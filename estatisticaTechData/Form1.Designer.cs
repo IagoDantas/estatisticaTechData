@@ -44,7 +44,7 @@ namespace estatisticaTechData
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.Azure;
-            this.lblUser.Location = new System.Drawing.Point(425, 288);
+            this.lblUser.Location = new System.Drawing.Point(590, 335);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(74, 26);
             this.lblUser.TabIndex = 0;
@@ -55,7 +55,7 @@ namespace estatisticaTechData
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.Azure;
-            this.lblPassword.Location = new System.Drawing.Point(436, 359);
+            this.lblPassword.Location = new System.Drawing.Point(590, 424);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(63, 26);
             this.lblPassword.TabIndex = 1;
@@ -66,7 +66,7 @@ namespace estatisticaTechData
             this.txtUser.BackColor = System.Drawing.Color.LightCyan;
             this.txtUser.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtUser.Location = new System.Drawing.Point(370, 318);
+            this.txtUser.Location = new System.Drawing.Point(535, 364);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(186, 27);
             this.txtUser.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace estatisticaTechData
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtPassword.Location = new System.Drawing.Point(370, 389);
+            this.txtPassword.Location = new System.Drawing.Point(535, 453);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(186, 27);
             this.txtPassword.TabIndex = 4;
@@ -90,7 +90,7 @@ namespace estatisticaTechData
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSignIn.Font = new System.Drawing.Font("Poppins ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSignIn.Location = new System.Drawing.Point(414, 455);
+            this.btnSignIn.Location = new System.Drawing.Point(569, 530);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(108, 41);
             this.btnSignIn.TabIndex = 5;
@@ -101,9 +101,10 @@ namespace estatisticaTechData
             // 
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(361, 51);
+            this.pcbLogo.Location = new System.Drawing.Point(498, 74);
             this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(206, 216);
+            this.pcbLogo.Size = new System.Drawing.Size(253, 248);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogo.TabIndex = 6;
             this.pcbLogo.TabStop = false;
             // 
@@ -113,7 +114,7 @@ namespace estatisticaTechData
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(903, 569);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pcbLogo);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.txtPassword);
