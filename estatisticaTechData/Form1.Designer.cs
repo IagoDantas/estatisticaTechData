@@ -49,7 +49,7 @@ namespace estatisticaTechData
             txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
             txtUser.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            txtUser.Location = new System.Drawing.Point(527, 320);
+            txtUser.Location = new System.Drawing.Point(510, 320);
             txtUser.Name = "txtUser";
             txtUser.Size = new System.Drawing.Size(186, 20);
             txtUser.TabIndex = 3;
@@ -61,7 +61,7 @@ namespace estatisticaTechData
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lblUser.Location = new System.Drawing.Point(591, 291);
+            this.lblUser.Location = new System.Drawing.Point(574, 291);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(74, 26);
             this.lblUser.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace estatisticaTechData
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtPassword.Location = new System.Drawing.Point(527, 394);
+            this.txtPassword.Location = new System.Drawing.Point(510, 394);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(186, 20);
             this.txtPassword.TabIndex = 4;
@@ -87,7 +87,7 @@ namespace estatisticaTechData
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSignIn.Font = new System.Drawing.Font("Poppins ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnSignIn.Location = new System.Drawing.Point(570, 442);
+            this.btnSignIn.Location = new System.Drawing.Point(553, 442);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(108, 41);
             this.btnSignIn.TabIndex = 5;
@@ -98,7 +98,7 @@ namespace estatisticaTechData
             // 
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
-            this.pcbLogo.Location = new System.Drawing.Point(499, 30);
+            this.pcbLogo.Location = new System.Drawing.Point(482, 30);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(253, 248);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +110,7 @@ namespace estatisticaTechData
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lblPassword.Location = new System.Drawing.Point(591, 365);
+            this.lblPassword.Location = new System.Drawing.Point(574, 365);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(63, 26);
             this.lblPassword.TabIndex = 7;
@@ -119,11 +119,11 @@ namespace estatisticaTechData
             // lklForgotPassword
             // 
             this.lklForgotPassword.AutoSize = true;
-            this.lklForgotPassword.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklForgotPassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklForgotPassword.Location = new System.Drawing.Point(542, 507);
+            this.lklForgotPassword.Location = new System.Drawing.Point(524, 506);
             this.lklForgotPassword.Name = "lklForgotPassword";
-            this.lklForgotPassword.Size = new System.Drawing.Size(159, 26);
+            this.lklForgotPassword.Size = new System.Drawing.Size(167, 28);
             this.lklForgotPassword.TabIndex = 8;
             this.lklForgotPassword.TabStop = true;
             this.lklForgotPassword.Text = "esqueceu a senha?";
@@ -134,7 +134,7 @@ namespace estatisticaTechData
             this.lklSignUp.AutoSize = true;
             this.lklSignUp.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklSignUp.Location = new System.Drawing.Point(565, 547);
+            this.lklSignUp.Location = new System.Drawing.Point(548, 544);
             this.lklSignUp.Name = "lklSignUp";
             this.lklSignUp.Size = new System.Drawing.Size(115, 28);
             this.lklSignUp.TabIndex = 9;
