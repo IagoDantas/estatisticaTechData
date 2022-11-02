@@ -17,12 +17,11 @@ namespace estatisticaTechData
             InitializeComponent();
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        private void lklSignUp_Click(object sender, EventArgs e)
         {
             frmCadastro cadastro = new frmCadastro();
             cadastro.Show();
             this.Visible = false;
         }
-
     }
 }
