@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace estatisticaTechData
 {
-    public partial class frmHome : Form
+    public partial class frmCadastro : Form
     {
-        public frmHome()
+        public frmCadastro()
         {
             InitializeComponent();
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            frmCadastro cadastro = new frmCadastro();
-            cadastro.Show();
-            this.Visible = false;
+            frmHome home = new frmHome();
+            home.Show();
+            this.Close();
         }
     }
 }
