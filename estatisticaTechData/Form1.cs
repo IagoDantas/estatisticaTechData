@@ -23,5 +23,11 @@ namespace estatisticaTechData
             cadastro.Show();
             this.Visible = false;
         }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+            txtUsers.Text = "";
+        }
     }
 }

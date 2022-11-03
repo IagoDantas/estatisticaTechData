@@ -29,32 +29,17 @@ namespace estatisticaTechData
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox txtUser;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
             this.lblUser = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnSignIn = new System.Windows.Forms.Button();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lklForgotPassword = new System.Windows.Forms.LinkLabel();
             this.lklSignUp = new System.Windows.Forms.LinkLabel();
-            txtUser = new System.Windows.Forms.TextBox();
+            this.txtUsers = new System.Windows.Forms.TextBox();
+            this.btnSignIn = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtUser
-            // 
-            txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            txtUser.Cursor = System.Windows.Forms.Cursors.IBeam;
-            txtUser.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            txtUser.Location = new System.Drawing.Point(547, 364);
-            txtUser.Name = "txtUser";
-            txtUser.Size = new System.Drawing.Size(186, 20);
-            txtUser.TabIndex = 3;
-            txtUser.Text = "Digite seu usuário:";
-            txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblUser
             // 
@@ -80,19 +65,6 @@ namespace estatisticaTechData
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = "Digite sua senha:";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnSignIn
-            // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSignIn.Font = new System.Drawing.Font("Poppins ExtraBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnSignIn.Location = new System.Drawing.Point(586, 490);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(108, 41);
-            this.btnSignIn.TabIndex = 5;
-            this.btnSignIn.Text = "entrar";
-            this.btnSignIn.UseVisualStyleBackColor = false;
             // 
             // pcbLogo
             // 
@@ -142,20 +114,53 @@ namespace estatisticaTechData
             this.lklSignUp.Text = "cadastre-se";
             this.lklSignUp.Click += new System.EventHandler(this.lklSignUp_Click);
             // 
+            // txtUsers
+            // 
+            this.txtUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUsers.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtUsers.Location = new System.Drawing.Point(547, 364);
+            this.txtUsers.Name = "txtUsers";
+            this.txtUsers.Size = new System.Drawing.Size(186, 20);
+            this.txtUsers.TabIndex = 10;
+            this.txtUsers.Text = "Digite seu usuário:";
+            this.txtUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnSignIn
+            // 
+            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnSignIn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnSignIn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSignIn.BorderRadius = 40;
+            this.btnSignIn.BorderSize = 0;
+            this.btnSignIn.FlatAppearance.BorderSize = 0;
+            this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSignIn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnSignIn.Location = new System.Drawing.Point(561, 501);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(151, 41);
+            this.btnSignIn.TabIndex = 11;
+            this.btnSignIn.Text = "entrar";
+            this.btnSignIn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnSignIn.UseVisualStyleBackColor = false;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1276, 686);
+            this.Controls.Add(this.btnSignIn);
+            this.Controls.Add(this.txtUsers);
             this.Controls.Add(this.lklSignUp);
             this.Controls.Add(this.lklForgotPassword);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.pcbLogo);
-            this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(txtUser);
             this.Controls.Add(this.lblUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -165,6 +170,7 @@ namespace estatisticaTechData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechData";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,11 +181,12 @@ namespace estatisticaTechData
 
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.PictureBox pcbLogo;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.LinkLabel lklForgotPassword;
         private System.Windows.Forms.LinkLabel lklSignUp;
+        private System.Windows.Forms.TextBox txtUsers;
+        private techDataButton btnSignIn;
     }
 }
 
