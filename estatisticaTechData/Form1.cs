@@ -24,10 +24,15 @@ namespace estatisticaTechData
             this.Visible = false;
         }
 
-        private void frmHome_Load(object sender, EventArgs e)
+        private void txtUsers_Enter(object sender, EventArgs e)
         {
-            txtPassword.Text = "";
             txtUsers.Text = "";
         }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPassword.Text = "";
+        }
+
     }
 }

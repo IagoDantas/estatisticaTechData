@@ -67,9 +67,10 @@
             this.txtEmail.Location = new System.Drawing.Point(760, 183);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(326, 29);
-            this.txtEmail.TabIndex = 48;
+            this.txtEmail.TabIndex = 5;
             this.txtEmail.Text = "Digite seu email";
             this.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // txtNome
             // 
@@ -81,9 +82,10 @@
             this.txtNome.Location = new System.Drawing.Point(191, 183);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(326, 29);
-            this.txtNome.TabIndex = 35;
+            this.txtNome.TabIndex = 0;
             this.txtNome.Text = "Digite seu nome";
             this.txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtNome.Enter += new System.EventHandler(this.txtNome_Enter);
             // 
             // txtSenha
             // 
@@ -94,9 +96,10 @@
             this.txtSenha.Location = new System.Drawing.Point(760, 321);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(326, 29);
-            this.txtSenha.TabIndex = 47;
+            this.txtSenha.TabIndex = 6;
             this.txtSenha.Text = "Digite sua senha";
             this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSenha.Enter += new System.EventHandler(this.txtSenha_Enter);
             // 
             // txtSenhaConfirma
             // 
@@ -107,9 +110,10 @@
             this.txtSenhaConfirma.Location = new System.Drawing.Point(760, 459);
             this.txtSenhaConfirma.Name = "txtSenhaConfirma";
             this.txtSenhaConfirma.Size = new System.Drawing.Size(326, 29);
-            this.txtSenhaConfirma.TabIndex = 46;
+            this.txtSenhaConfirma.TabIndex = 7;
             this.txtSenhaConfirma.Text = "Digite sua senha novamente";
             this.txtSenhaConfirma.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSenhaConfirma.Enter += new System.EventHandler(this.txtSenhaConfirma_Enter);
             // 
             // txtRa
             // 
@@ -120,9 +124,10 @@
             this.txtRa.Location = new System.Drawing.Point(191, 459);
             this.txtRa.Name = "txtRa";
             this.txtRa.Size = new System.Drawing.Size(326, 29);
-            this.txtRa.TabIndex = 45;
+            this.txtRa.TabIndex = 3;
             this.txtRa.Text = "Digite seu RA";
             this.txtRa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRa.Enter += new System.EventHandler(this.txtRa_Enter);
             // 
             // rdbProfessor
             // 
@@ -133,7 +138,7 @@
             this.rdbProfessor.Location = new System.Drawing.Point(209, 317);
             this.rdbProfessor.Name = "rdbProfessor";
             this.rdbProfessor.Size = new System.Drawing.Size(308, 41);
-            this.rdbProfessor.TabIndex = 43;
+            this.rdbProfessor.TabIndex = 2;
             this.rdbProfessor.TabStop = true;
             this.rdbProfessor.Text = "Professor(a) / Instrutor(a)";
             this.rdbProfessor.UseVisualStyleBackColor = true;
@@ -147,7 +152,7 @@
             this.rdbAluno.Location = new System.Drawing.Point(209, 260);
             this.rdbAluno.Name = "rdbAluno";
             this.rdbAluno.Size = new System.Drawing.Size(127, 41);
-            this.rdbAluno.TabIndex = 42;
+            this.rdbAluno.TabIndex = 1;
             this.rdbAluno.TabStop = true;
             this.rdbAluno.Text = "Aluno(a)";
             this.rdbAluno.UseVisualStyleBackColor = true;
@@ -240,7 +245,7 @@
             this.btnCadastrar.Location = new System.Drawing.Point(531, 563);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
-            this.btnCadastrar.TabIndex = 50;
+            this.btnCadastrar.TabIndex = 8;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCadastrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
@@ -271,7 +276,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro";
+            this.Text = "TechData";
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

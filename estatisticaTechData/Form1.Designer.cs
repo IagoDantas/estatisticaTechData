@@ -65,6 +65,7 @@ namespace estatisticaTechData
             this.txtPassword.TabIndex = 4;
             this.txtPassword.Text = "Digite sua senha:";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
             // 
             // pcbLogo
             // 
@@ -124,9 +125,10 @@ namespace estatisticaTechData
             this.txtUsers.Location = new System.Drawing.Point(547, 364);
             this.txtUsers.Name = "txtUsers";
             this.txtUsers.Size = new System.Drawing.Size(186, 20);
-            this.txtUsers.TabIndex = 10;
+            this.txtUsers.TabIndex = 1;
             this.txtUsers.Text = "Digite seu usuário:";
             this.txtUsers.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtUsers.Enter += new System.EventHandler(this.txtUsers_Enter);
             // 
             // btnSignIn
             // 
@@ -172,7 +174,6 @@ namespace estatisticaTechData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechData";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
