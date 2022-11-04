@@ -43,6 +43,7 @@ namespace estatisticaTechData
             // 
             // lblUser
             // 
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -54,6 +55,7 @@ namespace estatisticaTechData
             // 
             // txtPassword
             // 
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -69,6 +71,7 @@ namespace estatisticaTechData
             // 
             // pcbLogo
             // 
+            this.pcbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
             this.pcbLogo.Location = new System.Drawing.Point(513, 74);
@@ -80,6 +83,7 @@ namespace estatisticaTechData
             // 
             // lblPassword
             // 
+            this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -91,6 +95,7 @@ namespace estatisticaTechData
             // 
             // lklForgotPassword
             // 
+            this.lklForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklForgotPassword.AutoSize = true;
             this.lklForgotPassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -104,6 +109,7 @@ namespace estatisticaTechData
             // lklSignUp
             // 
             this.lklSignUp.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(208)))));
+            this.lklSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklSignUp.AutoSize = true;
             this.lklSignUp.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -117,6 +123,7 @@ namespace estatisticaTechData
             // 
             // txtUsers
             // 
+            this.txtUsers.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsers.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -132,6 +139,7 @@ namespace estatisticaTechData
             // 
             // btnSignIn
             // 
+            this.btnSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.btnSignIn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.btnSignIn.BorderColor = System.Drawing.Color.PaleVioletRed;

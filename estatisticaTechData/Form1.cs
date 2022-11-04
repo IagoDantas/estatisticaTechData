@@ -33,6 +33,5 @@ namespace estatisticaTechData
         {
             txtPassword.Text = "";
         }
-
     }
 }

@@ -49,6 +49,7 @@
             // 
             // pcbLogo
             // 
+            this.pcbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
             this.pcbLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pcbLogo.Location = new System.Drawing.Point(12, 12);
@@ -60,6 +61,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Poppins", 14.25F);
@@ -89,6 +91,7 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F);
@@ -103,6 +106,7 @@
             // 
             // txtSenhaConfirma
             // 
+            this.txtSenhaConfirma.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSenhaConfirma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtSenhaConfirma.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenhaConfirma.Font = new System.Drawing.Font("Poppins", 14.25F);
@@ -117,6 +121,7 @@
             // 
             // txtRa
             // 
+            this.txtRa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtRa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtRa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRa.Font = new System.Drawing.Font("Poppins", 14.25F);
@@ -131,6 +136,7 @@
             // 
             // rdbProfessor
             // 
+            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbProfessor.AutoSize = true;
             this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15.75F);
             this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -145,6 +151,7 @@
             // 
             // rdbAluno
             // 
+            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbAluno.AutoSize = true;
             this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15.75F);
             this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -159,6 +166,7 @@
             // 
             // lblSenhaConfirma
             // 
+            this.lblSenhaConfirma.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSenhaConfirma.AutoSize = true;
             this.lblSenhaConfirma.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenhaConfirma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -171,6 +179,7 @@
             // 
             // lblSenha
             // 
+            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -183,6 +192,7 @@
             // 
             // lblRa
             // 
+            this.lblRa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRa.AutoSize = true;
             this.lblRa.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblRa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -195,6 +205,7 @@
             // 
             // lblEmail
             // 
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -207,6 +218,7 @@
             // 
             // lblNome
             // 
+            this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -232,6 +244,7 @@
             // 
             // btnCadastrar
             // 
+            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;

@@ -19,11 +19,11 @@ namespace estatisticaTechData
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
-            frmHome home = new frmHome();
-            home.Show();
+            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
+            distribuicao.Show();
             this.Close();
         }
-
+   
         private void txtNome_Enter(object sender, EventArgs e)
         {
             txtNome.Text = "";
@@ -44,5 +44,7 @@ namespace estatisticaTechData
         {
             txtSenhaConfirma.Text = "";
         }
+
+        
     }
 }
