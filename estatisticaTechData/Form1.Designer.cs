@@ -106,7 +106,7 @@ namespace estatisticaTechData
             this.lklSignUp.AutoSize = true;
             this.lklSignUp.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklSignUp.Location = new System.Drawing.Point(581, 597);
+            this.lklSignUp.Location = new System.Drawing.Point(587, 598);
             this.lklSignUp.Name = "lklSignUp";
             this.lklSignUp.Size = new System.Drawing.Size(115, 28);
             this.lklSignUp.TabIndex = 9;
