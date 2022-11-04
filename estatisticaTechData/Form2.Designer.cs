@@ -35,7 +35,6 @@
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtSenhaConfirma = new System.Windows.Forms.TextBox();
             this.txtRa = new System.Windows.Forms.TextBox();
-            this.btnCadastrar = new System.Windows.Forms.Button();
             this.rdbProfessor = new System.Windows.Forms.RadioButton();
             this.rdbAluno = new System.Windows.Forms.RadioButton();
             this.lblSenhaConfirma = new System.Windows.Forms.Label();
@@ -44,6 +43,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnCadastrar = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,22 +123,6 @@
             this.txtRa.TabIndex = 45;
             this.txtRa.Text = "Digite seu RA";
             this.txtRa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnCadastrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCadastrar.Location = new System.Drawing.Point(529, 580);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(222, 55);
-            this.btnCadastrar.TabIndex = 44;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // rdbProfessor
             // 
@@ -241,19 +225,41 @@
             this.lblTitulo.TabIndex = 36;
             this.lblTitulo.Text = "Cadastro";
             // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCadastrar.BorderRadius = 55;
+            this.btnCadastrar.BorderSize = 0;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastrar.Location = new System.Drawing.Point(531, 563);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
+            this.btnCadastrar.TabIndex = 50;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pcbLogo);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtSenhaConfirma);
             this.Controls.Add(this.txtRa);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.rdbProfessor);
             this.Controls.Add(this.rdbAluno);
             this.Controls.Add(this.lblSenhaConfirma);
@@ -280,7 +286,6 @@
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtSenhaConfirma;
         private System.Windows.Forms.TextBox txtRa;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.RadioButton rdbProfessor;
         private System.Windows.Forms.RadioButton rdbAluno;
         private System.Windows.Forms.Label lblSenhaConfirma;
@@ -289,5 +294,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblTitulo;
+        private techDataButton btnCadastrar;
     }
 }

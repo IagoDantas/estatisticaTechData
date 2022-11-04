@@ -17,7 +17,7 @@ namespace estatisticaTechData
             InitializeComponent();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
             frmHome home = new frmHome();
             home.Show();
