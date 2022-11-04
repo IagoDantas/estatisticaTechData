@@ -33,5 +33,10 @@ namespace estatisticaTechData
         {
             txtPassword.Text = "";
         }
+
+        private void techDataTextBox1__TextChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Text Changed");
+        }
     }
 }

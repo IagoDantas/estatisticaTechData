@@ -38,6 +38,7 @@ namespace estatisticaTechData
             this.lklSignUp = new System.Windows.Forms.LinkLabel();
             this.txtUsers = new System.Windows.Forms.TextBox();
             this.btnSignIn = new estatisticaTechData.techDataButton();
+            this.techDataTextBox1 = new estatisticaTechData.techDataTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@ namespace estatisticaTechData
             this.lklSignUp.AutoSize = true;
             this.lklSignUp.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklSignUp.Location = new System.Drawing.Point(587, 598);
+            this.lklSignUp.Location = new System.Drawing.Point(578, 597);
             this.lklSignUp.Name = "lklSignUp";
             this.lklSignUp.Size = new System.Drawing.Size(115, 28);
             this.lklSignUp.TabIndex = 9;
@@ -149,13 +150,31 @@ namespace estatisticaTechData
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignIn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnSignIn.Location = new System.Drawing.Point(565, 501);
+            this.btnSignIn.Location = new System.Drawing.Point(560, 500);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(151, 41);
             this.btnSignIn.TabIndex = 11;
             this.btnSignIn.Text = "entrar";
             this.btnSignIn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSignIn.UseVisualStyleBackColor = false;
+            // 
+            // techDataTextBox1
+            // 
+            this.techDataTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.techDataTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.techDataTextBox1.BorderSize = 2;
+            this.techDataTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.techDataTextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.techDataTextBox1.Location = new System.Drawing.Point(119, 364);
+            this.techDataTextBox1.Multiline = false;
+            this.techDataTextBox1.Name = "techDataTextBox1";
+            this.techDataTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.techDataTextBox1.PasswordChar = false;
+            this.techDataTextBox1.Size = new System.Drawing.Size(250, 30);
+            this.techDataTextBox1.TabIndex = 12;
+            this.techDataTextBox1.Texts = "";
+            this.techDataTextBox1.UnderlinedStyle = false;
+            this.techDataTextBox1._TextChanged += new System.EventHandler(this.techDataTextBox1__TextChanged);
             // 
             // frmHome
             // 
@@ -164,6 +183,7 @@ namespace estatisticaTechData
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1276, 686);
+            this.Controls.Add(this.techDataTextBox1);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.txtUsers);
             this.Controls.Add(this.lklSignUp);
@@ -198,6 +218,7 @@ namespace estatisticaTechData
         private System.Windows.Forms.LinkLabel lklSignUp;
         private System.Windows.Forms.TextBox txtUsers;
         private techDataButton btnSignIn;
+        private techDataTextBox techDataTextBox1;
     }
 }
 
