@@ -55,6 +55,7 @@
             // 
             // btnDistribuicao
             // 
+            this.btnDistribuicao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDistribuicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.btnDistribuicao.FlatAppearance.BorderSize = 0;
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -70,6 +71,7 @@
             // 
             // btnHistorico
             // 
+            this.btnHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHistorico.FlatAppearance.BorderSize = 0;
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,6 +87,7 @@
             // 
             // btnPrevisaoDemanda
             // 
+            this.btnPrevisaoDemanda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -118,6 +121,7 @@
             // 
             // pbcPerfil
             // 
+            this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
             this.pbcPerfil.Location = new System.Drawing.Point(88, 45);
             this.pbcPerfil.Name = "pbcPerfil";
