@@ -137,8 +137,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pnlSideBar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmDistribuicaoNormal";
-            this.Text = "DIstribuicaoNormal";
+            this.Text = "Distribuição Normal";
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.ResumeLayout(false);
