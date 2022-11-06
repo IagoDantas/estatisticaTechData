@@ -17,6 +17,11 @@ namespace estatisticaTechData
             InitializeComponent();
         }
 
+        private void btnInicio_MouseEnter(object sender, EventArgs e)
+        {
+            btnInicio.BackColor = Color.FromArgb(220, 236, 223);
+            btnInicio.ForeColor = Color.Black;
+        }
         private void btnInicio_MouseHover(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(220, 236, 223);
@@ -29,6 +34,11 @@ namespace estatisticaTechData
             btnInicio.ForeColor = Color.White;
         }
 
+        private void btnDistribuicao_MouseEnter(object sender, EventArgs e)
+        {
+            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+            btnDistribuicao.ForeColor = Color.White;
+        }
         private void btnDistribuicao_MouseHover(object sender, EventArgs e)
         {
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
@@ -41,6 +51,11 @@ namespace estatisticaTechData
             btnDistribuicao.ForeColor = Color.Black;
         }
 
+        private void btnPrevisaoDemanda_MouseEnter(object sender, EventArgs e)
+        {
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(220, 236, 223);
+            btnPrevisaoDemanda.ForeColor = Color.Black;
+        }
         private void btnPrevisaoDemanda_MouseHover(object sender, EventArgs e)
         {
             btnPrevisaoDemanda.BackColor = Color.FromArgb(220, 236, 223);
@@ -51,6 +66,11 @@ namespace estatisticaTechData
         {
             btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
             btnPrevisaoDemanda.ForeColor = Color.White;
+        }
+        private void btnHistorico_MouseEnter(object sender, EventArgs e)
+        {
+            btnHistorico.BackColor = Color.FromArgb(220, 236, 223);
+            btnHistorico.ForeColor = Color.Black;
         }
 
         private void btnHistorico_MouseHover(object sender, EventArgs e)
@@ -64,5 +84,29 @@ namespace estatisticaTechData
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
         }
+        private void btnConfig_MouseEnter(object sender, EventArgs e)
+        {
+            btnConfig.BackColor = Color.FromArgb(220, 236, 223);
+            btnConfig.ForeColor = Color.Black;
+            pcbConfig.BackColor = Color.FromArgb(220, 236, 223);
+        }
+
+        private void btnConfig_MouseHover(object sender, EventArgs e)
+        {
+            btnConfig.BackColor = Color.FromArgb(220, 236, 223);
+            btnConfig.ForeColor = Color.Black;
+            pcbConfig.BackColor = Color.FromArgb(220, 236, 223);
+        }
+
+        private void btnConfig_MouseLeave(object sender, EventArgs e)
+        {
+            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+            btnConfig.ForeColor = Color.White;
+            pcbConfig.BackColor = Color.FromArgb(0, 107, 117);
+        }
+
+
+
+
     }
 }
