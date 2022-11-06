@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastro));
             this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.rdbProfessor = new System.Windows.Forms.RadioButton();
-            this.rdbAluno = new System.Windows.Forms.RadioButton();
             this.lblSenhaConfirma = new System.Windows.Forms.Label();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblRa = new System.Windows.Forms.Label();
@@ -50,6 +48,8 @@
             this.txtSombraNome = new estatisticaTechData.techDataTextBox();
             this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
             this.txtSombraSenha = new estatisticaTechData.techDataTextBox();
+            this.rdbAluno = new estatisticaTechData.Resources.techDataRadioButton();
+            this.rdbProfessor = new estatisticaTechData.Resources.techDataRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,42 +58,12 @@
             this.pcbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
             this.pcbLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pcbLogo.Location = new System.Drawing.Point(12, 12);
+            this.pcbLogo.Location = new System.Drawing.Point(24, 28);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(160, 156);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pcbLogo.TabIndex = 49;
             this.pcbLogo.TabStop = false;
-            // 
-            // rdbProfessor
-            // 
-            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbProfessor.AutoSize = true;
-            this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15.75F);
-            this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbProfessor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rdbProfessor.Location = new System.Drawing.Point(209, 337);
-            this.rdbProfessor.Name = "rdbProfessor";
-            this.rdbProfessor.Size = new System.Drawing.Size(308, 41);
-            this.rdbProfessor.TabIndex = 2;
-            this.rdbProfessor.TabStop = true;
-            this.rdbProfessor.Text = "Professor(a) / Instrutor(a)";
-            this.rdbProfessor.UseVisualStyleBackColor = true;
-            // 
-            // rdbAluno
-            // 
-            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbAluno.AutoSize = true;
-            this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15.75F);
-            this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbAluno.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.rdbAluno.Location = new System.Drawing.Point(209, 278);
-            this.rdbAluno.Name = "rdbAluno";
-            this.rdbAluno.Size = new System.Drawing.Size(127, 41);
-            this.rdbAluno.TabIndex = 1;
-            this.rdbAluno.TabStop = true;
-            this.rdbAluno.Text = "Aluno(a)";
-            this.rdbAluno.UseVisualStyleBackColor = true;
             // 
             // lblSenhaConfirma
             // 
@@ -102,7 +72,7 @@
             this.lblSenhaConfirma.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenhaConfirma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblSenhaConfirma.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSenhaConfirma.Location = new System.Drawing.Point(802, 397);
+            this.lblSenhaConfirma.Location = new System.Drawing.Point(801, 413);
             this.lblSenhaConfirma.Name = "lblSenhaConfirma";
             this.lblSenhaConfirma.Size = new System.Drawing.Size(242, 42);
             this.lblSenhaConfirma.TabIndex = 41;
@@ -115,7 +85,7 @@
             this.lblSenha.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblSenha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSenha.Location = new System.Drawing.Point(872, 259);
+            this.lblSenha.Location = new System.Drawing.Point(871, 267);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(102, 42);
             this.lblSenha.TabIndex = 40;
@@ -128,7 +98,7 @@
             this.lblRa.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblRa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblRa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblRa.Location = new System.Drawing.Point(329, 397);
+            this.lblRa.Location = new System.Drawing.Point(327, 413);
             this.lblRa.Name = "lblRa";
             this.lblRa.Size = new System.Drawing.Size(56, 42);
             this.lblRa.TabIndex = 39;
@@ -141,7 +111,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblEmail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblEmail.Location = new System.Drawing.Point(877, 121);
+            this.lblEmail.Location = new System.Drawing.Point(871, 137);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(92, 42);
             this.lblEmail.TabIndex = 38;
@@ -154,7 +124,7 @@
             this.lblNome.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblNome.Location = new System.Drawing.Point(305, 121);
+            this.lblNome.Location = new System.Drawing.Point(305, 137);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(97, 42);
             this.lblNome.TabIndex = 37;
@@ -167,7 +137,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblTitulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblTitulo.Location = new System.Drawing.Point(559, 63);
+            this.lblTitulo.Location = new System.Drawing.Point(559, 57);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(162, 51);
             this.lblTitulo.TabIndex = 36;
@@ -186,7 +156,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCadastrar.Location = new System.Drawing.Point(531, 562);
+            this.btnCadastrar.Location = new System.Drawing.Point(530, 556);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
             this.btnCadastrar.TabIndex = 8;
@@ -206,7 +176,7 @@
             this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtRA.Location = new System.Drawing.Point(191, 459);
-            this.txtRA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRA.Multiline = false;
             this.txtRA.Name = "txtRA";
             this.txtRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -214,7 +184,7 @@
             this.txtRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtRA.PlaceholderText = "Digite seu RA:";
             this.txtRA.Size = new System.Drawing.Size(326, 50);
-            this.txtRA.TabIndex = 51;
+            this.txtRA.TabIndex = 4;
             this.txtRA.Texts = "";
             this.txtRA.UnderlinedStyle = false;
             // 
@@ -228,7 +198,7 @@
             this.txtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtNome.Location = new System.Drawing.Point(191, 183);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -250,7 +220,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtEmail.Location = new System.Drawing.Point(760, 183);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -258,7 +228,7 @@
             this.txtEmail.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtEmail.PlaceholderText = "Digite seu email:";
             this.txtEmail.Size = new System.Drawing.Size(326, 50);
-            this.txtEmail.TabIndex = 52;
+            this.txtEmail.TabIndex = 1;
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = false;
             // 
@@ -272,7 +242,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.Location = new System.Drawing.Point(760, 315);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -280,7 +250,7 @@
             this.txtSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.PlaceholderText = "Digite sua senha:";
             this.txtSenha.Size = new System.Drawing.Size(326, 50);
-            this.txtSenha.TabIndex = 53;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.Texts = "";
             this.txtSenha.UnderlinedStyle = false;
             // 
@@ -294,7 +264,7 @@
             this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 459);
-            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtConfirmaSenha.Multiline = false;
             this.txtConfirmaSenha.Name = "txtConfirmaSenha";
             this.txtConfirmaSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -302,7 +272,7 @@
             this.txtConfirmaSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtConfirmaSenha.PlaceholderText = "Digite sua senha novamente:";
             this.txtConfirmaSenha.Size = new System.Drawing.Size(326, 50);
-            this.txtConfirmaSenha.TabIndex = 54;
+            this.txtConfirmaSenha.TabIndex = 3;
             this.txtConfirmaSenha.Texts = "";
             this.txtConfirmaSenha.UnderlinedStyle = false;
             // 
@@ -320,9 +290,9 @@
             this.btnSombraCadastro.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSombraCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraCadastro.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSombraCadastro.Location = new System.Drawing.Point(531, 567);
+            this.btnSombraCadastro.Location = new System.Drawing.Point(530, 568);
             this.btnSombraCadastro.Name = "btnSombraCadastro";
-            this.btnSombraCadastro.Size = new System.Drawing.Size(225, 55);
+            this.btnSombraCadastro.Size = new System.Drawing.Size(225, 50);
             this.btnSombraCadastro.TabIndex = 55;
             this.btnSombraCadastro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSombraCadastro.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
@@ -339,7 +309,7 @@
             this.txtSombraConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraConfirmaSenha.Location = new System.Drawing.Point(760, 463);
-            this.txtSombraConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraConfirmaSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSombraConfirmaSenha.Multiline = false;
             this.txtSombraConfirmaSenha.Name = "txtSombraConfirmaSenha";
             this.txtSombraConfirmaSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -362,7 +332,7 @@
             this.txtSombraRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraRA.Location = new System.Drawing.Point(191, 463);
-            this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSombraRA.Multiline = false;
             this.txtSombraRA.Name = "txtSombraRA";
             this.txtSombraRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -385,7 +355,7 @@
             this.txtSombraNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraNome.Location = new System.Drawing.Point(191, 187);
-            this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSombraNome.Multiline = false;
             this.txtSombraNome.Name = "txtSombraNome";
             this.txtSombraNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -408,7 +378,7 @@
             this.txtSombraEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraEmail.Location = new System.Drawing.Point(760, 187);
-            this.txtSombraEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSombraEmail.Multiline = false;
             this.txtSombraEmail.Name = "txtSombraEmail";
             this.txtSombraEmail.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -431,7 +401,7 @@
             this.txtSombraSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraSenha.Location = new System.Drawing.Point(760, 319);
-            this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSombraSenha.Multiline = false;
             this.txtSombraSenha.Name = "txtSombraSenha";
             this.txtSombraSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -443,12 +413,52 @@
             this.txtSombraSenha.Texts = "";
             this.txtSombraSenha.UnderlinedStyle = false;
             // 
+            // rdbAluno
+            // 
+            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbAluno.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbAluno.Location = new System.Drawing.Point(207, 294);
+            this.rdbAluno.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbAluno.Name = "rdbAluno";
+            this.rdbAluno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbAluno.Size = new System.Drawing.Size(133, 28);
+            this.rdbAluno.TabIndex = 61;
+            this.rdbAluno.Text = "Aluno(a)";
+            this.rdbAluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdbAluno.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbAluno.UseVisualStyleBackColor = true;
+            // 
+            // rdbProfessor
+            // 
+            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbProfessor.Location = new System.Drawing.Point(207, 352);
+            this.rdbProfessor.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbProfessor.Name = "rdbProfessor";
+            this.rdbProfessor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbProfessor.Size = new System.Drawing.Size(340, 32);
+            this.rdbProfessor.TabIndex = 5;
+            this.rdbProfessor.Text = "Professor(a) ou Instrutor(a)";
+            this.rdbProfessor.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.rdbProfessor.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbProfessor.UseVisualStyleBackColor = true;
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.rdbProfessor);
+            this.Controls.Add(this.rdbAluno);
             this.Controls.Add(this.txtConfirmaSenha);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
@@ -456,8 +466,6 @@
             this.Controls.Add(this.txtRA);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.pcbLogo);
-            this.Controls.Add(this.rdbProfessor);
-            this.Controls.Add(this.rdbAluno);
             this.Controls.Add(this.lblSenhaConfirma);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblRa);
@@ -485,8 +493,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pcbLogo;
-        private System.Windows.Forms.RadioButton rdbProfessor;
-        private System.Windows.Forms.RadioButton rdbAluno;
         private System.Windows.Forms.Label lblSenhaConfirma;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblRa;
@@ -505,5 +511,7 @@
         private techDataTextBox txtSombraNome;
         private techDataTextBox txtSombraEmail;
         private techDataTextBox txtSombraSenha;
+        private Resources.techDataRadioButton rdbAluno;
+        private Resources.techDataRadioButton rdbProfessor;
     }
 }

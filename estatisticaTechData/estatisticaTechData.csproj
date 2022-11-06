@@ -66,13 +66,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="techDataButton.cs">
+    <Compile Include="Resources\techDataButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="techDataTextBox.cs">
+    <Compile Include="Resources\techDataRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\techDataTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="techDataTextBox.Designer.cs">
+    <Compile Include="Resources\techDataTextBox.Designer.cs">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DIstribuicaoNormal.resx">
@@ -93,7 +96,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="techDataTextBox.resx">
+    <EmbeddedResource Include="Resources\techDataTextBox.resx">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
