@@ -137,7 +137,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblTitulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblTitulo.Location = new System.Drawing.Point(559, 57);
+            this.lblTitulo.Location = new System.Drawing.Point(558, 57);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(162, 51);
             this.lblTitulo.TabIndex = 36;
