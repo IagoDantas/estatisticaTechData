@@ -58,7 +58,7 @@
             this.pcbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
             this.pcbLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pcbLogo.Location = new System.Drawing.Point(24, 28);
+            this.pcbLogo.Location = new System.Drawing.Point(12, 12);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(160, 156);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
