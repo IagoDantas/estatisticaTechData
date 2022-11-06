@@ -41,12 +41,12 @@
             this.lblGraficoPorcentagem = new System.Windows.Forms.Label();
             this.pnlHistorico = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHistorico = new System.Windows.Forms.Label();
-            this.btnAcessoHistorico = new System.Windows.Forms.Button();
             this.pnlLegenda = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGrafico = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLegenda = new System.Windows.Forms.Label();
             this.lblGráfico = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnAcessoHistorico = new estatisticaTechData.techDataButton();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
@@ -85,7 +85,7 @@
             this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig.Location = new System.Drawing.Point(1, 629);
@@ -226,21 +226,6 @@
             this.lblHistorico.Text = "Histórico dos gráficos de distribuição normal anteriores:";
             this.lblHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAcessoHistorico
-            // 
-            this.btnAcessoHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAcessoHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAcessoHistorico.FlatAppearance.BorderSize = 0;
-            this.btnAcessoHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcessoHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcessoHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnAcessoHistorico.Location = new System.Drawing.Point(94, 69);
-            this.btnAcessoHistorico.Name = "btnAcessoHistorico";
-            this.btnAcessoHistorico.Size = new System.Drawing.Size(126, 47);
-            this.btnAcessoHistorico.TabIndex = 1;
-            this.btnAcessoHistorico.Text = "Acessar";
-            this.btnAcessoHistorico.UseVisualStyleBackColor = false;
-            // 
             // pnlLegenda
             // 
             this.pnlLegenda.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -286,12 +271,32 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(600, 74);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(341, 56);
+            this.lblTitulo.Size = new System.Drawing.Size(333, 53);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Distribuição Normal";
+            // 
+            // btnAcessoHistorico
+            // 
+            this.btnAcessoHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAcessoHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAcessoHistorico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAcessoHistorico.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAcessoHistorico.BorderRadius = 50;
+            this.btnAcessoHistorico.BorderSize = 0;
+            this.btnAcessoHistorico.FlatAppearance.BorderSize = 0;
+            this.btnAcessoHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcessoHistorico.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcessoHistorico.ForeColor = System.Drawing.Color.White;
+            this.btnAcessoHistorico.Location = new System.Drawing.Point(94, 69);
+            this.btnAcessoHistorico.Name = "btnAcessoHistorico";
+            this.btnAcessoHistorico.Size = new System.Drawing.Size(126, 47);
+            this.btnAcessoHistorico.TabIndex = 5;
+            this.btnAcessoHistorico.Text = "Acessar";
+            this.btnAcessoHistorico.TextColor = System.Drawing.Color.White;
+            this.btnAcessoHistorico.UseVisualStyleBackColor = false;
             // 
             // frmDistribuicaoNormal
             // 
@@ -341,8 +346,8 @@
         private System.Windows.Forms.Label lblGraficoPorcentagem;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblHistorico;
-        private System.Windows.Forms.Button btnAcessoHistorico;
         private System.Windows.Forms.PictureBox pcbConfig;
         private System.Windows.Forms.Button btnConfig;
+        private techDataButton btnAcessoHistorico;
     }
 }
