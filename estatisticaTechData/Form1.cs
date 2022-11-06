@@ -24,19 +24,5 @@ namespace estatisticaTechData
             this.Visible = false;
         }
 
-        private void txtUsers_Enter(object sender, EventArgs e)
-        {
-            txtUsers.Text = "";
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            txtPassword.Text = "";
-        }
-
-        private void techDataTextBox1__TextChanged(object sender, EventArgs e)
-        {
-            MessageBox.Show("Text Changed");
-        }
     }
 }
