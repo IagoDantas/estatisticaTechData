@@ -23,6 +23,6 @@ namespace estatisticaTechData
             distribuicao.Show();
             this.Close();
         }
-        
+
     }
 }
