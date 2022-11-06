@@ -23,6 +23,5 @@ namespace estatisticaTechData
             cadastro.Show();
             this.Visible = false;
         }
-
     }
 }

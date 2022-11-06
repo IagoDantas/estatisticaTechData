@@ -23,28 +23,6 @@ namespace estatisticaTechData
             distribuicao.Show();
             this.Close();
         }
-   
-        private void txtNome_Enter(object sender, EventArgs e)
-        {
-            txtNome.Text = "";
-        }
-        private void txtRa_Enter(object sender, EventArgs e)
-        {
-            txtRa.Text = "";
-        }
-        private void txtEmail_Enter(object sender, EventArgs e)
-        {
-            txtEmail.Text = "";
-        }
-        private void txtSenha_Enter(object sender, EventArgs e)
-        {
-            txtSenha.Text = "";
-        }
-        private void txtSenhaConfirma_Enter(object sender, EventArgs e)
-        {
-            txtSenhaConfirma.Text = "";
-        }
-
         
     }
 }
