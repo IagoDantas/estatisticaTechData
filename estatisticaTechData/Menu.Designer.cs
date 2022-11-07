@@ -298,7 +298,7 @@ namespace estatisticaTechData
             // 
             this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
-            this.pbcPerfil.Location = new System.Drawing.Point(540, 12);
+            this.pbcPerfil.Location = new System.Drawing.Point(545, 12);
             this.pbcPerfil.Name = "pbcPerfil";
             this.pbcPerfil.Size = new System.Drawing.Size(190, 185);
             this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
