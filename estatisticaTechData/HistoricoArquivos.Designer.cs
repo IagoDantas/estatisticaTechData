@@ -37,7 +37,7 @@
             this.btnPrevisaoDemanda = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
-            this.lnkNovaCarga = new System.Windows.Forms.LinkLabel();
+            this.lklNovaCarga = new System.Windows.Forms.LinkLabel();
             this.pnlArquivos = new System.Windows.Forms.Panel();
             this.lblHistoricoArquivos = new System.Windows.Forms.Label();
             this.lblDataArquivo = new System.Windows.Forms.Label();
@@ -180,23 +180,22 @@
             this.pbcPerfil.TabIndex = 0;
             this.pbcPerfil.TabStop = false;
             // 
-            // lnkNovaCarga
+            // lklNovaCarga
             // 
-            this.lnkNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lnkNovaCarga.AutoSize = true;
-            this.lnkNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lnkNovaCarga.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lnkNovaCarga.LinkColor = System.Drawing.Color.Black;
-            this.lnkNovaCarga.Location = new System.Drawing.Point(675, 108);
-            this.lnkNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lnkNovaCarga.Name = "lnkNovaCarga";
-            this.lnkNovaCarga.Size = new System.Drawing.Size(108, 28);
-            this.lnkNovaCarga.TabIndex = 3;
-            this.lnkNovaCarga.TabStop = true;
-            this.lnkNovaCarga.Text = "Nova Carga";
-            this.lnkNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
-            this.lnkNovaCarga.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkNovaCarga_LinkClicked);
+            this.lklNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.lklNovaCarga.AutoSize = true;
+            this.lklNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lklNovaCarga.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
+            this.lklNovaCarga.Location = new System.Drawing.Point(675, 108);
+            this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lklNovaCarga.Name = "lklNovaCarga";
+            this.lklNovaCarga.Size = new System.Drawing.Size(108, 28);
+            this.lklNovaCarga.TabIndex = 3;
+            this.lklNovaCarga.TabStop = true;
+            this.lklNovaCarga.Text = "Nova Carga";
+            this.lklNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // pnlArquivos
             // 
@@ -205,7 +204,7 @@
             this.pnlArquivos.Controls.Add(this.lblDataArquivo);
             this.pnlArquivos.Controls.Add(this.lblNomeArquivo);
             this.pnlArquivos.Location = new System.Drawing.Point(320, 197);
-            this.pnlArquivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlArquivos.Margin = new System.Windows.Forms.Padding(2);
             this.pnlArquivos.Name = "pnlArquivos";
             this.pnlArquivos.Size = new System.Drawing.Size(804, 430);
             this.pnlArquivos.TabIndex = 4;
@@ -278,7 +277,7 @@
             this.btnProximaPagina.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProximaPagina.ForeColor = System.Drawing.Color.White;
             this.btnProximaPagina.Location = new System.Drawing.Point(973, 634);
-            this.btnProximaPagina.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnProximaPagina.Margin = new System.Windows.Forms.Padding(2);
             this.btnProximaPagina.Name = "btnProximaPagina";
             this.btnProximaPagina.Size = new System.Drawing.Size(115, 44);
             this.btnProximaPagina.TabIndex = 6;
@@ -299,7 +298,7 @@
             this.btnNovaCarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovaCarga.ForeColor = System.Drawing.Color.White;
             this.btnNovaCarga.Location = new System.Drawing.Point(685, 24);
-            this.btnNovaCarga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNovaCarga.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovaCarga.Name = "btnNovaCarga";
             this.btnNovaCarga.Size = new System.Drawing.Size(81, 88);
             this.btnNovaCarga.TabIndex = 2;
@@ -317,10 +316,10 @@
             this.Controls.Add(this.btnProximaPagina);
             this.Controls.Add(this.lblRecentes);
             this.Controls.Add(this.pnlArquivos);
-            this.Controls.Add(this.lnkNovaCarga);
+            this.Controls.Add(this.lklNovaCarga);
             this.Controls.Add(this.btnNovaCarga);
             this.Controls.Add(this.pnlSideBar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmHistoricoArquivos";
@@ -347,7 +346,7 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.PictureBox pbcPerfil;
         private techDataButton btnNovaCarga;
-        private System.Windows.Forms.LinkLabel lnkNovaCarga;
+        private System.Windows.Forms.LinkLabel lklNovaCarga;
         private System.Windows.Forms.Panel pnlArquivos;
         private System.Windows.Forms.Label lblRecentes;
         private System.Windows.Forms.Label lblDataArquivo;

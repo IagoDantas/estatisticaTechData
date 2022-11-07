@@ -111,10 +111,6 @@ namespace estatisticaTechData.Resources
             this.Close();
         }
 
-        private void lnkNovaCarga_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            btnNovaCarga_Click(sender, e);
-        }
 
         private void btnNovaCarga_Click (object sender, EventArgs e)
         {
