@@ -176,7 +176,7 @@
             this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtRA.Location = new System.Drawing.Point(191, 459);
-            this.txtRA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRA.Margin = new System.Windows.Forms.Padding(4);
             this.txtRA.Multiline = false;
             this.txtRA.Name = "txtRA";
             this.txtRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -198,7 +198,7 @@
             this.txtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtNome.Location = new System.Drawing.Point(191, 183);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Multiline = false;
             this.txtNome.Name = "txtNome";
             this.txtNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -220,7 +220,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtEmail.Location = new System.Drawing.Point(760, 183);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Multiline = false;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -242,7 +242,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.Location = new System.Drawing.Point(760, 315);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -264,7 +264,7 @@
             this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 459);
-            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfirmaSenha.Multiline = false;
             this.txtConfirmaSenha.Name = "txtConfirmaSenha";
             this.txtConfirmaSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -309,7 +309,7 @@
             this.txtSombraConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraConfirmaSenha.Location = new System.Drawing.Point(760, 463);
-            this.txtSombraConfirmaSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSombraConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraConfirmaSenha.Multiline = false;
             this.txtSombraConfirmaSenha.Name = "txtSombraConfirmaSenha";
             this.txtSombraConfirmaSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -332,7 +332,7 @@
             this.txtSombraRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraRA.Location = new System.Drawing.Point(191, 463);
-            this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraRA.Multiline = false;
             this.txtSombraRA.Name = "txtSombraRA";
             this.txtSombraRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -355,7 +355,7 @@
             this.txtSombraNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraNome.Location = new System.Drawing.Point(191, 187);
-            this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraNome.Multiline = false;
             this.txtSombraNome.Name = "txtSombraNome";
             this.txtSombraNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -378,7 +378,7 @@
             this.txtSombraEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraEmail.Location = new System.Drawing.Point(760, 187);
-            this.txtSombraEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSombraEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraEmail.Multiline = false;
             this.txtSombraEmail.Name = "txtSombraEmail";
             this.txtSombraEmail.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -401,7 +401,7 @@
             this.txtSombraSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraSenha.Location = new System.Drawing.Point(760, 319);
-            this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraSenha.Multiline = false;
             this.txtSombraSenha.Name = "txtSombraSenha";
             this.txtSombraSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
@@ -417,7 +417,7 @@
             // 
             this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbAluno.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
             this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -436,7 +436,7 @@
             // 
             this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
             this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
