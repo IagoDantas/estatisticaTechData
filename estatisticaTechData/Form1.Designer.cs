@@ -172,6 +172,7 @@ namespace estatisticaTechData
             this.btnSignIn.Text = "entrar";
             this.btnSignIn.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnSombraEntrar
             // 
