@@ -66,6 +66,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HistoricoArquivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricoArquivos.Designer.cs">
+      <DependentUpon>HistoricoArquivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\techDataButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoArquivos.resx">
+      <DependentUpon>HistoricoArquivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
