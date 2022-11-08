@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace estatisticaTechData
 {
-    public partial class Configuracao : Form
+    public partial class Configuração : Form
     {
-        public Configuracao()
+        public Configuração()
         {
             InitializeComponent();
         }

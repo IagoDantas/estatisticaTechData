@@ -96,6 +96,9 @@
     <Compile Include="Resources\techDataTextBox.Designer.cs">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Configuracao.resx">
+      <DependentUpon>Configuracao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DIstribuicaoNormal.resx">
       <DependentUpon>DIstribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +138,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Assets\Img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
