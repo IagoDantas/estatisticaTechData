@@ -29,15 +29,21 @@ namespace estatisticaTechData
         private void btnInicio_Click(object sender, EventArgs e)
         {
             frmMenu menu = new frmMenu();
+            menu.Show();  
+            this.Close();
         }
         private void btnHistorico_Click(object sender, EventArgs e)
         {
             frmHistoricoArquivos historico = new frmHistoricoArquivos();
+            historico.Show();
+            this.Close();
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
             frmConfiguracao configuracao = new frmConfiguracao();
+            configuracao.Show();
+            this.Close();
         }
     }
 }
