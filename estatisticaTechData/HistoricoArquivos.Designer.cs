@@ -63,7 +63,7 @@
             this.pnlSideBar.Controls.Add(this.btnPrevisaoDemanda);
             this.pnlSideBar.Controls.Add(this.btnInicio);
             this.pnlSideBar.Controls.Add(this.pbcPerfil);
-            this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideBar.Location = new System.Drawing.Point(-2, 0);
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(276, 683);
             this.pnlSideBar.TabIndex = 1;
@@ -71,7 +71,7 @@
             // pcbConfig
             // 
             this.pcbConfig.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfig.Image")));
-            this.pcbConfig.Location = new System.Drawing.Point(10, 635);
+            this.pcbConfig.Location = new System.Drawing.Point(9, 630);
             this.pcbConfig.Name = "pcbConfig";
             this.pcbConfig.Size = new System.Drawing.Size(40, 40);
             this.pcbConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -86,7 +86,7 @@
             this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(1, 629);
+            this.btnConfig.Location = new System.Drawing.Point(1, 625);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(276, 54);
             this.btnConfig.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDistribuicao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDistribuicao.ForeColor = System.Drawing.Color.White;
-            this.btnDistribuicao.Location = new System.Drawing.Point(0, 298);
+            this.btnDistribuicao.Location = new System.Drawing.Point(0, 294);
             this.btnDistribuicao.Name = "btnDistribuicao";
             this.btnDistribuicao.Size = new System.Drawing.Size(276, 50);
             this.btnDistribuicao.TabIndex = 4;
@@ -123,7 +123,7 @@
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHistorico.Location = new System.Drawing.Point(-2, 438);
+            this.btnHistorico.Location = new System.Drawing.Point(-2, 434);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Size = new System.Drawing.Size(279, 50);
             this.btnHistorico.TabIndex = 3;
@@ -141,7 +141,7 @@
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
-            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 368);
+            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 364);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
             this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 50);
             this.btnPrevisaoDemanda.TabIndex = 2;
@@ -159,7 +159,7 @@
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Location = new System.Drawing.Point(-2, 228);
+            this.btnInicio.Location = new System.Drawing.Point(-2, 224);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(276, 50);
             this.btnInicio.TabIndex = 1;
@@ -173,7 +173,7 @@
             // 
             this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
-            this.pbcPerfil.Location = new System.Drawing.Point(86, 45);
+            this.pbcPerfil.Location = new System.Drawing.Point(86, 41);
             this.pbcPerfil.Name = "pbcPerfil";
             this.pbcPerfil.Size = new System.Drawing.Size(100, 100);
             this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -311,7 +311,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1203, 681);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.lblNumeroPagina);
             this.Controls.Add(this.btnProximaPagina);
             this.Controls.Add(this.lblRecentes);

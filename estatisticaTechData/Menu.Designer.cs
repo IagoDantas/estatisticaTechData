@@ -73,7 +73,7 @@ namespace estatisticaTechData
             this.lklSair.AutoSize = true;
             this.lklSair.Font = new System.Drawing.Font("Poppins", 13.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSair.LinkColor = System.Drawing.Color.White;
-            this.lklSair.Location = new System.Drawing.Point(615, 688);
+            this.lklSair.Location = new System.Drawing.Point(615, 635);
             this.lklSair.Name = "lklSair";
             this.lklSair.Size = new System.Drawing.Size(50, 31);
             this.lklSair.TabIndex = 6;
@@ -298,7 +298,7 @@ namespace estatisticaTechData
             // 
             this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
-            this.pbcPerfil.Location = new System.Drawing.Point(545, 12);
+            this.pbcPerfil.Location = new System.Drawing.Point(541, 12);
             this.pbcPerfil.Name = "pbcPerfil";
             this.pbcPerfil.Size = new System.Drawing.Size(190, 185);
             this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,7 +321,7 @@ namespace estatisticaTechData
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.ClientSize = new System.Drawing.Size(1264, 741);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.pbcPerfil);
             this.Controls.Add(this.btnConfigUsuario);

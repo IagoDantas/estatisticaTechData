@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuracao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configuracao.Designer.cs">
+      <DependentUpon>Configuracao.cs</DependentUpon>
+    </Compile>
     <Compile Include="DIstribuicaoNormal.cs">
       <SubType>Form</SubType>
     </Compile>
