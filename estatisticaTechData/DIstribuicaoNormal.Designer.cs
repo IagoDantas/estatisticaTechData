@@ -241,6 +241,7 @@
             this.btnAcessoHistorico.Text = "Acessar";
             this.btnAcessoHistorico.TextColor = System.Drawing.Color.White;
             this.btnAcessoHistorico.UseVisualStyleBackColor = false;
+            this.btnAcessoHistorico.Click += new System.EventHandler(this.btnAcessoHistorico_Click);
             // 
             // pnlLegenda
             // 

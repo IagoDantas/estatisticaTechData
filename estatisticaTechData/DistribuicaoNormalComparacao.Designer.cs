@@ -1,6 +1,6 @@
 ﻿namespace estatisticaTechData
 {
-    partial class DistribuicaoNormalComparacao
+    partial class frmCompara
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DistribuicaoNormalComparacao));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompara));
             this.pnlScreen = new System.Windows.Forms.Panel();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.lblData02 = new System.Windows.Forms.Label();
@@ -95,6 +95,7 @@
             this.btnVoltar.Text = "←";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // lblData02
             // 
@@ -288,6 +289,7 @@
             this.btnConfig.TabIndex = 7;
             this.btnConfig.Text = "CONFIGURAÇÔES";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // btnDistribuicao
             // 
@@ -316,6 +318,7 @@
             this.btnHistorico.TabIndex = 3;
             this.btnHistorico.Text = "Histórico de arquivos enviados";
             this.btnHistorico.UseVisualStyleBackColor = true;
+            this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
             // 
             // btnPrevisaoDemanda
             // 
@@ -346,6 +349,7 @@
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // pbcPerfil
             // 
@@ -358,7 +362,7 @@
             this.pbcPerfil.TabIndex = 0;
             this.pbcPerfil.TabStop = false;
             // 
-            // DistribuicaoNormalComparacao
+            // frmCompara
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,7 +370,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.pnlSideBar);
-            this.Name = "DistribuicaoNormalComparacao";
+            this.Name = "frmCompara";
             this.Text = "DistribuicaoNormalComparacao";
             this.pnlScreen.ResumeLayout(false);
             this.pnlScreen.PerformLayout();

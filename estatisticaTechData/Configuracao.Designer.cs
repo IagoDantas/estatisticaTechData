@@ -1,6 +1,6 @@
 ﻿namespace estatisticaTechData
 {
-    partial class Configuração
+    partial class frmConfiguracao
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuração));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfiguracao));
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.pcbConfig = new System.Windows.Forms.PictureBox();
@@ -154,13 +154,13 @@
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
             // 
-            // Configuração
+            // frmConfiguracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pnlSideBar);
-            this.Name = "Configuração";
+            this.Name = "frmConfiguracao";
             this.Text = "Configuracao";
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);

@@ -76,5 +76,11 @@ namespace estatisticaTechData
             this.Close();
         }
 
+        private void btnAcessoHistorico_Click(object sender, EventArgs e)
+        {
+            frmCompara compara = new frmCompara();
+            compara.Show();
+            this.Close();
+        }
     }
 }
