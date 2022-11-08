@@ -17,6 +17,35 @@ namespace estatisticaTechData
         {
             InitializeComponent();
         }
+
+        //Click
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+            frmHistoricoArquivos historicoArquivos = new frmHistoricoArquivos();
+            historicoArquivos.Show();
+            this.Close();
+        }
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            frmMenu menu = new frmMenu();
+            menu.Show();
+            this.Close();
+        }
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            frmConfiguracao configuracao = new frmConfiguracao();
+            configuracao.Show();
+            this.Close();
+        }
+        private void btnAcessoHistorico_Click(object sender, EventArgs e)
+        {
+            frmCompara compara = new frmCompara();
+            compara.Show();
+            this.Close();
+        }
+
+
+        //Hover
         private void btnInicio_MouseEnter(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(220, 236, 223);
@@ -68,19 +97,6 @@ namespace estatisticaTechData
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
             pcbConfig.BackColor = Color.FromArgb(0, 107, 117);
-        }
-        private void btnHistorico_Click(object sender, EventArgs e)
-        {
-            frmHistoricoArquivos historicoArquivos = new frmHistoricoArquivos();
-            historicoArquivos.Show();
-            this.Close();
-        }
-
-        private void btnAcessoHistorico_Click(object sender, EventArgs e)
-        {
-            frmCompara compara = new frmCompara();
-            compara.Show();
-            this.Close();
         }
     }
 }

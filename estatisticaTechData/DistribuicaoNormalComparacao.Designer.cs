@@ -290,6 +290,8 @@
             this.btnConfig.Text = "CONFIGURAÇÔES";
             this.btnConfig.UseVisualStyleBackColor = false;
             this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
+            this.btnConfig.MouseEnter += new System.EventHandler(this.btnConfig_MouseEnter);
+            this.btnConfig.MouseLeave += new System.EventHandler(this.btnConfig_MouseLeave);
             // 
             // btnDistribuicao
             // 
@@ -304,6 +306,8 @@
             this.btnDistribuicao.TabIndex = 4;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
             this.btnDistribuicao.UseVisualStyleBackColor = false;
+            this.btnDistribuicao.MouseEnter += new System.EventHandler(this.btnDistribuicao_MouseEnter);
+            this.btnDistribuicao.MouseLeave += new System.EventHandler(this.btnDistribuicao_MouseLeave);
             // 
             // btnHistorico
             // 
@@ -319,6 +323,8 @@
             this.btnHistorico.Text = "Histórico de arquivos enviados";
             this.btnHistorico.UseVisualStyleBackColor = true;
             this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
+            this.btnHistorico.MouseEnter += new System.EventHandler(this.btnHistorico_MouseEnter);
+            this.btnHistorico.MouseLeave += new System.EventHandler(this.btnHistorico_MouseLeave);
             // 
             // btnPrevisaoDemanda
             // 
@@ -334,6 +340,8 @@
             this.btnPrevisaoDemanda.TabIndex = 2;
             this.btnPrevisaoDemanda.Text = "Previsão de demanda";
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
+            this.btnPrevisaoDemanda.MouseEnter += new System.EventHandler(this.btnPrevisaoDemanda_MouseEnter);
+            this.btnPrevisaoDemanda.MouseLeave += new System.EventHandler(this.btnPrevisaoDemanda_MouseLeave);
             // 
             // btnInicio
             // 
@@ -350,6 +358,8 @@
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
+            this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
             // pbcPerfil
             // 
@@ -371,6 +381,7 @@
             this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.pnlSideBar);
             this.Name = "frmCompara";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DistribuicaoNormalComparacao";
             this.pnlScreen.ResumeLayout(false);
             this.pnlScreen.PerformLayout();

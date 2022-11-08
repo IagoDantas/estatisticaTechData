@@ -94,6 +94,7 @@
             this.btnConfig.TabIndex = 5;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             this.btnConfig.MouseEnter += new System.EventHandler(this.btnConfig_MouseEnter);
             this.btnConfig.MouseLeave += new System.EventHandler(this.btnConfig_MouseLeave);
             // 
@@ -161,6 +162,7 @@
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
             this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
             // 
