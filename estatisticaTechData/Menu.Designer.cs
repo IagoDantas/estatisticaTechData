@@ -179,6 +179,7 @@ namespace estatisticaTechData
             this.btnConfigUsuario.Text = "Configurações do usuário";
             this.btnConfigUsuario.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnConfigUsuario.UseVisualStyleBackColor = false;
+            this.btnConfigUsuario.Click += new System.EventHandler(this.btnConfigUsuario_Click);
             // 
             // btnSombraConfigUsuario
             // 

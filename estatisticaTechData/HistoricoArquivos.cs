@@ -16,51 +16,55 @@ namespace estatisticaTechData.Resources
         {
             InitializeComponent();
         }
+        private void btnNovaCarga_Click (object sender, EventArgs e)
+        {
+            MessageBox.Show("Clique");
+        }
+        private void btnDistribuicao_Click(object sender, EventArgs e)
+        {
+            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
+            distribuicao.Show();
+            this.Close();
+        }
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            frmMenu menu = new frmMenu();
+            menu.Show();
+            this.Close();
+        }
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            frmConfiguracao configuracao = new frmConfiguracao();
+            configuracao.Show();
+            this.Close();
+        }
+
+
         private void btnInicio_MouseEnter(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(220, 236, 223);
             btnInicio.ForeColor = Color.Black;
-        }
-        private void btnInicio_MouseHover(object sender, EventArgs e)
-        {
-            btnInicio.BackColor = Color.FromArgb(220, 236, 223);
-            btnInicio.ForeColor = Color.Black;
-        }
-
+        }      
         private void btnInicio_MouseLeave(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(0, 107, 117);
             btnInicio.ForeColor = Color.White;
         }
-
         private void btnDistribuicao_MouseEnter(object sender, EventArgs e)
         {
             btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
             btnDistribuicao.ForeColor = Color.Black;
         }
-        private void btnDistribuicao_MouseHover(object sender, EventArgs e)
-        {
-            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-            btnDistribuicao.ForeColor = Color.Black;
-        }
-
         private void btnDistribuicao_MouseLeave(object sender, EventArgs e)
         {
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
             btnDistribuicao.ForeColor = Color.White;
         }
-
         private void btnPrevisaoDemanda_MouseEnter(object sender, EventArgs e)
         {
             btnPrevisaoDemanda.BackColor = Color.FromArgb(220, 236, 223);
             btnPrevisaoDemanda.ForeColor = Color.Black;
         }
-        private void btnPrevisaoDemanda_MouseHover(object sender, EventArgs e)
-        {
-            btnPrevisaoDemanda.BackColor = Color.FromArgb(220, 236, 223);
-            btnPrevisaoDemanda.ForeColor = Color.Black;
-        }
-
         private void btnPrevisaoDemanda_MouseLeave(object sender, EventArgs e)
         {
             btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
@@ -71,13 +75,6 @@ namespace estatisticaTechData.Resources
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
         }
-
-        private void btnHistorico_MouseHover(object sender, EventArgs e)
-        {
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-        }
-
         private void btnHistorico_MouseLeave(object sender, EventArgs e)
         {
             btnHistorico.BackColor = Color.FromArgb(220, 236, 223);
@@ -89,32 +86,11 @@ namespace estatisticaTechData.Resources
             btnConfig.ForeColor = Color.Black;
             pcbConfig.BackColor = Color.FromArgb(220, 236, 223);
         }
-
-        private void btnConfig_MouseHover(object sender, EventArgs e)
-        {
-            btnConfig.BackColor = Color.FromArgb(220, 236, 223);
-            btnConfig.ForeColor = Color.Black;
-            pcbConfig.BackColor = Color.FromArgb(220, 236, 223);
-        }
-
         private void btnConfig_MouseLeave(object sender, EventArgs e)
         {
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
             pcbConfig.BackColor = Color.FromArgb(0, 107, 117);
-        }
-
-        private void btnDistribuicao_Click(object sender, EventArgs e)
-        {
-            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
-            distribuicao.Show();
-            this.Close();
-        }
-
-
-        private void btnNovaCarga_Click (object sender, EventArgs e)
-        {
-            MessageBox.Show("Clique");
         }
     }
 }

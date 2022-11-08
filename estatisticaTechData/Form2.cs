@@ -19,8 +19,8 @@ namespace estatisticaTechData
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
-            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
-            distribuicao.Show();
+            frmHome home = new frmHome();
+            home.Show();
             this.Close();
         }
 

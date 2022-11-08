@@ -45,5 +45,12 @@ namespace estatisticaTechData
             historicoArquivos.Show();
             this.Close();
         }
+
+        private void btnConfigUsuario_Click(object sender, EventArgs e)
+        {
+            frmConfiguracao configuracao = new frmConfiguracao();
+            configuracao.Show();
+            this.Close();
+        }
     }
 }

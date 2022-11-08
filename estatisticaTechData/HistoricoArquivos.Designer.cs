@@ -92,9 +92,9 @@
             this.btnConfig.TabIndex = 5;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             this.btnConfig.MouseEnter += new System.EventHandler(this.btnConfig_MouseEnter);
             this.btnConfig.MouseLeave += new System.EventHandler(this.btnConfig_MouseLeave);
-            this.btnConfig.MouseHover += new System.EventHandler(this.btnConfig_MouseHover);
             // 
             // btnDistribuicao
             // 
@@ -113,7 +113,6 @@
             this.btnDistribuicao.Click += new System.EventHandler(this.btnDistribuicao_Click);
             this.btnDistribuicao.MouseEnter += new System.EventHandler(this.btnDistribuicao_MouseEnter);
             this.btnDistribuicao.MouseLeave += new System.EventHandler(this.btnDistribuicao_MouseLeave);
-            this.btnDistribuicao.MouseHover += new System.EventHandler(this.btnDistribuicao_MouseHover);
             // 
             // btnHistorico
             // 
@@ -131,7 +130,6 @@
             this.btnHistorico.UseVisualStyleBackColor = false;
             this.btnHistorico.MouseEnter += new System.EventHandler(this.btnHistorico_MouseEnter);
             this.btnHistorico.MouseLeave += new System.EventHandler(this.btnHistorico_MouseLeave);
-            this.btnHistorico.MouseHover += new System.EventHandler(this.btnHistorico_MouseHover);
             // 
             // btnPrevisaoDemanda
             // 
@@ -149,7 +147,6 @@
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
             this.btnPrevisaoDemanda.MouseEnter += new System.EventHandler(this.btnPrevisaoDemanda_MouseEnter);
             this.btnPrevisaoDemanda.MouseLeave += new System.EventHandler(this.btnPrevisaoDemanda_MouseLeave);
-            this.btnPrevisaoDemanda.MouseHover += new System.EventHandler(this.btnPrevisaoDemanda_MouseHover);
             // 
             // btnInicio
             // 
@@ -165,9 +162,10 @@
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             this.btnInicio.MouseEnter += new System.EventHandler(this.btnInicio_MouseEnter);
             this.btnInicio.MouseLeave += new System.EventHandler(this.btnInicio_MouseLeave);
-            this.btnInicio.MouseHover += new System.EventHandler(this.btnInicio_MouseHover);
+
             // 
             // pbcPerfil
             // 
