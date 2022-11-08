@@ -86,7 +86,7 @@
             this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.btnVoltar.FlatAppearance.BorderSize = 0;
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Font = new System.Drawing.Font("Poppins Medium", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVoltar.Location = new System.Drawing.Point(0, 0);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoltar.Name = "btnVoltar";
@@ -100,10 +100,10 @@
             // lblData02
             // 
             this.lblData02.AutoSize = true;
-            this.lblData02.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData02.Location = new System.Drawing.Point(674, 223);
             this.lblData02.Name = "lblData02";
-            this.lblData02.Size = new System.Drawing.Size(114, 46);
+            this.lblData02.Size = new System.Drawing.Size(103, 32);
             this.lblData02.TabIndex = 6;
             this.lblData02.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData02.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -111,10 +111,10 @@
             // lblData01
             // 
             this.lblData01.AutoSize = true;
-            this.lblData01.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData01.Location = new System.Drawing.Point(202, 223);
             this.lblData01.Name = "lblData01";
-            this.lblData01.Size = new System.Drawing.Size(114, 46);
+            this.lblData01.Size = new System.Drawing.Size(103, 32);
             this.lblData01.TabIndex = 5;
             this.lblData01.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData01.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -122,20 +122,20 @@
             // lblSubTitulo
             // 
             this.lblSubTitulo.AutoSize = true;
-            this.lblSubTitulo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitulo.Location = new System.Drawing.Point(419, 145);
             this.lblSubTitulo.Name = "lblSubTitulo";
-            this.lblSubTitulo.Size = new System.Drawing.Size(153, 34);
+            this.lblSubTitulo.Size = new System.Drawing.Size(146, 24);
             this.lblSubTitulo.TabIndex = 4;
             this.lblSubTitulo.Text = "COMPARAÇÃO";
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.Location = new System.Drawing.Point(355, 97);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(299, 48);
+            this.lblTitulo.Size = new System.Drawing.Size(270, 31);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Distribuição Normal";
             // 
@@ -162,10 +162,10 @@
             // lblLegenda01
             // 
             this.lblLegenda01.AutoSize = true;
-            this.lblLegenda01.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegenda01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda01.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda01.Name = "lblLegenda01";
-            this.lblLegenda01.Size = new System.Drawing.Size(182, 46);
+            this.lblLegenda01.Size = new System.Drawing.Size(166, 32);
             this.lblLegenda01.TabIndex = 1;
             this.lblLegenda01.Text = "Aréa dentro do padrão de \r\ndistribuição";
             // 
@@ -189,10 +189,10 @@
             // lblLegenda02
             // 
             this.lblLegenda02.AutoSize = true;
-            this.lblLegenda02.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegenda02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda02.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda02.Name = "lblLegenda02";
-            this.lblLegenda02.Size = new System.Drawing.Size(159, 46);
+            this.lblLegenda02.Size = new System.Drawing.Size(145, 32);
             this.lblLegenda02.TabIndex = 2;
             this.lblLegenda02.Text = "Aréa que está perto do\r\npadrão de distribuição";
             // 
@@ -216,10 +216,10 @@
             // lblLegenda03
             // 
             this.lblLegenda03.AutoSize = true;
-            this.lblLegenda03.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegenda03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda03.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda03.Name = "lblLegenda03";
-            this.lblLegenda03.Size = new System.Drawing.Size(183, 46);
+            this.lblLegenda03.Size = new System.Drawing.Size(170, 32);
             this.lblLegenda03.TabIndex = 3;
             this.lblLegenda03.Text = "Aréa do que está longe do \r\npadrão de distribuição";
             // 
@@ -260,7 +260,7 @@
             this.pnlSideBar.Controls.Add(this.btnPrevisaoDemanda);
             this.pnlSideBar.Controls.Add(this.btnInicio);
             this.pnlSideBar.Controls.Add(this.pbcPerfil);
-            this.pnlSideBar.Location = new System.Drawing.Point(-1, -1);
+            this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(276, 683);
             this.pnlSideBar.TabIndex = 5;
@@ -280,7 +280,7 @@
             this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F);
+            this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig.Location = new System.Drawing.Point(0, 629);
@@ -299,7 +299,7 @@
             this.btnDistribuicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.btnDistribuicao.FlatAppearance.BorderSize = 0;
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDistribuicao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDistribuicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDistribuicao.Location = new System.Drawing.Point(0, 298);
             this.btnDistribuicao.Name = "btnDistribuicao";
             this.btnDistribuicao.Size = new System.Drawing.Size(276, 50);
@@ -314,7 +314,7 @@
             this.btnHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnHistorico.FlatAppearance.BorderSize = 0;
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
             this.btnHistorico.Location = new System.Drawing.Point(0, 438);
             this.btnHistorico.Name = "btnHistorico";
@@ -332,7 +332,7 @@
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
             this.btnPrevisaoDemanda.Location = new System.Drawing.Point(0, 368);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
@@ -349,7 +349,7 @@
             this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnInicio.FlatAppearance.BorderSize = 0;
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
             this.btnInicio.Location = new System.Drawing.Point(0, 228);
             this.btnInicio.Name = "btnInicio";
@@ -380,6 +380,8 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.pnlSideBar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCompara";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DistribuicaoNormalComparacao";
