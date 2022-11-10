@@ -16,5 +16,19 @@ namespace estatisticaTechData
         {
             InitializeComponent();
         }
+
+        private void btnComparar_Click(object sender, EventArgs e)
+        {
+            frmCompara compara = new frmCompara();
+            compara.Show();
+            this.Close();
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            frmDistribuicaoNormal distribuicaoNormal = new frmDistribuicaoNormal();
+            distribuicaoNormal.ShowDialog();
+            this.Close();
+        }
     }
 }

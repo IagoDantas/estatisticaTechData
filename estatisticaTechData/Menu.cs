@@ -34,8 +34,8 @@ namespace estatisticaTechData
 
         private void btnVisualizarGraficoDistNormal_Click(object sender, EventArgs e)
         {
-            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
-            distribuicao.Show();
+            frmHistoricoDistNormal historicoDist = new frmHistoricoDistNormal();
+            historicoDist.Show();
             this.Close();
         }
 

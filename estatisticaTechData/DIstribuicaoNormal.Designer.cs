@@ -47,6 +47,8 @@
             this.lblLegenda = new System.Windows.Forms.Label();
             this.lblGráfico = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnNovaBase = new estatisticaTechData.techDataButton();
+            this.lklNovaCarga = new System.Windows.Forms.LinkLabel();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
@@ -135,15 +137,16 @@
             // 
             this.btnPrevisaoDemanda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnPrevisaoDemanda.Enabled = false;
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
             this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 368);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
-            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 50);
+            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 64);
             this.btnPrevisaoDemanda.TabIndex = 2;
-            this.btnPrevisaoDemanda.Text = "Previsão de demanda";
+            this.btnPrevisaoDemanda.Text = "Previsão de demanda\r\n(Em breve)";
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
             this.btnPrevisaoDemanda.MouseEnter += new System.EventHandler(this.btnPrevisaoDemanda_MouseEnter);
             this.btnPrevisaoDemanda.MouseLeave += new System.EventHandler(this.btnPrevisaoDemanda_MouseLeave);
@@ -250,7 +253,7 @@
             this.pnlLegenda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.pnlLegenda.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlLegenda.Location = new System.Drawing.Point(683, 547);
+            this.pnlLegenda.Location = new System.Drawing.Point(713, 547);
             this.pnlLegenda.Name = "pnlLegenda";
             this.pnlLegenda.Size = new System.Drawing.Size(503, 100);
             this.pnlLegenda.TabIndex = 2;
@@ -258,7 +261,7 @@
             // pnlGrafico
             // 
             this.pnlGrafico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlGrafico.Location = new System.Drawing.Point(683, 175);
+            this.pnlGrafico.Location = new System.Drawing.Point(713, 175);
             this.pnlGrafico.Name = "pnlGrafico";
             this.pnlGrafico.Size = new System.Drawing.Size(503, 344);
             this.pnlGrafico.TabIndex = 2;
@@ -269,7 +272,7 @@
             this.lblLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblLegenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblLegenda.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegenda.Location = new System.Drawing.Point(694, 579);
+            this.lblLegenda.Location = new System.Drawing.Point(728, 579);
             this.lblLegenda.Name = "lblLegenda";
             this.lblLegenda.Size = new System.Drawing.Size(473, 37);
             this.lblLegenda.TabIndex = 0;
@@ -281,7 +284,7 @@
             this.lblGráfico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblGráfico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGráfico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGráfico.Location = new System.Drawing.Point(707, 329);
+            this.lblGráfico.Location = new System.Drawing.Point(738, 329);
             this.lblGráfico.Name = "lblGráfico";
             this.lblGráfico.Size = new System.Drawing.Size(450, 28);
             this.lblGráfico.TabIndex = 3;
@@ -291,18 +294,57 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(600, 74);
+            this.lblTitulo.Location = new System.Drawing.Point(636, 61);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(333, 53);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Distribuição Normal";
+            // 
+            // btnNovaBase
+            // 
+            this.btnNovaBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnNovaBase.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnNovaBase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovaBase.BackgroundImage")));
+            this.btnNovaBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovaBase.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNovaBase.BorderRadius = 80;
+            this.btnNovaBase.BorderSize = 0;
+            this.btnNovaBase.FlatAppearance.BorderSize = 0;
+            this.btnNovaBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovaBase.ForeColor = System.Drawing.Color.White;
+            this.btnNovaBase.Location = new System.Drawing.Point(1102, 50);
+            this.btnNovaBase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovaBase.Name = "btnNovaBase";
+            this.btnNovaBase.Size = new System.Drawing.Size(75, 78);
+            this.btnNovaBase.TabIndex = 5;
+            this.btnNovaBase.TextColor = System.Drawing.Color.White;
+            this.btnNovaBase.UseVisualStyleBackColor = false;
+            // 
+            // lklNovaCarga
+            // 
+            this.lklNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.lklNovaCarga.AutoSize = true;
+            this.lklNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lklNovaCarga.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
+            this.lklNovaCarga.Location = new System.Drawing.Point(1061, 130);
+            this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lklNovaCarga.Name = "lklNovaCarga";
+            this.lklNovaCarga.Size = new System.Drawing.Size(155, 25);
+            this.lklNovaCarga.TabIndex = 6;
+            this.lklNovaCarga.TabStop = true;
+            this.lklNovaCarga.Text = "Nova base de dados";
+            this.lklNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // frmDistribuicaoNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1203, 681);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lklNovaCarga);
+            this.Controls.Add(this.btnNovaBase);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblGráfico);
             this.Controls.Add(this.lblLegenda);
@@ -349,5 +391,7 @@
         private System.Windows.Forms.PictureBox pcbConfig;
         private System.Windows.Forms.Button btnConfig;
         private techDataButton btnAcessoHistorico;
+        private techDataButton btnNovaBase;
+        private System.Windows.Forms.LinkLabel lklNovaCarga;
     }
 }
