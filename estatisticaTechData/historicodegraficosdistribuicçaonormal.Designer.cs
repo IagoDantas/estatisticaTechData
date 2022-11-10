@@ -39,18 +39,23 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRecentes = new System.Windows.Forms.Label();
+            this.lblHistoricoArquivos = new System.Windows.Forms.Label();
+            this.lblNomeArquivo = new System.Windows.Forms.Label();
+            this.lblDataArquivo = new System.Windows.Forms.Label();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(512, 11);
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(446, 27);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(629, 33);
+            this.lblTitulo.Size = new System.Drawing.Size(685, 51);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Historico de graficos de distribuição normal:";
             this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
@@ -74,7 +79,7 @@
             // 
             // pcbConfig
             // 
-            this.pcbConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.pcbConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.pcbConfig.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfig.Image")));
             this.pcbConfig.Location = new System.Drawing.Point(10, 635);
             this.pcbConfig.Name = "pcbConfig";
@@ -85,15 +90,15 @@
             // 
             // btnConfig
             // 
-            this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.ForeColor = System.Drawing.Color.Black;
+            this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig.Location = new System.Drawing.Point(1, 629);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(276, 54);
+            this.btnConfig.Size = new System.Drawing.Size(275, 54);
             this.btnConfig.TabIndex = 5;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
@@ -104,7 +109,7 @@
             this.btnDistribuicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnDistribuicao.FlatAppearance.BorderSize = 0;
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDistribuicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDistribuicao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDistribuicao.ForeColor = System.Drawing.Color.White;
             this.btnDistribuicao.Location = new System.Drawing.Point(0, 298);
             this.btnDistribuicao.Name = "btnDistribuicao";
@@ -116,16 +121,17 @@
             // btnHistorico
             // 
             this.btnHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.btnHistorico.FlatAppearance.BorderSize = 0;
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorico.ForeColor = System.Drawing.Color.White;
+            this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorico.ForeColor = System.Drawing.Color.Black;
             this.btnHistorico.Location = new System.Drawing.Point(-2, 438);
             this.btnHistorico.Name = "btnHistorico";
-            this.btnHistorico.Size = new System.Drawing.Size(276, 50);
+            this.btnHistorico.Size = new System.Drawing.Size(278, 50);
             this.btnHistorico.TabIndex = 3;
             this.btnHistorico.Text = "Histórico de arquivos enviados";
-            this.btnHistorico.UseVisualStyleBackColor = true;
+            this.btnHistorico.UseVisualStyleBackColor = false;
             // 
             // btnPrevisaoDemanda
             // 
@@ -133,7 +139,7 @@
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
             this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 368);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
@@ -148,7 +154,7 @@
             this.btnInicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnInicio.FlatAppearance.BorderSize = 0;
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInicio.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
             this.btnInicio.Location = new System.Drawing.Point(-2, 228);
             this.btnInicio.Name = "btnInicio";
@@ -171,11 +177,59 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.panel1.Location = new System.Drawing.Point(351, 91);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Controls.Add(this.lblDataArquivo);
+            this.panel1.Controls.Add(this.lblNomeArquivo);
+            this.panel1.Controls.Add(this.lblHistoricoArquivos);
+            this.panel1.Location = new System.Drawing.Point(353, 140);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(856, 446);
             this.panel1.TabIndex = 7;
+            // 
+            // lblRecentes
+            // 
+            this.lblRecentes.AutoSize = true;
+            this.lblRecentes.Font = new System.Drawing.Font("Poppins Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.lblRecentes.Location = new System.Drawing.Point(346, 99);
+            this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecentes.Name = "lblRecentes";
+            this.lblRecentes.Size = new System.Drawing.Size(128, 39);
+            this.lblRecentes.TabIndex = 8;
+            this.lblRecentes.Text = "Recentes";
+            // 
+            // lblHistoricoArquivos
+            // 
+            this.lblHistoricoArquivos.AutoSize = true;
+            this.lblHistoricoArquivos.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistoricoArquivos.Location = new System.Drawing.Point(46, 200);
+            this.lblHistoricoArquivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblHistoricoArquivos.Name = "lblHistoricoArquivos";
+            this.lblHistoricoArquivos.Size = new System.Drawing.Size(764, 48);
+            this.lblHistoricoArquivos.TabIndex = 3;
+            this.lblHistoricoArquivos.Text = "Os antigos gráficos de distribuição normal ficam aqui";
+            // 
+            // lblNomeArquivo
+            // 
+            this.lblNomeArquivo.AutoSize = true;
+            this.lblNomeArquivo.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeArquivo.Location = new System.Drawing.Point(38, 16);
+            this.lblNomeArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNomeArquivo.Name = "lblNomeArquivo";
+            this.lblNomeArquivo.Size = new System.Drawing.Size(83, 34);
+            this.lblNomeArquivo.TabIndex = 9;
+            this.lblNomeArquivo.Text = "Nome:";
+            // 
+            // lblDataArquivo
+            // 
+            this.lblDataArquivo.AutoSize = true;
+            this.lblDataArquivo.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataArquivo.Location = new System.Drawing.Point(640, 16);
+            this.lblDataArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDataArquivo.Name = "lblDataArquivo";
+            this.lblDataArquivo.Size = new System.Drawing.Size(71, 34);
+            this.lblDataArquivo.TabIndex = 9;
+            this.lblDataArquivo.Text = "Data:";
             // 
             // historicodegraficosdistribuicçaonormal
             // 
@@ -183,15 +237,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lblRecentes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pnlSideBar);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "historicodegraficosdistribuicçaonormal";
             this.Load += new System.EventHandler(this.historicodegraficosdistribuicçaonormal_Load);
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +265,9 @@
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.PictureBox pbcPerfil;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblRecentes;
+        private System.Windows.Forms.Label lblHistoricoArquivos;
+        private System.Windows.Forms.Label lblNomeArquivo;
+        private System.Windows.Forms.Label lblDataArquivo;
     }
 }
