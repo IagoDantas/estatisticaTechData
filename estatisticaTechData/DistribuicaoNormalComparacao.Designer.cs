@@ -76,10 +76,12 @@
             this.pnlScreen.Controls.Add(this.pnlLegendaBack);
             this.pnlScreen.Controls.Add(this.pnlGrafico01);
             this.pnlScreen.Controls.Add(this.pnlGrafico02);
-            this.pnlScreen.Location = new System.Drawing.Point(275, -1);
+            this.pnlScreen.Location = new System.Drawing.Point(367, -1);
+            this.pnlScreen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlScreen.Name = "pnlScreen";
-            this.pnlScreen.Size = new System.Drawing.Size(990, 683);
+            this.pnlScreen.Size = new System.Drawing.Size(1320, 841);
             this.pnlScreen.TabIndex = 6;
+            this.pnlScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlScreen_Paint);
             // 
             // btnVoltar
             // 
@@ -90,7 +92,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(0, 0);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(75, 75);
+            this.btnVoltar.Size = new System.Drawing.Size(100, 92);
             this.btnVoltar.TabIndex = 7;
             this.btnVoltar.Text = "←";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -101,9 +103,10 @@
             // 
             this.lblData02.AutoSize = true;
             this.lblData02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData02.Location = new System.Drawing.Point(674, 223);
+            this.lblData02.Location = new System.Drawing.Point(899, 274);
+            this.lblData02.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData02.Name = "lblData02";
-            this.lblData02.Size = new System.Drawing.Size(103, 32);
+            this.lblData02.Size = new System.Drawing.Size(129, 40);
             this.lblData02.TabIndex = 6;
             this.lblData02.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData02.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,9 +115,10 @@
             // 
             this.lblData01.AutoSize = true;
             this.lblData01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData01.Location = new System.Drawing.Point(202, 223);
+            this.lblData01.Location = new System.Drawing.Point(269, 274);
+            this.lblData01.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblData01.Name = "lblData01";
-            this.lblData01.Size = new System.Drawing.Size(103, 32);
+            this.lblData01.Size = new System.Drawing.Size(129, 40);
             this.lblData01.TabIndex = 5;
             this.lblData01.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData01.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,9 +127,10 @@
             // 
             this.lblSubTitulo.AutoSize = true;
             this.lblSubTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTitulo.Location = new System.Drawing.Point(419, 145);
+            this.lblSubTitulo.Location = new System.Drawing.Point(559, 178);
+            this.lblSubTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubTitulo.Name = "lblSubTitulo";
-            this.lblSubTitulo.Size = new System.Drawing.Size(146, 24);
+            this.lblSubTitulo.Size = new System.Drawing.Size(183, 29);
             this.lblSubTitulo.TabIndex = 4;
             this.lblSubTitulo.Text = "COMPARAÇÃO";
             // 
@@ -133,9 +138,10 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(355, 97);
+            this.lblTitulo.Location = new System.Drawing.Point(473, 119);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(270, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(334, 39);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Distribuição Normal";
             // 
@@ -145,108 +151,120 @@
             this.pnlLegendaBack.Controls.Add(this.pnlLegenda01);
             this.pnlLegendaBack.Controls.Add(this.pnlLegenda02);
             this.pnlLegendaBack.Controls.Add(this.pnlLegenda03);
-            this.pnlLegendaBack.Location = new System.Drawing.Point(81, 587);
+            this.pnlLegendaBack.Location = new System.Drawing.Point(108, 722);
+            this.pnlLegendaBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegendaBack.Name = "pnlLegendaBack";
-            this.pnlLegendaBack.Size = new System.Drawing.Size(828, 68);
+            this.pnlLegendaBack.Size = new System.Drawing.Size(1104, 84);
             this.pnlLegendaBack.TabIndex = 2;
             // 
             // pnlLegenda01
             // 
             this.pnlLegenda01.Controls.Add(this.lblLegenda01);
             this.pnlLegenda01.Controls.Add(this.pnlLegendaCor01);
-            this.pnlLegenda01.Location = new System.Drawing.Point(8, 3);
+            this.pnlLegenda01.Location = new System.Drawing.Point(11, 4);
+            this.pnlLegenda01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegenda01.Name = "pnlLegenda01";
-            this.pnlLegenda01.Size = new System.Drawing.Size(265, 62);
+            this.pnlLegenda01.Size = new System.Drawing.Size(353, 76);
             this.pnlLegenda01.TabIndex = 2;
             // 
             // lblLegenda01
             // 
             this.lblLegenda01.AutoSize = true;
             this.lblLegenda01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegenda01.Location = new System.Drawing.Point(59, 8);
+            this.lblLegenda01.Location = new System.Drawing.Point(79, 10);
+            this.lblLegenda01.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLegenda01.Name = "lblLegenda01";
-            this.lblLegenda01.Size = new System.Drawing.Size(166, 32);
+            this.lblLegenda01.Size = new System.Drawing.Size(203, 40);
             this.lblLegenda01.TabIndex = 1;
             this.lblLegenda01.Text = "Aréa dentro do padrão de \r\ndistribuição";
             // 
             // pnlLegendaCor01
             // 
             this.pnlLegendaCor01.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlLegendaCor01.Location = new System.Drawing.Point(3, 6);
+            this.pnlLegendaCor01.Location = new System.Drawing.Point(4, 7);
+            this.pnlLegendaCor01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegendaCor01.Name = "pnlLegendaCor01";
-            this.pnlLegendaCor01.Size = new System.Drawing.Size(50, 50);
+            this.pnlLegendaCor01.Size = new System.Drawing.Size(67, 62);
             this.pnlLegendaCor01.TabIndex = 0;
             // 
             // pnlLegenda02
             // 
             this.pnlLegenda02.Controls.Add(this.lblLegenda02);
             this.pnlLegenda02.Controls.Add(this.pnlLegendaCor02);
-            this.pnlLegenda02.Location = new System.Drawing.Point(282, 3);
+            this.pnlLegenda02.Location = new System.Drawing.Point(376, 4);
+            this.pnlLegenda02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegenda02.Name = "pnlLegenda02";
-            this.pnlLegenda02.Size = new System.Drawing.Size(265, 62);
+            this.pnlLegenda02.Size = new System.Drawing.Size(353, 76);
             this.pnlLegenda02.TabIndex = 1;
             // 
             // lblLegenda02
             // 
             this.lblLegenda02.AutoSize = true;
             this.lblLegenda02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegenda02.Location = new System.Drawing.Point(59, 8);
+            this.lblLegenda02.Location = new System.Drawing.Point(79, 10);
+            this.lblLegenda02.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLegenda02.Name = "lblLegenda02";
-            this.lblLegenda02.Size = new System.Drawing.Size(145, 32);
+            this.lblLegenda02.Size = new System.Drawing.Size(179, 40);
             this.lblLegenda02.TabIndex = 2;
             this.lblLegenda02.Text = "Aréa que está perto do\r\npadrão de distribuição";
             // 
             // pnlLegendaCor02
             // 
             this.pnlLegendaCor02.BackColor = System.Drawing.Color.CadetBlue;
-            this.pnlLegendaCor02.Location = new System.Drawing.Point(3, 6);
+            this.pnlLegendaCor02.Location = new System.Drawing.Point(4, 7);
+            this.pnlLegendaCor02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegendaCor02.Name = "pnlLegendaCor02";
-            this.pnlLegendaCor02.Size = new System.Drawing.Size(50, 50);
+            this.pnlLegendaCor02.Size = new System.Drawing.Size(67, 62);
             this.pnlLegendaCor02.TabIndex = 1;
             // 
             // pnlLegenda03
             // 
             this.pnlLegenda03.Controls.Add(this.lblLegenda03);
             this.pnlLegenda03.Controls.Add(this.pnlLegendaCor03);
-            this.pnlLegenda03.Location = new System.Drawing.Point(556, 3);
+            this.pnlLegenda03.Location = new System.Drawing.Point(741, 4);
+            this.pnlLegenda03.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegenda03.Name = "pnlLegenda03";
-            this.pnlLegenda03.Size = new System.Drawing.Size(265, 62);
+            this.pnlLegenda03.Size = new System.Drawing.Size(353, 76);
             this.pnlLegenda03.TabIndex = 0;
             // 
             // lblLegenda03
             // 
             this.lblLegenda03.AutoSize = true;
             this.lblLegenda03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegenda03.Location = new System.Drawing.Point(59, 8);
+            this.lblLegenda03.Location = new System.Drawing.Point(79, 10);
+            this.lblLegenda03.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLegenda03.Name = "lblLegenda03";
-            this.lblLegenda03.Size = new System.Drawing.Size(170, 32);
+            this.lblLegenda03.Size = new System.Drawing.Size(209, 40);
             this.lblLegenda03.TabIndex = 3;
             this.lblLegenda03.Text = "Aréa do que está longe do \r\npadrão de distribuição";
             // 
             // pnlLegendaCor03
             // 
             this.pnlLegendaCor03.BackColor = System.Drawing.Color.Cyan;
-            this.pnlLegendaCor03.Location = new System.Drawing.Point(3, 6);
+            this.pnlLegendaCor03.Location = new System.Drawing.Point(4, 7);
+            this.pnlLegendaCor03.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegendaCor03.Name = "pnlLegendaCor03";
-            this.pnlLegendaCor03.Size = new System.Drawing.Size(50, 50);
+            this.pnlLegendaCor03.Size = new System.Drawing.Size(67, 62);
             this.pnlLegendaCor03.TabIndex = 2;
             // 
             // pnlGrafico01
             // 
             this.pnlGrafico01.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlGrafico01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlGrafico01.Location = new System.Drawing.Point(34, 272);
+            this.pnlGrafico01.Location = new System.Drawing.Point(45, 335);
+            this.pnlGrafico01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGrafico01.Name = "pnlGrafico01";
-            this.pnlGrafico01.Size = new System.Drawing.Size(451, 274);
+            this.pnlGrafico01.Size = new System.Drawing.Size(601, 337);
             this.pnlGrafico01.TabIndex = 1;
             // 
             // pnlGrafico02
             // 
             this.pnlGrafico02.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlGrafico02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlGrafico02.Location = new System.Drawing.Point(506, 272);
+            this.pnlGrafico02.Location = new System.Drawing.Point(675, 335);
+            this.pnlGrafico02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGrafico02.Name = "pnlGrafico02";
-            this.pnlGrafico02.Size = new System.Drawing.Size(451, 274);
+            this.pnlGrafico02.Size = new System.Drawing.Size(601, 337);
             this.pnlGrafico02.TabIndex = 0;
             // 
             // pnlSideBar
@@ -261,16 +279,19 @@
             this.pnlSideBar.Controls.Add(this.btnInicio);
             this.pnlSideBar.Controls.Add(this.pbcPerfil);
             this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBar.Name = "pnlSideBar";
-            this.pnlSideBar.Size = new System.Drawing.Size(276, 683);
+            this.pnlSideBar.Size = new System.Drawing.Size(368, 841);
             this.pnlSideBar.TabIndex = 5;
+            this.pnlSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSideBar_Paint);
             // 
             // pcbConfig
             // 
             this.pcbConfig.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfig.Image")));
-            this.pcbConfig.Location = new System.Drawing.Point(12, 636);
+            this.pcbConfig.Location = new System.Drawing.Point(16, 783);
+            this.pcbConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcbConfig.Name = "pcbConfig";
-            this.pcbConfig.Size = new System.Drawing.Size(40, 40);
+            this.pcbConfig.Size = new System.Drawing.Size(53, 49);
             this.pcbConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbConfig.TabIndex = 8;
             this.pcbConfig.TabStop = false;
@@ -283,9 +304,10 @@
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 629);
+            this.btnConfig.Location = new System.Drawing.Point(0, 774);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(276, 54);
+            this.btnConfig.Size = new System.Drawing.Size(368, 66);
             this.btnConfig.TabIndex = 7;
             this.btnConfig.Text = "CONFIGURAÇÔES";
             this.btnConfig.UseVisualStyleBackColor = false;
@@ -300,9 +322,10 @@
             this.btnDistribuicao.FlatAppearance.BorderSize = 0;
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDistribuicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDistribuicao.Location = new System.Drawing.Point(0, 298);
+            this.btnDistribuicao.Location = new System.Drawing.Point(0, 367);
+            this.btnDistribuicao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDistribuicao.Name = "btnDistribuicao";
-            this.btnDistribuicao.Size = new System.Drawing.Size(276, 50);
+            this.btnDistribuicao.Size = new System.Drawing.Size(368, 62);
             this.btnDistribuicao.TabIndex = 4;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
             this.btnDistribuicao.UseVisualStyleBackColor = false;
@@ -316,9 +339,10 @@
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnHistorico.Location = new System.Drawing.Point(0, 438);
+            this.btnHistorico.Location = new System.Drawing.Point(0, 539);
+            this.btnHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHistorico.Name = "btnHistorico";
-            this.btnHistorico.Size = new System.Drawing.Size(276, 50);
+            this.btnHistorico.Size = new System.Drawing.Size(368, 62);
             this.btnHistorico.TabIndex = 3;
             this.btnHistorico.Text = "Histórico de arquivos enviados";
             this.btnHistorico.UseVisualStyleBackColor = true;
@@ -334,9 +358,10 @@
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
-            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(0, 368);
+            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(0, 453);
+            this.btnPrevisaoDemanda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
-            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 50);
+            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(368, 62);
             this.btnPrevisaoDemanda.TabIndex = 2;
             this.btnPrevisaoDemanda.Text = "Previsão de demanda";
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
@@ -351,9 +376,10 @@
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Location = new System.Drawing.Point(0, 228);
+            this.btnInicio.Location = new System.Drawing.Point(0, 281);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(276, 50);
+            this.btnInicio.Size = new System.Drawing.Size(368, 62);
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
@@ -365,21 +391,23 @@
             // 
             this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
-            this.pbcPerfil.Location = new System.Drawing.Point(88, 45);
+            this.pbcPerfil.Location = new System.Drawing.Point(117, 55);
+            this.pbcPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbcPerfil.Name = "pbcPerfil";
-            this.pbcPerfil.Size = new System.Drawing.Size(100, 100);
+            this.pbcPerfil.Size = new System.Drawing.Size(133, 123);
             this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbcPerfil.TabIndex = 0;
             this.pbcPerfil.TabStop = false;
             // 
             // frmCompara
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.pnlScreen);
             this.Controls.Add(this.pnlSideBar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCompara";
