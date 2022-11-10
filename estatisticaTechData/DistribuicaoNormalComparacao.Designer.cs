@@ -132,10 +132,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(355, 97);
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 22F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Location = new System.Drawing.Point(331, 95);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(299, 48);
+            this.lblTitulo.Size = new System.Drawing.Size(333, 53);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Distribuição Normal";
             // 
