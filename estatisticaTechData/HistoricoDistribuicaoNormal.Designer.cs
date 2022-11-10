@@ -52,11 +52,11 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(482, 65);
+            this.lblTitulo.Location = new System.Drawing.Point(485, 59);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(635, 48);
             this.lblTitulo.TabIndex = 6;
-            this.lblTitulo.Text = "Historico de graficos de distribuição normal:";
+            this.lblTitulo.Text = "Histórico de graficos de distribuição normal:";
             this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // pnlSideBar
@@ -176,7 +176,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.panel1.Location = new System.Drawing.Point(353, 166);
+            this.panel1.Location = new System.Drawing.Point(351, 166);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(856, 446);
@@ -187,7 +187,7 @@
             this.lblRecentes.AutoSize = true;
             this.lblRecentes.Font = new System.Drawing.Font("Poppins Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.lblRecentes.Location = new System.Drawing.Point(346, 116);
+            this.lblRecentes.Location = new System.Drawing.Point(344, 116);
             this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecentes.Name = "lblRecentes";
             this.lblRecentes.Size = new System.Drawing.Size(128, 39);

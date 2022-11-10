@@ -98,7 +98,7 @@ namespace estatisticaTechData
             this.btnAddGraficoDistNormal.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
             this.btnAddGraficoDistNormal.Size = new System.Drawing.Size(306, 105);
             this.btnAddGraficoDistNormal.TabIndex = 7;
-            this.btnAddGraficoDistNormal.Text = "Adicionar novo gráfico de distribuição normal\r\n\r\n\r\n";
+            this.btnAddGraficoDistNormal.Text = "Adicionar e visualizar novo gráfico de distribuição normal\r\n\r\n\r\n";
             this.btnAddGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnAddGraficoDistNormal.UseVisualStyleBackColor = false;
             this.btnAddGraficoDistNormal.Click += new System.EventHandler(this.btnAddGraficoDistNormal_Click);
@@ -118,7 +118,7 @@ namespace estatisticaTechData
             this.btnVisualizarGraficoDistNormal.Name = "btnVisualizarGraficoDistNormal";
             this.btnVisualizarGraficoDistNormal.Size = new System.Drawing.Size(306, 105);
             this.btnVisualizarGraficoDistNormal.TabIndex = 8;
-            this.btnVisualizarGraficoDistNormal.Text = "Visualizar gráfico de distribuição normal";
+            this.btnVisualizarGraficoDistNormal.Text = "Histórico de gráfico de distribuição normal";
             this.btnVisualizarGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnVisualizarGraficoDistNormal.UseVisualStyleBackColor = false;
             this.btnVisualizarGraficoDistNormal.Click += new System.EventHandler(this.btnVisualizarGraficoDistNormal_Click);
