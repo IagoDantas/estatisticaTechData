@@ -198,7 +198,7 @@
             this.lblGraficoPorcentagem.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.lblGraficoPorcentagem.Size = new System.Drawing.Size(261, 76);
             this.lblGraficoPorcentagem.TabIndex = 5;
-            this.lblGraficoPorcentagem.Text = "Os gráficos com porcentagem seram gerados aqui.";
+            this.lblGraficoPorcentagem.Text = "Os gráficos com porcentagem serão gerados aqui.";
             // 
             // pnlHistorico
             // 
@@ -271,9 +271,9 @@
             this.lblLegenda.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda.Location = new System.Drawing.Point(694, 579);
             this.lblLegenda.Name = "lblLegenda";
-            this.lblLegenda.Size = new System.Drawing.Size(482, 37);
+            this.lblLegenda.Size = new System.Drawing.Size(473, 37);
             this.lblLegenda.TabIndex = 0;
-            this.lblLegenda.Text = "As legendas do gráfico seram geradas aqui.";
+            this.lblLegenda.Text = "As legendas do gráfico serão geradas aqui.";
             // 
             // lblGráfico
             // 
@@ -283,9 +283,9 @@
             this.lblGráfico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGráfico.Location = new System.Drawing.Point(707, 329);
             this.lblGráfico.Name = "lblGráfico";
-            this.lblGráfico.Size = new System.Drawing.Size(456, 28);
+            this.lblGráfico.Size = new System.Drawing.Size(450, 28);
             this.lblGráfico.TabIndex = 3;
-            this.lblGráfico.Text = "Os gráficos de distribuição normal seram gerados aqui.";
+            this.lblGráfico.Text = "Os gráficos de distribuição normal serão gerados aqui.";
             // 
             // lblTitulo
             // 
