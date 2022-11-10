@@ -135,15 +135,16 @@
             // 
             this.btnPrevisaoDemanda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnPrevisaoDemanda.Enabled = false;
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
             this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 368);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
-            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 50);
+            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 64);
             this.btnPrevisaoDemanda.TabIndex = 2;
-            this.btnPrevisaoDemanda.Text = "Previsão de demanda";
+            this.btnPrevisaoDemanda.Text = "Previsão de demanda\r\n(Em breve)";
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
             this.btnPrevisaoDemanda.MouseEnter += new System.EventHandler(this.btnPrevisaoDemanda_MouseEnter);
             this.btnPrevisaoDemanda.MouseLeave += new System.EventHandler(this.btnPrevisaoDemanda_MouseLeave);
@@ -250,7 +251,7 @@
             this.pnlLegenda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.pnlLegenda.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlLegenda.Location = new System.Drawing.Point(683, 547);
+            this.pnlLegenda.Location = new System.Drawing.Point(713, 547);
             this.pnlLegenda.Name = "pnlLegenda";
             this.pnlLegenda.Size = new System.Drawing.Size(503, 100);
             this.pnlLegenda.TabIndex = 2;
@@ -258,7 +259,7 @@
             // pnlGrafico
             // 
             this.pnlGrafico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlGrafico.Location = new System.Drawing.Point(683, 175);
+            this.pnlGrafico.Location = new System.Drawing.Point(713, 175);
             this.pnlGrafico.Name = "pnlGrafico";
             this.pnlGrafico.Size = new System.Drawing.Size(503, 344);
             this.pnlGrafico.TabIndex = 2;
@@ -269,7 +270,7 @@
             this.lblLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblLegenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblLegenda.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegenda.Location = new System.Drawing.Point(694, 579);
+            this.lblLegenda.Location = new System.Drawing.Point(728, 579);
             this.lblLegenda.Name = "lblLegenda";
             this.lblLegenda.Size = new System.Drawing.Size(473, 37);
             this.lblLegenda.TabIndex = 0;
@@ -281,7 +282,7 @@
             this.lblGráfico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblGráfico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGráfico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGráfico.Location = new System.Drawing.Point(707, 329);
+            this.lblGráfico.Location = new System.Drawing.Point(738, 329);
             this.lblGráfico.Name = "lblGráfico";
             this.lblGráfico.Size = new System.Drawing.Size(450, 28);
             this.lblGráfico.TabIndex = 3;
@@ -291,7 +292,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(600, 74);
+            this.lblTitulo.Location = new System.Drawing.Point(635, 73);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(333, 53);
             this.lblTitulo.TabIndex = 4;

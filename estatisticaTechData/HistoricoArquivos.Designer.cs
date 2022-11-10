@@ -136,15 +136,16 @@
             // 
             this.btnPrevisaoDemanda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnPrevisaoDemanda.Enabled = false;
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
             this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 364);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
-            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 50);
+            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 64);
             this.btnPrevisaoDemanda.TabIndex = 2;
-            this.btnPrevisaoDemanda.Text = "Previsão de demanda";
+            this.btnPrevisaoDemanda.Text = "Previsão de demanda \r\n(Em breve)";
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
             this.btnPrevisaoDemanda.MouseEnter += new System.EventHandler(this.btnPrevisaoDemanda_MouseEnter);
             this.btnPrevisaoDemanda.MouseLeave += new System.EventHandler(this.btnPrevisaoDemanda_MouseLeave);
