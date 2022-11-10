@@ -47,6 +47,8 @@
             this.lblLegenda = new System.Windows.Forms.Label();
             this.lblGráfico = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnNovaBase = new estatisticaTechData.techDataButton();
+            this.lklNovaCarga = new System.Windows.Forms.LinkLabel();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
@@ -292,11 +294,48 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(635, 73);
+            this.lblTitulo.Location = new System.Drawing.Point(636, 61);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(333, 53);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Distribuição Normal";
+            // 
+            // btnNovaBase
+            // 
+            this.btnNovaBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnNovaBase.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnNovaBase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovaBase.BackgroundImage")));
+            this.btnNovaBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovaBase.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNovaBase.BorderRadius = 80;
+            this.btnNovaBase.BorderSize = 0;
+            this.btnNovaBase.FlatAppearance.BorderSize = 0;
+            this.btnNovaBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovaBase.ForeColor = System.Drawing.Color.White;
+            this.btnNovaBase.Location = new System.Drawing.Point(1102, 50);
+            this.btnNovaBase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovaBase.Name = "btnNovaBase";
+            this.btnNovaBase.Size = new System.Drawing.Size(75, 78);
+            this.btnNovaBase.TabIndex = 5;
+            this.btnNovaBase.TextColor = System.Drawing.Color.White;
+            this.btnNovaBase.UseVisualStyleBackColor = false;
+            // 
+            // lklNovaCarga
+            // 
+            this.lklNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.lklNovaCarga.AutoSize = true;
+            this.lklNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lklNovaCarga.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
+            this.lklNovaCarga.Location = new System.Drawing.Point(1061, 130);
+            this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lklNovaCarga.Name = "lklNovaCarga";
+            this.lklNovaCarga.Size = new System.Drawing.Size(155, 25);
+            this.lklNovaCarga.TabIndex = 6;
+            this.lklNovaCarga.TabStop = true;
+            this.lklNovaCarga.Text = "Nova base de dados";
+            this.lklNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
             // 
             // frmDistribuicaoNormal
             // 
@@ -304,6 +343,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lklNovaCarga);
+            this.Controls.Add(this.btnNovaBase);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblGráfico);
             this.Controls.Add(this.lblLegenda);
@@ -350,5 +391,7 @@
         private System.Windows.Forms.PictureBox pcbConfig;
         private System.Windows.Forms.Button btnConfig;
         private techDataButton btnAcessoHistorico;
+        private techDataButton btnNovaBase;
+        private System.Windows.Forms.LinkLabel lklNovaCarga;
     }
 }
