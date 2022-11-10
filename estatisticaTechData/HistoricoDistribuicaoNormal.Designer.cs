@@ -57,7 +57,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(635, 48);
             this.lblTitulo.TabIndex = 6;
             this.lblTitulo.Text = "Histórico de graficos de distribuição normal:";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // pnlSideBar
             // 
@@ -74,7 +73,6 @@
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(276, 683);
             this.pnlSideBar.TabIndex = 5;
-            this.pnlSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSideBar_Paint);
             // 
             // pcbConfig
             // 
@@ -212,6 +210,7 @@
             this.btnProximaPagina.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnProximaPagina.BorderRadius = 45;
             this.btnProximaPagina.BorderSize = 0;
+            this.btnProximaPagina.Enabled = false;
             this.btnProximaPagina.FlatAppearance.BorderSize = 0;
             this.btnProximaPagina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProximaPagina.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,7 +260,6 @@
             this.Controls.Add(this.pnlSideBar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmHistoricoDistNormal";
-            this.Load += new System.EventHandler(this.historicodegraficosdistribuicçaonormal_Load);
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();

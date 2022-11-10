@@ -16,30 +16,5 @@ namespace estatisticaTechData
         {
             InitializeComponent();
         }
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlConfigs_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlSenha_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pnlSideBar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void historicodegraficosdistribuicçaonormal_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

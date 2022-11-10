@@ -46,6 +46,7 @@
             this.lblNumeroPagina = new System.Windows.Forms.Label();
             this.btnProximaPagina = new estatisticaTechData.techDataButton();
             this.btnNovaCarga = new estatisticaTechData.techDataButton();
+            this.btnAnterior = new estatisticaTechData.techDataButton();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
@@ -185,7 +186,7 @@
             this.lklNovaCarga.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
-            this.lklNovaCarga.Location = new System.Drawing.Point(675, 108);
+            this.lklNovaCarga.Location = new System.Drawing.Point(743, 113);
             this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lklNovaCarga.Name = "lklNovaCarga";
             this.lklNovaCarga.Size = new System.Drawing.Size(108, 28);
@@ -200,7 +201,7 @@
             this.pnlArquivos.Controls.Add(this.lblHistoricoArquivos);
             this.pnlArquivos.Controls.Add(this.lblDataArquivo);
             this.pnlArquivos.Controls.Add(this.lblNomeArquivo);
-            this.pnlArquivos.Location = new System.Drawing.Point(320, 197);
+            this.pnlArquivos.Location = new System.Drawing.Point(382, 182);
             this.pnlArquivos.Margin = new System.Windows.Forms.Padding(2);
             this.pnlArquivos.Name = "pnlArquivos";
             this.pnlArquivos.Size = new System.Drawing.Size(804, 430);
@@ -210,7 +211,7 @@
             // 
             this.lblHistoricoArquivos.AutoSize = true;
             this.lblHistoricoArquivos.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistoricoArquivos.Location = new System.Drawing.Point(59, 206);
+            this.lblHistoricoArquivos.Location = new System.Drawing.Point(67, 203);
             this.lblHistoricoArquivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHistoricoArquivos.Name = "lblHistoricoArquivos";
             this.lblHistoricoArquivos.Size = new System.Drawing.Size(663, 48);
@@ -244,7 +245,7 @@
             this.lblRecentes.AutoSize = true;
             this.lblRecentes.Font = new System.Drawing.Font("Poppins Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.lblRecentes.Location = new System.Drawing.Point(314, 154);
+            this.lblRecentes.Location = new System.Drawing.Point(375, 141);
             this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecentes.Name = "lblRecentes";
             this.lblRecentes.Size = new System.Drawing.Size(128, 39);
@@ -255,7 +256,7 @@
             // 
             this.lblNumeroPagina.AutoSize = true;
             this.lblNumeroPagina.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroPagina.Location = new System.Drawing.Point(925, 642);
+            this.lblNumeroPagina.Location = new System.Drawing.Point(946, 642);
             this.lblNumeroPagina.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumeroPagina.Name = "lblNumeroPagina";
             this.lblNumeroPagina.Size = new System.Drawing.Size(30, 28);
@@ -269,6 +270,7 @@
             this.btnProximaPagina.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnProximaPagina.BorderRadius = 45;
             this.btnProximaPagina.BorderSize = 0;
+            this.btnProximaPagina.Enabled = false;
             this.btnProximaPagina.FlatAppearance.BorderSize = 0;
             this.btnProximaPagina.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProximaPagina.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,7 +296,7 @@
             this.btnNovaCarga.FlatAppearance.BorderSize = 0;
             this.btnNovaCarga.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovaCarga.ForeColor = System.Drawing.Color.White;
-            this.btnNovaCarga.Location = new System.Drawing.Point(685, 24);
+            this.btnNovaCarga.Location = new System.Drawing.Point(753, 29);
             this.btnNovaCarga.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovaCarga.Name = "btnNovaCarga";
             this.btnNovaCarga.Size = new System.Drawing.Size(81, 88);
@@ -303,12 +305,34 @@
             this.btnNovaCarga.UseVisualStyleBackColor = false;
             this.btnNovaCarga.Click += new System.EventHandler(this.btnNovaCarga_Click);
             // 
+            // btnAnterior
+            // 
+            this.btnAnterior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAnterior.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAnterior.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAnterior.BorderRadius = 45;
+            this.btnAnterior.BorderSize = 0;
+            this.btnAnterior.Enabled = false;
+            this.btnAnterior.FlatAppearance.BorderSize = 0;
+            this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAnterior.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnterior.ForeColor = System.Drawing.Color.White;
+            this.btnAnterior.Location = new System.Drawing.Point(827, 631);
+            this.btnAnterior.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAnterior.Name = "btnAnterior";
+            this.btnAnterior.Size = new System.Drawing.Size(115, 44);
+            this.btnAnterior.TabIndex = 12;
+            this.btnAnterior.Text = "Anterior";
+            this.btnAnterior.TextColor = System.Drawing.Color.White;
+            this.btnAnterior.UseVisualStyleBackColor = false;
+            // 
             // frmHistoricoArquivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.lblNumeroPagina);
             this.Controls.Add(this.btnProximaPagina);
             this.Controls.Add(this.lblRecentes);
@@ -351,5 +375,6 @@
         private System.Windows.Forms.Label lblHistoricoArquivos;
         private techDataButton btnProximaPagina;
         private System.Windows.Forms.Label lblNumeroPagina;
+        private techDataButton btnAnterior;
     }
 }
