@@ -80,6 +80,7 @@
             this.pnlScreen.Name = "pnlScreen";
             this.pnlScreen.Size = new System.Drawing.Size(990, 683);
             this.pnlScreen.TabIndex = 6;
+            this.pnlScreen.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlScreen_Paint);
             // 
             // btnVoltar
             // 
@@ -103,7 +104,7 @@
             this.lblData02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData02.Location = new System.Drawing.Point(674, 223);
             this.lblData02.Name = "lblData02";
-            this.lblData02.Size = new System.Drawing.Size(103, 32);
+            this.lblData02.Size = new System.Drawing.Size(102, 32);
             this.lblData02.TabIndex = 6;
             this.lblData02.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData02.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -114,7 +115,7 @@
             this.lblData01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData01.Location = new System.Drawing.Point(202, 223);
             this.lblData01.Name = "lblData01";
-            this.lblData01.Size = new System.Drawing.Size(103, 32);
+            this.lblData01.Size = new System.Drawing.Size(102, 32);
             this.lblData01.TabIndex = 5;
             this.lblData01.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData01.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -165,7 +166,7 @@
             this.lblLegenda01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda01.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda01.Name = "lblLegenda01";
-            this.lblLegenda01.Size = new System.Drawing.Size(166, 32);
+            this.lblLegenda01.Size = new System.Drawing.Size(165, 32);
             this.lblLegenda01.TabIndex = 1;
             this.lblLegenda01.Text = "Aréa dentro do padrão de \r\ndistribuição";
             // 
@@ -192,7 +193,7 @@
             this.lblLegenda02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda02.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda02.Name = "lblLegenda02";
-            this.lblLegenda02.Size = new System.Drawing.Size(145, 32);
+            this.lblLegenda02.Size = new System.Drawing.Size(144, 32);
             this.lblLegenda02.TabIndex = 2;
             this.lblLegenda02.Text = "Aréa que está perto do\r\npadrão de distribuição";
             // 
@@ -219,7 +220,7 @@
             this.lblLegenda03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda03.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda03.Name = "lblLegenda03";
-            this.lblLegenda03.Size = new System.Drawing.Size(170, 32);
+            this.lblLegenda03.Size = new System.Drawing.Size(169, 32);
             this.lblLegenda03.TabIndex = 3;
             this.lblLegenda03.Text = "Aréa do que está longe do \r\npadrão de distribuição";
             // 
@@ -260,10 +261,11 @@
             this.pnlSideBar.Controls.Add(this.btnPrevisaoDemanda);
             this.pnlSideBar.Controls.Add(this.btnInicio);
             this.pnlSideBar.Controls.Add(this.pbcPerfil);
-            this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideBar.Location = new System.Drawing.Point(-4, 2);
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(276, 683);
             this.pnlSideBar.TabIndex = 5;
+            this.pnlSideBar.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSideBar_Paint);
             // 
             // pcbConfig
             // 

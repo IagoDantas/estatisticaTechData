@@ -97,5 +97,15 @@ namespace estatisticaTechData
             btnConfig.ForeColor = Color.White;
             pcbConfig.BackColor = Color.FromArgb(0, 107, 117);
         }
+
+        private void pnlScreen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlSideBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -66,16 +66,18 @@
             this.pnlSideBar.Controls.Add(this.btnInicio);
             this.pnlSideBar.Controls.Add(this.pbcPerfil);
             this.pnlSideBar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSideBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSideBar.Name = "pnlSideBar";
-            this.pnlSideBar.Size = new System.Drawing.Size(276, 683);
+            this.pnlSideBar.Size = new System.Drawing.Size(368, 841);
             this.pnlSideBar.TabIndex = 0;
             // 
             // pcbConfig
             // 
             this.pcbConfig.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfig.Image")));
-            this.pcbConfig.Location = new System.Drawing.Point(10, 635);
+            this.pcbConfig.Location = new System.Drawing.Point(13, 782);
+            this.pcbConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pcbConfig.Name = "pcbConfig";
-            this.pcbConfig.Size = new System.Drawing.Size(40, 40);
+            this.pcbConfig.Size = new System.Drawing.Size(53, 49);
             this.pcbConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbConfig.TabIndex = 6;
             this.pcbConfig.TabStop = false;
@@ -88,9 +90,10 @@
             this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(1, 629);
+            this.btnConfig.Location = new System.Drawing.Point(1, 774);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(276, 54);
+            this.btnConfig.Size = new System.Drawing.Size(368, 66);
             this.btnConfig.TabIndex = 5;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
@@ -105,9 +108,10 @@
             this.btnDistribuicao.FlatAppearance.BorderSize = 0;
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDistribuicao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDistribuicao.Location = new System.Drawing.Point(0, 298);
+            this.btnDistribuicao.Location = new System.Drawing.Point(0, 367);
+            this.btnDistribuicao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDistribuicao.Name = "btnDistribuicao";
-            this.btnDistribuicao.Size = new System.Drawing.Size(276, 50);
+            this.btnDistribuicao.Size = new System.Drawing.Size(368, 62);
             this.btnDistribuicao.TabIndex = 4;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
             this.btnDistribuicao.UseVisualStyleBackColor = false;
@@ -121,9 +125,10 @@
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnHistorico.Location = new System.Drawing.Point(-2, 438);
+            this.btnHistorico.Location = new System.Drawing.Point(-3, 539);
+            this.btnHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHistorico.Name = "btnHistorico";
-            this.btnHistorico.Size = new System.Drawing.Size(276, 50);
+            this.btnHistorico.Size = new System.Drawing.Size(368, 62);
             this.btnHistorico.TabIndex = 3;
             this.btnHistorico.Text = "Histórico de arquivos enviados";
             this.btnHistorico.UseVisualStyleBackColor = true;
@@ -139,9 +144,10 @@
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
-            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-2, 368);
+            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(-3, 453);
+            this.btnPrevisaoDemanda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
-            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(276, 50);
+            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(368, 62);
             this.btnPrevisaoDemanda.TabIndex = 2;
             this.btnPrevisaoDemanda.Text = "Previsão de demanda";
             this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
@@ -156,9 +162,10 @@
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Location = new System.Drawing.Point(-2, 228);
+            this.btnInicio.Location = new System.Drawing.Point(-3, 281);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(276, 50);
+            this.btnInicio.Size = new System.Drawing.Size(368, 62);
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
@@ -170,9 +177,10 @@
             // 
             this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
-            this.pbcPerfil.Location = new System.Drawing.Point(86, 45);
+            this.pbcPerfil.Location = new System.Drawing.Point(115, 55);
+            this.pbcPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbcPerfil.Name = "pbcPerfil";
-            this.pbcPerfil.Size = new System.Drawing.Size(100, 100);
+            this.pbcPerfil.Size = new System.Drawing.Size(133, 123);
             this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbcPerfil.TabIndex = 0;
             this.pbcPerfil.TabStop = false;
@@ -181,10 +189,11 @@
             // 
             this.pnlGraficoPorcentagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.pnlGraficoPorcentagem.Controls.Add(this.lblGraficoPorcentagem);
-            this.pnlGraficoPorcentagem.Location = new System.Drawing.Point(323, 175);
+            this.pnlGraficoPorcentagem.Location = new System.Drawing.Point(431, 215);
+            this.pnlGraficoPorcentagem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGraficoPorcentagem.Name = "pnlGraficoPorcentagem";
-            this.pnlGraficoPorcentagem.Padding = new System.Windows.Forms.Padding(30, 100, 0, 0);
-            this.pnlGraficoPorcentagem.Size = new System.Drawing.Size(315, 293);
+            this.pnlGraficoPorcentagem.Padding = new System.Windows.Forms.Padding(40, 123, 0, 0);
+            this.pnlGraficoPorcentagem.Size = new System.Drawing.Size(420, 361);
             this.pnlGraficoPorcentagem.TabIndex = 1;
             // 
             // lblGraficoPorcentagem
@@ -193,10 +202,11 @@
             this.lblGraficoPorcentagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblGraficoPorcentagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGraficoPorcentagem.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGraficoPorcentagem.Location = new System.Drawing.Point(33, 100);
+            this.lblGraficoPorcentagem.Location = new System.Drawing.Point(44, 123);
+            this.lblGraficoPorcentagem.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGraficoPorcentagem.Name = "lblGraficoPorcentagem";
-            this.lblGraficoPorcentagem.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.lblGraficoPorcentagem.Size = new System.Drawing.Size(261, 76);
+            this.lblGraficoPorcentagem.Padding = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.lblGraficoPorcentagem.Size = new System.Drawing.Size(328, 97);
             this.lblGraficoPorcentagem.TabIndex = 5;
             this.lblGraficoPorcentagem.Text = "Os gráficos com porcentagem serão gerados aqui.";
             // 
@@ -206,20 +216,22 @@
             this.pnlHistorico.Controls.Add(this.lblHistorico);
             this.pnlHistorico.Controls.Add(this.btnAcessoHistorico);
             this.pnlHistorico.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlHistorico.Location = new System.Drawing.Point(323, 506);
+            this.pnlHistorico.Location = new System.Drawing.Point(431, 623);
+            this.pnlHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHistorico.Name = "pnlHistorico";
-            this.pnlHistorico.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.pnlHistorico.Size = new System.Drawing.Size(315, 141);
+            this.pnlHistorico.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
+            this.pnlHistorico.Size = new System.Drawing.Size(420, 174);
             this.pnlHistorico.TabIndex = 2;
             // 
             // lblHistorico
             // 
             this.lblHistorico.AutoSize = true;
             this.lblHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorico.Location = new System.Drawing.Point(3, 10);
+            this.lblHistorico.Location = new System.Drawing.Point(4, 12);
+            this.lblHistorico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHistorico.Name = "lblHistorico";
             this.lblHistorico.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.lblHistorico.Size = new System.Drawing.Size(309, 56);
+            this.lblHistorico.Size = new System.Drawing.Size(387, 72);
             this.lblHistorico.TabIndex = 0;
             this.lblHistorico.Text = "Histórico dos gráficos de distribuição normal anteriores:";
             this.lblHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,9 +248,10 @@
             this.btnAcessoHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAcessoHistorico.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcessoHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnAcessoHistorico.Location = new System.Drawing.Point(94, 69);
+            this.btnAcessoHistorico.Location = new System.Drawing.Point(113, 88);
+            this.btnAcessoHistorico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAcessoHistorico.Name = "btnAcessoHistorico";
-            this.btnAcessoHistorico.Size = new System.Drawing.Size(126, 47);
+            this.btnAcessoHistorico.Size = new System.Drawing.Size(168, 58);
             this.btnAcessoHistorico.TabIndex = 5;
             this.btnAcessoHistorico.Text = "Acessar";
             this.btnAcessoHistorico.TextColor = System.Drawing.Color.White;
@@ -250,17 +263,19 @@
             this.pnlLegenda.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.pnlLegenda.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlLegenda.Location = new System.Drawing.Point(683, 547);
+            this.pnlLegenda.Location = new System.Drawing.Point(911, 673);
+            this.pnlLegenda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLegenda.Name = "pnlLegenda";
-            this.pnlLegenda.Size = new System.Drawing.Size(503, 100);
+            this.pnlLegenda.Size = new System.Drawing.Size(671, 123);
             this.pnlLegenda.TabIndex = 2;
             // 
             // pnlGrafico
             // 
             this.pnlGrafico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlGrafico.Location = new System.Drawing.Point(683, 175);
+            this.pnlGrafico.Location = new System.Drawing.Point(911, 215);
+            this.pnlGrafico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGrafico.Name = "pnlGrafico";
-            this.pnlGrafico.Size = new System.Drawing.Size(503, 344);
+            this.pnlGrafico.Size = new System.Drawing.Size(671, 423);
             this.pnlGrafico.TabIndex = 2;
             // 
             // lblLegenda
@@ -269,7 +284,8 @@
             this.lblLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblLegenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblLegenda.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLegenda.Location = new System.Drawing.Point(694, 579);
+            this.lblLegenda.Location = new System.Drawing.Point(925, 713);
+            this.lblLegenda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLegenda.Name = "lblLegenda";
             this.lblLegenda.Size = new System.Drawing.Size(473, 37);
             this.lblLegenda.TabIndex = 0;
@@ -281,9 +297,10 @@
             this.lblGráfico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblGráfico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblGráfico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGráfico.Location = new System.Drawing.Point(707, 329);
+            this.lblGráfico.Location = new System.Drawing.Point(943, 405);
+            this.lblGráfico.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGráfico.Name = "lblGráfico";
-            this.lblGráfico.Size = new System.Drawing.Size(450, 28);
+            this.lblGráfico.Size = new System.Drawing.Size(456, 28);
             this.lblGráfico.TabIndex = 3;
             this.lblGráfico.Text = "Os gráficos de distribuição normal serão gerados aqui.";
             // 
@@ -291,18 +308,19 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(600, 74);
+            this.lblTitulo.Location = new System.Drawing.Point(800, 91);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(333, 53);
+            this.lblTitulo.Size = new System.Drawing.Size(412, 65);
             this.lblTitulo.TabIndex = 4;
             this.lblTitulo.Text = "Distribuição Normal";
             // 
             // frmDistribuicaoNormal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1685, 838);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblGráfico);
             this.Controls.Add(this.lblLegenda);
@@ -311,11 +329,13 @@
             this.Controls.Add(this.pnlGrafico);
             this.Controls.Add(this.pnlGraficoPorcentagem);
             this.Controls.Add(this.pnlSideBar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDistribuicaoNormal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Distribuição Normal";
+            this.Load += new System.EventHandler(this.frmDistribuicaoNormal_Load);
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
