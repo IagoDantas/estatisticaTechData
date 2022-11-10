@@ -55,15 +55,16 @@ namespace estatisticaTechData
             this.btnAddGraficoPrevDemanda.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnAddGraficoPrevDemanda.BorderRadius = 105;
             this.btnAddGraficoPrevDemanda.BorderSize = 0;
+            this.btnAddGraficoPrevDemanda.Enabled = false;
             this.btnAddGraficoPrevDemanda.FlatAppearance.BorderSize = 0;
             this.btnAddGraficoPrevDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddGraficoPrevDemanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnAddGraficoPrevDemanda.Location = new System.Drawing.Point(754, 248);
             this.btnAddGraficoPrevDemanda.Name = "btnAddGraficoPrevDemanda";
             this.btnAddGraficoPrevDemanda.Size = new System.Drawing.Size(306, 105);
             this.btnAddGraficoPrevDemanda.TabIndex = 5;
-            this.btnAddGraficoPrevDemanda.Text = "Adicionar novo gráfico de previsão de demanda";
+            this.btnAddGraficoPrevDemanda.Text = "Adicionar novo gráfico de previsão de demanda (Em breve)";
             this.btnAddGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnAddGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
@@ -129,15 +130,17 @@ namespace estatisticaTechData
             this.btnVisualizarGraficoPrevDemanda.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btnVisualizarGraficoPrevDemanda.BorderRadius = 105;
             this.btnVisualizarGraficoPrevDemanda.BorderSize = 0;
+            this.btnVisualizarGraficoPrevDemanda.Enabled = false;
             this.btnVisualizarGraficoPrevDemanda.FlatAppearance.BorderSize = 0;
             this.btnVisualizarGraficoPrevDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizarGraficoPrevDemanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnVisualizarGraficoPrevDemanda.Location = new System.Drawing.Point(754, 379);
             this.btnVisualizarGraficoPrevDemanda.Name = "btnVisualizarGraficoPrevDemanda";
+            this.btnVisualizarGraficoPrevDemanda.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.btnVisualizarGraficoPrevDemanda.Size = new System.Drawing.Size(306, 105);
             this.btnVisualizarGraficoPrevDemanda.TabIndex = 9;
-            this.btnVisualizarGraficoPrevDemanda.Text = "Visualizar gráficos de previsão de demanda ";
+            this.btnVisualizarGraficoPrevDemanda.Text = "Visualizar gráficos de previsão de demanda (Em breve)";
             this.btnVisualizarGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnVisualizarGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
