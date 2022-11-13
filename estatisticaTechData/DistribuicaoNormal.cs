@@ -39,8 +39,8 @@ namespace estatisticaTechData
         }
         private void btnAcessoHistorico_Click(object sender, EventArgs e)
         {
-            frmCompara compara = new frmCompara();
-            compara.Show();
+            frmHistoricoDistNormal hist = new frmHistoricoDistNormal();
+            hist.Show();
             this.Close();
         }
 

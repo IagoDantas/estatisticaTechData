@@ -40,16 +40,17 @@
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNome = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnVisualizar = new estatisticaTechData.techDataButton();
+            this.btnEditar = new estatisticaTechData.techDataButton();
+            this.txtExemplo = new System.Windows.Forms.TextBox();
             this.btnDeletar = new estatisticaTechData.techDataButton();
             this.btnComparar = new estatisticaTechData.techDataButton();
             this.lblRecentes = new System.Windows.Forms.Label();
             this.lblNumeroPagina = new System.Windows.Forms.Label();
             this.btnProximaPagina = new estatisticaTechData.techDataButton();
             this.btnAnterior = new estatisticaTechData.techDataButton();
-            this.btnEditar = new estatisticaTechData.techDataButton();
-            this.btnVisualizar = new estatisticaTechData.techDataButton();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnDropdown = new estatisticaTechData.techDataButton();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
@@ -194,9 +195,10 @@
             // pnlNome
             // 
             this.pnlNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNome.Controls.Add(this.btnDropdown);
             this.pnlNome.Controls.Add(this.btnVisualizar);
             this.pnlNome.Controls.Add(this.btnEditar);
-            this.pnlNome.Controls.Add(this.textBox1);
+            this.pnlNome.Controls.Add(this.txtExemplo);
             this.pnlNome.Controls.Add(this.btnDeletar);
             this.pnlNome.Controls.Add(this.btnComparar);
             this.pnlNome.Location = new System.Drawing.Point(0, 62);
@@ -204,16 +206,58 @@
             this.pnlNome.Size = new System.Drawing.Size(856, 50);
             this.pnlNome.TabIndex = 15;
             // 
-            // textBox1
+            // btnVisualizar
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(8, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(409, 28);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Gráfico Professor Marcos 15/09/2022 22:30";
+            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnVisualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnVisualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnVisualizar.BorderRadius = 45;
+            this.btnVisualizar.BorderSize = 0;
+            this.btnVisualizar.FlatAppearance.BorderSize = 0;
+            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizar.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizar.ForeColor = System.Drawing.Color.White;
+            this.btnVisualizar.Location = new System.Drawing.Point(433, 2);
+            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVisualizar.Name = "btnVisualizar";
+            this.btnVisualizar.Size = new System.Drawing.Size(103, 44);
+            this.btnVisualizar.TabIndex = 15;
+            this.btnVisualizar.Text = "Visualizar";
+            this.btnVisualizar.TextColor = System.Drawing.Color.White;
+            this.btnVisualizar.UseVisualStyleBackColor = false;
+            this.btnVisualizar.Visible = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEditar.BorderRadius = 45;
+            this.btnEditar.BorderSize = 0;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(540, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(103, 44);
+            this.btnEditar.TabIndex = 14;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextColor = System.Drawing.Color.White;
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Visible = false;
+            // 
+            // txtExemplo
+            // 
+            this.txtExemplo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtExemplo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExemplo.Font = new System.Drawing.Font("Poppins", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExemplo.Location = new System.Drawing.Point(8, 10);
+            this.txtExemplo.Name = "txtExemplo";
+            this.txtExemplo.Size = new System.Drawing.Size(409, 28);
+            this.txtExemplo.TabIndex = 1;
+            this.txtExemplo.Text = "Gráfico Professor Marcos 15/09/2022 22:30";
             // 
             // btnDeletar
             // 
@@ -229,6 +273,7 @@
             this.btnDeletar.Location = new System.Drawing.Point(754, 2);
             this.btnDeletar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btnDeletar.Size = new System.Drawing.Size(98, 44);
             this.btnDeletar.TabIndex = 13;
             this.btnDeletar.Text = "Deletar";
@@ -254,6 +299,7 @@
             this.btnComparar.Text = "Comparar";
             this.btnComparar.TextColor = System.Drawing.Color.White;
             this.btnComparar.UseVisualStyleBackColor = false;
+            this.btnComparar.Visible = false;
             this.btnComparar.Click += new System.EventHandler(this.btnComparar_Click);
             // 
             // lblRecentes
@@ -321,46 +367,6 @@
             this.btnAnterior.TextColor = System.Drawing.Color.White;
             this.btnAnterior.UseVisualStyleBackColor = false;
             // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnEditar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnEditar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEditar.BorderRadius = 45;
-            this.btnEditar.BorderSize = 0;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(540, 2);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(103, 44);
-            this.btnEditar.TabIndex = 14;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextColor = System.Drawing.Color.White;
-            this.btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnVisualizar
-            // 
-            this.btnVisualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnVisualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnVisualizar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnVisualizar.BorderRadius = 45;
-            this.btnVisualizar.BorderSize = 0;
-            this.btnVisualizar.FlatAppearance.BorderSize = 0;
-            this.btnVisualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizar.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizar.ForeColor = System.Drawing.Color.White;
-            this.btnVisualizar.Location = new System.Drawing.Point(433, 2);
-            this.btnVisualizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnVisualizar.Name = "btnVisualizar";
-            this.btnVisualizar.Size = new System.Drawing.Size(103, 44);
-            this.btnVisualizar.TabIndex = 15;
-            this.btnVisualizar.Text = "Visualizar";
-            this.btnVisualizar.TextColor = System.Drawing.Color.White;
-            this.btnVisualizar.UseVisualStyleBackColor = false;
-            // 
             // btnVoltar
             // 
             this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
@@ -376,6 +382,27 @@
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // btnDropdown
+            // 
+            this.btnDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnDropdown.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnDropdown.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDropdown.BorderRadius = 45;
+            this.btnDropdown.BorderSize = 0;
+            this.btnDropdown.FlatAppearance.BorderSize = 0;
+            this.btnDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDropdown.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDropdown.ForeColor = System.Drawing.Color.White;
+            this.btnDropdown.Location = new System.Drawing.Point(647, 2);
+            this.btnDropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDropdown.Name = "btnDropdown";
+            this.btnDropdown.Size = new System.Drawing.Size(103, 44);
+            this.btnDropdown.TabIndex = 16;
+            this.btnDropdown.Text = "...";
+            this.btnDropdown.TextColor = System.Drawing.Color.White;
+            this.btnDropdown.UseVisualStyleBackColor = false;
+            this.btnDropdown.Click += new System.EventHandler(this.btnDropdown_Click);
             // 
             // frmHistoricoDistNormal
             // 
@@ -425,9 +452,10 @@
         private techDataButton btnDeletar;
         private techDataButton btnComparar;
         private System.Windows.Forms.Panel pnlNome;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtExemplo;
         private techDataButton btnVisualizar;
         private techDataButton btnEditar;
         private System.Windows.Forms.Button btnVoltar;
+        private techDataButton btnDropdown;
     }
 }

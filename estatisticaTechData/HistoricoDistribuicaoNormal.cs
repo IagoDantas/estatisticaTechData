@@ -30,5 +30,13 @@ namespace estatisticaTechData
             distribuicaoNormal.ShowDialog();
             this.Close();
         }
+
+        private void btnDropdown_Click(object sender, EventArgs e)
+        {
+            btnDropdown.Visible = false;
+            btnComparar.Visible = true;
+            btnEditar.Visible = true;
+            btnVisualizar.Visible = true;
+        }
     }
 }
