@@ -392,7 +392,7 @@
             this.btnDropdown.BorderSize = 0;
             this.btnDropdown.FlatAppearance.BorderSize = 0;
             this.btnDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDropdown.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDropdown.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDropdown.ForeColor = System.Drawing.Color.White;
             this.btnDropdown.Location = new System.Drawing.Point(647, 2);
             this.btnDropdown.Margin = new System.Windows.Forms.Padding(2);
