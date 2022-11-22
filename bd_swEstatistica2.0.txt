@@ -1,0 +1,43 @@
+tb_carga
+- id_carga int PK
+- dt_carga datetime
+- arquivo_carga longblob 
+- status_carga int
+- id_usuario FK (tb_usuario)
+
+tb_coluna
+- id_coluna int PK
+- nome_coluna longtext
+- id_carga FK (tb_carga)
+
+tb_linha
+- id_linha int PK
+- dado_linha longtext
+- id_coluna FK (tb_coluna)
+
+tb_graficoDistribuicao
+- id_graficoDistribuicao int PK
+- id_usuario int FK [id_usuario da tb_usuario]
+- id_carga int FK [id_carga da tb_carga]
+- dt_graficoDistribuicao datetime
+
+tb_graficoPrevisao
+- id_graficoPrevisao int PK
+- id_usuario int FK [id_usuario da tb_usuario]
+- id_carga int FK [id_carga da tb_carga]
+- dt_graficoPrevisao
+
+tb_usuario
+- id_usuario int PK
+- nome_usuario varchar(40)
+- email_usuario varchar(40)
+- senha_usuario longtext
+- tipo_usuario int FK [id_tipoUsuario da tb_tipoUsuario]
+- status_usuario int
+
+tb_tipoUsuario
+- id_tipoUsuario int PK
+- nome_tipoUsuario varchar(20)
+- status_tipoUsuario int
+
+
