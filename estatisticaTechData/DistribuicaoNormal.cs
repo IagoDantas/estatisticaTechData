@@ -103,5 +103,12 @@ namespace estatisticaTechData
         {
 
         }
+
+        private void btnNovaBase_Click(object sender, EventArgs e)
+        {
+            testes pag = new testes();
+            pag.Show();
+            this.Close();   
+        }
     }
 }

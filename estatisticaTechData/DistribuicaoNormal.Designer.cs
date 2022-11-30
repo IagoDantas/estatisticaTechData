@@ -319,6 +319,7 @@
             this.btnNovaBase.TabIndex = 5;
             this.btnNovaBase.TextColor = System.Drawing.Color.White;
             this.btnNovaBase.UseVisualStyleBackColor = false;
+            this.btnNovaBase.Click += new System.EventHandler(this.btnNovaBase_Click);
             // 
             // lklNovaCarga
             // 
@@ -357,7 +358,7 @@
             this.MinimizeBox = false;
             this.Name = "frmDistribuicaoNormal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Distribuição Normal";
+            this.Text = ".";
             this.Load += new System.EventHandler(this.frmDistribuicaoNormal_Load);
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();
