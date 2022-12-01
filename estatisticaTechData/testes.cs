@@ -96,6 +96,46 @@ namespace estatisticaTechData
             label1.Text = "A média é: "+ media;
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int x = dataGridView1.RowCount;
+            int y = dataGridView1.ColumnCount;
+            double[,] arrayExcel = new double[x, y];
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    DataGridViewCell cell = dataGridView1[rowIndex: i, columnIndex: j];
+                    arrayExcel[i, j] = Convert.ToDouble(cell.Value);
+                }
+            }
+            double moda = 0, compara;
+            int contA, contB = 0;
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    compara = arrayExcel[i, j];
+                    contA = 0;
+                    for (int k = 0; k < x; k++)
+                    {
+                        for (int l = 0; l < y; l++)
+                        {
+                            if(compara == arrayExcel[k, l])
+                            {
+                                contA++;
+                            }
+                        }
+                    }
+                    if(contA > contB)
+                    {
+                        contB = contA;
+                        moda = compara;
+                    }
+                }
+            }
+
+            label2.Text = "A moda é: " + moda;
+        }
     }
 }
