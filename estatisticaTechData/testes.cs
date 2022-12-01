@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -136,6 +137,41 @@ namespace estatisticaTechData
             }
 
             label2.Text = "A moda é: " + moda;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int x = dataGridView1.RowCount;
+            int y = dataGridView1.ColumnCount;
+            int length = x * y;
+            double[] arrayExcel = new double[length];
+            int p = 0;
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    DataGridViewCell cell = dataGridView1[rowIndex: i, columnIndex: j];
+                    arrayExcel[p] = Convert.ToDouble(cell.Value);
+                    p++;
+                }
+            }
+
+            Array.Sort(arrayExcel);
+            double mediana;
+            int posicao;
+            bool lenghtTest = (length % 2 != 0);
+            if (lenghtTest)
+            {
+                posicao = (length + 1) / 2;
+                mediana = arrayExcel[posicao-1];
+            }
+            else
+            {
+                posicao = length/2;
+                mediana = (arrayExcel[posicao-1] + arrayExcel[posicao])/ 2;
+            }
+
+            label3.Text = "A mediana desses valores é: "+mediana;
         }
     }
 }
