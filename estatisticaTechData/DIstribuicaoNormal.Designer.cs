@@ -315,7 +315,7 @@
             this.btnNovaBase.Location = new System.Drawing.Point(1102, 50);
             this.btnNovaBase.Margin = new System.Windows.Forms.Padding(2);
             this.btnNovaBase.Name = "btnNovaBase";
-            this.btnNovaBase.Size = new System.Drawing.Size(86, 78);
+            this.btnNovaBase.Size = new System.Drawing.Size(75, 78);
             this.btnNovaBase.TabIndex = 5;
             this.btnNovaBase.TextColor = System.Drawing.Color.White;
             this.btnNovaBase.UseVisualStyleBackColor = false;
