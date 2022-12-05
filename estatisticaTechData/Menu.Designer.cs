@@ -311,11 +311,13 @@ namespace estatisticaTechData
             // 
             // lblUsuario
             // 
+            this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(611, 211);
+            this.lblUsuario.Location = new System.Drawing.Point(607, 212);
             this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblUsuario.Size = new System.Drawing.Size(58, 34);
             this.lblUsuario.TabIndex = 19;
             this.lblUsuario.Text = "User";

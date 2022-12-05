@@ -36,20 +36,20 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnCadastrar = new estatisticaTechData.techDataButton();
-            this.txtRA = new estatisticaTechData.techDataTextBox();
-            this.txtNome = new estatisticaTechData.techDataTextBox();
-            this.txtEmail = new estatisticaTechData.techDataTextBox();
-            this.txtSenha = new estatisticaTechData.techDataTextBox();
+            this.rdbProfessor = new estatisticaTechData.Resources.techDataRadioButton();
+            this.rdbAluno = new estatisticaTechData.Resources.techDataRadioButton();
             this.txtConfirmaSenha = new estatisticaTechData.techDataTextBox();
+            this.txtSenha = new estatisticaTechData.techDataTextBox();
+            this.txtEmail = new estatisticaTechData.techDataTextBox();
+            this.txtNome = new estatisticaTechData.techDataTextBox();
+            this.txtRA = new estatisticaTechData.techDataTextBox();
+            this.btnCadastrar = new estatisticaTechData.techDataButton();
             this.btnSombraCadastro = new estatisticaTechData.techDataButton();
             this.txtSombraConfirmaSenha = new estatisticaTechData.techDataTextBox();
-            this.txtSombraRA = new estatisticaTechData.techDataTextBox();
-            this.txtSombraNome = new estatisticaTechData.techDataTextBox();
-            this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
             this.txtSombraSenha = new estatisticaTechData.techDataTextBox();
-            this.rdbAluno = new estatisticaTechData.Resources.techDataRadioButton();
-            this.rdbProfessor = new estatisticaTechData.Resources.techDataRadioButton();
+            this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
+            this.txtSombraNome = new estatisticaTechData.techDataTextBox();
+            this.txtSombraRA = new estatisticaTechData.techDataTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,72 +143,87 @@
             this.lblTitulo.TabIndex = 36;
             this.lblTitulo.Text = "Cadastro";
             // 
-            // btnCadastrar
+            // rdbProfessor
             // 
-            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnCadastrar.BorderRadius = 55;
-            this.btnCadastrar.BorderSize = 0;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCadastrar.Location = new System.Drawing.Point(530, 556);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
-            this.btnCadastrar.TabIndex = 8;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCadastrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
+            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
+            this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbProfessor.Location = new System.Drawing.Point(207, 352);
+            this.rdbProfessor.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbProfessor.Name = "rdbProfessor";
+            this.rdbProfessor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbProfessor.Size = new System.Drawing.Size(340, 32);
+            this.rdbProfessor.TabIndex = 5;
+            this.rdbProfessor.Text = "Professor(a) ou Instrutor(a)";
+            this.rdbProfessor.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.rdbProfessor.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbProfessor.UseVisualStyleBackColor = true;
             // 
-            // txtRA
+            // rdbAluno
             // 
-            this.txtRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtRA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtRA.BorderRadius = 25;
-            this.txtRA.BorderSize = 2;
-            this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtRA.Location = new System.Drawing.Point(191, 459);
-            this.txtRA.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRA.Multiline = false;
-            this.txtRA.Name = "txtRA";
-            this.txtRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtRA.PasswordChar = false;
-            this.txtRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtRA.PlaceholderText = "Digite seu RA:";
-            this.txtRA.Size = new System.Drawing.Size(326, 50);
-            this.txtRA.TabIndex = 4;
-            this.txtRA.Texts = "";
-            this.txtRA.UnderlinedStyle = false;
+            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbAluno.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
+            this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbAluno.Location = new System.Drawing.Point(207, 294);
+            this.rdbAluno.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbAluno.Name = "rdbAluno";
+            this.rdbAluno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbAluno.Size = new System.Drawing.Size(133, 28);
+            this.rdbAluno.TabIndex = 61;
+            this.rdbAluno.Text = "Aluno(a)";
+            this.rdbAluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdbAluno.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbAluno.UseVisualStyleBackColor = true;
             // 
-            // txtNome
+            // txtConfirmaSenha
             // 
-            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtNome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtNome.BorderRadius = 25;
-            this.txtNome.BorderSize = 2;
-            this.txtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtNome.Location = new System.Drawing.Point(191, 183);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNome.Multiline = false;
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtNome.PasswordChar = false;
-            this.txtNome.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtNome.PlaceholderText = "Digite seu nome:";
-            this.txtNome.Size = new System.Drawing.Size(326, 50);
-            this.txtNome.TabIndex = 0;
-            this.txtNome.Texts = "";
-            this.txtNome.UnderlinedStyle = false;
+            this.txtConfirmaSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtConfirmaSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtConfirmaSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtConfirmaSenha.BorderRadius = 25;
+            this.txtConfirmaSenha.BorderSize = 2;
+            this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 459);
+            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtConfirmaSenha.Multiline = false;
+            this.txtConfirmaSenha.Name = "txtConfirmaSenha";
+            this.txtConfirmaSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtConfirmaSenha.PasswordChar = true;
+            this.txtConfirmaSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtConfirmaSenha.PlaceholderText = "Digite sua senha novamente:";
+            this.txtConfirmaSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtConfirmaSenha.TabIndex = 3;
+            this.txtConfirmaSenha.Texts = "";
+            this.txtConfirmaSenha.UnderlinedStyle = false;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtSenha.BorderRadius = 25;
+            this.txtSenha.BorderSize = 2;
+            this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSenha.Location = new System.Drawing.Point(760, 315);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSenha.Multiline = false;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtSenha.PasswordChar = true;
+            this.txtSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSenha.PlaceholderText = "Digite sua senha:";
+            this.txtSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtSenha.TabIndex = 2;
+            this.txtSenha.Texts = "";
+            this.txtSenha.UnderlinedStyle = false;
             // 
             // txtEmail
             // 
@@ -232,49 +247,73 @@
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = false;
             // 
-            // txtSenha
+            // txtNome
             // 
-            this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtSenha.BorderRadius = 25;
-            this.txtSenha.BorderSize = 2;
-            this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSenha.Location = new System.Drawing.Point(760, 315);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSenha.Multiline = false;
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtSenha.PasswordChar = false;
-            this.txtSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSenha.PlaceholderText = "Digite sua senha:";
-            this.txtSenha.Size = new System.Drawing.Size(326, 50);
-            this.txtSenha.TabIndex = 2;
-            this.txtSenha.Texts = "";
-            this.txtSenha.UnderlinedStyle = false;
+            this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtNome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtNome.BorderRadius = 25;
+            this.txtNome.BorderSize = 2;
+            this.txtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtNome.Location = new System.Drawing.Point(191, 183);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNome.Multiline = false;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtNome.PasswordChar = false;
+            this.txtNome.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtNome.PlaceholderText = "Digite seu nome:";
+            this.txtNome.Size = new System.Drawing.Size(326, 50);
+            this.txtNome.TabIndex = 0;
+            this.txtNome.Texts = "";
+            this.txtNome.UnderlinedStyle = false;
             // 
-            // txtConfirmaSenha
+            // txtRA
             // 
-            this.txtConfirmaSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtConfirmaSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtConfirmaSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtConfirmaSenha.BorderRadius = 25;
-            this.txtConfirmaSenha.BorderSize = 2;
-            this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 459);
-            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtConfirmaSenha.Multiline = false;
-            this.txtConfirmaSenha.Name = "txtConfirmaSenha";
-            this.txtConfirmaSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtConfirmaSenha.PasswordChar = false;
-            this.txtConfirmaSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtConfirmaSenha.PlaceholderText = "Digite sua senha novamente:";
-            this.txtConfirmaSenha.Size = new System.Drawing.Size(326, 50);
-            this.txtConfirmaSenha.TabIndex = 3;
-            this.txtConfirmaSenha.Texts = "";
-            this.txtConfirmaSenha.UnderlinedStyle = false;
+            this.txtRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtRA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtRA.BorderRadius = 25;
+            this.txtRA.BorderSize = 2;
+            this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtRA.Location = new System.Drawing.Point(191, 459);
+            this.txtRA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRA.Multiline = false;
+            this.txtRA.Name = "txtRA";
+            this.txtRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtRA.PasswordChar = false;
+            this.txtRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtRA.PlaceholderText = "Digite seu RA:";
+            this.txtRA.Size = new System.Drawing.Size(326, 50);
+            this.txtRA.TabIndex = 4;
+            this.txtRA.Texts = "";
+            this.txtRA.UnderlinedStyle = false;
+            this.txtRA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRA_KeyPress);
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnCadastrar.BorderRadius = 55;
+            this.btnCadastrar.BorderSize = 0;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastrar.Location = new System.Drawing.Point(530, 556);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
+            this.btnCadastrar.TabIndex = 8;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCadastrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
             // 
             // btnSombraCadastro
             // 
@@ -321,51 +360,28 @@
             this.txtSombraConfirmaSenha.Texts = "";
             this.txtSombraConfirmaSenha.UnderlinedStyle = false;
             // 
-            // txtSombraRA
+            // txtSombraSenha
             // 
-            this.txtSombraRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtSombraRA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtSombraRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtSombraRA.BorderRadius = 25;
-            this.txtSombraRA.BorderSize = 2;
-            this.txtSombraRA.Enabled = false;
-            this.txtSombraRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSombraRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraRA.Location = new System.Drawing.Point(191, 463);
-            this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSombraRA.Multiline = false;
-            this.txtSombraRA.Name = "txtSombraRA";
-            this.txtSombraRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtSombraRA.PasswordChar = false;
-            this.txtSombraRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraRA.PlaceholderText = "";
-            this.txtSombraRA.Size = new System.Drawing.Size(326, 50);
-            this.txtSombraRA.TabIndex = 57;
-            this.txtSombraRA.Texts = "";
-            this.txtSombraRA.UnderlinedStyle = false;
-            // 
-            // txtSombraNome
-            // 
-            this.txtSombraNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtSombraNome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtSombraNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtSombraNome.BorderRadius = 25;
-            this.txtSombraNome.BorderSize = 2;
-            this.txtSombraNome.Enabled = false;
-            this.txtSombraNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSombraNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraNome.Location = new System.Drawing.Point(191, 187);
-            this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSombraNome.Multiline = false;
-            this.txtSombraNome.Name = "txtSombraNome";
-            this.txtSombraNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtSombraNome.PasswordChar = false;
-            this.txtSombraNome.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraNome.PlaceholderText = "";
-            this.txtSombraNome.Size = new System.Drawing.Size(326, 50);
-            this.txtSombraNome.TabIndex = 58;
-            this.txtSombraNome.Texts = "";
-            this.txtSombraNome.UnderlinedStyle = false;
+            this.txtSombraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtSombraSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtSombraSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtSombraSenha.BorderRadius = 25;
+            this.txtSombraSenha.BorderSize = 2;
+            this.txtSombraSenha.Enabled = false;
+            this.txtSombraSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSombraSenha.Location = new System.Drawing.Point(760, 319);
+            this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraSenha.Multiline = false;
+            this.txtSombraSenha.Name = "txtSombraSenha";
+            this.txtSombraSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtSombraSenha.PasswordChar = false;
+            this.txtSombraSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSombraSenha.PlaceholderText = "";
+            this.txtSombraSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraSenha.TabIndex = 60;
+            this.txtSombraSenha.Texts = "";
+            this.txtSombraSenha.UnderlinedStyle = false;
             // 
             // txtSombraEmail
             // 
@@ -390,66 +406,51 @@
             this.txtSombraEmail.Texts = "";
             this.txtSombraEmail.UnderlinedStyle = false;
             // 
-            // txtSombraSenha
+            // txtSombraNome
             // 
-            this.txtSombraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtSombraSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.txtSombraSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.txtSombraSenha.BorderRadius = 25;
-            this.txtSombraSenha.BorderSize = 2;
-            this.txtSombraSenha.Enabled = false;
-            this.txtSombraSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSombraSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraSenha.Location = new System.Drawing.Point(760, 319);
-            this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSombraSenha.Multiline = false;
-            this.txtSombraSenha.Name = "txtSombraSenha";
-            this.txtSombraSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtSombraSenha.PasswordChar = false;
-            this.txtSombraSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraSenha.PlaceholderText = "";
-            this.txtSombraSenha.Size = new System.Drawing.Size(326, 50);
-            this.txtSombraSenha.TabIndex = 60;
-            this.txtSombraSenha.Texts = "";
-            this.txtSombraSenha.UnderlinedStyle = false;
+            this.txtSombraNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtSombraNome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtSombraNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtSombraNome.BorderRadius = 25;
+            this.txtSombraNome.BorderSize = 2;
+            this.txtSombraNome.Enabled = false;
+            this.txtSombraNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSombraNome.Location = new System.Drawing.Point(191, 187);
+            this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraNome.Multiline = false;
+            this.txtSombraNome.Name = "txtSombraNome";
+            this.txtSombraNome.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtSombraNome.PasswordChar = false;
+            this.txtSombraNome.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSombraNome.PlaceholderText = "";
+            this.txtSombraNome.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraNome.TabIndex = 58;
+            this.txtSombraNome.Texts = "";
+            this.txtSombraNome.UnderlinedStyle = false;
             // 
-            // rdbAluno
+            // txtSombraRA
             // 
-            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbAluno.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbAluno.Location = new System.Drawing.Point(207, 294);
-            this.rdbAluno.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbAluno.Name = "rdbAluno";
-            this.rdbAluno.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbAluno.Size = new System.Drawing.Size(133, 28);
-            this.rdbAluno.TabIndex = 61;
-            this.rdbAluno.Text = "Aluno(a)";
-            this.rdbAluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdbAluno.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbAluno.UseVisualStyleBackColor = true;
-            // 
-            // rdbProfessor
-            // 
-            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbProfessor.Location = new System.Drawing.Point(207, 352);
-            this.rdbProfessor.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbProfessor.Name = "rdbProfessor";
-            this.rdbProfessor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbProfessor.Size = new System.Drawing.Size(340, 32);
-            this.rdbProfessor.TabIndex = 5;
-            this.rdbProfessor.Text = "Professor(a) ou Instrutor(a)";
-            this.rdbProfessor.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.rdbProfessor.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbProfessor.UseVisualStyleBackColor = true;
+            this.txtSombraRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtSombraRA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.txtSombraRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.txtSombraRA.BorderRadius = 25;
+            this.txtSombraRA.BorderSize = 2;
+            this.txtSombraRA.Enabled = false;
+            this.txtSombraRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSombraRA.Location = new System.Drawing.Point(191, 463);
+            this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSombraRA.Multiline = false;
+            this.txtSombraRA.Name = "txtSombraRA";
+            this.txtSombraRA.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
+            this.txtSombraRA.PasswordChar = false;
+            this.txtSombraRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.txtSombraRA.PlaceholderText = "";
+            this.txtSombraRA.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraRA.TabIndex = 57;
+            this.txtSombraRA.Texts = "";
+            this.txtSombraRA.UnderlinedStyle = false;
             // 
             // frmCadastro
             // 

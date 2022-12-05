@@ -17,7 +17,14 @@ namespace estatisticaTechData
         {
             InitializeComponent();
         }
-        //click
+        public frmConfiguracao(string username,string email,string senha)
+        {
+            InitializeComponent();
+            txtNome.Text = username;
+            txtEmail.Text = email;
+            txtSenha.Text = senha;
+        }
+
         private void pcbEditaNome_Click(object sender, EventArgs e)
         {
             txtNome.Enabled = true;

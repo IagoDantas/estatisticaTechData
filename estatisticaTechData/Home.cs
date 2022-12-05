@@ -62,15 +62,12 @@ namespace estatisticaTechData
                     string username = dt.Rows[0]["nome"].ToString();
                     string email = dt.Rows[0]["email"].ToString();
                     string senha = dt.Rows[0]["senha"].ToString();
-                    string ra = dt.Rows[0]["ra"].ToString();
                     MessageBox.Show("Login efetuado com sucesso!!\nVocê será redirecionado a página de menu.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
 
-                    frmMenu menu = new frmMenu(username);
+                    frmMenu menu = new frmMenu(username,email,senha);
                     menu.Show();
                     this.Visible = false;
-
-                    frmConfiguracao destino = new frmConfiguracao(username,ra,email,senha);
                 }
                 else
                 {

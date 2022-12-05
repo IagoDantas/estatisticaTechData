@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -84,6 +84,14 @@
     </Compile>
     <Compile Include="DistribuicaoNormalComparacao.Designer.cs">
       <DependentUpon>DistribuicaoNormalComparacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="estatisticaTechDataDataSet.cs">
+      <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="estatisticaTechDataDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -174,6 +182,17 @@
     <EmbeddedResource Include="testes.resx">
       <DependentUpon>testes.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="estatisticaTechDataDataSet.xsc">
+      <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="estatisticaTechDataDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>estatisticaTechDataDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="estatisticaTechDataDataSet.xss">
+      <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

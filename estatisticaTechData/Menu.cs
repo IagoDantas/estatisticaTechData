@@ -18,11 +18,15 @@ namespace estatisticaTechData
             InitializeComponent();
         }
 
+        public frmMenu(string username, string email, string senha)
+        {
+            InitializeComponent();
+            lblUsuario.Text = username;
+        }
+
         private void lklSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmHome home = new frmHome();
-            home.Show();
-            this.Close();
+            Application.Exit();
         }
 
         private void btnAddGraficoDistNormal_Click(object sender, EventArgs e)
@@ -52,5 +56,7 @@ namespace estatisticaTechData
             configuracao.Show();
             this.Close();
         }
+
+  
     }
 }
