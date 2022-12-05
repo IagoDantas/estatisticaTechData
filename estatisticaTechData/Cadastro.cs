@@ -24,9 +24,38 @@ namespace estatisticaTechData
             int tipoUsuario = rdbAluno.Checked ? tipoUsuario = 1 : tipoUsuario = 0 ;
             int status_usuario = 1;
 
+            if(rdbAluno.Checked == false && rdbProfessor.Checked == false)
+            {
+                MessageBox.Show("Por favor selecione se é aluno ou professor","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrEmpty(txtNome.Texts))
+            {
+                MessageBox.Show("Por favor insira um nome", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtSenha.Texts))
+            {
+                MessageBox.Show("Por favor insira uma senha", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSenha.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtConfirmaSenha.Texts))
+            {
+                MessageBox.Show("Por favor insira uma confirmação de senha", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmaSenha.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtEmail.Texts))
+            {
+                MessageBox.Show("Por favor insira um email", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return;
+            }
 
-            /*if (txtSenha == txtConfirmaSenha)
-            {*/
+            if (txtSenha == txtConfirmaSenha)
+            {   
                 try
                 {
                     string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\repos\estatisticaTechData\estatisticaTechData.accdb";
@@ -53,8 +82,9 @@ namespace estatisticaTechData
                     MessageBox.Show(erro.Message);
                 }
 
+            }
+            else
+                MessageBox.Show("A senha e a confirmação não coincidem"); 
         }
-           /*} else
-                MessageBox.Show("A senha e a confirmação não coincidem");*/
     }
 }
