@@ -65,11 +65,11 @@ namespace estatisticaTechData
                 try
                 {
                     estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
-                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmail(txtEmail.Texts);
+                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailRa(txtEmail.Texts,Convert.ToInt32(txtRA.Texts));
 
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Já existe um usuário com este email ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
