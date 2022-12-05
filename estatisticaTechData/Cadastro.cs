@@ -58,24 +58,35 @@ namespace estatisticaTechData
             {   
                 try
                 {
-                    string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\repos\estatisticaTechData\estatisticaTechData.accdb";
-                    OleDbConnection conn = new OleDbConnection(stringconn);
-                    conn.Open();
-                    string SQL;
-                    SQL = "insert into tb_usuario(nome,email,senha,tipo_usuario,status_usuario,ra)Values";
-                    SQL += "('"+txtNome.Texts+"','"+txtEmail.Texts+"','"+txtSenha.Texts+"','"+tipoUsuario+"','"+status_usuario+"','"+txtRA.Texts+"')";
+                    estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
+                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailPassword(txtEmail.Texts, txtSenha.Texts);
 
-                    OleDbCommand cmd = new OleDbCommand(SQL, conn);
+                    if (dt.Rows.Count > 0)
+                    {
+                        MessageBox.Show("Já existe um usuário com este email", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\repos\estatisticaTechData\estatisticaTechData.accdb";
+                        OleDbConnection conn = new OleDbConnection(stringconn);
+                        conn.Open();
+                        string SQL;
+                        SQL = "insert into tb_usuario(nome,email,senha,tipo_usuario,status_usuario,ra)Values";
+                        SQL += "('" + txtNome.Texts + "','" + txtEmail.Texts + "','" + txtSenha.Texts + "','" + tipoUsuario + "','" + status_usuario + "','" + txtRA.Texts + "')";
 
-                    cmd.ExecuteNonQuery();
+                        OleDbCommand cmd = new OleDbCommand(SQL, conn);
 
-                    MessageBox.Show("Dados gravados com sucesso");
+                        cmd.ExecuteNonQuery();
 
-                    conn.Close();
+                        MessageBox.Show("Dados gravados com sucesso");
 
-                    frmHome home = new frmHome();
-                    home.Show();
-                    this.Close();
+                        conn.Close();
+
+                        frmHome home = new frmHome();
+                        home.Show();
+                        this.Close();
+                    }
+                    
                 }
                 catch(Exception erro)
                 {
