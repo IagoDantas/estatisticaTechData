@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,11 +25,64 @@ namespace estatisticaTechData
             this.Visible = false;
         }
 
+        private void txtUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                txtPassword.Focus();
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                btnSignIn.PerformClick();
+        }
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            frmMenu menu = new frmMenu();
-            menu.Show();
-            this.Visible = false;
+
+            if(string.IsNullOrEmpty(txtUser.Texts))
+            {
+                MessageBox.Show("Por favor insira um email","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                txtUser.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Texts))
+            {
+                MessageBox.Show("Por favor insira uma senha", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+
+            try
+            {
+                estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
+                estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailPassword(txtUser.Texts,txtPassword.Texts);
+                
+                if(dt.Rows.Count > 0)
+                {
+                    string username = dt.Rows[0]["nome"].ToString();
+                    string email = dt.Rows[0]["email"].ToString();
+                    string senha = dt.Rows[0]["senha"].ToString();
+                    string ra = dt.Rows[0]["ra"].ToString();
+                    MessageBox.Show("Login efetuado com sucesso!!\nVocê será redirecionado a página de menu.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+
+                    frmMenu menu = new frmMenu(username);
+                    menu.Show();
+                    this.Visible = false;
+
+                    frmConfiguracao destino = new frmConfiguracao(username,ra,email,senha);
+                }
+                else
+                {
+                    MessageBox.Show("Seu email ou a sua senha estão incorretos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show(erro.Message,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+
         }
     }
 }
