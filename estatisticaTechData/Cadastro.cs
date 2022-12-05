@@ -65,7 +65,7 @@ namespace estatisticaTechData
                 try
                 {
                     estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
-                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailRa(txtEmail.Texts,Convert.ToInt32(txtRA.Texts));
+                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailRa(txtEmail.Texts, (int?)Convert.ToInt64(txtRA.Texts));
 
                     if (dt.Rows.Count > 0)
                     {
@@ -102,6 +102,15 @@ namespace estatisticaTechData
             }
             else
                 MessageBox.Show("A senha e a confirmação não coincidem"); 
+        }
+
+        private void txtRA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            {
+                MessageBox.Show("Por favor insira apenas números");
+                e.Handled = true;
+            }
         }
     }
 }
