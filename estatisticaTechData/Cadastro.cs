@@ -53,17 +53,23 @@ namespace estatisticaTechData
                 txtEmail.Focus();
                 return;
             }
+            if (string.IsNullOrEmpty(txtRA.Texts))
+            {
+                MessageBox.Show("Por favor insira um RA", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtRA.Focus();
+                return;
+            }
 
-            if (txtSenha == txtConfirmaSenha)
+            if (txtSenha.Texts == txtConfirmaSenha.Texts)
             {   
                 try
                 {
                     estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
-                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailPassword(txtEmail.Texts, txtSenha.Texts);
+                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmail(txtEmail.Texts);
 
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("Já existe um usuário com este email", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Já existe um usuário com este email ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
