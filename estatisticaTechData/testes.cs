@@ -190,5 +190,7 @@ namespace estatisticaTechData
             e.CellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(0, 107, 117);
             e.CellStyle.SelectionForeColor = System.Drawing.Color.White;
         }
+
+   
     }
 }
