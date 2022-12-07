@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection.Emit;
 
 namespace estatisticaTechData
 {
@@ -21,7 +22,11 @@ namespace estatisticaTechData
         public frmMenu(string username, string email, string senha)
         {
             InitializeComponent();
+            lblUsuario.AutoSize = false;
+            lblUsuario.Dock = DockStyle.Bottom; 
+            lblUsuario.TextAlign = ContentAlignment.MiddleCenter;
             lblUsuario.Text = username;
+            
         }
 
         private void lklSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -57,6 +62,5 @@ namespace estatisticaTechData
             this.Close();
         }
 
-  
     }
 }

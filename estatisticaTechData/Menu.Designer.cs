@@ -30,43 +30,25 @@ namespace estatisticaTechData
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.btnAddGraficoPrevDemanda = new estatisticaTechData.techDataButton();
             this.lklSair = new System.Windows.Forms.LinkLabel();
-            this.btnAddGraficoDistNormal = new estatisticaTechData.techDataButton();
-            this.btnVisualizarGraficoDistNormal = new estatisticaTechData.techDataButton();
-            this.btnVisualizarGraficoPrevDemanda = new estatisticaTechData.techDataButton();
-            this.btnHistoricoArquivos = new estatisticaTechData.techDataButton();
+            this.pbcPerfil = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.btnConfigUsuario = new estatisticaTechData.techDataButton();
+            this.btnHistoricoArquivos = new estatisticaTechData.techDataButton();
+            this.btnVisualizarGraficoPrevDemanda = new estatisticaTechData.techDataButton();
+            this.btnVisualizarGraficoDistNormal = new estatisticaTechData.techDataButton();
+            this.btnAddGraficoDistNormal = new estatisticaTechData.techDataButton();
+            this.btnAddGraficoPrevDemanda = new estatisticaTechData.techDataButton();
             this.btnSombraConfigUsuario = new estatisticaTechData.techDataButton();
             this.btnSombraHistoricoArquivos = new estatisticaTechData.techDataButton();
             this.btnSombraVisualizarGraficoPrevDemanda = new estatisticaTechData.techDataButton();
-            this.btnSombraAddGraficoPrevDemanda = new estatisticaTechData.techDataButton();
             this.btnSombraVisualizarGraficoDistNormal = new estatisticaTechData.techDataButton();
+            this.btnSombraAddGraficoPrevDemanda = new estatisticaTechData.techDataButton();
             this.btnSombraAddGraficoDistNormal = new estatisticaTechData.techDataButton();
-            this.pbcPerfil = new System.Windows.Forms.PictureBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnAddGraficoPrevDemanda
-            // 
-            this.btnAddGraficoPrevDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnAddGraficoPrevDemanda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnAddGraficoPrevDemanda.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddGraficoPrevDemanda.BorderRadius = 105;
-            this.btnAddGraficoPrevDemanda.BorderSize = 0;
-            this.btnAddGraficoPrevDemanda.Enabled = false;
-            this.btnAddGraficoPrevDemanda.FlatAppearance.BorderSize = 0;
-            this.btnAddGraficoPrevDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGraficoPrevDemanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAddGraficoPrevDemanda.Location = new System.Drawing.Point(754, 248);
-            this.btnAddGraficoPrevDemanda.Name = "btnAddGraficoPrevDemanda";
-            this.btnAddGraficoPrevDemanda.Size = new System.Drawing.Size(306, 105);
-            this.btnAddGraficoPrevDemanda.TabIndex = 5;
-            this.btnAddGraficoPrevDemanda.Text = "Adicionar novo gráfico de previsão de demanda (Em breve)";
-            this.btnAddGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAddGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
             // lklSair
             // 
@@ -82,46 +64,69 @@ namespace estatisticaTechData
             this.lklSair.Text = "Sair";
             this.lklSair.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklSair_LinkClicked);
             // 
-            // btnAddGraficoDistNormal
+            // pbcPerfil
             // 
-            this.btnAddGraficoDistNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnAddGraficoDistNormal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnAddGraficoDistNormal.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddGraficoDistNormal.BorderRadius = 105;
-            this.btnAddGraficoDistNormal.BorderSize = 0;
-            this.btnAddGraficoDistNormal.FlatAppearance.BorderSize = 0;
-            this.btnAddGraficoDistNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddGraficoDistNormal.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddGraficoDistNormal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAddGraficoDistNormal.Location = new System.Drawing.Point(217, 248);
-            this.btnAddGraficoDistNormal.Name = "btnAddGraficoDistNormal";
-            this.btnAddGraficoDistNormal.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.btnAddGraficoDistNormal.Size = new System.Drawing.Size(306, 105);
-            this.btnAddGraficoDistNormal.TabIndex = 7;
-            this.btnAddGraficoDistNormal.Text = "Adicionar e visualizar novo gráfico de distribuição normal\r\n\r\n\r\n";
-            this.btnAddGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAddGraficoDistNormal.UseVisualStyleBackColor = false;
-            this.btnAddGraficoDistNormal.Click += new System.EventHandler(this.btnAddGraficoDistNormal_Click);
+            this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
+            this.pbcPerfil.Location = new System.Drawing.Point(105, 0);
+            this.pbcPerfil.Name = "pbcPerfil";
+            this.pbcPerfil.Size = new System.Drawing.Size(190, 185);
+            this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbcPerfil.TabIndex = 18;
+            this.pbcPerfil.TabStop = false;
             // 
-            // btnVisualizarGraficoDistNormal
+            // lblUsuario
             // 
-            this.btnVisualizarGraficoDistNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnVisualizarGraficoDistNormal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnVisualizarGraficoDistNormal.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnVisualizarGraficoDistNormal.BorderRadius = 105;
-            this.btnVisualizarGraficoDistNormal.BorderSize = 0;
-            this.btnVisualizarGraficoDistNormal.FlatAppearance.BorderSize = 0;
-            this.btnVisualizarGraficoDistNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVisualizarGraficoDistNormal.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizarGraficoDistNormal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnVisualizarGraficoDistNormal.Location = new System.Drawing.Point(217, 379);
-            this.btnVisualizarGraficoDistNormal.Name = "btnVisualizarGraficoDistNormal";
-            this.btnVisualizarGraficoDistNormal.Size = new System.Drawing.Size(306, 105);
-            this.btnVisualizarGraficoDistNormal.TabIndex = 8;
-            this.btnVisualizarGraficoDistNormal.Text = "Histórico de gráfico de distribuição normal";
-            this.btnVisualizarGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnVisualizarGraficoDistNormal.UseVisualStyleBackColor = false;
-            this.btnVisualizarGraficoDistNormal.Click += new System.EventHandler(this.btnVisualizarGraficoDistNormal_Click);
+            this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.Location = new System.Drawing.Point(171, 195);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblUsuario.Size = new System.Drawing.Size(58, 34);
+            this.lblUsuario.TabIndex = 19;
+            this.lblUsuario.Text = "User";
+            // 
+            // btnConfigUsuario
+            // 
+            this.btnConfigUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnConfigUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnConfigUsuario.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnConfigUsuario.BorderRadius = 105;
+            this.btnConfigUsuario.BorderSize = 0;
+            this.btnConfigUsuario.FlatAppearance.BorderSize = 0;
+            this.btnConfigUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfigUsuario.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfigUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnConfigUsuario.Location = new System.Drawing.Point(754, 509);
+            this.btnConfigUsuario.Name = "btnConfigUsuario";
+            this.btnConfigUsuario.Size = new System.Drawing.Size(306, 105);
+            this.btnConfigUsuario.TabIndex = 11;
+            this.btnConfigUsuario.Text = "Configurações do usuário";
+            this.btnConfigUsuario.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnConfigUsuario.UseVisualStyleBackColor = false;
+            this.btnConfigUsuario.Click += new System.EventHandler(this.btnConfigUsuario_Click);
+            // 
+            // btnHistoricoArquivos
+            // 
+            this.btnHistoricoArquivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnHistoricoArquivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnHistoricoArquivos.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnHistoricoArquivos.BorderRadius = 105;
+            this.btnHistoricoArquivos.BorderSize = 0;
+            this.btnHistoricoArquivos.FlatAppearance.BorderSize = 0;
+            this.btnHistoricoArquivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistoricoArquivos.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistoricoArquivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnHistoricoArquivos.Location = new System.Drawing.Point(217, 509);
+            this.btnHistoricoArquivos.Name = "btnHistoricoArquivos";
+            this.btnHistoricoArquivos.Size = new System.Drawing.Size(306, 105);
+            this.btnHistoricoArquivos.TabIndex = 10;
+            this.btnHistoricoArquivos.Text = "Histórico de arquivos enviados";
+            this.btnHistoricoArquivos.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnHistoricoArquivos.UseVisualStyleBackColor = false;
+            this.btnHistoricoArquivos.Click += new System.EventHandler(this.btnHistoricoArquivos_Click);
             // 
             // btnVisualizarGraficoPrevDemanda
             // 
@@ -144,45 +149,66 @@ namespace estatisticaTechData
             this.btnVisualizarGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnVisualizarGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
-            // btnHistoricoArquivos
+            // btnVisualizarGraficoDistNormal
             // 
-            this.btnHistoricoArquivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnHistoricoArquivos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnHistoricoArquivos.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnHistoricoArquivos.BorderRadius = 105;
-            this.btnHistoricoArquivos.BorderSize = 0;
-            this.btnHistoricoArquivos.FlatAppearance.BorderSize = 0;
-            this.btnHistoricoArquivos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistoricoArquivos.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistoricoArquivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnHistoricoArquivos.Location = new System.Drawing.Point(217, 509);
-            this.btnHistoricoArquivos.Name = "btnHistoricoArquivos";
-            this.btnHistoricoArquivos.Size = new System.Drawing.Size(306, 105);
-            this.btnHistoricoArquivos.TabIndex = 10;
-            this.btnHistoricoArquivos.Text = "Histórico de arquivos enviados";
-            this.btnHistoricoArquivos.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnHistoricoArquivos.UseVisualStyleBackColor = false;
-            this.btnHistoricoArquivos.Click += new System.EventHandler(this.btnHistoricoArquivos_Click);
+            this.btnVisualizarGraficoDistNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnVisualizarGraficoDistNormal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnVisualizarGraficoDistNormal.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnVisualizarGraficoDistNormal.BorderRadius = 105;
+            this.btnVisualizarGraficoDistNormal.BorderSize = 0;
+            this.btnVisualizarGraficoDistNormal.FlatAppearance.BorderSize = 0;
+            this.btnVisualizarGraficoDistNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVisualizarGraficoDistNormal.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVisualizarGraficoDistNormal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnVisualizarGraficoDistNormal.Location = new System.Drawing.Point(217, 379);
+            this.btnVisualizarGraficoDistNormal.Name = "btnVisualizarGraficoDistNormal";
+            this.btnVisualizarGraficoDistNormal.Size = new System.Drawing.Size(306, 105);
+            this.btnVisualizarGraficoDistNormal.TabIndex = 8;
+            this.btnVisualizarGraficoDistNormal.Text = "Histórico de gráfico de distribuição normal";
+            this.btnVisualizarGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnVisualizarGraficoDistNormal.UseVisualStyleBackColor = false;
+            this.btnVisualizarGraficoDistNormal.Click += new System.EventHandler(this.btnVisualizarGraficoDistNormal_Click);
             // 
-            // btnConfigUsuario
+            // btnAddGraficoDistNormal
             // 
-            this.btnConfigUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnConfigUsuario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.btnConfigUsuario.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnConfigUsuario.BorderRadius = 105;
-            this.btnConfigUsuario.BorderSize = 0;
-            this.btnConfigUsuario.FlatAppearance.BorderSize = 0;
-            this.btnConfigUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfigUsuario.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfigUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnConfigUsuario.Location = new System.Drawing.Point(754, 509);
-            this.btnConfigUsuario.Name = "btnConfigUsuario";
-            this.btnConfigUsuario.Size = new System.Drawing.Size(306, 105);
-            this.btnConfigUsuario.TabIndex = 11;
-            this.btnConfigUsuario.Text = "Configurações do usuário";
-            this.btnConfigUsuario.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnConfigUsuario.UseVisualStyleBackColor = false;
-            this.btnConfigUsuario.Click += new System.EventHandler(this.btnConfigUsuario_Click);
+            this.btnAddGraficoDistNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnAddGraficoDistNormal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnAddGraficoDistNormal.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddGraficoDistNormal.BorderRadius = 105;
+            this.btnAddGraficoDistNormal.BorderSize = 0;
+            this.btnAddGraficoDistNormal.FlatAppearance.BorderSize = 0;
+            this.btnAddGraficoDistNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGraficoDistNormal.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGraficoDistNormal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddGraficoDistNormal.Location = new System.Drawing.Point(217, 248);
+            this.btnAddGraficoDistNormal.Name = "btnAddGraficoDistNormal";
+            this.btnAddGraficoDistNormal.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
+            this.btnAddGraficoDistNormal.Size = new System.Drawing.Size(306, 105);
+            this.btnAddGraficoDistNormal.TabIndex = 7;
+            this.btnAddGraficoDistNormal.Text = "Adicionar e visualizar novo gráfico de distribuição normal\r\n\r\n\r\n";
+            this.btnAddGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddGraficoDistNormal.UseVisualStyleBackColor = false;
+            this.btnAddGraficoDistNormal.Click += new System.EventHandler(this.btnAddGraficoDistNormal_Click);
+            // 
+            // btnAddGraficoPrevDemanda
+            // 
+            this.btnAddGraficoPrevDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnAddGraficoPrevDemanda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.btnAddGraficoPrevDemanda.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddGraficoPrevDemanda.BorderRadius = 105;
+            this.btnAddGraficoPrevDemanda.BorderSize = 0;
+            this.btnAddGraficoPrevDemanda.Enabled = false;
+            this.btnAddGraficoPrevDemanda.FlatAppearance.BorderSize = 0;
+            this.btnAddGraficoPrevDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddGraficoPrevDemanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddGraficoPrevDemanda.Location = new System.Drawing.Point(754, 248);
+            this.btnAddGraficoPrevDemanda.Name = "btnAddGraficoPrevDemanda";
+            this.btnAddGraficoPrevDemanda.Size = new System.Drawing.Size(306, 105);
+            this.btnAddGraficoPrevDemanda.TabIndex = 5;
+            this.btnAddGraficoPrevDemanda.Text = "Adicionar novo gráfico de previsão de demanda (Em breve)";
+            this.btnAddGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
             // btnSombraConfigUsuario
             // 
@@ -241,25 +267,6 @@ namespace estatisticaTechData
             this.btnSombraVisualizarGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraVisualizarGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
-            // btnSombraAddGraficoPrevDemanda
-            // 
-            this.btnSombraAddGraficoPrevDemanda.BackColor = System.Drawing.Color.Black;
-            this.btnSombraAddGraficoPrevDemanda.BackgroundColor = System.Drawing.Color.Black;
-            this.btnSombraAddGraficoPrevDemanda.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnSombraAddGraficoPrevDemanda.BorderRadius = 105;
-            this.btnSombraAddGraficoPrevDemanda.BorderSize = 0;
-            this.btnSombraAddGraficoPrevDemanda.Enabled = false;
-            this.btnSombraAddGraficoPrevDemanda.FlatAppearance.BorderSize = 0;
-            this.btnSombraAddGraficoPrevDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSombraAddGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSombraAddGraficoPrevDemanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnSombraAddGraficoPrevDemanda.Location = new System.Drawing.Point(754, 254);
-            this.btnSombraAddGraficoPrevDemanda.Name = "btnSombraAddGraficoPrevDemanda";
-            this.btnSombraAddGraficoPrevDemanda.Size = new System.Drawing.Size(306, 105);
-            this.btnSombraAddGraficoPrevDemanda.TabIndex = 15;
-            this.btnSombraAddGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnSombraAddGraficoPrevDemanda.UseVisualStyleBackColor = false;
-            // 
             // btnSombraVisualizarGraficoDistNormal
             // 
             this.btnSombraVisualizarGraficoDistNormal.BackColor = System.Drawing.Color.Black;
@@ -278,6 +285,25 @@ namespace estatisticaTechData
             this.btnSombraVisualizarGraficoDistNormal.TabIndex = 16;
             this.btnSombraVisualizarGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraVisualizarGraficoDistNormal.UseVisualStyleBackColor = false;
+            // 
+            // btnSombraAddGraficoPrevDemanda
+            // 
+            this.btnSombraAddGraficoPrevDemanda.BackColor = System.Drawing.Color.Black;
+            this.btnSombraAddGraficoPrevDemanda.BackgroundColor = System.Drawing.Color.Black;
+            this.btnSombraAddGraficoPrevDemanda.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnSombraAddGraficoPrevDemanda.BorderRadius = 105;
+            this.btnSombraAddGraficoPrevDemanda.BorderSize = 0;
+            this.btnSombraAddGraficoPrevDemanda.Enabled = false;
+            this.btnSombraAddGraficoPrevDemanda.FlatAppearance.BorderSize = 0;
+            this.btnSombraAddGraficoPrevDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSombraAddGraficoPrevDemanda.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSombraAddGraficoPrevDemanda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnSombraAddGraficoPrevDemanda.Location = new System.Drawing.Point(754, 254);
+            this.btnSombraAddGraficoPrevDemanda.Name = "btnSombraAddGraficoPrevDemanda";
+            this.btnSombraAddGraficoPrevDemanda.Size = new System.Drawing.Size(306, 105);
+            this.btnSombraAddGraficoPrevDemanda.TabIndex = 15;
+            this.btnSombraAddGraficoPrevDemanda.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnSombraAddGraficoPrevDemanda.UseVisualStyleBackColor = false;
             // 
             // btnSombraAddGraficoDistNormal
             // 
@@ -298,29 +324,14 @@ namespace estatisticaTechData
             this.btnSombraAddGraficoDistNormal.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraAddGraficoDistNormal.UseVisualStyleBackColor = false;
             // 
-            // pbcPerfil
+            // panel1
             // 
-            this.pbcPerfil.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbcPerfil.Image = ((System.Drawing.Image)(resources.GetObject("pbcPerfil.Image")));
-            this.pbcPerfil.Location = new System.Drawing.Point(541, 12);
-            this.pbcPerfil.Name = "pbcPerfil";
-            this.pbcPerfil.Size = new System.Drawing.Size(190, 185);
-            this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbcPerfil.TabIndex = 18;
-            this.pbcPerfil.TabStop = false;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.Location = new System.Drawing.Point(607, 212);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblUsuario.Size = new System.Drawing.Size(58, 34);
-            this.lblUsuario.TabIndex = 19;
-            this.lblUsuario.Text = "User";
+            this.panel1.Controls.Add(this.pbcPerfil);
+            this.panel1.Controls.Add(this.lblUsuario);
+            this.panel1.Location = new System.Drawing.Point(440, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(400, 234);
+            this.panel1.TabIndex = 20;
             // 
             // frmMenu
             // 
@@ -328,8 +339,7 @@ namespace estatisticaTechData
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.pbcPerfil);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnConfigUsuario);
             this.Controls.Add(this.btnHistoricoArquivos);
             this.Controls.Add(this.btnVisualizarGraficoPrevDemanda);
@@ -349,6 +359,8 @@ namespace estatisticaTechData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -370,5 +382,6 @@ namespace estatisticaTechData
         private techDataButton btnSombraAddGraficoDistNormal;
         private System.Windows.Forms.PictureBox pbcPerfil;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Panel panel1;
     }
 }

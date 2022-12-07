@@ -38,5 +38,27 @@ namespace estatisticaTechData
             btnEditar.Visible = true;
             btnVisualizar.Visible = true;
         }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            frmMenu menu = new frmMenu();
+            menu.Show();
+            this.Close();
+        }
+
+        private void btnDistribuicao_Click(object sender, EventArgs e)
+        {
+            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
+            distribuicao.Show();
+            this.Close();
+
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            frmConfiguracao config =  new frmConfiguracao();    
+            config.Show();
+            this.Close();
+        }
     }
 }

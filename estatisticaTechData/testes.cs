@@ -5,10 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mime;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Presentation;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace estatisticaTechData
 {
@@ -53,31 +56,33 @@ namespace estatisticaTechData
                                 }
                             }
                         }
-                        dataGridView1.DataSource = dt.DefaultView;
+                        dgvTeste.DataSource = dt.DefaultView;
                         Cursor.Current = Cursors.Default;
                     }
                 }
             }
 
+
+            
         }
 
-        private void button1_Click(object sender, EventArgs e )
+        private void btnMedia_Click(object sender, EventArgs e)
         {
-            int x = dataGridView1.RowCount;
-            int y = dataGridView1.ColumnCount;
+            int x = dgvTeste.RowCount;
+            int y = dgvTeste.ColumnCount;
             double[,] arrayExcel = new double[x, y];
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
                 {
-                    DataGridViewCell cell = dataGridView1[rowIndex: i, columnIndex: j];
+                    DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
                     arrayExcel[i, j] = Convert.ToDouble(cell.Value);
                 }
             }
             double media = 0;
             for (int i = 0; i < x; i++)
             {
-                for (int j = 0; j <y; j++)
+                for (int j = 0; j < y; j++)
                 {
                     media += arrayExcel[i, j];
                 }
@@ -94,22 +99,24 @@ namespace estatisticaTechData
 
             media = media / divisor;
 
-            label1.Text = "A média é: "+ media;
+            lblMedia.Text = "A média é: " + media.ToString("F");
+            lblMedia.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnModa_Click(object sender, EventArgs e)
         {
-            int x = dataGridView1.RowCount;
-            int y = dataGridView1.ColumnCount;
+            int x = dgvTeste.RowCount;
+            int y = dgvTeste.ColumnCount;
             double[,] arrayExcel = new double[x, y];
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
                 {
-                    DataGridViewCell cell = dataGridView1[rowIndex: i, columnIndex: j];
+                    DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
                     arrayExcel[i, j] = Convert.ToDouble(cell.Value);
                 }
             }
+
             double moda = 0, compara;
             int contA, contB = 0;
             for (int i = 0; i < x; i++)
@@ -122,13 +129,13 @@ namespace estatisticaTechData
                     {
                         for (int l = 0; l < y; l++)
                         {
-                            if(compara == arrayExcel[k, l])
+                            if (compara == arrayExcel[k, l])
                             {
                                 contA++;
                             }
                         }
                     }
-                    if(contA > contB)
+                    if (contA > contB)
                     {
                         contB = contA;
                         moda = compara;
@@ -136,13 +143,14 @@ namespace estatisticaTechData
                 }
             }
 
-            label2.Text = "A moda é: " + moda;
+            lblModa.Text = "A moda é: " + moda;
+            lblModa.Visible = true;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnMediana_Click(object sender, EventArgs e)
         {
-            int x = dataGridView1.RowCount;
-            int y = dataGridView1.ColumnCount;
+            int x = dgvTeste.RowCount;
+            int y = dgvTeste.ColumnCount;
             int length = x * y;
             double[] arrayExcel = new double[length];
             int p = 0;
@@ -150,7 +158,7 @@ namespace estatisticaTechData
             {
                 for (int j = 0; j < y; j++)
                 {
-                    DataGridViewCell cell = dataGridView1[rowIndex: i, columnIndex: j];
+                    DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
                     arrayExcel[p] = Convert.ToDouble(cell.Value);
                     p++;
                 }
@@ -163,15 +171,24 @@ namespace estatisticaTechData
             if (lenghtTest)
             {
                 posicao = (length + 1) / 2;
-                mediana = arrayExcel[posicao-1];
+                mediana = arrayExcel[posicao - 1];
             }
             else
             {
-                posicao = length/2;
-                mediana = (arrayExcel[posicao-1] + arrayExcel[posicao])/ 2;
+                posicao = length / 2;
+                mediana = (arrayExcel[posicao - 1] + arrayExcel[posicao]) / 2;
             }
 
-            label3.Text = "A mediana desses valores é: "+mediana;
+            lblMediana.Text = "A mediana desses valores é: " + mediana;
+            lblMediana.Visible = true;
+        }
+
+        private void dgvTeste_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            e.CellStyle.BackColor = System.Drawing.Color.FromArgb(220, 236, 223); 
+            e.CellStyle.ForeColor = System.Drawing.Color.Black;
+            e.CellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(0, 107, 117);
+            e.CellStyle.SelectionForeColor = System.Drawing.Color.White;
         }
     }
 }

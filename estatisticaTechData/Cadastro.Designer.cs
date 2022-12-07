@@ -50,6 +50,7 @@
             this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
             this.txtSombraNome = new estatisticaTechData.techDataTextBox();
             this.txtSombraRA = new estatisticaTechData.techDataTextBox();
+            this.lklSignIn = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -452,12 +453,28 @@
             this.txtSombraRA.Texts = "";
             this.txtSombraRA.UnderlinedStyle = false;
             // 
+            // lklSignIn
+            // 
+            this.lklSignIn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
+            this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lklSignIn.AutoSize = true;
+            this.lklSignIn.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.lklSignIn.Location = new System.Drawing.Point(608, 632);
+            this.lklSignIn.Name = "lklSignIn";
+            this.lklSignIn.Size = new System.Drawing.Size(64, 28);
+            this.lklSignIn.TabIndex = 62;
+            this.lklSignIn.TabStop = true;
+            this.lklSignIn.Text = "entrar";
+            this.lklSignIn.Click += new System.EventHandler(this.lklSignIn_Click);
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.lklSignIn);
             this.Controls.Add(this.rdbProfessor);
             this.Controls.Add(this.rdbAluno);
             this.Controls.Add(this.txtConfirmaSenha);
@@ -514,5 +531,6 @@
         private techDataTextBox txtSombraSenha;
         private Resources.techDataRadioButton rdbAluno;
         private Resources.techDataRadioButton rdbProfessor;
+        private System.Windows.Forms.LinkLabel lklSignIn;
     }
 }

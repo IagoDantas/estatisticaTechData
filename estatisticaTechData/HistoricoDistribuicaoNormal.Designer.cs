@@ -40,6 +40,7 @@
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNome = new System.Windows.Forms.Panel();
+            this.btnDropdown = new estatisticaTechData.techDataButton();
             this.btnVisualizar = new estatisticaTechData.techDataButton();
             this.btnEditar = new estatisticaTechData.techDataButton();
             this.txtExemplo = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.btnProximaPagina = new estatisticaTechData.techDataButton();
             this.btnAnterior = new estatisticaTechData.techDataButton();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.btnDropdown = new estatisticaTechData.techDataButton();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
@@ -109,6 +109,7 @@
             this.btnConfig.TabIndex = 5;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // btnDistribuicao
             // 
@@ -124,6 +125,7 @@
             this.btnDistribuicao.TabIndex = 4;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
             this.btnDistribuicao.UseVisualStyleBackColor = false;
+            this.btnDistribuicao.Click += new System.EventHandler(this.btnDistribuicao_Click);
             // 
             // btnHistorico
             // 
@@ -170,6 +172,7 @@
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // pbcPerfil
             // 
@@ -205,6 +208,27 @@
             this.pnlNome.Name = "pnlNome";
             this.pnlNome.Size = new System.Drawing.Size(856, 50);
             this.pnlNome.TabIndex = 15;
+            // 
+            // btnDropdown
+            // 
+            this.btnDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnDropdown.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnDropdown.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDropdown.BorderRadius = 45;
+            this.btnDropdown.BorderSize = 0;
+            this.btnDropdown.FlatAppearance.BorderSize = 0;
+            this.btnDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDropdown.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDropdown.ForeColor = System.Drawing.Color.White;
+            this.btnDropdown.Location = new System.Drawing.Point(647, 2);
+            this.btnDropdown.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDropdown.Name = "btnDropdown";
+            this.btnDropdown.Size = new System.Drawing.Size(103, 44);
+            this.btnDropdown.TabIndex = 16;
+            this.btnDropdown.Text = "...";
+            this.btnDropdown.TextColor = System.Drawing.Color.White;
+            this.btnDropdown.UseVisualStyleBackColor = false;
+            this.btnDropdown.Click += new System.EventHandler(this.btnDropdown_Click);
             // 
             // btnVisualizar
             // 
@@ -382,27 +406,6 @@
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
-            // 
-            // btnDropdown
-            // 
-            this.btnDropdown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnDropdown.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnDropdown.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDropdown.BorderRadius = 45;
-            this.btnDropdown.BorderSize = 0;
-            this.btnDropdown.FlatAppearance.BorderSize = 0;
-            this.btnDropdown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDropdown.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDropdown.ForeColor = System.Drawing.Color.White;
-            this.btnDropdown.Location = new System.Drawing.Point(647, 2);
-            this.btnDropdown.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDropdown.Name = "btnDropdown";
-            this.btnDropdown.Size = new System.Drawing.Size(103, 44);
-            this.btnDropdown.TabIndex = 16;
-            this.btnDropdown.Text = "...";
-            this.btnDropdown.TextColor = System.Drawing.Color.White;
-            this.btnDropdown.UseVisualStyleBackColor = false;
-            this.btnDropdown.Click += new System.EventHandler(this.btnDropdown_Click);
             // 
             // frmHistoricoDistNormal
             // 

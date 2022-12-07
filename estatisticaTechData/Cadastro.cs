@@ -112,5 +112,12 @@ namespace estatisticaTechData
                 e.Handled = true;
             }
         }
+
+        private void lklSignIn_Click(object sender, EventArgs e)
+        {
+            frmHome home = new frmHome();
+            home.Show();
+            this.Close();
+        }
     }
 }
