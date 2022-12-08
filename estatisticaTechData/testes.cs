@@ -191,5 +191,14 @@ namespace estatisticaTechData
             e.CellStyle.SelectionForeColor = System.Drawing.Color.White;
         }
 
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
+            distribuicao.Show();
+            this.Close();
+        }
+
+
     }
 }
