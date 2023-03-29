@@ -1,5 +1,4 @@
-﻿using estatisticaTechData.Resources;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,20 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace estatisticaTechData
+namespace estatisticaTechData.Resources
 {
-    public partial class frmDistribuicaoNormal : Form
+    public partial class frmHistoricoArquivos : Form
     {
-        public frmDistribuicaoNormal()
+        public frmHistoricoArquivos()
         {
             InitializeComponent();
         }
-
-        //Click
-        private void btnHistorico_Click(object sender, EventArgs e)
+        private void btnNovaCarga_Click (object sender, EventArgs e)
         {
-            frmHistoricoArquivos historicoArquivos = new frmHistoricoArquivos();
-            historicoArquivos.Show();
+            MessageBox.Show("Clique");
+        }
+        private void btnDistribuicao_Click(object sender, EventArgs e)
+        {
+            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
+            distribuicao.Show();
             this.Close();
         }
         private void btnInicio_Click(object sender, EventArgs e)
@@ -37,20 +38,13 @@ namespace estatisticaTechData
             configuracao.Show();
             this.Close();
         }
-        private void btnAcessoHistorico_Click(object sender, EventArgs e)
-        {
-            frmHistoricoDistNormal hist = new frmHistoricoDistNormal();
-            hist.Show();
-            this.Close();
-        }
 
 
-        //Hover
         private void btnInicio_MouseEnter(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(220, 236, 223);
             btnInicio.ForeColor = Color.Black;
-        }
+        }      
         private void btnInicio_MouseLeave(object sender, EventArgs e)
         {
             btnInicio.BackColor = Color.FromArgb(0, 107, 117);
@@ -58,13 +52,13 @@ namespace estatisticaTechData
         }
         private void btnDistribuicao_MouseEnter(object sender, EventArgs e)
         {
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
+            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
+            btnDistribuicao.ForeColor = Color.Black;
         }
         private void btnDistribuicao_MouseLeave(object sender, EventArgs e)
         {
-            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-            btnDistribuicao.ForeColor = Color.Black;
+            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+            btnDistribuicao.ForeColor = Color.White;
         }
         private void btnPrevisaoDemanda_MouseEnter(object sender, EventArgs e)
         {
@@ -78,13 +72,13 @@ namespace estatisticaTechData
         }
         private void btnHistorico_MouseEnter(object sender, EventArgs e)
         {
-            btnHistorico.BackColor = Color.FromArgb(220, 236, 223);
-            btnHistorico.ForeColor = Color.Black;
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
         }
         private void btnHistorico_MouseLeave(object sender, EventArgs e)
         {
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
+            btnHistorico.BackColor = Color.FromArgb(220, 236, 223);
+            btnHistorico.ForeColor = Color.Black;
         }
         private void btnConfig_MouseEnter(object sender, EventArgs e)
         {
@@ -99,16 +93,5 @@ namespace estatisticaTechData
             pcbConfig.BackColor = Color.FromArgb(0, 107, 117);
         }
 
-        private void frmDistribuicaoNormal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNovaBase_Click(object sender, EventArgs e)
-        {
-            testes pag = new testes();
-            pag.Show();
-            this.Close();   
-        }
     }
 }

@@ -11,24 +11,30 @@ using System.Windows.Forms;
 
 namespace estatisticaTechData
 {
-    public partial class frmDistribuicaoNormal : Form
+    public partial class frmCompara : Form
     {
-        public frmDistribuicaoNormal()
+        public frmCompara()
         {
             InitializeComponent();
         }
-
-        //Click
-        private void btnHistorico_Click(object sender, EventArgs e)
+       
+        //Click        
+        private void btnVoltar_Click(object sender, EventArgs e)
         {
-            frmHistoricoArquivos historicoArquivos = new frmHistoricoArquivos();
-            historicoArquivos.Show();
+            frmDistribuicaoNormal distribuicaoNormal = new frmDistribuicaoNormal();
+            distribuicaoNormal.ShowDialog();
             this.Close();
         }
         private void btnInicio_Click(object sender, EventArgs e)
         {
             frmMenu menu = new frmMenu();
-            menu.Show();
+            menu.Show();  
+            this.Close();
+        }
+        private void btnHistorico_Click(object sender, EventArgs e)
+        {
+            frmHistoricoArquivos historico = new frmHistoricoArquivos();
+            historico.Show();
             this.Close();
         }
         private void btnConfig_Click(object sender, EventArgs e)
@@ -37,13 +43,6 @@ namespace estatisticaTechData
             configuracao.Show();
             this.Close();
         }
-        private void btnAcessoHistorico_Click(object sender, EventArgs e)
-        {
-            frmHistoricoDistNormal hist = new frmHistoricoDistNormal();
-            hist.Show();
-            this.Close();
-        }
-
 
         //Hover
         private void btnInicio_MouseEnter(object sender, EventArgs e)
@@ -99,16 +98,6 @@ namespace estatisticaTechData
             pcbConfig.BackColor = Color.FromArgb(0, 107, 117);
         }
 
-        private void frmDistribuicaoNormal_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void btnNovaBase_Click(object sender, EventArgs e)
-        {
-            testes pag = new testes();
-            pag.Show();
-            this.Close();   
-        }
     }
 }
