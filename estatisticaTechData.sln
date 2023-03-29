@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "estatisticaTechData", "estatisticaTechData\estatisticaTechData.csproj", "{71A28D16-F99E-456A-8031-8CD23783271D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "estatisticaTechDataClassLibrary", "estatisticaTechDataClassLibrary\estatisticaTechDataClassLibrary.csproj", "{3758D0EA-1AC7-42BF-A499-987196CE5D0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{71A28D16-F99E-456A-8031-8CD23783271D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71A28D16-F99E-456A-8031-8CD23783271D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71A28D16-F99E-456A-8031-8CD23783271D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3758D0EA-1AC7-42BF-A499-987196CE5D0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3758D0EA-1AC7-42BF-A499-987196CE5D0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3758D0EA-1AC7-42BF-A499-987196CE5D0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3758D0EA-1AC7-42BF-A499-987196CE5D0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

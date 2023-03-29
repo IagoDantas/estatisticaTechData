@@ -238,5 +238,11 @@
     <Content Include="Images\TechData-fade-claro.png" />
     <Content Include="Images\techDataLogoForm.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\estatisticaTechDataClassLibrary\estatisticaTechDataClassLibrary.csproj">
+      <Project>{3758d0ea-1ac7-42bf-a499-987196ce5d0c}</Project>
+      <Name>estatisticaTechDataClassLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
