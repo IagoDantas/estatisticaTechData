@@ -70,22 +70,22 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuracao.cs">
+    <Compile Include="Screens\Configuracao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuracao.Designer.cs">
+    <Compile Include="Screens\Configuracao.Designer.cs">
       <DependentUpon>Configuracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="DistribuicaoNormal.cs">
+    <Compile Include="Screens\DistribuicaoNormal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DistribuicaoNormal.Designer.cs">
+    <Compile Include="Screens\DistribuicaoNormal.Designer.cs">
       <DependentUpon>DistribuicaoNormal.cs</DependentUpon>
     </Compile>
-    <Compile Include="DistribuicaoNormalComparacao.cs">
+    <Compile Include="Screens\DistribuicaoNormalComparacao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DistribuicaoNormalComparacao.Designer.cs">
+    <Compile Include="Screens\DistribuicaoNormalComparacao.Designer.cs">
       <DependentUpon>DistribuicaoNormalComparacao.cs</DependentUpon>
     </Compile>
     <Compile Include="estatisticaTechDataDataSet.cs">
@@ -102,30 +102,30 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cadastro.cs">
+    <Compile Include="Screens\Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cadastro.Designer.cs">
+    <Compile Include="Screens\Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="HistoricoDistribuicaoNormal.cs">
+    <Compile Include="Screens\HistoricoDistribuicaoNormal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HistoricoDistribuicaoNormal.Designer.cs">
+    <Compile Include="Screens\HistoricoDistribuicaoNormal.Designer.cs">
       <DependentUpon>HistoricoDistribuicaoNormal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Screens\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Screens\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HistoricoArquivos.cs">
+    <Compile Include="Screens\HistoricoArquivos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HistoricoArquivos.Designer.cs">
+    <Compile Include="Screens\HistoricoArquivos.Designer.cs">
       <DependentUpon>HistoricoArquivos.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\techDataButton.cs">
@@ -146,28 +146,28 @@
     <Compile Include="testes.Designer.cs">
       <DependentUpon>testes.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Configuracao.resx">
+    <EmbeddedResource Include="Screens\Configuracao.resx">
       <DependentUpon>Configuracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DistribuicaoNormal.resx">
+    <EmbeddedResource Include="Screens\DistribuicaoNormal.resx">
       <DependentUpon>DistribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DistribuicaoNormalComparacao.resx">
+    <EmbeddedResource Include="Screens\DistribuicaoNormalComparacao.resx">
       <DependentUpon>DistribuicaoNormalComparacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cadastro.resx">
+    <EmbeddedResource Include="Screens\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HistoricoDistribuicaoNormal.resx">
+    <EmbeddedResource Include="Screens\HistoricoDistribuicaoNormal.resx">
       <DependentUpon>HistoricoDistribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HistoricoArquivos.resx">
+    <EmbeddedResource Include="Screens\HistoricoArquivos.resx">
       <DependentUpon>HistoricoArquivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Screens\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
