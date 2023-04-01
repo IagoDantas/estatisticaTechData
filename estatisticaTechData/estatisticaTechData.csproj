@@ -140,6 +140,18 @@
     <Compile Include="Resources\techDataTextBox.Designer.cs">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_DistribuicaoNormal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_DistribuicaoNormal.Designer.cs">
+      <DependentUpon>UC_DistribuicaoNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\UC_DistribuicaoNormalComparacao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_DistribuicaoNormalComparacao.Designer.cs">
+      <DependentUpon>UC_DistribuicaoNormalComparacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="testes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,12 @@
     </Compile>
     <EmbeddedResource Include="Resources\techDataTextBox.resx">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_DistribuicaoNormal.resx">
+      <DependentUpon>UC_DistribuicaoNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_DistribuicaoNormalComparacao.resx">
+      <DependentUpon>UC_DistribuicaoNormalComparacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testes.resx">
       <DependentUpon>testes.cs</DependentUpon>
