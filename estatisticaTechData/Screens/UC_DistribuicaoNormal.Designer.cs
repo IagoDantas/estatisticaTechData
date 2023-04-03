@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_DistribuicaoNormal));
             this.lklNovaCarga = new System.Windows.Forms.LinkLabel();
-            this.btnNovaBase = new estatisticaTechData.techDataButton();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblGráfico = new System.Windows.Forms.Label();
             this.lblLegenda = new System.Windows.Forms.Label();
             this.pnlHistorico = new System.Windows.Forms.FlowLayoutPanel();
             this.lblHistorico = new System.Windows.Forms.Label();
-            this.btnAcessoHistorico = new estatisticaTechData.techDataButton();
             this.pnlLegenda = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGrafico = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGraficoPorcentagem = new System.Windows.Forms.FlowLayoutPanel();
             this.lblGraficoPorcentagem = new System.Windows.Forms.Label();
+            this.btnNovaBase = new estatisticaTechData.techDataButton();
+            this.btnAcessoHistorico = new estatisticaTechData.techDataButton();
             this.pnlHistorico.SuspendLayout();
             this.pnlLegenda.SuspendLayout();
             this.pnlGrafico.SuspendLayout();
@@ -65,28 +65,6 @@
             this.lklNovaCarga.Text = "Nova base de dados";
             this.lklNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
             // 
-            // btnNovaBase
-            // 
-            this.btnNovaBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNovaBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnNovaBase.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.btnNovaBase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovaBase.BackgroundImage")));
-            this.btnNovaBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnNovaBase.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnNovaBase.BorderRadius = 80;
-            this.btnNovaBase.BorderSize = 0;
-            this.btnNovaBase.FlatAppearance.BorderSize = 0;
-            this.btnNovaBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNovaBase.ForeColor = System.Drawing.Color.White;
-            this.btnNovaBase.Location = new System.Drawing.Point(861, 65);
-            this.btnNovaBase.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNovaBase.Name = "btnNovaBase";
-            this.btnNovaBase.Size = new System.Drawing.Size(75, 78);
-            this.btnNovaBase.TabIndex = 14;
-            this.btnNovaBase.TextColor = System.Drawing.Color.White;
-            this.btnNovaBase.UseVisualStyleBackColor = false;
-            this.btnNovaBase.Click += new System.EventHandler(this.btnNovaBase_Click);
-            // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -101,6 +79,7 @@
             // 
             // lblGráfico
             // 
+            this.lblGráfico.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblGráfico.AutoSize = true;
             this.lblGráfico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblGráfico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,7 +92,8 @@
             // 
             // lblLegenda
             // 
-            this.lblLegenda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblLegenda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLegenda.AutoSize = true;
             this.lblLegenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -140,6 +120,8 @@
             // 
             // lblHistorico
             // 
+            this.lblHistorico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHistorico.AutoSize = true;
             this.lblHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHistorico.Location = new System.Drawing.Point(23, 15);
@@ -149,27 +131,6 @@
             this.lblHistorico.TabIndex = 0;
             this.lblHistorico.Text = "Histórico dos gráficos de distribuição normal anteriores:";
             this.lblHistorico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAcessoHistorico
-            // 
-            this.btnAcessoHistorico.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAcessoHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAcessoHistorico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnAcessoHistorico.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAcessoHistorico.BorderRadius = 50;
-            this.btnAcessoHistorico.BorderSize = 0;
-            this.btnAcessoHistorico.FlatAppearance.BorderSize = 0;
-            this.btnAcessoHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcessoHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcessoHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnAcessoHistorico.Location = new System.Drawing.Point(94, 58);
-            this.btnAcessoHistorico.Name = "btnAcessoHistorico";
-            this.btnAcessoHistorico.Size = new System.Drawing.Size(126, 47);
-            this.btnAcessoHistorico.TabIndex = 5;
-            this.btnAcessoHistorico.Text = "Acessar";
-            this.btnAcessoHistorico.TextColor = System.Drawing.Color.White;
-            this.btnAcessoHistorico.UseVisualStyleBackColor = false;
-            this.btnAcessoHistorico.Click += new System.EventHandler(this.btnAcessoHistorico_Click);
             // 
             // pnlLegenda
             // 
@@ -211,6 +172,9 @@
             // 
             // lblGraficoPorcentagem
             // 
+            this.lblGraficoPorcentagem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGraficoPorcentagem.AutoSize = true;
             this.lblGraficoPorcentagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblGraficoPorcentagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -222,6 +186,50 @@
             this.lblGraficoPorcentagem.TabIndex = 5;
             this.lblGraficoPorcentagem.Text = "Os gráficos com porcentagem serão gerados aqui.";
             this.lblGraficoPorcentagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnNovaBase
+            // 
+            this.btnNovaBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNovaBase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnNovaBase.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.btnNovaBase.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNovaBase.BackgroundImage")));
+            this.btnNovaBase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNovaBase.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnNovaBase.BorderRadius = 80;
+            this.btnNovaBase.BorderSize = 0;
+            this.btnNovaBase.FlatAppearance.BorderSize = 0;
+            this.btnNovaBase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNovaBase.ForeColor = System.Drawing.Color.White;
+            this.btnNovaBase.Location = new System.Drawing.Point(861, 65);
+            this.btnNovaBase.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNovaBase.Name = "btnNovaBase";
+            this.btnNovaBase.Size = new System.Drawing.Size(75, 78);
+            this.btnNovaBase.TabIndex = 14;
+            this.btnNovaBase.TextColor = System.Drawing.Color.White;
+            this.btnNovaBase.UseVisualStyleBackColor = false;
+            this.btnNovaBase.Click += new System.EventHandler(this.btnNovaBase_Click);
+            // 
+            // btnAcessoHistorico
+            // 
+            this.btnAcessoHistorico.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAcessoHistorico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAcessoHistorico.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAcessoHistorico.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAcessoHistorico.BorderRadius = 50;
+            this.btnAcessoHistorico.BorderSize = 0;
+            this.btnAcessoHistorico.FlatAppearance.BorderSize = 0;
+            this.btnAcessoHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcessoHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcessoHistorico.ForeColor = System.Drawing.Color.White;
+            this.btnAcessoHistorico.Location = new System.Drawing.Point(23, 58);
+            this.btnAcessoHistorico.Name = "btnAcessoHistorico";
+            this.btnAcessoHistorico.Size = new System.Drawing.Size(269, 47);
+            this.btnAcessoHistorico.TabIndex = 5;
+            this.btnAcessoHistorico.Text = "Acessar";
+            this.btnAcessoHistorico.TextColor = System.Drawing.Color.White;
+            this.btnAcessoHistorico.UseVisualStyleBackColor = false;
+            this.btnAcessoHistorico.Click += new System.EventHandler(this.btnAcessoHistorico_Click);
             // 
             // UC_DistribuicaoNormal
             // 

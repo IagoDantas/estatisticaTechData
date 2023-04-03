@@ -53,10 +53,10 @@
             // 
             // lblData02
             // 
-            this.lblData02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblData02.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblData02.AutoSize = true;
             this.lblData02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData02.Location = new System.Drawing.Point(677, 208);
+            this.lblData02.Location = new System.Drawing.Point(689, 208);
             this.lblData02.Name = "lblData02";
             this.lblData02.Size = new System.Drawing.Size(102, 32);
             this.lblData02.TabIndex = 13;
@@ -65,7 +65,6 @@
             // 
             // lblData01
             // 
-            this.lblData01.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblData01.AutoSize = true;
             this.lblData01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData01.Location = new System.Drawing.Point(205, 208);
@@ -91,7 +90,7 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(334, 80);
+            this.lblTitulo.Location = new System.Drawing.Point(348, 73);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(294, 36);
             this.lblTitulo.TabIndex = 10;
@@ -99,8 +98,7 @@
             // 
             // pnlLegendaBack
             // 
-            this.pnlLegendaBack.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlLegendaBack.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pnlLegendaBack.AutoSize = true;
             this.pnlLegendaBack.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlLegendaBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -195,7 +193,8 @@
             // 
             // pnlGrafico01
             // 
-            this.pnlGrafico01.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlGrafico01.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlGrafico01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.pnlGrafico01.Location = new System.Drawing.Point(39, 257);
             this.pnlGrafico01.Name = "pnlGrafico01";
@@ -204,9 +203,10 @@
             // 
             // pnlGrafico02
             // 
-            this.pnlGrafico02.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlGrafico02.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGrafico02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlGrafico02.Location = new System.Drawing.Point(511, 257);
+            this.pnlGrafico02.Location = new System.Drawing.Point(523, 257);
             this.pnlGrafico02.Name = "pnlGrafico02";
             this.pnlGrafico02.Size = new System.Drawing.Size(451, 274);
             this.pnlGrafico02.TabIndex = 7;
@@ -241,7 +241,7 @@
             this.Controls.Add(this.pnlGrafico01);
             this.Controls.Add(this.pnlGrafico02);
             this.Name = "UC_DistribuicaoNormalComparacao";
-            this.Size = new System.Drawing.Size(1000, 720);
+            this.Size = new System.Drawing.Size(1012, 720);
             this.pnlLegendaBack.ResumeLayout(false);
             this.pnlLegenda01.ResumeLayout(false);
             this.pnlLegenda01.PerformLayout();
