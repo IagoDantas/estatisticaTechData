@@ -73,7 +73,7 @@ namespace estatisticaTechData
                     }
                     else
                     {
-                        string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Repos\techdata\estatisticaTechData.accdb";
+                        string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\gusta\OneDrive\Documentos\TechData\estatisticaTechData\estatisticaTechData.accdb";
                         OleDbConnection conn = new OleDbConnection(stringconn);
                         conn.Open();
                         string SQL;
