@@ -170,6 +170,18 @@
     <Compile Include="Screens\UC_HistóricoDistribuicaoNormal.Designer.cs">
       <DependentUpon>UC_HistóricoDistribuicaoNormal.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_Configuracao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Configuracao.Designer.cs">
+      <DependentUpon>UC_Configuracao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_HistoricoAquivos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HistoricoAquivos.Designer.cs">
+      <DependentUpon>UC_HistoricoAquivos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="testes.resx">
       <DependentUpon>testes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Configuracao.resx">
+      <DependentUpon>UC_Configuracao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_HistoricoAquivos.resx">
+      <DependentUpon>UC_HistoricoAquivos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="estatisticaTechDataDataSet.xsc">
       <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>
