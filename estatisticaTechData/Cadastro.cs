@@ -13,9 +13,11 @@ namespace estatisticaTechData
 {
     public partial class frmCadastro : Form
     {
+        private Connection conexao;
         public frmCadastro()
         {
             InitializeComponent();
+            conexao = new Connection();
         }
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
@@ -61,40 +63,58 @@ namespace estatisticaTechData
             }
 
             if (txtSenha.Texts == txtConfirmaSenha.Texts)
-            {   
+            {
                 try
                 {
-                    estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
-                    estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailRa(txtEmail.Texts, (int?)Convert.ToInt64(txtRA.Texts));
+                    //estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
+                    //estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailRa(txtEmail.Texts, (int?)Convert.ToInt64(txtRA.Texts));
 
-                    if (dt.Rows.Count > 0)
+                    //if (dt.Rows.Count > 0)
+                    //{
+                    //    MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //}
+                    string[] columns = { "email", "ra" };
+                    string where = $"email='{txtEmail.Texts}' OR ra='{Convert.ToInt64(txtRA.Texts)}'";
+                    List<string>[] result = conexao.SelectData("tb_usuario", columns, where);
+
+                    if (result[0].Count > 0)
                     {
                         MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\repos\estatisticaTechData\estatisticaTechData.accdb";
-                        OleDbConnection conn = new OleDbConnection(stringconn);
-                        conn.Open();
-                        string SQL;
-                        SQL = "insert into tb_usuario(nome,email,senha,tipo_usuario,status_usuario,ra)Values";
-                        SQL += "('" + txtNome.Texts + "','" + txtEmail.Texts + "','" + txtSenha.Texts + "','" + tipoUsuario + "','" + status_usuario + "','" + txtRA.Texts + "')";
+                        // string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\repos\estatisticaTechData\estatisticaTechData.accdb";
+                        // OleDbConnection conn = new OleDbConnection(stringconn);
+                        // conn.Open();
+                        // string SQL;
+                        // SQL = "insert into tb_usuario(nome,email,senha,tipo_usuario,status_usuario,ra)Values";
+                        // SQL += "('" + txtNome.Texts + "','" + txtEmail.Texts + "','" + txtSenha.Texts + "','" + tipoUsuario + "','" + status_usuario + "','" + txtRA.Texts + "')";
+                        // OleDbCommand cmd = new OleDbCommand(SQL, conn);
+                        // cmd.ExecuteNonQuery();
+                        // conn.Close();
 
-                        OleDbCommand cmd = new OleDbCommand(SQL, conn);
+                        Dictionary<string, string> data = new Dictionary<string, string>();
+                        data.Add("name", txtNome.Texts);
+                        data.Add("email", txtEmail.Texts);
+                        data.Add("password", txtSenha.Texts);
+                        data.Add("type", tipoUsuario.ToString());
 
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Dados gravados com sucesso");
-
-                        conn.Close();
+                        if (conexao.InsertData("users", data) == true)
+                        {
+                            MessageBox.Show("Dados gravados com sucesso");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao gravar dados");
+                        }
 
                         frmHome home = new frmHome();
                         home.Show();
                         this.Close();
                     }
-                    
+
                 }
-                catch(Exception erro)
+                catch (Exception erro)
                 {
                     MessageBox.Show(erro.Message);
                 }
