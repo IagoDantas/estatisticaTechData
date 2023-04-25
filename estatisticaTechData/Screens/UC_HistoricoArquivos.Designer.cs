@@ -40,17 +40,21 @@
             // 
             // lblNumeroPagina
             // 
+            this.lblNumeroPagina.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNumeroPagina.AutoSize = true;
-            this.lblNumeroPagina.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroPagina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumeroPagina.Location = new System.Drawing.Point(815, 651);
             this.lblNumeroPagina.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNumeroPagina.Name = "lblNumeroPagina";
-            this.lblNumeroPagina.Size = new System.Drawing.Size(30, 28);
+            this.lblNumeroPagina.Size = new System.Drawing.Size(31, 20);
             this.lblNumeroPagina.TabIndex = 18;
             this.lblNumeroPagina.Text = "1/1";
             // 
             // pnlArquivos
             // 
+            this.pnlArquivos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlArquivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.pnlArquivos.Controls.Add(this.lblHistoricoArquivos);
             this.pnlArquivos.Controls.Add(this.lblDataArquivo);
@@ -63,61 +67,64 @@
             // 
             // lblHistoricoArquivos
             // 
+            this.lblHistoricoArquivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblHistoricoArquivos.AutoSize = true;
-            this.lblHistoricoArquivos.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistoricoArquivos.Location = new System.Drawing.Point(67, 203);
+            this.lblHistoricoArquivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistoricoArquivos.Location = new System.Drawing.Point(85, 195);
             this.lblHistoricoArquivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHistoricoArquivos.Name = "lblHistoricoArquivos";
-            this.lblHistoricoArquivos.Size = new System.Drawing.Size(663, 48);
+            this.lblHistoricoArquivos.Size = new System.Drawing.Size(612, 31);
             this.lblHistoricoArquivos.TabIndex = 2;
             this.lblHistoricoArquivos.Text = "Os arquivos que ja foram utilizados ficam aqui";
             // 
             // lblDataArquivo
             // 
+            this.lblDataArquivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDataArquivo.AutoSize = true;
-            this.lblDataArquivo.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataArquivo.Location = new System.Drawing.Point(604, 6);
             this.lblDataArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataArquivo.Name = "lblDataArquivo";
-            this.lblDataArquivo.Size = new System.Drawing.Size(71, 34);
+            this.lblDataArquivo.Size = new System.Drawing.Size(57, 24);
             this.lblDataArquivo.TabIndex = 1;
             this.lblDataArquivo.Text = "Data:";
             // 
             // lblNomeArquivo
             // 
             this.lblNomeArquivo.AutoSize = true;
-            this.lblNomeArquivo.Font = new System.Drawing.Font("Poppins Medium", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeArquivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeArquivo.Location = new System.Drawing.Point(32, 6);
             this.lblNomeArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeArquivo.Name = "lblNomeArquivo";
-            this.lblNomeArquivo.Size = new System.Drawing.Size(83, 34);
+            this.lblNomeArquivo.Size = new System.Drawing.Size(72, 24);
             this.lblNomeArquivo.TabIndex = 0;
             this.lblNomeArquivo.Text = "Nome:";
             // 
             // lblRecentes
             // 
             this.lblRecentes.AutoSize = true;
-            this.lblRecentes.Font = new System.Drawing.Font("Poppins Medium", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.lblRecentes.Location = new System.Drawing.Point(92, 124);
             this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecentes.Name = "lblRecentes";
-            this.lblRecentes.Size = new System.Drawing.Size(128, 39);
+            this.lblRecentes.Size = new System.Drawing.Size(112, 26);
             this.lblRecentes.TabIndex = 16;
             this.lblRecentes.Text = "Recentes";
             // 
             // lklNovaCarga
             // 
             this.lklNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.lklNovaCarga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lklNovaCarga.AutoSize = true;
             this.lklNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lklNovaCarga.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklNovaCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
-            this.lklNovaCarga.Location = new System.Drawing.Point(440, 113);
+            this.lklNovaCarga.Location = new System.Drawing.Point(811, 129);
             this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lklNovaCarga.Name = "lklNovaCarga";
-            this.lklNovaCarga.Size = new System.Drawing.Size(108, 28);
+            this.lklNovaCarga.Size = new System.Drawing.Size(92, 20);
             this.lklNovaCarga.TabIndex = 14;
             this.lklNovaCarga.TabStop = true;
             this.lklNovaCarga.Text = "Nova Carga";
