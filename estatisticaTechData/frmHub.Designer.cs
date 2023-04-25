@@ -186,6 +186,8 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Tbc_Telas);
             this.Controls.Add(this.pnlSideBar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHub";
             this.Text = "frmHub";
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
