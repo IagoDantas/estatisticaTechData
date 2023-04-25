@@ -80,15 +80,7 @@ namespace estatisticaTechData
 
         private void frmHub_Load(object sender, EventArgs e)
         {
-            foreach (Control control in this.Controls)
-            {
-                MdiClient client = control as MdiClient;
-                if (!(client == null))
-                {
-                    client.BackColor = Color.White;
-                    break;
-                }
-            }
+            
         }
     }
 }

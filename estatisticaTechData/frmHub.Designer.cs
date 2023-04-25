@@ -170,21 +170,20 @@
             this.Tbc_Telas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tbc_Telas.Location = new System.Drawing.Point(262, -1);
+            this.Tbc_Telas.Location = new System.Drawing.Point(263, -1);
             this.Tbc_Telas.Name = "Tbc_Telas";
             this.Tbc_Telas.SelectedIndex = 0;
-            this.Tbc_Telas.Size = new System.Drawing.Size(1004, 682);
+            this.Tbc_Telas.Size = new System.Drawing.Size(1001, 682);
             this.Tbc_Telas.TabIndex = 8;
             // 
             // frmHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Tbc_Telas);
             this.Controls.Add(this.pnlSideBar);
-            this.IsMdiContainer = true;
             this.Name = "frmHub";
             this.Text = "frmHub";
             this.Load += new System.EventHandler(this.frmHub_Load);
