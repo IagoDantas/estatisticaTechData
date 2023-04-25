@@ -70,7 +70,11 @@ namespace estatisticaTechData
                     string where = $"email='{txtEmail.Texts}'";
                     List<string>[] result = conexao.SelectData("users", columns, where);
 
-                    if (result[0].Count > 0)
+                    string[] columnsAluno = { "ra" };
+                    string whereAluno = $"ra='{txtRA.Texts}'";
+                    List<string>[] resultAluno = conexao.SelectData("users", columns, where);
+
+                    if (result[0].Count > 0 || resultAluno[0].Count > 0)
                     {
                         MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -83,9 +87,27 @@ namespace estatisticaTechData
                         data.Add("password", txtSenha.Texts);
                         data.Add("type", tipoUsuario.ToString());
 
+
                         if (conexao.InsertData("users", data) == true)
                         {
-                            MessageBox.Show("Dados gravados com sucesso");
+
+                            string[] columns2 = { "id" };
+                            string where2 = $"email='{txtEmail.Texts}' AND password='{txtSenha.Texts}'";
+                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                            Dictionary<string, string> dataAluno = new Dictionary<string, string>();
+                            dataAluno.Add("ra", txtRA.Texts);
+                            dataAluno.Add("user_id", result2[0][0].ToString());
+
+                            if (conexao.InsertData("students", dataAluno) == true)
+                            {
+                                MessageBox.Show("Dados gravados com sucesso");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao gravar dados");
+                            }
+
                         }
                         else
                         {
