@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace estatisticaTechData
 {
-    public partial class UC_HistoricoAquivos : UserControl
+    public partial class UC_HistoricoArquivos : UserControl
     {
-        public UC_HistoricoAquivos()
+        public UC_HistoricoArquivos()
         {
             InitializeComponent();
         }

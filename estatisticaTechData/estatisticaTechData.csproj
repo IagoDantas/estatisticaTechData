@@ -170,17 +170,17 @@
     <Compile Include="Screens\UC_HistóricoDistribuicaoNormal.Designer.cs">
       <DependentUpon>UC_HistóricoDistribuicaoNormal.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Configuracao.cs">
+    <Compile Include="Screens\UC_Configuracao.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Configuracao.Designer.cs">
+    <Compile Include="Screens\UC_Configuracao.Designer.cs">
       <DependentUpon>UC_Configuracao.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_HistoricoAquivos.cs">
+    <Compile Include="Screens\UC_HistoricoArquivos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_HistoricoAquivos.Designer.cs">
-      <DependentUpon>UC_HistoricoAquivos.cs</DependentUpon>
+    <Compile Include="Screens\UC_HistoricoArquivos.Designer.cs">
+      <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
@@ -234,11 +234,11 @@
     <EmbeddedResource Include="testes.resx">
       <DependentUpon>testes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Configuracao.resx">
+    <EmbeddedResource Include="Screens\UC_Configuracao.resx">
       <DependentUpon>UC_Configuracao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_HistoricoAquivos.resx">
-      <DependentUpon>UC_HistoricoAquivos.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\UC_HistoricoArquivos.resx">
+      <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="estatisticaTechDataDataSet.xsc">
       <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>

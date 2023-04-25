@@ -20,7 +20,14 @@ namespace estatisticaTechData
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            
+            UC_HistoricoArquivos HistArquivos = new UC_HistoricoArquivos();
+            TabPage TbPage = new TabPage();
+            TbPage.Name = "HistArquivos";
+            TbPage.Text = "Histórico de arquivos";
+            TbPage.Controls.Add(HistArquivos);
+            Tbc_Telas.TabPages.Add(TbPage);
+
+
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
