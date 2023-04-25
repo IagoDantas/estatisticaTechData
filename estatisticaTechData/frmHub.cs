@@ -12,6 +12,8 @@ namespace estatisticaTechData
 {
     public partial class frmHub : Form
     {
+        int ControleDistribuicaoNormal = 0;
+        int ControleHistoricoArquivoDistNormal = 0; 
         public frmHub()
         {
             this.WindowState = FormWindowState.Maximized;
@@ -20,15 +22,23 @@ namespace estatisticaTechData
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            UC_HistoricoArquivos HistArquivos = new UC_HistoricoArquivos();
-            HistArquivos.Width = Tbc_Telas.Width;
-            HistArquivos.Height = Tbc_Telas.Height;
-            TabPage TbPage = new TabPage();
-            TbPage.Name = "HistArquivos";
-            TbPage.Text = "Histórico de arquivos";
-            TbPage.Controls.Add(HistArquivos);
-            Tbc_Telas.TabPages.Add(TbPage);
-            Tbc_Telas.SelectedTab = TbPage;
+            if (ControleHistoricoArquivoDistNormal == 0)
+            {
+                ControleHistoricoArquivoDistNormal += 1;
+                UC_HistoricoArquivos HistArquivos = new UC_HistoricoArquivos();
+                HistArquivos.Width = Tbc_Telas.Width;
+                HistArquivos.Height = Tbc_Telas.Height;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "HistArquivos";
+                TbPage.Text = "Histórico de arquivos";
+                TbPage.Controls.Add(HistArquivos);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
 
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
@@ -66,15 +76,23 @@ namespace estatisticaTechData
 
         private void btnDistribuicao_Click(object sender, EventArgs e)
         {
-            Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
-            DistNormal.Height = Tbc_Telas.Height;
-            DistNormal.Width = Tbc_Telas.Width;
-            TabPage TbPage = new TabPage();
-            TbPage.Name = "DistribuicaoNormal";
-            TbPage.Text = "Distribuição Normal";
-            TbPage.Controls.Add(DistNormal);
-            Tbc_Telas.TabPages.Add(TbPage);
-            Tbc_Telas.SelectedTab = TbPage;
+            if(ControleDistribuicaoNormal == 0)
+            {
+                ControleDistribuicaoNormal += 1;
+                Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
+                DistNormal.Height = Tbc_Telas.Height;
+                DistNormal.Width = Tbc_Telas.Width;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "DistribuicaoNormal";
+                TbPage.Text = "Distribuição Normal";
+                TbPage.Controls.Add(DistNormal);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
