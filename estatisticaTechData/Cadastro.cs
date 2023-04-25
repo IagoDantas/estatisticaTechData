@@ -66,16 +66,9 @@ namespace estatisticaTechData
             {
                 try
                 {
-                    //estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
-                    //estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailRa(txtEmail.Texts, (int?)Convert.ToInt64(txtRA.Texts));
-
-                    //if (dt.Rows.Count > 0)
-                    //{
-                    //    MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //}
-                    string[] columns = { "email", "ra" };
-                    string where = $"email='{txtEmail.Texts}' OR ra='{Convert.ToInt64(txtRA.Texts)}'";
-                    List<string>[] result = conexao.SelectData("tb_usuario", columns, where);
+                    string[] columns = { "email" };
+                    string where = $"email='{txtEmail.Texts}'";
+                    List<string>[] result = conexao.SelectData("users", columns, where);
 
                     if (result[0].Count > 0)
                     {
@@ -83,15 +76,6 @@ namespace estatisticaTechData
                     }
                     else
                     {
-                        // string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=F:\repos\estatisticaTechData\estatisticaTechData.accdb";
-                        // OleDbConnection conn = new OleDbConnection(stringconn);
-                        // conn.Open();
-                        // string SQL;
-                        // SQL = "insert into tb_usuario(nome,email,senha,tipo_usuario,status_usuario,ra)Values";
-                        // SQL += "('" + txtNome.Texts + "','" + txtEmail.Texts + "','" + txtSenha.Texts + "','" + tipoUsuario + "','" + status_usuario + "','" + txtRA.Texts + "')";
-                        // OleDbCommand cmd = new OleDbCommand(SQL, conn);
-                        // cmd.ExecuteNonQuery();
-                        // conn.Close();
 
                         Dictionary<string, string> data = new Dictionary<string, string>();
                         data.Add("name", txtNome.Texts);

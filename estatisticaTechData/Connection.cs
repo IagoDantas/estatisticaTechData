@@ -22,7 +22,7 @@ namespace estatisticaTechData
             server = "localhost"; //Endereço do servidor do MySQL
             database = "techdata"; //Nome do banco de dados
             uid = "root"; //Nome de usuário
-            password = "password"; //Senha
+            password = "Programacao2021"; //Senha
 
             string connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
 
