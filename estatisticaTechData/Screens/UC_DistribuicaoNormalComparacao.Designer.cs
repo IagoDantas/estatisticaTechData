@@ -55,10 +55,10 @@
             // 
             this.lblData02.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblData02.AutoSize = true;
-            this.lblData02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData02.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData02.Location = new System.Drawing.Point(689, 208);
             this.lblData02.Name = "lblData02";
-            this.lblData02.Size = new System.Drawing.Size(102, 32);
+            this.lblData02.Size = new System.Drawing.Size(114, 46);
             this.lblData02.TabIndex = 13;
             this.lblData02.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData02.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -66,10 +66,10 @@
             // lblData01
             // 
             this.lblData01.AutoSize = true;
-            this.lblData01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData01.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData01.Location = new System.Drawing.Point(205, 208);
             this.lblData01.Name = "lblData01";
-            this.lblData01.Size = new System.Drawing.Size(102, 32);
+            this.lblData01.Size = new System.Drawing.Size(114, 46);
             this.lblData01.TabIndex = 12;
             this.lblData01.Text = "Data do gráfico:\r\n-----\r\n";
             this.lblData01.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -78,10 +78,10 @@
             // 
             this.lblSubTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblSubTitulo.AutoSize = true;
-            this.lblSubTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitulo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubTitulo.Location = new System.Drawing.Point(422, 130);
             this.lblSubTitulo.Name = "lblSubTitulo";
-            this.lblSubTitulo.Size = new System.Drawing.Size(146, 24);
+            this.lblSubTitulo.Size = new System.Drawing.Size(153, 34);
             this.lblSubTitulo.TabIndex = 11;
             this.lblSubTitulo.Text = "COMPARAÇÃO";
             // 
@@ -89,10 +89,10 @@
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(348, 73);
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(342, 73);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(294, 36);
+            this.lblTitulo.Size = new System.Drawing.Size(324, 51);
             this.lblTitulo.TabIndex = 10;
             this.lblTitulo.Text = "Distribuição Normal";
             // 
@@ -122,10 +122,10 @@
             // lblLegenda01
             // 
             this.lblLegenda01.AutoSize = true;
-            this.lblLegenda01.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegenda01.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda01.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda01.Name = "lblLegenda01";
-            this.lblLegenda01.Size = new System.Drawing.Size(165, 32);
+            this.lblLegenda01.Size = new System.Drawing.Size(182, 46);
             this.lblLegenda01.TabIndex = 1;
             this.lblLegenda01.Text = "Área dentro do padrão de \r\ndistribuição";
             // 
@@ -149,10 +149,10 @@
             // lblLegenda02
             // 
             this.lblLegenda02.AutoSize = true;
-            this.lblLegenda02.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegenda02.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda02.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda02.Name = "lblLegenda02";
-            this.lblLegenda02.Size = new System.Drawing.Size(144, 32);
+            this.lblLegenda02.Size = new System.Drawing.Size(159, 46);
             this.lblLegenda02.TabIndex = 2;
             this.lblLegenda02.Text = "Área que está perto do\r\npadrão de distribuição";
             // 
@@ -176,10 +176,10 @@
             // lblLegenda03
             // 
             this.lblLegenda03.AutoSize = true;
-            this.lblLegenda03.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLegenda03.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLegenda03.Location = new System.Drawing.Point(59, 8);
             this.lblLegenda03.Name = "lblLegenda03";
-            this.lblLegenda03.Size = new System.Drawing.Size(169, 32);
+            this.lblLegenda03.Size = new System.Drawing.Size(183, 46);
             this.lblLegenda03.TabIndex = 3;
             this.lblLegenda03.Text = "Área do que está longe do \r\npadrão de distribuição";
             // 
@@ -231,6 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblData02);

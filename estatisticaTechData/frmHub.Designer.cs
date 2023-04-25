@@ -50,7 +50,7 @@
             this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnConfig.FlatAppearance.BorderSize = 0;
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfig.Location = new System.Drawing.Point(0, 625);
