@@ -68,8 +68,8 @@ namespace estatisticaTechData
                     MessageBox.Show("Login efetuado com sucesso!!\nVocê será redirecionado a página de menu.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
 
-                    frmMenu menu = new frmMenu(username,email,senha);
-                    menu.Show();
+                    frmHub hub = new frmHub();
+                    hub.Show();
                     this.Visible = false;
                 }
                 else

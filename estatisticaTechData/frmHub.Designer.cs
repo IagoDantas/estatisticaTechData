@@ -59,6 +59,7 @@
             this.btnConfig.TabIndex = 7;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // btnDistribuicao
             // 
