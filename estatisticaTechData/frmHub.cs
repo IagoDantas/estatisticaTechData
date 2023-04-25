@@ -14,17 +14,13 @@ namespace estatisticaTechData
     {
         public frmHub()
         {
+            this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)
         {
-            uC_DistribuicaoNormal1.Enabled = false;
-            uC_DistribuicaoNormal1.Visible = false;
-            uC_HistóricoDistribuicaoNormal1.Visible = true;
-            uC_HistóricoDistribuicaoNormal1.Enabled = true;
-            uC_DistribuicaoNormalComparacao1.Enabled = false;
-            uC_DistribuicaoNormalComparacao1.Visible = false;
+            
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
@@ -42,12 +38,7 @@ namespace estatisticaTechData
 
         private void btnPrevisaoDemanda_Click(object sender, EventArgs e)
         {
-            uC_DistribuicaoNormal1.Enabled = false;
-            uC_DistribuicaoNormal1.Visible = false;
-            uC_DistribuicaoNormalComparacao1.Enabled = true;
-            uC_DistribuicaoNormalComparacao1.Visible = true;
-            uC_HistóricoDistribuicaoNormal1.Visible = false;
-            uC_HistóricoDistribuicaoNormal1.Enabled = false;
+           
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
@@ -65,12 +56,13 @@ namespace estatisticaTechData
 
         private void btnDistribuicao_Click(object sender, EventArgs e)
         {
-            uC_DistribuicaoNormal1.Enabled = true;
-            uC_DistribuicaoNormal1.Visible = true;
-            uC_DistribuicaoNormalComparacao1.Enabled = false;
-            uC_DistribuicaoNormalComparacao1.Visible = false;
-            uC_HistóricoDistribuicaoNormal1.Visible = false;
-            uC_HistóricoDistribuicaoNormal1.Enabled = false;
+            Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
+            TabPage TbPage = new TabPage();
+            TbPage.Name = "DistribuicaoNormal";
+            TbPage.Text = "Distribuição Normal";
+            TbPage.Controls.Add(DistNormal);
+            Tbc_Telas.TabPages.Add(TbPage);
+            
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
             btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
@@ -84,7 +76,19 @@ namespace estatisticaTechData
             btnDistribuicao.Enabled = false;
             btnHistorico.Enabled = true;
             btnPrevisaoDemanda.Enabled = true;
+        }
 
+        private void frmHub_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                MdiClient client = control as MdiClient;
+                if (!(client == null))
+                {
+                    client.BackColor = Color.White;
+                    break;
+                }
+            }
         }
     }
 }

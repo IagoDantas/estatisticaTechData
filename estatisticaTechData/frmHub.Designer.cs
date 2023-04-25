@@ -37,9 +37,7 @@
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.pcbConfig = new System.Windows.Forms.PictureBox();
-            this.uC_HistóricoDistribuicaoNormal1 = new estatisticaTechData.UC_HistóricoDistribuicaoNormal();
-            this.uC_DistribuicaoNormalComparacao1 = new estatisticaTechData.Screens.UC_DistribuicaoNormalComparacao();
-            this.uC_DistribuicaoNormal1 = new estatisticaTechData.Screens.UC_DistribuicaoNormal();
+            this.Tbc_Telas = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
@@ -167,54 +165,29 @@
             this.pcbConfig.TabIndex = 8;
             this.pcbConfig.TabStop = false;
             // 
-            // uC_HistóricoDistribuicaoNormal1
+            // Tbc_Telas
             // 
-            this.uC_HistóricoDistribuicaoNormal1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Tbc_Telas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_HistóricoDistribuicaoNormal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.uC_HistóricoDistribuicaoNormal1.Enabled = false;
-            this.uC_HistóricoDistribuicaoNormal1.Location = new System.Drawing.Point(260, -1);
-            this.uC_HistóricoDistribuicaoNormal1.Name = "uC_HistóricoDistribuicaoNormal1";
-            this.uC_HistóricoDistribuicaoNormal1.Size = new System.Drawing.Size(1005, 679);
-            this.uC_HistóricoDistribuicaoNormal1.TabIndex = 7;
-            this.uC_HistóricoDistribuicaoNormal1.Visible = false;
-            // 
-            // uC_DistribuicaoNormalComparacao1
-            // 
-            this.uC_DistribuicaoNormalComparacao1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_DistribuicaoNormalComparacao1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.uC_DistribuicaoNormalComparacao1.Enabled = false;
-            this.uC_DistribuicaoNormalComparacao1.Location = new System.Drawing.Point(260, -1);
-            this.uC_DistribuicaoNormalComparacao1.Name = "uC_DistribuicaoNormalComparacao1";
-            this.uC_DistribuicaoNormalComparacao1.Size = new System.Drawing.Size(1005, 682);
-            this.uC_DistribuicaoNormalComparacao1.TabIndex = 8;
-            this.uC_DistribuicaoNormalComparacao1.Visible = false;
-            // 
-            // uC_DistribuicaoNormal1
-            // 
-            this.uC_DistribuicaoNormal1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.uC_DistribuicaoNormal1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.uC_DistribuicaoNormal1.Location = new System.Drawing.Point(260, -1);
-            this.uC_DistribuicaoNormal1.Name = "uC_DistribuicaoNormal1";
-            this.uC_DistribuicaoNormal1.Size = new System.Drawing.Size(1005, 682);
-            this.uC_DistribuicaoNormal1.TabIndex = 9;
+            this.Tbc_Telas.Location = new System.Drawing.Point(262, -1);
+            this.Tbc_Telas.Name = "Tbc_Telas";
+            this.Tbc_Telas.SelectedIndex = 0;
+            this.Tbc_Telas.Size = new System.Drawing.Size(1004, 682);
+            this.Tbc_Telas.TabIndex = 8;
             // 
             // frmHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.uC_DistribuicaoNormal1);
-            this.Controls.Add(this.uC_DistribuicaoNormalComparacao1);
-            this.Controls.Add(this.uC_HistóricoDistribuicaoNormal1);
+            this.Controls.Add(this.Tbc_Telas);
             this.Controls.Add(this.pnlSideBar);
+            this.IsMdiContainer = true;
             this.Name = "frmHub";
             this.Text = "frmHub";
+            this.Load += new System.EventHandler(this.frmHub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();
@@ -232,8 +205,6 @@
         private System.Windows.Forms.PictureBox pbcPerfil;
         private System.Windows.Forms.Panel pnlSideBar;
         private System.Windows.Forms.PictureBox pcbConfig;
-        private UC_HistóricoDistribuicaoNormal uC_HistóricoDistribuicaoNormal1;
-        private Screens.UC_DistribuicaoNormalComparacao uC_DistribuicaoNormalComparacao1;
-        private Screens.UC_DistribuicaoNormal uC_DistribuicaoNormal1;
+        private System.Windows.Forms.TabControl Tbc_Telas;
     }
 }
