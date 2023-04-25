@@ -60,6 +60,7 @@
             // 
             // pcbEditaSenha
             // 
+            this.pcbEditaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbEditaSenha.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaSenha.Image")));
             this.pcbEditaSenha.Location = new System.Drawing.Point(935, 5);
             this.pcbEditaSenha.Name = "pcbEditaSenha";
@@ -70,6 +71,7 @@
             // 
             // pcbConfirmaEmail
             // 
+            this.pcbConfirmaEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbConfirmaEmail.Enabled = false;
             this.pcbConfirmaEmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaEmail.Image")));
             this.pcbConfirmaEmail.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaEmail.InitialImage")));
@@ -83,6 +85,7 @@
             // 
             // pcbEditaEmail
             // 
+            this.pcbEditaEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbEditaEmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaEmail.Image")));
             this.pcbEditaEmail.Location = new System.Drawing.Point(935, 3);
             this.pcbEditaEmail.Name = "pcbEditaEmail";
@@ -93,6 +96,7 @@
             // 
             // pcbConfirmaNome
             // 
+            this.pcbConfirmaNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbConfirmaNome.Enabled = false;
             this.pcbConfirmaNome.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaNome.Image")));
             this.pcbConfirmaNome.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaNome.InitialImage")));
@@ -106,6 +110,7 @@
             // 
             // pcbEditaNome
             // 
+            this.pcbEditaNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbEditaNome.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaNome.Image")));
             this.pcbEditaNome.Location = new System.Drawing.Point(935, 3);
             this.pcbEditaNome.Name = "pcbEditaNome";
@@ -138,6 +143,7 @@
             // 
             // pcbConfirmaSenha
             // 
+            this.pcbConfirmaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbConfirmaSenha.Enabled = false;
             this.pcbConfirmaSenha.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaSenha.Image")));
             this.pcbConfirmaSenha.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaSenha.InitialImage")));
@@ -173,6 +179,8 @@
             // 
             // pnlSenha
             // 
+            this.pnlSenha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.pnlSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSenha.Controls.Add(this.pcbConfirmaSenha);
@@ -196,6 +204,8 @@
             // 
             // pnlEmail
             // 
+            this.pnlEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlEmail.Controls.Add(this.pcbConfirmaEmail);
             this.pnlEmail.Controls.Add(this.pcbEditaEmail);
@@ -208,6 +218,8 @@
             // 
             // pnlNome
             // 
+            this.pnlNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlNome.Controls.Add(this.pcbConfirmaNome);
             this.pnlNome.Controls.Add(this.pcbEditaNome);
@@ -232,7 +244,10 @@
             // 
             // pnlConfigs
             // 
-            this.pnlConfigs.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnlConfigs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlConfigs.AutoSize = true;
             this.pnlConfigs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.pnlConfigs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlConfigs.Controls.Add(this.lblTitulo);
@@ -245,6 +260,7 @@
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -278,6 +294,7 @@
             this.pnlConfigs.ResumeLayout(false);
             this.pnlConfigs.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

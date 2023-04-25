@@ -1,6 +1,6 @@
 ﻿namespace estatisticaTechData
 {
-    partial class UC_HistóricoDistribuicaoNormal
+    partial class UC_HistoricoDistribuicaoNormal
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -32,6 +32,7 @@
             this.lblRecentes = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNome = new System.Windows.Forms.Panel();
+            this.techDataButton1 = new estatisticaTechData.techDataButton();
             this.txtExemplo = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNumeroPagina = new System.Windows.Forms.Label();
@@ -83,11 +84,33 @@
             // 
             this.pnlNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNome.Controls.Add(this.techDataButton1);
             this.pnlNome.Controls.Add(this.txtExemplo);
             this.pnlNome.Location = new System.Drawing.Point(0, 62);
             this.pnlNome.Name = "pnlNome";
             this.pnlNome.Size = new System.Drawing.Size(856, 50);
             this.pnlNome.TabIndex = 15;
+            // 
+            // techDataButton1
+            // 
+            this.techDataButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.techDataButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.techDataButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.techDataButton1.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.techDataButton1.BorderRadius = 40;
+            this.techDataButton1.BorderSize = 0;
+            this.techDataButton1.FlatAppearance.BorderSize = 0;
+            this.techDataButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.techDataButton1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.techDataButton1.ForeColor = System.Drawing.Color.White;
+            this.techDataButton1.Location = new System.Drawing.Point(692, 5);
+            this.techDataButton1.Name = "techDataButton1";
+            this.techDataButton1.Size = new System.Drawing.Size(150, 40);
+            this.techDataButton1.TabIndex = 2;
+            this.techDataButton1.Text = "Comparar";
+            this.techDataButton1.TextColor = System.Drawing.Color.White;
+            this.techDataButton1.UseVisualStyleBackColor = false;
+            this.techDataButton1.Click += new System.EventHandler(this.techDataButton1_Click);
             // 
             // txtExemplo
             // 
@@ -125,7 +148,7 @@
             this.lblNumeroPagina.TabIndex = 17;
             this.lblNumeroPagina.Text = "1/1";
             // 
-            // UC_HistóricoDistribuicaoNormal
+            // UC_HistoricoDistribuicaoNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +158,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblNumeroPagina);
-            this.Name = "UC_HistóricoDistribuicaoNormal";
+            this.Name = "UC_HistoricoDistribuicaoNormal";
             this.Size = new System.Drawing.Size(980, 705);
             this.panel1.ResumeLayout(false);
             this.pnlNome.ResumeLayout(false);
@@ -161,5 +184,6 @@
         private techDataButton btnAnterior;
         private System.Windows.Forms.Label lblNumeroPagina;
         private techDataButton btnProximaPagina;
+        private techDataButton techDataButton1;
     }
 }

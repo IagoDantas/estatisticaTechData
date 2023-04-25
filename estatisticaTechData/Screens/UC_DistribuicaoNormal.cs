@@ -12,21 +12,15 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_DistribuicaoNormal : UserControl
     {
+        
         public UC_DistribuicaoNormal()
         {
             InitializeComponent();
         }
 
-        private void btnAcessoHistorico_Click(object sender, EventArgs e)
+        private void btnHist_Click(object sender, EventArgs e)
         {
-            frmHistoricoDistNormal hist = new frmHistoricoDistNormal();
-            hist.Show();
-        }
-
-        private void btnNovaBase_Click(object sender, EventArgs e)
-        {
-            testes pag = new testes();
-            pag.Show();
+            frmHub.funEstancia.abrirHist();
         }
     }
 }

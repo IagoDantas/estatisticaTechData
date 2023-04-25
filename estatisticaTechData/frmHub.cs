@@ -1,4 +1,5 @@
-﻿using System;
+﻿using estatisticaTechData.Screens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,12 +13,86 @@ namespace estatisticaTechData
 {
     public partial class frmHub : Form
     {
+        public static frmHub funEstancia;
         int ControleDistribuicaoNormal = 0;
-        int ControleHistoricoArquivoDistNormal = 0; 
+        int ControleHistoricoArquivoDistNormal = 0;
+        int ControleHistoricoDistNormal = 0;
+        int ControleConfig = 0;
+        int ControleCompara = 0;
+
         public frmHub()
         {
             this.WindowState = FormWindowState.Maximized;
             InitializeComponent();
+            funEstancia = this;
+        }
+
+        public void abrirHist()
+        {
+            if (ControleHistoricoDistNormal == 0)
+            {
+                ControleHistoricoDistNormal += 1;
+                UC_HistoricoDistribuicaoNormal HistDistNormal = new UC_HistoricoDistribuicaoNormal();
+                HistDistNormal.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "HistoricoDistribuicaoNormal";
+                TbPage.Text = "Historico Distribuição Normal";
+                TbPage.Controls.Add(HistDistNormal);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+            btnConfig.ForeColor = Color.White;
+            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
+            btnDistribuicao.ForeColor = Color.Black;
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
+            btnPrevisaoDemanda.ForeColor = Color.White;
+            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+            btnInicio.ForeColor = Color.White;
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
+            btnDistribuicao.Enabled = false;
+            btnHistorico.Enabled = true;
+            btnPrevisaoDemanda.Enabled = true;
+        }
+
+        public void abrirCompara()
+        {
+            if (ControleCompara == 0)
+            {
+                ControleCompara += 1;
+                UC_DistribuicaoNormalComparacao compara = new UC_DistribuicaoNormalComparacao();
+                compara.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "HistoricoDistribuicaoNormal";
+                TbPage.Text = "Historico Distribuição Normal";
+                TbPage.Controls.Add(compara);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de comparação abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+            btnConfig.ForeColor = Color.White;
+            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
+            btnDistribuicao.ForeColor = Color.Black;
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
+            btnPrevisaoDemanda.ForeColor = Color.White;
+            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+            btnInicio.ForeColor = Color.White;
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
+            btnDistribuicao.Enabled = false;
+            btnHistorico.Enabled = true;
+            btnPrevisaoDemanda.Enabled = true;
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)
@@ -26,8 +101,7 @@ namespace estatisticaTechData
             {
                 ControleHistoricoArquivoDistNormal += 1;
                 UC_HistoricoArquivos HistArquivos = new UC_HistoricoArquivos();
-                HistArquivos.Width = Tbc_Telas.Width;
-                HistArquivos.Height = Tbc_Telas.Height;
+                HistArquivos.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "HistArquivos";
                 TbPage.Text = "Histórico de arquivos";
@@ -80,8 +154,7 @@ namespace estatisticaTechData
             {
                 ControleDistribuicaoNormal += 1;
                 Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
-                DistNormal.Height = Tbc_Telas.Height;
-                DistNormal.Width = Tbc_Telas.Width;
+                DistNormal.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "DistribuicaoNormal";
                 TbPage.Text = "Distribuição Normal";
@@ -170,6 +243,41 @@ namespace estatisticaTechData
         void ApagaAba(TabPage Tb)
         {
             Tbc_Telas.TabPages.Remove(Tb);
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            if (ControleConfig == 0)
+            {
+                ControleConfig += 1;
+                UC_Configuracao Config = new UC_Configuracao();
+                Config.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "Configuracoes";
+                TbPage.Text = "Configuracoes";
+                TbPage.Controls.Add(Config);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de configurações abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            btnConfig.BackColor = Color.FromArgb(220, 236, 223);
+            btnConfig.ForeColor = Color.Black;
+            pcbConfig.BackColor = Color.FromArgb(220, 236, 223);
+            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+            btnDistribuicao.ForeColor = Color.Black;
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
+            btnPrevisaoDemanda.ForeColor = Color.White;
+            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+            btnInicio.ForeColor = Color.White;
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
+            btnDistribuicao.Enabled = false;
+            btnHistorico.Enabled = true;
+            btnPrevisaoDemanda.Enabled = true;
         }
     }
 }

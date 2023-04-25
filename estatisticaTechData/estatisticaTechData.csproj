@@ -164,11 +164,11 @@
     <Compile Include="testes.Designer.cs">
       <DependentUpon>testes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\UC_HistóricoDistribuicaoNormal.cs">
+    <Compile Include="Screens\UC_HistoricoDistribuicaoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\UC_HistóricoDistribuicaoNormal.Designer.cs">
-      <DependentUpon>UC_HistóricoDistribuicaoNormal.cs</DependentUpon>
+    <Compile Include="Screens\UC_HistoricoDistribuicaoNormal.Designer.cs">
+      <DependentUpon>UC_HistoricoDistribuicaoNormal.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\UC_Configuracao.cs">
       <SubType>UserControl</SubType>
@@ -228,8 +228,8 @@
     <EmbeddedResource Include="Screens\UC_DistribuicaoNormalComparacao.resx">
       <DependentUpon>UC_DistribuicaoNormalComparacao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\UC_HistóricoDistribuicaoNormal.resx">
-      <DependentUpon>UC_HistóricoDistribuicaoNormal.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\UC_HistoricoDistribuicaoNormal.resx">
+      <DependentUpon>UC_HistoricoDistribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testes.resx">
       <DependentUpon>testes.cs</DependentUpon>

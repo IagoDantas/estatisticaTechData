@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace estatisticaTechData
 {
-    public partial class UC_HistóricoDistribuicaoNormal : UserControl
+    public partial class UC_HistoricoDistribuicaoNormal : UserControl
     {
-        public UC_HistóricoDistribuicaoNormal()
+        public UC_HistoricoDistribuicaoNormal()
         {
             InitializeComponent();
         }
@@ -26,6 +26,9 @@ namespace estatisticaTechData
             btnVisualizar.Visible = true;
         }
 
-       
+        private void techDataButton1_Click(object sender, EventArgs e)
+        {
+            frmHub.funEstancia.abrirCompara();
+        }
     }
 }
