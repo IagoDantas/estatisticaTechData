@@ -13,9 +13,11 @@ namespace estatisticaTechData
 {
     public partial class frmHome : Form
     {
+        private Connection conexao;
         public frmHome()
         {
             InitializeComponent();
+            conexao = new Connection();
         }
 
         private void lklSignUp_Click(object sender, EventArgs e)
@@ -54,14 +56,15 @@ namespace estatisticaTechData
 
             try
             {
-                estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter user = new estatisticaTechDataDataSetTableAdapters.tb_usuarioTableAdapter();
-                estatisticaTechDataDataSet.tb_usuarioDataTable dt = user.GetDataByEmailPassword(txtUser.Texts,txtPassword.Texts);
-                
-                if(dt.Rows.Count > 0)
+                string[] columns = { "name", "email", "password" };
+                string where = $"email='{txtUser.Texts}' AND password='{txtPassword.Texts}'";
+                List<string>[] result = conexao.SelectData("users", columns, where);
+
+                if (result[0].Count > 0)
                 {
-                    string username = dt.Rows[0]["nome"].ToString();
-                    string email = dt.Rows[0]["email"].ToString();
-                    string senha = dt.Rows[0]["senha"].ToString();
+                    string username = result[0][0].ToString();
+                    string email = result[1][0].ToString();
+                    string senha = result[2][0].ToString();
                     MessageBox.Show("Login efetuado com sucesso!!\nVocê será redirecionado a página de menu.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
 
@@ -79,6 +82,11 @@ namespace estatisticaTechData
             {
                 MessageBox.Show(erro.Message,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
 
         }
     }
