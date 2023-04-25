@@ -171,11 +171,12 @@
             this.Tbc_Telas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tbc_Telas.Location = new System.Drawing.Point(263, -1);
+            this.Tbc_Telas.Location = new System.Drawing.Point(266, -1);
             this.Tbc_Telas.Name = "Tbc_Telas";
             this.Tbc_Telas.SelectedIndex = 0;
-            this.Tbc_Telas.Size = new System.Drawing.Size(1001, 682);
+            this.Tbc_Telas.Size = new System.Drawing.Size(998, 682);
             this.Tbc_Telas.TabIndex = 8;
+            this.Tbc_Telas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Telas_MouseDown);
             // 
             // frmHub
             // 
@@ -187,7 +188,6 @@
             this.Controls.Add(this.pnlSideBar);
             this.Name = "frmHub";
             this.Text = "frmHub";
-            this.Load += new System.EventHandler(this.frmHub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();

@@ -78,9 +78,67 @@ namespace estatisticaTechData
             btnPrevisaoDemanda.Enabled = true;
         }
 
-        private void frmHub_Load(object sender, EventArgs e)
+        private void Tbc_Telas_MouseDown(object sender, MouseEventArgs e)
         {
+           
+            if (e.Button == MouseButtons.Right)
+            {
+                /*MessageBox.Show("Direito " + PosicaoX + " " + PosicaoY);*/
+
+                var ContextMenu = new ContextMenuStrip();
+                var vToolTip001 = DesenhaItemMenu("Apagar aba selecionada");
+                var vToolTip002 = DesenhaItemMenu("Apagar todas as abas menos a selecionada");
+
+                ContextMenu.Items.Add(vToolTip001);
+                ContextMenu.Items.Add(vToolTip002);
+                ContextMenu.Show(this, new Point(e.X, e.Y));
+                vToolTip001.Click += new System.EventHandler(ToolTipApagarAbaSelecionada_Click);
+                vToolTip002.Click += new System.EventHandler(ToolTipApagarTodasAsAbas_Click);
+            }
+
+            void ToolTipApagarAbaSelecionada_Click(object sender1, EventArgs e1)
+            {
+                if (!(Tbc_Telas.SelectedTab == null))
+                {
+                    ApagaAba(Tbc_Telas.SelectedTab);
+                }
+            }
+            void ToolTipApagarTodasAsAbas_Click(object sender1, EventArgs e1)
+            {
+                if (!(Tbc_Telas.SelectedTab == null))
+                {
+                    int SelectedTab = Tbc_Telas.SelectedIndex;
+                    ApagaDireita(SelectedTab);
+                    ApagaEsquerda(SelectedTab);
+                }
+            }
+
+            ToolStripMenuItem DesenhaItemMenu(string text)
+            {
+                var vToolTip = new ToolStripMenuItem();
+                vToolTip.Text = text;
+
+                return vToolTip;
+            }
             
+        }
+        void ApagaDireita(int ItemSelecionado)
+        {
+            for (int i = Tbc_Telas.TabPages.Count - 1; i > ItemSelecionado; i += -1)
+            {
+                ApagaAba(Tbc_Telas.TabPages[i]);
+            }
+        }
+        void ApagaEsquerda(int ItemSelecionado)
+        {
+            for (int i = ItemSelecionado - 1; i >= 0; i += -1)
+            {
+                ApagaAba(Tbc_Telas.TabPages[i]);
+            }
+        }
+        void ApagaAba(TabPage Tb)
+        {
+            Tbc_Telas.TabPages.Remove(Tb);
         }
     }
 }
