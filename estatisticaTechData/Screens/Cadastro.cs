@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace estatisticaTechData
 {
@@ -23,12 +22,12 @@ namespace estatisticaTechData
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
 
-            int tipoUsuario = rdbAluno.Checked ? tipoUsuario = 1 : tipoUsuario = 0 ;
+            int tipoUsuario = rdbAluno.Checked ? tipoUsuario = 1 : tipoUsuario = 0;
             int status_usuario = 1;
 
-            if(rdbAluno.Checked == false && rdbProfessor.Checked == false)
+            if (rdbAluno.Checked == false && rdbProfessor.Checked == false)
             {
-                MessageBox.Show("Por favor selecione se é aluno ou professor","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor selecione se é aluno ou professor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(txtNome.Texts))
@@ -70,18 +69,16 @@ namespace estatisticaTechData
                     string where = $"email='{txtEmail.Texts}'";
                     List<string>[] result = conexao.SelectData("users", columns, where);
 
-                    if (result[0].Count > 0)
+                    string[] columnsAluno = { "ra" };
+                    string whereAluno = $"ra='{txtRA.Texts}'";
+                    List<string>[] resultAluno = conexao.SelectData("users", columns, where);
+
+                    if (result[0].Count > 0 || resultAluno[0].Count > 0)
                     {
                         MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        string stringconn = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\gusta\OneDrive\Documentos\TechData\estatisticaTechData\estatisticaTechData.accdb";
-                        OleDbConnection conn = new OleDbConnection(stringconn);
-                        conn.Open();
-                        string SQL;
-                        SQL = "insert into tb_usuario(nome,email,senha,tipo_usuario,status_usuario,ra)Values";
-                        SQL += "('" + txtNome.Texts + "','" + txtEmail.Texts + "','" + txtSenha.Texts + "','" + tipoUsuario + "','" + status_usuario + "','" + txtRA.Texts + "')";
 
                         Dictionary<string, string> data = new Dictionary<string, string>();
                         data.Add("name", txtNome.Texts);
@@ -89,9 +86,27 @@ namespace estatisticaTechData
                         data.Add("password", txtSenha.Texts);
                         data.Add("type", tipoUsuario.ToString());
 
+
                         if (conexao.InsertData("users", data) == true)
                         {
-                            MessageBox.Show("Dados gravados com sucesso");
+
+                            string[] columns2 = { "id" };
+                            string where2 = $"email='{txtEmail.Texts}' AND password='{txtSenha.Texts}'";
+                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                            Dictionary<string, string> dataAluno = new Dictionary<string, string>();
+                            dataAluno.Add("ra", txtRA.Texts);
+                            dataAluno.Add("user_id", result2[0][0].ToString());
+
+                            if (conexao.InsertData("students", dataAluno) == true)
+                            {
+                                MessageBox.Show("Dados gravados com sucesso");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao gravar dados");
+                            }
+
                         }
                         else
                         {
@@ -111,12 +126,12 @@ namespace estatisticaTechData
 
             }
             else
-                MessageBox.Show("A senha e a confirmação não coincidem"); 
+                MessageBox.Show("A senha e a confirmação não coincidem");
         }
 
         private void txtRA_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
+            if (!(Char.IsDigit(e.KeyChar) || (e.KeyChar == (char)Keys.Back)))
             {
                 MessageBox.Show("Por favor insira apenas números");
                 e.Handled = true;
