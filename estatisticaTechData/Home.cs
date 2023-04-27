@@ -13,11 +13,11 @@ namespace estatisticaTechData
 {
     public partial class frmHome : Form
     {
-        private Connection conexao;
+        private estatisticaTechDataClassLibrary.Connection conexao;
         public frmHome()
         {
             InitializeComponent();
-            conexao = new Connection();
+            conexao = new estatisticaTechDataClassLibrary.Connection();
         }
 
         private void lklSignUp_Click(object sender, EventArgs e)

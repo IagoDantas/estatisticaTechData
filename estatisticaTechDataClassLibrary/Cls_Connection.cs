@@ -6,11 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace estatisticaTechData
+namespace estatisticaTechDataClassLibrary
 {
-    internal class Connection
+    public class Connection
     {
-
         private MySqlConnection connection;
         private string server;
         private string database;

@@ -8,15 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace estatisticaTechData
 {
     public partial class frmCadastro : Form
     {
-        private Connection conexao;
+        private estatisticaTechDataClassLibrary.Connection conexao;
         public frmCadastro()
         {
             InitializeComponent();
-            conexao = new Connection();
+            conexao = new estatisticaTechDataClassLibrary.Connection();
         }
 
         private void btnCadastrar_Click_1(object sender, EventArgs e)
