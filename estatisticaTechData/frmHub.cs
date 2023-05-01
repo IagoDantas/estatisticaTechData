@@ -22,7 +22,7 @@ namespace estatisticaTechData
 
         public frmHub()
         {
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
             funEstancia = this;
         }
@@ -278,6 +278,11 @@ namespace estatisticaTechData
             btnDistribuicao.Enabled = false;
             btnHistorico.Enabled = true;
             btnPrevisaoDemanda.Enabled = true;
+        }
+
+        private void frmHub_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
         }
     }
 }
