@@ -91,5 +91,51 @@ namespace estatisticaTechDataClassLibrary
                 return new double[0];
             }
         }
+
+        static public double[] CalcularQuartis(double[] arrExcel, int N)
+        {
+            Array.Sort(arrExcel);
+            double[] arrQuartis = new double[3];
+            int lenght, i,j;
+            if (arrExcel.Length % 2 == 0)
+            {
+                lenght = arrExcel.Length / 2;
+                double[] arrQ1 = new double[lenght];
+                double[] arrQ3 = new double[lenght];
+                for (i = 0; i < lenght; i++)
+                    arrQ1[i] = arrExcel[i];
+                j = 0;
+                for (i = lenght+1; i < lenght * 2; i++)
+                {
+                    arrQ3[j] = arrExcel[i];
+                    j++;
+                }
+                arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length);
+                arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length);
+            }
+            else
+            {
+                lenght = ((arrExcel.Length + 1) / 2)-1;
+                double[] arrQ1 = new double[lenght];
+                double[] arrQ3 = new double[lenght];
+                for (i = 0; i < lenght; i++)
+                    arrQ1[i] = arrExcel[i];
+                j = 0;
+                for (i = lenght+1; i < (lenght * 2)-1; i++)
+                {
+                    arrQ3[j] = arrExcel[i];
+                    j++;
+                }
+                arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length);
+                arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length);
+            }
+
+
+
+            arrQuartis[1] = CalcularMediana(arrExcel, N);
+            
+
+            return arrQuartis;
+        }
     }
 }
