@@ -66,96 +66,56 @@ namespace estatisticaTechData
 
             
         }
-
-        private void btnMedia_Click(object sender, EventArgs e)
+        
+        public static double[] ArrayExcel(int x, int y, DataGridView dgvTeste)
         {
-            int x = dgvTeste.RowCount-1;
-            int y = dgvTeste.ColumnCount-1;
-            double[,] arrayExcel = new double[x, y];
+            int size = x * y, p=0;
+            double[] arrayExcel = new double[size];
             for (int i =0; i <x; i++)
             {
                 for (int j =1; j <= y; j++)
                 {   
                     DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
-                    arrayExcel[i, j-1] = Convert.ToDouble(cell.Value);
+                    arrayExcel[p] = Convert.ToDouble(cell.Value);
                 }
             }
+
+            return arrayExcel;
+        }
+        private void btnMedia_Click(object sender, EventArgs e)
+        {
+            int x = dgvTeste.RowCount-1;
+            int y = dgvTeste.ColumnCount-1;
+            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
             double media = 0;
-            for (int i = 0; i <x; i++)
-            {
-                for (int j = 0; j <y; j++)
-                {
-                    media += arrayExcel[i, j];
-                }
-            }
-
-            int divisor = x * y;
-            media = media / divisor;
-
+            x = x * y;
+            media = ClsCalculos.CalcularMedia(arrayExcel, x);
             lblMedia.Text = "A média é: " + media.ToString("F");
             lblMedia.Visible = true;
         }
 
         private void btnModa_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1, p=0;
+            int x = dgvTeste.RowCount - 1;
             int y = dgvTeste.ColumnCount - 1;
-            x = x * y;
-            double[] arrayExcel = new double[x];
-            for (int i = 0; i < x; i++)
-            {
-                for (int j = 1; j <= y; j++)
-                {
-                    DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
-                    arrayExcel[p] = Convert.ToDouble(cell.Value);
-                    p++;
-                }
-            }
-
-            double[] modas = calcularModa(arrayExcel);
-
+            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
+            double[] modas = ClsCalculos.CalcularModa(arrayExcel);
             if(modas.Length == 0 )
                 lblModa.Text = "Esta grupo é amodal";
             else if(modas.Length == 1 )
                 lblModa.Text = "A moda deste grupo é: "+ modas[0];
             else 
-                lblModa.Text = "As modas deste grupo são: " + modas[0] + " e " + modas[1];
-
-
+                lblModa.Text = "As modas deste grupo são: " + modas[0] + " e " + modas[1]; 
             lblModa.Visible = true;
         }
 
         private void btnMediana_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount;
-            int y = dgvTeste.ColumnCount;
-            int length = x * y;
-            double[] arrayExcel = new double[length];
-            int p = 0;
-            for (int i = 0; i < x; i++)
-            {
-                for (int j = 0; j < y; j++)
-                {
-                    DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
-                    arrayExcel[p] = Convert.ToDouble(cell.Value);
-                    p++;
-                }
-            }
-
-            Array.Sort(arrayExcel);
-            double mediana;
-            int posicao;
-            if (length % 2 == 0)
-            {
-                posicao = length / 2;
-                mediana = (arrayExcel[posicao] + arrayExcel[posicao + 1]) / 2;
-            }
-            else
-            {
-                posicao = length + 1/2;
-                mediana = arrayExcel[posicao];
-            }
-
+            int x = dgvTeste.RowCount - 1;
+            int y = dgvTeste.ColumnCount - 1;
+            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
+            x = x * y;
+            double mediana = ClsCalculos.CalcularMediana(arrayExcel, x);
             lblMediana.Text = "A mediana desses valores é: " + mediana;
             lblMediana.Visible = true;
         }
@@ -168,60 +128,7 @@ namespace estatisticaTechData
             e.CellStyle.SelectionForeColor = System.Drawing.Color.White;
         }
         
-        static public double[] calcularModa(double[] listaValores)
-        {
-            
-            double[] listaValoresOrdenada = listaValores.ToArray();
-            Array.Sort(listaValoresOrdenada);
-
-            double valorAtual = listaValoresOrdenada[0];
-            int contadorValorAtual = 0;
-
-            int[] listaNumRepeticoes = new int[listaValoresOrdenada.Length];
-            listaNumRepeticoes[0] = contadorValorAtual;
-
-            for (int i = 1; i <= listaValoresOrdenada.Length - 1; i++)
-            {
-                if (listaValoresOrdenada[i] != valorAtual)
-                {
-                    valorAtual = listaValoresOrdenada[i];
-                    contadorValorAtual = 0;
-                }
-                else
-                {
-                    contadorValorAtual++;
-                }
-                listaNumRepeticoes[i] = contadorValorAtual;
-            }
-
-            int maiorRepeticao = listaNumRepeticoes.Max();
-
-            if (maiorRepeticao > 0)
-            {
-                int contadorNumRepeticaoMaior = 0;
-                for (int i = 0; i < listaNumRepeticoes.Length; i++)
-                {
-                    if (listaNumRepeticoes[i] == maiorRepeticao)
-                        contadorNumRepeticaoMaior++;
-                }
-                double[] listaRetorno = new double[contadorNumRepeticaoMaior];
-                int contadorRetorno = 0;
-                for (int i = 0; i < listaNumRepeticoes.Length; i++)
-                {
-                    if (listaNumRepeticoes[i] == maiorRepeticao)
-                    {
-                        listaRetorno[contadorRetorno] = listaValoresOrdenada[i];
-                        contadorRetorno++;
-                    }
-                }
-
-                return listaRetorno;
-            }
-            else
-            {
-                return new double[0];
-            }
-        }
+        
 
     }
 }
