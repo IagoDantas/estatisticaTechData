@@ -129,7 +129,7 @@ namespace estatisticaTechData.Screens
             double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
             x = x * y;
             double[] quartis = ClsCalculos.CalcularQuartis(arrayExcel, x);
-            lblQuartis.Text = "Os quartis desses valores são: Q1: " + quartis[0] + "\nQ2: "+ quartis[1] + "\nQ3: " + quartis[2];
+            lblQuartis.Text = "Os quartis desses valores são: Q1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
             lblQuartis.Visible = true;
         }
     }

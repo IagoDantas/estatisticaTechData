@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace estatisticaTechDataClassLibrary
 {
     public class ClsCalculos
@@ -27,7 +29,7 @@ namespace estatisticaTechDataClassLibrary
             if (N % 2 == 0)
             {
                 posicao = N / 2;
-                mediana = (arrExcel[posicao] + arrExcel[posicao + 1]) / 2;
+                mediana = (arrExcel[posicao] + arrExcel[posicao - 1]) / 2;
             }
             else
             {
@@ -97,9 +99,9 @@ namespace estatisticaTechDataClassLibrary
             Array.Sort(arrExcel);
             double[] arrQuartis = new double[3];
             int lenght, i,j;
-            if (arrExcel.Length % 2 == 0)
+            if (N % 2 == 0)
             {
-                lenght = arrExcel.Length / 2;
+                lenght = N / 2;
                 double[] arrQ1 = new double[lenght];
                 double[] arrQ3 = new double[lenght];
                 for (i = 0; i < lenght; i++)
