@@ -39,6 +39,7 @@
             this.pnlGrafico = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGraficoPorcentagem = new System.Windows.Forms.FlowLayoutPanel();
             this.lblGraficoPorcentagem = new System.Windows.Forms.Label();
+            this.btnTeste = new System.Windows.Forms.Button();
             this.pnlHistorico.SuspendLayout();
             this.pnlLegenda.SuspendLayout();
             this.pnlGrafico.SuspendLayout();
@@ -204,12 +205,24 @@
             this.lblGraficoPorcentagem.Text = "Os gráficos com porcentagem serão gerados aqui.";
             this.lblGraficoPorcentagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // btnTeste
+            // 
+            this.btnTeste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTeste.Location = new System.Drawing.Point(871, 119);
+            this.btnTeste.Name = "btnTeste";
+            this.btnTeste.Size = new System.Drawing.Size(75, 23);
+            this.btnTeste.TabIndex = 16;
+            this.btnTeste.Text = "teste";
+            this.btnTeste.UseVisualStyleBackColor = true;
+            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            // 
             // UC_DistribuicaoNormal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(this.btnTeste);
             this.Controls.Add(this.lklNovaCarga);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pnlHistorico);
@@ -246,5 +259,6 @@
         private System.Windows.Forms.FlowLayoutPanel pnlGraficoPorcentagem;
         private System.Windows.Forms.Label lblGraficoPorcentagem;
         private techDataButton btnHist;
+        private System.Windows.Forms.Button btnTeste;
     }
 }

@@ -1,57 +1,50 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net.Mime;
-using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClosedXML.Excel;
-using DocumentFormat.OpenXml.Office2010.PowerPoint;
-using DocumentFormat.OpenXml.Presentation;
-using DocumentFormat.OpenXml.Spreadsheet;
-using estatisticaTechDataClassLibrary;
 
-namespace estatisticaTechData
+namespace estatisticaTechData.Screens
 {
-    public partial class testes : Form
+    public partial class UC_testes : UserControl
     {
-        public testes()
+        public UC_testes()
         {
             InitializeComponent();
         }
-
-        
 
         private void testes_Load(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
             {
-                if(ofd.ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     Cursor.Current = Cursors.WaitCursor;
                     DataTable dt = new DataTable();
-                    using(XLWorkbook workbook = new XLWorkbook(ofd.FileName))
+                    using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
                     {
                         bool isFirstRow = true;
                         var rows = workbook.Worksheet(1).RowsUsed();
-                        foreach(var row in rows)
+                        foreach (var row in rows)
                         {
                             if (isFirstRow)
                             {
-                                foreach(IXLCell cell in row.Cells())
+                                foreach (IXLCell cell in row.Cells())
                                 {
                                     dt.Columns.Add(cell.Value.ToString());
                                 }
                                 isFirstRow = false;
                             }
-                            else{
+                            else
+                            {
                                 dt.Rows.Add();
                                 int i = 0;
-                                foreach(IXLCell cell in row.Cells())
+                                foreach (IXLCell cell in row.Cells())
                                 {
                                     dt.Rows[dt.Rows.Count - 1][i++] = cell.Value.ToString();
                                 }
@@ -64,26 +57,26 @@ namespace estatisticaTechData
             }
 
 
-            
+
         }
 
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount-1;
-            int y = dgvTeste.ColumnCount-1;
+            int x = dgvTeste.RowCount - 1;
+            int y = dgvTeste.ColumnCount - 1;
             double[,] arrayExcel = new double[x, y];
-            for (int i =0; i <x; i++)
+            for (int i = 0; i < x; i++)
             {
-                for (int j =1; j <= y; j++)
-                {   
+                for (int j = 1; j <= y; j++)
+                {
                     DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
-                    arrayExcel[i, j-1] = Convert.ToDouble(cell.Value);
+                    arrayExcel[i, j - 1] = Convert.ToDouble(cell.Value);
                 }
             }
             double media = 0;
-            for (int i = 0; i <x; i++)
+            for (int i = 0; i < x; i++)
             {
-                for (int j = 0; j <y; j++)
+                for (int j = 0; j < y; j++)
                 {
                     media += arrayExcel[i, j];
                 }
@@ -98,7 +91,7 @@ namespace estatisticaTechData
 
         private void btnModa_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1, p=0;
+            int x = dgvTeste.RowCount - 1, p = 0;
             int y = dgvTeste.ColumnCount - 1;
             x = x * y;
             double[] arrayExcel = new double[x];
@@ -114,11 +107,11 @@ namespace estatisticaTechData
 
             double[] modas = calcularModa(arrayExcel);
 
-            if(modas.Length == 0 )
+            if (modas.Length == 0)
                 lblModa.Text = "Esta grupo é amodal";
-            else if(modas.Length == 1 )
-                lblModa.Text = "A moda deste grupo é: "+ modas[0];
-            else 
+            else if (modas.Length == 1)
+                lblModa.Text = "A moda deste grupo é: " + modas[0];
+            else
                 lblModa.Text = "As modas deste grupo são: " + modas[0] + " e " + modas[1];
 
 
@@ -152,7 +145,7 @@ namespace estatisticaTechData
             }
             else
             {
-                posicao = length + 1/2;
+                posicao = length + 1 / 2;
                 mediana = arrayExcel[posicao];
             }
 
@@ -162,15 +155,15 @@ namespace estatisticaTechData
 
         private void dgvTeste_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            e.CellStyle.BackColor = System.Drawing.Color.FromArgb(220, 236, 223); 
+            e.CellStyle.BackColor = System.Drawing.Color.FromArgb(220, 236, 223);
             e.CellStyle.ForeColor = System.Drawing.Color.Black;
             e.CellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(0, 107, 117);
             e.CellStyle.SelectionForeColor = System.Drawing.Color.White;
         }
-        
+
         static public double[] calcularModa(double[] listaValores)
         {
-            
+
             double[] listaValoresOrdenada = listaValores.ToArray();
             Array.Sort(listaValoresOrdenada);
 

@@ -208,6 +208,12 @@
     <Compile Include="Screens\UC_DistribuicaoNormalComparacao.Designer.cs">
       <DependentUpon>UC_DistribuicaoNormalComparacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_testes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_testes.Designer.cs">
+      <DependentUpon>UC_testes.cs</DependentUpon>
+    </Compile>
     <Compile Include="testes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_HistoricoDistribuicaoNormal.resx">
       <DependentUpon>UC_HistoricoDistribuicaoNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_testes.resx">
+      <DependentUpon>UC_testes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testes.resx">
       <DependentUpon>testes.cs</DependentUpon>

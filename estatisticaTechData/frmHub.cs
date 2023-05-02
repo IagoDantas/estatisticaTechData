@@ -19,6 +19,7 @@ namespace estatisticaTechData
         int ControleHistoricoDistNormal = 0;
         int ControleConfig = 0;
         int ControleCompara = 0;
+        int ControleTeste = 0;
 
         public frmHub()
         {
@@ -43,22 +44,28 @@ namespace estatisticaTechData
             }
             else
             {
-                MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Já existem abas de histórico distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
 
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-            btnDistribuicao.ForeColor = Color.Black;
-            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
-            btnPrevisaoDemanda.ForeColor = Color.White;
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-            btnDistribuicao.Enabled = false;
-            btnHistorico.Enabled = true;
-            btnPrevisaoDemanda.Enabled = true;
+        public void abrirTeste()
+        {
+            if (ControleTeste == 0)
+            {
+                ControleTeste += 1;
+                UC_testes Teste = new UC_testes();
+                Teste.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "Teste";
+                TbPage.Text = "Teste";
+                TbPage.Controls.Add(Teste);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de Teste abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         public void abrirCompara()
@@ -69,8 +76,8 @@ namespace estatisticaTechData
                 UC_DistribuicaoNormalComparacao compara = new UC_DistribuicaoNormalComparacao();
                 compara.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
-                TbPage.Name = "HistoricoDistribuicaoNormal";
-                TbPage.Text = "Historico Distribuição Normal";
+                TbPage.Name = "ComparacaoDistribuicaoNormal";
+                TbPage.Text = "Comparacao Distribuição Normal";
                 TbPage.Controls.Add(compara);
                 Tbc_Telas.TabPages.Add(TbPage);
                 Tbc_Telas.SelectedTab = TbPage;

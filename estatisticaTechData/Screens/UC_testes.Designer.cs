@@ -1,16 +1,16 @@
-﻿namespace estatisticaTechData
+﻿namespace estatisticaTechData.Screens
 {
-    partial class testes
+    partial class UC_testes
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// Variável de designer necessária.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// Limpar os recursos que estão sendo usados.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código gerado pelo Designer de Componentes
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// Método necessário para suporte ao Designer - não modifique 
+        /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent()
         {
@@ -83,6 +83,8 @@
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTeste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvTeste.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.dgvTeste.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTeste.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
@@ -112,7 +114,6 @@
             // 
             // btnMediana
             // 
-            this.btnMediana.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMediana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnMediana.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnMediana.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -133,7 +134,6 @@
             // 
             // btnModa
             // 
-            this.btnModa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnModa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnModa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnModa.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -154,7 +154,6 @@
             // 
             // btnMedia
             // 
-            this.btnMedia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnMedia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnMedia.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -173,12 +172,11 @@
             this.btnMedia.UseVisualStyleBackColor = false;
             this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
             // 
-            // testes
+            // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.btnMedia);
             this.Controls.Add(this.btnModa);
             this.Controls.Add(this.btnMediana);
@@ -186,9 +184,8 @@
             this.Controls.Add(this.lblMediana);
             this.Controls.Add(this.lblModa);
             this.Controls.Add(this.lblMedia);
-            this.Name = "testes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "testes";
+            this.Name = "UC_testes";
+            this.Size = new System.Drawing.Size(1264, 681);
             this.Load += new System.EventHandler(this.testes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).EndInit();
             this.ResumeLayout(false);
