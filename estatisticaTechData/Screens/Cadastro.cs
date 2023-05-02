@@ -1,4 +1,5 @@
-﻿using System;
+﻿using estatisticaTechDataClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,26 @@ namespace estatisticaTechData
             InitializeComponent();
             conexao = new estatisticaTechDataClassLibrary.Connection();
         }
-
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            Cls_Utils.ChecaForcaSenha verifica = new Cls_Utils.ChecaForcaSenha(); 
+            Cls_Utils.ChecaForcaSenha.ForcaDaSenha forca;
+            forca = verifica.GetForcaDaSenha(txtSenha.Texts);
+            Lbl_Resultado.Text = forca.ToString();
+            if (Lbl_Resultado.Text == "Inaceitavel" || Lbl_Resultado.Text == "Fraca")
+            {
+                Lbl_Resultado.ForeColor = Color.Red;
+            }
+            if (Lbl_Resultado.Text == "Aceitavel")
+            {
+                Lbl_Resultado.ForeColor = Color.Blue;
+            }
+            if (Lbl_Resultado.Text == "Forte" || Lbl_Resultado.Text == "Segura")
+            {
+                Lbl_Resultado.ForeColor = Color.Green;
+            }
+        }
+       
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
 
@@ -145,5 +165,6 @@ namespace estatisticaTechData
             home.Show();
             this.Close();
         }
+       
     }
 }

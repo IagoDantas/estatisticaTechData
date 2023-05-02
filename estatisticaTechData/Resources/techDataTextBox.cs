@@ -320,6 +320,7 @@ namespace estatisticaTechData
         {
             this.OnKeyPress(e);
         }
+       
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
@@ -334,5 +335,11 @@ namespace estatisticaTechData
             SetPlaceholder();
         }
 
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            this.OnKeyDown(e);
+        }
+
+ 
     }
 }

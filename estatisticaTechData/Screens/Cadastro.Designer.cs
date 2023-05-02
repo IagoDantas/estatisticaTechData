@@ -36,6 +36,8 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.lklSignIn = new System.Windows.Forms.LinkLabel();
+            this.Lbl_Resultado = new System.Windows.Forms.Label();
             this.rdbProfessor = new estatisticaTechData.Resources.techDataRadioButton();
             this.rdbAluno = new estatisticaTechData.Resources.techDataRadioButton();
             this.txtConfirmaSenha = new estatisticaTechData.techDataTextBox();
@@ -50,7 +52,6 @@
             this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
             this.txtSombraNome = new estatisticaTechData.techDataTextBox();
             this.txtSombraRA = new estatisticaTechData.techDataTextBox();
-            this.lklSignIn = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             this.lblSenhaConfirma.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenhaConfirma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblSenhaConfirma.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSenhaConfirma.Location = new System.Drawing.Point(801, 413);
+            this.lblSenhaConfirma.Location = new System.Drawing.Point(801, 428);
             this.lblSenhaConfirma.Name = "lblSenhaConfirma";
             this.lblSenhaConfirma.Size = new System.Drawing.Size(242, 42);
             this.lblSenhaConfirma.TabIndex = 41;
@@ -99,7 +100,7 @@
             this.lblRa.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
             this.lblRa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblRa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblRa.Location = new System.Drawing.Point(327, 413);
+            this.lblRa.Location = new System.Drawing.Point(327, 431);
             this.lblRa.Name = "lblRa";
             this.lblRa.Size = new System.Drawing.Size(56, 42);
             this.lblRa.TabIndex = 39;
@@ -143,6 +144,33 @@
             this.lblTitulo.Size = new System.Drawing.Size(162, 51);
             this.lblTitulo.TabIndex = 36;
             this.lblTitulo.Text = "Cadastro";
+            // 
+            // lklSignIn
+            // 
+            this.lklSignIn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
+            this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lklSignIn.AutoSize = true;
+            this.lklSignIn.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.lklSignIn.Location = new System.Drawing.Point(608, 632);
+            this.lklSignIn.Name = "lklSignIn";
+            this.lklSignIn.Size = new System.Drawing.Size(64, 28);
+            this.lklSignIn.TabIndex = 62;
+            this.lklSignIn.TabStop = true;
+            this.lklSignIn.Text = "entrar";
+            this.lklSignIn.Click += new System.EventHandler(this.lklSignIn_Click);
+            // 
+            // Lbl_Resultado
+            // 
+            this.Lbl_Resultado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Lbl_Resultado.AutoSize = true;
+            this.Lbl_Resultado.Font = new System.Drawing.Font("Poppins Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Resultado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.Lbl_Resultado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Lbl_Resultado.Location = new System.Drawing.Point(1093, 331);
+            this.Lbl_Resultado.Name = "Lbl_Resultado";
+            this.Lbl_Resultado.Size = new System.Drawing.Size(0, 34);
+            this.Lbl_Resultado.TabIndex = 63;
             // 
             // rdbProfessor
             // 
@@ -191,7 +219,7 @@
             this.txtConfirmaSenha.BorderSize = 2;
             this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 459);
+            this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 474);
             this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfirmaSenha.Multiline = false;
             this.txtConfirmaSenha.Name = "txtConfirmaSenha";
@@ -218,13 +246,14 @@
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtSenha.PasswordChar = true;
+            this.txtSenha.PasswordChar = false;
             this.txtSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.PlaceholderText = "Digite sua senha:";
             this.txtSenha.Size = new System.Drawing.Size(326, 50);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.Texts = "";
             this.txtSenha.UnderlinedStyle = false;
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // txtEmail
             // 
@@ -279,7 +308,7 @@
             this.txtRA.BorderSize = 2;
             this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtRA.Location = new System.Drawing.Point(191, 459);
+            this.txtRA.Location = new System.Drawing.Point(191, 474);
             this.txtRA.Margin = new System.Windows.Forms.Padding(4);
             this.txtRA.Multiline = false;
             this.txtRA.Name = "txtRA";
@@ -348,7 +377,7 @@
             this.txtSombraConfirmaSenha.Enabled = false;
             this.txtSombraConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraConfirmaSenha.Location = new System.Drawing.Point(760, 463);
+            this.txtSombraConfirmaSenha.Location = new System.Drawing.Point(760, 478);
             this.txtSombraConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraConfirmaSenha.Multiline = false;
             this.txtSombraConfirmaSenha.Name = "txtSombraConfirmaSenha";
@@ -440,7 +469,7 @@
             this.txtSombraRA.Enabled = false;
             this.txtSombraRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtSombraRA.Location = new System.Drawing.Point(191, 463);
+            this.txtSombraRA.Location = new System.Drawing.Point(191, 478);
             this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4);
             this.txtSombraRA.Multiline = false;
             this.txtSombraRA.Name = "txtSombraRA";
@@ -453,27 +482,13 @@
             this.txtSombraRA.Texts = "";
             this.txtSombraRA.UnderlinedStyle = false;
             // 
-            // lklSignIn
-            // 
-            this.lklSignIn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
-            this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lklSignIn.AutoSize = true;
-            this.lklSignIn.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklSignIn.Location = new System.Drawing.Point(608, 632);
-            this.lklSignIn.Name = "lklSignIn";
-            this.lklSignIn.Size = new System.Drawing.Size(64, 28);
-            this.lklSignIn.TabIndex = 62;
-            this.lklSignIn.TabStop = true;
-            this.lklSignIn.Text = "entrar";
-            this.lklSignIn.Click += new System.EventHandler(this.lklSignIn_Click);
-            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.Lbl_Resultado);
             this.Controls.Add(this.lklSignIn);
             this.Controls.Add(this.rdbProfessor);
             this.Controls.Add(this.rdbAluno);
@@ -532,5 +547,6 @@
         private Resources.techDataRadioButton rdbAluno;
         private Resources.techDataRadioButton rdbProfessor;
         private System.Windows.Forms.LinkLabel lklSignIn;
+        private System.Windows.Forms.Label Lbl_Resultado;
     }
 }
