@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace estatisticaTechDataClassLibrary
 {
     public class ClsCalculos
@@ -27,11 +29,11 @@ namespace estatisticaTechDataClassLibrary
             if (N % 2 == 0)
             {
                 posicao = N / 2;
-                mediana = (arrExcel[posicao] + arrExcel[posicao + 1]) / 2;
+                mediana = (arrExcel[posicao] + arrExcel[posicao - 1]) / 2;
             }
             else
             {
-                posicao = N + 1 / 2;
+                posicao = N/2;
                 mediana = arrExcel[posicao];
             }
             return mediana;
@@ -90,6 +92,48 @@ namespace estatisticaTechDataClassLibrary
             {
                 return new double[0];
             }
+        }
+
+        static public double[] CalcularQuartis(double[] arrExcel, int N)
+        {
+            Array.Sort(arrExcel);
+            double[] arrQuartis = new double[3];
+            int lenght = N / 2, i,j;
+            double[] arrQ1 = new double[lenght];
+            double[] arrQ3 = new double[lenght];                
+            if (N % 2 == 0)
+            {
+                for (i = 0; i < lenght; i++)
+                    arrQ1[i] = arrExcel[i];
+                j = 0;
+                for (i = lenght; i < lenght*2; i++)
+                {
+                    arrQ3[j] = arrExcel[i];
+                    j++;
+                }
+                arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length);
+                arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length);
+            }
+            else
+            {
+                for (i = 0; i < lenght; i++)
+                    arrQ1[i] = arrExcel[i];
+                j = 0;
+                for (i = lenght+1; i <= lenght * 2; i++)
+                {
+                    arrQ3[j] = arrExcel[i];
+                    j++;
+                }
+                arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length);
+                arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length);
+            }
+
+
+
+            arrQuartis[1] = CalcularMediana(arrExcel, N);
+            
+
+            return arrQuartis;
         }
     }
 }

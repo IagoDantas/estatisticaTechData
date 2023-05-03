@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            estatisticaTechData.techDataButton btnQuartis;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,8 +41,30 @@
             this.btnMediana = new estatisticaTechData.techDataButton();
             this.btnModa = new estatisticaTechData.techDataButton();
             this.btnMedia = new estatisticaTechData.techDataButton();
+            this.lblQuartis = new System.Windows.Forms.Label();
+            btnQuartis = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnQuartis
+            // 
+            btnQuartis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnQuartis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnQuartis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnQuartis.BorderRadius = 50;
+            btnQuartis.BorderSize = 0;
+            btnQuartis.FlatAppearance.BorderSize = 0;
+            btnQuartis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnQuartis.ForeColor = System.Drawing.Color.White;
+            btnQuartis.Location = new System.Drawing.Point(556, 364);
+            btnQuartis.Name = "btnQuartis";
+            btnQuartis.Size = new System.Drawing.Size(126, 47);
+            btnQuartis.TabIndex = 12;
+            btnQuartis.Text = "Quartis";
+            btnQuartis.TextColor = System.Drawing.Color.White;
+            btnQuartis.UseVisualStyleBackColor = false;
+            btnQuartis.Click += new System.EventHandler(this.btnQuartis_Click);
             // 
             // lblMedia
             // 
@@ -172,11 +195,25 @@
             this.btnMedia.UseVisualStyleBackColor = false;
             this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
             // 
+            // lblQuartis
+            // 
+            this.lblQuartis.AutoSize = true;
+            this.lblQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuartis.ForeColor = System.Drawing.Color.Black;
+            this.lblQuartis.Location = new System.Drawing.Point(718, 373);
+            this.lblQuartis.Name = "lblQuartis";
+            this.lblQuartis.Size = new System.Drawing.Size(51, 20);
+            this.lblQuartis.TabIndex = 11;
+            this.lblQuartis.Text = "label3";
+            this.lblQuartis.Visible = false;
+            // 
             // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(btnQuartis);
+            this.Controls.Add(this.lblQuartis);
             this.Controls.Add(this.btnMedia);
             this.Controls.Add(this.btnModa);
             this.Controls.Add(this.btnMediana);
@@ -201,5 +238,6 @@
         private techDataButton btnMediana;
         private techDataButton btnModa;
         private techDataButton btnMedia;
+        private System.Windows.Forms.Label lblQuartis;
     }
 }
