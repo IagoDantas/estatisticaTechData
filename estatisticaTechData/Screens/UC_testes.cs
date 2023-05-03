@@ -132,5 +132,16 @@ namespace estatisticaTechData.Screens
             lblQuartis.Text = "Os quartis desses valores são: Q1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
             lblQuartis.Visible = true;
         }
+
+        private void btnPercentis_Click(object sender, EventArgs e)
+        {
+            int x = dgvTeste.RowCount - 1;
+            int y = dgvTeste.ColumnCount - 1;
+            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
+            x = x * y;
+            double[] percentis = ClsCalculos.CalcularPercentis(arrayExcel);
+            lblPercentis.Text = "Aqui estão alguns percentis desses valores são: P1: " + percentis[0] + "\nP25: " + percentis[24] + "\nP60: " + percentis[59] + "\nP80: " + percentis[79];
+            lblPercentis.Visible = true;
+        }
     }
 }

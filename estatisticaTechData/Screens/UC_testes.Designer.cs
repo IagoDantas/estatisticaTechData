@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             estatisticaTechData.techDataButton btnQuartis;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            estatisticaTechData.techDataButton btnPercentis;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@
             this.btnModa = new estatisticaTechData.techDataButton();
             this.btnMedia = new estatisticaTechData.techDataButton();
             this.lblQuartis = new System.Windows.Forms.Label();
+            this.lblPercentis = new System.Windows.Forms.Label();
             btnQuartis = new estatisticaTechData.techDataButton();
+            btnPercentis = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +98,7 @@
             this.lblMediana.AutoSize = true;
             this.lblMediana.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMediana.ForeColor = System.Drawing.Color.Black;
-            this.lblMediana.Location = new System.Drawing.Point(718, 460);
+            this.lblMediana.Location = new System.Drawing.Point(718, 222);
             this.lblMediana.Name = "lblMediana";
             this.lblMediana.Size = new System.Drawing.Size(61, 28);
             this.lblMediana.TabIndex = 3;
@@ -104,33 +107,33 @@
             // 
             // dgvTeste
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTeste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvTeste.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.dgvTeste.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTeste.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTeste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTeste.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeste.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTeste.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.dgvTeste.Location = new System.Drawing.Point(22, 27);
             this.dgvTeste.Name = "dgvTeste";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvTeste.Size = new System.Drawing.Size(486, 620);
             this.dgvTeste.TabIndex = 5;
             this.dgvTeste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTeste_CellFormatting);
@@ -146,7 +149,7 @@
             this.btnMediana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMediana.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMediana.ForeColor = System.Drawing.Color.White;
-            this.btnMediana.Location = new System.Drawing.Point(556, 451);
+            this.btnMediana.Location = new System.Drawing.Point(556, 213);
             this.btnMediana.Name = "btnMediana";
             this.btnMediana.Size = new System.Drawing.Size(126, 47);
             this.btnMediana.TabIndex = 8;
@@ -207,11 +210,45 @@
             this.lblQuartis.Text = "label3";
             this.lblQuartis.Visible = false;
             // 
+            // btnPercentis
+            // 
+            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnPercentis.BorderRadius = 50;
+            btnPercentis.BorderSize = 0;
+            btnPercentis.FlatAppearance.BorderSize = 0;
+            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPercentis.ForeColor = System.Drawing.Color.White;
+            btnPercentis.Location = new System.Drawing.Point(556, 440);
+            btnPercentis.Name = "btnPercentis";
+            btnPercentis.Size = new System.Drawing.Size(126, 47);
+            btnPercentis.TabIndex = 14;
+            btnPercentis.Text = "Percentis";
+            btnPercentis.TextColor = System.Drawing.Color.White;
+            btnPercentis.UseVisualStyleBackColor = false;
+            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
+            // 
+            // lblPercentis
+            // 
+            this.lblPercentis.AutoSize = true;
+            this.lblPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentis.ForeColor = System.Drawing.Color.Black;
+            this.lblPercentis.Location = new System.Drawing.Point(718, 449);
+            this.lblPercentis.Name = "lblPercentis";
+            this.lblPercentis.Size = new System.Drawing.Size(51, 20);
+            this.lblPercentis.TabIndex = 13;
+            this.lblPercentis.Text = "label3";
+            this.lblPercentis.Visible = false;
+            // 
             // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(btnPercentis);
+            this.Controls.Add(this.lblPercentis);
             this.Controls.Add(btnQuartis);
             this.Controls.Add(this.lblQuartis);
             this.Controls.Add(this.btnMedia);
@@ -239,5 +276,6 @@
         private techDataButton btnModa;
         private techDataButton btnMedia;
         private System.Windows.Forms.Label lblQuartis;
+        private System.Windows.Forms.Label lblPercentis;
     }
 }

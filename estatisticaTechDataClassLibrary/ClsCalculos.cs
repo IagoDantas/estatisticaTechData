@@ -135,5 +135,40 @@ namespace estatisticaTechDataClassLibrary
 
             return arrQuartis;
         }
+
+        static public double[] CalcularPercentis(double[] arrExcel)
+        {
+            double[] arrPercentil = new double[100];
+
+            Array.Sort(arrExcel);
+
+            int percentil = 1;
+            for (int i = 0; i < 100; i++)
+            {
+                double posicao = (percentil / 100.0) * arrExcel.Length;
+
+                if (posicao % 1 == 0)
+                {
+                    int indice = (int)posicao - 1;
+                    arrPercentil[i] = arrExcel[indice];
+                }
+                else
+                {
+                    int indiceInferior = (int)Math.Floor(posicao) - 1;
+                    int indiceSuperior = (int)Math.Ceiling(posicao) - 1;
+                    if(indiceSuperior == arrExcel.Length)
+                        indiceSuperior--;
+                    if (indiceInferior < 0)
+                        indiceInferior = 0;
+                    double valorInferior = arrExcel[indiceInferior];
+                    double valorSuperior = arrExcel[indiceSuperior];
+                    arrPercentil[i] = ((posicao - 1) % 1) * (valorSuperior - valorInferior) + valorInferior;
+                }
+                percentil++;
+            }
+
+            return arrPercentil;
+        }
+
     }
 }
