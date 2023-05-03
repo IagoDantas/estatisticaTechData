@@ -173,7 +173,7 @@ namespace estatisticaTechData
 
         private void pcbVermais_Click(object sender, EventArgs e)
         {
-            if (VerSenhaTxt == false)
+           /* if (VerSenhaTxt == false)
             {
                 Txt_Senha.PasswordChar = '\0';
                 VerSenhaTxt = true;
@@ -184,7 +184,7 @@ namespace estatisticaTechData
                 Txt_Senha.PasswordChar = '*';
                 VerSenhaTxt = false;
                 Btn_VerSenha.Text = "Mostrar Senha";
-            }
+            }*/
         }
     }
 }
