@@ -28,46 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            estatisticaTechData.techDataButton btnQuartis;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             estatisticaTechData.techDataButton btnPercentis;
+            estatisticaTechData.techDataButton btnQuartis;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
             this.dgvTeste = new System.Windows.Forms.DataGridView();
-            this.btnMediana = new estatisticaTechData.techDataButton();
-            this.btnModa = new estatisticaTechData.techDataButton();
-            this.btnMedia = new estatisticaTechData.techDataButton();
             this.lblQuartis = new System.Windows.Forms.Label();
             this.lblPercentis = new System.Windows.Forms.Label();
-            btnQuartis = new estatisticaTechData.techDataButton();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.txtPercentil = new System.Windows.Forms.MaskedTextBox();
+            this.btnMedia = new estatisticaTechData.techDataButton();
+            this.btnModa = new estatisticaTechData.techDataButton();
+            this.btnMediana = new estatisticaTechData.techDataButton();
             btnPercentis = new estatisticaTechData.techDataButton();
+            btnQuartis = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnQuartis
-            // 
-            btnQuartis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnQuartis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnQuartis.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnQuartis.BorderRadius = 50;
-            btnQuartis.BorderSize = 0;
-            btnQuartis.FlatAppearance.BorderSize = 0;
-            btnQuartis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnQuartis.ForeColor = System.Drawing.Color.White;
-            btnQuartis.Location = new System.Drawing.Point(556, 364);
-            btnQuartis.Name = "btnQuartis";
-            btnQuartis.Size = new System.Drawing.Size(126, 47);
-            btnQuartis.TabIndex = 12;
-            btnQuartis.Text = "Quartis";
-            btnQuartis.TextColor = System.Drawing.Color.White;
-            btnQuartis.UseVisualStyleBackColor = false;
-            btnQuartis.Click += new System.EventHandler(this.btnQuartis_Click);
             // 
             // lblMedia
             // 
@@ -107,76 +89,119 @@
             // 
             // dgvTeste
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTeste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvTeste.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.dgvTeste.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTeste.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTeste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTeste.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeste.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTeste.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.dgvTeste.Location = new System.Drawing.Point(22, 27);
             this.dgvTeste.Name = "dgvTeste";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTeste.Size = new System.Drawing.Size(486, 620);
             this.dgvTeste.TabIndex = 5;
             this.dgvTeste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTeste_CellFormatting);
             // 
-            // btnMediana
+            // lblQuartis
             // 
-            this.btnMediana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnMediana.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnMediana.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnMediana.BorderRadius = 50;
-            this.btnMediana.BorderSize = 0;
-            this.btnMediana.FlatAppearance.BorderSize = 0;
-            this.btnMediana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMediana.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMediana.ForeColor = System.Drawing.Color.White;
-            this.btnMediana.Location = new System.Drawing.Point(556, 213);
-            this.btnMediana.Name = "btnMediana";
-            this.btnMediana.Size = new System.Drawing.Size(126, 47);
-            this.btnMediana.TabIndex = 8;
-            this.btnMediana.Text = "Mediana";
-            this.btnMediana.TextColor = System.Drawing.Color.White;
-            this.btnMediana.UseVisualStyleBackColor = false;
-            this.btnMediana.Click += new System.EventHandler(this.btnMediana_Click);
+            this.lblQuartis.AutoSize = true;
+            this.lblQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuartis.ForeColor = System.Drawing.Color.Black;
+            this.lblQuartis.Location = new System.Drawing.Point(718, 373);
+            this.lblQuartis.Name = "lblQuartis";
+            this.lblQuartis.Size = new System.Drawing.Size(51, 20);
+            this.lblQuartis.TabIndex = 11;
+            this.lblQuartis.Text = "label3";
+            this.lblQuartis.Visible = false;
             // 
-            // btnModa
+            // lblPercentis
             // 
-            this.btnModa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnModa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnModa.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnModa.BorderRadius = 50;
-            this.btnModa.BorderSize = 0;
-            this.btnModa.FlatAppearance.BorderSize = 0;
-            this.btnModa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModa.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModa.ForeColor = System.Drawing.Color.White;
-            this.btnModa.Location = new System.Drawing.Point(556, 289);
-            this.btnModa.Name = "btnModa";
-            this.btnModa.Size = new System.Drawing.Size(126, 47);
-            this.btnModa.TabIndex = 9;
-            this.btnModa.Text = "Moda";
-            this.btnModa.TextColor = System.Drawing.Color.White;
-            this.btnModa.UseVisualStyleBackColor = false;
-            this.btnModa.Click += new System.EventHandler(this.btnModa_Click);
+            this.lblPercentis.AutoSize = true;
+            this.lblPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentis.ForeColor = System.Drawing.Color.Black;
+            this.lblPercentis.Location = new System.Drawing.Point(822, 476);
+            this.lblPercentis.Name = "lblPercentis";
+            this.lblPercentis.Size = new System.Drawing.Size(51, 20);
+            this.lblPercentis.TabIndex = 13;
+            this.lblPercentis.Text = "label3";
+            this.lblPercentis.Visible = false;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Black;
+            this.lblTitulo.Location = new System.Drawing.Point(552, 438);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(294, 20);
+            this.lblTitulo.TabIndex = 17;
+            this.lblTitulo.Text = "Digite o percentil que você deseja saber:";
+            // 
+            // txtPercentil
+            // 
+            this.txtPercentil.Location = new System.Drawing.Point(556, 476);
+            this.txtPercentil.Mask = "000";
+            this.txtPercentil.Name = "txtPercentil";
+            this.txtPercentil.Size = new System.Drawing.Size(260, 20);
+            this.txtPercentil.TabIndex = 18;
+            // 
+            // btnPercentis
+            // 
+            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnPercentis.BorderRadius = 50;
+            btnPercentis.BorderSize = 0;
+            btnPercentis.FlatAppearance.BorderSize = 0;
+            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPercentis.ForeColor = System.Drawing.Color.White;
+            btnPercentis.Location = new System.Drawing.Point(556, 502);
+            btnPercentis.Name = "btnPercentis";
+            btnPercentis.Size = new System.Drawing.Size(126, 47);
+            btnPercentis.TabIndex = 14;
+            btnPercentis.Text = "Percentis";
+            btnPercentis.TextColor = System.Drawing.Color.White;
+            btnPercentis.UseVisualStyleBackColor = false;
+            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
+            // 
+            // btnQuartis
+            // 
+            btnQuartis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnQuartis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnQuartis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnQuartis.BorderRadius = 50;
+            btnQuartis.BorderSize = 0;
+            btnQuartis.FlatAppearance.BorderSize = 0;
+            btnQuartis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnQuartis.ForeColor = System.Drawing.Color.White;
+            btnQuartis.Location = new System.Drawing.Point(556, 364);
+            btnQuartis.Name = "btnQuartis";
+            btnQuartis.Size = new System.Drawing.Size(126, 47);
+            btnQuartis.TabIndex = 12;
+            btnQuartis.Text = "Quartis";
+            btnQuartis.TextColor = System.Drawing.Color.White;
+            btnQuartis.UseVisualStyleBackColor = false;
+            btnQuartis.Click += new System.EventHandler(this.btnQuartis_Click);
             // 
             // btnMedia
             // 
@@ -198,55 +223,53 @@
             this.btnMedia.UseVisualStyleBackColor = false;
             this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
             // 
-            // lblQuartis
+            // btnModa
             // 
-            this.lblQuartis.AutoSize = true;
-            this.lblQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuartis.ForeColor = System.Drawing.Color.Black;
-            this.lblQuartis.Location = new System.Drawing.Point(718, 373);
-            this.lblQuartis.Name = "lblQuartis";
-            this.lblQuartis.Size = new System.Drawing.Size(51, 20);
-            this.lblQuartis.TabIndex = 11;
-            this.lblQuartis.Text = "label3";
-            this.lblQuartis.Visible = false;
+            this.btnModa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnModa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnModa.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnModa.BorderRadius = 50;
+            this.btnModa.BorderSize = 0;
+            this.btnModa.FlatAppearance.BorderSize = 0;
+            this.btnModa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModa.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModa.ForeColor = System.Drawing.Color.White;
+            this.btnModa.Location = new System.Drawing.Point(556, 289);
+            this.btnModa.Name = "btnModa";
+            this.btnModa.Size = new System.Drawing.Size(126, 47);
+            this.btnModa.TabIndex = 9;
+            this.btnModa.Text = "Moda";
+            this.btnModa.TextColor = System.Drawing.Color.White;
+            this.btnModa.UseVisualStyleBackColor = false;
+            this.btnModa.Click += new System.EventHandler(this.btnModa_Click);
             // 
-            // btnPercentis
+            // btnMediana
             // 
-            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnPercentis.BorderRadius = 50;
-            btnPercentis.BorderSize = 0;
-            btnPercentis.FlatAppearance.BorderSize = 0;
-            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnPercentis.ForeColor = System.Drawing.Color.White;
-            btnPercentis.Location = new System.Drawing.Point(556, 440);
-            btnPercentis.Name = "btnPercentis";
-            btnPercentis.Size = new System.Drawing.Size(126, 47);
-            btnPercentis.TabIndex = 14;
-            btnPercentis.Text = "Percentis";
-            btnPercentis.TextColor = System.Drawing.Color.White;
-            btnPercentis.UseVisualStyleBackColor = false;
-            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
-            // 
-            // lblPercentis
-            // 
-            this.lblPercentis.AutoSize = true;
-            this.lblPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercentis.ForeColor = System.Drawing.Color.Black;
-            this.lblPercentis.Location = new System.Drawing.Point(718, 449);
-            this.lblPercentis.Name = "lblPercentis";
-            this.lblPercentis.Size = new System.Drawing.Size(51, 20);
-            this.lblPercentis.TabIndex = 13;
-            this.lblPercentis.Text = "label3";
-            this.lblPercentis.Visible = false;
+            this.btnMediana.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnMediana.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnMediana.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnMediana.BorderRadius = 50;
+            this.btnMediana.BorderSize = 0;
+            this.btnMediana.FlatAppearance.BorderSize = 0;
+            this.btnMediana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMediana.Font = new System.Drawing.Font("Poppins", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMediana.ForeColor = System.Drawing.Color.White;
+            this.btnMediana.Location = new System.Drawing.Point(556, 213);
+            this.btnMediana.Name = "btnMediana";
+            this.btnMediana.Size = new System.Drawing.Size(126, 47);
+            this.btnMediana.TabIndex = 8;
+            this.btnMediana.Text = "Mediana";
+            this.btnMediana.TextColor = System.Drawing.Color.White;
+            this.btnMediana.UseVisualStyleBackColor = false;
+            this.btnMediana.Click += new System.EventHandler(this.btnMediana_Click);
             // 
             // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(this.txtPercentil);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(btnPercentis);
             this.Controls.Add(this.lblPercentis);
             this.Controls.Add(btnQuartis);
@@ -277,5 +300,7 @@
         private techDataButton btnMedia;
         private System.Windows.Forms.Label lblQuartis;
         private System.Windows.Forms.Label lblPercentis;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.MaskedTextBox txtPercentil;
     }
 }

@@ -135,12 +135,22 @@ namespace estatisticaTechData.Screens
 
         private void btnPercentis_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1;
-            int y = dgvTeste.ColumnCount - 1;
-            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-            x = x * y;
-            double[] percentis = ClsCalculos.CalcularPercentis(arrayExcel);
-            lblPercentis.Text = "Aqui estão alguns percentis desses valores são: P1: " + percentis[0] + "\nP25: " + percentis[24] + "\nP60: " + percentis[59] + "\nP80: " + percentis[79];
+            if (String.IsNullOrEmpty(txtPercentil.Text))
+                lblPercentis.Text = "A caixa de texto está vazio, digite um número.";
+            else
+            {
+                int numTXT = Convert.ToInt32(txtPercentil.Text);
+                int x = dgvTeste.RowCount - 1;
+                int y = dgvTeste.ColumnCount - 1;
+                double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
+                x = x * y;
+                double[] percentis = ClsCalculos.CalcularPercentis(arrayExcel);
+
+                if (numTXT > 0 && numTXT <= 100)
+                    lblPercentis.Text = $"O percentil N°{numTXT} é: {percentis[numTXT - 1]}.";
+                else
+                    lblPercentis.Text = "Digite um número entre 1 a 100.";
+            }
             lblPercentis.Visible = true;
         }
     }
