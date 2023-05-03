@@ -52,7 +52,9 @@
             this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
             this.txtSombraNome = new estatisticaTechData.techDataTextBox();
             this.txtSombraRA = new estatisticaTechData.techDataTextBox();
+            this.pcbVermais = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVermais)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbLogo
@@ -167,7 +169,7 @@
             this.Lbl_Resultado.Font = new System.Drawing.Font("Poppins Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Resultado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.Lbl_Resultado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lbl_Resultado.Location = new System.Drawing.Point(1093, 331);
+            this.Lbl_Resultado.Location = new System.Drawing.Point(933, 373);
             this.Lbl_Resultado.Name = "Lbl_Resultado";
             this.Lbl_Resultado.Size = new System.Drawing.Size(0, 34);
             this.Lbl_Resultado.TabIndex = 63;
@@ -246,7 +248,7 @@
             this.txtSenha.Multiline = false;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Padding = new System.Windows.Forms.Padding(10, 8, 10, 7);
-            this.txtSenha.PasswordChar = false;
+            this.txtSenha.PasswordChar = true;
             this.txtSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.PlaceholderText = "Digite sua senha:";
             this.txtSenha.Size = new System.Drawing.Size(326, 50);
@@ -482,12 +484,24 @@
             this.txtSombraRA.Texts = "";
             this.txtSombraRA.UnderlinedStyle = false;
             // 
+            // pcbVermais
+            // 
+            this.pcbVermais.Image = global::estatisticaTechData.Properties.Resources.olho;
+            this.pcbVermais.Location = new System.Drawing.Point(1093, 323);
+            this.pcbVermais.Name = "pcbVermais";
+            this.pcbVermais.Size = new System.Drawing.Size(42, 36);
+            this.pcbVermais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbVermais.TabIndex = 64;
+            this.pcbVermais.TabStop = false;
+            this.pcbVermais.Click += new System.EventHandler(this.pcbVermais_Click);
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pcbVermais);
             this.Controls.Add(this.Lbl_Resultado);
             this.Controls.Add(this.lklSignIn);
             this.Controls.Add(this.rdbProfessor);
@@ -518,6 +532,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechData";
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVermais)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,5 +563,6 @@
         private Resources.techDataRadioButton rdbProfessor;
         private System.Windows.Forms.LinkLabel lklSignIn;
         private System.Windows.Forms.Label Lbl_Resultado;
+        private System.Windows.Forms.PictureBox pcbVermais;
     }
 }

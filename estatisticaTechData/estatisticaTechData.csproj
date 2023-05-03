@@ -350,6 +350,7 @@
   <ItemGroup>
     <Content Include="Images\TechData-fade-claro.png" />
     <Content Include="Images\techDataLogoForm.ico" />
+    <None Include="Resources\olho.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\estatisticaTechDataClassLibrary\estatisticaTechDataClassLibrary.csproj">
