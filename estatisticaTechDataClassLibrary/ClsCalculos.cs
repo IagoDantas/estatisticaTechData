@@ -33,7 +33,7 @@ namespace estatisticaTechDataClassLibrary
             }
             else
             {
-                posicao = N + 1 / 2;
+                posicao = N/2;
                 mediana = arrExcel[posicao];
             }
             return mediana;
@@ -98,16 +98,15 @@ namespace estatisticaTechDataClassLibrary
         {
             Array.Sort(arrExcel);
             double[] arrQuartis = new double[3];
-            int lenght, i,j;
+            int lenght = N / 2, i,j;
+            double[] arrQ1 = new double[lenght];
+            double[] arrQ3 = new double[lenght];                
             if (N % 2 == 0)
             {
-                lenght = N / 2;
-                double[] arrQ1 = new double[lenght];
-                double[] arrQ3 = new double[lenght];
                 for (i = 0; i < lenght; i++)
                     arrQ1[i] = arrExcel[i];
                 j = 0;
-                for (i = lenght+1; i < lenght * 2; i++)
+                for (i = lenght; i < lenght*2; i++)
                 {
                     arrQ3[j] = arrExcel[i];
                     j++;
@@ -117,13 +116,10 @@ namespace estatisticaTechDataClassLibrary
             }
             else
             {
-                lenght = ((arrExcel.Length + 1) / 2)-1;
-                double[] arrQ1 = new double[lenght];
-                double[] arrQ3 = new double[lenght];
                 for (i = 0; i < lenght; i++)
                     arrQ1[i] = arrExcel[i];
                 j = 0;
-                for (i = lenght+1; i < (lenght * 2)-1; i++)
+                for (i = lenght+1; i <= lenght * 2; i++)
                 {
                     arrQ3[j] = arrExcel[i];
                     j++;
