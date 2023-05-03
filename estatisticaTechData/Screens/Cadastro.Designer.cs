@@ -52,9 +52,11 @@
             this.txtSombraEmail = new estatisticaTechData.techDataTextBox();
             this.txtSombraNome = new estatisticaTechData.techDataTextBox();
             this.txtSombraRA = new estatisticaTechData.techDataTextBox();
-            this.pcbVermais = new System.Windows.Forms.PictureBox();
+            this.pcbEsconderSenha = new System.Windows.Forms.PictureBox();
+            this.pcbVerSenha = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbVermais)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbLogo
@@ -484,16 +486,27 @@
             this.txtSombraRA.Texts = "";
             this.txtSombraRA.UnderlinedStyle = false;
             // 
-            // pcbVermais
+            // pcbEsconderSenha
             // 
-            this.pcbVermais.Image = global::estatisticaTechData.Properties.Resources.olho;
-            this.pcbVermais.Location = new System.Drawing.Point(1093, 323);
-            this.pcbVermais.Name = "pcbVermais";
-            this.pcbVermais.Size = new System.Drawing.Size(42, 36);
-            this.pcbVermais.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbVermais.TabIndex = 64;
-            this.pcbVermais.TabStop = false;
-            this.pcbVermais.Click += new System.EventHandler(this.pcbVermais_Click);
+            this.pcbEsconderSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
+            this.pcbEsconderSenha.Location = new System.Drawing.Point(1141, 323);
+            this.pcbEsconderSenha.Name = "pcbEsconderSenha";
+            this.pcbEsconderSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbEsconderSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbEsconderSenha.TabIndex = 64;
+            this.pcbEsconderSenha.TabStop = false;
+            this.pcbEsconderSenha.Click += new System.EventHandler(this.pcbEsconderSenha_Click);
+            // 
+            // pcbVerSenha
+            // 
+            this.pcbVerSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
+            this.pcbVerSenha.Location = new System.Drawing.Point(1093, 323);
+            this.pcbVerSenha.Name = "pcbVerSenha";
+            this.pcbVerSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbVerSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbVerSenha.TabIndex = 65;
+            this.pcbVerSenha.TabStop = false;
+            this.pcbVerSenha.Click += new System.EventHandler(this.pcbVerSenha_Click);
             // 
             // frmCadastro
             // 
@@ -501,7 +514,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.pcbVermais);
+            this.Controls.Add(this.pcbVerSenha);
+            this.Controls.Add(this.pcbEsconderSenha);
             this.Controls.Add(this.Lbl_Resultado);
             this.Controls.Add(this.lklSignIn);
             this.Controls.Add(this.rdbProfessor);
@@ -531,8 +545,10 @@
             this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechData";
+            this.Load += new System.EventHandler(this.frmCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbVermais)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,6 +579,7 @@
         private Resources.techDataRadioButton rdbProfessor;
         private System.Windows.Forms.LinkLabel lklSignIn;
         private System.Windows.Forms.Label Lbl_Resultado;
-        private System.Windows.Forms.PictureBox pcbVermais;
+        private System.Windows.Forms.PictureBox pcbEsconderSenha;
+        private System.Windows.Forms.PictureBox pcbVerSenha;
     }
 }
