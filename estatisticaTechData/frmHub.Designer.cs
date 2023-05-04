@@ -187,9 +187,9 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Tbc_Telas);
             this.Controls.Add(this.pnlSideBar);
-            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmHub";
-            this.Text = "frmHub";
+            this.Text = "TechData";
             this.Load += new System.EventHandler(this.frmHub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);

@@ -16,6 +16,7 @@ namespace estatisticaTechData
         private estatisticaTechDataClassLibrary.Connection conexao;
         public frmHome()
         {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
             conexao = new estatisticaTechDataClassLibrary.Connection();
         }
@@ -82,11 +83,6 @@ namespace estatisticaTechData
             {
                 MessageBox.Show(erro.Message,"Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
-
-        }
-
-        private void frmHome_Load(object sender, EventArgs e)
-        {
 
         }
     }
