@@ -170,5 +170,22 @@ namespace estatisticaTechDataClassLibrary
             return arrPercentil;
         }
 
+           
+        public static double CalcularDesvioPadrao(double[] arrExcel)
+        {
+            double media = CalcularMedia(arrExcel, arrExcel.Length);
+            double somatoria = 0;
+
+            //Faz a somatória dos desvios elevados ao quadrado
+            for (int i = 0; i < arrExcel.Length; i++)
+            {
+                somatoria += Math.Pow(arrExcel[i] - media, 2);
+            }
+
+            //Faz o calculo final do desvio Padrão
+            double desvioPadrao = Math.Sqrt(somatoria / arrExcel.Length);
+
+            return desvioPadrao;
+        }
     }
 }

@@ -56,9 +56,6 @@ namespace estatisticaTechData.Screens
                     }
                 }
             }
-
-
-
         }
 
         public static double[] ArrayExcel(int x, int y, DataGridView dgvTeste)
@@ -152,6 +149,18 @@ namespace estatisticaTechData.Screens
                     lblPercentis.Text = "Digite um número entre 1 a 100.";
             }
             lblPercentis.Visible = true;
+        }
+
+        private void btnDesvioPadrao_Click(object sender, EventArgs e)
+        {
+            int x = dgvTeste.RowCount - 1;
+            int y = dgvTeste.ColumnCount - 1;
+            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
+
+            double desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayExcel);
+
+            lblDesvioPadrao.Text = desvioPadrao.ToString("F");
+            lblDesvioPadrao.Visible = true;
         }
     }
 }
