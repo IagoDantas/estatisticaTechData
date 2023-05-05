@@ -30,12 +30,13 @@
         {
             estatisticaTechData.techDataButton btnPercentis;
             estatisticaTechData.techDataButton btnQuartis;
+            estatisticaTechData.techDataButton btnDesvioPadrao;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            estatisticaTechData.techDataButton btnDesvioPadrao;
+            estatisticaTechData.techDataButton btnDispersao;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -48,9 +49,11 @@
             this.btnModa = new estatisticaTechData.techDataButton();
             this.btnMediana = new estatisticaTechData.techDataButton();
             this.lblDesvioPadrao = new System.Windows.Forms.Label();
+            this.lblDipersao = new System.Windows.Forms.Label();
             btnPercentis = new estatisticaTechData.techDataButton();
             btnQuartis = new estatisticaTechData.techDataButton();
             btnDesvioPadrao = new estatisticaTechData.techDataButton();
+            btnDispersao = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,6 +96,26 @@
             btnQuartis.TextColor = System.Drawing.Color.White;
             btnQuartis.UseVisualStyleBackColor = false;
             btnQuartis.Click += new System.EventHandler(this.btnQuartis_Click);
+            // 
+            // btnDesvioPadrao
+            // 
+            btnDesvioPadrao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDesvioPadrao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDesvioPadrao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnDesvioPadrao.BorderRadius = 50;
+            btnDesvioPadrao.BorderSize = 0;
+            btnDesvioPadrao.FlatAppearance.BorderSize = 0;
+            btnDesvioPadrao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDesvioPadrao.ForeColor = System.Drawing.Color.White;
+            btnDesvioPadrao.Location = new System.Drawing.Point(550, 475);
+            btnDesvioPadrao.Name = "btnDesvioPadrao";
+            btnDesvioPadrao.Size = new System.Drawing.Size(126, 47);
+            btnDesvioPadrao.TabIndex = 19;
+            btnDesvioPadrao.Text = "Desvio Padrão";
+            btnDesvioPadrao.TextColor = System.Drawing.Color.White;
+            btnDesvioPadrao.UseVisualStyleBackColor = false;
+            btnDesvioPadrao.Click += new System.EventHandler(this.btnDesvioPadrao_Click);
             // 
             // lblMedia
             // 
@@ -266,26 +289,6 @@
             this.btnMediana.UseVisualStyleBackColor = false;
             this.btnMediana.Click += new System.EventHandler(this.btnMediana_Click);
             // 
-            // btnDesvioPadrao
-            // 
-            btnDesvioPadrao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDesvioPadrao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDesvioPadrao.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnDesvioPadrao.BorderRadius = 50;
-            btnDesvioPadrao.BorderSize = 0;
-            btnDesvioPadrao.FlatAppearance.BorderSize = 0;
-            btnDesvioPadrao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnDesvioPadrao.ForeColor = System.Drawing.Color.White;
-            btnDesvioPadrao.Location = new System.Drawing.Point(550, 475);
-            btnDesvioPadrao.Name = "btnDesvioPadrao";
-            btnDesvioPadrao.Size = new System.Drawing.Size(126, 47);
-            btnDesvioPadrao.TabIndex = 19;
-            btnDesvioPadrao.Text = "Desvio Padrão";
-            btnDesvioPadrao.TextColor = System.Drawing.Color.White;
-            btnDesvioPadrao.UseVisualStyleBackColor = false;
-            btnDesvioPadrao.Click += new System.EventHandler(this.btnDesvioPadrao_Click);
-            // 
             // lblDesvioPadrao
             // 
             this.lblDesvioPadrao.AutoSize = true;
@@ -298,11 +301,45 @@
             this.lblDesvioPadrao.Text = "label";
             this.lblDesvioPadrao.Visible = false;
             // 
+            // btnDispersao
+            // 
+            btnDispersao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDispersao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDispersao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnDispersao.BorderRadius = 50;
+            btnDispersao.BorderSize = 0;
+            btnDispersao.FlatAppearance.BorderSize = 0;
+            btnDispersao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDispersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDispersao.ForeColor = System.Drawing.Color.White;
+            btnDispersao.Location = new System.Drawing.Point(550, 544);
+            btnDispersao.Name = "btnDispersao";
+            btnDispersao.Size = new System.Drawing.Size(126, 47);
+            btnDispersao.TabIndex = 21;
+            btnDispersao.Text = "Dispersão";
+            btnDispersao.TextColor = System.Drawing.Color.White;
+            btnDispersao.UseVisualStyleBackColor = false;
+            btnDispersao.Click += new System.EventHandler(this.btnDispersao_Click);
+            // 
+            // lblDipersao
+            // 
+            this.lblDipersao.AutoSize = true;
+            this.lblDipersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDipersao.ForeColor = System.Drawing.Color.Black;
+            this.lblDipersao.Location = new System.Drawing.Point(712, 557);
+            this.lblDipersao.Name = "lblDipersao";
+            this.lblDipersao.Size = new System.Drawing.Size(42, 20);
+            this.lblDipersao.TabIndex = 22;
+            this.lblDipersao.Text = "label";
+            this.lblDipersao.Visible = false;
+            // 
             // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(this.lblDipersao);
+            this.Controls.Add(btnDispersao);
             this.Controls.Add(this.lblDesvioPadrao);
             this.Controls.Add(btnDesvioPadrao);
             this.Controls.Add(this.txtPercentil);
@@ -340,5 +377,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.MaskedTextBox txtPercentil;
         private System.Windows.Forms.Label lblDesvioPadrao;
+        private System.Windows.Forms.Label lblDipersao;
     }
 }

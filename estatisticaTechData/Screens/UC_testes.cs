@@ -14,6 +14,11 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_testes : UserControl
     {
+        int x, y;
+        double[] arrayExcel;
+        double[] modas, quartis, percentis;
+        double media, mediana, desvioPadrao, dispersao;
+
         public UC_testes()
         {
             InitializeComponent();
@@ -56,41 +61,45 @@ namespace estatisticaTechData.Screens
                     }
                 }
             }
+            x = dgvTeste.RowCount - 1;
+            y = dgvTeste.ColumnCount - 1;
+            arrayExcel = ArrayExcel(x, y, dgvTeste);
+            x = x * y;
         }
 
         public static double[] ArrayExcel(int x, int y, DataGridView dgvTeste)
         {
             int size = x * y, p = 0;
-            double[] arrayExcel = new double[size];
+            double[] arrExcel = new double[size];
             for (int i = 0; i < x; i++)
             {
                 for (int j = 1; j <= y; j++)
                 {
                     DataGridViewCell cell = dgvTeste[rowIndex: i, columnIndex: j];
-                    arrayExcel[p] = Convert.ToDouble(cell.Value);
+                    arrExcel[p] = Convert.ToDouble(cell.Value);
                     p++;
                 }
             }
 
-            return arrayExcel;
+            return arrExcel;
         }
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1;
-            int y = dgvTeste.ColumnCount - 1;
-            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-            x = x * y;
-            double media = ClsCalculos.CalcularMedia(arrayExcel, x); 
+            media = ClsCalculos.CalcularMedia(arrayExcel, x); 
             lblMedia.Text = "A média é: " + media.ToString("F");
             lblMedia.Visible = true;
         }
 
+        private void btnDispersao_Click(object sender, EventArgs e)
+        {
+            dispersao = Math.Round(ClsCalculos.CalcularDispersao(arrayExcel), 4);
+            lblDipersao.Text = $"A dispersão desse conjunto é {dispersao} ou  seja {dispersao*100}%";
+            lblDipersao.Visible = true;
+        }
+
         private void btnModa_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1;
-            int y = dgvTeste.ColumnCount - 1;
-            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-            double[] modas = ClsCalculos.CalcularModa(arrayExcel);
+            modas = ClsCalculos.CalcularModa(arrayExcel);
             if (modas.Length == 0)
                 lblModa.Text = "Esta grupo é amodal";
             else if (modas.Length == 1)
@@ -102,11 +111,7 @@ namespace estatisticaTechData.Screens
 
         private void btnMediana_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1;
-            int y = dgvTeste.ColumnCount - 1;
-            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-            x = x * y;
-            double mediana = ClsCalculos.CalcularMediana(arrayExcel, x);
+            mediana = ClsCalculos.CalcularMediana(arrayExcel, x);
             lblMediana.Text = "A mediana desses valores é: " + mediana;
             lblMediana.Visible = true;
         }
@@ -121,11 +126,7 @@ namespace estatisticaTechData.Screens
 
         private void btnQuartis_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1;
-            int y = dgvTeste.ColumnCount - 1;
-            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-            x = x * y;
-            double[] quartis = ClsCalculos.CalcularQuartis(arrayExcel, x);
+            quartis = ClsCalculos.CalcularQuartis(arrayExcel, x);
             lblQuartis.Text = "Os quartis desses valores são: Q1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
             lblQuartis.Visible = true;
         }
@@ -137,11 +138,7 @@ namespace estatisticaTechData.Screens
             else
             {
                 int numTXT = Convert.ToInt32(txtPercentil.Text);
-                int x = dgvTeste.RowCount - 1;
-                int y = dgvTeste.ColumnCount - 1;
-                double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-                x = x * y;
-                double[] percentis = ClsCalculos.CalcularPercentis(arrayExcel);
+                percentis = ClsCalculos.CalcularPercentis(arrayExcel);
 
                 if (numTXT > 0 && numTXT <= 100)
                     lblPercentis.Text = $"O percentil N°{numTXT} é: {percentis[numTXT - 1]}.";
@@ -153,11 +150,7 @@ namespace estatisticaTechData.Screens
 
         private void btnDesvioPadrao_Click(object sender, EventArgs e)
         {
-            int x = dgvTeste.RowCount - 1;
-            int y = dgvTeste.ColumnCount - 1;
-            double[] arrayExcel = ArrayExcel(x, y, dgvTeste);
-
-            double desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayExcel);
+            desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayExcel);
 
             lblDesvioPadrao.Text = desvioPadrao.ToString("F");
             lblDesvioPadrao.Visible = true;

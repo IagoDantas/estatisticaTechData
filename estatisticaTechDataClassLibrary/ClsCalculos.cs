@@ -187,5 +187,14 @@ namespace estatisticaTechDataClassLibrary
 
             return desvioPadrao;
         }
+
+        public static double CalcularDispersao(double[] arrExcel)
+        {
+            double media = CalcularMedia(arrExcel, arrExcel.Length);
+            double desvioPadrao = CalcularDesvioPadrao(arrExcel);
+            double dispersao = desvioPadrao / media;
+
+            return dispersao;
+        }
     }
 }
