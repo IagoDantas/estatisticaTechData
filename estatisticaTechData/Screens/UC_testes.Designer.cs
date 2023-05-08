@@ -34,11 +34,11 @@
             estatisticaTechData.techDataButton btnDispersao;
             estatisticaTechData.techDataButton btnCoeficientePercentilicoCurtose;
             estatisticaTechData.techDataButton btnVariancia;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -74,7 +74,7 @@
             btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnPercentis.ForeColor = System.Drawing.Color.White;
-            btnPercentis.Location = new System.Drawing.Point(550, 391);
+            btnPercentis.Location = new System.Drawing.Point(550, 417);
             btnPercentis.Name = "btnPercentis";
             btnPercentis.Size = new System.Drawing.Size(126, 47);
             btnPercentis.TabIndex = 14;
@@ -114,7 +114,7 @@
             btnDesvioPadrao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnDesvioPadrao.ForeColor = System.Drawing.Color.White;
-            btnDesvioPadrao.Location = new System.Drawing.Point(550, 475);
+            btnDesvioPadrao.Location = new System.Drawing.Point(550, 501);
             btnDesvioPadrao.Name = "btnDesvioPadrao";
             btnDesvioPadrao.Size = new System.Drawing.Size(126, 47);
             btnDesvioPadrao.TabIndex = 19;
@@ -134,7 +134,7 @@
             btnDispersao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnDispersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnDispersao.ForeColor = System.Drawing.Color.White;
-            btnDispersao.Location = new System.Drawing.Point(550, 600);
+            btnDispersao.Location = new System.Drawing.Point(550, 626);
             btnDispersao.Name = "btnDispersao";
             btnDispersao.Size = new System.Drawing.Size(126, 47);
             btnDispersao.TabIndex = 21;
@@ -174,7 +174,7 @@
             btnVariancia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             btnVariancia.ForeColor = System.Drawing.Color.White;
-            btnVariancia.Location = new System.Drawing.Point(550, 538);
+            btnVariancia.Location = new System.Drawing.Point(550, 564);
             btnVariancia.Name = "btnVariancia";
             btnVariancia.Size = new System.Drawing.Size(126, 47);
             btnVariancia.TabIndex = 27;
@@ -221,33 +221,33 @@
             // 
             // dgvTeste
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTeste.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTeste.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvTeste.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.dgvTeste.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTeste.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeste.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTeste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTeste.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTeste.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTeste.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.dgvTeste.Location = new System.Drawing.Point(22, 27);
             this.dgvTeste.Name = "dgvTeste";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvTeste.Size = new System.Drawing.Size(486, 620);
             this.dgvTeste.TabIndex = 5;
             this.dgvTeste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTeste_CellFormatting);
@@ -269,7 +269,7 @@
             this.lblPercentis.AutoSize = true;
             this.lblPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentis.ForeColor = System.Drawing.Color.Black;
-            this.lblPercentis.Location = new System.Drawing.Point(816, 365);
+            this.lblPercentis.Location = new System.Drawing.Point(816, 391);
             this.lblPercentis.Name = "lblPercentis";
             this.lblPercentis.Size = new System.Drawing.Size(51, 20);
             this.lblPercentis.TabIndex = 13;
@@ -281,7 +281,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(546, 327);
+            this.lblTitulo.Location = new System.Drawing.Point(546, 353);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(294, 20);
             this.lblTitulo.TabIndex = 17;
@@ -289,7 +289,7 @@
             // 
             // txtPercentil
             // 
-            this.txtPercentil.Location = new System.Drawing.Point(550, 365);
+            this.txtPercentil.Location = new System.Drawing.Point(550, 391);
             this.txtPercentil.Mask = "000";
             this.txtPercentil.Name = "txtPercentil";
             this.txtPercentil.Size = new System.Drawing.Size(260, 20);
@@ -360,7 +360,7 @@
             this.lblDesvioPadrao.AutoSize = true;
             this.lblDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesvioPadrao.ForeColor = System.Drawing.Color.Black;
-            this.lblDesvioPadrao.Location = new System.Drawing.Point(712, 488);
+            this.lblDesvioPadrao.Location = new System.Drawing.Point(712, 514);
             this.lblDesvioPadrao.Name = "lblDesvioPadrao";
             this.lblDesvioPadrao.Size = new System.Drawing.Size(42, 20);
             this.lblDesvioPadrao.TabIndex = 20;
@@ -372,7 +372,7 @@
             this.lblDipersao.AutoSize = true;
             this.lblDipersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDipersao.ForeColor = System.Drawing.Color.Black;
-            this.lblDipersao.Location = new System.Drawing.Point(712, 613);
+            this.lblDipersao.Location = new System.Drawing.Point(712, 639);
             this.lblDipersao.Name = "lblDipersao";
             this.lblDipersao.Size = new System.Drawing.Size(42, 20);
             this.lblDipersao.TabIndex = 22;
@@ -384,7 +384,7 @@
             this.lblCoeficientePercentilicoCurtose.AutoSize = true;
             this.lblCoeficientePercentilicoCurtose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCoeficientePercentilicoCurtose.ForeColor = System.Drawing.Color.Black;
-            this.lblCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(896, 82);
+            this.lblCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(1023, 36);
             this.lblCoeficientePercentilicoCurtose.Name = "lblCoeficientePercentilicoCurtose";
             this.lblCoeficientePercentilicoCurtose.Size = new System.Drawing.Size(42, 20);
             this.lblCoeficientePercentilicoCurtose.TabIndex = 26;
@@ -396,7 +396,7 @@
             this.lblVariancia.AutoSize = true;
             this.lblVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVariancia.ForeColor = System.Drawing.Color.Black;
-            this.lblVariancia.Location = new System.Drawing.Point(712, 551);
+            this.lblVariancia.Location = new System.Drawing.Point(712, 577);
             this.lblVariancia.Name = "lblVariancia";
             this.lblVariancia.Size = new System.Drawing.Size(42, 20);
             this.lblVariancia.TabIndex = 28;

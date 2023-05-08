@@ -17,7 +17,7 @@ namespace estatisticaTechData.Screens
         int x, y;
         double[] arrayExcel;
         double[] modas, quartis, percentis;
-        double media, mediana, desvioPadrao,variancia, dispersao, coeficienteCurtose, coeficientePercentilicoCurtose;
+        double media, mediana, desvioPadrao,variancia, dispersao, coeficientePercentilicoCurtose;
 
         public UC_testes()
         {
@@ -93,14 +93,14 @@ namespace estatisticaTechData.Screens
         private void btnCoeficientePercenCurtose_Click(object sender, EventArgs e)
         {
             coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayExcel, x);
-            lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {coeficientePercentilicoCurtose}";
+            lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {Math.Round(coeficientePercentilicoCurtose, 2)}";
             lblCoeficientePercentilicoCurtose.Visible = true;
         }
 
         private void btnVariancia_Click(object sender, EventArgs e)
         {
             variancia = ClsCalculos.CalcularVariancia(arrayExcel);
-            lblVariancia.Text = $"A variância  desse conjunto é {variancia}";
+            lblVariancia.Text = $"A variância  desse conjunto é {Math.Round(variancia,2)}";
             lblVariancia.Visible = true;
         }
 
@@ -141,7 +141,7 @@ namespace estatisticaTechData.Screens
         private void btnQuartis_Click(object sender, EventArgs e)
         {
             quartis = ClsCalculos.CalcularQuartis(arrayExcel, x);
-            lblQuartis.Text = "Os quartis desses valores são: Q1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
+            lblQuartis.Text = "Os quartis desses valores são: \nQ1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
             lblQuartis.Visible = true;
         }
 
