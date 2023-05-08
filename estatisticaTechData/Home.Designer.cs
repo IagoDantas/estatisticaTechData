@@ -35,6 +35,8 @@ namespace estatisticaTechData
             this.lklForgotPassword = new System.Windows.Forms.LinkLabel();
             this.lklSignUp = new System.Windows.Forms.LinkLabel();
             this.lblUser = new System.Windows.Forms.Label();
+            this.pcbVerSenha = new System.Windows.Forms.PictureBox();
+            this.pcbEsconderSenha = new System.Windows.Forms.PictureBox();
             this.txtPassword = new estatisticaTechData.techDataTextBox();
             this.txtUser = new estatisticaTechData.techDataTextBox();
             this.btnSignIn = new estatisticaTechData.techDataButton();
@@ -42,6 +44,8 @@ namespace estatisticaTechData
             this.txtSombraSenha = new estatisticaTechData.techDataTextBox();
             this.txtSombraUsuario = new estatisticaTechData.techDataTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbLogo
@@ -60,11 +64,11 @@ namespace estatisticaTechData
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Poppins", 13F);
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lblPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblPassword.Location = new System.Drawing.Point(603, 389);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(74, 31);
+            this.lblPassword.Size = new System.Drawing.Size(64, 22);
             this.lblPassword.TabIndex = 7;
             this.lblPassword.Text = "senha:";
             // 
@@ -73,11 +77,11 @@ namespace estatisticaTechData
             this.lklForgotPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
             this.lklForgotPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklForgotPassword.AutoSize = true;
-            this.lklForgotPassword.Font = new System.Drawing.Font("Poppins", 13F);
+            this.lklForgotPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lklForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklForgotPassword.Location = new System.Drawing.Point(548, 495);
+            this.lklForgotPassword.Location = new System.Drawing.Point(562, 495);
             this.lklForgotPassword.Name = "lklForgotPassword";
-            this.lklForgotPassword.Size = new System.Drawing.Size(190, 31);
+            this.lklForgotPassword.Size = new System.Drawing.Size(167, 22);
             this.lklForgotPassword.TabIndex = 8;
             this.lklForgotPassword.TabStop = true;
             this.lklForgotPassword.Text = "esqueceu a senha?";
@@ -87,11 +91,11 @@ namespace estatisticaTechData
             this.lklSignUp.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
             this.lklSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklSignUp.AutoSize = true;
-            this.lklSignUp.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignUp.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lklSignUp.Location = new System.Drawing.Point(574, 623);
             this.lklSignUp.Name = "lklSignUp";
-            this.lklSignUp.Size = new System.Drawing.Size(138, 34);
+            this.lklSignUp.Size = new System.Drawing.Size(118, 24);
             this.lklSignUp.TabIndex = 9;
             this.lklSignUp.TabStop = true;
             this.lklSignUp.Text = "cadastre-se";
@@ -101,13 +105,37 @@ namespace estatisticaTechData
             // 
             this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Poppins", 13F);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblUser.Location = new System.Drawing.Point(609, 298);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(68, 31);
+            this.lblUser.Size = new System.Drawing.Size(57, 22);
             this.lblUser.TabIndex = 0;
             this.lblUser.Text = "email:";
+            // 
+            // pcbVerSenha
+            // 
+            this.pcbVerSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcbVerSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
+            this.pcbVerSenha.Location = new System.Drawing.Point(757, 425);
+            this.pcbVerSenha.Name = "pcbVerSenha";
+            this.pcbVerSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbVerSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbVerSenha.TabIndex = 67;
+            this.pcbVerSenha.TabStop = false;
+            this.pcbVerSenha.Click += new System.EventHandler(this.pcbVerSenha_Click);
+            // 
+            // pcbEsconderSenha
+            // 
+            this.pcbEsconderSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcbEsconderSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
+            this.pcbEsconderSenha.Location = new System.Drawing.Point(806, 425);
+            this.pcbEsconderSenha.Name = "pcbEsconderSenha";
+            this.pcbEsconderSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbEsconderSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbEsconderSenha.TabIndex = 66;
+            this.pcbEsconderSenha.TabStop = false;
+            this.pcbEsconderSenha.Click += new System.EventHandler(this.pcbEsconderSenha_Click);
             // 
             // txtPassword
             // 
@@ -117,7 +145,7 @@ namespace estatisticaTechData
             this.txtPassword.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtPassword.BorderRadius = 22;
             this.txtPassword.BorderSize = 2;
-            this.txtPassword.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtPassword.Location = new System.Drawing.Point(528, 424);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
@@ -127,7 +155,7 @@ namespace estatisticaTechData
             this.txtPassword.PasswordChar = true;
             this.txtPassword.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtPassword.PlaceholderText = "Digite sua senha:";
-            this.txtPassword.Size = new System.Drawing.Size(222, 47);
+            this.txtPassword.Size = new System.Drawing.Size(222, 37);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
@@ -141,7 +169,7 @@ namespace estatisticaTechData
             this.txtUser.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtUser.BorderRadius = 22;
             this.txtUser.BorderSize = 2;
-            this.txtUser.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtUser.Location = new System.Drawing.Point(528, 333);
             this.txtUser.Margin = new System.Windows.Forms.Padding(4);
@@ -151,7 +179,7 @@ namespace estatisticaTechData
             this.txtUser.PasswordChar = false;
             this.txtUser.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtUser.PlaceholderText = "Digite seu email:";
-            this.txtUser.Size = new System.Drawing.Size(222, 47);
+            this.txtUser.Size = new System.Drawing.Size(222, 37);
             this.txtUser.TabIndex = 1;
             this.txtUser.Texts = "";
             this.txtUser.UnderlinedStyle = false;
@@ -167,7 +195,7 @@ namespace estatisticaTechData
             this.btnSignIn.BorderSize = 0;
             this.btnSignIn.FlatAppearance.BorderSize = 0;
             this.btnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignIn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSignIn.Location = new System.Drawing.Point(566, 546);
             this.btnSignIn.Name = "btnSignIn";
@@ -189,7 +217,7 @@ namespace estatisticaTechData
             this.btnSombraEntrar.Enabled = false;
             this.btnSombraEntrar.FlatAppearance.BorderSize = 0;
             this.btnSombraEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSombraEntrar.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSombraEntrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSombraEntrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraEntrar.Location = new System.Drawing.Point(566, 550);
             this.btnSombraEntrar.Name = "btnSombraEntrar";
@@ -254,6 +282,8 @@ namespace estatisticaTechData
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pcbVerSenha);
+            this.Controls.Add(this.pcbEsconderSenha);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnSignIn);
@@ -275,7 +305,10 @@ namespace estatisticaTechData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechData";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +326,8 @@ namespace estatisticaTechData
         private techDataTextBox txtSombraUsuario;
         private System.Windows.Forms.Label lblUser;
         private techDataTextBox txtUser;
+        private System.Windows.Forms.PictureBox pcbVerSenha;
+        private System.Windows.Forms.PictureBox pcbEsconderSenha;
     }
 }
 
