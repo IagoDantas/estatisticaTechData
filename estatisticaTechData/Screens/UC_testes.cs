@@ -17,7 +17,7 @@ namespace estatisticaTechData.Screens
         int x, y;
         double[] arrayExcel;
         double[] modas, quartis, percentis;
-        double media, mediana, desvioPadrao,variancia, dispersao, coeficientePercentilicoCurtose;
+        double media, mediana, desvioPadrao,variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
 
         public UC_testes()
         {
@@ -97,6 +97,13 @@ namespace estatisticaTechData.Screens
             lblCoeficientePercentilicoCurtose.Visible = true;
         }
 
+        private void btnCoeficienteAssimetria_Click(object sender, EventArgs e)
+        {
+            coeficienteAssimetria = ClsCalculos.CalcularCoeficienteAssimetria(arrayExcel);
+            lblCoeficienteAssimetria.Text = $"O coeficiente de assimetria é {Math.Round(coeficienteAssimetria, 2)}";
+            lblCoeficienteAssimetria.Visible = true;
+        }
+
         private void btnVariancia_Click(object sender, EventArgs e)
         {
             variancia = ClsCalculos.CalcularVariancia(arrayExcel);
@@ -165,7 +172,6 @@ namespace estatisticaTechData.Screens
         private void btnDesvioPadrao_Click(object sender, EventArgs e)
         {
             desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayExcel);
-
             lblDesvioPadrao.Text = desvioPadrao.ToString("F");
             lblDesvioPadrao.Visible = true;
         }

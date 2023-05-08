@@ -216,6 +216,20 @@ namespace estatisticaTechDataClassLibrary
             return dispersao;
         }
 
+        public static double CalcularCoeficienteAssimetria(double [] arrExcel)
+        {
+            double media = CalcularMedia(arrExcel, arrExcel.Length);
+
+            double desvioPadrao = CalcularDesvioPadrao(arrExcel);
+
+            double[] modas = CalcularModa(arrExcel);
+
+            double moda = CalcularMedia(modas,modas.Length);
+
+            double coeficienteAssimetria = (media - moda) / desvioPadrao;
+
+            return coeficienteAssimetria;
+        }
 
         public static double CalcularCoeficientePercentilicoCurtose(double[] arrExcel, int N)
         {
