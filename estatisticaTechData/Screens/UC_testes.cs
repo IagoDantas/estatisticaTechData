@@ -17,7 +17,7 @@ namespace estatisticaTechData.Screens
         int x, y;
         double[] arrayExcel;
         double[] modas, quartis, percentis;
-        double media, mediana, desvioPadrao, dispersao;
+        double media, mediana, desvioPadrao,variancia, dispersao, coeficienteCurtose, coeficientePercentilicoCurtose;
 
         public UC_testes()
         {
@@ -88,6 +88,20 @@ namespace estatisticaTechData.Screens
             media = ClsCalculos.CalcularMedia(arrayExcel, x); 
             lblMedia.Text = "A média é: " + media.ToString("F");
             lblMedia.Visible = true;
+        }
+
+        private void btnCoeficientePercenCurtose_Click(object sender, EventArgs e)
+        {
+            coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayExcel, x);
+            lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {coeficientePercentilicoCurtose}";
+            lblCoeficientePercentilicoCurtose.Visible = true;
+        }
+
+        private void btnVariancia_Click(object sender, EventArgs e)
+        {
+            variancia = ClsCalculos.CalcularVariancia(arrayExcel);
+            lblVariancia.Text = $"A variância  desse conjunto é {variancia}";
+            lblVariancia.Visible = true;
         }
 
         private void btnDispersao_Click(object sender, EventArgs e)

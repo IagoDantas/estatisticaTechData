@@ -98,40 +98,42 @@ namespace estatisticaTechDataClassLibrary
         {
             Array.Sort(arrExcel);
             double[] arrQuartis = new double[3];
-            int lenght = N / 2, i,j;
+            int lenght = N / 2, i, j;
             double[] arrQ1 = new double[lenght];
-            double[] arrQ3 = new double[lenght];                
+            double[] arrQ3 = new double[lenght];
+            double[] arrQ2 = new double[N % 2 == 0 ? 2 : 1];
+
             if (N % 2 == 0)
             {
                 for (i = 0; i < lenght; i++)
                     arrQ1[i] = arrExcel[i];
                 j = 0;
-                for (i = lenght; i < lenght*2; i++)
+                for (i = lenght; i < lenght * 2; i++)
                 {
                     arrQ3[j] = arrExcel[i];
                     j++;
                 }
                 arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length);
                 arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length);
+                arrQ2[0] = arrExcel[lenght - 1];
+                arrQ2[1] = arrExcel[lenght];
             }
             else
             {
                 for (i = 0; i < lenght; i++)
                     arrQ1[i] = arrExcel[i];
                 j = 0;
-                for (i = lenght+1; i <= lenght * 2; i++)
+                for (i = lenght + 2; i <= lenght * 2; i++)
                 {
                     arrQ3[j] = arrExcel[i];
                     j++;
                 }
                 arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length);
                 arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length);
+                arrQ2[0] = arrExcel[lenght];
             }
 
-
-
-            arrQuartis[1] = CalcularMediana(arrExcel, N);
-            
+            arrQuartis[1] = CalcularMediana(arrQ2, arrQ2.Length);
 
             return arrQuartis;
         }
@@ -188,6 +190,23 @@ namespace estatisticaTechDataClassLibrary
             return desvioPadrao;
         }
 
+        public static double CalcularVariancia(double[] arrExcel)
+        {
+            double media = CalcularMedia(arrExcel, arrExcel.Length);
+            double somatoria = 0;
+
+            //Faz a somatória dos desvios elevados ao quadrado
+            for (int i = 0; i < arrExcel.Length; i++)
+            {
+                somatoria += Math.Pow(arrExcel[i] - media, 2);
+            }
+
+            //Faz o calculo final da variância
+            double variancia = somatoria / (arrExcel.Length);
+
+            return variancia;
+        }
+
         public static double CalcularDispersao(double[] arrExcel)
         {
             double media = CalcularMedia(arrExcel, arrExcel.Length);
@@ -195,6 +214,28 @@ namespace estatisticaTechDataClassLibrary
             double dispersao = desvioPadrao / media;
 
             return dispersao;
+        }
+
+
+        public static double CalcularCoeficientePercentilicoCurtose(double[] arrExcel, int N)
+        {
+            double[] arrQuartis = new double[3];
+            double[] arrPercentil = new double[100];
+
+            arrQuartis = CalcularQuartis(arrExcel, N);
+            arrPercentil = CalcularPercentis(arrExcel);
+
+            double primeiroQuartil = arrQuartis[0];
+            double terceiroQuartil = arrQuartis[2];
+
+            double decimoPercentil = arrPercentil[9];
+            double nonagesimoPercentil = arrPercentil[89];
+
+            double numerador = terceiroQuartil - primeiroQuartil;
+            double denominador = (nonagesimoPercentil - decimoPercentil) * 2;
+            double coeficientePercentilico = (numerador / denominador) ;
+
+            return coeficientePercentilico;
         }
     }
 }

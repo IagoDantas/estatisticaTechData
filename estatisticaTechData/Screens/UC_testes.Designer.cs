@@ -31,12 +31,14 @@
             estatisticaTechData.techDataButton btnPercentis;
             estatisticaTechData.techDataButton btnQuartis;
             estatisticaTechData.techDataButton btnDesvioPadrao;
+            estatisticaTechData.techDataButton btnDispersao;
+            estatisticaTechData.techDataButton btnCoeficientePercentilicoCurtose;
+            estatisticaTechData.techDataButton btnVariancia;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            estatisticaTechData.techDataButton btnDispersao;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -50,10 +52,14 @@
             this.btnMediana = new estatisticaTechData.techDataButton();
             this.lblDesvioPadrao = new System.Windows.Forms.Label();
             this.lblDipersao = new System.Windows.Forms.Label();
+            this.lblCoeficientePercentilicoCurtose = new System.Windows.Forms.Label();
+            this.lblVariancia = new System.Windows.Forms.Label();
             btnPercentis = new estatisticaTechData.techDataButton();
             btnQuartis = new estatisticaTechData.techDataButton();
             btnDesvioPadrao = new estatisticaTechData.techDataButton();
             btnDispersao = new estatisticaTechData.techDataButton();
+            btnCoeficientePercentilicoCurtose = new estatisticaTechData.techDataButton();
+            btnVariancia = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,6 +122,66 @@
             btnDesvioPadrao.TextColor = System.Drawing.Color.White;
             btnDesvioPadrao.UseVisualStyleBackColor = false;
             btnDesvioPadrao.Click += new System.EventHandler(this.btnDesvioPadrao_Click);
+            // 
+            // btnDispersao
+            // 
+            btnDispersao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDispersao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDispersao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnDispersao.BorderRadius = 50;
+            btnDispersao.BorderSize = 0;
+            btnDispersao.FlatAppearance.BorderSize = 0;
+            btnDispersao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDispersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDispersao.ForeColor = System.Drawing.Color.White;
+            btnDispersao.Location = new System.Drawing.Point(550, 600);
+            btnDispersao.Name = "btnDispersao";
+            btnDispersao.Size = new System.Drawing.Size(126, 47);
+            btnDispersao.TabIndex = 21;
+            btnDispersao.Text = "Dispersão";
+            btnDispersao.TextColor = System.Drawing.Color.White;
+            btnDispersao.UseVisualStyleBackColor = false;
+            btnDispersao.Click += new System.EventHandler(this.btnDispersao_Click);
+            // 
+            // btnCoeficientePercentilicoCurtose
+            // 
+            btnCoeficientePercentilicoCurtose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnCoeficientePercentilicoCurtose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnCoeficientePercentilicoCurtose.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnCoeficientePercentilicoCurtose.BorderRadius = 50;
+            btnCoeficientePercentilicoCurtose.BorderSize = 0;
+            btnCoeficientePercentilicoCurtose.FlatAppearance.BorderSize = 0;
+            btnCoeficientePercentilicoCurtose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCoeficientePercentilicoCurtose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnCoeficientePercentilicoCurtose.ForeColor = System.Drawing.Color.White;
+            btnCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(891, 23);
+            btnCoeficientePercentilicoCurtose.Name = "btnCoeficientePercentilicoCurtose";
+            btnCoeficientePercentilicoCurtose.Size = new System.Drawing.Size(126, 47);
+            btnCoeficientePercentilicoCurtose.TabIndex = 25;
+            btnCoeficientePercentilicoCurtose.Text = "Coeficiente % curtose";
+            btnCoeficientePercentilicoCurtose.TextColor = System.Drawing.Color.White;
+            btnCoeficientePercentilicoCurtose.UseVisualStyleBackColor = false;
+            btnCoeficientePercentilicoCurtose.Click += new System.EventHandler(this.btnCoeficientePercenCurtose_Click);
+            // 
+            // btnVariancia
+            // 
+            btnVariancia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnVariancia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnVariancia.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnVariancia.BorderRadius = 50;
+            btnVariancia.BorderSize = 0;
+            btnVariancia.FlatAppearance.BorderSize = 0;
+            btnVariancia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnVariancia.ForeColor = System.Drawing.Color.White;
+            btnVariancia.Location = new System.Drawing.Point(550, 538);
+            btnVariancia.Name = "btnVariancia";
+            btnVariancia.Size = new System.Drawing.Size(126, 47);
+            btnVariancia.TabIndex = 27;
+            btnVariancia.Text = "Variância";
+            btnVariancia.TextColor = System.Drawing.Color.White;
+            btnVariancia.UseVisualStyleBackColor = false;
+            btnVariancia.Click += new System.EventHandler(this.btnVariancia_Click);
             // 
             // lblMedia
             // 
@@ -301,43 +367,51 @@
             this.lblDesvioPadrao.Text = "label";
             this.lblDesvioPadrao.Visible = false;
             // 
-            // btnDispersao
-            // 
-            btnDispersao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDispersao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDispersao.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnDispersao.BorderRadius = 50;
-            btnDispersao.BorderSize = 0;
-            btnDispersao.FlatAppearance.BorderSize = 0;
-            btnDispersao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnDispersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnDispersao.ForeColor = System.Drawing.Color.White;
-            btnDispersao.Location = new System.Drawing.Point(550, 544);
-            btnDispersao.Name = "btnDispersao";
-            btnDispersao.Size = new System.Drawing.Size(126, 47);
-            btnDispersao.TabIndex = 21;
-            btnDispersao.Text = "Dispersão";
-            btnDispersao.TextColor = System.Drawing.Color.White;
-            btnDispersao.UseVisualStyleBackColor = false;
-            btnDispersao.Click += new System.EventHandler(this.btnDispersao_Click);
-            // 
             // lblDipersao
             // 
             this.lblDipersao.AutoSize = true;
             this.lblDipersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDipersao.ForeColor = System.Drawing.Color.Black;
-            this.lblDipersao.Location = new System.Drawing.Point(712, 557);
+            this.lblDipersao.Location = new System.Drawing.Point(712, 613);
             this.lblDipersao.Name = "lblDipersao";
             this.lblDipersao.Size = new System.Drawing.Size(42, 20);
             this.lblDipersao.TabIndex = 22;
             this.lblDipersao.Text = "label";
             this.lblDipersao.Visible = false;
             // 
+            // lblCoeficientePercentilicoCurtose
+            // 
+            this.lblCoeficientePercentilicoCurtose.AutoSize = true;
+            this.lblCoeficientePercentilicoCurtose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCoeficientePercentilicoCurtose.ForeColor = System.Drawing.Color.Black;
+            this.lblCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(896, 82);
+            this.lblCoeficientePercentilicoCurtose.Name = "lblCoeficientePercentilicoCurtose";
+            this.lblCoeficientePercentilicoCurtose.Size = new System.Drawing.Size(42, 20);
+            this.lblCoeficientePercentilicoCurtose.TabIndex = 26;
+            this.lblCoeficientePercentilicoCurtose.Text = "label";
+            this.lblCoeficientePercentilicoCurtose.Visible = false;
+            // 
+            // lblVariancia
+            // 
+            this.lblVariancia.AutoSize = true;
+            this.lblVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVariancia.ForeColor = System.Drawing.Color.Black;
+            this.lblVariancia.Location = new System.Drawing.Point(712, 551);
+            this.lblVariancia.Name = "lblVariancia";
+            this.lblVariancia.Size = new System.Drawing.Size(42, 20);
+            this.lblVariancia.TabIndex = 28;
+            this.lblVariancia.Text = "label";
+            this.lblVariancia.Visible = false;
+            // 
             // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(this.lblVariancia);
+            this.Controls.Add(btnVariancia);
+            this.Controls.Add(this.lblCoeficientePercentilicoCurtose);
+            this.Controls.Add(btnCoeficientePercentilicoCurtose);
             this.Controls.Add(this.lblDipersao);
             this.Controls.Add(btnDispersao);
             this.Controls.Add(this.lblDesvioPadrao);
@@ -378,5 +452,7 @@
         private System.Windows.Forms.MaskedTextBox txtPercentil;
         private System.Windows.Forms.Label lblDesvioPadrao;
         private System.Windows.Forms.Label lblDipersao;
+        private System.Windows.Forms.Label lblCoeficientePercentilicoCurtose;
+        private System.Windows.Forms.Label lblVariancia;
     }
 }
