@@ -219,11 +219,8 @@ namespace estatisticaTechDataClassLibrary
 
         public static double CalcularCoeficientePercentilicoCurtose(double[] arrExcel, int N)
         {
-            double[] arrQuartis = new double[3];
-            double[] arrPercentil = new double[100];
-
-            arrQuartis = CalcularQuartis(arrExcel, N);
-            arrPercentil = CalcularPercentis(arrExcel);
+            double[] arrQuartis = CalcularQuartis(arrExcel, N);
+            double[] arrPercentil = CalcularPercentis(arrExcel);
 
             double primeiroQuartil = arrQuartis[0];
             double terceiroQuartil = arrQuartis[2];
