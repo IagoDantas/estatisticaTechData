@@ -85,24 +85,5 @@ namespace estatisticaTechData
             }
 
         }
-
-        private void pcbVerSenha_Click(object sender, EventArgs e)
-        {
-            pcbEsconderSenha.Visible = true;
-            txtPassword.PasswordChar = false;
-            pcbVerSenha.Visible = false;
-        }
-
-        private void pcbEsconderSenha_Click(object sender, EventArgs e)
-        {
-            pcbEsconderSenha.Visible = false;
-            txtPassword.PasswordChar = true;
-            pcbVerSenha.Visible = true;
-        }
-
-        private void frmHome_Load(object sender, EventArgs e)
-        {
-            pcbEsconderSenha.Visible = false;
-        }
     }
 }
