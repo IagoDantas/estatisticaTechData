@@ -41,7 +41,11 @@ namespace estatisticaTechData
             this.btnSombraEntrar = new estatisticaTechData.techDataButton();
             this.txtSombraSenha = new estatisticaTechData.techDataTextBox();
             this.txtSombraUsuario = new estatisticaTechData.techDataTextBox();
+            this.pcbVerSenha = new System.Windows.Forms.PictureBox();
+            this.pcbEsconderSenha = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbLogo
@@ -247,6 +251,30 @@ namespace estatisticaTechData
             this.txtSombraUsuario.Texts = "";
             this.txtSombraUsuario.UnderlinedStyle = false;
             // 
+            // pcbVerSenha
+            // 
+            this.pcbVerSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcbVerSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
+            this.pcbVerSenha.Location = new System.Drawing.Point(757, 435);
+            this.pcbVerSenha.Name = "pcbVerSenha";
+            this.pcbVerSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbVerSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbVerSenha.TabIndex = 66;
+            this.pcbVerSenha.TabStop = false;
+            this.pcbVerSenha.Click += new System.EventHandler(this.pcbVerSenha_Click);
+            // 
+            // pcbEsconderSenha
+            // 
+            this.pcbEsconderSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pcbEsconderSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
+            this.pcbEsconderSenha.Location = new System.Drawing.Point(805, 435);
+            this.pcbEsconderSenha.Name = "pcbEsconderSenha";
+            this.pcbEsconderSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbEsconderSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbEsconderSenha.TabIndex = 67;
+            this.pcbEsconderSenha.TabStop = false;
+            this.pcbEsconderSenha.Click += new System.EventHandler(this.pcbEsconderSenha_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +282,8 @@ namespace estatisticaTechData
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pcbEsconderSenha);
+            this.Controls.Add(this.pcbVerSenha);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnSignIn);
@@ -275,7 +305,10 @@ namespace estatisticaTechData
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechData";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +326,8 @@ namespace estatisticaTechData
         private techDataTextBox txtSombraUsuario;
         private System.Windows.Forms.Label lblUser;
         private techDataTextBox txtUser;
+        private System.Windows.Forms.PictureBox pcbVerSenha;
+        private System.Windows.Forms.PictureBox pcbEsconderSenha;
     }
 }
 
