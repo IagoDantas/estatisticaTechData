@@ -54,9 +54,13 @@
             this.txtSombraRA = new estatisticaTechData.techDataTextBox();
             this.pcbEsconderSenha = new System.Windows.Forms.PictureBox();
             this.pcbVerSenha = new System.Windows.Forms.PictureBox();
+            this.pcbVerConfirmeSenha = new System.Windows.Forms.PictureBox();
+            this.pcbEsconderConfirmeSenha = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerConfirmeSenha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderConfirmeSenha)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbLogo
@@ -75,12 +79,12 @@
             // 
             this.lblSenhaConfirma.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSenhaConfirma.AutoSize = true;
-            this.lblSenhaConfirma.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSenhaConfirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenhaConfirma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblSenhaConfirma.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSenhaConfirma.Location = new System.Drawing.Point(801, 428);
             this.lblSenhaConfirma.Name = "lblSenhaConfirma";
-            this.lblSenhaConfirma.Size = new System.Drawing.Size(242, 42);
+            this.lblSenhaConfirma.Size = new System.Drawing.Size(224, 29);
             this.lblSenhaConfirma.TabIndex = 41;
             this.lblSenhaConfirma.Text = "Confirme a senha:";
             // 
@@ -88,12 +92,12 @@
             // 
             this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblSenha.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblSenha.Location = new System.Drawing.Point(871, 267);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(102, 42);
+            this.lblSenha.Size = new System.Drawing.Size(94, 29);
             this.lblSenha.TabIndex = 40;
             this.lblSenha.Text = "Senha:";
             // 
@@ -101,12 +105,12 @@
             // 
             this.lblRa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRa.AutoSize = true;
-            this.lblRa.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
+            this.lblRa.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.lblRa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblRa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblRa.Location = new System.Drawing.Point(327, 431);
             this.lblRa.Name = "lblRa";
-            this.lblRa.Size = new System.Drawing.Size(56, 42);
+            this.lblRa.Size = new System.Drawing.Size(54, 29);
             this.lblRa.TabIndex = 39;
             this.lblRa.Text = "RA:";
             // 
@@ -114,12 +118,12 @@
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblEmail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblEmail.Location = new System.Drawing.Point(871, 137);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(92, 42);
+            this.lblEmail.Size = new System.Drawing.Size(86, 29);
             this.lblEmail.TabIndex = 38;
             this.lblEmail.Text = "Email:";
             // 
@@ -127,12 +131,12 @@
             // 
             this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNome.AutoSize = true;
-            this.lblNome.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold);
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblNome.Location = new System.Drawing.Point(305, 137);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(97, 42);
+            this.lblNome.Size = new System.Drawing.Size(90, 29);
             this.lblNome.TabIndex = 37;
             this.lblNome.Text = "Nome:";
             // 
@@ -140,12 +144,12 @@
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblTitulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblTitulo.Location = new System.Drawing.Point(558, 57);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(162, 51);
+            this.lblTitulo.Size = new System.Drawing.Size(141, 33);
             this.lblTitulo.TabIndex = 36;
             this.lblTitulo.Text = "Cadastro";
             // 
@@ -154,11 +158,11 @@
             this.lklSignIn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
             this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklSignIn.AutoSize = true;
-            this.lklSignIn.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lklSignIn.Location = new System.Drawing.Point(608, 632);
             this.lklSignIn.Name = "lklSignIn";
-            this.lklSignIn.Size = new System.Drawing.Size(64, 28);
+            this.lklSignIn.Size = new System.Drawing.Size(57, 20);
             this.lklSignIn.TabIndex = 62;
             this.lklSignIn.TabStop = true;
             this.lklSignIn.Text = "entrar";
@@ -168,12 +172,12 @@
             // 
             this.Lbl_Resultado.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_Resultado.AutoSize = true;
-            this.Lbl_Resultado.Font = new System.Drawing.Font("Poppins Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Resultado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.Lbl_Resultado.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Lbl_Resultado.Location = new System.Drawing.Point(933, 373);
             this.Lbl_Resultado.Name = "Lbl_Resultado";
-            this.Lbl_Resultado.Size = new System.Drawing.Size(0, 34);
+            this.Lbl_Resultado.Size = new System.Drawing.Size(0, 24);
             this.Lbl_Resultado.TabIndex = 63;
             // 
             // rdbProfessor
@@ -181,7 +185,7 @@
             this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbProfessor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbProfessor.Location = new System.Drawing.Point(207, 352);
@@ -200,7 +204,7 @@
             this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbAluno.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.rdbAluno.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAluno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbAluno.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbAluno.Location = new System.Drawing.Point(207, 294);
@@ -221,7 +225,7 @@
             this.txtConfirmaSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtConfirmaSenha.BorderRadius = 25;
             this.txtConfirmaSenha.BorderSize = 2;
-            this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 474);
             this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -231,7 +235,7 @@
             this.txtConfirmaSenha.PasswordChar = true;
             this.txtConfirmaSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtConfirmaSenha.PlaceholderText = "Digite sua senha novamente:";
-            this.txtConfirmaSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtConfirmaSenha.Size = new System.Drawing.Size(326, 40);
             this.txtConfirmaSenha.TabIndex = 3;
             this.txtConfirmaSenha.Texts = "";
             this.txtConfirmaSenha.UnderlinedStyle = false;
@@ -243,7 +247,7 @@
             this.txtSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtSenha.BorderRadius = 25;
             this.txtSenha.BorderSize = 2;
-            this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.Location = new System.Drawing.Point(760, 315);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -253,7 +257,7 @@
             this.txtSenha.PasswordChar = true;
             this.txtSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.PlaceholderText = "Digite sua senha:";
-            this.txtSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtSenha.Size = new System.Drawing.Size(326, 40);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.Texts = "";
             this.txtSenha.UnderlinedStyle = false;
@@ -266,7 +270,7 @@
             this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtEmail.BorderRadius = 25;
             this.txtEmail.BorderSize = 2;
-            this.txtEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtEmail.Location = new System.Drawing.Point(760, 183);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -276,7 +280,7 @@
             this.txtEmail.PasswordChar = false;
             this.txtEmail.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtEmail.PlaceholderText = "Digite seu email:";
-            this.txtEmail.Size = new System.Drawing.Size(326, 50);
+            this.txtEmail.Size = new System.Drawing.Size(326, 40);
             this.txtEmail.TabIndex = 1;
             this.txtEmail.Texts = "";
             this.txtEmail.UnderlinedStyle = false;
@@ -288,7 +292,7 @@
             this.txtNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtNome.BorderRadius = 25;
             this.txtNome.BorderSize = 2;
-            this.txtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtNome.Location = new System.Drawing.Point(191, 183);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
@@ -298,7 +302,7 @@
             this.txtNome.PasswordChar = false;
             this.txtNome.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtNome.PlaceholderText = "Digite seu nome:";
-            this.txtNome.Size = new System.Drawing.Size(326, 50);
+            this.txtNome.Size = new System.Drawing.Size(326, 40);
             this.txtNome.TabIndex = 0;
             this.txtNome.Texts = "";
             this.txtNome.UnderlinedStyle = false;
@@ -310,7 +314,7 @@
             this.txtRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtRA.BorderRadius = 25;
             this.txtRA.BorderSize = 2;
-            this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtRA.Location = new System.Drawing.Point(191, 474);
             this.txtRA.Margin = new System.Windows.Forms.Padding(4);
@@ -320,7 +324,7 @@
             this.txtRA.PasswordChar = false;
             this.txtRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtRA.PlaceholderText = "Digite seu RA:";
-            this.txtRA.Size = new System.Drawing.Size(326, 50);
+            this.txtRA.Size = new System.Drawing.Size(326, 40);
             this.txtRA.TabIndex = 4;
             this.txtRA.Texts = "";
             this.txtRA.UnderlinedStyle = false;
@@ -336,7 +340,7 @@
             this.btnCadastrar.BorderSize = 0;
             this.btnCadastrar.FlatAppearance.BorderSize = 0;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCadastrar.Location = new System.Drawing.Point(530, 556);
@@ -360,7 +364,7 @@
             this.btnSombraCadastro.Enabled = false;
             this.btnSombraCadastro.FlatAppearance.BorderSize = 0;
             this.btnSombraCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSombraCadastro.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSombraCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSombraCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraCadastro.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSombraCadastro.Location = new System.Drawing.Point(530, 568);
@@ -379,7 +383,7 @@
             this.txtSombraConfirmaSenha.BorderRadius = 25;
             this.txtSombraConfirmaSenha.BorderSize = 2;
             this.txtSombraConfirmaSenha.Enabled = false;
-            this.txtSombraConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraConfirmaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraConfirmaSenha.Location = new System.Drawing.Point(760, 478);
             this.txtSombraConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -389,7 +393,7 @@
             this.txtSombraConfirmaSenha.PasswordChar = false;
             this.txtSombraConfirmaSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraConfirmaSenha.PlaceholderText = "";
-            this.txtSombraConfirmaSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraConfirmaSenha.Size = new System.Drawing.Size(326, 40);
             this.txtSombraConfirmaSenha.TabIndex = 56;
             this.txtSombraConfirmaSenha.Texts = "";
             this.txtSombraConfirmaSenha.UnderlinedStyle = false;
@@ -402,7 +406,7 @@
             this.txtSombraSenha.BorderRadius = 25;
             this.txtSombraSenha.BorderSize = 2;
             this.txtSombraSenha.Enabled = false;
-            this.txtSombraSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraSenha.Location = new System.Drawing.Point(760, 319);
             this.txtSombraSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -412,7 +416,7 @@
             this.txtSombraSenha.PasswordChar = false;
             this.txtSombraSenha.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraSenha.PlaceholderText = "";
-            this.txtSombraSenha.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraSenha.Size = new System.Drawing.Size(326, 40);
             this.txtSombraSenha.TabIndex = 60;
             this.txtSombraSenha.Texts = "";
             this.txtSombraSenha.UnderlinedStyle = false;
@@ -425,7 +429,7 @@
             this.txtSombraEmail.BorderRadius = 25;
             this.txtSombraEmail.BorderSize = 2;
             this.txtSombraEmail.Enabled = false;
-            this.txtSombraEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraEmail.Location = new System.Drawing.Point(760, 187);
             this.txtSombraEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -435,7 +439,7 @@
             this.txtSombraEmail.PasswordChar = false;
             this.txtSombraEmail.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraEmail.PlaceholderText = "";
-            this.txtSombraEmail.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraEmail.Size = new System.Drawing.Size(326, 40);
             this.txtSombraEmail.TabIndex = 59;
             this.txtSombraEmail.Texts = "";
             this.txtSombraEmail.UnderlinedStyle = false;
@@ -448,7 +452,7 @@
             this.txtSombraNome.BorderRadius = 25;
             this.txtSombraNome.BorderSize = 2;
             this.txtSombraNome.Enabled = false;
-            this.txtSombraNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraNome.Location = new System.Drawing.Point(191, 187);
             this.txtSombraNome.Margin = new System.Windows.Forms.Padding(4);
@@ -458,7 +462,7 @@
             this.txtSombraNome.PasswordChar = false;
             this.txtSombraNome.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraNome.PlaceholderText = "";
-            this.txtSombraNome.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraNome.Size = new System.Drawing.Size(326, 40);
             this.txtSombraNome.TabIndex = 58;
             this.txtSombraNome.Texts = "";
             this.txtSombraNome.UnderlinedStyle = false;
@@ -471,7 +475,7 @@
             this.txtSombraRA.BorderRadius = 25;
             this.txtSombraRA.BorderSize = 2;
             this.txtSombraRA.Enabled = false;
-            this.txtSombraRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSombraRA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSombraRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraRA.Location = new System.Drawing.Point(191, 478);
             this.txtSombraRA.Margin = new System.Windows.Forms.Padding(4);
@@ -481,7 +485,7 @@
             this.txtSombraRA.PasswordChar = false;
             this.txtSombraRA.PlaceholderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSombraRA.PlaceholderText = "";
-            this.txtSombraRA.Size = new System.Drawing.Size(326, 50);
+            this.txtSombraRA.Size = new System.Drawing.Size(326, 40);
             this.txtSombraRA.TabIndex = 57;
             this.txtSombraRA.Texts = "";
             this.txtSombraRA.UnderlinedStyle = false;
@@ -508,12 +512,36 @@
             this.pcbVerSenha.TabStop = false;
             this.pcbVerSenha.Click += new System.EventHandler(this.pcbVerSenha_Click);
             // 
+            // pcbVerConfirmeSenha
+            // 
+            this.pcbVerConfirmeSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
+            this.pcbVerConfirmeSenha.Location = new System.Drawing.Point(1093, 482);
+            this.pcbVerConfirmeSenha.Name = "pcbVerConfirmeSenha";
+            this.pcbVerConfirmeSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbVerConfirmeSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbVerConfirmeSenha.TabIndex = 67;
+            this.pcbVerConfirmeSenha.TabStop = false;
+            this.pcbVerConfirmeSenha.Click += new System.EventHandler(this.pcbVerConfirmeSenha_Click);
+            // 
+            // pcbEsconderConfirmeSenha
+            // 
+            this.pcbEsconderConfirmeSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
+            this.pcbEsconderConfirmeSenha.Location = new System.Drawing.Point(1141, 482);
+            this.pcbEsconderConfirmeSenha.Name = "pcbEsconderConfirmeSenha";
+            this.pcbEsconderConfirmeSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbEsconderConfirmeSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbEsconderConfirmeSenha.TabIndex = 66;
+            this.pcbEsconderConfirmeSenha.TabStop = false;
+            this.pcbEsconderConfirmeSenha.Click += new System.EventHandler(this.pcbEsconderConfirmeSenha_Click);
+            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.pcbVerConfirmeSenha);
+            this.Controls.Add(this.pcbEsconderConfirmeSenha);
             this.Controls.Add(this.pcbVerSenha);
             this.Controls.Add(this.pcbEsconderSenha);
             this.Controls.Add(this.Lbl_Resultado);
@@ -549,6 +577,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbVerConfirmeSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderConfirmeSenha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,5 +611,7 @@
         private System.Windows.Forms.Label Lbl_Resultado;
         private System.Windows.Forms.PictureBox pcbEsconderSenha;
         private System.Windows.Forms.PictureBox pcbVerSenha;
+        private System.Windows.Forms.PictureBox pcbVerConfirmeSenha;
+        private System.Windows.Forms.PictureBox pcbEsconderConfirmeSenha;
     }
 }

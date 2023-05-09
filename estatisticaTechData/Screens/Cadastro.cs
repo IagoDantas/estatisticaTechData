@@ -174,6 +174,7 @@ namespace estatisticaTechData
         private void frmCadastro_Load(object sender, EventArgs e)
         {
             pcbEsconderSenha.Visible = false;
+            pcbEsconderConfirmeSenha.Visible = false;
         }
 
         private void pcbVerSenha_Click(object sender, EventArgs e)
@@ -188,6 +189,20 @@ namespace estatisticaTechData
             pcbEsconderSenha.Visible = false;
             txtSenha.PasswordChar = true;
             pcbVerSenha.Visible = true;
+        }
+
+        private void pcbVerConfirmeSenha_Click(object sender, EventArgs e)
+        {
+            pcbEsconderConfirmeSenha.Visible = true;
+            txtConfirmaSenha.PasswordChar = false;
+            pcbVerConfirmeSenha.Visible = false;
+        }
+
+        private void pcbEsconderConfirmeSenha_Click(object sender, EventArgs e)
+        {
+            pcbEsconderConfirmeSenha.Visible = false;
+            txtConfirmaSenha.PasswordChar = true;
+            pcbVerConfirmeSenha.Visible = true;
         }
     }
 }
