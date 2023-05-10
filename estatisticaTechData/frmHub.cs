@@ -20,13 +20,16 @@ namespace estatisticaTechData
         int ControleConfig = 0;
         int ControleCompara = 0;
         int ControleTeste = 0;
+        public string emailUser;
 
-        public frmHub()
+        public frmHub(string email)
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
             funEstancia = this;
+            emailUser = email;
         }
+
 
         public void abrirHist()
         {

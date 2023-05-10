@@ -164,6 +164,12 @@
     <Compile Include="Screens\Cadastro.Designer.cs">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmValidacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmValidacao.Designer.cs">
+      <DependentUpon>frmValidacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\HistoricoDistribuicaoNormal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmValidacao.resx">
+      <DependentUpon>frmValidacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\HistoricoDistribuicaoNormal.resx">
       <DependentUpon>HistoricoDistribuicaoNormal.cs</DependentUpon>

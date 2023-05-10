@@ -68,6 +68,7 @@
             this.pcbEditaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbEditaSenha.TabIndex = 7;
             this.pcbEditaSenha.TabStop = false;
+            this.pcbEditaSenha.Click += new System.EventHandler(this.pcbEditaSenha_Click);
             // 
             // pcbConfirmaEmail
             // 
@@ -82,6 +83,7 @@
             this.pcbConfirmaEmail.TabIndex = 4;
             this.pcbConfirmaEmail.TabStop = false;
             this.pcbConfirmaEmail.Visible = false;
+            this.pcbConfirmaEmail.Click += new System.EventHandler(this.pcbConfirmaEmail_Click);
             // 
             // pcbEditaEmail
             // 
@@ -93,6 +95,7 @@
             this.pcbEditaEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbEditaEmail.TabIndex = 5;
             this.pcbEditaEmail.TabStop = false;
+            this.pcbEditaEmail.Click += new System.EventHandler(this.pcbEditaEmail_Click);
             // 
             // pcbConfirmaNome
             // 
@@ -107,6 +110,7 @@
             this.pcbConfirmaNome.TabIndex = 3;
             this.pcbConfirmaNome.TabStop = false;
             this.pcbConfirmaNome.Visible = false;
+            this.pcbConfirmaNome.Click += new System.EventHandler(this.pcbConfirmaNome_Click);
             // 
             // pcbEditaNome
             // 
@@ -118,6 +122,7 @@
             this.pcbEditaNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbEditaNome.TabIndex = 2;
             this.pcbEditaNome.TabStop = false;
+            this.pcbEditaNome.Click += new System.EventHandler(this.pcbEditaNome_Click);
             // 
             // lblNome
             // 
@@ -154,6 +159,7 @@
             this.pcbConfirmaSenha.TabIndex = 6;
             this.pcbConfirmaSenha.TabStop = false;
             this.pcbConfirmaSenha.Visible = false;
+            this.pcbConfirmaSenha.Click += new System.EventHandler(this.pcbConfirmaSenha_Click);
             // 
             // lblEmail
             // 
