@@ -38,6 +38,7 @@
             this.pnlSideBar = new System.Windows.Forms.Panel();
             this.pcbConfig = new System.Windows.Forms.PictureBox();
             this.Tbc_Telas = new System.Windows.Forms.TabControl();
+            this.btnCEP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
@@ -70,7 +71,7 @@
             this.btnDistribuicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDistribuicao.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDistribuicao.ForeColor = System.Drawing.Color.White;
-            this.btnDistribuicao.Location = new System.Drawing.Point(0, 249);
+            this.btnDistribuicao.Location = new System.Drawing.Point(0, 251);
             this.btnDistribuicao.Name = "btnDistribuicao";
             this.btnDistribuicao.Size = new System.Drawing.Size(266, 50);
             this.btnDistribuicao.TabIndex = 4;
@@ -86,7 +87,7 @@
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnHistorico.Location = new System.Drawing.Point(0, 389);
+            this.btnHistorico.Location = new System.Drawing.Point(0, 467);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Size = new System.Drawing.Size(266, 50);
             this.btnHistorico.TabIndex = 3;
@@ -103,7 +104,7 @@
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
-            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(0, 319);
+            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(0, 321);
             this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
             this.btnPrevisaoDemanda.Size = new System.Drawing.Size(266, 64);
             this.btnPrevisaoDemanda.TabIndex = 2;
@@ -120,7 +121,7 @@
             this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInicio.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInicio.ForeColor = System.Drawing.Color.White;
-            this.btnInicio.Location = new System.Drawing.Point(3, 184);
+            this.btnInicio.Location = new System.Drawing.Point(0, 184);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(266, 50);
             this.btnInicio.TabIndex = 1;
@@ -144,6 +145,7 @@
             this.pnlSideBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.pnlSideBar.Controls.Add(this.btnCEP);
             this.pnlSideBar.Controls.Add(this.pcbConfig);
             this.pnlSideBar.Controls.Add(this.btnConfig);
             this.pnlSideBar.Controls.Add(this.btnDistribuicao);
@@ -179,6 +181,21 @@
             this.Tbc_Telas.TabIndex = 8;
             this.Tbc_Telas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Telas_MouseDown);
             // 
+            // btnCEP
+            // 
+            this.btnCEP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCEP.FlatAppearance.BorderSize = 0;
+            this.btnCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEP.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCEP.ForeColor = System.Drawing.Color.White;
+            this.btnCEP.Location = new System.Drawing.Point(0, 400);
+            this.btnCEP.Name = "btnCEP";
+            this.btnCEP.Size = new System.Drawing.Size(266, 50);
+            this.btnCEP.TabIndex = 9;
+            this.btnCEP.Text = "Gráfico CEP";
+            this.btnCEP.UseVisualStyleBackColor = true;
+            // 
             // frmHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,5 +226,6 @@
         private System.Windows.Forms.Panel pnlSideBar;
         private System.Windows.Forms.PictureBox pcbConfig;
         private System.Windows.Forms.TabControl Tbc_Telas;
+        private System.Windows.Forms.Button btnCEP;
     }
 }
