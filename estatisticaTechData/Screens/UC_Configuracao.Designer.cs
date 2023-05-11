@@ -46,6 +46,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.pnlConfigs = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.Lbl_Resultado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEditaSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEditaEmail)).BeginInit();
@@ -182,6 +183,7 @@
             this.txtSenha.Size = new System.Drawing.Size(423, 29);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.Text = "*********";
+            this.txtSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSenha_KeyDown);
             // 
             // pnlSenha
             // 
@@ -256,6 +258,7 @@
             this.pnlConfigs.AutoSize = true;
             this.pnlConfigs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.pnlConfigs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlConfigs.Controls.Add(this.Lbl_Resultado);
             this.pnlConfigs.Controls.Add(this.lblTitulo);
             this.pnlConfigs.Controls.Add(this.pnlEmail);
             this.pnlConfigs.Controls.Add(this.pnlNome);
@@ -275,6 +278,15 @@
             this.lblTitulo.Size = new System.Drawing.Size(243, 51);
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "Configurações";
+            // 
+            // Lbl_Resultado
+            // 
+            this.Lbl_Resultado.AutoSize = true;
+            this.Lbl_Resultado.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Resultado.Location = new System.Drawing.Point(147, 374);
+            this.Lbl_Resultado.Name = "Lbl_Resultado";
+            this.Lbl_Resultado.Size = new System.Drawing.Size(0, 26);
+            this.Lbl_Resultado.TabIndex = 6;
             // 
             // UC_Configuracao
             // 
@@ -323,5 +335,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Panel pnlConfigs;
         private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Label Lbl_Resultado;
     }
 }

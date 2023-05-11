@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
 using estatisticaTechData.Screens;
+using estatisticaTechDataClassLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,6 +106,7 @@ namespace estatisticaTechData
         }
         private void pcbConfirmaSenha_Click(object sender, EventArgs e)
         {
+            string preSenha = txtSenha.Text;
             if (string.IsNullOrEmpty(txtSenha.Text))
             {
                 MessageBox.Show("Senha não alterada, a caixa de texto estava vazia!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -112,18 +114,27 @@ namespace estatisticaTechData
             }
             else
             {
-                try
+                if (Lbl_Resultado.Text != "Inaceitavel")
                 {
-                    string where = $"email='{frmHub.funEstancia.emailUser}'";
-                    Dictionary<string, string> data = new Dictionary<string, string>();
-                    data.Add("password", txtSenha.Text);
-                    conexao.UpdateData("users", data, where);
-                    MessageBox.Show("Senha atualizada");
+                    try
+                    {
+                        string where = $"email='{frmHub.funEstancia.emailUser}'";
+                        Dictionary<string, string> data = new Dictionary<string, string>();
+                        data.Add("password", txtSenha.Text);
+                        conexao.UpdateData("users", data, where);
+                        MessageBox.Show("Senha atualizada");
+                    }
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception erro)
+                else
                 {
-                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A força da senha não pode ser inaceitável ");
+                    carregaInformacoes();
                 }
+
             }
             txtSenha.Enabled = false;
             txtSenha.PasswordChar = '*';
@@ -206,6 +217,26 @@ namespace estatisticaTechData
                 {
                     MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            Cls_Utils.ChecaForcaSenha verifica = new Cls_Utils.ChecaForcaSenha();
+            Cls_Utils.ChecaForcaSenha.ForcaDaSenha forca;
+            forca = verifica.GetForcaDaSenha(txtSenha.Text);
+            Lbl_Resultado.Text = forca.ToString();
+            if (Lbl_Resultado.Text == "Inaceitavel" || Lbl_Resultado.Text == "Fraca")
+            {
+                Lbl_Resultado.ForeColor = Color.Red;
+            }
+            if (Lbl_Resultado.Text == "Aceitavel")
+            {
+                Lbl_Resultado.ForeColor = Color.Blue;
+            }
+            if (Lbl_Resultado.Text == "Forte" || Lbl_Resultado.Text == "Segura")
+            {
+                Lbl_Resultado.ForeColor = Color.Green;
             }
         }
     }
