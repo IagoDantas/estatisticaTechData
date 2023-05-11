@@ -244,12 +244,6 @@
     <Compile Include="Screens\UC_HistoricoArquivos.Designer.cs">
       <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_DialogBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DialogBox.Designer.cs">
-      <DependentUpon>UC_DialogBox.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,9 +307,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_HistoricoArquivos.resx">
       <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_DialogBox.resx">
-      <DependentUpon>UC_DialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="estatisticaTechDataDataSet.xsc">
       <DependentUpon>estatisticaTechDataDataSet.xsd</DependentUpon>
