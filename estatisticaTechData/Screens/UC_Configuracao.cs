@@ -190,7 +190,7 @@ namespace estatisticaTechData
                 try
                 {
                     string[] columns = { "email" };
-                    string where = $"email='{frmHub.funEstancia.emailUser}'";
+                    string where = $"email='{txtEmail.Text}'";
                     List<string>[] result = conexao.SelectData("users", columns, where);
                     if (result[0].Count > 0)
                     {
@@ -198,8 +198,8 @@ namespace estatisticaTechData
                         txtEmail.Focus();
                     }
                     else
-                    {
-                    
+                    {   
+                            where = $"email='{frmHub.funEstancia.emailUser}'";
                             Dictionary<string, string> data = new Dictionary<string, string>();
                             data.Add("email", txtEmail.Text);
                             conexao.UpdateData("users", data, where);
