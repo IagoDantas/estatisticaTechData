@@ -199,7 +199,7 @@ namespace estatisticaTechData.Screens
             // 
             this.Lbl_Resultado.AutoSize = true;
             this.Lbl_Resultado.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Resultado.Location = new System.Drawing.Point(113, 137);
+            this.Lbl_Resultado.Location = new System.Drawing.Point(136, 137);
             this.Lbl_Resultado.Name = "Lbl_Resultado";
             this.Lbl_Resultado.Size = new System.Drawing.Size(0, 26);
             this.Lbl_Resultado.TabIndex = 28;

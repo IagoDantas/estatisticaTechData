@@ -34,27 +34,34 @@ namespace estatisticaTechData.Screens
             }
             else
             {
-                if (Lbl_Resultado.Text != "Inaceitavel")
+                if (Lbl_Resultado.Text != "Inaceitavel" )
                 {
-                    try
+                    if(Txt_NovaConfirmacaoSenha.Texts == Txt_NovaSenha.Texts)
                     {
-                        string where = $"email='{email}'";
-                        Dictionary<string, string> data = new Dictionary<string, string>();
-                        data.Add("password", Txt_NovaSenha.Texts);
-                        conexao.UpdateData("users", data, where);
-                        MessageBox.Show("Senha atualizada");
-                        this.Close();
+                        try
+                        {
+                            string where = $"email='{email}'";
+                            Dictionary<string, string> data = new Dictionary<string, string>();
+                            data.Add("password", Txt_NovaSenha.Texts);
+                            conexao.UpdateData("users", data, where);
+                            MessageBox.Show("Senha atualizada");
+                            this.Close();
+                        }
+                        catch (Exception erro)
+                        {
+                            MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    catch (Exception erro)
+                    else
                     {
-                        MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Close();
+                        MessageBox.Show("A senha e a confirmação de senha não coincidem","Erro",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        
                     }
                 }
                 else
                 {
-                    MessageBox.Show("A força da senha não pode ser inaceitável ");
-                    this.Close();
+                    MessageBox.Show("A força da senha não pode ser inaceitável ", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    
                 }
 
             }
