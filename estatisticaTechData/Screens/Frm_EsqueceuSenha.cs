@@ -38,18 +38,32 @@ namespace estatisticaTechData.Screens
                 {
                     if(Txt_NovaConfirmacaoSenha.Texts == Txt_NovaSenha.Texts)
                     {
-                        try
+                        string[] columns = {"password" };
+                        string where = $"email='{email}'";
+                        List<string>[] result = conexao.SelectData("users", columns, where);
+                        string SenhaAtual = result[0][0].ToString();
+
+                        if (SenhaAtual != Txt_NovaSenha.Texts)
                         {
-                            string where = $"email='{email}'";
-                            Dictionary<string, string> data = new Dictionary<string, string>();
-                            data.Add("password", Txt_NovaSenha.Texts);
-                            conexao.UpdateData("users", data, where);
-                            MessageBox.Show("Senha atualizada");
-                            this.Close();
+                            try
+                            {
+                                where = "";
+                                where = $"email='{email}'";
+                                Dictionary<string, string> data = new Dictionary<string, string>();
+                                data.Add("password", Txt_NovaSenha.Texts);
+                                conexao.UpdateData("users", data, where);
+                                MessageBox.Show("Senha atualizada");
+                                this.Close();
+                            }
+                            catch (Exception erro)
+                            {
+                                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
-                        catch (Exception erro)
+                        else
                         {
-                            MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("A nova senha não pode ser igual a senha antiga", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         }
                     }
                     else
