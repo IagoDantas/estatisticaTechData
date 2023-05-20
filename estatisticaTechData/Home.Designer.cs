@@ -117,9 +117,9 @@ namespace estatisticaTechData
             // 
             this.pcbVerSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbVerSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
-            this.pcbVerSenha.Location = new System.Drawing.Point(757, 425);
+            this.pcbVerSenha.Location = new System.Drawing.Point(757, 437);
             this.pcbVerSenha.Name = "pcbVerSenha";
-            this.pcbVerSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbVerSenha.Size = new System.Drawing.Size(26, 24);
             this.pcbVerSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbVerSenha.TabIndex = 67;
             this.pcbVerSenha.TabStop = false;
@@ -129,9 +129,9 @@ namespace estatisticaTechData
             // 
             this.pcbEsconderSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbEsconderSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
-            this.pcbEsconderSenha.Location = new System.Drawing.Point(806, 425);
+            this.pcbEsconderSenha.Location = new System.Drawing.Point(790, 437);
             this.pcbEsconderSenha.Name = "pcbEsconderSenha";
-            this.pcbEsconderSenha.Size = new System.Drawing.Size(42, 36);
+            this.pcbEsconderSenha.Size = new System.Drawing.Size(26, 24);
             this.pcbEsconderSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbEsconderSenha.TabIndex = 66;
             this.pcbEsconderSenha.TabStop = false;
