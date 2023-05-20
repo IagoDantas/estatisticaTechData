@@ -82,7 +82,7 @@
             this.lblSenhaConfirma.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenhaConfirma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblSenhaConfirma.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblSenhaConfirma.Location = new System.Drawing.Point(820, 431);
+            this.lblSenhaConfirma.Location = new System.Drawing.Point(820, 423);
             this.lblSenhaConfirma.Name = "lblSenhaConfirma";
             this.lblSenhaConfirma.Size = new System.Drawing.Size(213, 37);
             this.lblSenhaConfirma.TabIndex = 41;
@@ -108,7 +108,7 @@
             this.lblRa.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblRa.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblRa.Location = new System.Drawing.Point(332, 431);
+            this.lblRa.Location = new System.Drawing.Point(332, 423);
             this.lblRa.Name = "lblRa";
             this.lblRa.Size = new System.Drawing.Size(52, 37);
             this.lblRa.TabIndex = 39;
@@ -121,7 +121,7 @@
             this.lblEmail.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblEmail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblEmail.Location = new System.Drawing.Point(885, 137);
+            this.lblEmail.Location = new System.Drawing.Point(885, 132);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(82, 37);
             this.lblEmail.TabIndex = 38;
@@ -134,7 +134,7 @@
             this.lblNome.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lblNome.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblNome.Location = new System.Drawing.Point(310, 137);
+            this.lblNome.Location = new System.Drawing.Point(310, 132);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(87, 37);
             this.lblNome.TabIndex = 37;
@@ -158,11 +158,11 @@
             this.lklSignIn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
             this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lklSignIn.AutoSize = true;
-            this.lklSignIn.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklSignIn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.lklSignIn.Location = new System.Drawing.Point(605, 621);
             this.lklSignIn.Name = "lklSignIn";
-            this.lklSignIn.Size = new System.Drawing.Size(76, 34);
+            this.lklSignIn.Size = new System.Drawing.Size(77, 34);
             this.lklSignIn.TabIndex = 62;
             this.lklSignIn.TabStop = true;
             this.lklSignIn.Text = "entrar";
@@ -340,14 +340,14 @@
             this.btnCadastrar.BorderSize = 0;
             this.btnCadastrar.FlatAppearance.BorderSize = 0;
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCadastrar.Location = new System.Drawing.Point(530, 556);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
             this.btnCadastrar.TabIndex = 8;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "cadastrar";
             this.btnCadastrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCadastrar.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnCadastrar.UseVisualStyleBackColor = false;

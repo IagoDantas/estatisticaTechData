@@ -79,5 +79,33 @@ namespace estatisticaTechData.Screens
                 Lbl_Resultado.ForeColor = Color.Green;
             }
         }
+
+        private void pcbVerNovaSenha_Click(object sender, EventArgs e)
+        {
+            pcbEsconderNovaSenha.Visible = true;
+            Txt_NovaSenha.PasswordChar = false;
+            pcbVerNovaSenha.Visible = false;
+        }
+
+        private void pcbEsconderNovaSenha_Click(object sender, EventArgs e)
+        {
+            pcbEsconderNovaSenha.Visible = false;
+            Txt_NovaSenha.PasswordChar = true;
+            pcbVerNovaSenha.Visible = true;
+        }
+
+        private void pcbVerConfirmeSenha_Click(object sender, EventArgs e)
+        {
+            pcbEsconderConfirmeNovaSenha.Visible = true;
+            Txt_NovaConfirmacaoSenha.PasswordChar = false;
+            pcbVerConfirmeNovaSenha.Visible = false;
+        }
+
+        private void pcbEsconderConfirmeSenha_Click(object sender, EventArgs e)
+        {
+            pcbEsconderConfirmeNovaSenha.Visible = false;
+            Txt_NovaConfirmacaoSenha.PasswordChar = true;
+            pcbVerConfirmeNovaSenha.Visible = true;
+        }
     }
 }
