@@ -85,6 +85,7 @@ namespace estatisticaTechData
             this.lklForgotPassword.TabIndex = 8;
             this.lklForgotPassword.TabStop = true;
             this.lklForgotPassword.Text = "esqueceu a senha?";
+            this.lklForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklForgotPassword_LinkClicked);
             // 
             // lklSignUp
             // 

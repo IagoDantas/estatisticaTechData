@@ -104,5 +104,11 @@ namespace estatisticaTechData
         {
             pcbEsconderSenha.Visible = false;
         }
+
+        private void lklForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Screens.Frm_ValidaEmail ValidarEmail = new Screens.Frm_ValidaEmail();
+            ValidarEmail.ShowDialog();
+        }
     }
 }

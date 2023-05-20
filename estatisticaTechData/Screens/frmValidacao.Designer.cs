@@ -57,11 +57,11 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Poppins Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.ForeColor = System.Drawing.Color.White;
-            this.btnOk.Location = new System.Drawing.Point(451, 198);
+            this.btnOk.Location = new System.Drawing.Point(413, 198);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(71, 40);
+            this.btnOk.Size = new System.Drawing.Size(93, 40);
             this.btnOk.TabIndex = 5;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "Continuar";
             this.btnOk.TextColor = System.Drawing.Color.White;
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -77,7 +77,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Poppins Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(353, 198);
+            this.btnCancel.Location = new System.Drawing.Point(315, 198);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(92, 40);
             this.btnCancel.TabIndex = 4;
@@ -96,7 +96,7 @@
             this.txtPassword.BorderSize = 2;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.txtPassword.Location = new System.Drawing.Point(128, 102);
+            this.txtPassword.Location = new System.Drawing.Point(128, 109);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";

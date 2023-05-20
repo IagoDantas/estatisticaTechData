@@ -170,6 +170,18 @@
     <Compile Include="Screens\frmValidacao.Designer.cs">
       <DependentUpon>frmValidacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Frm_EsqueceuSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Frm_EsqueceuSenha.Designer.cs">
+      <DependentUpon>Frm_EsqueceuSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Frm_ValidaEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Frm_ValidaEmail.Designer.cs">
+      <DependentUpon>Frm_ValidaEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\HistoricoDistribuicaoNormal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmValidacao.resx">
       <DependentUpon>frmValidacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Frm_EsqueceuSenha.resx">
+      <DependentUpon>Frm_EsqueceuSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Frm_ValidaEmail.resx">
+      <DependentUpon>Frm_ValidaEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\HistoricoDistribuicaoNormal.resx">
       <DependentUpon>HistoricoDistribuicaoNormal.cs</DependentUpon>
