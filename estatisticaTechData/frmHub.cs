@@ -288,13 +288,6 @@ namespace estatisticaTechData
             btnDistribuicao.Enabled = false;
             btnHistorico.Enabled = true;
             btnPrevisaoDemanda.Enabled = true;
-        }
-
-        private void frmHub_Load(object sender, EventArgs e)
-        {
-            MaximizeBox = false;
-        }
-
-    
+        }    
     }
 }
