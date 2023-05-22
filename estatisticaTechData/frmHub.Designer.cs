@@ -36,9 +36,9 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.btnCEP = new System.Windows.Forms.Button();
             this.pcbConfig = new System.Windows.Forms.PictureBox();
             this.Tbc_Telas = new System.Windows.Forms.TabControl();
-            this.btnCEP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
@@ -158,6 +158,21 @@
             this.pnlSideBar.Size = new System.Drawing.Size(266, 682);
             this.pnlSideBar.TabIndex = 6;
             // 
+            // btnCEP
+            // 
+            this.btnCEP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCEP.FlatAppearance.BorderSize = 0;
+            this.btnCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCEP.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCEP.ForeColor = System.Drawing.Color.White;
+            this.btnCEP.Location = new System.Drawing.Point(0, 400);
+            this.btnCEP.Name = "btnCEP";
+            this.btnCEP.Size = new System.Drawing.Size(266, 50);
+            this.btnCEP.TabIndex = 9;
+            this.btnCEP.Text = "Gráfico CEP";
+            this.btnCEP.UseVisualStyleBackColor = true;
+            // 
             // pcbConfig
             // 
             this.pcbConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -180,21 +195,6 @@
             this.Tbc_Telas.Size = new System.Drawing.Size(998, 682);
             this.Tbc_Telas.TabIndex = 8;
             this.Tbc_Telas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Telas_MouseDown);
-            // 
-            // btnCEP
-            // 
-            this.btnCEP.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCEP.FlatAppearance.BorderSize = 0;
-            this.btnCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCEP.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCEP.ForeColor = System.Drawing.Color.White;
-            this.btnCEP.Location = new System.Drawing.Point(0, 400);
-            this.btnCEP.Name = "btnCEP";
-            this.btnCEP.Size = new System.Drawing.Size(266, 50);
-            this.btnCEP.TabIndex = 9;
-            this.btnCEP.Text = "Gráfico CEP";
-            this.btnCEP.UseVisualStyleBackColor = true;
             // 
             // frmHub
             // 

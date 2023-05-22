@@ -294,5 +294,7 @@ namespace estatisticaTechData
         {
             MaximizeBox = false;
         }
+
+    
     }
 }
