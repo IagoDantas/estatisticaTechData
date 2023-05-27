@@ -103,6 +103,7 @@ namespace estatisticaTechData
         private void frmHome_Load(object sender, EventArgs e)
         {
             pcbEsconderSenha.Visible = false;
+            MaximizeBox = false;
         }
 
         private void lklForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

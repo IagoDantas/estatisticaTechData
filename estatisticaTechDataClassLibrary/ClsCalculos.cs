@@ -138,7 +138,7 @@ namespace estatisticaTechDataClassLibrary
             return arrQuartis;
         }
 
-        static public double[] CalcularPercentis(double[] arrExcel)
+        public static double[] CalcularPercentis(double[] arrExcel)
         {
             double[] arrPercentil = new double[100];
 
@@ -147,7 +147,7 @@ namespace estatisticaTechDataClassLibrary
             int percentil = 1;
             for (int i = 0; i < 100; i++)
             {
-                double posicao = (percentil / 100.0) * arrExcel.Length;
+                double posicao = ((percentil - 0.5) / 100.0) * (arrExcel.Length + 1);
 
                 if (posicao % 1 == 0)
                 {
@@ -158,7 +158,7 @@ namespace estatisticaTechDataClassLibrary
                 {
                     int indiceInferior = (int)Math.Floor(posicao) - 1;
                     int indiceSuperior = (int)Math.Ceiling(posicao) - 1;
-                    if(indiceSuperior == arrExcel.Length)
+                    if (indiceSuperior == arrExcel.Length)
                         indiceSuperior--;
                     if (indiceInferior < 0)
                         indiceInferior = 0;
@@ -172,7 +172,8 @@ namespace estatisticaTechDataClassLibrary
             return arrPercentil;
         }
 
-           
+
+
         public static double CalcularDesvioPadrao(double[] arrExcel)
         {
             double media = CalcularMedia(arrExcel, arrExcel.Length);

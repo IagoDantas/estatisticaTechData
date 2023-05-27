@@ -16,7 +16,7 @@ namespace estatisticaTechData
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Teste());
+            Application.Run(new frmHome());
         }
     }
 }
