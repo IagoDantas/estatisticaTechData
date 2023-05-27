@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lklNovaCarga = new System.Windows.Forms.LinkLabel();
+            estatisticaTechData.techDataButton Btn_NovosDados;
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblGráfico = new System.Windows.Forms.Label();
             this.lblLegenda = new System.Windows.Forms.Label();
@@ -39,37 +39,19 @@
             this.pnlGrafico = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlGraficoPorcentagem = new System.Windows.Forms.FlowLayoutPanel();
             this.lblGraficoPorcentagem = new System.Windows.Forms.Label();
-            this.btnTeste = new System.Windows.Forms.Button();
+            Btn_NovosDados = new estatisticaTechData.techDataButton();
             this.pnlHistorico.SuspendLayout();
             this.pnlLegenda.SuspendLayout();
             this.pnlGrafico.SuspendLayout();
             this.pnlGraficoPorcentagem.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lklNovaCarga
-            // 
-            this.lklNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklNovaCarga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lklNovaCarga.AutoSize = true;
-            this.lklNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lklNovaCarga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
-            this.lklNovaCarga.Location = new System.Drawing.Point(834, 145);
-            this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lklNovaCarga.Name = "lklNovaCarga";
-            this.lklNovaCarga.Size = new System.Drawing.Size(135, 16);
-            this.lklNovaCarga.TabIndex = 15;
-            this.lklNovaCarga.TabStop = true;
-            this.lklNovaCarga.Text = "Nova base de dados";
-            this.lklNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
-            // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(333, 80);
+            this.lblTitulo.Location = new System.Drawing.Point(353, 80);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(291, 33);
             this.lblTitulo.TabIndex = 13;
@@ -160,7 +142,7 @@
             this.pnlLegenda.Location = new System.Drawing.Point(366, 579);
             this.pnlLegenda.Name = "pnlLegenda";
             this.pnlLegenda.Padding = new System.Windows.Forms.Padding(80, 50, 0, 0);
-            this.pnlLegenda.Size = new System.Drawing.Size(607, 122);
+            this.pnlLegenda.Size = new System.Drawing.Size(647, 122);
             this.pnlLegenda.TabIndex = 10;
             // 
             // pnlGrafico
@@ -173,7 +155,7 @@
             this.pnlGrafico.Location = new System.Drawing.Point(366, 199);
             this.pnlGrafico.Name = "pnlGrafico";
             this.pnlGrafico.Padding = new System.Windows.Forms.Padding(100, 180, 0, 0);
-            this.pnlGrafico.Size = new System.Drawing.Size(607, 350);
+            this.pnlGrafico.Size = new System.Drawing.Size(647, 350);
             this.pnlGrafico.TabIndex = 11;
             // 
             // pnlGraficoPorcentagem
@@ -205,16 +187,26 @@
             this.lblGraficoPorcentagem.Text = "Os gráficos com porcentagem serão gerados aqui.";
             this.lblGraficoPorcentagem.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnTeste
+            // Btn_NovosDados
             // 
-            this.btnTeste.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTeste.Location = new System.Drawing.Point(871, 119);
-            this.btnTeste.Name = "btnTeste";
-            this.btnTeste.Size = new System.Drawing.Size(75, 23);
-            this.btnTeste.TabIndex = 16;
-            this.btnTeste.Text = "teste";
-            this.btnTeste.UseVisualStyleBackColor = true;
-            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            Btn_NovosDados.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            Btn_NovosDados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            Btn_NovosDados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            Btn_NovosDados.BorderColor = System.Drawing.Color.PaleVioletRed;
+            Btn_NovosDados.BorderRadius = 50;
+            Btn_NovosDados.BorderSize = 0;
+            Btn_NovosDados.FlatAppearance.BorderSize = 0;
+            Btn_NovosDados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            Btn_NovosDados.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Btn_NovosDados.ForeColor = System.Drawing.Color.White;
+            Btn_NovosDados.Location = new System.Drawing.Point(887, 136);
+            Btn_NovosDados.Name = "Btn_NovosDados";
+            Btn_NovosDados.Size = new System.Drawing.Size(126, 47);
+            Btn_NovosDados.TabIndex = 32;
+            Btn_NovosDados.Text = "Nova base de dados";
+            Btn_NovosDados.TextColor = System.Drawing.Color.White;
+            Btn_NovosDados.UseVisualStyleBackColor = false;
+            Btn_NovosDados.Click += new System.EventHandler(this.Btn_NovosDados_Click);
             // 
             // UC_DistribuicaoNormal
             // 
@@ -222,15 +214,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
-            this.Controls.Add(this.btnTeste);
-            this.Controls.Add(this.lklNovaCarga);
+            this.Controls.Add(Btn_NovosDados);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pnlHistorico);
             this.Controls.Add(this.pnlLegenda);
             this.Controls.Add(this.pnlGrafico);
             this.Controls.Add(this.pnlGraficoPorcentagem);
             this.Name = "UC_DistribuicaoNormal";
-            this.Size = new System.Drawing.Size(1000, 720);
+            this.Size = new System.Drawing.Size(1040, 720);
             this.pnlHistorico.ResumeLayout(false);
             this.pnlHistorico.PerformLayout();
             this.pnlLegenda.ResumeLayout(false);
@@ -245,8 +236,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel lklNovaCarga;
         private techDataButton btnNovaBase;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblGráfico;
@@ -259,6 +248,5 @@
         private System.Windows.Forms.FlowLayoutPanel pnlGraficoPorcentagem;
         private System.Windows.Forms.Label lblGraficoPorcentagem;
         private techDataButton btnHist;
-        private System.Windows.Forms.Button btnTeste;
     }
 }

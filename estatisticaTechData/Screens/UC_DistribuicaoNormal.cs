@@ -23,7 +23,7 @@ namespace estatisticaTechData.Screens
             frmHub.funEstancia.abrirHist();
         }
 
-        private void btnTeste_Click(object sender, EventArgs e)
+        private void Btn_NovosDados_Click(object sender, EventArgs e)
         {
             frmHub.funEstancia.abrirTeste();
         }
