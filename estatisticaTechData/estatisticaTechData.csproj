@@ -127,6 +127,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGraphControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraphControl.Designer.cs">
+      <DependentUpon>frmGraphControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHub.cs">
       <SubType>Form</SubType>
     </Compile>

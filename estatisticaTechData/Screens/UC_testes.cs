@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using estatisticaTechDataClassLibrary;
+using ExemploGraficoControle;
 
 namespace estatisticaTechData.Screens
 {
@@ -95,6 +96,12 @@ namespace estatisticaTechData.Screens
             coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayExcel, x);
             lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {Math.Round(coeficientePercentilicoCurtose, 2)}";
             lblCoeficientePercentilicoCurtose.Visible = true;
+        }
+
+        private void graphControl_Click(object sender, EventArgs e)
+        {
+            frmGraphControl graph = new frmGraphControl(arrayExcel);
+            graph.ShowDialog();
         }
 
         private void btnCoeficienteAssimetria_Click(object sender, EventArgs e)
