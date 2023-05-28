@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using estatisticaTechDataClassLibrary;
 using ExemploGraficoControle;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace estatisticaTechData.Screens
 {
@@ -17,6 +18,8 @@ namespace estatisticaTechData.Screens
     {
         int x, y;
         double[] arrayExcel;
+        double[] mediasIniciais;
+        double[,] matrizExcel;
         double[] modas, quartis, percentis;
         double media, mediana, desvioPadrao,variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
 
@@ -27,12 +30,12 @@ namespace estatisticaTechData.Screens
 
         private void testes_Load(object sender, EventArgs e)
         {
+            DataTable dt = new DataTable();
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     Cursor.Current = Cursors.WaitCursor;
-                    DataTable dt = new DataTable();
                     using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
                     {
                         bool isFirstRow = true;
@@ -65,9 +68,46 @@ namespace estatisticaTechData.Screens
             x = dgvTeste.RowCount - 1;
             y = dgvTeste.ColumnCount - 1;
             arrayExcel = ArrayExcel(x, y, dgvTeste);
-            x = x * y;
-        }
+            double[,] matriz = new double[x, y];
+            int contador = 0;
+            for(int i=0;i<x;i++)
+                for (int j = 0; j < y; j++)
+                {
+                    matriz[i, j] = arrayExcel[contador];
+                    contador++;
+                }
+            mediasIniciais = CalcularMediasInicias(matriz, x, y);
+            DataRow newRow = dt.NewRow();
+            for (int i = 0; i <= mediasIniciais.Length; i++)
+            {
+                if(i==0)
+                    newRow[i] = "Médias:";
+                else
+                    newRow[i] = Math.Round(mediasIniciais[i-1],4).ToString();
+            }
+            dt.Rows.Add(newRow);
 
+            // Atualizar o DataSource do DataGridView
+            dgvTeste.DataSource = dt;
+            x = x * y;
+            matrizExcel = matriz;
+        }
+        public static double[] CalcularMediasInicias(double[,] matriz, int sizeX, int sizeY)
+        {
+            double sum;
+            double[] medias = new double[sizeY];
+            for(int j = 0; j < sizeY; j++)
+            {
+                sum = 0;
+                for(int i = 0; i < sizeX; i++)
+                {
+                    sum += matriz[i,j];
+                }
+                medias[j] = sum/sizeX;
+            }
+
+            return medias;
+        }
         public static double[] ArrayExcel(int x, int y, DataGridView dgvTeste)
         {
             int size = x * y, p = 0;
@@ -86,8 +126,8 @@ namespace estatisticaTechData.Screens
         }
         private void btnMedia_Click(object sender, EventArgs e)
         {
-            media = ClsCalculos.CalcularMedia(arrayExcel, x); 
-            lblMedia.Text = "A média é: " + media.ToString("F");
+            media = ClsCalculos.CalcularMedia(mediasIniciais, mediasIniciais.Length); 
+            lblMedia.Text = "A média das médias é: " + media.ToString("F");
             lblMedia.Visible = true;
         }
 
@@ -101,6 +141,12 @@ namespace estatisticaTechData.Screens
         private void graphControl_Click(object sender, EventArgs e)
         {
             frmGraphControl graph = new frmGraphControl(arrayExcel);
+            graph.ShowDialog();
+        }
+
+        private void btnGraphMedia_Click(object sender, EventArgs e)
+        {
+            frmGraphMedia graph = new frmGraphMedia(arrayExcel);
             graph.ShowDialog();
         }
 

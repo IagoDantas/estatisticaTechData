@@ -13,8 +13,8 @@ namespace ExemploGraficoControle
 
         public frmGraphControl(double[] arrayTeste)
         {
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.arrayTeste = arrayTeste;
         }
 
