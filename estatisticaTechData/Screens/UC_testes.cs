@@ -19,6 +19,7 @@ namespace estatisticaTechData.Screens
         int x, y;
         double[] arrayExcel;
         double[] mediasIniciais;
+        double[] amplitudes;
         double[,] matrizExcel;
         double[] modas, quartis, percentis;
         double media, mediana, desvioPadrao,variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
@@ -87,6 +88,17 @@ namespace estatisticaTechData.Screens
             }
             dt.Rows.Add(newRow);
 
+            amplitudes = CalcularAmplitudes(matriz, x, y);
+            newRow = dt.NewRow();
+            for (int i = 0; i <= amplitudes.Length; i++)
+            {
+                if (i == 0)
+                    newRow[i] = "Amplitudes:";
+                else
+                    newRow[i] = Math.Round(amplitudes[i - 1], 4).ToString();
+            }
+            dt.Rows.Add(newRow);
+
             // Atualizar o DataSource do DataGridView
             dgvTeste.DataSource = dt;
             x = x * y;
@@ -94,11 +106,10 @@ namespace estatisticaTechData.Screens
         }
         public static double[] CalcularMediasInicias(double[,] matriz, int sizeX, int sizeY)
         {
-            double sum;
             double[] medias = new double[sizeY];
             for(int j = 0; j < sizeY; j++)
             {
-                sum = 0;
+                double sum = 0;
                 for(int i = 0; i < sizeX; i++)
                 {
                     sum += matriz[i,j];
@@ -108,6 +119,28 @@ namespace estatisticaTechData.Screens
 
             return medias;
         }
+
+        public static double[] CalcularAmplitudes(double[,] matriz, int sizeX, int sizeY)
+        {
+            double[] amplitudes = new double[sizeY];
+            for (int j = 0; j < sizeY; j++)
+            {
+                double maior = 0, menor = 0;
+                for (int i = 0; i < sizeX; i++)
+                {
+                    if (matriz[i,j] > maior)
+                        maior = matriz[i,j];
+                    else if (menor == 0)
+                        menor = matriz[i,j];
+                    else if (matriz[i,j]<menor)
+                        menor = matriz[i,j];
+                }
+                amplitudes[j] = maior-menor;
+            }
+
+            return amplitudes;
+        }
+
         public static double[] ArrayExcel(int x, int y, DataGridView dgvTeste)
         {
             int size = x * y, p = 0;
