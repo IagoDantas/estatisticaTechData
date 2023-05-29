@@ -133,7 +133,9 @@ namespace estatisticaTechData.Screens
 
         private void btnCoeficientePercenCurtose_Click(object sender, EventArgs e)
         {
-            coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayExcel, x);
+            double[] arrayCopy = new double[arrayExcel.Length];
+            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
+            coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayCopy, x);
             lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {Math.Round(coeficientePercentilicoCurtose, 2)}";
             lblCoeficientePercentilicoCurtose.Visible = true;
         }
@@ -152,7 +154,9 @@ namespace estatisticaTechData.Screens
 
         private void btnCoeficienteAssimetria_Click(object sender, EventArgs e)
         {
-            coeficienteAssimetria = ClsCalculos.CalcularCoeficienteAssimetria(arrayExcel);
+            double[] arrayCopy = new double[arrayExcel.Length];
+            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
+            coeficienteAssimetria = ClsCalculos.CalcularCoeficienteAssimetria(arrayCopy);
             lblCoeficienteAssimetria.Text = $"O coeficiente de assimetria é {Math.Round(coeficienteAssimetria, 2)}";
             lblCoeficienteAssimetria.Visible = true;
         }
@@ -173,7 +177,9 @@ namespace estatisticaTechData.Screens
 
         private void btnModa_Click(object sender, EventArgs e)
         {
-            modas = ClsCalculos.CalcularModa(arrayExcel);
+            double[] arrayCopy = new double[arrayExcel.Length];
+            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
+            modas = ClsCalculos.CalcularModa(arrayCopy);
             if (modas.Length == 0)
                 lblModa.Text = "Esta grupo é amodal";
             else if (modas.Length == 1)
@@ -185,7 +191,9 @@ namespace estatisticaTechData.Screens
 
         private void btnMediana_Click(object sender, EventArgs e)
         {
-            mediana = ClsCalculos.CalcularMediana(arrayExcel, x);
+            double[] arrayCopy = new double[arrayExcel.Length];
+            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
+            mediana = ClsCalculos.CalcularMediana(arrayCopy, x);
             lblMediana.Text = "A mediana desses valores é: " + mediana;
             lblMediana.Visible = true;
         }
@@ -200,19 +208,23 @@ namespace estatisticaTechData.Screens
 
         private void btnQuartis_Click(object sender, EventArgs e)
         {
-            quartis = ClsCalculos.CalcularQuartis(arrayExcel, x);
+            double[] arrayCopy = new double[arrayExcel.Length];
+            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
+            quartis = ClsCalculos.CalcularQuartis(arrayCopy, x);
             lblQuartis.Text = "Os quartis desses valores são: \nQ1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
             lblQuartis.Visible = true;
         }
 
         private void btnPercentis_Click(object sender, EventArgs e)
         {
+            double[] arrayCopy = new double[arrayExcel.Length];
+            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
             if (String.IsNullOrEmpty(txtPercentil.Text))
                 lblPercentis.Text = "A caixa de texto está vazio, digite um número.";
             else
             {
                 int numTXT = Convert.ToInt32(txtPercentil.Text);
-                percentis = ClsCalculos.CalcularPercentis(arrayExcel);
+                percentis = ClsCalculos.CalcularPercentis(arrayCopy);
 
                 if (numTXT > 0 && numTXT <= 100)
                     lblPercentis.Text = $"O percentil N°{numTXT} é: {percentis[numTXT - 1]}.";

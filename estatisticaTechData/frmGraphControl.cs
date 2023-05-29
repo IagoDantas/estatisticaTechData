@@ -1,7 +1,7 @@
-﻿using DocumentFormat.OpenXml.Office2019.Excel.RichData2;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using ZedGraph;
 
@@ -20,16 +20,28 @@ namespace ExemploGraficoControle
 
         private void frmGraphControl_Load(object sender, EventArgs e)
         {
-            grafico.Dock = DockStyle.Fill;
             // Configurar o gráfico
+            grafico.Dock = DockStyle.Fill;
             GraphPane graphPane = grafico.GraphPane;
             graphPane.Title.Text = "Gráfico de Controle";
             graphPane.XAxis.Title.Text = "Tempo";
             graphPane.YAxis.Title.Text = "Valor";
 
             // Dados de exemplo
+            PointPairList pointsMedia = new PointPairList();
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
+            
+            //linha média
+            for (int i = 0; i < data.Count; i++)
+            {
+                pointsMedia.Add(i + 1, data[i]);
+            }
+            double media = pointsMedia.Average(p => p.Y);
+            double xMin = 1;
+            double xMax = data.Count;
+            LineItem mediaLine = graphPane.AddCurve("Média", new[] { xMin, xMax }, new[] { media, media }, Color.Red);
+            mediaLine.Line.Width = 2;
 
             // Calcular a média e o desvio padrão dos dados
             double mean = CalculateMean(data);

@@ -32,15 +32,15 @@ namespace estatisticaTechData
 
 
             // Dados de exemplo
-            PointPairList pointPairList = new PointPairList();
+            PointPairList pointsMedia = new PointPairList();
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
             for (int i = 0; i < data.Count; i++)
             {
-                pointPairList.Add(i + 1, data[i]);
+                pointsMedia.Add(i + 1, data[i]);
             }
 
-            double media = pointPairList.Average(p => p.Y);
+            double media = pointsMedia.Average(p => p.Y);
             double xMin = 1;
             double xMax = data.Count;
 
