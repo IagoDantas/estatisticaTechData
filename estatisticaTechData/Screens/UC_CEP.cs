@@ -10,17 +10,20 @@ using System.Windows.Forms;
 
 namespace estatisticaTechData.Screens
 {
-    public partial class UC_DistribuicaoNormalComparacao : UserControl
+    public partial class UC_CEP : UserControl
     {
-        public UC_DistribuicaoNormalComparacao()
+        public UC_CEP()
         {
             InitializeComponent();
         }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void btnHist_Click(object sender, EventArgs e)
         {
-            /*frmDistribuicaoNormal distribuicaoNormal = new frmDistribuicaoNormal();
-            distribuicaoNormal.ShowDialog();*/
+            frmHub.funEstancia.abrirHist();
+        }
+
+        private void Btn_NovosDados_Click(object sender, EventArgs e)
+        {
+            frmHub.funEstancia.abrirTeste();
         }
     }
 }

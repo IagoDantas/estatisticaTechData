@@ -19,6 +19,7 @@ namespace estatisticaTechData
         int ControleHistoricoDistNormal = 0;
         int ControleConfig = 0;
         int ControleCompara = 0;
+        int ControleCEP = 0; 
         int ControleTeste = 0;
         public string emailUser;
 
@@ -92,17 +93,21 @@ namespace estatisticaTechData
 
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
+
             btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
             btnDistribuicao.ForeColor = Color.Black;
+
             btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
             btnPrevisaoDemanda.ForeColor = Color.White;
+
             btnInicio.BackColor = Color.FromArgb(0, 107, 117);
             btnInicio.ForeColor = Color.White;
+
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
+
             btnDistribuicao.Enabled = false;
             btnHistorico.Enabled = true;
-            btnPrevisaoDemanda.Enabled = true;
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)
@@ -121,23 +126,32 @@ namespace estatisticaTechData
             }
             else
             {
-                MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Já existem abas de histórico de arquivos abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
+
+            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+            btnCEP.ForeColor = Color.White;
+
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
             btnDistribuicao.ForeColor = Color.White;
+
             btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
             btnPrevisaoDemanda.ForeColor = Color.White;
+
             btnInicio.BackColor = Color.FromArgb(0, 107, 117);
             btnInicio.ForeColor = Color.White;
+
             btnHistorico.BackColor = Color.FromArgb(220, 236, 223);
             btnHistorico.ForeColor = Color.Black;
+
             btnDistribuicao.Enabled = true;
+            btnCEP.Enabled = true;
+            btnConfig.Enabled = true;
             btnHistorico.Enabled = false;
-            btnPrevisaoDemanda.Enabled = true;
         }
 
         private void btnPrevisaoDemanda_Click(object sender, EventArgs e)
@@ -179,17 +193,27 @@ namespace estatisticaTechData
             
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
             btnConfig.ForeColor = Color.White;
+
             btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
             btnDistribuicao.ForeColor = Color.Black;
+
             btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
             btnPrevisaoDemanda.ForeColor = Color.White;
+
             btnInicio.BackColor = Color.FromArgb(0, 107, 117);
             btnInicio.ForeColor = Color.White;
+
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
+
+            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+            btnCEP.ForeColor = Color.White;
+
+
             btnDistribuicao.Enabled = false;
             btnHistorico.Enabled = true;
-            btnPrevisaoDemanda.Enabled = true;
+            btnCEP.Enabled = true;
+            btnConfig.Enabled = true;
         }
 
         private void Tbc_Telas_MouseDown(object sender, MouseEventArgs e)
@@ -276,18 +300,63 @@ namespace estatisticaTechData
 
             btnConfig.BackColor = Color.FromArgb(220, 236, 223);
             btnConfig.ForeColor = Color.Black;
-            pcbConfig.BackColor = Color.FromArgb(220, 236, 223);
+
             btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.Black;
+            btnDistribuicao.ForeColor = Color.White;
+
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
+            btnPrevisaoDemanda.ForeColor = Color.White;
+
+            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+            btnInicio.ForeColor = Color.White;
+
+            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+            btnCEP.ForeColor = Color.White;
+
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
+
+
+            btnCEP.Enabled = true;
+            btnDistribuicao.Enabled = true;
+            btnHistorico.Enabled = true;
+            btnConfig.Enabled = false;
+        }
+
+        private void btnCEP_Click(object sender, EventArgs e)
+        {
+            if (ControleCEP == 0)
+            {
+                ControleCEP += 1;
+                Screens.UC_CEP CEP = new Screens.UC_CEP();
+                CEP.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "GraficoCEP";
+                TbPage.Text = "Gráfico CEP";
+                TbPage.Controls.Add(CEP);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de controle estatístico de processo abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+            btnConfig.ForeColor = Color.White;
+            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+            btnDistribuicao.ForeColor = Color.White;
+            btnCEP.BackColor = Color.FromArgb(220, 236, 223);
+            btnCEP.ForeColor = Color.Black;
             btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
             btnPrevisaoDemanda.ForeColor = Color.White;
             btnInicio.BackColor = Color.FromArgb(0, 107, 117);
             btnInicio.ForeColor = Color.White;
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
-            btnDistribuicao.Enabled = false;
+            btnCEP.Enabled = false;
+            btnDistribuicao.Enabled = true;
             btnHistorico.Enabled = true;
-            btnPrevisaoDemanda.Enabled = true;
-        }    
+        }
     }
 }

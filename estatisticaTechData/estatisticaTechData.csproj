@@ -213,6 +213,12 @@
     <Compile Include="Resources\techDataTextBox.Designer.cs">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_CEP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_CEP.Designer.cs">
+      <DependentUpon>UC_CEP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\UC_DistribuicaoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -288,6 +294,9 @@
     </Compile>
     <EmbeddedResource Include="Resources\techDataTextBox.resx">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_CEP.resx">
+      <DependentUpon>UC_CEP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_DistribuicaoNormal.resx">
       <DependentUpon>UC_DistribuicaoNormal.cs</DependentUpon>

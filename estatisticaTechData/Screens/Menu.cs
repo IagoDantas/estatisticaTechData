@@ -36,31 +36,31 @@ namespace estatisticaTechData
 
         private void btnAddGraficoDistNormal_Click(object sender, EventArgs e)
         {
-            frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
+            /*frmDistribuicaoNormal distribuicao = new frmDistribuicaoNormal();
             distribuicao.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnVisualizarGraficoDistNormal_Click(object sender, EventArgs e)
         {
-            frmHistoricoDistNormal historicoDist = new frmHistoricoDistNormal();
+           /* frmHistoricoDistNormal historicoDist = new frmHistoricoDistNormal();
             historicoDist.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnHistoricoArquivos_Click(object sender, EventArgs e)
         {
-            frmHistoricoArquivos historicoArquivos = new frmHistoricoArquivos();
+            /*frmHistoricoArquivos historicoArquivos = new frmHistoricoArquivos();
             historicoArquivos.Show();
-            this.Close();
+            this.Close();*/
         }
 
         private void btnConfigUsuario_Click(object sender, EventArgs e)
         {
-            frmConfiguracao configuracao = new frmConfiguracao();
+            /*frmConfiguracao configuracao = new frmConfiguracao();
             configuracao.Show();
             this.Close();
-        }
+*/        }
 
 
 

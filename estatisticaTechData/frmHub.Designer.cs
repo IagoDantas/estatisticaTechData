@@ -100,6 +100,7 @@
             this.btnPrevisaoDemanda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnPrevisaoDemanda.Enabled = false;
             this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
             this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,6 +173,7 @@
             this.btnCEP.TabIndex = 9;
             this.btnCEP.Text = "Gráfico CEP";
             this.btnCEP.UseVisualStyleBackColor = true;
+            this.btnCEP.Click += new System.EventHandler(this.btnCEP_Click);
             // 
             // pcbConfig
             // 

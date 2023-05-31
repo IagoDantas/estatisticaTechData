@@ -19,7 +19,7 @@ namespace estatisticaTechData
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             double[] array = { 3, 5, 3 };
-            Application.Run(new frmGraphMedia(array));
+            Application.Run(new frmHub(""));
         }
     }
 }
