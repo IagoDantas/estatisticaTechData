@@ -248,6 +248,13 @@ namespace estatisticaTechData
                     int SelectedTab = Tbc_Telas.SelectedIndex;
                     ApagaDireita(SelectedTab);
                     ApagaEsquerda(SelectedTab);
+                    ControleDistribuicaoNormal = 0;
+                    ControleHistoricoArquivoDistNormal = 0;
+                    ControleHistoricoDistNormal = 0;
+                    ControleConfig = 0;
+                    ControleCompara = 0;
+                    ControleCEP = 0;
+                    ControleTeste = 0;
                 }
             }
 
@@ -276,6 +283,35 @@ namespace estatisticaTechData
         }
         void ApagaAba(TabPage Tb)
         {
+            if (Tb.Name == "HistoricoDistribuicaoNormal")
+            {
+                ControleHistoricoDistNormal = 0;
+            }
+            if (Tb.Name == "Teste")
+            {
+                ControleTeste = 0;
+            }
+            if (Tb.Name == "ComparacaoDistribuicaoNormal")
+            {
+                ControleCompara = 0;
+            }
+            if (Tb.Name == "HistArquivos")
+            {
+                ControleHistoricoArquivoDistNormal = 0;
+            }
+            if (Tb.Name == "DistribuicaoNormal")
+            {
+                ControleDistribuicaoNormal = 0;
+            }
+            if (Tb.Name == "Configuracoes")
+            {
+                ControleConfig = 0;
+            }
+            if (Tb.Name == "GraficoCEP")
+            {
+                ControleCEP = 0;
+            }
+
             Tbc_Telas.TabPages.Remove(Tb);
         }
 
