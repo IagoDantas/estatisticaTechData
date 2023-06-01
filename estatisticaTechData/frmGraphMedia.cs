@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,15 +25,17 @@ namespace estatisticaTechData
 
         private void frmGraphMedia_Load(object sender, EventArgs e)
         {
-            // Configurar o gráfico
-            grafico.Dock = DockStyle.Fill;
+            // Configurar o objeto GraphPane para o gráfico X-barra
             GraphPane graphPane = grafico.GraphPane;
-            graphPane.Title.Text = "Gráfico de Controle";
+            grafico.Dock = DockStyle.Fill;
+            graphPane.Title.Text = "Gráfico de Médias";
             graphPane.XAxis.Title.Text = "Amostra";
             graphPane.YAxis.Title.Text = "Valor";
 
-            // Dados de exemplo
-            PointPairList pointsMedia = new PointPairList();
+            // Adicionar os pontos de dados ao gráfico X-barra
+            LineItem mediasCurve = graphPane.AddCurve("Médias", null, arrayTeste, Color.Red, SymbolType.Circle);
+
+         
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
             double media = data.Average();
@@ -41,27 +44,21 @@ namespace estatisticaTechData
             double lsc = media + 3 * desvioPadrao;
             double lic = media - 3 * desvioPadrao;
 
-            for (int i = 0; i < data.Count; i++)
-            {
-                pointsMedia.Add(i, data[i]);
-            }
-
-            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
-            LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count - 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
-            LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count - 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
+           
+            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count +1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count+1}, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
+            LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
 
-            LineItem pontosLine = graphPane.AddCurve("Pontos", pointsMedia, Color.Black, SymbolType.Circle);
 
             graphPane.XAxis.Scale.Min = 0;
-            graphPane.XAxis.Scale.Max = data.Count - 1;
+            graphPane.XAxis.Scale.Max = data.Count+1;
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             graphPane.XAxis.MajorGrid.IsVisible = true;
             graphPane.YAxis.MajorGrid.IsVisible = true;
 
             grafico.AxisChange();
             grafico.Invalidate();
-
 
         }
     }

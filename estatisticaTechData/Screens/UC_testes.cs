@@ -181,7 +181,7 @@ namespace estatisticaTechData.Screens
 
         private void btnGraphMedia_Click(object sender, EventArgs e)
         {
-            frmGraphMedia graph = new frmGraphMedia(arrayExcel);
+            frmGraphMedia graph = new frmGraphMedia(mediasIniciais);
             graph.ShowDialog();
         }
 

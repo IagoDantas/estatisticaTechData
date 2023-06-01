@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -20,86 +21,45 @@ namespace ExemploGraficoControle
 
         private void frmGraphControl_Load(object sender, EventArgs e)
         {
-            // Configurar o gráfico
-            grafico.Dock = DockStyle.Fill;
+            // Configurar o objeto GraphPane para o gráfico Individual (I)
             GraphPane graphPane = grafico.GraphPane;
-            graphPane.Title.Text = "Gráfico de Controle";
-            graphPane.XAxis.Title.Text = "Tempo";
+            grafico.Dock = DockStyle.Fill;
+            graphPane.Title.Text = "Gráfico de Controle Individual (I)";
+            graphPane.XAxis.Title.Text = "Amostra";
             graphPane.YAxis.Title.Text = "Valor";
 
             // Dados de exemplo
             PointPairList pointsMedia = new PointPairList();
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
-            
-            //linha média
+            double media = data.Average();
+            double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
+
+            double lsc = media + 3 * desvioPadrao;
+            double lic = media - 3 * desvioPadrao;
+
             for (int i = 0; i < data.Count; i++)
             {
-                pointsMedia.Add(i + 1, data[i]);
-            }
-            double media = pointsMedia.Average(p => p.Y);
-            double xMin = 1;
-            double xMax = data.Count;
-            LineItem mediaLine = graphPane.AddCurve("Média", new[] { xMin, xMax }, new[] { media, media }, Color.Red);
-            mediaLine.Line.Width = 2;
-
-            // Calcular a média e o desvio padrão dos dados
-            double mean = CalculateMean(data);
-            double stdDev = CalculateStandardDeviation(data);
-
-            // Calcular os limites de controle (por exemplo, usando 3 desvios padrão)
-            double upperLimit = mean + 3 * stdDev;
-            double lowerLimit = mean - 3 * stdDev;
-
-            // Adicionar os pontos de dados ao gráfico
-            PointPairList pointPairList = new PointPairList();
-            for (int i = 0; i < data.Count; i++)
-            {
-                double x = i + 1; // Tempo (pode ser uma data real)
-                double y = data[i]; // Valor do dado
-
-                pointPairList.Add(x, y);
+                pointsMedia.Add(i, data[i]);
             }
 
-            // Adicionar curva com os pontos de dados
-            LineItem curve = graphPane.AddCurve("Dados", pointPairList, Color.Blue, SymbolType.Circle);
+            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count - 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
+            LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count - 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
-            // Adicionar limites de controle como linhas horizontais
-            LineObj upperLimitLine = new LineObj(Color.Red, curve.Points[0].X, upperLimit, curve.Points[curve.Points.Count - 1].X, upperLimit);
-            LineObj lowerLimitLine = new LineObj(Color.Red, curve.Points[0].X, lowerLimit, curve.Points[curve.Points.Count - 1].X, lowerLimit);
 
-            graphPane.GraphObjList.Add(upperLimitLine);
-            graphPane.GraphObjList.Add(lowerLimitLine);
+            LineItem pontosLine = graphPane.AddCurve("Pontos", pointsMedia, Color.Black, SymbolType.Circle);
 
-            // Atualizar o gráfico
+            graphPane.XAxis.Scale.Min = 0;
+            graphPane.XAxis.Scale.Max = data.Count - 1;
+            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            graphPane.XAxis.MajorGrid.IsVisible = true;
+            graphPane.YAxis.MajorGrid.IsVisible = true;
+
             grafico.AxisChange();
             grafico.Invalidate();
-        }
 
-        private double CalculateMean(List<double> data)
-        {
-            double sum = 0;
-            foreach (double value in data)
-            {
-                sum += value;
-            }
 
-            return sum / data.Count;
-        }
-
-        private double CalculateStandardDeviation(List<double> data)
-        {
-            double mean = CalculateMean(data);
-            double sumSquaredDiff = 0;
-
-            foreach (double value in data)
-            {
-                double diff = value - mean;
-                sumSquaredDiff += Math.Pow(diff, 2);
-            }
-
-            double variance = sumSquaredDiff / data.Count;
-            return Math.Sqrt(variance);
         }
     }
 }
