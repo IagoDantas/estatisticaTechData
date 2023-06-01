@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             estatisticaTechData.techDataButton btnGraphMedia;
             estatisticaTechData.techDataButton btnGraphControl;
             estatisticaTechData.techDataButton btnCoeficienteAssimetria;
@@ -42,6 +37,12 @@
             estatisticaTechData.techDataButton btnDesvioPadrao;
             estatisticaTechData.techDataButton btnPercentis;
             estatisticaTechData.techDataButton btnQuartis;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            estatisticaTechData.techDataButton btnGraficoDistNormal;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -67,8 +68,191 @@
             btnDesvioPadrao = new estatisticaTechData.techDataButton();
             btnPercentis = new estatisticaTechData.techDataButton();
             btnQuartis = new estatisticaTechData.techDataButton();
+            btnGraficoDistNormal = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnGraphMedia
+            // 
+            btnGraphMedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            btnGraphMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnGraphMedia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnGraphMedia.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnGraphMedia.BorderRadius = 50;
+            btnGraphMedia.BorderSize = 0;
+            btnGraphMedia.FlatAppearance.BorderSize = 0;
+            btnGraphMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnGraphMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnGraphMedia.ForeColor = System.Drawing.Color.White;
+            btnGraphMedia.Location = new System.Drawing.Point(1101, 417);
+            btnGraphMedia.Name = "btnGraphMedia";
+            btnGraphMedia.Size = new System.Drawing.Size(126, 47);
+            btnGraphMedia.TabIndex = 32;
+            btnGraphMedia.Text = "Gráfico de Média";
+            btnGraphMedia.TextColor = System.Drawing.Color.White;
+            btnGraphMedia.UseVisualStyleBackColor = false;
+            btnGraphMedia.Click += new System.EventHandler(this.btnGraphMedia_Click);
+            // 
+            // btnGraphControl
+            // 
+            btnGraphControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            btnGraphControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnGraphControl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnGraphControl.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnGraphControl.BorderRadius = 50;
+            btnGraphControl.BorderSize = 0;
+            btnGraphControl.FlatAppearance.BorderSize = 0;
+            btnGraphControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnGraphControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnGraphControl.ForeColor = System.Drawing.Color.White;
+            btnGraphControl.Location = new System.Drawing.Point(1101, 479);
+            btnGraphControl.Name = "btnGraphControl";
+            btnGraphControl.Size = new System.Drawing.Size(126, 47);
+            btnGraphControl.TabIndex = 31;
+            btnGraphControl.Text = "Gráfico de Controle";
+            btnGraphControl.TextColor = System.Drawing.Color.White;
+            btnGraphControl.UseVisualStyleBackColor = false;
+            btnGraphControl.Click += new System.EventHandler(this.graphControl_Click);
+            // 
+            // btnCoeficienteAssimetria
+            // 
+            btnCoeficienteAssimetria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnCoeficienteAssimetria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnCoeficienteAssimetria.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnCoeficienteAssimetria.BorderRadius = 50;
+            btnCoeficienteAssimetria.BorderSize = 0;
+            btnCoeficienteAssimetria.FlatAppearance.BorderSize = 0;
+            btnCoeficienteAssimetria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCoeficienteAssimetria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnCoeficienteAssimetria.ForeColor = System.Drawing.Color.White;
+            btnCoeficienteAssimetria.Location = new System.Drawing.Point(926, 111);
+            btnCoeficienteAssimetria.Name = "btnCoeficienteAssimetria";
+            btnCoeficienteAssimetria.Size = new System.Drawing.Size(126, 47);
+            btnCoeficienteAssimetria.TabIndex = 29;
+            btnCoeficienteAssimetria.Text = "Coeficiente de Assimetria";
+            btnCoeficienteAssimetria.TextColor = System.Drawing.Color.White;
+            btnCoeficienteAssimetria.UseVisualStyleBackColor = false;
+            btnCoeficienteAssimetria.Click += new System.EventHandler(this.btnCoeficienteAssimetria_Click);
+            // 
+            // btnVariancia
+            // 
+            btnVariancia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnVariancia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnVariancia.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnVariancia.BorderRadius = 50;
+            btnVariancia.BorderSize = 0;
+            btnVariancia.FlatAppearance.BorderSize = 0;
+            btnVariancia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnVariancia.ForeColor = System.Drawing.Color.White;
+            btnVariancia.Location = new System.Drawing.Point(514, 533);
+            btnVariancia.Name = "btnVariancia";
+            btnVariancia.Size = new System.Drawing.Size(126, 47);
+            btnVariancia.TabIndex = 27;
+            btnVariancia.Text = "Variância";
+            btnVariancia.TextColor = System.Drawing.Color.White;
+            btnVariancia.UseVisualStyleBackColor = false;
+            btnVariancia.Click += new System.EventHandler(this.btnVariancia_Click);
+            // 
+            // btnCoeficientePercentilicoCurtose
+            // 
+            btnCoeficientePercentilicoCurtose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnCoeficientePercentilicoCurtose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnCoeficientePercentilicoCurtose.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnCoeficientePercentilicoCurtose.BorderRadius = 50;
+            btnCoeficientePercentilicoCurtose.BorderSize = 0;
+            btnCoeficientePercentilicoCurtose.FlatAppearance.BorderSize = 0;
+            btnCoeficientePercentilicoCurtose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCoeficientePercentilicoCurtose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnCoeficientePercentilicoCurtose.ForeColor = System.Drawing.Color.White;
+            btnCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(917, 27);
+            btnCoeficientePercentilicoCurtose.Name = "btnCoeficientePercentilicoCurtose";
+            btnCoeficientePercentilicoCurtose.Size = new System.Drawing.Size(126, 47);
+            btnCoeficientePercentilicoCurtose.TabIndex = 25;
+            btnCoeficientePercentilicoCurtose.Text = "Coeficiente % curtose";
+            btnCoeficientePercentilicoCurtose.TextColor = System.Drawing.Color.White;
+            btnCoeficientePercentilicoCurtose.UseVisualStyleBackColor = false;
+            btnCoeficientePercentilicoCurtose.Click += new System.EventHandler(this.btnCoeficientePercenCurtose_Click);
+            // 
+            // btnDispersao
+            // 
+            btnDispersao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDispersao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDispersao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnDispersao.BorderRadius = 50;
+            btnDispersao.BorderSize = 0;
+            btnDispersao.FlatAppearance.BorderSize = 0;
+            btnDispersao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDispersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDispersao.ForeColor = System.Drawing.Color.White;
+            btnDispersao.Location = new System.Drawing.Point(514, 595);
+            btnDispersao.Name = "btnDispersao";
+            btnDispersao.Size = new System.Drawing.Size(126, 47);
+            btnDispersao.TabIndex = 21;
+            btnDispersao.Text = "Dispersão";
+            btnDispersao.TextColor = System.Drawing.Color.White;
+            btnDispersao.UseVisualStyleBackColor = false;
+            btnDispersao.Click += new System.EventHandler(this.btnDispersao_Click);
+            // 
+            // btnDesvioPadrao
+            // 
+            btnDesvioPadrao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDesvioPadrao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnDesvioPadrao.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnDesvioPadrao.BorderRadius = 50;
+            btnDesvioPadrao.BorderSize = 0;
+            btnDesvioPadrao.FlatAppearance.BorderSize = 0;
+            btnDesvioPadrao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnDesvioPadrao.ForeColor = System.Drawing.Color.White;
+            btnDesvioPadrao.Location = new System.Drawing.Point(514, 470);
+            btnDesvioPadrao.Name = "btnDesvioPadrao";
+            btnDesvioPadrao.Size = new System.Drawing.Size(126, 47);
+            btnDesvioPadrao.TabIndex = 19;
+            btnDesvioPadrao.Text = "Desvio Padrão";
+            btnDesvioPadrao.TextColor = System.Drawing.Color.White;
+            btnDesvioPadrao.UseVisualStyleBackColor = false;
+            btnDesvioPadrao.Click += new System.EventHandler(this.btnDesvioPadrao_Click);
+            // 
+            // btnPercentis
+            // 
+            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnPercentis.BorderRadius = 50;
+            btnPercentis.BorderSize = 0;
+            btnPercentis.FlatAppearance.BorderSize = 0;
+            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPercentis.ForeColor = System.Drawing.Color.White;
+            btnPercentis.Location = new System.Drawing.Point(514, 417);
+            btnPercentis.Name = "btnPercentis";
+            btnPercentis.Size = new System.Drawing.Size(126, 47);
+            btnPercentis.TabIndex = 14;
+            btnPercentis.Text = "Percentis";
+            btnPercentis.TextColor = System.Drawing.Color.White;
+            btnPercentis.UseVisualStyleBackColor = false;
+            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
+            // 
+            // btnQuartis
+            // 
+            btnQuartis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnQuartis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnQuartis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnQuartis.BorderRadius = 50;
+            btnQuartis.BorderSize = 0;
+            btnQuartis.FlatAppearance.BorderSize = 0;
+            btnQuartis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnQuartis.ForeColor = System.Drawing.Color.White;
+            btnQuartis.Location = new System.Drawing.Point(514, 253);
+            btnQuartis.Name = "btnQuartis";
+            btnQuartis.Size = new System.Drawing.Size(126, 47);
+            btnQuartis.TabIndex = 12;
+            btnQuartis.Text = "Quartis";
+            btnQuartis.TextColor = System.Drawing.Color.White;
+            btnQuartis.UseVisualStyleBackColor = false;
+            btnQuartis.Click += new System.EventHandler(this.btnQuartis_Click);
             // 
             // lblMedia
             // 
@@ -242,188 +426,6 @@
             this.lblCoeficienteAssimetria.Text = "label";
             this.lblCoeficienteAssimetria.Visible = false;
             // 
-            // btnGraphMedia
-            // 
-            btnGraphMedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            btnGraphMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnGraphMedia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnGraphMedia.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnGraphMedia.BorderRadius = 50;
-            btnGraphMedia.BorderSize = 0;
-            btnGraphMedia.FlatAppearance.BorderSize = 0;
-            btnGraphMedia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnGraphMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnGraphMedia.ForeColor = System.Drawing.Color.White;
-            btnGraphMedia.Location = new System.Drawing.Point(1104, 546);
-            btnGraphMedia.Name = "btnGraphMedia";
-            btnGraphMedia.Size = new System.Drawing.Size(126, 47);
-            btnGraphMedia.TabIndex = 32;
-            btnGraphMedia.Text = "Gráfico de Média";
-            btnGraphMedia.TextColor = System.Drawing.Color.White;
-            btnGraphMedia.UseVisualStyleBackColor = false;
-            btnGraphMedia.Click += new System.EventHandler(this.btnGraphMedia_Click);
-            // 
-            // btnGraphControl
-            // 
-            btnGraphControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            btnGraphControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnGraphControl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnGraphControl.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnGraphControl.BorderRadius = 50;
-            btnGraphControl.BorderSize = 0;
-            btnGraphControl.FlatAppearance.BorderSize = 0;
-            btnGraphControl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnGraphControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnGraphControl.ForeColor = System.Drawing.Color.White;
-            btnGraphControl.Location = new System.Drawing.Point(1104, 608);
-            btnGraphControl.Name = "btnGraphControl";
-            btnGraphControl.Size = new System.Drawing.Size(126, 47);
-            btnGraphControl.TabIndex = 31;
-            btnGraphControl.Text = "Gráfico de Controle";
-            btnGraphControl.TextColor = System.Drawing.Color.White;
-            btnGraphControl.UseVisualStyleBackColor = false;
-            btnGraphControl.Click += new System.EventHandler(this.graphControl_Click);
-            // 
-            // btnCoeficienteAssimetria
-            // 
-            btnCoeficienteAssimetria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnCoeficienteAssimetria.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnCoeficienteAssimetria.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnCoeficienteAssimetria.BorderRadius = 50;
-            btnCoeficienteAssimetria.BorderSize = 0;
-            btnCoeficienteAssimetria.FlatAppearance.BorderSize = 0;
-            btnCoeficienteAssimetria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnCoeficienteAssimetria.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnCoeficienteAssimetria.ForeColor = System.Drawing.Color.White;
-            btnCoeficienteAssimetria.Location = new System.Drawing.Point(926, 111);
-            btnCoeficienteAssimetria.Name = "btnCoeficienteAssimetria";
-            btnCoeficienteAssimetria.Size = new System.Drawing.Size(126, 47);
-            btnCoeficienteAssimetria.TabIndex = 29;
-            btnCoeficienteAssimetria.Text = "Coeficiente de Assimetria";
-            btnCoeficienteAssimetria.TextColor = System.Drawing.Color.White;
-            btnCoeficienteAssimetria.UseVisualStyleBackColor = false;
-            btnCoeficienteAssimetria.Click += new System.EventHandler(this.btnCoeficienteAssimetria_Click);
-            // 
-            // btnVariancia
-            // 
-            btnVariancia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnVariancia.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnVariancia.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnVariancia.BorderRadius = 50;
-            btnVariancia.BorderSize = 0;
-            btnVariancia.FlatAppearance.BorderSize = 0;
-            btnVariancia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnVariancia.ForeColor = System.Drawing.Color.White;
-            btnVariancia.Location = new System.Drawing.Point(514, 533);
-            btnVariancia.Name = "btnVariancia";
-            btnVariancia.Size = new System.Drawing.Size(126, 47);
-            btnVariancia.TabIndex = 27;
-            btnVariancia.Text = "Variância";
-            btnVariancia.TextColor = System.Drawing.Color.White;
-            btnVariancia.UseVisualStyleBackColor = false;
-            btnVariancia.Click += new System.EventHandler(this.btnVariancia_Click);
-            // 
-            // btnCoeficientePercentilicoCurtose
-            // 
-            btnCoeficientePercentilicoCurtose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnCoeficientePercentilicoCurtose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnCoeficientePercentilicoCurtose.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnCoeficientePercentilicoCurtose.BorderRadius = 50;
-            btnCoeficientePercentilicoCurtose.BorderSize = 0;
-            btnCoeficientePercentilicoCurtose.FlatAppearance.BorderSize = 0;
-            btnCoeficientePercentilicoCurtose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnCoeficientePercentilicoCurtose.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnCoeficientePercentilicoCurtose.ForeColor = System.Drawing.Color.White;
-            btnCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(917, 27);
-            btnCoeficientePercentilicoCurtose.Name = "btnCoeficientePercentilicoCurtose";
-            btnCoeficientePercentilicoCurtose.Size = new System.Drawing.Size(126, 47);
-            btnCoeficientePercentilicoCurtose.TabIndex = 25;
-            btnCoeficientePercentilicoCurtose.Text = "Coeficiente % curtose";
-            btnCoeficientePercentilicoCurtose.TextColor = System.Drawing.Color.White;
-            btnCoeficientePercentilicoCurtose.UseVisualStyleBackColor = false;
-            btnCoeficientePercentilicoCurtose.Click += new System.EventHandler(this.btnCoeficientePercenCurtose_Click);
-            // 
-            // btnDispersao
-            // 
-            btnDispersao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDispersao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDispersao.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnDispersao.BorderRadius = 50;
-            btnDispersao.BorderSize = 0;
-            btnDispersao.FlatAppearance.BorderSize = 0;
-            btnDispersao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnDispersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnDispersao.ForeColor = System.Drawing.Color.White;
-            btnDispersao.Location = new System.Drawing.Point(514, 595);
-            btnDispersao.Name = "btnDispersao";
-            btnDispersao.Size = new System.Drawing.Size(126, 47);
-            btnDispersao.TabIndex = 21;
-            btnDispersao.Text = "Dispersão";
-            btnDispersao.TextColor = System.Drawing.Color.White;
-            btnDispersao.UseVisualStyleBackColor = false;
-            btnDispersao.Click += new System.EventHandler(this.btnDispersao_Click);
-            // 
-            // btnDesvioPadrao
-            // 
-            btnDesvioPadrao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDesvioPadrao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnDesvioPadrao.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnDesvioPadrao.BorderRadius = 50;
-            btnDesvioPadrao.BorderSize = 0;
-            btnDesvioPadrao.FlatAppearance.BorderSize = 0;
-            btnDesvioPadrao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnDesvioPadrao.ForeColor = System.Drawing.Color.White;
-            btnDesvioPadrao.Location = new System.Drawing.Point(514, 470);
-            btnDesvioPadrao.Name = "btnDesvioPadrao";
-            btnDesvioPadrao.Size = new System.Drawing.Size(126, 47);
-            btnDesvioPadrao.TabIndex = 19;
-            btnDesvioPadrao.Text = "Desvio Padrão";
-            btnDesvioPadrao.TextColor = System.Drawing.Color.White;
-            btnDesvioPadrao.UseVisualStyleBackColor = false;
-            btnDesvioPadrao.Click += new System.EventHandler(this.btnDesvioPadrao_Click);
-            // 
-            // btnPercentis
-            // 
-            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnPercentis.BorderRadius = 50;
-            btnPercentis.BorderSize = 0;
-            btnPercentis.FlatAppearance.BorderSize = 0;
-            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnPercentis.ForeColor = System.Drawing.Color.White;
-            btnPercentis.Location = new System.Drawing.Point(514, 417);
-            btnPercentis.Name = "btnPercentis";
-            btnPercentis.Size = new System.Drawing.Size(126, 47);
-            btnPercentis.TabIndex = 14;
-            btnPercentis.Text = "Percentis";
-            btnPercentis.TextColor = System.Drawing.Color.White;
-            btnPercentis.UseVisualStyleBackColor = false;
-            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
-            // 
-            // btnQuartis
-            // 
-            btnQuartis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnQuartis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnQuartis.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnQuartis.BorderRadius = 50;
-            btnQuartis.BorderSize = 0;
-            btnQuartis.FlatAppearance.BorderSize = 0;
-            btnQuartis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnQuartis.ForeColor = System.Drawing.Color.White;
-            btnQuartis.Location = new System.Drawing.Point(514, 253);
-            btnQuartis.Name = "btnQuartis";
-            btnQuartis.Size = new System.Drawing.Size(126, 47);
-            btnQuartis.TabIndex = 12;
-            btnQuartis.Text = "Quartis";
-            btnQuartis.TextColor = System.Drawing.Color.White;
-            btnQuartis.UseVisualStyleBackColor = false;
-            btnQuartis.Click += new System.EventHandler(this.btnQuartis_Click);
-            // 
             // btnMedia
             // 
             this.btnMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
@@ -484,11 +486,33 @@
             this.btnMediana.UseVisualStyleBackColor = false;
             this.btnMediana.Click += new System.EventHandler(this.btnMediana_Click);
             // 
+            // btnGraficoDistNormal
+            // 
+            btnGraficoDistNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            btnGraficoDistNormal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnGraficoDistNormal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnGraficoDistNormal.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnGraficoDistNormal.BorderRadius = 50;
+            btnGraficoDistNormal.BorderSize = 0;
+            btnGraficoDistNormal.FlatAppearance.BorderSize = 0;
+            btnGraficoDistNormal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnGraficoDistNormal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnGraficoDistNormal.ForeColor = System.Drawing.Color.White;
+            btnGraficoDistNormal.Location = new System.Drawing.Point(1071, 532);
+            btnGraficoDistNormal.Name = "btnGraficoDistNormal";
+            btnGraficoDistNormal.Size = new System.Drawing.Size(174, 47);
+            btnGraficoDistNormal.TabIndex = 33;
+            btnGraficoDistNormal.Text = "Gráfico de Distribuição Normal";
+            btnGraficoDistNormal.TextColor = System.Drawing.Color.White;
+            btnGraficoDistNormal.UseVisualStyleBackColor = false;
+            btnGraficoDistNormal.Click += new System.EventHandler(this.btnGraficoDistNormal_Click);
+            // 
             // UC_testes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(btnGraficoDistNormal);
             this.Controls.Add(btnGraphMedia);
             this.Controls.Add(btnGraphControl);
             this.Controls.Add(this.lblCoeficienteAssimetria);

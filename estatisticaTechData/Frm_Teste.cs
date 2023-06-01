@@ -13,36 +13,39 @@ namespace estatisticaTechData
 {
     public partial class Frm_Teste : Form
     {
-        public Frm_Teste()
+        double[] arrayTeste;
+        public Frm_Teste(double[] arrayTeste)
         {
             InitializeComponent();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.arrayTeste = arrayTeste;
         }
 
         private void Frm_Teste_Load(object sender, EventArgs e)
-        {
-            // Obter a referência ao objeto ZedGraphControl
 
-            // Adicionar o controle ZedGraphControl ao formulário
-            Controls.Add(grafico);
-
-            // Configurar o gráfico
+        { 
             GraphPane graphPane = grafico.GraphPane;
+            grafico.Dock = DockStyle.Fill;
             graphPane.Title.Text = "Distribuição Normal";
-            graphPane.XAxis.Title.Text = "Valores X";
-            graphPane.YAxis.Title.Text = "Valores Y";
+            graphPane.XAxis.Title.Text = "Amostra";
+            graphPane.YAxis.Title.Text = "Valor";
 
-            // Criar uma lista de pontos para a distribuição normal
+
+            List<double> data = new List<double>();
+            data.AddRange(arrayTeste);
+            double media = data.Average();
+            double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
+
             PointPairList pointPairList = new PointPairList();
-            double mean = 0; // Média
-            double stdDev = 1; // Desvio padrão
-            double xMin = -3; // Valor mínimo do eixo x
-            double xMax = 3; // Valor máximo do eixo x
-            double step = 0.1; // Incremento para gerar os pontos
+            double numDevs = 2;
+            double xMin = media - (numDevs * desvioPadrao);
+            double xMax = media + (numDevs * desvioPadrao);
+            double step = 0.1; 
 
             for (double x = xMin; x <= xMax; x += step)
             {
-                double y = (1 / (stdDev * Math.Sqrt(2 * Math.PI))) *
-                           Math.Exp(-Math.Pow(x - mean, 2) / (2 * Math.Pow(stdDev, 2)));
+                double y = (1 / (desvioPadrao * Math.Sqrt(2 * Math.PI))) *
+                           Math.Exp(-Math.Pow(x - media, 2) / (2 * Math.Pow(desvioPadrao, 2)));
 
                 pointPairList.Add(x, y);
             }

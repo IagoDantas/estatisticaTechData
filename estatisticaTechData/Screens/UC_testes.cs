@@ -183,6 +183,13 @@ namespace estatisticaTechData.Screens
         {
             frmGraphMedia graph = new frmGraphMedia(mediasIniciais);
             graph.ShowDialog();
+        
+        }
+
+        private void btnGraficoDistNormal_Click(object sender, EventArgs e)
+        {
+            Frm_Teste graph = new Frm_Teste(arrayExcel);
+            graph.ShowDialog();
         }
 
         private void btnCoeficienteAssimetria_Click(object sender, EventArgs e)
