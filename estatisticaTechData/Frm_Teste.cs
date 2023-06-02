@@ -54,6 +54,9 @@ namespace estatisticaTechData
 
             // Adicionar uma curva ao gráfico com a lista de pontos
             LineItem curve = graphPane.AddCurve("Curva", pointPairList, System.Drawing.Color.Blue, SymbolType.None);
+            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            graphPane.XAxis.MajorGrid.IsVisible = true;
+            graphPane.YAxis.MajorGrid.IsVisible = true;
 
             // Atualizar o gráfico
             grafico.AxisChange();
