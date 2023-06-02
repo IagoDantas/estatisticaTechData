@@ -37,10 +37,12 @@ namespace estatisticaTechData
             double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
 
             PointPairList pointPairList = new PointPairList();
-            double numDevs = 2;
+            double numDevs = 3;
             double xMin = media - (numDevs * desvioPadrao);
             double xMax = media + (numDevs * desvioPadrao);
-            double step = 0.1; 
+            double step = 0.1;
+            
+            
 
             for (double x = xMin; x <= xMax; x += step)
             {

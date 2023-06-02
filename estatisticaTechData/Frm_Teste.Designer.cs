@@ -35,7 +35,7 @@ namespace estatisticaTechData
             // 
             // grafico
             // 
-            this.grafico.Location = new System.Drawing.Point(57, 12);
+            this.grafico.Location = new System.Drawing.Point(12, 12);
             this.grafico.Name = "grafico";
             this.grafico.ScrollGrace = 0D;
             this.grafico.ScrollMaxX = 0D;
