@@ -82,7 +82,7 @@ namespace estatisticaTechData.Screens
             for (int i = 0; i <= mediasIniciais.Length; i++)
             {
                 if(i==0)
-                    newRow[i] = "Médias:";
+                    newRow[i] = "Média(s):";
                 else
                     newRow[i] = Math.Round(mediasIniciais[i-1],4).ToString();
             }
@@ -93,7 +93,7 @@ namespace estatisticaTechData.Screens
             for (int i = 0; i <= amplitudes.Length; i++)
             {
                 if (i == 0)
-                    newRow[i] = "Amplitudes:";
+                    newRow[i] = "Amplitude(s):";
                 else
                     newRow[i] = Math.Round(amplitudes[i - 1], 4).ToString();
             }
@@ -125,21 +125,20 @@ namespace estatisticaTechData.Screens
             double[] amplitudes = new double[sizeY];
             for (int j = 0; j < sizeY; j++)
             {
-                double maior = 0, menor = 0;
+                double maior = 0, menor = double.MaxValue;
                 for (int i = 0; i < sizeX; i++)
                 {
-                    if (matriz[i,j] > maior)
-                        maior = matriz[i,j];
-                    else if (menor == 0)
-                        menor = matriz[i,j];
-                    else if (matriz[i,j]<menor)
-                        menor = matriz[i,j];
+                    if (matriz[i, j] > maior)
+                        maior = matriz[i, j];
+                    if (matriz[i, j] < menor)
+                        menor = matriz[i, j];
                 }
-                amplitudes[j] = maior-menor;
+                amplitudes[j] = maior - menor;
             }
 
             return amplitudes;
         }
+
 
         public static double[] ArrayExcel(int x, int y, DataGridView dgvTeste)
         {
