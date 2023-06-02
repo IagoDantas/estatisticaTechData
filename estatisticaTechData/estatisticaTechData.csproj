@@ -133,6 +133,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmGraphAmpli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGraphAmpli.Designer.cs">
+      <DependentUpon>frmGraphAmpli.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_GraphAmplitude.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     <Compile Include="Screens\UC_HistoricoArquivos.Designer.cs">
       <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmGraphAmpli.resx">
+      <DependentUpon>frmGraphAmpli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_GraphAmplitude.resx">
       <DependentUpon>frm_GraphAmplitude.cs</DependentUpon>
     </EmbeddedResource>

@@ -191,6 +191,12 @@ namespace estatisticaTechData.Screens
             graph.ShowDialog();
         }
 
+        private void btnGraphAmplitude_Click(object sender, EventArgs e)
+        {
+            frmGraphAmpli graph = new frmGraphAmpli(amplitudes);
+            graph.ShowDialog();
+        }
+
         private void btnCoeficienteAssimetria_Click(object sender, EventArgs e)
         {
             double[] arrayCopy = new double[arrayExcel.Length];
