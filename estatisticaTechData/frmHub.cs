@@ -21,6 +21,7 @@ namespace estatisticaTechData
         int ControleCompara = 0;
         int ControleCEP = 0; 
         int ControleTeste = 0;
+        int ControleCEPVariavel = 0;
         public string emailUser;
 
         public frmHub(string email)
@@ -57,11 +58,30 @@ namespace estatisticaTechData
             if (ControleTeste == 0)
             {
                 ControleTeste += 1;
-                UC_testes Teste = new UC_testes();
+                UC_Background Teste = new UC_Background();
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
-                TbPage.Name = "Teste";
-                TbPage.Text = "Teste";
+                TbPage.Name = "Background";
+                TbPage.Text = "Background";
+                TbPage.Controls.Add(Teste);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de Teste abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public void abrirCEPVariavel()
+        {
+            if (ControleCEPVariavel == 0)
+            {
+                ControleCEPVariavel += 1;
+                UC_controlVariaveis Teste = new UC_controlVariaveis();
+                Teste.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "ControleDeVariaveis";
+                TbPage.Text = "Controle De Variáveis";
                 TbPage.Controls.Add(Teste);
                 Tbc_Telas.TabPages.Add(TbPage);
                 Tbc_Telas.SelectedTab = TbPage;
@@ -255,6 +275,7 @@ namespace estatisticaTechData
                     ControleCompara = 0;
                     ControleCEP = 0;
                     ControleTeste = 0;
+                    ControleCEPVariavel = 0;
                 }
             }
 
@@ -287,7 +308,7 @@ namespace estatisticaTechData
             {
                 ControleHistoricoDistNormal = 0;
             }
-            if (Tb.Name == "Teste")
+            if (Tb.Name == "Background")
             {
                 ControleTeste = 0;
             }
@@ -311,7 +332,10 @@ namespace estatisticaTechData
             {
                 ControleCEP = 0;
             }
-
+            if (Tb.Name == "ControleDeVariaveis")
+            {
+                ControleCEPVariavel = 0;
+            }
             Tbc_Telas.TabPages.Remove(Tb);
         }
 

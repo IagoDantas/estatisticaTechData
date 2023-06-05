@@ -16,14 +16,21 @@ namespace estatisticaTechData.Screens
         {
             InitializeComponent();
         }
-        private void btnHist_Click(object sender, EventArgs e)
-        {
-            frmHub.funEstancia.abrirHist();
-        }
 
-        private void Btn_NovosDados_Click(object sender, EventArgs e)
+        private void btnVIsualize_Click(object sender, EventArgs e)
         {
-            frmHub.funEstancia.abrirTeste();
+            if (rdbVariaveis.Checked)
+            {
+                frmHub.funEstancia.abrirTeste();
+                frmHub.funEstancia.abrirCEPVariavel();
+            }else if (rdbAtributos.Checked)
+            {
+                MessageBox.Show("Selecionado", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma opção", "Erro",MessageBoxButtons.OK ,MessageBoxIcon.Error );
+            }
         }
     }
 }

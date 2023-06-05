@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZedGraph;
+using estatisticaTechDataClassLibrary;
 
 namespace estatisticaTechData
 {
@@ -27,7 +28,7 @@ namespace estatisticaTechData
         {
             // Configurar o objeto GraphPane para o gráfico X-barra
             GraphPane graphPane = grafico.GraphPane;
-            grafico.Dock = DockStyle.Fill;
+            //grafico.Dock = DockStyle.Fill;
             graphPane.Title.Text = "Gráfico de Médias";
             graphPane.XAxis.Title.Text = "Amostra";
             graphPane.YAxis.Title.Text = "Valor";
@@ -60,6 +61,12 @@ namespace estatisticaTechData
             grafico.AxisChange();
             grafico.Invalidate();
 
+            double cpk = ClsCalculos.CalculateCpk(media, desvioPadrao, lsc, lic);
+            lblCPK.Text = $"O Índice de Capacidade de Processo(Cpk) é: {cpk:F2}";
+
         }
+
+        
+
     }
 }

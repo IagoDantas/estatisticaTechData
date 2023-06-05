@@ -9,7 +9,53 @@ namespace estatisticaTechDataClassLibrary
 {
     public class ClsCalculos
     {
+        public static double[] CalcularMediasInicias(double[,] matriz, int sizeX, int sizeY)
+        {
+            double[] medias = new double[sizeY];
+            for (int j = 0; j < sizeY; j++)
+            {
+                double sum = 0;
+                for (int i = 0; i < sizeX; i++)
+                {
+                    sum += matriz[i, j];
+                }
+                medias[j] = sum / sizeX;
+            }
 
+            return medias;
+        }
+
+        public static double[] CalcularAmplitudes(double[,] matriz, int sizeX, int sizeY)
+        {
+            double[] amplitudes = new double[sizeY];
+            for (int j = 0; j < sizeY; j++)
+            {
+                double maior = 0, menor = double.MaxValue;
+                for (int i = 0; i < sizeX; i++)
+                {
+                    if (matriz[i, j] > maior)
+                        maior = matriz[i, j];
+                    if (matriz[i, j] < menor)
+                        menor = matriz[i, j];
+                }
+                amplitudes[j] = maior - menor;
+            }
+
+            return amplitudes;
+        }
+        public static double CalculateCpk(double mean, double standardDeviation, double upperSpecLimit, double lowerSpecLimit)
+        {
+            double cpk = 0.0;
+
+            // Calcular a diferença entre a média do processo e os limites de especificação
+            double diffUpper = upperSpecLimit - mean;
+            double diffLower = mean - lowerSpecLimit;
+
+            // Calcular o Cpk utilizando a fórmula
+            cpk = Math.Min(diffUpper / (3 * standardDeviation), diffLower / (3 * standardDeviation));
+
+            return cpk;
+        }
         public static double CalcularMedia(double[] arrExcel, int divisor)
         {
             double mediaResult = 0;

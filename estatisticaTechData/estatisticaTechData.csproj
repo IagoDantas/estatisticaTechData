@@ -139,12 +139,6 @@
     <Compile Include="frmGraphAmpli.Designer.cs">
       <DependentUpon>frmGraphAmpli.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_GraphAmplitude.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_GraphAmplitude.Designer.cs">
-      <DependentUpon>frm_GraphAmplitude.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmGraphControl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +225,12 @@
     <Compile Include="Screens\UC_CEP.Designer.cs">
       <DependentUpon>UC_CEP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_controlVariaveis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_controlVariaveis.Designer.cs">
+      <DependentUpon>UC_controlVariaveis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\UC_DistribuicaoNormal.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,11 +243,11 @@
     <Compile Include="Screens\UC_DistribuicaoNormalComparacao.Designer.cs">
       <DependentUpon>UC_DistribuicaoNormalComparacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\UC_testes.cs">
+    <Compile Include="Screens\UC_Background.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\UC_testes.Designer.cs">
-      <DependentUpon>UC_testes.cs</DependentUpon>
+    <Compile Include="Screens\UC_Background.Designer.cs">
+      <DependentUpon>UC_Background.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\UC_HistoricoDistribuicaoNormal.cs">
       <SubType>UserControl</SubType>
@@ -270,8 +270,8 @@
     <EmbeddedResource Include="frmGraphAmpli.resx">
       <DependentUpon>frmGraphAmpli.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_GraphAmplitude.resx">
-      <DependentUpon>frm_GraphAmplitude.cs</DependentUpon>
+    <EmbeddedResource Include="frmGraphMedia.resx">
+      <DependentUpon>frmGraphMedia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
@@ -316,6 +316,9 @@
     <EmbeddedResource Include="Screens\UC_CEP.resx">
       <DependentUpon>UC_CEP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_controlVariaveis.resx">
+      <DependentUpon>UC_controlVariaveis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_DistribuicaoNormal.resx">
       <DependentUpon>UC_DistribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
@@ -325,8 +328,8 @@
     <EmbeddedResource Include="Screens\UC_HistoricoDistribuicaoNormal.resx">
       <DependentUpon>UC_HistoricoDistribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\UC_testes.resx">
-      <DependentUpon>UC_testes.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\UC_Background.resx">
+      <DependentUpon>UC_Background.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_Configuracao.resx">
       <DependentUpon>UC_Configuracao.cs</DependentUpon>
