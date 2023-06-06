@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace estatisticaTechData.Screens
 {
@@ -24,10 +25,12 @@ namespace estatisticaTechData.Screens
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
+        private estatisticaTechDataClassLibrary.Connection conexao;
         public UC_BackgroundAtributos()
         {
             InitializeComponent();
             funEstancia = this;
+            conexao = new estatisticaTechDataClassLibrary.Connection();
         }
 
         private void UC_BackgroundAtributos_Load(object sender, EventArgs e)
@@ -63,7 +66,22 @@ namespace estatisticaTechData.Screens
                             }
                         }
                         dgvTeste.DataSource = dt.DefaultView;
-                        Cursor.Current = Cursors.Default;
+
+                        string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
+
+                        Dictionary<string, string> data = new Dictionary<string, string>();
+                        data.Add("status", "A");
+                        data.Add("data", json);
+                        //data.Add("password", txtSenha.Texts);
+                        data.Add("type_count_id", "1");
+
+
+                        if (conexao.InsertData("table_master", data) != true)
+                        {
+                            MessageBox.Show("Falha ao salvar os dados no banco");
+                        }
+
+                            Cursor.Current = Cursors.Default;
                     }
                 }
             }
