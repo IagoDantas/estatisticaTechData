@@ -91,6 +91,7 @@
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
             this.btnHistorico.Location = new System.Drawing.Point(3, 530);
             this.btnHistorico.Name = "btnHistorico";
+            this.btnHistorico.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnHistorico.Size = new System.Drawing.Size(266, 50);
             this.btnHistorico.TabIndex = 3;
             this.btnHistorico.Text = "Histórico de arquivos enviados";
