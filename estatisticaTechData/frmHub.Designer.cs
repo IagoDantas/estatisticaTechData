@@ -74,6 +74,7 @@
             this.btnDistribuicao.ForeColor = System.Drawing.Color.White;
             this.btnDistribuicao.Location = new System.Drawing.Point(0, 251);
             this.btnDistribuicao.Name = "btnDistribuicao";
+            this.btnDistribuicao.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnDistribuicao.Size = new System.Drawing.Size(266, 50);
             this.btnDistribuicao.TabIndex = 4;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
