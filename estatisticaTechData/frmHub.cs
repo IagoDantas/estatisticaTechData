@@ -22,6 +22,7 @@ namespace estatisticaTechData
         int ControleCEP = 0; 
         int ControleTeste = 0;
         int ControleCEPVariavel = 0;
+        int ControleCEPAtributo = 0;
         public string emailUser;
 
         public frmHub(string email)
@@ -88,7 +89,26 @@ namespace estatisticaTechData
             }
             else
             {
-                MessageBox.Show("Já existem abas de Teste abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Já existem abas de Controle De Variáveis", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        public void abrirCEPAtributo()
+        {
+            if (ControleCEPAtributo == 0)
+            {
+                ControleCEPVariavel += 1;
+                UC_controlAtributos Teste = new UC_controlAtributos();
+                Teste.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "ControleDeAtributos";
+                TbPage.Text = "Controle De Atributos";
+                TbPage.Controls.Add(Teste);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de Controle De Atributos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -194,6 +214,7 @@ namespace estatisticaTechData
 
         private void btnDistribuicao_Click(object sender, EventArgs e)
         {
+            abrirTeste();
             if(ControleDistribuicaoNormal == 0)
             {
                 ControleDistribuicaoNormal += 1;
@@ -276,6 +297,7 @@ namespace estatisticaTechData
                     ControleCEP = 0;
                     ControleTeste = 0;
                     ControleCEPVariavel = 0;
+                    ControleCEPAtributo = 0;
                 }
             }
 
@@ -335,6 +357,10 @@ namespace estatisticaTechData
             if (Tb.Name == "ControleDeVariaveis")
             {
                 ControleCEPVariavel = 0;
+            }
+            if (Tb.Name == "ControleDeAtributos")
+            {
+                ControleCEPAtributo = 0;
             }
             Tbc_Telas.TabPages.Remove(Tb);
         }
@@ -417,6 +443,11 @@ namespace estatisticaTechData
             btnCEP.Enabled = false;
             btnDistribuicao.Enabled = true;
             btnHistorico.Enabled = true;
+        }
+
+        private void btnHistGraph_Click(object sender, EventArgs e)
+        {
+            abrirHist();
         }
     }
 }

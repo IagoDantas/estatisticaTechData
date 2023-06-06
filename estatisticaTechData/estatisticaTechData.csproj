@@ -133,35 +133,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmGraphAmpli.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGraphAmpli.Designer.cs">
-      <DependentUpon>frmGraphAmpli.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmGraphControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGraphControl.Designer.cs">
-      <DependentUpon>frmGraphControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmGraphMedia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGraphMedia.Designer.cs">
-      <DependentUpon>frmGraphMedia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHub.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHub.Designer.cs">
       <DependentUpon>frmHub.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frm_GraphPC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_GraphPC.Designer.cs">
-      <DependentUpon>frm_GraphPC.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Teste.cs">
       <SubType>Form</SubType>
@@ -225,6 +201,12 @@
     <Compile Include="Screens\UC_CEP.Designer.cs">
       <DependentUpon>UC_CEP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_controlAtributos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_controlAtributos.Designer.cs">
+      <DependentUpon>UC_controlAtributos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\UC_controlVariaveis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -267,17 +249,8 @@
     <Compile Include="Screens\UC_HistoricoArquivos.Designer.cs">
       <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmGraphAmpli.resx">
-      <DependentUpon>frmGraphAmpli.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGraphMedia.resx">
-      <DependentUpon>frmGraphMedia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_GraphPC.resx">
-      <DependentUpon>frm_GraphPC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Teste.resx">
       <DependentUpon>Frm_Teste.cs</DependentUpon>
@@ -315,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_CEP.resx">
       <DependentUpon>UC_CEP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_controlAtributos.resx">
+      <DependentUpon>UC_controlAtributos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_controlVariaveis.resx">
       <DependentUpon>UC_controlVariaveis.cs</DependentUpon>

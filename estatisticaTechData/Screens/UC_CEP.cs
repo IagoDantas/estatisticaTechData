@@ -25,7 +25,8 @@ namespace estatisticaTechData.Screens
                 frmHub.funEstancia.abrirCEPVariavel();
             }else if (rdbAtributos.Checked)
             {
-                MessageBox.Show("Selecionado", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmHub.funEstancia.abrirTeste();
+                frmHub.funEstancia.abrirCEPAtributo();
             }
             else
             {

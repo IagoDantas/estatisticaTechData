@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using estatisticaTechDataClassLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,15 @@ using ZedGraph;
 namespace estatisticaTechData.Screens
 {
     public partial class UC_controlVariaveis : UserControl
-    {        
+    {
+        double cpk;
+        double lsc = UC_Background.funEstancia.media + 3 * UC_Background.funEstancia.desvioPadrao;
+        double lic = UC_Background.funEstancia.media - 3 * UC_Background.funEstancia.desvioPadrao;
+
         public UC_controlVariaveis()
         {
             InitializeComponent();
+            cpk = ClsCalculos.CalculateCpk(UC_Background.funEstancia.media, UC_Background.funEstancia.desvioPadrao, lsc,lic);
         }
         private void UC_controlVariaveis_Load(object sender, EventArgs e)
         {
@@ -23,6 +30,9 @@ namespace estatisticaTechData.Screens
             GraficoAmplitude(UC_Background.funEstancia.amplitudes);
             GraficoMedia(UC_Background.funEstancia.mediasIniciais);
             rdbControle.Checked = true;
+            lblMedia.Text = Math.Round(UC_Background.funEstancia.media, 4).ToString();
+            lblDesvio.Text = Math.Round(UC_Background.funEstancia.desvioPadrao, 4).ToString();
+            lblCpk.Text = Math.Round(cpk, 4).ToString();
         }
 
         private void GraficoControle(double[] arrayTeste)
@@ -38,11 +48,7 @@ namespace estatisticaTechData.Screens
             PointPairList pointsMedia = new PointPairList();
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
-            double media = data.Average();
-            double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
-
-            double lsc = media + 3 * desvioPadrao;
-            double lic = media - 3 * desvioPadrao;
+            double media = UC_Background.funEstancia.media;
 
             for (int i = 0; i < data.Count; i++)
             {

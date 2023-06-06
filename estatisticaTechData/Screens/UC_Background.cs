@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using estatisticaTechDataClassLibrary;
-using ExemploGraficoControle;
 using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace estatisticaTechData.Screens
@@ -21,7 +20,7 @@ namespace estatisticaTechData.Screens
         public double[] arrayExcel;
         public double[] mediasIniciais;
         public double[] amplitudes;
-        double[,] matrizExcel;
+        public double[,] matrizExcel;
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
@@ -72,15 +71,15 @@ namespace estatisticaTechData.Screens
             x = dgvTeste.RowCount - 1;
             y = dgvTeste.ColumnCount - 1;
             arrayExcel = ArrayExcel(x, y, dgvTeste);
-            double[,] matriz = new double[x, y];
+            matrizExcel = new double[x, y];
             int contador = 0;
             for(int i=0;i<x;i++)
                 for (int j = 0; j < y; j++)
                 {
-                    matriz[i, j] = arrayExcel[contador];
+                    matrizExcel[i, j] = arrayExcel[contador];
                     contador++;
                 }
-            mediasIniciais = ClsCalculos.CalcularMediasInicias(matriz, x, y);
+            mediasIniciais = ClsCalculos.CalcularMediasInicias(matrizExcel, x, y);
             DataRow newRow = dt.NewRow();
             for (int i = 0; i <= mediasIniciais.Length; i++)
             {
@@ -91,7 +90,7 @@ namespace estatisticaTechData.Screens
             }
             dt.Rows.Add(newRow);
 
-            amplitudes = ClsCalculos.CalcularAmplitudes(matriz, x, y);
+            amplitudes = ClsCalculos.CalcularAmplitudes(matrizExcel, x, y);
             newRow = dt.NewRow();
             for (int i = 0; i <= amplitudes.Length; i++)
             {
@@ -105,7 +104,6 @@ namespace estatisticaTechData.Screens
             // Atualizar o DataSource do DataGridView
             dgvTeste.DataSource = dt;
             x = x * y;
-            matrizExcel = matriz;
 
             //Array para os cálculos
             double[] arrayCopy = new double[arrayExcel.Length];
@@ -165,28 +163,8 @@ namespace estatisticaTechData.Screens
             lblDesvioPadrao.Visible = true;
         }
         
-        private void graphControl_Click(object sender, EventArgs e)
-        {
-            frmGraphControl graph = new frmGraphControl(arrayExcel);
-            graph.ShowDialog();
-        }
-        private void btnGraphMedia_Click(object sender, EventArgs e)
-        {
-            frmGraphMedia graph = new frmGraphMedia(mediasIniciais);
-            graph.ShowDialog();
-        
-        }
-        private void btnGraficoDistNormal_Click(object sender, EventArgs e)
-        {
-            Frm_Teste graph = new Frm_Teste(arrayExcel);
-            graph.ShowDialog();
-        }
 
-        private void btnGraphAmplitude_Click(object sender, EventArgs e)
-        {
-            frmGraphAmpli graph = new frmGraphAmpli(amplitudes);
-            graph.ShowDialog();
-        }
+        
         private void btnPercentis_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtPercentil.Text))

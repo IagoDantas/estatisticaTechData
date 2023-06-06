@@ -36,6 +36,7 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.pnlSideBar = new System.Windows.Forms.Panel();
+            this.btnHistGraph = new System.Windows.Forms.Button();
             this.btnCEP = new System.Windows.Forms.Button();
             this.pcbConfig = new System.Windows.Forms.PictureBox();
             this.Tbc_Telas = new System.Windows.Forms.TabControl();
@@ -87,7 +88,7 @@
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnHistorico.Location = new System.Drawing.Point(0, 467);
+            this.btnHistorico.Location = new System.Drawing.Point(3, 530);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Size = new System.Drawing.Size(266, 50);
             this.btnHistorico.TabIndex = 3;
@@ -146,6 +147,7 @@
             this.pnlSideBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.pnlSideBar.Controls.Add(this.btnHistGraph);
             this.pnlSideBar.Controls.Add(this.btnCEP);
             this.pnlSideBar.Controls.Add(this.pcbConfig);
             this.pnlSideBar.Controls.Add(this.btnConfig);
@@ -158,6 +160,22 @@
             this.pnlSideBar.Name = "pnlSideBar";
             this.pnlSideBar.Size = new System.Drawing.Size(266, 682);
             this.pnlSideBar.TabIndex = 6;
+            // 
+            // btnHistGraph
+            // 
+            this.btnHistGraph.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHistGraph.FlatAppearance.BorderSize = 0;
+            this.btnHistGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistGraph.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistGraph.ForeColor = System.Drawing.Color.White;
+            this.btnHistGraph.Location = new System.Drawing.Point(3, 465);
+            this.btnHistGraph.Name = "btnHistGraph";
+            this.btnHistGraph.Size = new System.Drawing.Size(266, 50);
+            this.btnHistGraph.TabIndex = 10;
+            this.btnHistGraph.Text = "Histórico de Gráficos";
+            this.btnHistGraph.UseVisualStyleBackColor = true;
+            this.btnHistGraph.Click += new System.EventHandler(this.btnHistGraph_Click);
             // 
             // btnCEP
             // 
@@ -227,5 +245,6 @@
         private System.Windows.Forms.PictureBox pcbConfig;
         private System.Windows.Forms.TabControl Tbc_Telas;
         private System.Windows.Forms.Button btnCEP;
+        private System.Windows.Forms.Button btnHistGraph;
     }
 }
