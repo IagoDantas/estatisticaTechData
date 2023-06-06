@@ -133,7 +133,7 @@ namespace estatisticaTechData.Screens
 
             //Dispersão
             dispersao = Math.Round(ClsCalculos.CalcularDispersao(arrayCopy), 4);
-            lblDipersao.Text = $"A dispersão desse conjunto é {dispersao} ou  seja {dispersao * 100}%";
+            lblDipersao.Text = $"A dispersão desse conjunto é {dispersao} ou seja {dispersao * 100}%";
             lblDipersao.Visible = true;
 
             //Moda

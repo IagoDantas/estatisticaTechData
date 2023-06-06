@@ -55,7 +55,7 @@
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(245, 42);
+            this.lblTitulo.Location = new System.Drawing.Point(301, 43);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(500, 51);
             this.lblTitulo.TabIndex = 13;
@@ -133,7 +133,7 @@
             this.rdbGraphP.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbGraphP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.rdbGraphP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbGraphP.Location = new System.Drawing.Point(383, 37);
+            this.rdbGraphP.Location = new System.Drawing.Point(430, 36);
             this.rdbGraphP.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbGraphP.Name = "rdbGraphP";
             this.rdbGraphP.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -155,7 +155,7 @@
             this.rdbGraphC.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbGraphC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.rdbGraphC.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbGraphC.Location = new System.Drawing.Point(203, 37);
+            this.rdbGraphC.Location = new System.Drawing.Point(250, 36);
             this.rdbGraphC.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbGraphC.Name = "rdbGraphC";
             this.rdbGraphC.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);

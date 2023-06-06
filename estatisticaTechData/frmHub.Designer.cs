@@ -74,6 +74,7 @@
             this.btnDistribuicao.ForeColor = System.Drawing.Color.White;
             this.btnDistribuicao.Location = new System.Drawing.Point(0, 251);
             this.btnDistribuicao.Name = "btnDistribuicao";
+            this.btnDistribuicao.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnDistribuicao.Size = new System.Drawing.Size(266, 50);
             this.btnDistribuicao.TabIndex = 4;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
@@ -90,6 +91,7 @@
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
             this.btnHistorico.Location = new System.Drawing.Point(3, 530);
             this.btnHistorico.Name = "btnHistorico";
+            this.btnHistorico.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnHistorico.Size = new System.Drawing.Size(266, 50);
             this.btnHistorico.TabIndex = 3;
             this.btnHistorico.Text = "Histórico de arquivos enviados";
@@ -129,6 +131,7 @@
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // pbcPerfil
             // 
@@ -226,6 +229,7 @@
             this.Controls.Add(this.pnlSideBar);
             this.Name = "frmHub";
             this.Text = "TechData";
+            this.Load += new System.EventHandler(this.frmHub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();
