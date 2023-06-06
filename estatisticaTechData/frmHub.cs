@@ -23,6 +23,7 @@ namespace estatisticaTechData
         int ControleTeste = 0;
         int ControleCEPVariavel = 0;
         int ControleCEPAtributo = 0;
+        int ControleInicio = 0;
         public string emailUser;
 
         public frmHub(string email)
@@ -52,6 +53,8 @@ namespace estatisticaTechData
             {
                 MessageBox.Show("Já existem abas de histórico distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            btnInicio.Enabled = true;
+
         }
 
         public void abrirTeste()
@@ -91,6 +94,8 @@ namespace estatisticaTechData
             {
                 MessageBox.Show("Já existem abas de Controle De Variáveis", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            btnInicio.Enabled = true;
+
         }
         public void abrirCEPAtributo()
         {
@@ -110,6 +115,8 @@ namespace estatisticaTechData
             {
                 MessageBox.Show("Já existem abas de Controle De Atributos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            btnInicio.Enabled = true;
+
         }
 
         public void abrirCompara()
@@ -147,6 +154,8 @@ namespace estatisticaTechData
             btnHistorico.ForeColor = Color.White;
 
             btnDistribuicao.Enabled = false;
+            btnInicio.Enabled = true;
+
             btnHistorico.Enabled = true;
         }
 
@@ -190,6 +199,8 @@ namespace estatisticaTechData
 
             btnDistribuicao.Enabled = true;
             btnCEP.Enabled = true;
+            btnInicio.Enabled = true;
+
             btnConfig.Enabled = true;
             btnHistorico.Enabled = false;
         }
@@ -208,6 +219,8 @@ namespace estatisticaTechData
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
             btnDistribuicao.Enabled = true;
+            btnInicio.Enabled = true;
+
             btnHistorico.Enabled = true;
             btnPrevisaoDemanda.Enabled = false;
         }
@@ -253,6 +266,8 @@ namespace estatisticaTechData
 
             btnDistribuicao.Enabled = false;
             btnHistorico.Enabled = true;
+            btnInicio.Enabled = true;
+
             btnCEP.Enabled = true;
             btnConfig.Enabled = true;
         }
@@ -280,7 +295,12 @@ namespace estatisticaTechData
                 if (!(Tbc_Telas.SelectedTab == null))
                 {
                     ApagaAba(Tbc_Telas.SelectedTab);
+                    if (Tbc_Telas.TabCount == 0)
+                    {
+                        
+                    }
                 }
+                
             }
             void ToolTipApagarTodasAsAbas_Click(object sender1, EventArgs e1)
             {
@@ -362,6 +382,11 @@ namespace estatisticaTechData
             {
                 ControleCEPAtributo = 0;
             }
+            if (Tb.Name == "Inicio")
+            {
+                ControleInicio = 0;
+            }
+
             Tbc_Telas.TabPages.Remove(Tb);
         }
 
@@ -404,6 +429,8 @@ namespace estatisticaTechData
 
 
             btnCEP.Enabled = true;
+            btnInicio.Enabled = true;
+
             btnDistribuicao.Enabled = true;
             btnHistorico.Enabled = true;
             btnConfig.Enabled = false;
@@ -441,6 +468,7 @@ namespace estatisticaTechData
             btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
             btnHistorico.ForeColor = Color.White;
             btnCEP.Enabled = false;
+            btnInicio.Enabled = true;
             btnDistribuicao.Enabled = true;
             btnHistorico.Enabled = true;
         }
@@ -448,6 +476,87 @@ namespace estatisticaTechData
         private void btnHistGraph_Click(object sender, EventArgs e)
         {
             abrirHist();
+        }
+
+        private void frmHub_Load(object sender, EventArgs e)
+        {
+
+            ControleInicio += 1;
+            Screens.UC_Inicio Inicio = new Screens.UC_Inicio();
+            Inicio.Dock = DockStyle.Fill;
+            TabPage TbPage = new TabPage();
+            TbPage.Name = "Inicio";
+            TbPage.Text = "Início";
+            TbPage.Controls.Add(Inicio);
+            Tbc_Telas.TabPages.Add(TbPage);
+            Tbc_Telas.SelectedTab = TbPage;
+
+            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+            btnConfig.ForeColor = Color.White;
+            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+            btnDistribuicao.ForeColor = Color.White;
+
+
+            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+            btnCEP.ForeColor = Color.White;
+
+            btnInicio.BackColor = Color.FromArgb(220, 236, 223);
+            btnInicio.ForeColor = Color.Black;
+
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
+            btnPrevisaoDemanda.ForeColor = Color.White;
+            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+            btnInicio.ForeColor = Color.White;
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
+            btnInicio.Enabled = false;
+            btnCEP.Enabled = true;
+            btnDistribuicao.Enabled = true;
+            btnHistorico.Enabled = true;
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            if (ControleInicio == 0)
+            {
+                ControleInicio += 1;
+
+                Screens.UC_Inicio Inicio = new Screens.UC_Inicio();
+                Inicio.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "Inicio";
+                TbPage.Text = "Início";
+                TbPage.Controls.Add(Inicio);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                MessageBox.Show("Já existem abas de Inicio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+            btnConfig.ForeColor = Color.White;
+            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+            btnDistribuicao.ForeColor = Color.White;
+
+
+            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+            btnCEP.ForeColor = Color.White;
+
+            btnInicio.BackColor = Color.FromArgb(220, 236, 223);
+            btnInicio.ForeColor = Color.Black;
+
+            btnPrevisaoDemanda.BackColor = Color.FromArgb(0, 107, 117);
+            btnPrevisaoDemanda.ForeColor = Color.White;
+            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+            btnInicio.ForeColor = Color.White;
+            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+            btnHistorico.ForeColor = Color.White;
+            btnInicio.Enabled = true;
+            btnCEP.Enabled = true;
+            btnDistribuicao.Enabled = true;
+            btnHistorico.Enabled = true;
         }
     }
 }

@@ -22,5 +22,10 @@ namespace estatisticaTechData.Screens
             /*frmDistribuicaoNormal distribuicaoNormal = new frmDistribuicaoNormal();
             distribuicaoNormal.ShowDialog();*/
         }
+
+        private void UC_DistribuicaoNormalComparacao_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -245,6 +245,7 @@
             this.Controls.Add(this.pnlGrafico02);
             this.Name = "UC_DistribuicaoNormalComparacao";
             this.Size = new System.Drawing.Size(1012, 720);
+            this.Load += new System.EventHandler(this.UC_DistribuicaoNormalComparacao_Load);
             this.pnlLegendaBack.ResumeLayout(false);
             this.pnlLegenda01.ResumeLayout(false);
             this.pnlLegenda01.PerformLayout();

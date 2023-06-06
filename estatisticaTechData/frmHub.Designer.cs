@@ -131,6 +131,7 @@
             this.btnInicio.TabIndex = 1;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // pbcPerfil
             // 
@@ -228,6 +229,7 @@
             this.Controls.Add(this.pnlSideBar);
             this.Name = "frmHub";
             this.Text = "TechData";
+            this.Load += new System.EventHandler(this.frmHub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).EndInit();

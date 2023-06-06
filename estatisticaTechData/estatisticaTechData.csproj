@@ -249,6 +249,12 @@
     <Compile Include="Screens\UC_HistoricoArquivos.Designer.cs">
       <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_Inicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_Inicio.Designer.cs">
+      <DependentUpon>UC_Inicio.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_HistoricoArquivos.resx">
       <DependentUpon>UC_HistoricoArquivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_Inicio.resx">
+      <DependentUpon>UC_Inicio.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
