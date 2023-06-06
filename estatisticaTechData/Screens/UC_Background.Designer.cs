@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            estatisticaTechData.techDataButton btnPercentis;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            estatisticaTechData.techDataButton btnPercentis;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -50,27 +50,6 @@
             btnPercentis = new estatisticaTechData.techDataButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPercentis
-            // 
-            btnPercentis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnPercentis.BorderRadius = 50;
-            btnPercentis.BorderSize = 0;
-            btnPercentis.FlatAppearance.BorderSize = 0;
-            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnPercentis.ForeColor = System.Drawing.Color.White;
-            btnPercentis.Location = new System.Drawing.Point(630, 396);
-            btnPercentis.Name = "btnPercentis";
-            btnPercentis.Size = new System.Drawing.Size(126, 47);
-            btnPercentis.TabIndex = 14;
-            btnPercentis.Text = "Percentis";
-            btnPercentis.TextColor = System.Drawing.Color.White;
-            btnPercentis.UseVisualStyleBackColor = false;
-            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
             // 
             // lblMedia
             // 
@@ -140,7 +119,7 @@
             this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTeste.Size = new System.Drawing.Size(486, 620);
+            this.dgvTeste.Size = new System.Drawing.Size(556, 620);
             this.dgvTeste.TabIndex = 5;
             this.dgvTeste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTeste_CellFormatting);
             // 
@@ -163,7 +142,7 @@
             this.lblPercentis.AutoSize = true;
             this.lblPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentis.ForeColor = System.Drawing.Color.Black;
-            this.lblPercentis.Location = new System.Drawing.Point(877, 355);
+            this.lblPercentis.Location = new System.Drawing.Point(1196, 363);
             this.lblPercentis.Name = "lblPercentis";
             this.lblPercentis.Size = new System.Drawing.Size(51, 20);
             this.lblPercentis.TabIndex = 13;
@@ -176,7 +155,7 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(564, 316);
+            this.lblTitulo.Location = new System.Drawing.Point(897, 324);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(294, 20);
             this.lblTitulo.TabIndex = 17;
@@ -185,7 +164,7 @@
             // txtPercentil
             // 
             this.txtPercentil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPercentil.Location = new System.Drawing.Point(581, 355);
+            this.txtPercentil.Location = new System.Drawing.Point(914, 363);
             this.txtPercentil.Mask = "000";
             this.txtPercentil.Name = "txtPercentil";
             this.txtPercentil.Size = new System.Drawing.Size(260, 20);
@@ -255,6 +234,27 @@
             this.lblCoeficienteAssimetria.TabIndex = 30;
             this.lblCoeficienteAssimetria.Text = "label";
             this.lblCoeficienteAssimetria.Visible = false;
+            // 
+            // btnPercentis
+            // 
+            btnPercentis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnPercentis.BorderRadius = 50;
+            btnPercentis.BorderSize = 0;
+            btnPercentis.FlatAppearance.BorderSize = 0;
+            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPercentis.ForeColor = System.Drawing.Color.White;
+            btnPercentis.Location = new System.Drawing.Point(963, 404);
+            btnPercentis.Name = "btnPercentis";
+            btnPercentis.Size = new System.Drawing.Size(126, 47);
+            btnPercentis.TabIndex = 14;
+            btnPercentis.Text = "Percentis";
+            btnPercentis.TextColor = System.Drawing.Color.White;
+            btnPercentis.UseVisualStyleBackColor = false;
+            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
             // 
             // UC_Background
             // 
