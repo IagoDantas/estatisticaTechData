@@ -54,6 +54,7 @@ namespace estatisticaTechData
             }
             else
             {
+                guia("HistoricoDistribuicaoNormal");
                 MessageBox.Show("Já existem abas de histórico distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             btnInicio.Enabled = true;
@@ -121,6 +122,7 @@ namespace estatisticaTechData
             }
             else
             {
+                guia("ControleDeVariaveis");
                 MessageBox.Show("Já existem abas de Controle De Variáveis", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             btnInicio.Enabled = true;
@@ -142,6 +144,7 @@ namespace estatisticaTechData
             }
             else
             {
+                guia("ControleDeAtributos");
                 MessageBox.Show("Já existem abas de Controle De Atributos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             btnInicio.Enabled = true;
@@ -164,6 +167,7 @@ namespace estatisticaTechData
             }
             else
             {
+                guia("ComparacaoDistribuicaoNormal");
                 MessageBox.Show("Já existem abas de comparação abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
@@ -204,6 +208,7 @@ namespace estatisticaTechData
             }
             else
             {
+                guia("HistArquivos");
                 MessageBox.Show("Já existem abas de histórico de arquivos abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
@@ -271,6 +276,7 @@ namespace estatisticaTechData
             }
             else
             {
+                guia("DistribuicaoNormal");
                 MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
@@ -323,6 +329,28 @@ namespace estatisticaTechData
             {
                 if (!(Tbc_Telas.SelectedTab == null))
                 {
+                    int var = confereAba(Tbc_Telas.SelectedTab);
+                    if(var == 1)
+                    {
+                        int SelectedTab = Tbc_Telas.SelectedIndex-1;
+                        if(SelectedTab >=0)
+                            ApagaAba(Tbc_Telas.TabPages[SelectedTab]);
+                        if (Tbc_Telas.TabCount == 0)
+                        {
+
+                        }
+                    }
+                    if (var == 2)
+                    {
+                        
+                        int SelectedTab = Tbc_Telas.SelectedIndex + 1;
+                        if(SelectedTab<Tbc_Telas.TabCount)
+                            ApagaAba(Tbc_Telas.TabPages[SelectedTab]);
+                        if (Tbc_Telas.TabCount == 0)
+                        {
+
+                        }
+                    }
                     ApagaAba(Tbc_Telas.SelectedTab);
                     if (Tbc_Telas.TabCount == 0)
                     {
@@ -336,19 +364,30 @@ namespace estatisticaTechData
                 if (!(Tbc_Telas.SelectedTab == null))
                 {
                     int SelectedTab = Tbc_Telas.SelectedIndex;
-                    ApagaDireita(SelectedTab);
-                    ApagaEsquerda(SelectedTab);
-                    ControleDistribuicaoNormal = 0;
-                    ControleHistoricoArquivoDistNormal = 0;
-                    ControleHistoricoDistNormal = 0;
-                    ControleConfig = 0;
-                    ControleCompara = 0;
-                    ControleCEP = 0;
-                    ControleBackgroundDist = 0;
-                    ControleCEPVariavel = 0;
-                    ControleCEPAtributo = 0;
-                    ControleBackgroundAtributo = 0;
-                    ControleBackgroundVariavel = 0;
+                    int var = confereAba(Tbc_Telas.SelectedTab);
+                    if(var == 1)
+                    {
+                        ApagaDireita(SelectedTab);
+                        if (SelectedTab > 0)
+                        {
+                            int abaAnterior = SelectedTab - 1;
+                            ApagaEsquerda(abaAnterior);
+                        }
+                    }
+                    else if (var == 2)
+                    {
+                        ApagaEsquerda(SelectedTab);
+                        if(SelectedTab < Tbc_Telas.TabCount - 1)
+                        {
+                            int abaPosterior = SelectedTab + 1;
+                            ApagaDireita(abaPosterior);
+                        }
+                    }
+                    else
+                    {
+                        ApagaDireita(SelectedTab);
+                        ApagaEsquerda(SelectedTab);
+                    }
                 }
             }
 
@@ -359,7 +398,17 @@ namespace estatisticaTechData
 
                 return vToolTip;
             }
-            
+
+            int confereAba(TabPage Tb)
+            {
+                int var = 0;
+                if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal")
+                    var = 1;
+                if(Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel")
+                    var = 2;
+                return var;
+            }
+
         }
         void ApagaDireita(int ItemSelecionado)
         {
@@ -445,7 +494,7 @@ namespace estatisticaTechData
             }
             else
             {
-                MessageBox.Show("Já existem abas de configurações abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                guia("Configuracoes");
             }
 
             btnConfig.BackColor = Color.FromArgb(220, 236, 223);
@@ -491,7 +540,7 @@ namespace estatisticaTechData
             }
             else
             {
-                MessageBox.Show("Já existem abas de controle estatístico de processo abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                guia("GraficoCEP");
             }
 
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
@@ -583,7 +632,7 @@ namespace estatisticaTechData
             }
             else
             {
-                MessageBox.Show("Já existem abas de Inicio", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                guia("Inicio");
             }
 
             btnConfig.BackColor = Color.FromArgb(0, 107, 117);
