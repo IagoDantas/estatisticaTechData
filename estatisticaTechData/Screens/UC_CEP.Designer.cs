@@ -116,7 +116,7 @@ namespace estatisticaTechData.Screens
             this.btnVIsualize.Name = "btnVIsualize";
             this.btnVIsualize.Size = new System.Drawing.Size(174, 46);
             this.btnVIsualize.TabIndex = 32;
-            this.btnVIsualize.Text = "Vizualizar";
+            this.btnVIsualize.Text = "Visualizar";
             this.btnVIsualize.TextColor = System.Drawing.Color.White;
             this.btnVIsualize.UseVisualStyleBackColor = false;
             this.btnVIsualize.Click += new System.EventHandler(this.btnVIsualize_Click);

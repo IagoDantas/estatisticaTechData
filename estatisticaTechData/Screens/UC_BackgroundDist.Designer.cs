@@ -1,6 +1,6 @@
 ﻿namespace estatisticaTechData.Screens
 {
-    partial class UC_Background
+    partial class UC_BackgroundDist
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            estatisticaTechData.techDataButton btnPercentis;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            estatisticaTechData.techDataButton btnPercentis;
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblModa = new System.Windows.Forms.Label();
             this.lblMediana = new System.Windows.Forms.Label();
@@ -51,65 +51,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnPercentis
-            // 
-            btnPercentis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
-            btnPercentis.BorderRadius = 50;
-            btnPercentis.BorderSize = 0;
-            btnPercentis.FlatAppearance.BorderSize = 0;
-            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            btnPercentis.ForeColor = System.Drawing.Color.White;
-            btnPercentis.Location = new System.Drawing.Point(630, 396);
-            btnPercentis.Name = "btnPercentis";
-            btnPercentis.Size = new System.Drawing.Size(126, 47);
-            btnPercentis.TabIndex = 14;
-            btnPercentis.Text = "Percentis";
-            btnPercentis.TextColor = System.Drawing.Color.White;
-            btnPercentis.UseVisualStyleBackColor = false;
-            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
-            // 
             // lblMedia
             // 
-            this.lblMedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMedia.AutoSize = true;
             this.lblMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMedia.ForeColor = System.Drawing.Color.Black;
-            this.lblMedia.Location = new System.Drawing.Point(676, 36);
+            this.lblMedia.Location = new System.Drawing.Point(714, 53);
             this.lblMedia.Name = "lblMedia";
             this.lblMedia.Size = new System.Drawing.Size(51, 20);
             this.lblMedia.TabIndex = 1;
             this.lblMedia.Text = "label1";
-            this.lblMedia.Visible = false;
             // 
             // lblModa
             // 
-            this.lblModa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblModa.AutoSize = true;
             this.lblModa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblModa.ForeColor = System.Drawing.Color.Black;
-            this.lblModa.Location = new System.Drawing.Point(676, 187);
+            this.lblModa.Location = new System.Drawing.Point(714, 144);
             this.lblModa.Name = "lblModa";
             this.lblModa.Size = new System.Drawing.Size(51, 20);
             this.lblModa.TabIndex = 2;
             this.lblModa.Text = "label2";
-            this.lblModa.Visible = false;
             // 
             // lblMediana
             // 
-            this.lblMediana.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMediana.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblMediana.AutoSize = true;
             this.lblMediana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMediana.ForeColor = System.Drawing.Color.Black;
-            this.lblMediana.Location = new System.Drawing.Point(676, 111);
+            this.lblMediana.Location = new System.Drawing.Point(1044, 53);
             this.lblMediana.Name = "lblMediana";
             this.lblMediana.Size = new System.Drawing.Size(51, 20);
             this.lblMediana.TabIndex = 3;
             this.lblMediana.Text = "label3";
-            this.lblMediana.Visible = false;
             // 
             // dgvTeste
             // 
@@ -140,30 +114,28 @@
             this.dgvTeste.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvTeste.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTeste.Size = new System.Drawing.Size(486, 620);
+            this.dgvTeste.Size = new System.Drawing.Size(661, 620);
             this.dgvTeste.TabIndex = 5;
             this.dgvTeste.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTeste_CellFormatting);
             // 
             // lblQuartis
             // 
-            this.lblQuartis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblQuartis.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblQuartis.AutoSize = true;
             this.lblQuartis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuartis.ForeColor = System.Drawing.Color.Black;
-            this.lblQuartis.Location = new System.Drawing.Point(676, 262);
+            this.lblQuartis.Location = new System.Drawing.Point(1044, 134);
             this.lblQuartis.Name = "lblQuartis";
             this.lblQuartis.Size = new System.Drawing.Size(51, 20);
             this.lblQuartis.TabIndex = 11;
             this.lblQuartis.Text = "label3";
-            this.lblQuartis.Visible = false;
             // 
             // lblPercentis
             // 
-            this.lblPercentis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPercentis.AutoSize = true;
             this.lblPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentis.ForeColor = System.Drawing.Color.Black;
-            this.lblPercentis.Location = new System.Drawing.Point(877, 355);
+            this.lblPercentis.Location = new System.Drawing.Point(1027, 513);
             this.lblPercentis.Name = "lblPercentis";
             this.lblPercentis.Size = new System.Drawing.Size(51, 20);
             this.lblPercentis.TabIndex = 13;
@@ -172,11 +144,10 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(564, 316);
+            this.lblTitulo.Location = new System.Drawing.Point(714, 474);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(294, 20);
             this.lblTitulo.TabIndex = 17;
@@ -184,8 +155,7 @@
             // 
             // txtPercentil
             // 
-            this.txtPercentil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPercentil.Location = new System.Drawing.Point(581, 355);
+            this.txtPercentil.Location = new System.Drawing.Point(731, 513);
             this.txtPercentil.Mask = "000";
             this.txtPercentil.Name = "txtPercentil";
             this.txtPercentil.Size = new System.Drawing.Size(260, 20);
@@ -193,70 +163,82 @@
             // 
             // lblDesvioPadrao
             // 
-            this.lblDesvioPadrao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesvioPadrao.AutoSize = true;
             this.lblDesvioPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDesvioPadrao.ForeColor = System.Drawing.Color.Black;
-            this.lblDesvioPadrao.Location = new System.Drawing.Point(676, 483);
+            this.lblDesvioPadrao.Location = new System.Drawing.Point(714, 231);
             this.lblDesvioPadrao.Name = "lblDesvioPadrao";
             this.lblDesvioPadrao.Size = new System.Drawing.Size(42, 20);
             this.lblDesvioPadrao.TabIndex = 20;
             this.lblDesvioPadrao.Text = "label";
-            this.lblDesvioPadrao.Visible = false;
             // 
             // lblDipersao
             // 
-            this.lblDipersao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDipersao.AutoSize = true;
             this.lblDipersao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDipersao.ForeColor = System.Drawing.Color.Black;
-            this.lblDipersao.Location = new System.Drawing.Point(676, 608);
+            this.lblDipersao.Location = new System.Drawing.Point(714, 400);
             this.lblDipersao.Name = "lblDipersao";
             this.lblDipersao.Size = new System.Drawing.Size(42, 20);
             this.lblDipersao.TabIndex = 22;
             this.lblDipersao.Text = "label";
-            this.lblDipersao.Visible = false;
             // 
             // lblCoeficientePercentilicoCurtose
             // 
-            this.lblCoeficientePercentilicoCurtose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCoeficientePercentilicoCurtose.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCoeficientePercentilicoCurtose.AutoSize = true;
             this.lblCoeficientePercentilicoCurtose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCoeficientePercentilicoCurtose.ForeColor = System.Drawing.Color.Black;
-            this.lblCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(1049, 40);
+            this.lblCoeficientePercentilicoCurtose.Location = new System.Drawing.Point(1044, 231);
             this.lblCoeficientePercentilicoCurtose.Name = "lblCoeficientePercentilicoCurtose";
             this.lblCoeficientePercentilicoCurtose.Size = new System.Drawing.Size(42, 20);
             this.lblCoeficientePercentilicoCurtose.TabIndex = 26;
             this.lblCoeficientePercentilicoCurtose.Text = "label";
-            this.lblCoeficientePercentilicoCurtose.Visible = false;
             // 
             // lblVariancia
             // 
-            this.lblVariancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblVariancia.AutoSize = true;
             this.lblVariancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVariancia.ForeColor = System.Drawing.Color.Black;
-            this.lblVariancia.Location = new System.Drawing.Point(676, 546);
+            this.lblVariancia.Location = new System.Drawing.Point(714, 306);
             this.lblVariancia.Name = "lblVariancia";
             this.lblVariancia.Size = new System.Drawing.Size(42, 20);
             this.lblVariancia.TabIndex = 28;
             this.lblVariancia.Text = "label";
-            this.lblVariancia.Visible = false;
             // 
             // lblCoeficienteAssimetria
             // 
-            this.lblCoeficienteAssimetria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCoeficienteAssimetria.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCoeficienteAssimetria.AutoSize = true;
             this.lblCoeficienteAssimetria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCoeficienteAssimetria.ForeColor = System.Drawing.Color.Black;
-            this.lblCoeficienteAssimetria.Location = new System.Drawing.Point(1058, 124);
+            this.lblCoeficienteAssimetria.Location = new System.Drawing.Point(1044, 306);
             this.lblCoeficienteAssimetria.Name = "lblCoeficienteAssimetria";
             this.lblCoeficienteAssimetria.Size = new System.Drawing.Size(42, 20);
             this.lblCoeficienteAssimetria.TabIndex = 30;
             this.lblCoeficienteAssimetria.Text = "label";
-            this.lblCoeficienteAssimetria.Visible = false;
             // 
-            // UC_Background
+            // btnPercentis
+            // 
+            btnPercentis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            btnPercentis.BorderColor = System.Drawing.Color.PaleVioletRed;
+            btnPercentis.BorderRadius = 50;
+            btnPercentis.BorderSize = 0;
+            btnPercentis.FlatAppearance.BorderSize = 0;
+            btnPercentis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnPercentis.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            btnPercentis.ForeColor = System.Drawing.Color.White;
+            btnPercentis.Location = new System.Drawing.Point(780, 554);
+            btnPercentis.Name = "btnPercentis";
+            btnPercentis.Size = new System.Drawing.Size(126, 47);
+            btnPercentis.TabIndex = 14;
+            btnPercentis.Text = "Percentis";
+            btnPercentis.TextColor = System.Drawing.Color.White;
+            btnPercentis.UseVisualStyleBackColor = false;
+            btnPercentis.Click += new System.EventHandler(this.btnPercentis_Click);
+            // 
+            // UC_BackgroundDist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,9 +257,9 @@
             this.Controls.Add(this.lblMediana);
             this.Controls.Add(this.lblModa);
             this.Controls.Add(this.lblMedia);
-            this.Name = "UC_Background";
+            this.Name = "UC_BackgroundDist";
             this.Size = new System.Drawing.Size(1264, 681);
-            this.Load += new System.EventHandler(this.testes_Load);
+            this.Load += new System.EventHandler(this.UC_BackgroundDist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTeste)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

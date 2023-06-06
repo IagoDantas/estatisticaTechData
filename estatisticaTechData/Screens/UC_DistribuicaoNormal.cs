@@ -15,19 +15,19 @@ namespace estatisticaTechData.Screens
     public partial class UC_DistribuicaoNormal : UserControl
     {
         double cpk;
-        double lsc = UC_Background.funEstancia.media + 3 * UC_Background.funEstancia.desvioPadrao;
-        double lic = UC_Background.funEstancia.media - 3 * UC_Background.funEstancia.desvioPadrao;
+        double lsc = UC_BackgroundDist.funEstancia.media + 3 * UC_BackgroundDist.funEstancia.desvioPadrao;
+        double lic = UC_BackgroundDist.funEstancia.media - 3 * UC_BackgroundDist.funEstancia.desvioPadrao;
 
         public UC_DistribuicaoNormal()
         {
             InitializeComponent();
-            cpk = ClsCalculos.CalculateCpk(UC_Background.funEstancia.media, UC_Background.funEstancia.desvioPadrao, lsc, lic);
+            cpk = ClsCalculos.CalculateCpk(UC_BackgroundDist.funEstancia.media, UC_BackgroundDist.funEstancia.desvioPadrao, lsc, lic);
         }
         private void UC_DistribuicaoNormal_Load(object sender, EventArgs e)
         {
             Grafico();
-            lblMedia.Text = Math.Round(UC_Background.funEstancia.media, 4).ToString();
-            lblDesvio.Text = Math.Round(UC_Background.funEstancia.desvioPadrao, 4).ToString();
+            lblMedia.Text = Math.Round(UC_BackgroundDist.funEstancia.media, 4).ToString();
+            lblDesvio.Text = Math.Round(UC_BackgroundDist.funEstancia.desvioPadrao, 4).ToString();
             lblCpk.Text = Math.Round(cpk, 4).ToString();
         }
 
@@ -41,7 +41,7 @@ namespace estatisticaTechData.Screens
 
 
             List<double> data = new List<double>();
-            data.AddRange(UC_Background.funEstancia.arrayExcel);
+            data.AddRange(UC_BackgroundDist.funEstancia.arrayExcel);
             double media = data.Average();
             double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
 
@@ -70,6 +70,12 @@ namespace estatisticaTechData.Screens
             // Atualizar o gráfico
             zedDistribuição.AxisChange();
             zedDistribuição.Invalidate();
+        }
+
+        private void btnVermais_Click(object sender, EventArgs e)
+        {
+            string nomeDaGuia = "BackgroundDist";
+            frmHub.funEstancia.guia(nomeDaGuia);
         }
     }
 }

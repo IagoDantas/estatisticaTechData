@@ -195,6 +195,18 @@
     <Compile Include="Resources\techDataTextBox.Designer.cs">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_BackgroundAtributos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_BackgroundAtributos.Designer.cs">
+      <DependentUpon>UC_BackgroundAtributos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\UC_BackgroundVariaveis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_BackgroundVariaveis.Designer.cs">
+      <DependentUpon>UC_BackgroundVariaveis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\UC_CEP.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -225,11 +237,11 @@
     <Compile Include="Screens\UC_DistribuicaoNormalComparacao.Designer.cs">
       <DependentUpon>UC_DistribuicaoNormalComparacao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\UC_Background.cs">
+    <Compile Include="Screens\UC_BackgroundDist.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Screens\UC_Background.Designer.cs">
-      <DependentUpon>UC_Background.cs</DependentUpon>
+    <Compile Include="Screens\UC_BackgroundDist.Designer.cs">
+      <DependentUpon>UC_BackgroundDist.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\UC_HistoricoDistribuicaoNormal.cs">
       <SubType>UserControl</SubType>
@@ -304,8 +316,8 @@
     <EmbeddedResource Include="Screens\UC_HistoricoDistribuicaoNormal.resx">
       <DependentUpon>UC_HistoricoDistribuicaoNormal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\UC_Background.resx">
-      <DependentUpon>UC_Background.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\UC_BackgroundDist.resx">
+      <DependentUpon>UC_BackgroundDist.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_Configuracao.resx">
       <DependentUpon>UC_Configuracao.cs</DependentUpon>

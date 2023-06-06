@@ -21,11 +21,11 @@ namespace estatisticaTechData.Screens
         {
             if (rdbVariaveis.Checked)
             {
-                frmHub.funEstancia.abrirTeste();
+                frmHub.funEstancia.abrirBackgroundVariaveis();
                 frmHub.funEstancia.abrirCEPVariavel();
             }else if (rdbAtributos.Checked)
             {
-                frmHub.funEstancia.abrirTeste();
+                frmHub.funEstancia.abrirBackgroundAtributos();
                 frmHub.funEstancia.abrirCEPAtributo();
             }
             else

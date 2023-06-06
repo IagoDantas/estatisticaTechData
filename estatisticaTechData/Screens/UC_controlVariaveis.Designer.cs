@@ -35,9 +35,6 @@
             this.zedMedias = new ZedGraph.ZedGraphControl();
             this.zedControle = new ZedGraph.ZedGraphControl();
             this.pnlEscolhas = new System.Windows.Forms.Panel();
-            this.rdbAmplitudes = new estatisticaTechData.Resources.techDataRadioButton();
-            this.rdbMedia = new estatisticaTechData.Resources.techDataRadioButton();
-            this.rdbControle = new estatisticaTechData.Resources.techDataRadioButton();
             this.lblMediaTitle = new System.Windows.Forms.Label();
             this.lblMedia = new System.Windows.Forms.Label();
             this.lblDesvioTitle = new System.Windows.Forms.Label();
@@ -47,6 +44,9 @@
             this.lblDesvio = new System.Windows.Forms.Label();
             this.lblInfos = new System.Windows.Forms.Label();
             this.btnVermais = new estatisticaTechData.techDataButton();
+            this.rdbAmplitudes = new estatisticaTechData.Resources.techDataRadioButton();
+            this.rdbMedia = new estatisticaTechData.Resources.techDataRadioButton();
+            this.rdbControle = new estatisticaTechData.Resources.techDataRadioButton();
             this.pnlGraficos.SuspendLayout();
             this.pnlEscolhas.SuspendLayout();
             this.pnlInfos.SuspendLayout();
@@ -144,72 +144,6 @@
             this.pnlEscolhas.Name = "pnlEscolhas";
             this.pnlEscolhas.Size = new System.Drawing.Size(742, 113);
             this.pnlEscolhas.TabIndex = 64;
-            // 
-            // rdbAmplitudes
-            // 
-            this.rdbAmplitudes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbAmplitudes.AutoSize = true;
-            this.rdbAmplitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbAmplitudes.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbAmplitudes.CheckedColor = System.Drawing.Color.White;
-            this.rdbAmplitudes.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbAmplitudes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbAmplitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbAmplitudes.Location = new System.Drawing.Point(473, 37);
-            this.rdbAmplitudes.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbAmplitudes.Name = "rdbAmplitudes";
-            this.rdbAmplitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbAmplitudes.Size = new System.Drawing.Size(258, 38);
-            this.rdbAmplitudes.TabIndex = 65;
-            this.rdbAmplitudes.Text = "Gráfico de Amplitudes";
-            this.rdbAmplitudes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdbAmplitudes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbAmplitudes.UseVisualStyleBackColor = false;
-            this.rdbAmplitudes.CheckedChanged += new System.EventHandler(this.rdbAmplitudes_CheckedChanged);
-            // 
-            // rdbMedia
-            // 
-            this.rdbMedia.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbMedia.AutoSize = true;
-            this.rdbMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbMedia.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbMedia.CheckedColor = System.Drawing.Color.White;
-            this.rdbMedia.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbMedia.Location = new System.Drawing.Point(250, 37);
-            this.rdbMedia.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbMedia.Name = "rdbMedia";
-            this.rdbMedia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbMedia.Size = new System.Drawing.Size(217, 38);
-            this.rdbMedia.TabIndex = 63;
-            this.rdbMedia.Text = "Gráfico de Médias";
-            this.rdbMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdbMedia.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbMedia.UseVisualStyleBackColor = false;
-            this.rdbMedia.CheckedChanged += new System.EventHandler(this.rdbMedia_CheckedChanged);
-            // 
-            // rdbControle
-            // 
-            this.rdbControle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbControle.AutoSize = true;
-            this.rdbControle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbControle.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbControle.CheckedColor = System.Drawing.Color.White;
-            this.rdbControle.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbControle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbControle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbControle.Location = new System.Drawing.Point(14, 37);
-            this.rdbControle.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbControle.Name = "rdbControle";
-            this.rdbControle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbControle.Size = new System.Drawing.Size(230, 38);
-            this.rdbControle.TabIndex = 64;
-            this.rdbControle.Text = "Gráfico de Controle";
-            this.rdbControle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdbControle.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbControle.UseVisualStyleBackColor = false;
-            this.rdbControle.CheckedChanged += new System.EventHandler(this.rdbControle_CheckedChanged);
             // 
             // lblMediaTitle
             // 
@@ -324,6 +258,73 @@
             this.btnVermais.Text = "Ver Mais";
             this.btnVermais.TextColor = System.Drawing.Color.White;
             this.btnVermais.UseVisualStyleBackColor = false;
+            this.btnVermais.Click += new System.EventHandler(this.btnVermais_Click);
+            // 
+            // rdbAmplitudes
+            // 
+            this.rdbAmplitudes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbAmplitudes.AutoSize = true;
+            this.rdbAmplitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbAmplitudes.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbAmplitudes.CheckedColor = System.Drawing.Color.White;
+            this.rdbAmplitudes.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAmplitudes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbAmplitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbAmplitudes.Location = new System.Drawing.Point(473, 37);
+            this.rdbAmplitudes.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbAmplitudes.Name = "rdbAmplitudes";
+            this.rdbAmplitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbAmplitudes.Size = new System.Drawing.Size(258, 38);
+            this.rdbAmplitudes.TabIndex = 65;
+            this.rdbAmplitudes.Text = "Gráfico de Amplitudes";
+            this.rdbAmplitudes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdbAmplitudes.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbAmplitudes.UseVisualStyleBackColor = false;
+            this.rdbAmplitudes.CheckedChanged += new System.EventHandler(this.rdbAmplitudes_CheckedChanged);
+            // 
+            // rdbMedia
+            // 
+            this.rdbMedia.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbMedia.AutoSize = true;
+            this.rdbMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbMedia.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbMedia.CheckedColor = System.Drawing.Color.White;
+            this.rdbMedia.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbMedia.Location = new System.Drawing.Point(250, 37);
+            this.rdbMedia.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbMedia.Name = "rdbMedia";
+            this.rdbMedia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbMedia.Size = new System.Drawing.Size(217, 38);
+            this.rdbMedia.TabIndex = 63;
+            this.rdbMedia.Text = "Gráfico de Médias";
+            this.rdbMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdbMedia.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbMedia.UseVisualStyleBackColor = false;
+            this.rdbMedia.CheckedChanged += new System.EventHandler(this.rdbMedia_CheckedChanged);
+            // 
+            // rdbControle
+            // 
+            this.rdbControle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbControle.AutoSize = true;
+            this.rdbControle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbControle.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbControle.CheckedColor = System.Drawing.Color.White;
+            this.rdbControle.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbControle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbControle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbControle.Location = new System.Drawing.Point(14, 37);
+            this.rdbControle.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbControle.Name = "rdbControle";
+            this.rdbControle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbControle.Size = new System.Drawing.Size(230, 38);
+            this.rdbControle.TabIndex = 64;
+            this.rdbControle.Text = "Gráfico de Controle";
+            this.rdbControle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.rdbControle.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.rdbControle.UseVisualStyleBackColor = false;
+            this.rdbControle.CheckedChanged += new System.EventHandler(this.rdbControle_CheckedChanged);
             // 
             // UC_controlVariaveis
             // 

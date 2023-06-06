@@ -16,22 +16,22 @@ namespace estatisticaTechData.Screens
     public partial class UC_controlVariaveis : UserControl
     {
         double cpk;
-        double lsc = UC_Background.funEstancia.media + 3 * UC_Background.funEstancia.desvioPadrao;
-        double lic = UC_Background.funEstancia.media - 3 * UC_Background.funEstancia.desvioPadrao;
+        double lsc = UC_BackgroundVariaveis.funEstancia.media + 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao;
+        double lic = UC_BackgroundVariaveis.funEstancia.media - 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao;
 
         public UC_controlVariaveis()
         {
             InitializeComponent();
-            cpk = ClsCalculos.CalculateCpk(UC_Background.funEstancia.media, UC_Background.funEstancia.desvioPadrao, lsc,lic);
+            cpk = ClsCalculos.CalculateCpk(UC_BackgroundVariaveis.funEstancia.media, UC_BackgroundVariaveis.funEstancia.desvioPadrao, lsc,lic);
         }
         private void UC_controlVariaveis_Load(object sender, EventArgs e)
         {
-            GraficoControle(UC_Background.funEstancia.arrayExcel);
-            GraficoAmplitude(UC_Background.funEstancia.amplitudes);
-            GraficoMedia(UC_Background.funEstancia.mediasIniciais);
+            GraficoControle(UC_BackgroundVariaveis.funEstancia.arrayExcel);
+            GraficoAmplitude(UC_BackgroundVariaveis.funEstancia.amplitudes);
+            GraficoMedia(UC_BackgroundVariaveis.funEstancia.mediasIniciais);
             rdbControle.Checked = true;
-            lblMedia.Text = Math.Round(UC_Background.funEstancia.media, 4).ToString();
-            lblDesvio.Text = Math.Round(UC_Background.funEstancia.desvioPadrao, 4).ToString();
+            lblMedia.Text = Math.Round(UC_BackgroundVariaveis.funEstancia.media, 4).ToString();
+            lblDesvio.Text = Math.Round(UC_BackgroundVariaveis.funEstancia.desvioPadrao, 4).ToString();
             lblCpk.Text = Math.Round(cpk, 4).ToString();
         }
 
@@ -48,7 +48,7 @@ namespace estatisticaTechData.Screens
             PointPairList pointsMedia = new PointPairList();
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
-            double media = UC_Background.funEstancia.media;
+            double media = UC_BackgroundVariaveis.funEstancia.media;
 
             for (int i = 0; i < data.Count; i++)
             {
@@ -166,5 +166,10 @@ namespace estatisticaTechData.Screens
             }
         }
 
+        private void btnVermais_Click(object sender, EventArgs e)
+        {
+            string nomeDaGuia = "BackgroundVariavel";
+            frmHub.funEstancia.guia(nomeDaGuia);
+        }
     }
 }

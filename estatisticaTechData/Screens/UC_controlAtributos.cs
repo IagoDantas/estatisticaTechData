@@ -8,12 +8,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 using ZedGraph;
 
 namespace estatisticaTechData.Screens
 {
-    public partial class UC_controlAtributos : UserControl
+    public partial class UC_controlAtributos : System.Windows.Forms.UserControl
     {
         double[,] matriz;
         double row;
@@ -22,7 +23,7 @@ namespace estatisticaTechData.Screens
         public UC_controlAtributos()
         {
             InitializeComponent();
-            matriz = UC_Background.funEstancia.matrizExcel;
+            matriz = UC_BackgroundAtributos.funEstancia.matrizExcel;
             row = matriz.GetLength(0);
         }
         private void UC_controlVariaveis_Load(object sender, EventArgs e)
@@ -103,6 +104,12 @@ namespace estatisticaTechData.Screens
                 mediaD += matriz[i, 0];
             }
             mediaD /= row; 
+        }
+
+        private void btnVermais_Click(object sender, EventArgs e)
+        {
+            string nomeDaGuia = "BackgroundAtributo";
+            frmHub.funEstancia.guia(nomeDaGuia);
         }
     }
 }

@@ -280,6 +280,7 @@
             this.btnVermais.Text = "Ver Mais";
             this.btnVermais.TextColor = System.Drawing.Color.White;
             this.btnVermais.UseVisualStyleBackColor = false;
+            this.btnVermais.Click += new System.EventHandler(this.btnVermais_Click);
             // 
             // UC_controlAtributos
             // 

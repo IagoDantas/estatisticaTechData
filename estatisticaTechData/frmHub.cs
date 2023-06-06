@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace estatisticaTechData
@@ -20,7 +21,9 @@ namespace estatisticaTechData
         int ControleConfig = 0;
         int ControleCompara = 0;
         int ControleCEP = 0; 
-        int ControleTeste = 0;
+        int ControleBackgroundDist = 0;
+        int ControleBackgroundAtributo = 0;
+        int ControleBackgroundVariavel = 0;
         int ControleCEPVariavel = 0;
         int ControleCEPAtributo = 0;
         public string emailUser;
@@ -54,23 +57,49 @@ namespace estatisticaTechData
             }
         }
 
-        public void abrirTeste()
+        public void abrirBackgroundDist()
         {
-            if (ControleTeste == 0)
+            if (ControleBackgroundDist == 0)
             {
-                ControleTeste += 1;
-                UC_Background Teste = new UC_Background();
+                ControleBackgroundDist += 1;
+                UC_BackgroundDist Teste = new UC_BackgroundDist();
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
-                TbPage.Name = "Background";
+                TbPage.Name = "BackgroundDist";
                 TbPage.Text = "Background";
                 TbPage.Controls.Add(Teste);
                 Tbc_Telas.TabPages.Add(TbPage);
                 Tbc_Telas.SelectedTab = TbPage;
             }
-            else
+        }
+        public void abrirBackgroundAtributos()
+        {
+            if (ControleBackgroundAtributo == 0)
             {
-                MessageBox.Show("Já existem abas de Teste abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ControleBackgroundAtributo += 1;
+                UC_BackgroundAtributos Teste = new UC_BackgroundAtributos();
+                Teste.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "BackgroundAtributo";
+                TbPage.Text = "Background";
+                TbPage.Controls.Add(Teste);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+        }
+        public void abrirBackgroundVariaveis()
+        {
+            if (ControleBackgroundVariavel == 0)
+            {
+                ControleBackgroundVariavel += 1;
+                UC_BackgroundVariaveis Teste = new UC_BackgroundVariaveis();
+                Teste.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "BackgroundVariavel";
+                TbPage.Text = "Background";
+                TbPage.Controls.Add(Teste);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
             }
         }
         public void abrirCEPVariavel()
@@ -96,7 +125,7 @@ namespace estatisticaTechData
         {
             if (ControleCEPAtributo == 0)
             {
-                ControleCEPVariavel += 1;
+                ControleCEPAtributo += 1;
                 UC_controlAtributos Teste = new UC_controlAtributos();
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
@@ -214,7 +243,7 @@ namespace estatisticaTechData
 
         private void btnDistribuicao_Click(object sender, EventArgs e)
         {
-            abrirTeste();
+            abrirBackgroundDist();
             if(ControleDistribuicaoNormal == 0)
             {
                 ControleDistribuicaoNormal += 1;
@@ -295,9 +324,11 @@ namespace estatisticaTechData
                     ControleConfig = 0;
                     ControleCompara = 0;
                     ControleCEP = 0;
-                    ControleTeste = 0;
+                    ControleBackgroundDist = 0;
                     ControleCEPVariavel = 0;
                     ControleCEPAtributo = 0;
+                    ControleBackgroundAtributo = 0;
+                    ControleBackgroundVariavel = 0;
                 }
             }
 
@@ -330,9 +361,17 @@ namespace estatisticaTechData
             {
                 ControleHistoricoDistNormal = 0;
             }
-            if (Tb.Name == "Background")
+            if (Tb.Name == "BackgroundDist")
             {
-                ControleTeste = 0;
+                ControleBackgroundDist = 0;
+            }
+            if (Tb.Name == "BackgroundAtributo")
+            {
+                ControleBackgroundAtributo = 0;
+            }
+            if (Tb.Name == "BackgroundVariavel")
+            {
+                ControleBackgroundVariavel = 0;
             }
             if (Tb.Name == "ComparacaoDistribuicaoNormal")
             {
@@ -448,6 +487,18 @@ namespace estatisticaTechData
         private void btnHistGraph_Click(object sender, EventArgs e)
         {
             abrirHist();
+        }
+
+        public void guia(string guia)
+        {
+            TabPage guiaDesejada = Tbc_Telas.TabPages[guia];
+
+            // Verifica se a guia foi encontrada
+            if (guiaDesejada != null)
+            {
+                // Define a guia encontrada como a guia selecionada
+                Tbc_Telas.SelectedTab = guiaDesejada;
+            }
         }
     }
 }

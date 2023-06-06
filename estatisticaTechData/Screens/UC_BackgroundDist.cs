@@ -13,9 +13,9 @@ using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace estatisticaTechData.Screens
 {
-    public partial class UC_Background : UserControl
+    public partial class UC_BackgroundDist : UserControl
     {
-        public static UC_Background funEstancia;
+        public static UC_BackgroundDist funEstancia;
         int x, y;
         public double[] arrayExcel;
         public double[] mediasIniciais;
@@ -25,13 +25,13 @@ namespace estatisticaTechData.Screens
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
 
-        public UC_Background()
+        public UC_BackgroundDist()
         {
             InitializeComponent();
             funEstancia = this;
         }
 
-        private void testes_Load(object sender, EventArgs e)
+        private void UC_BackgroundDist_Load(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
@@ -79,6 +79,8 @@ namespace estatisticaTechData.Screens
                     matrizExcel[i, j] = arrayExcel[contador];
                     contador++;
                 }
+
+            dgvTeste.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             mediasIniciais = ClsCalculos.CalcularMediasInicias(matrizExcel, x, y);
             DataRow newRow = dt.NewRow();
             for (int i = 0; i <= mediasIniciais.Length; i++)
