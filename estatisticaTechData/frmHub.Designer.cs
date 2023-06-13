@@ -227,6 +227,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Tbc_Telas);
             this.Controls.Add(this.pnlSideBar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHub";
             this.Text = "TechData";
             this.Load += new System.EventHandler(this.frmHub_Load);
