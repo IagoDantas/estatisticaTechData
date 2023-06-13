@@ -75,13 +75,12 @@ namespace estatisticaTechData.Screens
                         //data.Add("password", txtSenha.Texts);
                         data.Add("type_count_id", "1");
 
-
                         if (conexao.InsertData("table_master", data) != true)
                         {
                             MessageBox.Show("Falha ao salvar os dados no banco");
                         }
 
-                            Cursor.Current = Cursors.Default;
+                        Cursor.Current = Cursors.Default;
                     }
                 }
             }
@@ -176,7 +175,7 @@ namespace estatisticaTechData.Screens
 
             //Desvio Padrão
             desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayCopy);
-            lblDesvioPadrao.Text = desvioPadrao.ToString("F");
+            lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
             lblDesvioPadrao.Visible = true;
         }
 

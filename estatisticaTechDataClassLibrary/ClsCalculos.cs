@@ -269,11 +269,9 @@ namespace estatisticaTechDataClassLibrary
 
             double desvioPadrao = CalcularDesvioPadrao(arrExcel);
 
-            double[] modas = CalcularModa(arrExcel);
+            double mediana = CalcularMediana(arrExcel, arrExcel.Length);
 
-            double moda = CalcularMedia(modas,modas.Length);
-
-            double coeficienteAssimetria = (media - moda) / desvioPadrao;
+            double coeficienteAssimetria = 3 * (media - mediana) / desvioPadrao;
 
             return coeficienteAssimetria;
         }

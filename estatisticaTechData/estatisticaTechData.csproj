@@ -307,6 +307,12 @@
     <EmbeddedResource Include="Resources\techDataTextBox.resx">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_BackgroundAtributos.resx">
+      <DependentUpon>UC_BackgroundAtributos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_BackgroundVariaveis.resx">
+      <DependentUpon>UC_BackgroundVariaveis.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_CEP.resx">
       <DependentUpon>UC_CEP.cs</DependentUpon>
     </EmbeddedResource>

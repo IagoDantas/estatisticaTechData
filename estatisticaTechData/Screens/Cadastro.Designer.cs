@@ -160,7 +160,7 @@
             this.lklSignIn.AutoSize = true;
             this.lklSignIn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklSignIn.Location = new System.Drawing.Point(605, 621);
+            this.lklSignIn.Location = new System.Drawing.Point(607, 621);
             this.lklSignIn.Name = "lklSignIn";
             this.lklSignIn.Size = new System.Drawing.Size(77, 34);
             this.lklSignIn.TabIndex = 62;
@@ -225,7 +225,7 @@
             this.txtConfirmaSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtConfirmaSenha.BorderRadius = 25;
             this.txtConfirmaSenha.BorderSize = 2;
-            this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConfirmaSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtConfirmaSenha.Location = new System.Drawing.Point(760, 464);
             this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -247,7 +247,7 @@
             this.txtSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtSenha.BorderRadius = 25;
             this.txtSenha.BorderSize = 2;
-            this.txtSenha.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSenha.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtSenha.Location = new System.Drawing.Point(760, 325);
             this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
@@ -270,7 +270,7 @@
             this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtEmail.BorderRadius = 25;
             this.txtEmail.BorderSize = 2;
-            this.txtEmail.Font = new System.Drawing.Font("Poppins SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtEmail.Location = new System.Drawing.Point(760, 173);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
@@ -292,7 +292,7 @@
             this.txtNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtNome.BorderRadius = 25;
             this.txtNome.BorderSize = 2;
-            this.txtNome.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtNome.Location = new System.Drawing.Point(191, 173);
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
@@ -314,7 +314,7 @@
             this.txtRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtRA.BorderRadius = 25;
             this.txtRA.BorderSize = 2;
-            this.txtRA.Font = new System.Drawing.Font("Poppins SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRA.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.txtRA.Location = new System.Drawing.Point(191, 464);
             this.txtRA.Margin = new System.Windows.Forms.Padding(4);

@@ -19,6 +19,7 @@ namespace estatisticaTechData.Screens
         double[,] matriz;
         double row;
         double mediaD;
+        double desvioPadrao;
 
         public UC_controlAtributos()
         {
@@ -29,10 +30,12 @@ namespace estatisticaTechData.Screens
         private void UC_controlVariaveis_Load(object sender, EventArgs e)
         {
             CalcMedia();
+            CalcDesvioPadrao();
             GraficoC();
             GraficoP();
             rdbGraphC.Checked = true;
             lblMedia.Text = Math.Round(mediaD, 4).ToString();
+            lblDesvio.Text = Math.Round(desvioPadrao, 4).ToString();
         }
 
         private void GraficoC()
@@ -104,6 +107,19 @@ namespace estatisticaTechData.Screens
                 mediaD += matriz[i, 0];
             }
             mediaD /= row; 
+        }
+
+        private void CalcDesvioPadrao()
+        {
+            double somaQuadrados = 0;
+            for (int i = 0; i < row; i++)
+            {
+                double valor = matriz[i, 0];
+                somaQuadrados += Math.Pow(valor - mediaD, 2);
+            }
+
+            double variancia = somaQuadrados / (row - 1); // Usamos (row - 1) para calcular a variância corrigida
+            desvioPadrao = Math.Sqrt(variancia);
         }
 
         private void btnVermais_Click(object sender, EventArgs e)

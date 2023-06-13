@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace estatisticaTechData.Screens
 {
@@ -24,10 +25,13 @@ namespace estatisticaTechData.Screens
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
+        private estatisticaTechDataClassLibrary.Connection conexao;
+
         public UC_BackgroundVariaveis()
         {
             InitializeComponent();
             funEstancia = this;
+            conexao = new estatisticaTechDataClassLibrary.Connection();
         }
 
         private void UC_BackgroundVariaveis_Load(object sender, EventArgs e)
@@ -63,6 +67,20 @@ namespace estatisticaTechData.Screens
                             }
                         }
                         dgvTeste.DataSource = dt.DefaultView;
+
+
+                        string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
+
+                        Dictionary<string, string> data = new Dictionary<string, string>();
+                        data.Add("status", "A");
+                        data.Add("data", json);
+                        data.Add("type_count_id", "2");
+
+                        if (conexao.InsertData("table_master", data) != true)
+                        {
+                            MessageBox.Show("Falha ao salvar os dados no banco");
+                        }
+
                         Cursor.Current = Cursors.Default;
                     }
                 }
@@ -158,7 +176,7 @@ namespace estatisticaTechData.Screens
 
             //Desvio Padrão
             desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayCopy);
-            lblDesvioPadrao.Text = desvioPadrao.ToString("F");
+            lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
             lblDesvioPadrao.Visible = true;
         }
 
