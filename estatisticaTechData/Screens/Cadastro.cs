@@ -17,6 +17,7 @@ namespace estatisticaTechData
         private estatisticaTechDataClassLibrary.Connection conexao;
         public frmCadastro()
         {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             InitializeComponent();
             conexao = new estatisticaTechDataClassLibrary.Connection();
         }
@@ -182,6 +183,7 @@ namespace estatisticaTechData
         {
             pcbEsconderSenha.Visible = false;
             pcbEsconderConfirmeSenha.Visible = false;
+            MaximizeBox = false;
         }
 
         private void pcbVerSenha_Click(object sender, EventArgs e)

@@ -65,7 +65,6 @@
             // 
             // pcbLogo
             // 
-            this.pcbLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
             this.pcbLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pcbLogo.Location = new System.Drawing.Point(12, 12);
@@ -77,7 +76,7 @@
             // 
             // lblSenhaConfirma
             // 
-            this.lblSenhaConfirma.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSenhaConfirma.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSenhaConfirma.AutoSize = true;
             this.lblSenhaConfirma.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenhaConfirma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -90,7 +89,7 @@
             // 
             // lblSenha
             // 
-            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -103,7 +102,7 @@
             // 
             // lblRa
             // 
-            this.lblRa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRa.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblRa.AutoSize = true;
             this.lblRa.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -116,7 +115,7 @@
             // 
             // lblEmail
             // 
-            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -129,7 +128,7 @@
             // 
             // lblNome
             // 
-            this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -142,7 +141,7 @@
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -156,11 +155,11 @@
             // lklSignIn
             // 
             this.lklSignIn.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(189)))), ((int)(((byte)(168)))));
-            this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lklSignIn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lklSignIn.AutoSize = true;
             this.lklSignIn.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklSignIn.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklSignIn.Location = new System.Drawing.Point(607, 621);
+            this.lklSignIn.Location = new System.Drawing.Point(606, 584);
             this.lklSignIn.Name = "lklSignIn";
             this.lklSignIn.Size = new System.Drawing.Size(77, 34);
             this.lklSignIn.TabIndex = 62;
@@ -170,7 +169,7 @@
             // 
             // Lbl_Resultado
             // 
-            this.Lbl_Resultado.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Lbl_Resultado.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_Resultado.AutoSize = true;
             this.Lbl_Resultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Resultado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -182,7 +181,7 @@
             // 
             // rdbProfessor
             // 
-            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
             this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,7 +200,7 @@
             // 
             // rdbAluno
             // 
-            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbAluno.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdbAluno.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbAluno.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
             this.rdbAluno.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -220,6 +219,7 @@
             // 
             // txtConfirmaSenha
             // 
+            this.txtConfirmaSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtConfirmaSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtConfirmaSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtConfirmaSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -242,6 +242,7 @@
             // 
             // txtSenha
             // 
+            this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -265,6 +266,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -287,6 +289,7 @@
             // 
             // txtNome
             // 
+            this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtNome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -309,6 +312,7 @@
             // 
             // txtRA
             // 
+            this.txtRA.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtRA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.txtRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -332,7 +336,7 @@
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.btnCadastrar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.btnCadastrar.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -343,7 +347,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCadastrar.Location = new System.Drawing.Point(530, 556);
+            this.btnCadastrar.Location = new System.Drawing.Point(529, 519);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(225, 55);
             this.btnCadastrar.TabIndex = 8;
@@ -355,7 +359,7 @@
             // 
             // btnSombraCadastro
             // 
-            this.btnSombraCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSombraCadastro.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSombraCadastro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btnSombraCadastro.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.btnSombraCadastro.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
@@ -367,7 +371,7 @@
             this.btnSombraCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSombraCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.btnSombraCadastro.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSombraCadastro.Location = new System.Drawing.Point(530, 568);
+            this.btnSombraCadastro.Location = new System.Drawing.Point(529, 531);
             this.btnSombraCadastro.Name = "btnSombraCadastro";
             this.btnSombraCadastro.Size = new System.Drawing.Size(225, 50);
             this.btnSombraCadastro.TabIndex = 55;
@@ -377,6 +381,7 @@
             // 
             // txtSombraConfirmaSenha
             // 
+            this.txtSombraConfirmaSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSombraConfirmaSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraConfirmaSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraConfirmaSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -400,6 +405,7 @@
             // 
             // txtSombraSenha
             // 
+            this.txtSombraSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSombraSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraSenha.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraSenha.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -423,6 +429,7 @@
             // 
             // txtSombraEmail
             // 
+            this.txtSombraEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtSombraEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraEmail.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -446,6 +453,7 @@
             // 
             // txtSombraNome
             // 
+            this.txtSombraNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSombraNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraNome.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraNome.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -469,6 +477,7 @@
             // 
             // txtSombraRA
             // 
+            this.txtSombraRA.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtSombraRA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraRA.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
             this.txtSombraRA.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
@@ -492,6 +501,7 @@
             // 
             // pcbEsconderSenha
             // 
+            this.pcbEsconderSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pcbEsconderSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
             this.pcbEsconderSenha.Location = new System.Drawing.Point(1125, 343);
             this.pcbEsconderSenha.Name = "pcbEsconderSenha";
@@ -503,6 +513,7 @@
             // 
             // pcbVerSenha
             // 
+            this.pcbVerSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pcbVerSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
             this.pcbVerSenha.Location = new System.Drawing.Point(1093, 343);
             this.pcbVerSenha.Name = "pcbVerSenha";
@@ -514,6 +525,7 @@
             // 
             // pcbVerConfirmeSenha
             // 
+            this.pcbVerConfirmeSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pcbVerConfirmeSenha.Image = global::estatisticaTechData.Properties.Resources.olho;
             this.pcbVerConfirmeSenha.Location = new System.Drawing.Point(1093, 482);
             this.pcbVerConfirmeSenha.Name = "pcbVerConfirmeSenha";
@@ -525,6 +537,7 @@
             // 
             // pcbEsconderConfirmeSenha
             // 
+            this.pcbEsconderConfirmeSenha.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pcbEsconderConfirmeSenha.Image = global::estatisticaTechData.Properties.Resources.visivel;
             this.pcbEsconderConfirmeSenha.Location = new System.Drawing.Point(1125, 482);
             this.pcbEsconderConfirmeSenha.Name = "pcbEsconderConfirmeSenha";
