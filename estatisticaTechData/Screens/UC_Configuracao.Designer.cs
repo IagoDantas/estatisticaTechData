@@ -29,101 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Configuracao));
-            this.pcbEditaSenha = new System.Windows.Forms.PictureBox();
-            this.pcbConfirmaEmail = new System.Windows.Forms.PictureBox();
-            this.pcbEditaEmail = new System.Windows.Forms.PictureBox();
-            this.pcbConfirmaNome = new System.Windows.Forms.PictureBox();
-            this.pcbEditaNome = new System.Windows.Forms.PictureBox();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.pcbConfirmaSenha = new System.Windows.Forms.PictureBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.pnlSenha = new System.Windows.Forms.Panel();
+            this.pcbConfirmaSenha = new System.Windows.Forms.PictureBox();
+            this.pcbEditaSenha = new System.Windows.Forms.PictureBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.pnlEmail = new System.Windows.Forms.Panel();
+            this.pcbConfirmaEmail = new System.Windows.Forms.PictureBox();
+            this.pcbEditaEmail = new System.Windows.Forms.PictureBox();
             this.pnlNome = new System.Windows.Forms.Panel();
+            this.pcbConfirmaNome = new System.Windows.Forms.PictureBox();
+            this.pcbEditaNome = new System.Windows.Forms.PictureBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.pnlConfigs = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnAddCargaAlunos = new estatisticaTechData.techDataButton();
+            this.btnAddProfessor = new estatisticaTechData.techDataButton();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.Lbl_Resultado = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.pnlSenha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEditaSenha)).BeginInit();
+            this.pnlEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEditaEmail)).BeginInit();
+            this.pnlNome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEditaNome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaSenha)).BeginInit();
-            this.pnlSenha.SuspendLayout();
-            this.pnlEmail.SuspendLayout();
-            this.pnlNome.SuspendLayout();
             this.pnlConfigs.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pcbEditaSenha
-            // 
-            this.pcbEditaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbEditaSenha.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaSenha.Image")));
-            this.pcbEditaSenha.Location = new System.Drawing.Point(935, 5);
-            this.pcbEditaSenha.Name = "pcbEditaSenha";
-            this.pcbEditaSenha.Size = new System.Drawing.Size(42, 42);
-            this.pcbEditaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbEditaSenha.TabIndex = 7;
-            this.pcbEditaSenha.TabStop = false;
-            this.pcbEditaSenha.Click += new System.EventHandler(this.pcbEditaSenha_Click);
-            // 
-            // pcbConfirmaEmail
-            // 
-            this.pcbConfirmaEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbConfirmaEmail.Enabled = false;
-            this.pcbConfirmaEmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaEmail.Image")));
-            this.pcbConfirmaEmail.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaEmail.InitialImage")));
-            this.pcbConfirmaEmail.Location = new System.Drawing.Point(887, 3);
-            this.pcbConfirmaEmail.Name = "pcbConfirmaEmail";
-            this.pcbConfirmaEmail.Size = new System.Drawing.Size(42, 42);
-            this.pcbConfirmaEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbConfirmaEmail.TabIndex = 4;
-            this.pcbConfirmaEmail.TabStop = false;
-            this.pcbConfirmaEmail.Visible = false;
-            this.pcbConfirmaEmail.Click += new System.EventHandler(this.pcbConfirmaEmail_Click);
-            // 
-            // pcbEditaEmail
-            // 
-            this.pcbEditaEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbEditaEmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaEmail.Image")));
-            this.pcbEditaEmail.Location = new System.Drawing.Point(935, 3);
-            this.pcbEditaEmail.Name = "pcbEditaEmail";
-            this.pcbEditaEmail.Size = new System.Drawing.Size(42, 42);
-            this.pcbEditaEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbEditaEmail.TabIndex = 5;
-            this.pcbEditaEmail.TabStop = false;
-            this.pcbEditaEmail.Click += new System.EventHandler(this.pcbEditaEmail_Click);
-            // 
-            // pcbConfirmaNome
-            // 
-            this.pcbConfirmaNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbConfirmaNome.Enabled = false;
-            this.pcbConfirmaNome.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaNome.Image")));
-            this.pcbConfirmaNome.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaNome.InitialImage")));
-            this.pcbConfirmaNome.Location = new System.Drawing.Point(887, 3);
-            this.pcbConfirmaNome.Name = "pcbConfirmaNome";
-            this.pcbConfirmaNome.Size = new System.Drawing.Size(42, 42);
-            this.pcbConfirmaNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbConfirmaNome.TabIndex = 3;
-            this.pcbConfirmaNome.TabStop = false;
-            this.pcbConfirmaNome.Visible = false;
-            this.pcbConfirmaNome.Click += new System.EventHandler(this.pcbConfirmaNome_Click);
-            // 
-            // pcbEditaNome
-            // 
-            this.pcbEditaNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbEditaNome.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaNome.Image")));
-            this.pcbEditaNome.Location = new System.Drawing.Point(935, 3);
-            this.pcbEditaNome.Name = "pcbEditaNome";
-            this.pcbEditaNome.Size = new System.Drawing.Size(42, 42);
-            this.pcbEditaNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbEditaNome.TabIndex = 2;
-            this.pcbEditaNome.TabStop = false;
-            this.pcbEditaNome.Click += new System.EventHandler(this.pcbEditaNome_Click);
             // 
             // lblNome
             // 
@@ -146,21 +83,6 @@
             this.txtEmail.Size = new System.Drawing.Size(423, 29);
             this.txtEmail.TabIndex = 3;
             this.txtEmail.Text = "henrique@email.com";
-            // 
-            // pcbConfirmaSenha
-            // 
-            this.pcbConfirmaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbConfirmaSenha.Enabled = false;
-            this.pcbConfirmaSenha.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaSenha.Image")));
-            this.pcbConfirmaSenha.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaSenha.InitialImage")));
-            this.pcbConfirmaSenha.Location = new System.Drawing.Point(887, 5);
-            this.pcbConfirmaSenha.Name = "pcbConfirmaSenha";
-            this.pcbConfirmaSenha.Size = new System.Drawing.Size(42, 42);
-            this.pcbConfirmaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbConfirmaSenha.TabIndex = 6;
-            this.pcbConfirmaSenha.TabStop = false;
-            this.pcbConfirmaSenha.Visible = false;
-            this.pcbConfirmaSenha.Click += new System.EventHandler(this.pcbConfirmaSenha_Click);
             // 
             // lblEmail
             // 
@@ -200,6 +122,33 @@
             this.pnlSenha.Size = new System.Drawing.Size(1000, 52);
             this.pnlSenha.TabIndex = 7;
             // 
+            // pcbConfirmaSenha
+            // 
+            this.pcbConfirmaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbConfirmaSenha.Enabled = false;
+            this.pcbConfirmaSenha.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaSenha.Image")));
+            this.pcbConfirmaSenha.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaSenha.InitialImage")));
+            this.pcbConfirmaSenha.Location = new System.Drawing.Point(887, 5);
+            this.pcbConfirmaSenha.Name = "pcbConfirmaSenha";
+            this.pcbConfirmaSenha.Size = new System.Drawing.Size(42, 42);
+            this.pcbConfirmaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbConfirmaSenha.TabIndex = 6;
+            this.pcbConfirmaSenha.TabStop = false;
+            this.pcbConfirmaSenha.Visible = false;
+            this.pcbConfirmaSenha.Click += new System.EventHandler(this.pcbConfirmaSenha_Click);
+            // 
+            // pcbEditaSenha
+            // 
+            this.pcbEditaSenha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbEditaSenha.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaSenha.Image")));
+            this.pcbEditaSenha.Location = new System.Drawing.Point(935, 5);
+            this.pcbEditaSenha.Name = "pcbEditaSenha";
+            this.pcbEditaSenha.Size = new System.Drawing.Size(42, 42);
+            this.pcbEditaSenha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbEditaSenha.TabIndex = 7;
+            this.pcbEditaSenha.TabStop = false;
+            this.pcbEditaSenha.Click += new System.EventHandler(this.pcbEditaSenha_Click);
+            // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
@@ -221,8 +170,35 @@
             this.pnlEmail.Controls.Add(this.lblEmail);
             this.pnlEmail.Location = new System.Drawing.Point(-1, 233);
             this.pnlEmail.Name = "pnlEmail";
-            this.pnlEmail.Size = new System.Drawing.Size(1000, 50);
+            this.pnlEmail.Size = new System.Drawing.Size(1122, 50);
             this.pnlEmail.TabIndex = 4;
+            // 
+            // pcbConfirmaEmail
+            // 
+            this.pcbConfirmaEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbConfirmaEmail.Enabled = false;
+            this.pcbConfirmaEmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaEmail.Image")));
+            this.pcbConfirmaEmail.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaEmail.InitialImage")));
+            this.pcbConfirmaEmail.Location = new System.Drawing.Point(1009, 3);
+            this.pcbConfirmaEmail.Name = "pcbConfirmaEmail";
+            this.pcbConfirmaEmail.Size = new System.Drawing.Size(42, 42);
+            this.pcbConfirmaEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbConfirmaEmail.TabIndex = 4;
+            this.pcbConfirmaEmail.TabStop = false;
+            this.pcbConfirmaEmail.Visible = false;
+            this.pcbConfirmaEmail.Click += new System.EventHandler(this.pcbConfirmaEmail_Click);
+            // 
+            // pcbEditaEmail
+            // 
+            this.pcbEditaEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbEditaEmail.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaEmail.Image")));
+            this.pcbEditaEmail.Location = new System.Drawing.Point(1057, 3);
+            this.pcbEditaEmail.Name = "pcbEditaEmail";
+            this.pcbEditaEmail.Size = new System.Drawing.Size(42, 42);
+            this.pcbEditaEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbEditaEmail.TabIndex = 5;
+            this.pcbEditaEmail.TabStop = false;
+            this.pcbEditaEmail.Click += new System.EventHandler(this.pcbEditaEmail_Click);
             // 
             // pnlNome
             // 
@@ -235,8 +211,35 @@
             this.pnlNome.Controls.Add(this.lblNome);
             this.pnlNome.Location = new System.Drawing.Point(-1, 161);
             this.pnlNome.Name = "pnlNome";
-            this.pnlNome.Size = new System.Drawing.Size(1000, 50);
+            this.pnlNome.Size = new System.Drawing.Size(1122, 50);
             this.pnlNome.TabIndex = 3;
+            // 
+            // pcbConfirmaNome
+            // 
+            this.pcbConfirmaNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbConfirmaNome.Enabled = false;
+            this.pcbConfirmaNome.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaNome.Image")));
+            this.pcbConfirmaNome.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbConfirmaNome.InitialImage")));
+            this.pcbConfirmaNome.Location = new System.Drawing.Point(1009, 3);
+            this.pcbConfirmaNome.Name = "pcbConfirmaNome";
+            this.pcbConfirmaNome.Size = new System.Drawing.Size(42, 42);
+            this.pcbConfirmaNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbConfirmaNome.TabIndex = 3;
+            this.pcbConfirmaNome.TabStop = false;
+            this.pcbConfirmaNome.Visible = false;
+            this.pcbConfirmaNome.Click += new System.EventHandler(this.pcbConfirmaNome_Click);
+            // 
+            // pcbEditaNome
+            // 
+            this.pcbEditaNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbEditaNome.Image = ((System.Drawing.Image)(resources.GetObject("pcbEditaNome.Image")));
+            this.pcbEditaNome.Location = new System.Drawing.Point(1057, 3);
+            this.pcbEditaNome.Name = "pcbEditaNome";
+            this.pcbEditaNome.Size = new System.Drawing.Size(42, 42);
+            this.pcbEditaNome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbEditaNome.TabIndex = 2;
+            this.pcbEditaNome.TabStop = false;
+            this.pcbEditaNome.Click += new System.EventHandler(this.pcbEditaNome_Click);
             // 
             // txtNome
             // 
@@ -258,26 +261,72 @@
             this.pnlConfigs.AutoSize = true;
             this.pnlConfigs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
             this.pnlConfigs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlConfigs.Controls.Add(this.btnAddCargaAlunos);
+            this.pnlConfigs.Controls.Add(this.btnAddProfessor);
+            this.pnlConfigs.Controls.Add(this.txtTipo);
             this.pnlConfigs.Controls.Add(this.Lbl_Resultado);
             this.pnlConfigs.Controls.Add(this.lblTitulo);
             this.pnlConfigs.Controls.Add(this.pnlEmail);
             this.pnlConfigs.Controls.Add(this.pnlNome);
             this.pnlConfigs.Location = new System.Drawing.Point(0, 0);
             this.pnlConfigs.Name = "pnlConfigs";
-            this.pnlConfigs.Size = new System.Drawing.Size(1000, 720);
+            this.pnlConfigs.Size = new System.Drawing.Size(1122, 720);
             this.pnlConfigs.TabIndex = 6;
             // 
-            // lblTitulo
+            // btnAddCargaAlunos
             // 
-            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(352, 21);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(243, 51);
-            this.lblTitulo.TabIndex = 5;
-            this.lblTitulo.Text = "Configurações";
+            this.btnAddCargaAlunos.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddCargaAlunos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddCargaAlunos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddCargaAlunos.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddCargaAlunos.BorderRadius = 50;
+            this.btnAddCargaAlunos.BorderSize = 0;
+            this.btnAddCargaAlunos.FlatAppearance.BorderSize = 0;
+            this.btnAddCargaAlunos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCargaAlunos.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddCargaAlunos.ForeColor = System.Drawing.Color.White;
+            this.btnAddCargaAlunos.Location = new System.Drawing.Point(569, 652);
+            this.btnAddCargaAlunos.Name = "btnAddCargaAlunos";
+            this.btnAddCargaAlunos.Size = new System.Drawing.Size(224, 47);
+            this.btnAddCargaAlunos.TabIndex = 16;
+            this.btnAddCargaAlunos.Text = "Adicionar carga de alunos";
+            this.btnAddCargaAlunos.TextColor = System.Drawing.Color.White;
+            this.btnAddCargaAlunos.UseVisualStyleBackColor = false;
+            this.btnAddCargaAlunos.Visible = false;
+            this.btnAddCargaAlunos.Click += new System.EventHandler(this.btnAddCargaAlunos_Click);
+            // 
+            // btnAddProfessor
+            // 
+            this.btnAddProfessor.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAddProfessor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddProfessor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnAddProfessor.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddProfessor.BorderRadius = 50;
+            this.btnAddProfessor.BorderSize = 0;
+            this.btnAddProfessor.FlatAppearance.BorderSize = 0;
+            this.btnAddProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProfessor.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddProfessor.ForeColor = System.Drawing.Color.White;
+            this.btnAddProfessor.Location = new System.Drawing.Point(799, 652);
+            this.btnAddProfessor.Name = "btnAddProfessor";
+            this.btnAddProfessor.Size = new System.Drawing.Size(178, 47);
+            this.btnAddProfessor.TabIndex = 15;
+            this.btnAddProfessor.Text = "Adicionar Instrutor";
+            this.btnAddProfessor.TextColor = System.Drawing.Color.White;
+            this.btnAddProfessor.UseVisualStyleBackColor = false;
+            this.btnAddProfessor.Visible = false;
+            this.btnAddProfessor.Click += new System.EventHandler(this.btnAddProfessor_Click);
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.txtTipo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTipo.Enabled = false;
+            this.txtTipo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipo.Location = new System.Drawing.Point(152, 501);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(423, 29);
+            this.txtTipo.TabIndex = 8;
             // 
             // Lbl_Resultado
             // 
@@ -288,6 +337,18 @@
             this.Lbl_Resultado.Size = new System.Drawing.Size(0, 26);
             this.Lbl_Resultado.TabIndex = 6;
             // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(413, 21);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(243, 51);
+            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.Text = "Configurações";
+            // 
             // UC_Configuracao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,18 +358,18 @@
             this.Name = "UC_Configuracao";
             this.Size = new System.Drawing.Size(1000, 720);
             this.Load += new System.EventHandler(this.UC_Configuracao_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbEditaSenha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbEditaEmail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaNome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbEditaNome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaSenha)).EndInit();
             this.pnlSenha.ResumeLayout(false);
             this.pnlSenha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaSenha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEditaSenha)).EndInit();
             this.pnlEmail.ResumeLayout(false);
             this.pnlEmail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEditaEmail)).EndInit();
             this.pnlNome.ResumeLayout(false);
             this.pnlNome.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbConfirmaNome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbEditaNome)).EndInit();
             this.pnlConfigs.ResumeLayout(false);
             this.pnlConfigs.PerformLayout();
             this.ResumeLayout(false);
@@ -336,5 +397,8 @@
         private System.Windows.Forms.Panel pnlConfigs;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label Lbl_Resultado;
+        private System.Windows.Forms.TextBox txtTipo;
+        private techDataButton btnAddProfessor;
+        private techDataButton btnAddCargaAlunos;
     }
 }

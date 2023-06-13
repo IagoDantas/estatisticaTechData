@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.Office2010.PowerPoint;
 using estatisticaTechDataClassLibrary;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace estatisticaTechData.Screens
         public double[] mediasIniciais;
         public double[] amplitudes;
         public double[,] matrizExcel;
+        string email, senha;
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
@@ -33,8 +35,11 @@ namespace estatisticaTechData.Screens
             conexao = new estatisticaTechDataClassLibrary.Connection();
         }
 
+        
+
         private void UC_BackgroundAtributos_Load(object sender, EventArgs e)
         {
+            carregaInformacoes();
             DataTable dt = new DataTable();
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
             {
@@ -67,15 +72,53 @@ namespace estatisticaTechData.Screens
                         }
                         dgvTeste.DataSource = dt.DefaultView;
 
+                        byte[] excelData;
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            workbook.SaveAs(ms);
+                            excelData = ms.ToArray();
+                        }
                         string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
 
-                        Dictionary<string, string> data = new Dictionary<string, string>();
-                        data.Add("status", "A");
-                        data.Add("data", json);
-                        //data.Add("password", txtSenha.Texts);
-                        data.Add("type_count_id", "1");
+                        
+                        string[] columns2 = { "id" };
+                        string where2 = $"email='{email}' AND password='{senha}'";
+                        List<string>[] result2 = conexao.SelectData("users", columns2, where2);
 
-                        if (conexao.InsertData("table_master", data) != true)
+                        if (result2[0].Count > 0)
+                        {
+                            string userId = result2[0][0].ToString();
+
+                            Dictionary<string, string> dataCharge = new Dictionary<string, string>();
+                            dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                            dataCharge.Add("file", Convert.ToBase64String(excelData));
+                            dataCharge.Add("user_id", userId);
+                            dataCharge.Add("status", "A");
+                            dataCharge.Add("data", json);
+
+
+                            if (conexao.InsertData("charge", dataCharge) == true)
+                            {
+                                MessageBox.Show("Arquivo adicionado com sucesso.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao adicionar o arquivo.");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao obter o ID do usuário");
+                        }
+
+                        Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
+                        dataTableMaster.Add("status", "A");
+                        dataTableMaster.Add("data", json);
+                        //data.Add("password", txtSenha.Texts);
+                        dataTableMaster.Add("type_count_id", "1");
+
+                        if (conexao.InsertData("table_master", dataTableMaster) != true)
                         {
                             MessageBox.Show("Falha ao salvar os dados no banco");
                         }
@@ -180,7 +223,21 @@ namespace estatisticaTechData.Screens
         }
 
 
-
+        public void carregaInformacoes()
+        {
+            try
+            {
+                string[] columns = { "email", "password" };
+                string where = $"email='{frmHub.funEstancia.emailUser}'";
+                List<string>[] result = conexao.SelectData("users", columns, where);
+                email = result[0][0].ToString();
+                senha = result[1][0].ToString();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void btnPercentis_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtPercentil.Text))

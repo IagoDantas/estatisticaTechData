@@ -44,12 +44,9 @@ namespace estatisticaTechData
         private void btnCadastrar_Click_1(object sender, EventArgs e)
         {
 
-            int tipoUsuario = rdbAluno.Checked ? tipoUsuario = 1 : tipoUsuario = 0;
-            int status_usuario = 1;
-
-            if (rdbAluno.Checked == false && rdbProfessor.Checked == false)
+            if (rdbAluno.Checked == false && rdbVisitante.Checked == false)
             {
-                MessageBox.Show("Por favor selecione se é aluno ou professor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor selecione se é aluno ou visitante", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (string.IsNullOrEmpty(txtNome.Texts))
@@ -88,65 +85,139 @@ namespace estatisticaTechData
                 {
                     if (Cls_Utils.IsValidEmail(txtEmail.Texts) == true)
                     {
-                        try
+                        if(rdbAluno.Checked == true)
                         {
-                            string[] columns = { "email" };
-                            string where = $"email='{txtEmail.Texts}'";
-                            List<string>[] result = conexao.SelectData("users", columns, where);
-
-                            string[] columnsAluno = { "ra" };
-                            string whereAluno = $"ra='{txtRA.Texts}'";
-                            List<string>[] resultAluno = conexao.SelectData("users", columns, where);
-
-                            if (result[0].Count > 0 || resultAluno[0].Count > 0)
+                            try
                             {
-                                MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            else
-                            {
+                                string[] columns = { "email" };
+                                string where = $"email='{txtEmail.Texts}'";
+                                List<string>[] result = conexao.SelectData("users", columns, where);
 
-                                Dictionary<string, string> data = new Dictionary<string, string>();
-                                data.Add("name", txtNome.Texts);
-                                data.Add("email", txtEmail.Texts);
-                                data.Add("password", txtSenha.Texts);
-                                data.Add("type", tipoUsuario.ToString());
+                                string[] columnsAluno = { "ra" };
+                                string whereAluno = $"ra='{txtRA.Texts}'";
+                                List<string>[] resultAluno = conexao.SelectData("users", columns, where);
 
-
-                                if (conexao.InsertData("users", data) == true)
+                                if (result[0].Count > 0 || resultAluno[0].Count > 0)
+                                {
+                                    MessageBox.Show("Já existe um usuário com este email ou ra ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
+                                else
                                 {
 
-                                    string[] columns2 = { "id" };
-                                    string where2 = $"email='{txtEmail.Texts}' AND password='{txtSenha.Texts}'";
-                                    List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+                                    Dictionary<string, string> data = new Dictionary<string, string>();
+                                    data.Add("name", txtNome.Texts);
+                                    data.Add("email", txtEmail.Texts);
+                                    data.Add("password", txtSenha.Texts);
+                                    data.Add("type", "1");
 
-                                    Dictionary<string, string> dataAluno = new Dictionary<string, string>();
-                                    dataAluno.Add("ra", txtRA.Texts);
-                                    dataAluno.Add("user_id", result2[0][0].ToString());
 
-                                    if (conexao.InsertData("students", dataAluno) == true)
+                                    if (conexao.InsertData("users", data) == true)
                                     {
-                                        MessageBox.Show("Dados gravados com sucesso");
+
+                                        string[] columns2 = { "id" };
+                                        string where2 = $"email='{txtEmail.Texts}' AND password='{txtSenha.Texts}'";
+                                        List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                                        Dictionary<string, string> dataAluno = new Dictionary<string, string>();
+                                        dataAluno.Add("ra", txtRA.Texts);
+                                        dataAluno.Add("user_id", result2[0][0].ToString());
+
+                                        if (conexao.InsertData("students", dataAluno) == true)
+                                        {
+                                            MessageBox.Show("Dados gravados com sucesso");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Erro ao gravar dados");
+                                        }
+
                                     }
                                     else
                                     {
                                         MessageBox.Show("Erro ao gravar dados");
                                     }
 
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Erro ao gravar dados");
+                                    frmHome home = new frmHome();
+                                    home.Show();
+                                    this.Close();
                                 }
 
-                                frmHome home = new frmHome();
-                                home.Show();
-                                this.Close();
                             }
-
+                            catch (Exception erro)
+                            {
+                                MessageBox.Show(erro.Message);
+                            }
                         }
-                        catch (Exception erro)
+                        else
                         {
-                            MessageBox.Show(erro.Message);
+                            if(Cls_Utils.Valida(txtRA.Texts) == true)
+                            {
+                                try
+                                {
+                                    string[] columns = { "email" };
+                                    string where = $"email='{txtEmail.Texts}'";
+                                    List<string>[] result = conexao.SelectData("users", columns, where);
+
+                                    string[] columnsVisitante = { "cpf" };
+                                    string whereVisitante = $"cpf='{txtRA.Texts}'";
+                                    List<string>[] resultVisitante = conexao.SelectData("users", columns, where);
+
+                                    if (result[0].Count > 0 || resultVisitante[0].Count > 0)
+                                    {
+                                        MessageBox.Show("Já existe um usuário com este email ou cpf ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+
+                                        Dictionary<string, string> data = new Dictionary<string, string>();
+                                        data.Add("name", txtNome.Texts);
+                                        data.Add("email", txtEmail.Texts);
+                                        data.Add("password", txtSenha.Texts);
+                                        data.Add("type", "3");
+
+
+                                        if (conexao.InsertData("users", data) == true)
+                                        {
+
+                                            string[] columns2 = { "id" };
+                                            string where2 = $"email='{txtEmail.Texts}' AND password='{txtSenha.Texts}'";
+                                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                                            Dictionary<string, string> dataVisitante = new Dictionary<string, string>();
+                                            dataVisitante.Add("cpf", txtRA.Texts);
+                                            dataVisitante.Add("user_id", result2[0][0].ToString());
+
+                                            if (conexao.InsertData("visitors", dataVisitante) == true)
+                                            {
+                                                MessageBox.Show("Dados gravados com sucesso");
+                                            }
+                                            else
+                                            {
+                                                MessageBox.Show("Erro ao gravar dados");
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Erro ao gravar dados");
+                                        }
+
+                                        frmHome home = new frmHome();
+                                        home.Show();
+                                        this.Close();
+                                    }
+
+                                }
+                                catch (Exception erro)
+                                {
+                                    MessageBox.Show(erro.Message);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("O CPF não é válido");
+                            }
+                            
                         }
                     }
                     else
@@ -159,7 +230,7 @@ namespace estatisticaTechData
                     MessageBox.Show("A senha e a confirmação não coincidem");
             }
             else
-                MessageBox.Show("A força da senha não pode ser inaceitável ");
+                MessageBox.Show("A força da senha não pode ser inaceitável");
 
         }
 
@@ -212,6 +283,18 @@ namespace estatisticaTechData
             pcbEsconderConfirmeSenha.Visible = false;
             txtConfirmaSenha.PasswordChar = true;
             pcbVerConfirmeSenha.Visible = true;
+        }
+
+        private void rdbAluno_CheckedChanged(object sender, EventArgs e)
+        {
+            lblRa.Text = "RA:";
+            txtRA.Texts = "Digite seu RA:";
+        }
+
+        private void rdbVisitante_CheckedChanged(object sender, EventArgs e)
+        {
+            lblRa.Text = "CPF:";
+            txtRA.Texts = "Digite seu CPF:";
         }
     }
 }

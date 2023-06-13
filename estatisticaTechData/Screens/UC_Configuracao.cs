@@ -1,4 +1,7 @@
 ﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using OfficeOpenXml;
 using estatisticaTechData.Screens;
 using estatisticaTechDataClassLibrary;
 using System;
@@ -11,12 +14,14 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace estatisticaTechData
 {
     public partial class UC_Configuracao : UserControl
     {
         private estatisticaTechDataClassLibrary.Connection conexao;
+        string tipo;
 
         public UC_Configuracao()
         {
@@ -29,18 +34,28 @@ namespace estatisticaTechData
         {
             carregaInformacoes();
             txtSenha.PasswordChar = '*';
+            if (tipo == "2")
+            {
+                btnAddProfessor.Visible = true;
+                btnAddCargaAlunos.Visible = true;
+            }
+            if (tipo == "0")
+            {
+                btnAddCargaAlunos.Visible = true;
+            }
         }
 
         public void carregaInformacoes()
         {
             try
             {
-                string[] columns = { "name", "email", "password" };
+                string[] columns = { "name", "email", "password", "type" };
                 string where = $"email='{frmHub.funEstancia.emailUser}'";
                 List<string>[] result = conexao.SelectData("users", columns, where);
                 txtNome.Text = result[0][0].ToString();
                 txtEmail.Text = result[1][0].ToString();
                 txtSenha.Text = result[2][0].ToString();
+                tipo = result[3][0].ToString();
             }
             catch (Exception erro)
             {
@@ -53,22 +68,22 @@ namespace estatisticaTechData
             F.ShowDialog();
 
             if (F.DialogResult == DialogResult.OK)
-            { 
+            {
                 return true;
             }
-            else if(F.DialogResult == DialogResult.No)
+            else if (F.DialogResult == DialogResult.No)
             {
                 MessageBox.Show($"Senha inválida", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else 
-                return false; 
+            else
+                return false;
         }
 
         private void pcbEditaSenha_Click(object sender, EventArgs e)
         {
             bool senhaFrm = validaSenha();
-            if(senhaFrm == true)
+            if (senhaFrm == true)
             {
                 txtSenha.Enabled = true;
                 txtSenha.Focus();
@@ -198,18 +213,18 @@ namespace estatisticaTechData
                         txtEmail.Focus();
                     }
                     else
-                    {   
-                            where = $"email='{frmHub.funEstancia.emailUser}'";
-                            Dictionary<string, string> data = new Dictionary<string, string>();
-                            data.Add("email", txtEmail.Text);
-                            conexao.UpdateData("users", data, where);
-                            MessageBox.Show("Email atualizado");
-                            frmHub.funEstancia.emailUser = txtEmail.Text;
-                            txtEmail.Enabled = false;
-                            pcbEditaEmail.Enabled = true;
-                            pcbEditaEmail.Visible = true;
-                            pcbConfirmaEmail.Visible = false;
-                            pcbConfirmaEmail.Enabled = false;
+                    {
+                        where = $"email='{frmHub.funEstancia.emailUser}'";
+                        Dictionary<string, string> data = new Dictionary<string, string>();
+                        data.Add("email", txtEmail.Text);
+                        conexao.UpdateData("users", data, where);
+                        MessageBox.Show("Email atualizado");
+                        frmHub.funEstancia.emailUser = txtEmail.Text;
+                        txtEmail.Enabled = false;
+                        pcbEditaEmail.Enabled = true;
+                        pcbEditaEmail.Visible = true;
+                        pcbConfirmaEmail.Visible = false;
+                        pcbConfirmaEmail.Enabled = false;
 
                     }
                 }
@@ -237,6 +252,113 @@ namespace estatisticaTechData
             if (Lbl_Resultado.Text == "Forte" || Lbl_Resultado.Text == "Segura")
             {
                 Lbl_Resultado.ForeColor = Color.Green;
+            }
+        }
+
+        private void btnAddProfessor_Click(object sender, EventArgs e)
+        {
+            Frm_CadastroProfessor addProfessor = new Frm_CadastroProfessor();
+            addProfessor.ShowDialog();
+        }
+
+        private void btnAddCargaAlunos_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
+            {
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+
+                    ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial; // Adicione esta linha
+
+                    FileInfo fileInfo = new FileInfo(ofd.FileName);
+                    using (ExcelPackage package = new ExcelPackage(fileInfo))
+                    {
+                        ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+
+                        bool isFirstRow = true;
+                        foreach (var firstRowCell in worksheet.Cells[1, 1, 1, worksheet.Dimension.Columns])
+                        {
+                            dt.Columns.Add(firstRowCell.Value.ToString());
+                        }
+
+                        for (int row = 2; row <= worksheet.Dimension.Rows; row++)
+                        {
+                            var newRow = dt.Rows.Add();
+                            for (int col = 1; col <= worksheet.Dimension.Columns; col++)
+                            {
+                                newRow[col - 1] = worksheet.Cells[row, col].Value?.ToString();
+                            }
+                        }
+                    }
+
+                    // Restante do código para manipulação dos dados do DataTable
+
+                    // Adicionar ao banco de dados
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        string nome = row["Nome"].ToString();
+                        string email = row["Email"].ToString();
+                        string senha = row["Senha"].ToString();
+                        string ra = row["RA"].ToString();
+
+                        // Verificar se o e-mail já está cadastrado
+                        string[] columns = { "email" };
+                        string where = $"email='{email}'";
+                        List<string>[] result = conexao.SelectData("users", columns, where);
+
+                        if (result[0].Count > 0)
+                        {
+                            MessageBox.Show("Já existe um usuário com este email: " + email, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            continue; // Pular para o próximo registro do DataTable
+                        }
+
+                        // Código para adicionar ao banco de dados usando os valores obtidos
+                        // Substitua os valores abaixo pelos dados corretos para o seu caso
+                        Dictionary<string, string> data = new Dictionary<string, string>();
+                        data.Add("name", nome);
+                        data.Add("email", email);
+                        data.Add("password", senha);
+                        data.Add("type", "1");
+
+                        if (conexao.InsertData("users", data) == true)
+                        {
+                            string[] columns2 = { "id" };
+                            string where2 = $"email='{email}' AND password='{senha}'";
+                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                            if (result2[0].Count > 0)
+                            {
+                                string userId = result2[0][0].ToString();
+
+                                // Inserir o aluno relacionado ao usuário, juntamente com o campo "RA"
+                                Dictionary<string, string> dataStudent = new Dictionary<string, string>();
+                                dataStudent.Add("user_id", userId);
+                                dataStudent.Add("ra", ra); // Adicionar o campo "RA" na tabela "students"
+
+                                if (conexao.InsertData("students", dataStudent) == true)
+                                {
+                                    MessageBox.Show("Dados gravados com sucesso");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Erro ao gravar dados");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao obter o ID do usuário");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao gravar dados");
+                        }
+                    }
+
+                    Cursor.Current = Cursors.Default;
+                }
             }
         }
     }

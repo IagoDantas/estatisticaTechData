@@ -38,7 +38,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lklSignIn = new System.Windows.Forms.LinkLabel();
             this.Lbl_Resultado = new System.Windows.Forms.Label();
-            this.rdbProfessor = new estatisticaTechData.Resources.techDataRadioButton();
+            this.rdbVisitante = new estatisticaTechData.Resources.techDataRadioButton();
             this.rdbAluno = new estatisticaTechData.Resources.techDataRadioButton();
             this.txtConfirmaSenha = new estatisticaTechData.techDataTextBox();
             this.txtSenha = new estatisticaTechData.techDataTextBox();
@@ -179,24 +179,25 @@
             this.Lbl_Resultado.Size = new System.Drawing.Size(0, 24);
             this.Lbl_Resultado.TabIndex = 63;
             // 
-            // rdbProfessor
+            // rdbVisitante
             // 
-            this.rdbProfessor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.rdbProfessor.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbProfessor.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
-            this.rdbProfessor.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbProfessor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbProfessor.Location = new System.Drawing.Point(207, 352);
-            this.rdbProfessor.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbProfessor.Name = "rdbProfessor";
-            this.rdbProfessor.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbProfessor.Size = new System.Drawing.Size(340, 32);
-            this.rdbProfessor.TabIndex = 5;
-            this.rdbProfessor.Text = "Professor(a) ou Instrutor(a)";
-            this.rdbProfessor.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.rdbProfessor.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbProfessor.UseVisualStyleBackColor = true;
+            this.rdbVisitante.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.rdbVisitante.CheckAlign = System.Drawing.ContentAlignment.TopRight;
+            this.rdbVisitante.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(230)))), ((int)(((byte)(222)))));
+            this.rdbVisitante.Font = new System.Drawing.Font("Poppins", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbVisitante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbVisitante.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rdbVisitante.Location = new System.Drawing.Point(207, 352);
+            this.rdbVisitante.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbVisitante.Name = "rdbVisitante";
+            this.rdbVisitante.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.rdbVisitante.Size = new System.Drawing.Size(340, 32);
+            this.rdbVisitante.TabIndex = 5;
+            this.rdbVisitante.Text = "Visitante";
+            this.rdbVisitante.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.rdbVisitante.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.rdbVisitante.UseVisualStyleBackColor = true;
+            this.rdbVisitante.CheckedChanged += new System.EventHandler(this.rdbVisitante_CheckedChanged);
             // 
             // rdbAluno
             // 
@@ -216,6 +217,7 @@
             this.rdbAluno.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rdbAluno.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbAluno.UseVisualStyleBackColor = true;
+            this.rdbAluno.CheckedChanged += new System.EventHandler(this.rdbAluno_CheckedChanged);
             // 
             // txtConfirmaSenha
             // 
@@ -559,7 +561,7 @@
             this.Controls.Add(this.pcbEsconderSenha);
             this.Controls.Add(this.Lbl_Resultado);
             this.Controls.Add(this.lklSignIn);
-            this.Controls.Add(this.rdbProfessor);
+            this.Controls.Add(this.rdbVisitante);
             this.Controls.Add(this.rdbAluno);
             this.Controls.Add(this.txtConfirmaSenha);
             this.Controls.Add(this.txtSenha);
@@ -619,7 +621,7 @@
         private techDataTextBox txtSombraEmail;
         private techDataTextBox txtSombraSenha;
         private Resources.techDataRadioButton rdbAluno;
-        private Resources.techDataRadioButton rdbProfessor;
+        private Resources.techDataRadioButton rdbVisitante;
         private System.Windows.Forms.LinkLabel lklSignIn;
         private System.Windows.Forms.Label Lbl_Resultado;
         private System.Windows.Forms.PictureBox pcbEsconderSenha;

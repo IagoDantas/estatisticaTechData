@@ -30,12 +30,18 @@
         {
             this.lblNumeroPagina = new System.Windows.Forms.Label();
             this.pnlArquivos = new System.Windows.Forms.Panel();
-            this.lblHistoricoArquivos = new System.Windows.Forms.Label();
+            this.pnlNome = new System.Windows.Forms.Panel();
+            this.TxtData = new System.Windows.Forms.TextBox();
+            this.btnShow = new estatisticaTechData.techDataButton();
+            this.btnDelete = new estatisticaTechData.techDataButton();
+            this.btnRead = new estatisticaTechData.techDataButton();
+            this.TxtNome = new System.Windows.Forms.TextBox();
             this.lblDataArquivo = new System.Windows.Forms.Label();
             this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.lblRecentes = new System.Windows.Forms.Label();
-            this.lklNovaCarga = new System.Windows.Forms.LinkLabel();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.pnlArquivos.SuspendLayout();
+            this.pnlNome.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumeroPagina
@@ -56,7 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlArquivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlArquivos.Controls.Add(this.lblHistoricoArquivos);
+            this.pnlArquivos.Controls.Add(this.pnlNome);
             this.pnlArquivos.Controls.Add(this.lblDataArquivo);
             this.pnlArquivos.Controls.Add(this.lblNomeArquivo);
             this.pnlArquivos.Location = new System.Drawing.Point(99, 182);
@@ -65,17 +71,108 @@
             this.pnlArquivos.Size = new System.Drawing.Size(804, 430);
             this.pnlArquivos.TabIndex = 15;
             // 
-            // lblHistoricoArquivos
+            // pnlNome
             // 
-            this.lblHistoricoArquivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblHistoricoArquivos.AutoSize = true;
-            this.lblHistoricoArquivos.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistoricoArquivos.Location = new System.Drawing.Point(85, 195);
-            this.lblHistoricoArquivos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblHistoricoArquivos.Name = "lblHistoricoArquivos";
-            this.lblHistoricoArquivos.Size = new System.Drawing.Size(663, 48);
-            this.lblHistoricoArquivos.TabIndex = 2;
-            this.lblHistoricoArquivos.Text = "Os arquivos que ja foram utilizados ficam aqui";
+            this.pnlNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlNome.Controls.Add(this.TxtData);
+            this.pnlNome.Controls.Add(this.btnShow);
+            this.pnlNome.Controls.Add(this.btnDelete);
+            this.pnlNome.Controls.Add(this.btnRead);
+            this.pnlNome.Controls.Add(this.TxtNome);
+            this.pnlNome.Location = new System.Drawing.Point(0, 64);
+            this.pnlNome.Name = "pnlNome";
+            this.pnlNome.Size = new System.Drawing.Size(801, 50);
+            this.pnlNome.TabIndex = 16;
+            // 
+            // TxtData
+            // 
+            this.TxtData.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TxtData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.TxtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtData.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtData.Location = new System.Drawing.Point(255, 8);
+            this.TxtData.Name = "TxtData";
+            this.TxtData.Size = new System.Drawing.Size(167, 29);
+            this.TxtData.TabIndex = 7;
+            this.TxtData.Text = "15/09/2022 22:30";
+            // 
+            // btnShow
+            // 
+            this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnShow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnShow.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.btnShow.BorderRadius = 40;
+            this.btnShow.BorderSize = 0;
+            this.btnShow.FlatAppearance.BorderSize = 0;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShow.Font = new System.Drawing.Font("Poppins Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Location = new System.Drawing.Point(581, 3);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(105, 40);
+            this.btnShow.TabIndex = 6;
+            this.btnShow.Text = "...";
+            this.btnShow.TextColor = System.Drawing.Color.White;
+            this.btnShow.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.BackgroundColor = System.Drawing.Color.Red;
+            this.btnDelete.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.btnDelete.BorderRadius = 40;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.Enabled = false;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(692, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(105, 40);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Deletar";
+            this.btnDelete.TextColor = System.Drawing.Color.White;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Visible = false;
+            // 
+            // btnRead
+            // 
+            this.btnRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnRead.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnRead.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.btnRead.BorderRadius = 40;
+            this.btnRead.BorderSize = 0;
+            this.btnRead.Enabled = false;
+            this.btnRead.FlatAppearance.BorderSize = 0;
+            this.btnRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRead.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRead.ForeColor = System.Drawing.Color.White;
+            this.btnRead.Location = new System.Drawing.Point(470, 3);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(105, 40);
+            this.btnRead.TabIndex = 3;
+            this.btnRead.Text = "Visualizar";
+            this.btnRead.TextColor = System.Drawing.Color.White;
+            this.btnRead.UseVisualStyleBackColor = false;
+            this.btnRead.Visible = false;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // TxtNome
+            // 
+            this.TxtNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TxtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNome.Location = new System.Drawing.Point(8, 8);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(241, 29);
+            this.TxtNome.TabIndex = 1;
+            this.TxtNome.Text = "Gráfico Professor Marcos ";
             // 
             // lblDataArquivo
             // 
@@ -112,37 +209,34 @@
             this.lblRecentes.TabIndex = 16;
             this.lblRecentes.Text = "Recentes";
             // 
-            // lklNovaCarga
+            // lblTitulo
             // 
-            this.lklNovaCarga.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.lklNovaCarga.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lklNovaCarga.AutoSize = true;
-            this.lklNovaCarga.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lklNovaCarga.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklNovaCarga.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lklNovaCarga.LinkColor = System.Drawing.Color.Black;
-            this.lklNovaCarga.Location = new System.Drawing.Point(811, 129);
-            this.lklNovaCarga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lklNovaCarga.Name = "lklNovaCarga";
-            this.lklNovaCarga.Size = new System.Drawing.Size(108, 28);
-            this.lklNovaCarga.TabIndex = 14;
-            this.lklNovaCarga.TabStop = true;
-            this.lklNovaCarga.Text = "Nova Carga";
-            this.lklNovaCarga.VisitedLinkColor = System.Drawing.Color.Black;
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(361, 67);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(314, 48);
+            this.lblTitulo.TabIndex = 19;
+            this.lblTitulo.Text = "Histórico de arquivos";
             // 
             // UC_HistoricoArquivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(236)))), ((int)(((byte)(223)))));
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblNumeroPagina);
             this.Controls.Add(this.pnlArquivos);
             this.Controls.Add(this.lblRecentes);
-            this.Controls.Add(this.lklNovaCarga);
             this.Name = "UC_HistoricoArquivos";
             this.Size = new System.Drawing.Size(1000, 720);
+            this.Load += new System.EventHandler(this.UC_HistoricoArquivos_Load);
             this.pnlArquivos.ResumeLayout(false);
             this.pnlArquivos.PerformLayout();
+            this.pnlNome.ResumeLayout(false);
+            this.pnlNome.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,11 +248,16 @@
         private System.Windows.Forms.Label lblNumeroPagina;
         private techDataButton btnProximaPagina;
         private System.Windows.Forms.Panel pnlArquivos;
-        private System.Windows.Forms.Label lblHistoricoArquivos;
         private System.Windows.Forms.Label lblDataArquivo;
         private System.Windows.Forms.Label lblNomeArquivo;
         private System.Windows.Forms.Label lblRecentes;
-        private System.Windows.Forms.LinkLabel lklNovaCarga;
         private techDataButton btnNovaCarga;
+        private System.Windows.Forms.Panel pnlNome;
+        private techDataButton btnShow;
+        private techDataButton btnDelete;
+        private techDataButton btnRead;
+        private System.Windows.Forms.TextBox TxtNome;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.TextBox TxtData;
     }
 }

@@ -32,14 +32,14 @@
             this.lblRecentes = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNome = new System.Windows.Forms.Panel();
+            this.btnShow = new estatisticaTechData.techDataButton();
             this.btnDelete = new estatisticaTechData.techDataButton();
+            this.btnCompara = new estatisticaTechData.techDataButton();
             this.btnEdit = new estatisticaTechData.techDataButton();
             this.btnRead = new estatisticaTechData.techDataButton();
             this.txtExemplo = new System.Windows.Forms.TextBox();
-            this.btnCompara = new estatisticaTechData.techDataButton();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblNumeroPagina = new System.Windows.Forms.Label();
-            this.btnShow = new estatisticaTechData.techDataButton();
             this.panel1.SuspendLayout();
             this.pnlNome.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,27 @@
             this.pnlNome.Size = new System.Drawing.Size(897, 50);
             this.pnlNome.TabIndex = 15;
             // 
+            // btnShow
+            // 
+            this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnShow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnShow.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.btnShow.BorderRadius = 40;
+            this.btnShow.BorderSize = 0;
+            this.btnShow.FlatAppearance.BorderSize = 0;
+            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShow.Font = new System.Drawing.Font("Poppins Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.Location = new System.Drawing.Point(788, 5);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(105, 40);
+            this.btnShow.TabIndex = 6;
+            this.btnShow.Text = "...";
+            this.btnShow.TextColor = System.Drawing.Color.White;
+            this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
             // btnDelete
             // 
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -120,6 +141,29 @@
             this.btnDelete.TextColor = System.Drawing.Color.White;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Visible = false;
+            // 
+            // btnCompara
+            // 
+            this.btnCompara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCompara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnCompara.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.btnCompara.BorderColor = System.Drawing.Color.PapayaWhip;
+            this.btnCompara.BorderRadius = 40;
+            this.btnCompara.BorderSize = 0;
+            this.btnCompara.Enabled = false;
+            this.btnCompara.FlatAppearance.BorderSize = 0;
+            this.btnCompara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompara.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompara.ForeColor = System.Drawing.Color.White;
+            this.btnCompara.Location = new System.Drawing.Point(677, 5);
+            this.btnCompara.Name = "btnCompara";
+            this.btnCompara.Size = new System.Drawing.Size(105, 40);
+            this.btnCompara.TabIndex = 2;
+            this.btnCompara.Text = "Comparar";
+            this.btnCompara.TextColor = System.Drawing.Color.White;
+            this.btnCompara.UseVisualStyleBackColor = false;
+            this.btnCompara.Visible = false;
+            this.btnCompara.Click += new System.EventHandler(this.btnCompara_Click);
             // 
             // btnEdit
             // 
@@ -177,36 +221,13 @@
             this.txtExemplo.TabIndex = 1;
             this.txtExemplo.Text = "Gráfico Professor Marcos 15/09/2022 22:30";
             // 
-            // btnCompara
-            // 
-            this.btnCompara.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCompara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnCompara.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnCompara.BorderColor = System.Drawing.Color.PapayaWhip;
-            this.btnCompara.BorderRadius = 40;
-            this.btnCompara.BorderSize = 0;
-            this.btnCompara.Enabled = false;
-            this.btnCompara.FlatAppearance.BorderSize = 0;
-            this.btnCompara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompara.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompara.ForeColor = System.Drawing.Color.White;
-            this.btnCompara.Location = new System.Drawing.Point(677, 5);
-            this.btnCompara.Name = "btnCompara";
-            this.btnCompara.Size = new System.Drawing.Size(105, 40);
-            this.btnCompara.TabIndex = 2;
-            this.btnCompara.Text = "Comparar";
-            this.btnCompara.TextColor = System.Drawing.Color.White;
-            this.btnCompara.UseVisualStyleBackColor = false;
-            this.btnCompara.Visible = false;
-            this.btnCompara.Click += new System.EventHandler(this.btnCompara_Click);
-            // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(206, 68);
+            this.lblTitulo.Location = new System.Drawing.Point(191, 67);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(635, 48);
             this.lblTitulo.TabIndex = 13;
@@ -223,27 +244,6 @@
             this.lblNumeroPagina.Size = new System.Drawing.Size(30, 28);
             this.lblNumeroPagina.TabIndex = 17;
             this.lblNumeroPagina.Text = "1/1";
-            // 
-            // btnShow
-            // 
-            this.btnShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnShow.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnShow.BorderColor = System.Drawing.Color.PapayaWhip;
-            this.btnShow.BorderRadius = 40;
-            this.btnShow.BorderSize = 0;
-            this.btnShow.FlatAppearance.BorderSize = 0;
-            this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShow.Font = new System.Drawing.Font("Poppins Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(788, 5);
-            this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(105, 40);
-            this.btnShow.TabIndex = 6;
-            this.btnShow.Text = "...";
-            this.btnShow.TextColor = System.Drawing.Color.White;
-            this.btnShow.UseVisualStyleBackColor = false;
-            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             // 
             // UC_HistoricoDistribuicaoNormal
             // 
