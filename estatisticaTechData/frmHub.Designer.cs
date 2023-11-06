@@ -32,7 +32,6 @@
             this.btnConfig = new System.Windows.Forms.Button();
             this.btnDistribuicao = new System.Windows.Forms.Button();
             this.btnHistorico = new System.Windows.Forms.Button();
-            this.btnPrevisaoDemanda = new System.Windows.Forms.Button();
             this.btnInicio = new System.Windows.Forms.Button();
             this.pbcPerfil = new System.Windows.Forms.PictureBox();
             this.pnlSideBar = new System.Windows.Forms.Panel();
@@ -89,7 +88,7 @@
             this.btnHistorico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistorico.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistorico.ForeColor = System.Drawing.Color.White;
-            this.btnHistorico.Location = new System.Drawing.Point(3, 530);
+            this.btnHistorico.Location = new System.Drawing.Point(3, 419);
             this.btnHistorico.Name = "btnHistorico";
             this.btnHistorico.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnHistorico.Size = new System.Drawing.Size(266, 50);
@@ -97,24 +96,6 @@
             this.btnHistorico.Text = "Histórico de arquivos enviados";
             this.btnHistorico.UseVisualStyleBackColor = true;
             this.btnHistorico.Click += new System.EventHandler(this.btnHistorico_Click);
-            // 
-            // btnPrevisaoDemanda
-            // 
-            this.btnPrevisaoDemanda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrevisaoDemanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.btnPrevisaoDemanda.Enabled = false;
-            this.btnPrevisaoDemanda.FlatAppearance.BorderSize = 0;
-            this.btnPrevisaoDemanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrevisaoDemanda.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrevisaoDemanda.ForeColor = System.Drawing.Color.White;
-            this.btnPrevisaoDemanda.Location = new System.Drawing.Point(0, 321);
-            this.btnPrevisaoDemanda.Name = "btnPrevisaoDemanda";
-            this.btnPrevisaoDemanda.Size = new System.Drawing.Size(266, 64);
-            this.btnPrevisaoDemanda.TabIndex = 2;
-            this.btnPrevisaoDemanda.Text = "Previsão de demanda\r\n(Em breve)";
-            this.btnPrevisaoDemanda.UseVisualStyleBackColor = false;
-            this.btnPrevisaoDemanda.Click += new System.EventHandler(this.btnPrevisaoDemanda_Click);
             // 
             // btnInicio
             // 
@@ -156,7 +137,6 @@
             this.pnlSideBar.Controls.Add(this.btnConfig);
             this.pnlSideBar.Controls.Add(this.btnDistribuicao);
             this.pnlSideBar.Controls.Add(this.btnHistorico);
-            this.pnlSideBar.Controls.Add(this.btnPrevisaoDemanda);
             this.pnlSideBar.Controls.Add(this.btnInicio);
             this.pnlSideBar.Controls.Add(this.pbcPerfil);
             this.pnlSideBar.Location = new System.Drawing.Point(-1, -1);
@@ -172,7 +152,7 @@
             this.btnHistGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHistGraph.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHistGraph.ForeColor = System.Drawing.Color.White;
-            this.btnHistGraph.Location = new System.Drawing.Point(3, 465);
+            this.btnHistGraph.Location = new System.Drawing.Point(3, 363);
             this.btnHistGraph.Name = "btnHistGraph";
             this.btnHistGraph.Size = new System.Drawing.Size(266, 50);
             this.btnHistGraph.TabIndex = 10;
@@ -188,7 +168,7 @@
             this.btnCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCEP.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCEP.ForeColor = System.Drawing.Color.White;
-            this.btnCEP.Location = new System.Drawing.Point(0, 400);
+            this.btnCEP.Location = new System.Drawing.Point(0, 307);
             this.btnCEP.Name = "btnCEP";
             this.btnCEP.Size = new System.Drawing.Size(266, 50);
             this.btnCEP.TabIndex = 9;
@@ -243,7 +223,6 @@
         private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnDistribuicao;
         private System.Windows.Forms.Button btnHistorico;
-        private System.Windows.Forms.Button btnPrevisaoDemanda;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.PictureBox pbcPerfil;
         private System.Windows.Forms.Panel pnlSideBar;
