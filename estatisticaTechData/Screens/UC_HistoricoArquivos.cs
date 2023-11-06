@@ -79,6 +79,24 @@ namespace estatisticaTechData
                         labelData.Text = $"Data: {dateText}";
                         labelData.Location = new Point(labelNome.Right + 30, 10); // Ajuste as coordenadas conforme necessário
 
+                        techDataButton compareButton = new techDataButton();
+                        compareButton.BackColor = Color.FromArgb(0, 107, 117);
+                        compareButton.BackgroundColor = Color.FromArgb(0, 107, 117);
+                        compareButton.BorderColor = Color.PaleVioletRed;
+                        compareButton.BorderRadius = 50;
+                        compareButton.BorderSize = 0;
+                        compareButton.FlatAppearance.BorderSize = 0;
+                        compareButton.FlatStyle = FlatStyle.Flat;
+                        compareButton.Font = new Font("Poppins", 10, FontStyle.Bold);
+                        compareButton.ForeColor = Color.White;
+                        compareButton.Location = new Point(659, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                        compareButton.Name = $"btnComparar_{i}"; // Nome único para o botão
+                        compareButton.Size = new Size(105, 47);
+                        compareButton.TabIndex = 15;
+                        compareButton.Text = "Comparar";
+                        compareButton.TextColor = Color.White;
+                        compareButton.UseVisualStyleBackColor = false;
+
                         techDataButton deleteButton = new techDataButton();
                         deleteButton.BackColor = Color.FromArgb(0, 107, 117);
                         deleteButton.BackgroundColor = Color.FromArgb(234, 22, 22);
@@ -89,13 +107,16 @@ namespace estatisticaTechData
                         deleteButton.FlatStyle = FlatStyle.Flat;
                         deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
                         deleteButton.ForeColor = Color.White;
-                        deleteButton.Location = new Point(659, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                        deleteButton.Location = new Point(compareButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
                         deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
-                        deleteButton.Size = new Size(80, 47);
+                        deleteButton.Size = new Size(105, 47);
                         deleteButton.TabIndex = 15;
                         deleteButton.Text = "Deletar";
-                        deleteButton.TextColor = Color.White;
+                        deleteButton.TextColor = Color.Black;
                         deleteButton.UseVisualStyleBackColor = false;
+
+
+                        
 
                         deleteButton.Click += (s, eventArgs) =>
                         {
@@ -103,10 +124,17 @@ namespace estatisticaTechData
                             int buttonIndex = int.Parse(deleteButton.Name.Split('_')[1]);
                             // Use o buttonIndex para realizar a exclusão do registro
                         };
+                        compareButton.Click += (s, eventArgs) =>
+                        {
+                            // Aqui você pode acessar o índice do botão e realizar a exclusão do registro correspondente
+                            int buttonIndex = int.Parse(compareButton.Name.Split('_')[1]);
+                            // Use o buttonIndex para realizar a exclusão do registro
+                        };
 
                         // Adicione os Labels ao Panel
                         panel.Controls.Add(labelNome);
                         panel.Controls.Add(labelData);
+                        panel.Controls.Add(compareButton);
                         panel.Controls.Add(deleteButton);
 
                         // Adicione o Panel ao seu formulário
