@@ -38,7 +38,6 @@ namespace estatisticaTechData
 
             if (chargeResult[0].Count > 0)
             {
-                int panelY = 2;
 
                 for (int i = 0; i < chargeResult[0].Count; i++)
                 {
@@ -63,28 +62,56 @@ namespace estatisticaTechData
                         Panel panel = new Panel();
                         panel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                         panel.BorderStyle = BorderStyle.FixedSingle;
-                        panel.Location = new Point(10, panelY); // Ajuste as coordenadas conforme necessário
-                        panel.Size = new Size(801, 50);
+                        panel.Location = new Point(0, i * 50); // Ajuste as coordenadas X e Y conforme necessário
+                        panel.Size = new Size(pnlArquivos.Width - 20, 50);
 
                         // Crie um Label para exibir o nome
                         Label labelNome = new Label();
+                        labelNome.Font = new Font("Poppins", 12, FontStyle.Bold);
+                        labelNome.AutoSize = true;
                         labelNome.Text = $"Nome: {cargaUserName}";
                         labelNome.Location = new Point(10, 10); // Ajuste as coordenadas conforme necessário
 
                         // Crie um Label para exibir a data e ajuste sua posição para que fique ao lado do Label do nome
                         Label labelData = new Label();
+                        labelData.Font = new Font("Poppins", 12, FontStyle.Regular);
+                        labelData.AutoSize = true;
                         labelData.Text = $"Data: {dateText}";
-                        labelData.Location = new Point(labelNome.Right + 10, 10); // Ajuste as coordenadas conforme necessário
+                        labelData.Location = new Point(labelNome.Right + 30, 10); // Ajuste as coordenadas conforme necessário
+
+                        techDataButton deleteButton = new techDataButton();
+                        deleteButton.BackColor = Color.FromArgb(0, 107, 117);
+                        deleteButton.BackgroundColor = Color.FromArgb(234, 22, 22);
+                        deleteButton.BorderColor = Color.PaleVioletRed;
+                        deleteButton.BorderRadius = 50;
+                        deleteButton.BorderSize = 0;
+                        deleteButton.FlatAppearance.BorderSize = 0;
+                        deleteButton.FlatStyle = FlatStyle.Flat;
+                        deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
+                        deleteButton.ForeColor = Color.White;
+                        deleteButton.Location = new Point(659, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                        deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
+                        deleteButton.Size = new Size(80, 47);
+                        deleteButton.TabIndex = 15;
+                        deleteButton.Text = "Deletar";
+                        deleteButton.TextColor = Color.White;
+                        deleteButton.UseVisualStyleBackColor = false;
+
+                        deleteButton.Click += (s, eventArgs) =>
+                        {
+                            // Aqui você pode acessar o índice do botão e realizar a exclusão do registro correspondente
+                            int buttonIndex = int.Parse(deleteButton.Name.Split('_')[1]);
+                            // Use o buttonIndex para realizar a exclusão do registro
+                        };
 
                         // Adicione os Labels ao Panel
                         panel.Controls.Add(labelNome);
                         panel.Controls.Add(labelData);
-                        
+                        panel.Controls.Add(deleteButton);
 
                         // Adicione o Panel ao seu formulário
-                        this.Controls.Add(panel);
                         pnlArquivos.Controls.Add(panel);
-                        panelY += panel.Height + 10;
+
                     }
                 }
             }

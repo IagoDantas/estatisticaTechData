@@ -30,11 +30,8 @@
         {
             this.lblNumeroPagina = new System.Windows.Forms.Label();
             this.pnlArquivos = new System.Windows.Forms.Panel();
-            this.lblDataArquivo = new System.Windows.Forms.Label();
-            this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.lblRecentes = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.pnlArquivos.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNumeroPagina
@@ -51,41 +48,13 @@
             // 
             // pnlArquivos
             // 
+            this.pnlArquivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlArquivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlArquivos.Controls.Add(this.lblDataArquivo);
-            this.pnlArquivos.Controls.Add(this.lblNomeArquivo);
-            this.pnlArquivos.Location = new System.Drawing.Point(99, 182);
+            this.pnlArquivos.Location = new System.Drawing.Point(108, 166);
             this.pnlArquivos.Margin = new System.Windows.Forms.Padding(2);
             this.pnlArquivos.Name = "pnlArquivos";
             this.pnlArquivos.Size = new System.Drawing.Size(804, 430);
             this.pnlArquivos.TabIndex = 15;
-            // 
-            // lblDataArquivo
-            // 
-            this.lblDataArquivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDataArquivo.AutoSize = true;
-            this.lblDataArquivo.Enabled = false;
-            this.lblDataArquivo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataArquivo.Location = new System.Drawing.Point(604, 6);
-            this.lblDataArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDataArquivo.Name = "lblDataArquivo";
-            this.lblDataArquivo.Size = new System.Drawing.Size(68, 34);
-            this.lblDataArquivo.TabIndex = 1;
-            this.lblDataArquivo.Text = "Data:";
-            this.lblDataArquivo.Visible = false;
-            // 
-            // lblNomeArquivo
-            // 
-            this.lblNomeArquivo.AutoSize = true;
-            this.lblNomeArquivo.Enabled = false;
-            this.lblNomeArquivo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeArquivo.Location = new System.Drawing.Point(32, 6);
-            this.lblNomeArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNomeArquivo.Name = "lblNomeArquivo";
-            this.lblNomeArquivo.Size = new System.Drawing.Size(78, 34);
-            this.lblNomeArquivo.TabIndex = 0;
-            this.lblNomeArquivo.Text = "Nome:";
-            this.lblNomeArquivo.Visible = false;
             // 
             // lblRecentes
             // 
@@ -105,7 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(378, 67);
+            this.lblTitulo.Location = new System.Drawing.Point(437, 62);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(314, 48);
             this.lblTitulo.TabIndex = 19;
@@ -123,8 +92,6 @@
             this.Name = "UC_HistoricoArquivos";
             this.Size = new System.Drawing.Size(1000, 720);
             this.Load += new System.EventHandler(this.UC_HistoricoArquivos_Load);
-            this.pnlArquivos.ResumeLayout(false);
-            this.pnlArquivos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,8 +103,6 @@
         private System.Windows.Forms.Label lblNumeroPagina;
         private techDataButton btnProximaPagina;
         private System.Windows.Forms.Panel pnlArquivos;
-        private System.Windows.Forms.Label lblDataArquivo;
-        private System.Windows.Forms.Label lblNomeArquivo;
         private System.Windows.Forms.Label lblRecentes;
         private techDataButton btnNovaCarga;
         private System.Windows.Forms.Label lblTitulo;
