@@ -156,12 +156,6 @@
     <Compile Include="frmHub.Designer.cs">
       <DependentUpon>frmHub.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_Teste.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm_Teste.Designer.cs">
-      <DependentUpon>Frm_Teste.cs</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,9 +286,6 @@
     </Compile>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm_Teste.resx">
-      <DependentUpon>Frm_Teste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
