@@ -43,16 +43,32 @@ namespace estatisticaTechDataClassLibrary
 
             return amplitudes;
         }
-        public static double CalculateCpk(double mean, double standardDeviation, double upperSpecLimit, double lowerSpecLimit)
+        public static double CalculateCp(double desvio, double upperSpecLimit, double lowerSpecLimit)
+        {
+            double cp = 0.0;
+
+            cp = (upperSpecLimit-lowerSpecLimit) / (6 * desvio);
+
+            return cp;
+        }
+        public static double CalculateCpk(double media, double desvio, double upperSpecLimit, double lowerSpecLimit)
         {
             double cpk = 0.0;
 
-            // Calcular a diferença entre a média do processo e os limites de especificação
-            double diffUpper = upperSpecLimit - mean;
-            double diffLower = mean - lowerSpecLimit;
+            double diffUpper = upperSpecLimit - media;
+            double diffLower = media - lowerSpecLimit;
 
-            // Calcular o Cpk utilizando a fórmula
-            cpk = Math.Min(diffUpper / (3 * standardDeviation), diffLower / (3 * standardDeviation));
+            double up = diffUpper / (3 * desvio);
+            double low = diffLower / (3 * desvio);
+
+            if(up <= low)
+            {
+                cpk = up;
+            }
+            else
+            {
+                cpk = low;
+            }
 
             return cpk;
         }

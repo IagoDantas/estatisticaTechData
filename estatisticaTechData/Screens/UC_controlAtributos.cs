@@ -34,8 +34,8 @@ namespace estatisticaTechData.Screens
             GraficoC();
             GraficoP();
             rdbGraphC.Checked = true;
-            lblMedia.Text = Math.Round(mediaD, 4).ToString();
-            lblDesvio.Text = Math.Round(desvioPadrao, 4).ToString();
+            lblMedia.Text = mediaD.ToString("f4");
+            lblDesvio.Text = desvioPadrao.ToString("f4");
         }
 
         private void GraficoC()

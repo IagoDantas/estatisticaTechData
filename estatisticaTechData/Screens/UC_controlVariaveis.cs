@@ -15,14 +15,17 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_controlVariaveis : UserControl
     {
-        double cpk;
-        double lsc = UC_BackgroundVariaveis.funEstancia.media + 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao;
-        double lic = UC_BackgroundVariaveis.funEstancia.media - 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao;
+        double cpk, cp,
+            desvio = UC_BackgroundVariaveis.funEstancia.desvioPadrao,
+            lsc = UC_BackgroundVariaveis.funEstancia.media + 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
+            lic = UC_BackgroundVariaveis.funEstancia.media - 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
+            media = UC_BackgroundVariaveis.funEstancia.media;   
 
         public UC_controlVariaveis()
         {
             InitializeComponent();
             cpk = ClsCalculos.CalculateCpk(UC_BackgroundVariaveis.funEstancia.media, UC_BackgroundVariaveis.funEstancia.desvioPadrao, lsc,lic);
+            cp = ClsCalculos.CalculateCp(UC_BackgroundVariaveis.funEstancia.desvioPadrao, lsc, lic);
         }
         private void UC_controlVariaveis_Load(object sender, EventArgs e)
         {
@@ -30,9 +33,10 @@ namespace estatisticaTechData.Screens
             GraficoAmplitude(UC_BackgroundVariaveis.funEstancia.amplitudes);
             GraficoMedia(UC_BackgroundVariaveis.funEstancia.mediasIniciais);
             rdbControle.Checked = true;
-            lblMedia.Text = Math.Round(UC_BackgroundVariaveis.funEstancia.media, 4).ToString();
-            lblDesvio.Text = Math.Round(UC_BackgroundVariaveis.funEstancia.desvioPadrao, 4).ToString();
-            lblCpk.Text = Math.Round(cpk, 4).ToString();
+            lblMedia.Text = media.ToString("f4");
+            lblDesvio.Text = desvio.ToString("f4");
+            lblCpk.Text = cpk.ToString("f4");
+            lblCP.Text = cp.ToString("f4");
         }
 
         private void GraficoControle(double[] arrayTeste)

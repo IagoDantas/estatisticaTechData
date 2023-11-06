@@ -14,9 +14,11 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_DistribuicaoNormal : UserControl
     {
-        double cpk;
-        double lsc = UC_BackgroundDist.funEstancia.media + 3 * UC_BackgroundDist.funEstancia.desvioPadrao;
-        double lic = UC_BackgroundDist.funEstancia.media - 3 * UC_BackgroundDist.funEstancia.desvioPadrao;
+        double cpk,
+            lsc = UC_BackgroundDist.funEstancia.media + 3 * UC_BackgroundDist.funEstancia.desvioPadrao,
+            lic = UC_BackgroundDist.funEstancia.media - 3 * UC_BackgroundDist.funEstancia.desvioPadrao,
+            media = UC_BackgroundDist.funEstancia.media,
+            desvioPadrao = UC_BackgroundDist.funEstancia.desvioPadrao;
 
         public UC_DistribuicaoNormal()
         {
@@ -26,9 +28,9 @@ namespace estatisticaTechData.Screens
         private void UC_DistribuicaoNormal_Load(object sender, EventArgs e)
         {
             Grafico();
-            lblMedia.Text = Math.Round(UC_BackgroundDist.funEstancia.media, 4).ToString();
-            lblDesvio.Text = Math.Round(UC_BackgroundDist.funEstancia.desvioPadrao, 4).ToString();
-            lblCpk.Text = Math.Round(cpk, 4).ToString();
+            lblMedia.Text = media.ToString("f4");
+            lblDesvio.Text = desvioPadrao.ToString("f4");
+            lblCpk.Text = cpk.ToString("f4");
         }
 
         private void Grafico()

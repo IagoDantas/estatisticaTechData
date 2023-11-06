@@ -103,7 +103,7 @@ namespace estatisticaTechData.Screens
                 if (i == 0)
                     newRow[i] = "Média(s):";
                 else
-                    newRow[i] = Math.Round(mediasIniciais[i - 1], 4).ToString();
+                    newRow[i] = mediasIniciais[i - 1].ToString("f4");
             }
             dt.Rows.Add(newRow);
 
@@ -114,7 +114,7 @@ namespace estatisticaTechData.Screens
                 if (i == 0)
                     newRow[i] = "Amplitude(s):";
                 else
-                    newRow[i] = Math.Round(amplitudes[i - 1], 4).ToString();
+                    newRow[i] = amplitudes[i - 1].ToString("f4");
             }
             dt.Rows.Add(newRow);
 
@@ -133,22 +133,22 @@ namespace estatisticaTechData.Screens
 
             //Coeficiente Percentilico de Curtose
             coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayCopy, x);
-            lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {Math.Round(coeficientePercentilicoCurtose, 2)}";
+            lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {coeficientePercentilicoCurtose.ToString("f4")}";
             lblCoeficientePercentilicoCurtose.Visible = true;
 
             //Coeficiente de Assimetria
             coeficienteAssimetria = ClsCalculos.CalcularCoeficienteAssimetria(arrayCopy);
-            lblCoeficienteAssimetria.Text = $"O coeficiente de assimetria é {Math.Round(coeficienteAssimetria, 2)}";
+            lblCoeficienteAssimetria.Text = $"O coeficiente de assimetria é {coeficienteAssimetria.ToString("f4")}";
             lblCoeficienteAssimetria.Visible = true;
 
             //Variancia
             variancia = ClsCalculos.CalcularVariancia(arrayCopy);
-            lblVariancia.Text = $"A variância  desse conjunto é {Math.Round(variancia, 2)}";
+            lblVariancia.Text = $"A variância  desse conjunto é {variancia.ToString("f4")}";
             lblVariancia.Visible = true;
 
             //Dispersão
-            dispersao = Math.Round(ClsCalculos.CalcularDispersao(arrayCopy), 4);
-            lblDipersao.Text = $"A dispersão desse conjunto é {dispersao} ou  seja {dispersao * 100}%";
+            dispersao = ClsCalculos.CalcularDispersao(arrayCopy);
+            lblDipersao.Text = $"A dispersão desse conjunto é {dispersao.ToString("f4")} ou  seja {(dispersao * 100).ToString("f4")}%";
             lblDipersao.Visible = true;
 
             //Moda
