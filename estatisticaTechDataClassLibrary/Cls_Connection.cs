@@ -160,7 +160,15 @@ namespace estatisticaTechDataClassLibrary
             {
                 if (this.OpenConnection() == true)
                 {
-                    string query = $"SELECT {string.Join(",", columns)} FROM {table} WHERE {where}";
+                    string query;
+                    if (string.IsNullOrEmpty(where))
+                    {
+                        query = $"SELECT {string.Join(",", columns)} FROM {table}";
+                    }
+                    else
+                    {
+                        query = $"SELECT {string.Join(",", columns)} FROM {table} WHERE {where}";
+                    }
 
                     MySqlCommand cmd = new MySqlCommand(query, connection);
 
@@ -198,5 +206,6 @@ namespace estatisticaTechDataClassLibrary
                 return null;
             }
         }
+
     }
 }
