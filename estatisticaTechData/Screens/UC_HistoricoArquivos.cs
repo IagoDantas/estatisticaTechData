@@ -33,7 +33,7 @@ namespace estatisticaTechData
             senha = userInfo["senha"].ToString();
 
             // Obtenha os dados da tabela "charge"
-            string[] chargeColumns = { "date", "data", "status", "user_id" };
+            string[] chargeColumns = { "date", "data", "status", "user_id", "id" };
             string chargeWhere = "status = 'A'";
             List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
 
@@ -48,6 +48,7 @@ namespace estatisticaTechData
 
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
+                    int id = int.Parse(chargeResult[4][i].ToString());
 
                     // Obtenha o nome do usuário da tabela "users"
                     string[] userColumns = { "name" };
@@ -116,14 +117,28 @@ namespace estatisticaTechData
                         deleteButton.TextColor = Color.Black;
                         deleteButton.UseVisualStyleBackColor = false;
 
-
-                        
-
                         deleteButton.Click += (s, eventArgs) =>
                         {
-                            // Aqui você pode acessar o índice do botão e realizar a exclusão do registro correspondente
-                            int buttonIndex = int.Parse(deleteButton.Name.Split('_')[1]);
+                           
                             // Use o buttonIndex para realizar a exclusão do registro
+                            string table = "charge"; // Defina o nome da tabela
+                            string where = $"id = {id}"; // Supondo que o índice seja a chave primária do registro
+
+                            bool sucesso = conexao.DeleteData(table, where);
+
+                            if (sucesso)
+                            {
+                                // Remove o painel inteiro
+                                Control parent = deleteButton.Parent;
+                                if (parent != null)
+                                {
+                                    parent.Parent.Controls.Remove(parent);
+                                }
+
+                                // Exibe um MessageBox para indicar que a exclusão foi bem-sucedida
+                                MessageBox.Show("Registro excluído com sucesso!");
+                            }
+
                         };
                         compareButton.Click += (s, eventArgs) =>
                         {
