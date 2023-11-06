@@ -26,29 +26,47 @@ namespace estatisticaTechData
 
         private void UC_HistoricoArquivos_Load(object sender, EventArgs e)
         {
-           /* Dictionary<string, object> userInfo = carregaInformacoes();
+            Dictionary<string, object> userInfo = carregaInformacoes();
             string userId = userInfo["id"].ToString();
             userName = userInfo["nome"].ToString();
             email = userInfo["email"].ToString();
             senha = userInfo["senha"].ToString();
 
             // Obter a data do arquivo
-            string[] chargeColumns = { "date" };
-            string chargeWhere = $"user_id = {userId}"; // Supondo que o arquivo associado ao usuário logado seja o mais recente
+            string[] chargeColumns = { "date", "data", "status", "user_id" }; // Inclua a coluna "user_id"
+            string chargeWhere = $"user_id = {userId}"; // Substitua "userId" pela ID da carga específica
             List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
+
             if (chargeResult[0].Count > 0)
             {
-                fileDate = DateTime.Parse(chargeResult[0][0]); // Converter a string em DateTime
-            }*/
+                // Obtenha a data da carga
+                fileDate = DateTime.Parse(chargeResult[0][0]);
+                TxtData.Text = fileDate.ToString();
+
+                // Obtenha o user_id da carga
+                int cargaUserId = int.Parse(chargeResult[3][0].ToString());
+
+                // Agora, com o user_id da carga, você pode obter o nome do usuário da tabela "users"
+                string[] userColumns = { "name" };
+                string userWhere = $"id = {cargaUserId}";
+                List<string>[] userResult = conexao.SelectData("users", userColumns, userWhere);
+
+                if (userResult[0].Count > 0)
+                {
+                    // Obtenha o nome do usuário
+                    string userName = userResult[0][0];
+                    TxtNome.Text = userName;
+                }
+            }
         }
 
-        /*public Dictionary<string, object> carregaInformacoes()
+        public Dictionary<string, object> carregaInformacoes()
         {
             Dictionary<string, object> userInfo = new Dictionary<string, object>();
 
             try
             {
-                string[] columns = { "id", "email", "senha" };
+                string[] columns = { "id", "email", "password" };
                 string where = $"email='{frmHub.funEstancia.emailUser}'";
                 List<string>[] result = conexao.SelectData("users", columns, where);
                 userInfo["id"] = result[0][0].ToString();
@@ -71,15 +89,6 @@ namespace estatisticaTechData
             }
 
             return userInfo;
-        }*/
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRead_Click(object sender, EventArgs e)
-        {
-
         }
 
        

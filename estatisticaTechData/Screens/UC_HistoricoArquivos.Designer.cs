@@ -93,7 +93,7 @@
             this.TxtData.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtData.Location = new System.Drawing.Point(255, 8);
             this.TxtData.Name = "TxtData";
-            this.TxtData.Size = new System.Drawing.Size(167, 29);
+            this.TxtData.Size = new System.Drawing.Size(193, 29);
             this.TxtData.TabIndex = 7;
             this.TxtData.Text = "15/09/2022 22:30";
             // 
@@ -160,7 +160,6 @@
             this.btnRead.TextColor = System.Drawing.Color.White;
             this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Visible = false;
-            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // TxtNome
             // 
@@ -202,7 +201,7 @@
             this.lblRecentes.AutoSize = true;
             this.lblRecentes.Font = new System.Drawing.Font("Poppins", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.lblRecentes.Location = new System.Drawing.Point(92, 124);
+            this.lblRecentes.Location = new System.Drawing.Point(101, 124);
             this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRecentes.Name = "lblRecentes";
             this.lblRecentes.Size = new System.Drawing.Size(125, 40);
