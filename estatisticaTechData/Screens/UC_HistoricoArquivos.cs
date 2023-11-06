@@ -34,8 +34,8 @@ namespace estatisticaTechData
 
             // Obter a data do arquivo
             string[] chargeColumns = { "date", "data", "status", "user_id" }; // Inclua a coluna "user_id"
-            string chargeWhere = $"user_id = {userId}"; // Substitua "userId" pela ID da carga específica
-            List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
+            /*string chargeWhere = $"user_id = {userId}";*/ // Substitua "userId" pela ID da carga específica
+            List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, "");
 
             if (chargeResult[0].Count > 0)
             {

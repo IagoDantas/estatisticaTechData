@@ -90,6 +90,7 @@
             this.TxtData.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TxtData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.TxtData.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtData.Enabled = false;
             this.TxtData.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtData.Location = new System.Drawing.Point(255, 8);
             this.TxtData.Name = "TxtData";
@@ -101,6 +102,7 @@
             this.TxtNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.TxtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtNome.Enabled = false;
             this.TxtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNome.Location = new System.Drawing.Point(8, 8);
             this.TxtNome.Name = "TxtNome";
@@ -148,7 +150,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(361, 67);
+            this.lblTitulo.Location = new System.Drawing.Point(378, 67);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(314, 48);
             this.lblTitulo.TabIndex = 19;
