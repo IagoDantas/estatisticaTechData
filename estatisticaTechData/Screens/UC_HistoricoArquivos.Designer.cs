@@ -32,14 +32,14 @@
             this.pnlArquivos = new System.Windows.Forms.Panel();
             this.pnlNome = new System.Windows.Forms.Panel();
             this.TxtData = new System.Windows.Forms.TextBox();
-            this.btnShow = new estatisticaTechData.techDataButton();
-            this.btnDelete = new estatisticaTechData.techDataButton();
-            this.btnRead = new estatisticaTechData.techDataButton();
             this.TxtNome = new System.Windows.Forms.TextBox();
             this.lblDataArquivo = new System.Windows.Forms.Label();
             this.lblNomeArquivo = new System.Windows.Forms.Label();
             this.lblRecentes = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnShow = new estatisticaTechData.techDataButton();
+            this.btnDelete = new estatisticaTechData.techDataButton();
+            this.btnRead = new estatisticaTechData.techDataButton();
             this.pnlArquivos.SuspendLayout();
             this.pnlNome.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +95,64 @@
             this.TxtData.Name = "TxtData";
             this.TxtData.Size = new System.Drawing.Size(193, 29);
             this.TxtData.TabIndex = 7;
-            this.TxtData.Text = "15/09/2022 22:30";
+            // 
+            // TxtNome
+            // 
+            this.TxtNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.TxtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TxtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtNome.Location = new System.Drawing.Point(8, 8);
+            this.TxtNome.Name = "TxtNome";
+            this.TxtNome.Size = new System.Drawing.Size(241, 29);
+            this.TxtNome.TabIndex = 1;
+            // 
+            // lblDataArquivo
+            // 
+            this.lblDataArquivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDataArquivo.AutoSize = true;
+            this.lblDataArquivo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataArquivo.Location = new System.Drawing.Point(604, 6);
+            this.lblDataArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDataArquivo.Name = "lblDataArquivo";
+            this.lblDataArquivo.Size = new System.Drawing.Size(68, 34);
+            this.lblDataArquivo.TabIndex = 1;
+            this.lblDataArquivo.Text = "Data:";
+            // 
+            // lblNomeArquivo
+            // 
+            this.lblNomeArquivo.AutoSize = true;
+            this.lblNomeArquivo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeArquivo.Location = new System.Drawing.Point(32, 6);
+            this.lblNomeArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNomeArquivo.Name = "lblNomeArquivo";
+            this.lblNomeArquivo.Size = new System.Drawing.Size(78, 34);
+            this.lblNomeArquivo.TabIndex = 0;
+            this.lblNomeArquivo.Text = "Nome:";
+            // 
+            // lblRecentes
+            // 
+            this.lblRecentes.AutoSize = true;
+            this.lblRecentes.Font = new System.Drawing.Font("Poppins", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.lblRecentes.Location = new System.Drawing.Point(101, 124);
+            this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecentes.Name = "lblRecentes";
+            this.lblRecentes.Size = new System.Drawing.Size(125, 40);
+            this.lblRecentes.TabIndex = 16;
+            this.lblRecentes.Text = "Recentes";
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(361, 67);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(314, 48);
+            this.lblTitulo.TabIndex = 19;
+            this.lblTitulo.Text = "Histórico de arquivos";
             // 
             // btnShow
             // 
@@ -160,65 +217,6 @@
             this.btnRead.TextColor = System.Drawing.Color.White;
             this.btnRead.UseVisualStyleBackColor = false;
             this.btnRead.Visible = false;
-            // 
-            // TxtNome
-            // 
-            this.TxtNome.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TxtNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.TxtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtNome.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNome.Location = new System.Drawing.Point(8, 8);
-            this.TxtNome.Name = "TxtNome";
-            this.TxtNome.Size = new System.Drawing.Size(241, 29);
-            this.TxtNome.TabIndex = 1;
-            this.TxtNome.Text = "Gráfico Professor Marcos ";
-            // 
-            // lblDataArquivo
-            // 
-            this.lblDataArquivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDataArquivo.AutoSize = true;
-            this.lblDataArquivo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataArquivo.Location = new System.Drawing.Point(604, 6);
-            this.lblDataArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDataArquivo.Name = "lblDataArquivo";
-            this.lblDataArquivo.Size = new System.Drawing.Size(68, 34);
-            this.lblDataArquivo.TabIndex = 1;
-            this.lblDataArquivo.Text = "Data:";
-            // 
-            // lblNomeArquivo
-            // 
-            this.lblNomeArquivo.AutoSize = true;
-            this.lblNomeArquivo.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeArquivo.Location = new System.Drawing.Point(32, 6);
-            this.lblNomeArquivo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNomeArquivo.Name = "lblNomeArquivo";
-            this.lblNomeArquivo.Size = new System.Drawing.Size(78, 34);
-            this.lblNomeArquivo.TabIndex = 0;
-            this.lblNomeArquivo.Text = "Nome:";
-            // 
-            // lblRecentes
-            // 
-            this.lblRecentes.AutoSize = true;
-            this.lblRecentes.Font = new System.Drawing.Font("Poppins", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecentes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.lblRecentes.Location = new System.Drawing.Point(101, 124);
-            this.lblRecentes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRecentes.Name = "lblRecentes";
-            this.lblRecentes.Size = new System.Drawing.Size(125, 40);
-            this.lblRecentes.TabIndex = 16;
-            this.lblRecentes.Text = "Recentes";
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(361, 67);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(314, 48);
-            this.lblTitulo.TabIndex = 19;
-            this.lblTitulo.Text = "Histórico de arquivos";
             // 
             // UC_HistoricoArquivos
             // 
