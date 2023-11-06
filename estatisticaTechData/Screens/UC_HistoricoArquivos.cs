@@ -34,7 +34,8 @@ namespace estatisticaTechData
 
             // Obtenha os dados da tabela "charge"
             string[] chargeColumns = { "date", "data", "status", "user_id" };
-            List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, "");
+            string chargeWhere = "status = 'A'";
+            List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
 
             if (chargeResult[0].Count > 0)
             {
