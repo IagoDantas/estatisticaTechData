@@ -37,9 +37,12 @@
             this.lblDesvioTitle = new System.Windows.Forms.Label();
             this.lblCPKTitle = new System.Windows.Forms.Label();
             this.pnlInfos = new System.Windows.Forms.Panel();
+            this.lblAnaliseTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblCpk = new System.Windows.Forms.Label();
             this.lblDesvio = new System.Windows.Forms.Label();
             this.lblInfos = new System.Windows.Forms.Label();
+            this.lblAnalise = new System.Windows.Forms.Label();
             this.btnVermais = new estatisticaTechData.techDataButton();
             this.pnlGraficos.SuspendLayout();
             this.pnlInfos.SuspendLayout();
@@ -91,7 +94,7 @@
             this.lblMediaTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMediaTitle.AutoSize = true;
             this.lblMediaTitle.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaTitle.Location = new System.Drawing.Point(90, 90);
+            this.lblMediaTitle.Location = new System.Drawing.Point(86, 90);
             this.lblMediaTitle.Name = "lblMediaTitle";
             this.lblMediaTitle.Size = new System.Drawing.Size(59, 23);
             this.lblMediaTitle.TabIndex = 0;
@@ -100,7 +103,7 @@
             // lblMedia
             // 
             this.lblMedia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMedia.Location = new System.Drawing.Point(86, 113);
+            this.lblMedia.Location = new System.Drawing.Point(80, 113);
             this.lblMedia.Name = "lblMedia";
             this.lblMedia.Size = new System.Drawing.Size(70, 14);
             this.lblMedia.TabIndex = 1;
@@ -112,7 +115,7 @@
             this.lblDesvioTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesvioTitle.AutoSize = true;
             this.lblDesvioTitle.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesvioTitle.Location = new System.Drawing.Point(63, 192);
+            this.lblDesvioTitle.Location = new System.Drawing.Point(57, 154);
             this.lblDesvioTitle.Name = "lblDesvioTitle";
             this.lblDesvioTitle.Size = new System.Drawing.Size(116, 23);
             this.lblDesvioTitle.TabIndex = 2;
@@ -134,6 +137,9 @@
             this.pnlInfos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlInfos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.pnlInfos.Controls.Add(this.lblAnalise);
+            this.pnlInfos.Controls.Add(this.lblAnaliseTitle);
+            this.pnlInfos.Controls.Add(this.label1);
             this.pnlInfos.Controls.Add(this.lblCpk);
             this.pnlInfos.Controls.Add(this.lblDesvio);
             this.pnlInfos.Controls.Add(this.lblInfos);
@@ -146,6 +152,27 @@
             this.pnlInfos.Name = "pnlInfos";
             this.pnlInfos.Size = new System.Drawing.Size(242, 501);
             this.pnlInfos.TabIndex = 66;
+            // 
+            // lblAnaliseTitle
+            // 
+            this.lblAnaliseTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnaliseTitle.AutoSize = true;
+            this.lblAnaliseTitle.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnaliseTitle.Location = new System.Drawing.Point(36, 220);
+            this.lblAnaliseTitle.Name = "lblAnaliseTitle";
+            this.lblAnaliseTitle.Size = new System.Drawing.Size(181, 23);
+            this.lblAnaliseTitle.TabIndex = 10;
+            this.lblAnaliseTitle.Text = "Analise da Distribuição";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Location = new System.Drawing.Point(82, 342);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 14);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "000.0000";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblCpk
             // 
@@ -160,7 +187,7 @@
             // lblDesvio
             // 
             this.lblDesvio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDesvio.Location = new System.Drawing.Point(86, 215);
+            this.lblDesvio.Location = new System.Drawing.Point(80, 177);
             this.lblDesvio.Name = "lblDesvio";
             this.lblDesvio.Size = new System.Drawing.Size(70, 14);
             this.lblDesvio.TabIndex = 8;
@@ -178,6 +205,17 @@
             this.lblInfos.Size = new System.Drawing.Size(130, 28);
             this.lblInfos.TabIndex = 7;
             this.lblInfos.Text = "Informações:";
+            // 
+            // lblAnalise
+            // 
+            this.lblAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAnalise.AutoSize = true;
+            this.lblAnalise.Location = new System.Drawing.Point(80, 243);
+            this.lblAnalise.Name = "lblAnalise";
+            this.lblAnalise.Size = new System.Drawing.Size(54, 13);
+            this.lblAnalise.TabIndex = 11;
+            this.lblAnalise.Text = "Dispersão";
+            this.lblAnalise.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnVermais
             // 
@@ -236,5 +274,9 @@
         private techDataButton btnVermais;
         private System.Windows.Forms.Label lblCpk;
         private System.Windows.Forms.Label lblDesvio;
+        private System.Windows.Forms.Label labelAnalise;
+        private System.Windows.Forms.Label lblAnaliseTitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAnalise;
     }
 }
