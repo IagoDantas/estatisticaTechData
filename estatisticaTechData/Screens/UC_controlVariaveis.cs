@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+﻿using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing;
 using estatisticaTechDataClassLibrary;
 using System;
 using System.Collections.Generic;
@@ -128,6 +130,14 @@ namespace estatisticaTechData.Screens
             // Adicionar os pontos de dados ao gráfico de Amplitude (R)
             LineItem amplitudesCurve = graphPaneR.AddCurve("Amplitudes", null, amplitudes, Color.Green, SymbolType.Circle);
 
+            double media = amplitudes.Average();
+            double desvioPadrao = Math.Sqrt(amplitudes.Select(x => Math.Pow(x - media, 2)).Average());
+            double lsc = media + (3* desvioPadrao);
+            double lic = media - (3 * desvioPadrao);
+
+            LineItem mediaLine = graphPaneR.AddCurve("Média", new double[] { 0, amplitudes.Length  +1}, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem lscLine = graphPaneR.AddCurve("LSC", new double[] { 0, amplitudes.Length + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
+            LineItem licLine = graphPaneR.AddCurve("LIC", new double[] { 0, amplitudes.Length + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
             graphPaneR.XAxis.Scale.Min = 0;
             graphPaneR.XAxis.Scale.Max = amplitudes.Length + 1;
