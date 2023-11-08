@@ -52,22 +52,46 @@ namespace estatisticaTechData.Screens
             double xMin = media - (numDevs * desvioPadrao);
             double xMax = media + (numDevs * desvioPadrao);
             double step = 0.1;
+            double lic = media - (3 * desvioPadrao);
+            double lsc = media + (3 * desvioPadrao);
+            double yMin=0, yMax=0;
 
-
-
+              
+            
             for (double x = xMin; x <= xMax; x += step)
             {
                 double y = (1 / (desvioPadrao * Math.Sqrt(2 * Math.PI))) *
                            Math.Exp(-Math.Pow(x - media, 2) / (2 * Math.Pow(desvioPadrao, 2)));
+                if (x == xMin)
+                {
+                    yMin = y;
+                    yMax = y;
+                }
+                else
+                {
+                    if (y > yMax)
+                        yMax = y;
+                    if (y < yMin)
+                        yMin = y;
+                }
 
                 pointPairList.Add(x, y);
             }
 
+            
+
+            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { media, media }, new double[] { yMin, yMax}, Color.DarkGreen, SymbolType.None);
+            LineItem lscLine = graphPane.AddCurve("LSC",  new double[] { lsc, lsc }, new double[] { yMin, yMax}, Color.Red, SymbolType.None);
+            LineItem licLine = graphPane.AddCurve("LIC",  new double[] { lic, lic }, new double[] { yMin, yMax}, Color.Red, SymbolType.None);
+
             // Adicionar uma curva ao gráfico com a lista de pontos
             LineItem curve = graphPane.AddCurve("Curva", pointPairList, System.Drawing.Color.Blue, SymbolType.None);
+
+            graphPane.XAxis.Scale.Min = xMin-2;
+            graphPane.XAxis.Scale.Max = xMax+2;
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
-            graphPane.XAxis.MajorGrid.IsVisible = true;
-            graphPane.YAxis.MajorGrid.IsVisible = true;
+            graphPane.YAxis.Scale.Min = yMin - 0.01; 
+            graphPane.YAxis.Scale.Max = yMax + 0.01; 
 
             // Atualizar o gráfico
             zedDistribuição.AxisChange();
