@@ -47,15 +47,15 @@ namespace estatisticaTechData
 
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
-                    int id = int.Parse(chargeResult[4][i].ToString());
+                    int chargeId = int.Parse(chargeResult[4][i].ToString());
 
                     string[] tableMasterColumns = { "id", "type_count_id" };
-                    string tableMasterWhere = $"id = {id+1} AND user_id = {cargaUserId}";
+                    string tableMasterWhere = $"charge_id = {chargeId}";
 
                     List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
 
-                    int tableMasterId = int.Parse(tableMasterResult[0][i].ToString());
-                    int tableMasterTypeCountId = int.Parse(tableMasterResult[1][i].ToString());
+                    int tableMasterId = int.Parse(tableMasterResult[0][i]);
+                    int tableMasterTypeCountId = int.Parse(tableMasterResult[1][i]);
 
                     string[] typeCountColumns = { "description" };
                     string typeCountWhere = $"id = {tableMasterTypeCountId}";
@@ -141,13 +141,13 @@ namespace estatisticaTechData
                         {
                            
                             // Use o buttonIndex para realizar a exclusão do registro
-                            string tableCharge = "charge"; // Defina o nome da tabela
-                            string whereCharge = $"id = {id}"; // Supondo que o índice seja a chave primária do registro
+                            string tableCharge = "charge"; 
+                            string whereCharge = $"id = {chargeId}"; 
                             
                             bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
 
                             string tableMaster = "table_master";
-                            string whereTableMaster = $"id = {id}";
+                            string whereTableMaster = $"id = {tableMasterId}";
 
                             bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
 
