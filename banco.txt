@@ -86,7 +86,7 @@ CREATE TABLE `line` (
   PRIMARY KEY (`id_linha`),
   KEY `column_id` (`column_id`),
   CONSTRAINT `line_ibfk_1` FOREIGN KEY (`column_id`) REFERENCES `columns` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+)type_countsteachers ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,9 +122,9 @@ CREATE TABLE `students` (
 
 LOCK TABLES `students` WRITE;
 /*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'213123',2,'A');
 /*!40000 ALTER TABLE `students` ENABLE KEYS */;
 UNLOCK TABLES;
+
 
 --
 -- Table structure for table `table_master`
@@ -139,11 +139,14 @@ CREATE TABLE `table_master` (
   `data` json NOT NULL,
   `user_id` int DEFAULT NULL,
   `type_count_id` int DEFAULT NULL,
+  `charge_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `type_count_id` (`type_count_id`),
+  KEY `charge_id` (`charge_id`),
   CONSTRAINT `table_master_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `table_master_ibfk_2` FOREIGN KEY (`type_count_id`) REFERENCES `type_counts` (`id`)
+  CONSTRAINT `table_master_ibfk_2` FOREIGN KEY (`type_count_id`) REFERENCES `type_counts` (`id`),
+  CONSTRAINT `table_master_ibfk_3` FOREIGN KEY (`charge_id`) REFERENCES `charge` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -153,7 +156,6 @@ CREATE TABLE `table_master` (
 
 LOCK TABLES `table_master` WRITE;
 /*!40000 ALTER TABLE `table_master` DISABLE KEYS */;
-INSERT INTO `table_master` VALUES (1,'A','[{\"Total\": \"50\", \"Amostras\": \"1\", \"Defeituosos\": \"4\"}, {\"Total\": \"60\", \"Amostras\": \"2\", \"Defeituosos\": \"3\"}, {\"Total\": \"55\", \"Amostras\": \"3\", \"Defeituosos\": \"6\"}, {\"Total\": \"58\", \"Amostras\": \"4\", \"Defeituosos\": \"5\"}, {\"Total\": \"52\", \"Amostras\": \"5\", \"Defeituosos\": \"2\"}, {\"Total\": \"53\", \"Amostras\": \"6\", \"Defeituosos\": \"4\"}, {\"Total\": \"57\", \"Amostras\": \"7\", \"Defeituosos\": \"7\"}, {\"Total\": \"56\", \"Amostras\": \"8\", \"Defeituosos\": \"3\"}, {\"Total\": \"54\", \"Amostras\": \"9\", \"Defeituosos\": \"5\"}, {\"Total\": \"51\", \"Amostras\": \"10\", \"Defeituosos\": \"4\"}]',NULL,1);
 /*!40000 ALTER TABLE `table_master` ENABLE KEYS */;
 UNLOCK TABLES;
 
