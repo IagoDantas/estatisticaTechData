@@ -126,6 +126,27 @@ namespace estatisticaTechDataClassLibrary
             }
         }
 
+        public int GetLastInsertedId()
+        {
+            int lastInsertedId = -1; // Valor padrão caso a consulta não retorne nenhum ID
+
+            using (MySqlCommand cmd = new MySqlCommand("SELECT LAST_INSERT_ID()", connection))
+            {
+                connection.Open();
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    lastInsertedId = Convert.ToInt32(result);
+                }
+
+                connection.Close();
+            }
+
+            return lastInsertedId;
+        }
+
+
         public bool DeleteData(string table, string where)
         {
             try
