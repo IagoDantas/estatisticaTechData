@@ -27,6 +27,7 @@ namespace estatisticaTechData.Screens
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
+        private string userId;
         private estatisticaTechDataClassLibrary.Connection conexao;
         public UC_BackgroundAtributos()
         {
@@ -45,6 +46,7 @@ namespace estatisticaTechData.Screens
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
+                    
                     Cursor.Current = Cursors.WaitCursor;
                     using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
                     {
@@ -87,7 +89,7 @@ namespace estatisticaTechData.Screens
 
                         if (result2[0].Count > 0)
                         {
-                            string userId = result2[0][0].ToString();
+                            userId = result2[0][0].ToString();
 
                             Dictionary<string, string> dataCharge = new Dictionary<string, string>();
                             dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -115,7 +117,7 @@ namespace estatisticaTechData.Screens
                         Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
                         dataTableMaster.Add("status", "A");
                         dataTableMaster.Add("data", json);
-                        //data.Add("password", txtSenha.Texts);
+                        dataTableMaster.Add("user_id", userId);
                         dataTableMaster.Add("type_count_id", "1");
 
                         if (conexao.InsertData("table_master", dataTableMaster) != true)

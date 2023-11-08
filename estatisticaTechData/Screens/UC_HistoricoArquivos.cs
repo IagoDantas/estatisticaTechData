@@ -36,20 +36,34 @@ namespace estatisticaTechData
             string[] chargeColumns = { "date", "data", "status", "user_id", "id" };
             string chargeWhere = "status = 'A'";
             List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
-
+            
             if (chargeResult[0].Count > 0)
             {
-
                 for (int i = 0; i < chargeResult[0].Count; i++)
                 {
                     // Obtenha a data da carga
-                    DateTime fileDate = DateTime.Parse(chargeResult[0][i]);
+                    fileDate = DateTime.Parse(chargeResult[0][i]);
                     string dateText = fileDate.ToString();
 
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
                     int id = int.Parse(chargeResult[4][i].ToString());
 
+                    string[] tableMasterColumns = { "id", "type_count_id" };
+                    string tableMasterWhere = $"id = {id+1} AND user_id = {cargaUserId}";
+
+                    List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
+
+                    int tableMasterId = int.Parse(tableMasterResult[0][i].ToString());
+                    int tableMasterTypeCountId = int.Parse(tableMasterResult[1][i].ToString());
+
+                    string[] typeCountColumns = { "description" };
+                    string typeCountWhere = $"id = {tableMasterTypeCountId}";
+
+                    List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
+
+                    string description = typeCountsResult[0][i].ToString();
+                    
                     // Obtenha o nome do usuário da tabela "users"
                     string[] userColumns = { "name" };
                     string userWhere = $"id = {cargaUserId}";
@@ -80,6 +94,12 @@ namespace estatisticaTechData
                         labelData.AutoSize = true;
                         labelData.Text = $"Data: {dateText}";
                         labelData.Location = new Point(labelNome.Right + 30, 10); // Ajuste as coordenadas conforme necessário
+
+                        Label labelTipo = new Label();
+                        labelTipo.Font = new Font("Poppins", 12, FontStyle.Regular);
+                        labelTipo.AutoSize = true;
+                        labelTipo.Text = $"Gráfico de {description}";
+                        labelTipo.Location = new Point(labelData.Right + 100, 10); // Ajuste as coordenadas conforme necessário
 
                         techDataButton compareButton = new techDataButton();
                         compareButton.BackColor = Color.FromArgb(0, 107, 117);
@@ -121,12 +141,17 @@ namespace estatisticaTechData
                         {
                            
                             // Use o buttonIndex para realizar a exclusão do registro
-                            string table = "charge"; // Defina o nome da tabela
-                            string where = $"id = {id}"; // Supondo que o índice seja a chave primária do registro
+                            string tableCharge = "charge"; // Defina o nome da tabela
+                            string whereCharge = $"id = {id}"; // Supondo que o índice seja a chave primária do registro
+                            
+                            bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
 
-                            bool sucesso = conexao.DeleteData(table, where);
+                            string tableMaster = "table_master";
+                            string whereTableMaster = $"id = {id}";
 
-                            if (sucesso)
+                            bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
+
+                            if (sucessoCharge && sucessoTableMaster)
                             {
                                 // Remove o painel inteiro
                                 Control parent = deleteButton.Parent;
@@ -150,6 +175,8 @@ namespace estatisticaTechData
                         // Adicione os Labels ao Panel
                         panel.Controls.Add(labelNome);
                         panel.Controls.Add(labelData);
+
+                        panel.Controls.Add(labelTipo);
                         panel.Controls.Add(compareButton);
                         panel.Controls.Add(deleteButton);
 
