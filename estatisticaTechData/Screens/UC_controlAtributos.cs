@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
 using estatisticaTechDataClassLibrary;
 using System;
 using System.Collections.Generic;
@@ -45,15 +46,31 @@ namespace estatisticaTechData.Screens
             cGraphPane.Title.Text = "Gráfico C";
             cGraphPane.XAxis.Title.Text = "Amostras";
             cGraphPane.YAxis.Title.Text = "Valor C";
+            double media= 0;
+
 
             // Adicionar os pontos de dados ao gráfico C
             PointPairList cPointPairs = new PointPairList();
+            List<double> data = new List<double>();
             for (int i = 0; i < row; i++)
             {
                 double cValue = 1 - (matriz[i, 0] / matriz[i, 1]);
                 cPointPairs.Add(i + 1, cValue);
+                data.Add(cValue);
+                media+= cValue;
             }
             LineItem cCurve = cGraphPane.AddCurve("C", cPointPairs, System.Drawing.Color.Red, SymbolType.Circle);
+            media = media /(row);
+            double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
+
+            double lsc = media + 3 * desvioPadrao;
+            double lic = media - 3 * desvioPadrao;
+
+
+            LineItem mediaLine = cGraphPane.AddCurve("Média", new double[] { -1, data.Count + 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem lscLine = cGraphPane.AddCurve("LSC", new double[] { -1, data.Count + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
+            LineItem licLine = cGraphPane.AddCurve("LIC", new double[] { -1, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
+
 
             // Atualizar os gráficos
             zedGraphC.AxisChange();
@@ -67,15 +84,31 @@ namespace estatisticaTechData.Screens
             pGraphPane.Title.Text = "Gráfico P";
             pGraphPane.XAxis.Title.Text = "Amostras";
             pGraphPane.YAxis.Title.Text = "Valor P";
-
+            double media = 0;
             // Adicionar os pontos de dados ao gráfico P
             PointPairList pPointPairs = new PointPairList();
+            List<double> data = new List<double>();
+
             for (int i = 0; i < row; i++)
             {
                 double pValue = matriz[i, 0] / matriz[i, 1];
                 pPointPairs.Add(i + 1, pValue);
+                data.Add(pValue);
+                media += pValue;
             }
             LineItem pCurve = pGraphPane.AddCurve("P", pPointPairs, System.Drawing.Color.Blue, SymbolType.Circle);
+            media /= (row);
+            double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
+
+            double lsc = media + 3 * desvioPadrao;
+            double lic = media - 3 * desvioPadrao;
+
+
+            LineItem mediaLine = pGraphPane.AddCurve("Média", new double[] { -1, data.Count + 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem lscLine = pGraphPane.AddCurve("LSC", new double[] { -1, data.Count + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
+            LineItem licLine = pGraphPane.AddCurve("LIC", new double[] { -1, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
+
+
 
             zedGraphP.AxisChange();
             zedGraphP.Invalidate();
