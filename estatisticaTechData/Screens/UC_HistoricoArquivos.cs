@@ -121,7 +121,7 @@ namespace estatisticaTechData
 
                         techDataButton deleteButton = new techDataButton();
                         deleteButton.BackColor = Color.FromArgb(0, 107, 117);
-                        deleteButton.BackgroundColor = Color.FromArgb(234, 22, 22);
+                        deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
                         deleteButton.BorderColor = Color.PaleVioletRed;
                         deleteButton.BorderRadius = 50;
                         deleteButton.BorderSize = 0;
@@ -134,7 +134,7 @@ namespace estatisticaTechData
                         deleteButton.Size = new Size(105, 47);
                         deleteButton.TabIndex = 15;
                         deleteButton.Text = "Deletar";
-                        deleteButton.TextColor = Color.Black;
+                        deleteButton.TextColor = Color.White;
                         deleteButton.UseVisualStyleBackColor = false;
 
                         deleteButton.Click += (s, eventArgs) =>
