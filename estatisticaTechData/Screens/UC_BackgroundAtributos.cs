@@ -27,7 +27,8 @@ namespace estatisticaTechData.Screens
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
-        private string userId;
+        private int userId;
+        private int chargeId;
         private estatisticaTechDataClassLibrary.Connection conexao;
         public UC_BackgroundAtributos()
         {
@@ -89,12 +90,12 @@ namespace estatisticaTechData.Screens
 
                         if (result2[0].Count > 0)
                         {
-                            userId = result2[0][0].ToString();
+                            userId = int.Parse(result2[0][0].ToString());
 
                             Dictionary<string, string> dataCharge = new Dictionary<string, string>();
                             dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                             dataCharge.Add("file", Convert.ToBase64String(excelData));
-                            dataCharge.Add("user_id", userId);
+                            dataCharge.Add("user_id", userId.ToString());
                             dataCharge.Add("status", "A");
                             dataCharge.Add("data", json);
 
@@ -102,6 +103,8 @@ namespace estatisticaTechData.Screens
                             if (conexao.InsertData("charge", dataCharge) == true)
                             {
                                 MessageBox.Show("Arquivo adicionado com sucesso.");
+
+                                chargeId = conexao.GetLastInsertedId(); 
                             }
                             else
                             {
@@ -117,8 +120,9 @@ namespace estatisticaTechData.Screens
                         Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
                         dataTableMaster.Add("status", "A");
                         dataTableMaster.Add("data", json);
-                        dataTableMaster.Add("user_id", userId);
+                        dataTableMaster.Add("user_id", userId.ToString());
                         dataTableMaster.Add("type_count_id", "1");
+                        dataTableMaster.Add("charge_id", chargeId.ToString());
 
                         if (conexao.InsertData("table_master", dataTableMaster) != true)
                         {
