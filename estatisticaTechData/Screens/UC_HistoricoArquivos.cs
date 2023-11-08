@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,9 @@ namespace estatisticaTechData
         private string userName;
         private DateTime fileDate;
         string email, senha;
+        string description;
+        int tableMasterId;
+        int tableMasterTypeCountId;
 
         private estatisticaTechDataClassLibrary.Connection conexao;
 
@@ -31,6 +34,7 @@ namespace estatisticaTechData
             userName = userInfo["nome"].ToString();
             email = userInfo["email"].ToString();
             senha = userInfo["senha"].ToString();
+            
 
             // Obtenha os dados da tabela "charge"
             string[] chargeColumns = { "date", "data", "status", "user_id", "id" };
@@ -48,21 +52,22 @@ namespace estatisticaTechData
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
                     int chargeId = int.Parse(chargeResult[4][i].ToString());
-
                     string[] tableMasterColumns = { "id", "type_count_id" };
                     string tableMasterWhere = $"charge_id = {chargeId}";
 
                     List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
+                    if(i < tableMasterResult[0].Count)
+                    {
+                        tableMasterId = int.Parse(tableMasterResult[0][i]);
+                        tableMasterTypeCountId = int.Parse(tableMasterResult[1][i]);
+                        string[] typeCountColumns = { "description" };
+                        string typeCountWhere = $"id = {tableMasterTypeCountId}";
 
-                    int tableMasterId = int.Parse(tableMasterResult[0][i]);
-                    int tableMasterTypeCountId = int.Parse(tableMasterResult[1][i]);
+                        List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
 
-                    string[] typeCountColumns = { "description" };
-                    string typeCountWhere = $"id = {tableMasterTypeCountId}";
+                        description = typeCountsResult[0][i].ToString();
+                    }
 
-                    List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
-
-                    string description = typeCountsResult[0][i].ToString();
                     
                     // Obtenha o nome do usuário da tabela "users"
                     string[] userColumns = { "name" };
