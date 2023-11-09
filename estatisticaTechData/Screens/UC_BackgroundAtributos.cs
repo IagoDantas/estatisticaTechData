@@ -102,9 +102,24 @@ namespace estatisticaTechData.Screens
 
                             if (conexao.InsertData("charge", dataCharge) == true)
                             {
-                                MessageBox.Show("Arquivo adicionado com sucesso.");
 
-                                chargeId = conexao.GetLastInsertedId(); 
+                                chargeId = conexao.GetLastInsertedId();
+                                Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
+                                dataTableMaster.Add("status", "A");
+                                dataTableMaster.Add("data", json);
+                                dataTableMaster.Add("user_id", userId.ToString());
+                                dataTableMaster.Add("type_count_id", "1");
+                                dataTableMaster.Add("charge_id", chargeId.ToString());
+
+                                if (conexao.InsertData("table_master", dataTableMaster) != true)
+                                {
+                                    MessageBox.Show("Falha ao salvar os dados no banco");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Arquivo adicionado com sucesso.");
+
+                                }
                             }
                             else
                             {
@@ -116,19 +131,6 @@ namespace estatisticaTechData.Screens
                         {
                             MessageBox.Show("Erro ao obter o ID do usuário");
                         }
-
-                        Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
-                        dataTableMaster.Add("status", "A");
-                        dataTableMaster.Add("data", json);
-                        dataTableMaster.Add("user_id", userId.ToString());
-                        dataTableMaster.Add("type_count_id", "1");
-                        dataTableMaster.Add("charge_id", chargeId.ToString());
-
-                        if (conexao.InsertData("table_master", dataTableMaster) != true)
-                        {
-                            MessageBox.Show("Falha ao salvar os dados no banco");
-                        }
-
                         Cursor.Current = Cursors.Default;
                     }
                 }
