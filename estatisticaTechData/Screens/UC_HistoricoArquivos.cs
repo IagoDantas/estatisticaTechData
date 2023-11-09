@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,9 @@ namespace estatisticaTechData
         private string userName;
         private DateTime fileDate;
         string email, senha;
+        string description;
+        int tableMasterId;
+        int tableMasterTypeCountId;
 
         private estatisticaTechDataClassLibrary.Connection conexao;
 
@@ -31,25 +34,41 @@ namespace estatisticaTechData
             userName = userInfo["nome"].ToString();
             email = userInfo["email"].ToString();
             senha = userInfo["senha"].ToString();
+            
 
             // Obtenha os dados da tabela "charge"
             string[] chargeColumns = { "date", "data", "status", "user_id", "id" };
             string chargeWhere = "status = 'A'";
             List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
-
+            
             if (chargeResult[0].Count > 0)
             {
-
                 for (int i = 0; i < chargeResult[0].Count; i++)
                 {
                     // Obtenha a data da carga
-                    DateTime fileDate = DateTime.Parse(chargeResult[0][i]);
+                    fileDate = DateTime.Parse(chargeResult[0][i]);
                     string dateText = fileDate.ToString();
 
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
-                    int id = int.Parse(chargeResult[4][i].ToString());
+                    int chargeId = int.Parse(chargeResult[4][i].ToString());
+                    string[] tableMasterColumns = { "id", "type_count_id" };
+                    string tableMasterWhere = $"charge_id = {chargeId}";
 
+                    List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
+                    if(i < tableMasterResult[0].Count)
+                    {
+                        tableMasterId = int.Parse(tableMasterResult[0][i]);
+                        tableMasterTypeCountId = int.Parse(tableMasterResult[1][i]);
+                        string[] typeCountColumns = { "description" };
+                        string typeCountWhere = $"id = {tableMasterTypeCountId}";
+
+                        List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
+
+                        description = typeCountsResult[0][i].ToString();
+                    }
+
+                    
                     // Obtenha o nome do usuário da tabela "users"
                     string[] userColumns = { "name" };
                     string userWhere = $"id = {cargaUserId}";
@@ -81,6 +100,12 @@ namespace estatisticaTechData
                         labelData.Text = $"Data: {dateText}";
                         labelData.Location = new Point(labelNome.Right + 30, 10); // Ajuste as coordenadas conforme necessário
 
+                        Label labelTipo = new Label();
+                        labelTipo.Font = new Font("Poppins", 12, FontStyle.Regular);
+                        labelTipo.AutoSize = true;
+                        labelTipo.Text = $"Gráfico de {description}";
+                        labelTipo.Location = new Point(labelData.Right + 100, 10); // Ajuste as coordenadas conforme necessário
+
                         techDataButton compareButton = new techDataButton();
                         compareButton.BackColor = Color.FromArgb(0, 107, 117);
                         compareButton.BackgroundColor = Color.FromArgb(0, 107, 117);
@@ -101,7 +126,7 @@ namespace estatisticaTechData
 
                         techDataButton deleteButton = new techDataButton();
                         deleteButton.BackColor = Color.FromArgb(0, 107, 117);
-                        deleteButton.BackgroundColor = Color.FromArgb(234, 22, 22);
+                        deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
                         deleteButton.BorderColor = Color.PaleVioletRed;
                         deleteButton.BorderRadius = 50;
                         deleteButton.BorderSize = 0;
@@ -114,19 +139,24 @@ namespace estatisticaTechData
                         deleteButton.Size = new Size(105, 47);
                         deleteButton.TabIndex = 15;
                         deleteButton.Text = "Deletar";
-                        deleteButton.TextColor = Color.Black;
+                        deleteButton.TextColor = Color.White;
                         deleteButton.UseVisualStyleBackColor = false;
 
                         deleteButton.Click += (s, eventArgs) =>
                         {
                            
                             // Use o buttonIndex para realizar a exclusão do registro
-                            string table = "charge"; // Defina o nome da tabela
-                            string where = $"id = {id}"; // Supondo que o índice seja a chave primária do registro
+                            string tableCharge = "charge"; 
+                            string whereCharge = $"id = {chargeId}"; 
+                            
+                            bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
 
-                            bool sucesso = conexao.DeleteData(table, where);
+                            string tableMaster = "table_master";
+                            string whereTableMaster = $"id = {tableMasterId}";
 
-                            if (sucesso)
+                            bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
+
+                            if (sucessoCharge && sucessoTableMaster)
                             {
                                 // Remove o painel inteiro
                                 Control parent = deleteButton.Parent;
@@ -150,6 +180,8 @@ namespace estatisticaTechData
                         // Adicione os Labels ao Panel
                         panel.Controls.Add(labelNome);
                         panel.Controls.Add(labelData);
+
+                        panel.Controls.Add(labelTipo);
                         panel.Controls.Add(compareButton);
                         panel.Controls.Add(deleteButton);
 
