@@ -1,5 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Bibliography;
 using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using DocumentFormat.OpenXml.Vml;
 using estatisticaTechDataClassLibrary;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
 using ZedGraph;
+using Fill = ZedGraph.Fill;
 
 namespace estatisticaTechData.Screens
 {
@@ -47,6 +49,7 @@ namespace estatisticaTechData.Screens
             cGraphPane.XAxis.Title.Text = "Amostras";
             cGraphPane.YAxis.Title.Text = "Valor C";
             double media= 0;
+            double yMax=0, yMin=0;
 
 
             // Adicionar os pontos de dados ao gráfico C
@@ -56,10 +59,22 @@ namespace estatisticaTechData.Screens
             {
                 double cValue = 1 - (matriz[i, 0] / matriz[i, 1]);
                 cPointPairs.Add(i + 1, cValue);
+                if (i == 0)
+                {
+                    yMin = cValue;
+                    yMax = cValue;
+                }
+                else
+                {
+                    if (cValue > yMax)
+                        yMax = cValue;
+                    if (cValue < yMin)
+                        yMin = cValue;
+                }
                 data.Add(cValue);
                 media+= cValue;
             }
-            LineItem cCurve = cGraphPane.AddCurve("C", cPointPairs, System.Drawing.Color.Red, SymbolType.Circle);
+            LineItem cCurve = cGraphPane.AddCurve("C", cPointPairs, System.Drawing.Color.Blue, SymbolType.Circle);
             media = media /(row);
             double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
 
@@ -67,10 +82,31 @@ namespace estatisticaTechData.Screens
             double lic = media - 3 * desvioPadrao;
 
 
-            LineItem mediaLine = cGraphPane.AddCurve("Média", new double[] { -1, data.Count + 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem mediaLine = cGraphPane.AddCurve("Média", new double[] { -1, data.Count + 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = cGraphPane.AddCurve("LSC", new double[] { -1, data.Count + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = cGraphPane.AddCurve("LIC", new double[] { -1, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
+            mediaLine.Line.Width = 3.0f;
+            lscLine.Line.Width = 3.0f;
+            licLine.Line.Width = 3.0f;
+            mediaLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
 
+            cCurve.Line.Width = 2.0f;
+            cCurve.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
+            cGraphPane.XAxis.MajorGrid.IsVisible = true;
+            cGraphPane.YAxis.MajorGrid.IsVisible = true;
+            cGraphPane.XAxis.Scale.Min = 0;
+            cGraphPane.XAxis.Scale.Max = row + 1;
+            cGraphPane.YAxis.Scale.Min = lic - 0.01;
+            cGraphPane.YAxis.Scale.Max = lsc + 0.01;
+            cGraphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            double yDataRange = yMax - yMin; 
+            double yMajorStep = yDataRange / 10; 
+
+            cGraphPane.XAxis.Scale.MajorStep = 1;
+            cGraphPane.YAxis.Scale.MajorStep = yMajorStep;
 
             // Atualizar os gráficos
             zedGraphC.AxisChange();
@@ -88,12 +124,25 @@ namespace estatisticaTechData.Screens
             // Adicionar os pontos de dados ao gráfico P
             PointPairList pPointPairs = new PointPairList();
             List<double> data = new List<double>();
+            double yMin=0, yMax=0;
 
             for (int i = 0; i < row; i++)
             {
                 double pValue = matriz[i, 0] / matriz[i, 1];
                 pPointPairs.Add(i + 1, pValue);
                 data.Add(pValue);
+                if (i == 0)
+                {
+                    yMin = pValue;
+                    yMax = pValue;
+                }
+                else
+                {
+                    if (pValue > yMax)
+                        yMax = pValue;
+                    if (pValue < yMin)
+                        yMin = pValue;
+                }
                 media += pValue;
             }
             LineItem pCurve = pGraphPane.AddCurve("P", pPointPairs, System.Drawing.Color.Blue, SymbolType.Circle);
@@ -104,12 +153,33 @@ namespace estatisticaTechData.Screens
             double lic = media - 3 * desvioPadrao;
 
 
-            LineItem mediaLine = pGraphPane.AddCurve("Média", new double[] { -1, data.Count + 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem mediaLine = pGraphPane.AddCurve("Média", new double[] { -1, data.Count + 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = pGraphPane.AddCurve("LSC", new double[] { -1, data.Count + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = pGraphPane.AddCurve("LIC", new double[] { -1, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
 
+            mediaLine.Line.Width = 3.0f;
+            lscLine.Line.Width = 3.0f;
+            licLine.Line.Width = 3.0f;
+            mediaLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
 
+            pCurve.Line.Width = 2.0f;
+            pCurve.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
+            pGraphPane.XAxis.MajorGrid.IsVisible = true;
+            pGraphPane.YAxis.MajorGrid.IsVisible = true;
+            pGraphPane.XAxis.Scale.Min = 0;
+            pGraphPane.XAxis.Scale.Max = row + 1;
+            pGraphPane.YAxis.Scale.Min = lic - 0.01;
+            pGraphPane.YAxis.Scale.Max = lsc + 0.01;
+            pGraphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            double yDataRange = yMax - yMin;
+            double yMajorStep = yDataRange / 10;
+
+            pGraphPane.XAxis.Scale.MajorStep = 1;
+            pGraphPane.YAxis.Scale.MajorStep = yMajorStep;
             zedGraphP.AxisChange();
             zedGraphP.Invalidate();
         }

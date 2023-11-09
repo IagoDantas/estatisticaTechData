@@ -55,44 +55,74 @@ namespace estatisticaTechData.Screens
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
             double media = UC_BackgroundVariaveis.funEstancia.media;
-
+            double yMin=0, yMax=0;
             for (int i = 0; i < data.Count; i++)
             {
                 pointsMedia.Add(i, data[i]);
+                if (i == 0)
+                {
+                    yMin = data[i];
+                    yMax = data[i];
+                }
+                else
+                {
+                    if (data[i] > yMax)
+                        yMax = data[i];
+                    if (data[i] < yMin)
+                        yMin = data[i];
+                }
             }
 
-            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count - 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count - 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
 
-            LineItem pontosLine = graphPane.AddCurve("Pontos", pointsMedia, Color.Black, SymbolType.Circle);
+            LineItem pontosLine = graphPane.AddCurve("Amostras", pointsMedia, Color.Blue, SymbolType.Circle);
 
-            graphPane.XAxis.Scale.Min = 0;
-            graphPane.XAxis.Scale.Max = data.Count - 1;
-            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            mediaLine.Line.Width = 3.0f;
+            lscLine.Line.Width = 3.0f;
+            licLine.Line.Width = 3.0f;
+            mediaLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
+            pontosLine.Line.Width = 2.0f;
+            pontosLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
             graphPane.XAxis.MajorGrid.IsVisible = true;
             graphPane.YAxis.MajorGrid.IsVisible = true;
+            graphPane.XAxis.Scale.Min = - 1;
+            graphPane.XAxis.Scale.Max = data.Count;
+            graphPane.YAxis.Scale.Min = lic - 0.01;
+            graphPane.YAxis.Scale.Max = lsc + 0.01;
+            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            double yDataRange = yMax - yMin;
+            double yMajorStep = yDataRange / 10;
+
+            graphPane.XAxis.Scale.MajorStep = 10;
+            graphPane.YAxis.Scale.MajorStep = yMajorStep;
 
             zedControle.AxisChange();
             zedControle.Invalidate();
         }
 
-        private void GraficoMedia(double[] arrayTeste)
+        private void GraficoMedia(double[] medias)
         {
             // Configurar o objeto GraphPane para o gráfico X-barra
             GraphPane graphPane = zedMedias.GraphPane;
             //grafico.Dock = DockStyle.Fill;
             graphPane.Title.Text = "Gráfico de Médias";
-            graphPane.XAxis.Title.Text = "Amostra";
+            graphPane.XAxis.Title.Text = "Médias";
             graphPane.YAxis.Title.Text = "Valor";
 
             // Adicionar os pontos de dados ao gráfico X-barra
-            LineItem mediasCurve = graphPane.AddCurve("Médias", null, arrayTeste, Color.Red, SymbolType.Circle);
-
+            LineItem mediasCurve = graphPane.AddCurve("Médias", null, medias, Color.Blue, SymbolType.Circle);
+            double yMin = medias.Min();
+            double yMax = medias.Max();
 
             List<double> data = new List<double>();
-            data.AddRange(arrayTeste);
+            data.AddRange(medias);
             double media = data.Average();
             double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
 
@@ -100,17 +130,33 @@ namespace estatisticaTechData.Screens
             double lic = media - 3 * desvioPadrao;
 
 
-            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count + 1 }, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count + 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
 
 
-            graphPane.XAxis.Scale.Min = 0;
-            graphPane.XAxis.Scale.Max = data.Count + 1;
-            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            mediaLine.Line.Width = 3.0f;
+            lscLine.Line.Width = 3.0f;
+            licLine.Line.Width = 3.0f;
+            mediaLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
+            mediasCurve.Line.Width = 2.0f;
+            mediasCurve.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
             graphPane.XAxis.MajorGrid.IsVisible = true;
             graphPane.YAxis.MajorGrid.IsVisible = true;
+            graphPane.XAxis.Scale.Min = 0;
+            graphPane.XAxis.Scale.Max = data.Count + 1;
+            graphPane.YAxis.Scale.Min = lic - 0.01;
+            graphPane.YAxis.Scale.Max = lsc + 0.01;
+            graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            double yDataRange = yMax - yMin;
+            double yMajorStep = yDataRange / 10;
+            graphPane.YAxis.Scale.MajorStep = yMajorStep;
+            graphPane.XAxis.Scale.MajorStep = 1;
 
             zedMedias.AxisChange();
             zedMedias.Invalidate();
@@ -123,27 +169,46 @@ namespace estatisticaTechData.Screens
             zedAmplitude.Dock = DockStyle.Fill;
             graphPaneR.Title.Text = "Gráfico de Controle de Amplitude (R)";
             graphPaneR.XAxis.Title.Text = "Amostras";
-            graphPaneR.YAxis.Title.Text = "Amplitude";
+            graphPaneR.YAxis.Title.Text = "Amplitudes";
 
 
 
             // Adicionar os pontos de dados ao gráfico de Amplitude (R)
-            LineItem amplitudesCurve = graphPaneR.AddCurve("Amplitudes", null, amplitudes, Color.Green, SymbolType.Circle);
+            LineItem amplitudesCurve = graphPaneR.AddCurve("Amplitudes", null, amplitudes, Color.Blue, SymbolType.Circle);
+            double yMin = amplitudes.Min();
+            double yMax = amplitudes.Max();
 
             double media = amplitudes.Average();
             double desvioPadrao = Math.Sqrt(amplitudes.Select(x => Math.Pow(x - media, 2)).Average());
             double lsc = media + (3* desvioPadrao);
             double lic = media - (3 * desvioPadrao);
 
-            LineItem mediaLine = graphPaneR.AddCurve("Média", new double[] { 0, amplitudes.Length  +1}, new double[] { media, media }, Color.Blue, SymbolType.None);
+            LineItem mediaLine = graphPaneR.AddCurve("Média", new double[] { 0, amplitudes.Length  +1}, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPaneR.AddCurve("LSC", new double[] { 0, amplitudes.Length + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = graphPaneR.AddCurve("LIC", new double[] { 0, amplitudes.Length + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
 
-            graphPaneR.XAxis.Scale.Min = 0;
-            graphPaneR.XAxis.Scale.Max = amplitudes.Length + 1;
-            graphPaneR.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            mediaLine.Line.Width = 3.0f;
+            lscLine.Line.Width = 3.0f;
+            licLine.Line.Width = 3.0f;
+            mediaLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
+            amplitudesCurve.Line.Width = 2.0f;
+            amplitudesCurve.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+
             graphPaneR.XAxis.MajorGrid.IsVisible = true;
             graphPaneR.YAxis.MajorGrid.IsVisible = true;
+            graphPaneR.XAxis.Scale.Min = 0;
+            graphPaneR.XAxis.Scale.Max = amplitudes.Length +1;
+            graphPaneR.YAxis.Scale.Min = lic - 0.01;
+            graphPaneR.YAxis.Scale.Max = lsc + 0.01;
+            graphPaneR.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
+            double yDataRange = yMax - yMin;
+            double yMajorStep = yDataRange / 10;
+
+            graphPaneR.XAxis.Scale.MajorStep = 1;
+            graphPaneR.YAxis.Scale.MajorStep = yMajorStep;
 
             // Atualizar o gráfico
             zedAmplitude.AxisChange();

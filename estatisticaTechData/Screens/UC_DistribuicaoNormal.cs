@@ -43,8 +43,8 @@ namespace estatisticaTechData.Screens
             GraphPane graphPane = zedDistribuição.GraphPane;
             zedDistribuição.Dock = DockStyle.Fill;
             graphPane.Title.Text = "Distribuição Normal";
-            graphPane.XAxis.Title.Text = "Amostra";
-            graphPane.YAxis.Title.Text = "Valor";
+            graphPane.XAxis.Title.Text = "Valores da Amostra";
+            graphPane.YAxis.Title.Text = "Densidade de Probabilidade";
 
 
             List<double> data = new List<double>();
@@ -108,15 +108,20 @@ namespace estatisticaTechData.Screens
             graphPane.YAxis.Scale.Min = yMin - 0.01; 
             graphPane.YAxis.Scale.Max = yMax + 0.01;
             // Calcular o intervalo entre os rótulos na escala do eixo X
-            double xDataRange = xMax - xMin; // Substitua xMax e xMin pelos valores reais
-            double xMajorStep = xDataRange / 10; // Dividir o intervalo em 10 partes (ajuste conforme necessário)
-
-            // Calcular o intervalo entre os rótulos na escala do eixo Y
-            double yDataRange = yMax - yMin; // Substitua yMax e yMin pelos valores reais
+            double yDataRange = yMax - yMin; // Substitua xMax e xMin pelos valores reais
             double yMajorStep = yDataRange / 10; // Dividir o intervalo em 10 partes (ajuste conforme necessário)
 
-            graphPane.XAxis.Scale.MajorStep = xMajorStep;
+            double xDataRange = xMax - xMin;
+            double xMajorStep = 1;
+
+            while (xMajorStep * 10 < xDataRange)
+            {
+                xMajorStep *= 10;
+            }
+
             graphPane.YAxis.Scale.MajorStep = yMajorStep;
+            graphPane.XAxis.Scale.MajorStep = xMajorStep;
+
 
 
 
