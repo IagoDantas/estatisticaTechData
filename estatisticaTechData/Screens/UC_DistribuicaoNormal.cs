@@ -80,18 +80,40 @@ namespace estatisticaTechData.Screens
 
             
 
-            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { media, media }, new double[] { yMin, yMax}, Color.DarkGreen, SymbolType.None);
-            LineItem lscLine = graphPane.AddCurve("LSC",  new double[] { lsc, lsc }, new double[] { yMin, yMax}, Color.Red, SymbolType.None);
-            LineItem licLine = graphPane.AddCurve("LIC",  new double[] { lic, lic }, new double[] { yMin, yMax}, Color.Red, SymbolType.None);
+            LineItem mediaLine = graphPane.AddCurve("Média", new double[] { media, media }, new double[] { yMin - 0.001, yMax + 0.001 }, Color.Green, SymbolType.None);
+            LineItem lscLine = graphPane.AddCurve("LSC",  new double[] { lsc, lsc }, new double[] { yMin - 0.001, yMax + 0.001 }, Color.Red, SymbolType.None);
+            LineItem licLine = graphPane.AddCurve("LIC",  new double[] { lic, lic }, new double[] { yMin - 0.001, yMax + 0.001 }, Color.Red, SymbolType.None);
+            mediaLine.Line.Width = 3.0f; 
+            lscLine.Line.Width = 3.0f;
+            licLine.Line.Width = 3.0f;
+            mediaLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid; 
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
 
             // Adicionar uma curva ao gráfico com a lista de pontos
             LineItem curve = graphPane.AddCurve("Curva", pointPairList, System.Drawing.Color.Blue, SymbolType.None);
+            curve.Line.Width = 2.0f;
+            curve.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
 
+            graphPane.XAxis.MajorGrid.IsVisible = true;
+            graphPane.YAxis.MajorGrid.IsVisible = true;
             graphPane.XAxis.Scale.Min = xMin-2;
             graphPane.XAxis.Scale.Max = xMax+2;
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             graphPane.YAxis.Scale.Min = yMin - 0.01; 
-            graphPane.YAxis.Scale.Max = yMax + 0.01; 
+            graphPane.YAxis.Scale.Max = yMax + 0.01;
+            // Calcular o intervalo entre os rótulos na escala do eixo X
+            double xDataRange = xMax - xMin; // Substitua xMax e xMin pelos valores reais
+            double xMajorStep = xDataRange / 10; // Dividir o intervalo em 10 partes (ajuste conforme necessário)
+
+            // Calcular o intervalo entre os rótulos na escala do eixo Y
+            double yDataRange = yMax - yMin; // Substitua yMax e yMin pelos valores reais
+            double yMajorStep = yDataRange / 10; // Dividir o intervalo em 10 partes (ajuste conforme necessário)
+
+            graphPane.XAxis.Scale.MajorStep = xMajorStep;
+            graphPane.YAxis.Scale.MajorStep = yMajorStep;
+
+
 
             // Atualizar o gráfico
             zedDistribuição.AxisChange();
