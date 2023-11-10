@@ -16,8 +16,6 @@ namespace estatisticaTechData
         private DateTime fileDate;
         string email, senha;
         string description;
-        int tableMasterId;
-        int tableMasterTypeCountId;
 
         private estatisticaTechDataClassLibrary.Connection conexao;
 
@@ -48,25 +46,24 @@ namespace estatisticaTechData
                     // Obtenha a data da carga
                     fileDate = DateTime.Parse(chargeResult[0][i]);
                     string dateText = fileDate.ToString();
-
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
                     int chargeId = int.Parse(chargeResult[4][i].ToString());
+                    Console.WriteLine("Charge id: " + chargeId);
                     string[] tableMasterColumns = { "id", "type_count_id" };
                     string tableMasterWhere = $"charge_id = {chargeId}";
 
                     List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
-                    if(i < tableMasterResult[0].Count)
-                    {
-                        tableMasterId = int.Parse(tableMasterResult[0][i]);
-                        tableMasterTypeCountId = int.Parse(tableMasterResult[1][i]);
-                        string[] typeCountColumns = { "description" };
-                        string typeCountWhere = $"id = {tableMasterTypeCountId}";
+                    
+                    int tableMasterId = int.Parse(tableMasterResult[0][0]);
+                    int tableMasterTypeCountId = int.Parse(tableMasterResult[1][0]);
+                    string[] typeCountColumns = { "description" };
+                    string typeCountWhere = $"id = {tableMasterTypeCountId}";
 
-                        List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
-
-                        description = typeCountsResult[0][i].ToString();
-                    }
+                    List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
+                    
+                    description = typeCountsResult[0][0].ToString();
+                    
 
                     
                     // Obtenha o nome do usuário da tabela "users"
@@ -144,17 +141,22 @@ namespace estatisticaTechData
 
                         deleteButton.Click += (s, eventArgs) =>
                         {
-                           
+                            
                             // Use o buttonIndex para realizar a exclusão do registro
                             string tableCharge = "charge"; 
-                            string whereCharge = $"id = {chargeId}"; 
-                            
-                            bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
+                            string whereCharge = $"id = {chargeId}";
+
+
 
                             string tableMaster = "table_master";
                             string whereTableMaster = $"id = {tableMasterId}";
 
+
                             bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
+                            
+                            bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
+
+
 
                             if (sucessoCharge && sucessoTableMaster)
                             {
