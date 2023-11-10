@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace estatisticaTechData.Screens
 {
@@ -22,6 +23,9 @@ namespace estatisticaTechData.Screens
         public double[] mediasIniciais;
         public double[] amplitudes;
         public double[,] matrizExcel;
+        string email, senha;
+        private int userId;
+        private int chargeId;
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao;
@@ -36,6 +40,7 @@ namespace estatisticaTechData.Screens
 
         private void UC_BackgroundVariaveis_Load(object sender, EventArgs e)
         {
+            carregaInformacoes();
             DataTable dt = new DataTable();
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
             {
@@ -68,19 +73,62 @@ namespace estatisticaTechData.Screens
                         }
                         dgvTeste.DataSource = dt.DefaultView;
 
+                        byte[] excelData;
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            workbook.SaveAs(ms);
+                            excelData = ms.ToArray();
+                        }
 
                         string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
 
-                        Dictionary<string, string> data = new Dictionary<string, string>();
-                        data.Add("status", "A");
-                        data.Add("data", json);
-                        data.Add("type_count_id", "2");
+                        string[] columns2 = { "id" };
+                        string where2 = $"email='{email}' AND password='{senha}'";
+                        List<string>[] result2 = conexao.SelectData("users", columns2, where2);
 
-                        if (conexao.InsertData("table_master", data) != true)
+                        if (result2[0].Count > 0)
                         {
-                            MessageBox.Show("Falha ao salvar os dados no banco");
-                        }
+                            userId = int.Parse(result2[0][0].ToString());
 
+                            Dictionary<string, string> dataCharge = new Dictionary<string, string>();
+                            dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                            dataCharge.Add("file", Convert.ToBase64String(excelData));
+                            dataCharge.Add("user_id", userId.ToString());
+                            dataCharge.Add("status", "A");
+                            dataCharge.Add("data", json);
+
+
+                            if (conexao.InsertData("charge", dataCharge) == true)
+                            {
+
+                                chargeId = conexao.GetLastInsertedId();
+                                Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
+                                dataTableMaster.Add("status", "A");
+                                dataTableMaster.Add("data", json);
+                                dataTableMaster.Add("user_id", userId.ToString());
+                                dataTableMaster.Add("type_count_id", "2");
+                                dataTableMaster.Add("charge_id", chargeId.ToString());
+
+                                if (conexao.InsertData("table_master", dataTableMaster) != true)
+                                {
+                                    MessageBox.Show("Falha ao salvar os dados no banco");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Arquivo adicionado com sucesso.");
+
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao adicionar o arquivo.");
+                            }
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro ao obter o ID do usuário");
+                        }
                         Cursor.Current = Cursors.Default;
                     }
                 }
@@ -180,7 +228,21 @@ namespace estatisticaTechData.Screens
             lblDesvioPadrao.Visible = true;
         }
 
-
+        public void carregaInformacoes()
+        {
+            try
+            {
+                string[] columns = { "email", "password" };
+                string where = $"email='{frmHub.funEstancia.emailUser}'";
+                List<string>[] result = conexao.SelectData("users", columns, where);
+                email = result[0][0].ToString();
+                senha = result[1][0].ToString();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void btnPercentis_Click(object sender, EventArgs e)
         {
