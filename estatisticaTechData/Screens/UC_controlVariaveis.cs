@@ -21,7 +21,7 @@ namespace estatisticaTechData.Screens
             desvio = UC_BackgroundVariaveis.funEstancia.desvioPadrao,
             lsc = UC_BackgroundVariaveis.funEstancia.media + 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
             lic = UC_BackgroundVariaveis.funEstancia.media - 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
-            media = UC_BackgroundVariaveis.funEstancia.media;   
+            media = UC_BackgroundVariaveis.funEstancia.media;            
 
         public UC_controlVariaveis()
         {
@@ -34,11 +34,13 @@ namespace estatisticaTechData.Screens
             GraficoControle(UC_BackgroundVariaveis.funEstancia.arrayExcel);
             GraficoAmplitude(UC_BackgroundVariaveis.funEstancia.amplitudes);
             GraficoMedia(UC_BackgroundVariaveis.funEstancia.mediasIniciais);
+            double amplitude = UC_BackgroundVariaveis.funEstancia.arrayExcel.Max() - UC_BackgroundVariaveis.funEstancia.arrayExcel.Min();
             rdbControle.Checked = true;
             lblMedia.Text = media.ToString("f4");
             lblDesvio.Text = desvio.ToString("f4");
             lblCpk.Text = cpk.ToString("f4");
             lblCP.Text = cp.ToString("f4");
+            lblAmplitude.Text = amplitude.ToString("f4");
         }
 
         private void GraficoControle(double[] arrayTeste)
@@ -48,7 +50,7 @@ namespace estatisticaTechData.Screens
             zedControle.Dock = DockStyle.Fill;
             graphPane.Title.Text = "Gráfico de Controle Individual (I)";
             graphPane.XAxis.Title.Text = "Amostra";
-            graphPane.YAxis.Title.Text = "Valor";
+            graphPane.YAxis.Title.Text = "Valor observado";
 
             // Dados de exemplo
             PointPairList pointsMedia = new PointPairList();
@@ -94,8 +96,18 @@ namespace estatisticaTechData.Screens
             graphPane.YAxis.MajorGrid.IsVisible = true;
             graphPane.XAxis.Scale.Min = - 1;
             graphPane.XAxis.Scale.Max = data.Count;
-            graphPane.YAxis.Scale.Min = lic - 0.01;
-            graphPane.YAxis.Scale.Max = lsc + 0.01;
+            if(yMax > lsc || yMin < lic)
+            {
+                double comp = Math.Max(yMax, yMin);
+                graphPane.YAxis.Scale.Min = comp - 0.1;
+                graphPane.YAxis.Scale.Max = comp + 0.1;
+            }
+            else
+            {
+                graphPane.YAxis.Scale.Min = lic - 0.1;
+                graphPane.YAxis.Scale.Max = lsc + 0.1;
+            }
+            
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
             double yMajorStep = yDataRange / 10;
@@ -150,8 +162,17 @@ namespace estatisticaTechData.Screens
             graphPane.YAxis.MajorGrid.IsVisible = true;
             graphPane.XAxis.Scale.Min = 0;
             graphPane.XAxis.Scale.Max = data.Count + 1;
-            graphPane.YAxis.Scale.Min = lic - 0.01;
-            graphPane.YAxis.Scale.Max = lsc + 0.01;
+            if (yMax > lsc || yMin < lic)
+            {
+                double comp = Math.Max(yMax, yMin);
+                graphPane.YAxis.Scale.Min = comp - 0.1;
+                graphPane.YAxis.Scale.Max = comp + 0.1;
+            }
+            else
+            {
+                graphPane.YAxis.Scale.Min = lic - 0.1;
+                graphPane.YAxis.Scale.Max = lsc + 0.1;
+            }
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
             double yMajorStep = yDataRange / 10;
@@ -161,7 +182,6 @@ namespace estatisticaTechData.Screens
             zedMedias.AxisChange();
             zedMedias.Invalidate();
         }
-
         private void GraficoAmplitude(double[] amplitudes)
         {
             // Configurar o objeto GraphPane para o gráfico de Amplitude (R)
@@ -201,8 +221,17 @@ namespace estatisticaTechData.Screens
             graphPaneR.YAxis.MajorGrid.IsVisible = true;
             graphPaneR.XAxis.Scale.Min = 0;
             graphPaneR.XAxis.Scale.Max = amplitudes.Length +1;
-            graphPaneR.YAxis.Scale.Min = lic - 0.01;
-            graphPaneR.YAxis.Scale.Max = lsc + 0.01;
+            if (yMax > lsc || yMin < lic)
+            {
+                double comp = Math.Max(yMax, yMin);
+                graphPaneR.YAxis.Scale.Min = comp - 0.1;
+                graphPaneR.YAxis.Scale.Max = comp + 0.1;
+            }
+            else
+            {
+                graphPaneR.YAxis.Scale.Min = lic - 0.1;
+                graphPaneR.YAxis.Scale.Max = lsc + 0.1;
+            }
             graphPaneR.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
             double yMajorStep = yDataRange / 10;
