@@ -113,11 +113,6 @@ namespace estatisticaTechData.Screens
                                 {
                                     MessageBox.Show("Falha ao salvar os dados no banco");
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Arquivo adicionado com sucesso.");
-
-                                }
                             }
                             else
                             {
