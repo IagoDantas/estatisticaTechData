@@ -18,7 +18,8 @@ namespace estatisticaTechData.Screens
             lsc = UC_BackgroundDist.funEstancia.media + 3 * UC_BackgroundDist.funEstancia.desvioPadrao,
             lic = UC_BackgroundDist.funEstancia.media - 3 * UC_BackgroundDist.funEstancia.desvioPadrao,
             media = UC_BackgroundDist.funEstancia.media,
-            desvioPadrao = UC_BackgroundDist.funEstancia.desvioPadrao;
+            desvioPadrao = UC_BackgroundDist.funEstancia.desvioPadrao,
+            iqr = UC_BackgroundDist.funEstancia.IQR;
         double variancia;
 
         public UC_DistribuicaoNormal()
@@ -32,10 +33,12 @@ namespace estatisticaTechData.Screens
             Grafico();
             lblMedia.Text = media.ToString("f4");
             lblDesvio.Text = desvioPadrao.ToString("f4");
-            lblCpk.Text = cpk.ToString("f4");
+            lblIQR.Text = cpk.ToString("f4");
             if (variancia <= 15) lblAnalise.Text = "Dispersão baixa";
             else if (variancia <= 30) lblAnalise.Text = "Dispersão média";
             else lblAnalise.Text = "Dispersão alta";
+            lblVariancia.Text = Math.Pow(desvioPadrao, 2).ToString("f4");
+            lblIQR.Text = iqr.ToString("f4");
         }
 
         private void Grafico()

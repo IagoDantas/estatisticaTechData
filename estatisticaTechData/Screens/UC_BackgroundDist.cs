@@ -26,7 +26,7 @@ namespace estatisticaTechData.Screens
         string email, senha;
         double[] modas, quartis, percentis;
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
-        public double media, desvioPadrao;
+        public double media, desvioPadrao, IQR;
         private int userId;
         private int chargeId;
         private estatisticaTechDataClassLibrary.Connection conexao;
@@ -36,6 +36,7 @@ namespace estatisticaTechData.Screens
             InitializeComponent();
             funEstancia = this;
             conexao = new estatisticaTechDataClassLibrary.Connection();
+            IQR = quartis[2] - quartis[0];
         }
 
         private void UC_BackgroundDist_Load(object sender, EventArgs e)
@@ -224,6 +225,8 @@ namespace estatisticaTechData.Screens
             desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayCopy);
             lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
             lblDesvioPadrao.Visible = true;
+
+            
         }
 
         public void carregaInformacoes()

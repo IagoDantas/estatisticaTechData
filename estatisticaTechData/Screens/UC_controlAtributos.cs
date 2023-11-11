@@ -107,8 +107,19 @@ namespace estatisticaTechData.Screens
             cGraphPane.YAxis.MajorGrid.IsVisible = true;
             cGraphPane.XAxis.Scale.Min = 0;
             cGraphPane.XAxis.Scale.Max = row + 1;
-            cGraphPane.YAxis.Scale.Min = lic - 0.01;
-            cGraphPane.YAxis.Scale.Max = lsc + 0.01;
+            if (yMax > lsc || yMin < lic)
+            {
+                double diffMax, diffMin;
+                diffMax = yMax - lsc;
+                diffMin = lic - yMin;
+                cGraphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                cGraphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+            }
+            else
+            {
+                cGraphPane.YAxis.Scale.Min = lic - 0.1;
+                cGraphPane.YAxis.Scale.Max = lsc + 0.1;
+            }
             cGraphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin; 
             double yMajorStep = yDataRange / 10; 
@@ -180,8 +191,19 @@ namespace estatisticaTechData.Screens
             pGraphPane.YAxis.MajorGrid.IsVisible = true;
             pGraphPane.XAxis.Scale.Min = 0;
             pGraphPane.XAxis.Scale.Max = row + 1;
-            pGraphPane.YAxis.Scale.Min = lic - 0.01;
-            pGraphPane.YAxis.Scale.Max = lsc + 0.01;
+            if (yMax > lsc || yMin < lic)
+            {
+                double diffMax, diffMin;
+                diffMax = yMax - lsc;
+                diffMin = lic - yMin;
+                pGraphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                pGraphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+            }
+            else
+            {
+                pGraphPane.YAxis.Scale.Min = lic - 0.1;
+                pGraphPane.YAxis.Scale.Max = lsc + 0.1;
+            }
             pGraphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
             double yMajorStep = yDataRange / 10;

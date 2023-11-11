@@ -96,18 +96,20 @@ namespace estatisticaTechData.Screens
             graphPane.YAxis.MajorGrid.IsVisible = true;
             graphPane.XAxis.Scale.Min = - 1;
             graphPane.XAxis.Scale.Max = data.Count;
-            if(yMax > lsc || yMin < lic)
+            if (yMax > lsc || yMin < lic)
             {
-                double comp = Math.Max(yMax, yMin);
-                graphPane.YAxis.Scale.Min = comp - 0.1;
-                graphPane.YAxis.Scale.Max = comp + 0.1;
+                double diffMax, diffMin;
+                diffMax = yMax - lsc;
+                diffMin = lic - yMin;
+                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
             }
             else
             {
                 graphPane.YAxis.Scale.Min = lic - 0.1;
                 graphPane.YAxis.Scale.Max = lsc + 0.1;
             }
-            
+
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
             double yMajorStep = yDataRange / 10;
@@ -164,9 +166,11 @@ namespace estatisticaTechData.Screens
             graphPane.XAxis.Scale.Max = data.Count + 1;
             if (yMax > lsc || yMin < lic)
             {
-                double comp = Math.Max(yMax, yMin);
-                graphPane.YAxis.Scale.Min = comp - 0.1;
-                graphPane.YAxis.Scale.Max = comp + 0.1;
+                double diffMax, diffMin;
+                diffMax = yMax - lsc;
+                diffMin = lic - yMin;
+                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
             }
             else
             {
@@ -223,9 +227,11 @@ namespace estatisticaTechData.Screens
             graphPaneR.XAxis.Scale.Max = amplitudes.Length +1;
             if (yMax > lsc || yMin < lic)
             {
-                double comp = Math.Max(yMax, yMin);
-                graphPaneR.YAxis.Scale.Min = comp - 0.1;
-                graphPaneR.YAxis.Scale.Max = comp + 0.1;
+                double diffMax, diffMin;
+                diffMax = yMax - lsc;
+                diffMin = lic - yMin;
+                graphPaneR.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                graphPaneR.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
             }
             else
             {
