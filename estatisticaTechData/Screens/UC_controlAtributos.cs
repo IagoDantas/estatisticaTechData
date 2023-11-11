@@ -23,12 +23,18 @@ namespace estatisticaTechData.Screens
         double row;
         double mediaD;
         double desvioPadrao;
+        double def, ams;
 
         public UC_controlAtributos()
         {
             InitializeComponent();
             matriz = UC_BackgroundAtributos.funEstancia.matrizExcel;
             row = matriz.GetLength(0);
+            for(int i = 0; i < row; i++)
+            {
+                def += matriz[i, 0];
+                ams += matriz[i, 1];
+            }
         }
         private void UC_controlVariaveis_Load(object sender, EventArgs e)
         {
@@ -37,8 +43,10 @@ namespace estatisticaTechData.Screens
             GraficoC();
             GraficoP();
             rdbGraphC.Checked = true;
-            lblMedia.Text = mediaD.ToString("f4");
-            lblDesvio.Text = desvioPadrao.ToString("f4");
+            lblDef.Text = def.ToString();
+            lblAmostra.Text = ams.ToString();
+            double pct = (def / ams) * 100;
+            lblTaxa.Text = pct.ToString("f2") + "%";
         }
 
         private void GraficoC()
@@ -47,7 +55,7 @@ namespace estatisticaTechData.Screens
             GraphPane cGraphPane = zedGraphC.GraphPane;
             cGraphPane.Title.Text = "Gráfico C";
             cGraphPane.XAxis.Title.Text = "Amostras";
-            cGraphPane.YAxis.Title.Text = "Valor C";
+            cGraphPane.YAxis.Title.Text = "Número de Defeitos";
             double media= 0;
             double yMax=0, yMin=0;
 
@@ -119,7 +127,7 @@ namespace estatisticaTechData.Screens
             GraphPane pGraphPane = zedGraphP.GraphPane;
             pGraphPane.Title.Text = "Gráfico P";
             pGraphPane.XAxis.Title.Text = "Amostras";
-            pGraphPane.YAxis.Title.Text = "Valor P";
+            pGraphPane.YAxis.Title.Text = "Proporção de Defeitos";
             double media = 0;
             // Adicionar os pontos de dados ao gráfico P
             PointPairList pPointPairs = new PointPairList();

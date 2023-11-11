@@ -43,12 +43,14 @@
             this.lblDesvioTitle = new System.Windows.Forms.Label();
             this.lblCPKTitle = new System.Windows.Forms.Label();
             this.pnlInfos = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAmplitude = new System.Windows.Forms.Label();
+            this.lblCP = new System.Windows.Forms.Label();
+            this.lblCPtitle = new System.Windows.Forms.Label();
             this.lblCpk = new System.Windows.Forms.Label();
             this.lblDesvio = new System.Windows.Forms.Label();
             this.lblInfos = new System.Windows.Forms.Label();
             this.btnVermais = new estatisticaTechData.techDataButton();
-            this.lblCP = new System.Windows.Forms.Label();
-            this.lblCPtitle = new System.Windows.Forms.Label();
             this.pnlGraficos.SuspendLayout();
             this.pnlEscolhas.SuspendLayout();
             this.pnlInfos.SuspendLayout();
@@ -218,9 +220,9 @@
             this.lblMediaTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMediaTitle.AutoSize = true;
             this.lblMediaTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaTitle.Location = new System.Drawing.Point(90, 90);
+            this.lblMediaTitle.Location = new System.Drawing.Point(91, 90);
             this.lblMediaTitle.Name = "lblMediaTitle";
-            this.lblMediaTitle.Size = new System.Drawing.Size(55, 16);
+            this.lblMediaTitle.Size = new System.Drawing.Size(54, 16);
             this.lblMediaTitle.TabIndex = 0;
             this.lblMediaTitle.Text = "Média:";
             // 
@@ -239,17 +241,17 @@
             this.lblDesvioTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesvioTitle.AutoSize = true;
             this.lblDesvioTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesvioTitle.Location = new System.Drawing.Point(63, 162);
+            this.lblDesvioTitle.Location = new System.Drawing.Point(65, 210);
             this.lblDesvioTitle.Name = "lblDesvioTitle";
-            this.lblDesvioTitle.Size = new System.Drawing.Size(112, 16);
+            this.lblDesvioTitle.Size = new System.Drawing.Size(115, 16);
             this.lblDesvioTitle.TabIndex = 2;
-            this.lblDesvioTitle.Text = "Desvio Padrão";
+            this.lblDesvioTitle.Text = "Desvio Padrão:";
             // 
             // lblCPKTitle
             // 
             this.lblCPKTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCPKTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPKTitle.Location = new System.Drawing.Point(39, 291);
+            this.lblCPKTitle.Location = new System.Drawing.Point(32, 337);
             this.lblCPKTitle.Name = "lblCPKTitle";
             this.lblCPKTitle.Size = new System.Drawing.Size(178, 51);
             this.lblCPKTitle.TabIndex = 4;
@@ -261,6 +263,8 @@
             this.pnlInfos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlInfos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.pnlInfos.Controls.Add(this.label1);
+            this.pnlInfos.Controls.Add(this.lblAmplitude);
             this.pnlInfos.Controls.Add(this.lblCP);
             this.pnlInfos.Controls.Add(this.lblCPtitle);
             this.pnlInfos.Controls.Add(this.lblCpk);
@@ -276,10 +280,52 @@
             this.pnlInfos.Size = new System.Drawing.Size(242, 501);
             this.pnlInfos.TabIndex = 66;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(81, 150);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Amplitude:";
+            // 
+            // lblAmplitude
+            // 
+            this.lblAmplitude.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAmplitude.Location = new System.Drawing.Point(86, 173);
+            this.lblAmplitude.Name = "lblAmplitude";
+            this.lblAmplitude.Size = new System.Drawing.Size(70, 14);
+            this.lblAmplitude.TabIndex = 13;
+            this.lblAmplitude.Text = "000.0000";
+            this.lblAmplitude.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblCP
+            // 
+            this.lblCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCP.Location = new System.Drawing.Point(86, 310);
+            this.lblCP.Name = "lblCP";
+            this.lblCP.Size = new System.Drawing.Size(70, 14);
+            this.lblCP.TabIndex = 11;
+            this.lblCP.Text = "000.0000";
+            this.lblCP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblCPtitle
+            // 
+            this.lblCPtitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCPtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPtitle.Location = new System.Drawing.Point(32, 270);
+            this.lblCPtitle.Name = "lblCPtitle";
+            this.lblCPtitle.Size = new System.Drawing.Size(178, 38);
+            this.lblCPtitle.TabIndex = 10;
+            this.lblCPtitle.Text = "Índice de Capacidade de Processo(CP):";
+            this.lblCPtitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // lblCpk
             // 
             this.lblCpk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCpk.Location = new System.Drawing.Point(87, 342);
+            this.lblCpk.Location = new System.Drawing.Point(86, 374);
             this.lblCpk.Name = "lblCpk";
             this.lblCpk.Size = new System.Drawing.Size(70, 14);
             this.lblCpk.TabIndex = 9;
@@ -289,7 +335,7 @@
             // lblDesvio
             // 
             this.lblDesvio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDesvio.Location = new System.Drawing.Point(86, 185);
+            this.lblDesvio.Location = new System.Drawing.Point(86, 233);
             this.lblDesvio.Name = "lblDesvio";
             this.lblDesvio.Size = new System.Drawing.Size(70, 14);
             this.lblDesvio.TabIndex = 8;
@@ -301,10 +347,10 @@
             this.lblInfos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInfos.AutoSize = true;
-            this.lblInfos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfos.Location = new System.Drawing.Point(56, 29);
+            this.lblInfos.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.lblInfos.Location = new System.Drawing.Point(56, 30);
             this.lblInfos.Name = "lblInfos";
-            this.lblInfos.Size = new System.Drawing.Size(114, 20);
+            this.lblInfos.Size = new System.Drawing.Size(130, 28);
             this.lblInfos.TabIndex = 7;
             this.lblInfos.Text = "Informações:";
             // 
@@ -329,27 +375,6 @@
             this.btnVermais.TextColor = System.Drawing.Color.White;
             this.btnVermais.UseVisualStyleBackColor = false;
             this.btnVermais.Click += new System.EventHandler(this.btnVermais_Click);
-            // 
-            // lblCP
-            // 
-            this.lblCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCP.Location = new System.Drawing.Point(87, 268);
-            this.lblCP.Name = "lblCP";
-            this.lblCP.Size = new System.Drawing.Size(70, 14);
-            this.lblCP.TabIndex = 11;
-            this.lblCP.Text = "000.0000";
-            this.lblCP.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblCPtitle
-            // 
-            this.lblCPtitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCPtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPtitle.Location = new System.Drawing.Point(39, 217);
-            this.lblCPtitle.Name = "lblCPtitle";
-            this.lblCPtitle.Size = new System.Drawing.Size(178, 51);
-            this.lblCPtitle.TabIndex = 10;
-            this.lblCPtitle.Text = "Índice de Capacidade de Processo(CP):";
-            this.lblCPtitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // UC_controlVariaveis
             // 
@@ -397,5 +422,7 @@
         private System.Windows.Forms.Label lblDesvio;
         private System.Windows.Forms.Label lblCP;
         private System.Windows.Forms.Label lblCPtitle;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAmplitude;
     }
 }
