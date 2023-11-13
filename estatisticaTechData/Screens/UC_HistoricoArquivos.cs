@@ -49,7 +49,6 @@ namespace estatisticaTechData
                     // Obtenha o user_id da carga
                     int cargaUserId = int.Parse(chargeResult[3][i].ToString());
                     int chargeId = int.Parse(chargeResult[4][i].ToString());
-                    Console.WriteLine("Charge id: " + chargeId);
                     string[] tableMasterColumns = { "id", "type_count_id" };
                     string tableMasterWhere = $"charge_id = {chargeId}";
 
