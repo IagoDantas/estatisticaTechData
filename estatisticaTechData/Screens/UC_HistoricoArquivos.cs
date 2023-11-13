@@ -100,7 +100,7 @@ namespace estatisticaTechData
                         labelTipo.Font = new Font("Poppins", 12, FontStyle.Regular);
                         labelTipo.AutoSize = true;
                         labelTipo.Text = $"Gráfico de {description}";
-                        labelTipo.Location = new Point(labelData.Right + 100, 10); // Ajuste as coordenadas conforme necessário
+                        labelTipo.Location = new Point(labelData.Right + 120, 10); // Ajuste as coordenadas conforme necessário
 
                         techDataButton compareButton = new techDataButton();
                         compareButton.BackColor = Color.FromArgb(0, 107, 117);
@@ -112,7 +112,7 @@ namespace estatisticaTechData
                         compareButton.FlatStyle = FlatStyle.Flat;
                         compareButton.Font = new Font("Poppins", 10, FontStyle.Bold);
                         compareButton.ForeColor = Color.White;
-                        compareButton.Location = new Point(659, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                        compareButton.Location = new Point(689, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
                         compareButton.Name = $"btnComparar_{i}"; // Nome único para o botão
                         compareButton.Size = new Size(105, 47);
                         compareButton.TabIndex = 15;
