@@ -40,193 +40,202 @@ namespace estatisticaTechData.Screens
 
         private void UC_BackgroundDist_Load(object sender, EventArgs e)
         {
-            carregaInformacoes();
-            DataTable dt = new DataTable();
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
+            try {
+                carregaInformacoes();
+                DataTable dt = new DataTable();
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
                 {
-                    Cursor.Current = Cursors.WaitCursor;
-                    using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
+                    if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        bool isFirstRow = true;
-                        var rows = workbook.Worksheet(1).RowsUsed();
-                        foreach (var row in rows)
+                        Cursor.Current = Cursors.WaitCursor;
+                        using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
                         {
-                            if (isFirstRow)
+                            bool isFirstRow = true;
+                            var rows = workbook.Worksheet(1).RowsUsed();
+                            foreach (var row in rows)
                             {
-                                foreach (IXLCell cell in row.Cells())
+                                if (isFirstRow)
                                 {
-                                    dt.Columns.Add(cell.Value.ToString());
+                                    foreach (IXLCell cell in row.Cells())
+                                    {
+                                        dt.Columns.Add(cell.Value.ToString());
+                                    }
+                                    isFirstRow = false;
                                 }
-                                isFirstRow = false;
+                                else
+                                {
+                                    dt.Rows.Add();
+                                    int i = 0;
+                                    foreach (IXLCell cell in row.Cells())
+                                    {
+                                        dt.Rows[dt.Rows.Count - 1][i++] = cell.Value.ToString();
+                                    }
+                                }
+                            }
+                            dgvTeste.DataSource = dt.DefaultView;
+
+                            byte[] excelData;
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                workbook.SaveAs(ms);
+                                excelData = ms.ToArray();
+                            }
+
+                            string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
+
+
+                            string[] columns2 = { "id" };
+                            string where2 = $"email='{email}' AND password='{senha}'";
+                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                            if (result2[0].Count > 0)
+                            {
+                                userId = int.Parse(result2[0][0].ToString());
+
+                                Dictionary<string, string> dataCharge = new Dictionary<string, string>();
+                                dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                                dataCharge.Add("file", Convert.ToBase64String(excelData));
+                                dataCharge.Add("user_id", userId.ToString());
+                                dataCharge.Add("status", "A");
+                                dataCharge.Add("data", json);
+
+
+                                if (conexao.InsertData("charge", dataCharge) == true)
+                                {
+
+                                    chargeId = conexao.GetLastInsertedId();
+                                    Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
+                                    dataTableMaster.Add("status", "A");
+                                    dataTableMaster.Add("data", json);
+                                    dataTableMaster.Add("user_id", userId.ToString());
+                                    dataTableMaster.Add("type_count_id", "3");
+                                    dataTableMaster.Add("charge_id", chargeId.ToString());
+
+                                    if (conexao.InsertData("table_master", dataTableMaster) != true)
+                                    {
+                                        MessageBox.Show("Falha ao salvar os dados no banco");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Erro ao adicionar o arquivo.");
+                                }
+
                             }
                             else
                             {
-                                dt.Rows.Add();
-                                int i = 0;
-                                foreach (IXLCell cell in row.Cells())
-                                {
-                                    dt.Rows[dt.Rows.Count - 1][i++] = cell.Value.ToString();
-                                }
+                                MessageBox.Show("Erro ao obter o ID do usuário");
                             }
+                            Cursor.Current = Cursors.Default;
                         }
-                        dgvTeste.DataSource = dt.DefaultView;
-
-                        byte[] excelData;
-                        using (MemoryStream ms = new MemoryStream())
-                        {
-                            workbook.SaveAs(ms);
-                            excelData = ms.ToArray();
-                        }
-
-                        string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
-
-
-                        string[] columns2 = { "id" };
-                        string where2 = $"email='{email}' AND password='{senha}'";
-                        List<string>[] result2 = conexao.SelectData("users", columns2, where2);
-
-                        if (result2[0].Count > 0)
-                        {
-                            userId = int.Parse(result2[0][0].ToString());
-
-                            Dictionary<string, string> dataCharge = new Dictionary<string, string>();
-                            dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                            dataCharge.Add("file", Convert.ToBase64String(excelData));
-                            dataCharge.Add("user_id", userId.ToString());
-                            dataCharge.Add("status", "A");
-                            dataCharge.Add("data", json);
-
-
-                            if (conexao.InsertData("charge", dataCharge) == true)
-                            {
-
-                                chargeId = conexao.GetLastInsertedId();
-                                Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
-                                dataTableMaster.Add("status", "A");
-                                dataTableMaster.Add("data", json);
-                                dataTableMaster.Add("user_id", userId.ToString());
-                                dataTableMaster.Add("type_count_id", "3");
-                                dataTableMaster.Add("charge_id", chargeId.ToString());
-
-                                if (conexao.InsertData("table_master", dataTableMaster) != true)
-                                {
-                                    MessageBox.Show("Falha ao salvar os dados no banco");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Erro ao adicionar o arquivo.");
-                            }
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erro ao obter o ID do usuário");
-                        }
-                        Cursor.Current = Cursors.Default;
+                    }
+                    else { 
+                        
                     }
                 }
-            }
-            x = dgvTeste.RowCount - 1;
-            y = dgvTeste.ColumnCount - 1;
-            arrayExcel = ArrayExcel(x, y, dgvTeste);
-            matrizExcel = new double[x, y];
-            int contador = 0;
-            for(int i=0;i<x;i++)
-                for (int j = 0; j < y; j++)
+                x = dgvTeste.RowCount - 1;
+                y = dgvTeste.ColumnCount - 1;
+                arrayExcel = ArrayExcel(x, y, dgvTeste);
+                matrizExcel = new double[x, y];
+                int contador = 0;
+                for (int i = 0; i < x; i++)
+                    for (int j = 0; j < y; j++)
+                    {
+                        matrizExcel[i, j] = arrayExcel[contador];
+                        contador++;
+                    }
+
+                dgvTeste.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                mediasIniciais = ClsCalculos.CalcularMediasInicias(matrizExcel, x, y);
+                DataRow newRow = dt.NewRow();
+                for (int i = 0; i <= mediasIniciais.Length; i++)
                 {
-                    matrizExcel[i, j] = arrayExcel[contador];
-                    contador++;
+                    if (i == 0)
+                        newRow[i] = "Média(s):";
+                    else
+                        newRow[i] = mediasIniciais[i - 1].ToString("f4");
                 }
+                dt.Rows.Add(newRow);
 
-            dgvTeste.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            mediasIniciais = ClsCalculos.CalcularMediasInicias(matrizExcel, x, y);
-            DataRow newRow = dt.NewRow();
-            for (int i = 0; i <= mediasIniciais.Length; i++)
-            {
-                if(i==0)
-                    newRow[i] = "Média(s):";
+                amplitudes = ClsCalculos.CalcularAmplitudes(matrizExcel, x, y);
+                newRow = dt.NewRow();
+                for (int i = 0; i <= amplitudes.Length; i++)
+                {
+                    if (i == 0)
+                        newRow[i] = "Amplitude(s):";
+                    else
+                        newRow[i] = amplitudes[i - 1].ToString("f4");
+                }
+                dt.Rows.Add(newRow);
+
+                // Atualizar o DataSource do DataGridView
+                dgvTeste.DataSource = dt;
+                x = x * y;
+
+                //Array para os cálculos
+                double[] arrayCopy = new double[arrayExcel.Length];
+                Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
+
+                //Media das medias
+                media = ClsCalculos.CalcularMedia(mediasIniciais, mediasIniciais.Length);
+                lblMedia.Text = "A média das médias é: " + media.ToString("F");
+                lblMedia.Visible = true;
+
+                //Coeficiente Percentilico de Curtose
+                coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayCopy, x);
+                lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {coeficientePercentilicoCurtose.ToString("f4")}";
+                lblCoeficientePercentilicoCurtose.Visible = true;
+
+                //Coeficiente de Assimetria
+                coeficienteAssimetria = ClsCalculos.CalcularCoeficienteAssimetria(arrayCopy);
+                lblCoeficienteAssimetria.Text = $"O coeficiente de assimetria é {coeficienteAssimetria.ToString("f4")}";
+                lblCoeficienteAssimetria.Visible = true;
+
+                //Variancia
+                variancia = ClsCalculos.CalcularVariancia(arrayCopy);
+                lblVariancia.Text = $"A variância  desse conjunto é {variancia.ToString("f4")}";
+                lblVariancia.Visible = true;
+
+                //Dispersão
+                dispersao = ClsCalculos.CalcularDispersao(arrayCopy);
+                lblDipersao.Text = $"A dispersão desse conjunto é {dispersao.ToString("f4")} ou seja {(dispersao * 100).ToString("f2")}%";
+                lblDipersao.Visible = true;
+
+                //Moda
+                modas = ClsCalculos.CalcularModa(arrayCopy);
+                if (modas.Length == 0)
+                    lblModa.Text = "Esta grupo é amodal";
+                else if (modas.Length == 1)
+                    lblModa.Text = "A moda deste grupo é: " + modas[0];
                 else
-                    newRow[i] = mediasIniciais[i-1].ToString("f4");
-            }
-            dt.Rows.Add(newRow);
+                    lblModa.Text = "As modas deste grupo são: " + modas[0] + " e " + modas[1];
+                lblModa.Visible = true;
 
-            amplitudes = ClsCalculos.CalcularAmplitudes(matrizExcel, x, y);
-            newRow = dt.NewRow();
-            for (int i = 0; i <= amplitudes.Length; i++)
+                //Mediana
+                mediana = ClsCalculos.CalcularMediana(arrayCopy, x);
+                lblMediana.Text = "A mediana desses valores é: " + mediana;
+                lblMediana.Visible = true;
+
+                //Quartis
+                quartis = ClsCalculos.CalcularQuartis(arrayCopy, x);
+                lblQuartis.Text = "Os quartis desses valores são: \nQ1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
+                lblQuartis.Visible = true;
+
+                //Percentis
+                percentis = ClsCalculos.CalcularPercentis(arrayCopy);
+
+                //Desvio Padrão
+                desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayCopy);
+                lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
+                lblDesvioPadrao.Visible = true;
+
+                //IQR
+                IQR = quartis[2] - quartis[0];
+            }
+            catch (Exception ex)
             {
-                if (i == 0)
-                    newRow[i] = "Amplitude(s):";
-                else
-                    newRow[i] = amplitudes[i - 1].ToString("f4");
+                Console.WriteLine(ex);
             }
-            dt.Rows.Add(newRow);
-
-            // Atualizar o DataSource do DataGridView
-            dgvTeste.DataSource = dt;
-            x = x * y;
-
-            //Array para os cálculos
-            double[] arrayCopy = new double[arrayExcel.Length];
-            Array.Copy(arrayExcel, arrayCopy, arrayExcel.Length);
-
-            //Media das medias
-            media = ClsCalculos.CalcularMedia(mediasIniciais, mediasIniciais.Length); 
-            lblMedia.Text = "A média das médias é: " + media.ToString("F");
-            lblMedia.Visible = true;
-            
-            //Coeficiente Percentilico de Curtose
-            coeficientePercentilicoCurtose = ClsCalculos.CalcularCoeficientePercentilicoCurtose(arrayCopy, x);
-            lblCoeficientePercentilicoCurtose.Text = $"O coeficiente % de curtose é {coeficientePercentilicoCurtose.ToString("f4")}";
-            lblCoeficientePercentilicoCurtose.Visible = true;
-            
-            //Coeficiente de Assimetria
-            coeficienteAssimetria = ClsCalculos.CalcularCoeficienteAssimetria(arrayCopy);
-            lblCoeficienteAssimetria.Text = $"O coeficiente de assimetria é {coeficienteAssimetria.ToString("f4")}";
-            lblCoeficienteAssimetria.Visible = true;
-            
-            //Variancia
-            variancia = ClsCalculos.CalcularVariancia(arrayCopy);
-            lblVariancia.Text = $"A variância  desse conjunto é {variancia.ToString("f4")}";
-            lblVariancia.Visible = true;
-
-            //Dispersão
-            dispersao = ClsCalculos.CalcularDispersao(arrayCopy);
-            lblDipersao.Text = $"A dispersão desse conjunto é {dispersao.ToString("f4")} ou seja {(dispersao * 100).ToString("f2")}%";
-            lblDipersao.Visible = true;
-
-            //Moda
-            modas = ClsCalculos.CalcularModa(arrayCopy);
-            if (modas.Length == 0)
-                lblModa.Text = "Esta grupo é amodal";
-            else if (modas.Length == 1)
-                lblModa.Text = "A moda deste grupo é: " + modas[0];
-            else
-                lblModa.Text = "As modas deste grupo são: " + modas[0] + " e " + modas[1];
-            lblModa.Visible = true;
-
-            //Mediana
-            mediana = ClsCalculos.CalcularMediana(arrayCopy, x);
-            lblMediana.Text = "A mediana desses valores é: " + mediana;
-            lblMediana.Visible = true;
-
-            //Quartis
-            quartis = ClsCalculos.CalcularQuartis(arrayCopy, x);
-            lblQuartis.Text = "Os quartis desses valores são: \nQ1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
-            lblQuartis.Visible = true;
-
-            //Percentis
-            percentis = ClsCalculos.CalcularPercentis(arrayCopy);
-
-            //Desvio Padrão
-            desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayCopy);
-            lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
-            lblDesvioPadrao.Visible = true;
-
-            //IQR
-            IQR = quartis[2] - quartis[0];
 
         }
 

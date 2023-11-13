@@ -349,6 +349,8 @@ namespace estatisticaTechData
                 }
                 
             }
+
+            
             void ToolTipApagarTodasAsAbas_Click(object sender1, EventArgs e1)
             {
                 if (!(Tbc_Telas.SelectedTab == null))
@@ -400,6 +402,49 @@ namespace estatisticaTechData
             }
 
         }
+        public void apagarAbaSelecionada()
+        {
+            if (!(Tbc_Telas.SelectedTab == null))
+            {
+                int var = confereAba(Tbc_Telas.SelectedTab);
+                if (var == 1)
+                {
+                    int SelectedTab = Tbc_Telas.SelectedIndex - 1;
+                    if (SelectedTab >= 0)
+                        ApagaAba(Tbc_Telas.TabPages[SelectedTab]);
+                    if (Tbc_Telas.TabCount == 0)
+                    {
+
+                    }
+                }
+                if (var == 2)
+                {
+
+                    int SelectedTab = Tbc_Telas.SelectedIndex + 1;
+                    if (SelectedTab < Tbc_Telas.TabCount)
+                        ApagaAba(Tbc_Telas.TabPages[SelectedTab]);
+                    if (Tbc_Telas.TabCount == 0)
+                    {
+
+                    }
+                }
+                ApagaAba(Tbc_Telas.SelectedTab);
+                if (Tbc_Telas.TabCount == 0)
+                {
+
+                }
+            }
+
+            int confereAba(TabPage Tb)
+            {
+                int var = 0;
+                if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal")
+                    var = 1;
+                if (Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel")
+                    var = 2;
+                return var;
+            }
+        }
         void ApagaDireita(int ItemSelecionado)
         {
             for (int i = Tbc_Telas.TabPages.Count - 1; i > ItemSelecionado; i += -1)
@@ -414,7 +459,7 @@ namespace estatisticaTechData
                 ApagaAba(Tbc_Telas.TabPages[i]);
             }
         }
-        void ApagaAba(TabPage Tb)
+        public void ApagaAba(TabPage Tb)
         {
             if (Tb.Name == "HistoricoDistribuicaoNormal")
             {
