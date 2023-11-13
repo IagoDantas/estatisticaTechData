@@ -37,14 +37,14 @@
             this.lblDesvioTitle = new System.Windows.Forms.Label();
             this.lblCPKTitle = new System.Windows.Forms.Label();
             this.pnlInfos = new System.Windows.Forms.Panel();
+            this.lblVariancia = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblAnalise = new System.Windows.Forms.Label();
             this.lblAnaliseTitle = new System.Windows.Forms.Label();
             this.lblIQR = new System.Windows.Forms.Label();
             this.lblDesvio = new System.Windows.Forms.Label();
             this.lblInfos = new System.Windows.Forms.Label();
             this.btnVermais = new estatisticaTechData.techDataButton();
-            this.lblVariancia = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlGraficos.SuspendLayout();
             this.pnlInfos.SuspendLayout();
             this.SuspendLayout();
@@ -157,13 +157,34 @@
             this.pnlInfos.Size = new System.Drawing.Size(242, 501);
             this.pnlInfos.TabIndex = 66;
             // 
+            // lblVariancia
+            // 
+            this.lblVariancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVariancia.Location = new System.Drawing.Point(86, 230);
+            this.lblVariancia.Name = "lblVariancia";
+            this.lblVariancia.Size = new System.Drawing.Size(70, 14);
+            this.lblVariancia.TabIndex = 13;
+            this.lblVariancia.Text = "000.0000";
+            this.lblVariancia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(80, 205);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 23);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Variãncia";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lblAnalise
             // 
             this.lblAnalise.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnalise.AutoSize = true;
-            this.lblAnalise.Location = new System.Drawing.Point(94, 283);
+            this.lblAnalise.Location = new System.Drawing.Point(26, 283);
             this.lblAnalise.Name = "lblAnalise";
-            this.lblAnalise.Size = new System.Drawing.Size(54, 13);
+            this.lblAnalise.Size = new System.Drawing.Size(190, 13);
             this.lblAnalise.TabIndex = 11;
             this.lblAnalise.Text = "Dispersão";
             this.lblAnalise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -234,28 +255,6 @@
             this.btnVermais.TextColor = System.Drawing.Color.White;
             this.btnVermais.UseVisualStyleBackColor = false;
             this.btnVermais.Click += new System.EventHandler(this.btnVermais_Click);
-            // 
-            // lblVariancia
-            // 
-            this.lblVariancia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblVariancia.Location = new System.Drawing.Point(86, 230);
-            this.lblVariancia.Name = "lblVariancia";
-            this.lblVariancia.Size = new System.Drawing.Size(70, 14);
-            this.lblVariancia.TabIndex = 13;
-            this.lblVariancia.Text = "000.0000";
-            this.lblVariancia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(80, 205);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 23);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Variãncia";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UC_DistribuicaoNormal
             // 
