@@ -36,7 +36,6 @@ namespace estatisticaTechData.Screens
             InitializeComponent();
             funEstancia = this;
             conexao = new estatisticaTechDataClassLibrary.Connection();
-            IQR = quartis[2] - quartis[0];
         }
 
         private void UC_BackgroundDist_Load(object sender, EventArgs e)
@@ -226,7 +225,9 @@ namespace estatisticaTechData.Screens
             lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
             lblDesvioPadrao.Visible = true;
 
-            
+            //IQR
+            IQR = quartis[2] - quartis[0];
+
         }
 
         public void carregaInformacoes()
