@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace estatisticaTechDataClassLibrary
 {
@@ -167,8 +168,6 @@ namespace estatisticaTechDataClassLibrary
             Array.Sort(arrExcel);
 
             int meio = N / 2;
-            int q1Posicao = N / 4;
-            int q3Posicao = 3 * N / 4;
 
             arrQuartis[1] = CalcularMediana(arrExcel, N); // Q2
 
@@ -182,8 +181,8 @@ namespace estatisticaTechDataClassLibrary
             }
             else
             {
-                double[] arrQ1 = arrExcel.Take(q1Posicao + 1).ToArray();
-                double[] arrQ3 = arrExcel.Skip(q3Posicao).ToArray();
+                double[] arrQ1 = arrExcel.Take(meio).ToArray();
+                double[] arrQ3 = arrExcel.Skip(meio+1).ToArray();
 
                 arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length); // Q1
                 arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length); // Q3
@@ -206,22 +205,30 @@ namespace estatisticaTechDataClassLibrary
 
             for (int i = 0; i < 100; i++)
             {
-                double percentil = i / 100.0;
-                double posicao = percentil * (arrExcel.Length - 1);
+                double percentil = 0;
+                double posicao = (i * (arrExcel.Length + 1)) / 100;
+                int parteInteira = (int)Math.Floor(posicao);
 
-                int indiceInferior = (int)Math.Floor(posicao);
-                int indiceSuperior = (int)Math.Ceiling(posicao);
+                if (posicao == parteInteira)
+                {
+                    percentil = arrExcel[parteInteira];
+                }
+                else
+                {
+                    int indiceInferior = (int)Math.Floor(posicao);
+                    int indiceSuperior = (int)Math.Ceiling(posicao);
+                    double d = posicao - Math.Truncate(posicao);
+                    percentil = ((1 - d) * arrExcel[indiceInferior]) + (d * arrExcel[indiceSuperior]);
+                }
 
-                double valorInferior = arrExcel[indiceInferior];
-                double valorSuperior = arrExcel[indiceSuperior];
-
-                arrPercentil[i] = valorInferior + (percentil * (valorSuperior - valorInferior));
+                arrPercentil[i] = percentil;
             }
 
             Console.WriteLine($"P25: {arrPercentil[24]}, P50: {arrPercentil[49]}, P75: {arrPercentil[74]}");
 
             return arrPercentil;
         }
+
 
 
 
