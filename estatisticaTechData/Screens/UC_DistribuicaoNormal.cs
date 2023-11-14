@@ -30,7 +30,7 @@ namespace estatisticaTechData.Screens
         }
         private void UC_DistribuicaoNormal_Load(object sender, EventArgs e)
         {
-            if (UC_BackgroundDist.funEstancia.arrayExcel != null)
+            if (UC_BackgroundDist.funEstancia.arrayExcel == null)
             {
                 frmHub.funEstancia.apagarAbaSelecionada();
             }

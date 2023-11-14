@@ -65,15 +65,21 @@ namespace estatisticaTechData
         {
             if (ControleBackgroundDist == 0)
             {
-                ControleBackgroundDist += 1;
-                UC_BackgroundDist Teste = new UC_BackgroundDist();
-                Teste.Dock = DockStyle.Fill;
-                TabPage TbPage = new TabPage();
-                TbPage.Name = "BackgroundDist";
-                TbPage.Text = "Background";
-                TbPage.Controls.Add(Teste);
-                Tbc_Telas.TabPages.Add(TbPage);
-                Tbc_Telas.SelectedTab = TbPage;
+                try
+                {
+                    UC_BackgroundDist Teste = new UC_BackgroundDist();
+                    Teste.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "BackgroundDist";
+                    TbPage.Text = "Background";
+                    TbPage.Controls.Add(Teste);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                    ControleBackgroundDist += 1;
+                }catch
+                {
+                    throw new Exception("Erro ao carregar excel");
+                }
             }
         }
         public void abrirBackgroundAtributos()
@@ -253,48 +259,54 @@ namespace estatisticaTechData
 
         private void btnDistribuicao_Click(object sender, EventArgs e)
         {
-            abrirBackgroundDist();
-            if(ControleDistribuicaoNormal == 0)
+            try
             {
-                ControleDistribuicaoNormal += 1;
-                Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
-                DistNormal.Dock = DockStyle.Fill;
-                TabPage TbPage = new TabPage();
-                TbPage.Name = "DistribuicaoNormal";
-                TbPage.Text = "Distribuição Normal";
-                TbPage.Controls.Add(DistNormal);
-                Tbc_Telas.TabPages.Add(TbPage);
-                Tbc_Telas.SelectedTab = TbPage;
-            }
-            else
-            {
-                guia("DistribuicaoNormal");
-                MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                abrirBackgroundDist();
+                if(ControleDistribuicaoNormal == 0)
+                {
+                    ControleDistribuicaoNormal += 1;
+                    Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
+                    DistNormal.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "DistribuicaoNormal";
+                    TbPage.Text = "Distribuição Normal";
+                    TbPage.Controls.Add(DistNormal);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                }
+                else
+                {
+                    guia("DistribuicaoNormal");
+                    MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
+                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+                btnConfig.ForeColor = Color.White;
 
-            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-            btnDistribuicao.ForeColor = Color.Black;
-
-
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-
-            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-            btnCEP.ForeColor = Color.White;
+                btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
+                btnDistribuicao.ForeColor = Color.Black;
 
 
-            btnDistribuicao.Enabled = false;
-            btnHistorico.Enabled = true;
-            btnInicio.Enabled = true;
+                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+                btnInicio.ForeColor = Color.White;
 
-            btnCEP.Enabled = true;
-            btnConfig.Enabled = true;
+                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+                btnHistorico.ForeColor = Color.White;
+
+                btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+                btnCEP.ForeColor = Color.White;
+
+
+                btnDistribuicao.Enabled = false;
+                btnHistorico.Enabled = true;
+                btnInicio.Enabled = true;
+
+                btnCEP.Enabled = true;
+                btnConfig.Enabled = true;
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Tbc_Telas_MouseDown(object sender, MouseEventArgs e)
