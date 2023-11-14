@@ -171,7 +171,7 @@ namespace estatisticaTechData.Screens
 
             //Media das medias
             media = ClsCalculos.CalcularMedia(mediasIniciais, mediasIniciais.Length);
-            lblMedia.Text = "A média das médias é: " + media.ToString("F");
+            lblMedia.Text = "A média das médias é: " + media.ToString("f4");
             lblMedia.Visible = true;
 
             //Coeficiente Percentilico de Curtose
@@ -206,12 +206,12 @@ namespace estatisticaTechData.Screens
 
             //Mediana
             mediana = ClsCalculos.CalcularMediana(arrayCopy, x);
-            lblMediana.Text = "A mediana desses valores é: " + mediana;
+            lblMediana.Text = "A mediana desses valores é: " + mediana.ToString("f4");
             lblMediana.Visible = true;
 
             //Quartis
             quartis = ClsCalculos.CalcularQuartis(arrayCopy, x);
-            lblQuartis.Text = "Os quartis desses valores são: \nQ1: " + quartis[0] + "\nQ2: " + quartis[1] + "\nQ3: " + quartis[2];
+            lblQuartis.Text = "Os quartis desses valores são: \nQ1: " + quartis[0].ToString("f4") + "\nQ2: " + quartis[1].ToString("f4") + "\nQ3: " + quartis[2].ToString("f4");
             lblQuartis.Visible = true;
 
             //Percentis
@@ -219,7 +219,7 @@ namespace estatisticaTechData.Screens
 
             //Desvio Padrão
             desvioPadrao = ClsCalculos.CalcularDesvioPadrao(arrayCopy);
-            lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("F")}";
+            lblDesvioPadrao.Text = $"O desvio padrão deste conjunto é {desvioPadrao.ToString("f4")}";
             lblDesvioPadrao.Visible = true;
         }
 
@@ -242,17 +242,27 @@ namespace estatisticaTechData.Screens
         private void btnPercentis_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtPercentil.Text))
+            {
                 lblPercentis.Text = "A caixa de texto está vazia, digite um número.";
+            }
             else
             {
                 int numTXT = Convert.ToInt32(txtPercentil.Text);
                 if (numTXT > 0 && numTXT <= 100)
-                    lblPercentis.Text = $"O percentil N°{numTXT} é: {percentis[numTXT - 1]}.";
+                {
+                    // Ajuste para indexar corretamente o array de percentis
+                    int indiceArray = numTXT - 1;
+
+                    lblPercentis.Text = $"O percentil N°{numTXT} é: {percentis[indiceArray].ToString("f4")}.";
+                }
                 else
-                    lblPercentis.Text = "Digite um número entre 1 a 100.";
+                {
+                    lblPercentis.Text = "Digite um número entre 1 e 100.";
+                }
             }
             lblPercentis.Visible = true;
         }
+
         private void dgvTeste_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             e.CellStyle.BackColor = System.Drawing.Color.FromArgb(220, 236, 223);

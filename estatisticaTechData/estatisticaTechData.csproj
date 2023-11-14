@@ -236,6 +236,12 @@
     <Compile Include="Screens\UC_controlAtributos.Designer.cs">
       <DependentUpon>UC_controlAtributos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\UC_controlCompara.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_controlCompara.Designer.cs">
+      <DependentUpon>UC_controlCompara.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\UC_controlVariaveis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -283,6 +289,12 @@
     </Compile>
     <Compile Include="Screens\UC_Inicio.Designer.cs">
       <DependentUpon>UC_Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\UC_BackgroundCompara.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\UC_BackgroundCompara.Designer.cs">
+      <DependentUpon>UC_BackgroundCompara.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmHub.resx">
       <DependentUpon>frmHub.cs</DependentUpon>
