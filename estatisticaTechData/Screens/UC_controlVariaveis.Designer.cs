@@ -60,10 +60,10 @@
             // 
             this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(293, 42);
+            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(307, 42);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(469, 33);
+            this.lblTitulo.Size = new System.Drawing.Size(503, 51);
             this.lblTitulo.TabIndex = 13;
             this.lblTitulo.Text = "Gráfico de Controle de Variáveis";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -156,14 +156,14 @@
             this.rdbAmplitudes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbAmplitudes.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbAmplitudes.CheckedColor = System.Drawing.Color.White;
-            this.rdbAmplitudes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAmplitudes.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbAmplitudes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.rdbAmplitudes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbAmplitudes.Location = new System.Drawing.Point(473, 37);
             this.rdbAmplitudes.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbAmplitudes.Name = "rdbAmplitudes";
             this.rdbAmplitudes.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbAmplitudes.Size = new System.Drawing.Size(223, 28);
+            this.rdbAmplitudes.Size = new System.Drawing.Size(258, 38);
             this.rdbAmplitudes.TabIndex = 65;
             this.rdbAmplitudes.Text = "Gráfico de Amplitudes";
             this.rdbAmplitudes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -178,14 +178,14 @@
             this.rdbMedia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbMedia.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbMedia.CheckedColor = System.Drawing.Color.White;
-            this.rdbMedia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMedia.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbMedia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.rdbMedia.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbMedia.Location = new System.Drawing.Point(250, 37);
             this.rdbMedia.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbMedia.Name = "rdbMedia";
             this.rdbMedia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbMedia.Size = new System.Drawing.Size(190, 28);
+            this.rdbMedia.Size = new System.Drawing.Size(217, 38);
             this.rdbMedia.TabIndex = 63;
             this.rdbMedia.Text = "Gráfico de Médias";
             this.rdbMedia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -200,14 +200,14 @@
             this.rdbControle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
             this.rdbControle.CheckAlign = System.Drawing.ContentAlignment.TopRight;
             this.rdbControle.CheckedColor = System.Drawing.Color.White;
-            this.rdbControle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbControle.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbControle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
             this.rdbControle.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdbControle.Location = new System.Drawing.Point(14, 37);
             this.rdbControle.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbControle.Name = "rdbControle";
             this.rdbControle.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbControle.Size = new System.Drawing.Size(200, 28);
+            this.rdbControle.Size = new System.Drawing.Size(230, 38);
             this.rdbControle.TabIndex = 64;
             this.rdbControle.Text = "Gráfico de Controle";
             this.rdbControle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -219,10 +219,10 @@
             // 
             this.lblMediaTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMediaTitle.AutoSize = true;
-            this.lblMediaTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaTitle.Location = new System.Drawing.Point(91, 90);
+            this.lblMediaTitle.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMediaTitle.Location = new System.Drawing.Point(92, 77);
             this.lblMediaTitle.Name = "lblMediaTitle";
-            this.lblMediaTitle.Size = new System.Drawing.Size(54, 16);
+            this.lblMediaTitle.Size = new System.Drawing.Size(56, 23);
             this.lblMediaTitle.TabIndex = 0;
             this.lblMediaTitle.Text = "Média:";
             // 
@@ -240,18 +240,18 @@
             // 
             this.lblDesvioTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDesvioTitle.AutoSize = true;
-            this.lblDesvioTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDesvioTitle.Location = new System.Drawing.Point(65, 210);
+            this.lblDesvioTitle.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesvioTitle.Location = new System.Drawing.Point(66, 197);
             this.lblDesvioTitle.Name = "lblDesvioTitle";
-            this.lblDesvioTitle.Size = new System.Drawing.Size(115, 16);
+            this.lblDesvioTitle.Size = new System.Drawing.Size(110, 23);
             this.lblDesvioTitle.TabIndex = 2;
             this.lblDesvioTitle.Text = "Desvio Padrão:";
             // 
             // lblCPKTitle
             // 
             this.lblCPKTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCPKTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPKTitle.Location = new System.Drawing.Point(32, 337);
+            this.lblCPKTitle.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPKTitle.Location = new System.Drawing.Point(33, 324);
             this.lblCPKTitle.Name = "lblCPKTitle";
             this.lblCPKTitle.Size = new System.Drawing.Size(178, 51);
             this.lblCPKTitle.TabIndex = 4;
@@ -284,10 +284,10 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(81, 150);
+            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(82, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.Size = new System.Drawing.Size(86, 23);
             this.label1.TabIndex = 12;
             this.label1.Text = "Amplitude:";
             // 
@@ -304,7 +304,7 @@
             // lblCP
             // 
             this.lblCP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCP.Location = new System.Drawing.Point(86, 310);
+            this.lblCP.Location = new System.Drawing.Point(86, 295);
             this.lblCP.Name = "lblCP";
             this.lblCP.Size = new System.Drawing.Size(70, 14);
             this.lblCP.TabIndex = 11;
@@ -314,8 +314,8 @@
             // lblCPtitle
             // 
             this.lblCPtitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCPtitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCPtitle.Location = new System.Drawing.Point(32, 270);
+            this.lblCPtitle.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCPtitle.Location = new System.Drawing.Point(33, 257);
             this.lblCPtitle.Name = "lblCPtitle";
             this.lblCPtitle.Size = new System.Drawing.Size(178, 38);
             this.lblCPtitle.TabIndex = 10;
@@ -335,7 +335,7 @@
             // lblDesvio
             // 
             this.lblDesvio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDesvio.Location = new System.Drawing.Point(86, 233);
+            this.lblDesvio.Location = new System.Drawing.Point(86, 224);
             this.lblDesvio.Name = "lblDesvio";
             this.lblDesvio.Size = new System.Drawing.Size(70, 14);
             this.lblDesvio.TabIndex = 8;
@@ -365,7 +365,7 @@
             this.btnVermais.BorderSize = 0;
             this.btnVermais.FlatAppearance.BorderSize = 0;
             this.btnVermais.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVermais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVermais.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVermais.ForeColor = System.Drawing.Color.White;
             this.btnVermais.Location = new System.Drawing.Point(46, 412);
             this.btnVermais.Name = "btnVermais";
