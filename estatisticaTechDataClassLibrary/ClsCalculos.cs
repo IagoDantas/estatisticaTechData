@@ -211,7 +211,14 @@ namespace estatisticaTechDataClassLibrary
 
                 if (posicao == parteInteira)
                 {
-                    percentil = arrExcel[parteInteira];
+                    if(posicao >= arrExcel.Length)
+                    {
+                        percentil = arrExcel[arrExcel.Length-1];
+                    }
+                    else
+                    {
+                        percentil = arrExcel[parteInteira];
+                    }
                 }
                 else
                 {
