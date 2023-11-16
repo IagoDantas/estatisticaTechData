@@ -16,7 +16,9 @@ namespace estatisticaTechData
         private DateTime fileDate;
         string email, senha;
         string description;
-
+        private int currentPage = 1;
+        private int recordsPerPage = 8;
+        private List<string>[] chargeResult;
         private estatisticaTechDataClassLibrary.Connection conexao;
 
         public UC_HistoricoArquivos()
@@ -27,6 +29,8 @@ namespace estatisticaTechData
 
         private void UC_HistoricoArquivos_Load(object sender, EventArgs e)
         {
+            lblNumeroPagina.Text = currentPage.ToString();
+
             Dictionary<string, object> userInfo = carregaInformacoes();
             string userId = userInfo["id"].ToString();
             userName = userInfo["nome"].ToString();
@@ -37,11 +41,20 @@ namespace estatisticaTechData
             // Obtenha os dados da tabela "charge"
             string[] chargeColumns = { "date", "data", "status", "user_id", "id" };
             string chargeWhere = "status = 'A'";
-            List<string>[] chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
+            chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
             
             if (chargeResult[0].Count > 0)
             {
-                for (int i = 0; i < chargeResult[0].Count; i++)
+                if ((currentPage - 1) * recordsPerPage + 8 <= chargeResult[0].Count)
+                    btnNextPage.Enabled = true;
+                else
+                    btnNextPage.Enabled = false;
+
+                if (currentPage > 1)
+                    btnPrevPage.Enabled = true;
+                else
+                    btnPrevPage.Enabled = false;
+                for (int i = (currentPage - 1) * recordsPerPage; i < chargeResult[0].Count && i < currentPage * recordsPerPage; i++)
                 {
                     // Obtenha a data da carga
                     fileDate = DateTime.Parse(chargeResult[0][i]);
@@ -79,8 +92,9 @@ namespace estatisticaTechData
                         Panel panel = new Panel();
                         panel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
                         panel.BorderStyle = BorderStyle.FixedSingle;
-                        panel.Location = new Point(0, i * 50); // Ajuste as coordenadas X e Y conforme necessário
-                        panel.Size = new Size(pnlArquivos.Width - 20, 50);
+                        panel.Location = new Point(0, (i - (currentPage - 1) * recordsPerPage) * 50);
+                        panel.Size = new Size(pnlArquivos.Width, 50);
+
 
                         // Crie um Label para exibir o nome
                         Label labelNome = new Label();
@@ -188,10 +202,38 @@ namespace estatisticaTechData
 
                         // Adicione o Panel ao seu formulário
                         pnlArquivos.Controls.Add(panel);
+                        
 
+                        
                     }
                 }
             }
+        }
+       
+
+        private void btnNextPage_Click(object sender, EventArgs e)
+        {
+            if ((currentPage - 1) * recordsPerPage + 8 <= chargeResult[0].Count)
+            {
+                currentPage++;
+                pnlArquivos.Controls.Clear(); // Limpa os controles existentes
+                UC_HistoricoArquivos_Load(sender, e); // Recarrega os registros para a nova página
+            }
+            else
+            {
+                btnNextPage.Enabled = false;
+            }
+        }
+
+        private void btnPrevPage_Click(object sender, EventArgs e)
+        {
+            if (currentPage > 1)
+            {
+                currentPage--;
+                pnlArquivos.Controls.Clear(); // Limpa os controles existentes
+                UC_HistoricoArquivos_Load(sender, e); // Recarrega os registros para a nova página
+            }
+      
         }
 
         public Dictionary<string, object> carregaInformacoes()
