@@ -42,174 +42,181 @@ namespace estatisticaTechData
             string[] chargeColumns = { "date", "data", "status", "user_id", "id" };
             string chargeWhere = "status = 'A'";
             chargeResult = conexao.SelectData("charge", chargeColumns, chargeWhere);
-            
+
             if (chargeResult[0].Count > 0)
             {
-                if ((currentPage - 1) * recordsPerPage + 8 <= chargeResult[0].Count)
-                    btnNextPage.Enabled = true;
-                else
-                    btnNextPage.Enabled = false;
+                // Verifica se há registros suficientes para avançar para a próxima página
+                btnNextPage.Enabled = (currentPage * recordsPerPage) < chargeResult[0].Count;
 
-                if (currentPage > 1)
-                    btnPrevPage.Enabled = true;
-                else
-                    btnPrevPage.Enabled = false;
-                for (int i = (currentPage - 1) * recordsPerPage; i < chargeResult[0].Count && i < currentPage * recordsPerPage; i++)
+                // Verifica se é possível retroceder para a página anterior
+                btnPrevPage.Enabled = currentPage > 1;
+
+                // Chama o método de carregar registros com base na página atual
+                carregarRegistros();
+            }
+        }
+
+        private void carregarRegistros()
+        {
+            pnlArquivos.Controls.Clear(); // Limpa os controles existentes
+
+            for (int i = (currentPage - 1) * recordsPerPage; i < chargeResult[0].Count && i < currentPage * recordsPerPage; i++)
+            {
+                // Obtenha a data da carga
+                fileDate = DateTime.Parse(chargeResult[0][i]);
+                string dateText = fileDate.ToString();
+                // Obtenha o user_id da carga
+                int cargaUserId = int.Parse(chargeResult[3][i].ToString());
+                int chargeId = int.Parse(chargeResult[4][i].ToString());
+                string[] tableMasterColumns = { "id", "type_count_id" };
+                string tableMasterWhere = $"charge_id = {chargeId}";
+
+                List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
+
+                int tableMasterId = int.Parse(tableMasterResult[0][0]);
+                int tableMasterTypeCountId = int.Parse(tableMasterResult[1][0]);
+                string[] typeCountColumns = { "description" };
+                string typeCountWhere = $"id = {tableMasterTypeCountId}";
+
+                List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
+
+                description = typeCountsResult[0][0].ToString();
+
+
+
+                // Obtenha o nome do usuário da tabela "users"
+                string[] userColumns = { "name" };
+                string userWhere = $"id = {cargaUserId}";
+                List<string>[] userResult = conexao.SelectData("users", userColumns, userWhere);
+
+                if (userResult[0].Count > 0)
                 {
-                    // Obtenha a data da carga
-                    fileDate = DateTime.Parse(chargeResult[0][i]);
-                    string dateText = fileDate.ToString();
-                    // Obtenha o user_id da carga
-                    int cargaUserId = int.Parse(chargeResult[3][i].ToString());
-                    int chargeId = int.Parse(chargeResult[4][i].ToString());
-                    string[] tableMasterColumns = { "id", "type_count_id" };
-                    string tableMasterWhere = $"charge_id = {chargeId}";
+                    // Obtenha o nome do usuário
+                    string cargaUserName = userResult[0][0];
 
-                    List<string>[] tableMasterResult = conexao.SelectData("table_master", tableMasterColumns, tableMasterWhere);
-                    
-                    int tableMasterId = int.Parse(tableMasterResult[0][0]);
-                    int tableMasterTypeCountId = int.Parse(tableMasterResult[1][0]);
-                    string[] typeCountColumns = { "description" };
-                    string typeCountWhere = $"id = {tableMasterTypeCountId}";
+                    // Crie um novo Panel com o estilo desejado
+                    Panel panel = new Panel();
+                    panel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+                    panel.BorderStyle = BorderStyle.FixedSingle;
+                    panel.Location = new Point(0, (i - (currentPage - 1) * recordsPerPage) * 50);
+                    panel.Size = new Size(pnlArquivos.Width, 50);
 
-                    List<string>[] typeCountsResult = conexao.SelectData("type_counts", typeCountColumns, typeCountWhere);
-                    
-                    description = typeCountsResult[0][0].ToString();
-                    
 
-                    
-                    // Obtenha o nome do usuário da tabela "users"
-                    string[] userColumns = { "name" };
-                    string userWhere = $"id = {cargaUserId}";
-                    List<string>[] userResult = conexao.SelectData("users", userColumns, userWhere);
+                    // Crie um Label para exibir o nome
+                    Label labelNome = new Label();
+                    labelNome.Font = new Font("Poppins", 12, FontStyle.Bold);
+                    labelNome.AutoSize = true;
+                    labelNome.Text = $"Nome: {cargaUserName}";
+                    labelNome.Location = new Point(10, 10); // Ajuste as coordenadas conforme necessário
 
-                    if (userResult[0].Count > 0)
+                    // Crie um Label para exibir a data e ajuste sua posição para que fique ao lado do Label do nome
+                    Label labelData = new Label();
+                    labelData.Font = new Font("Poppins", 12, FontStyle.Regular);
+                    labelData.AutoSize = true;
+                    labelData.Text = $"Data: {dateText}";
+                    labelData.Location = new Point(labelNome.Right + 30, 10); // Ajuste as coordenadas conforme necessário
+
+                    Label labelTipo = new Label();
+                    labelTipo.Font = new Font("Poppins", 12, FontStyle.Regular);
+                    labelTipo.AutoSize = true;
+                    labelTipo.Text = $"Gráfico de {description}";
+                    labelTipo.Location = new Point(labelData.Right + 120, 10); // Ajuste as coordenadas conforme necessário
+
+                    techDataButton compareButton = new techDataButton();
+                    compareButton.BackColor = Color.FromArgb(0, 107, 117);
+                    compareButton.BackgroundColor = Color.FromArgb(0, 107, 117);
+                    compareButton.BorderColor = Color.PaleVioletRed;
+                    compareButton.BorderRadius = 50;
+                    compareButton.BorderSize = 0;
+                    compareButton.FlatAppearance.BorderSize = 0;
+                    compareButton.FlatStyle = FlatStyle.Flat;
+                    compareButton.Font = new Font("Poppins", 10, FontStyle.Bold);
+                    compareButton.ForeColor = Color.White;
+                    compareButton.Location = new Point(689, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                    compareButton.Name = $"btnComparar_{i}"; // Nome único para o botão
+                    compareButton.Size = new Size(105, 47);
+                    compareButton.TabIndex = 15;
+                    compareButton.Text = "Comparar";
+                    compareButton.TextColor = Color.White;
+                    compareButton.UseVisualStyleBackColor = false;
+
+                    techDataButton deleteButton = new techDataButton();
+                    deleteButton.BackColor = Color.FromArgb(0, 107, 117);
+                    deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
+                    deleteButton.BorderColor = Color.PaleVioletRed;
+                    deleteButton.BorderRadius = 50;
+                    deleteButton.BorderSize = 0;
+                    deleteButton.FlatAppearance.BorderSize = 0;
+                    deleteButton.FlatStyle = FlatStyle.Flat;
+                    deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
+                    deleteButton.ForeColor = Color.White;
+                    deleteButton.Location = new Point(compareButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                    deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
+                    deleteButton.Size = new Size(105, 47);
+                    deleteButton.TabIndex = 15;
+                    deleteButton.Text = "Deletar";
+                    deleteButton.TextColor = Color.White;
+                    deleteButton.UseVisualStyleBackColor = false;
+
+                    deleteButton.Click += (s, eventArgs) =>
                     {
-                        // Obtenha o nome do usuário
-                        string cargaUserName = userResult[0][0];
 
-                        // Crie um novo Panel com o estilo desejado
-                        Panel panel = new Panel();
-                        panel.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-                        panel.BorderStyle = BorderStyle.FixedSingle;
-                        panel.Location = new Point(0, (i - (currentPage - 1) * recordsPerPage) * 50);
-                        panel.Size = new Size(pnlArquivos.Width, 50);
+                        // Use o buttonIndex para realizar a exclusão do registro
+                        string tableCharge = "charge";
+                        string whereCharge = $"id = {chargeId}";
 
 
-                        // Crie um Label para exibir o nome
-                        Label labelNome = new Label();
-                        labelNome.Font = new Font("Poppins", 12, FontStyle.Bold);
-                        labelNome.AutoSize = true;
-                        labelNome.Text = $"Nome: {cargaUserName}";
-                        labelNome.Location = new Point(10, 10); // Ajuste as coordenadas conforme necessário
 
-                        // Crie um Label para exibir a data e ajuste sua posição para que fique ao lado do Label do nome
-                        Label labelData = new Label();
-                        labelData.Font = new Font("Poppins", 12, FontStyle.Regular);
-                        labelData.AutoSize = true;
-                        labelData.Text = $"Data: {dateText}";
-                        labelData.Location = new Point(labelNome.Right + 30, 10); // Ajuste as coordenadas conforme necessário
+                        string tableMaster = "table_master";
+                        string whereTableMaster = $"id = {tableMasterId}";
 
-                        Label labelTipo = new Label();
-                        labelTipo.Font = new Font("Poppins", 12, FontStyle.Regular);
-                        labelTipo.AutoSize = true;
-                        labelTipo.Text = $"Gráfico de {description}";
-                        labelTipo.Location = new Point(labelData.Right + 120, 10); // Ajuste as coordenadas conforme necessário
 
-                        techDataButton compareButton = new techDataButton();
-                        compareButton.BackColor = Color.FromArgb(0, 107, 117);
-                        compareButton.BackgroundColor = Color.FromArgb(0, 107, 117);
-                        compareButton.BorderColor = Color.PaleVioletRed;
-                        compareButton.BorderRadius = 50;
-                        compareButton.BorderSize = 0;
-                        compareButton.FlatAppearance.BorderSize = 0;
-                        compareButton.FlatStyle = FlatStyle.Flat;
-                        compareButton.Font = new Font("Poppins", 10, FontStyle.Bold);
-                        compareButton.ForeColor = Color.White;
-                        compareButton.Location = new Point(689, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
-                        compareButton.Name = $"btnComparar_{i}"; // Nome único para o botão
-                        compareButton.Size = new Size(105, 47);
-                        compareButton.TabIndex = 15;
-                        compareButton.Text = "Comparar";
-                        compareButton.TextColor = Color.White;
-                        compareButton.UseVisualStyleBackColor = false;
+                        bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
 
-                        techDataButton deleteButton = new techDataButton();
-                        deleteButton.BackColor = Color.FromArgb(0, 107, 117);
-                        deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
-                        deleteButton.BorderColor = Color.PaleVioletRed;
-                        deleteButton.BorderRadius = 50;
-                        deleteButton.BorderSize = 0;
-                        deleteButton.FlatAppearance.BorderSize = 0;
-                        deleteButton.FlatStyle = FlatStyle.Flat;
-                        deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
-                        deleteButton.ForeColor = Color.White;
-                        deleteButton.Location = new Point(compareButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
-                        deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
-                        deleteButton.Size = new Size(105, 47);
-                        deleteButton.TabIndex = 15;
-                        deleteButton.Text = "Deletar";
-                        deleteButton.TextColor = Color.White;
-                        deleteButton.UseVisualStyleBackColor = false;
+                        bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
 
-                        deleteButton.Click += (s, eventArgs) =>
+
+
+                        if (sucessoCharge && sucessoTableMaster)
                         {
-                            
-                            // Use o buttonIndex para realizar a exclusão do registro
-                            string tableCharge = "charge"; 
-                            string whereCharge = $"id = {chargeId}";
-
-
-
-                            string tableMaster = "table_master";
-                            string whereTableMaster = $"id = {tableMasterId}";
-
-
-                            bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
-                            
-                            bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
-
-
-
-                            if (sucessoCharge && sucessoTableMaster)
+                            // Remove o painel inteiro
+                            Control parent = deleteButton.Parent;
+                            if (parent != null)
                             {
-                                // Remove o painel inteiro
-                                Control parent = deleteButton.Parent;
-                                if (parent != null)
-                                {
-                                    parent.Parent.Controls.Remove(parent);
-                                }
-
-                                // Exibe um MessageBox para indicar que a exclusão foi bem-sucedida
-                                MessageBox.Show("Registro excluído com sucesso!");
+                                parent.Parent.Controls.Remove(parent);
                             }
 
-                        };
-                        compareButton.Click += (s, eventArgs) =>
-                        {
-                            // Aqui você pode acessar o índice do botão e realizar a exclusão do registro correspondente
-                            int buttonIndex = int.Parse(compareButton.Name.Split('_')[1]);
-                            // Use o buttonIndex para realizar a exclusão do registro
-                        };
+                            pnlArquivos.Controls.Clear(); // Limpa os controles existentes
+                            UC_HistoricoArquivos_Load(s, eventArgs);
+                            // Exibe um MessageBox para indicar que a exclusão foi bem-sucedida
+                            MessageBox.Show("Registro excluído com sucesso!");
+                        }
 
-                        // Adicione os Labels ao Panel
-                        panel.Controls.Add(labelNome);
-                        panel.Controls.Add(labelData);
+                    };
+                    compareButton.Click += (s, eventArgs) =>
+                    {
+                        // Aqui você pode acessar o índice do botão e realizar a exclusão do registro correspondente
+                        int buttonIndex = int.Parse(compareButton.Name.Split('_')[1]);
+                        // Use o buttonIndex para realizar a exclusão do registro
+                    };
 
-                        panel.Controls.Add(labelTipo);
-                        panel.Controls.Add(compareButton);
-                        panel.Controls.Add(deleteButton);
+                    // Adicione os Labels ao Panel
+                    panel.Controls.Add(labelNome);
+                    panel.Controls.Add(labelData);
 
-                        // Adicione o Panel ao seu formulário
-                        pnlArquivos.Controls.Add(panel);
-                        
+                    panel.Controls.Add(labelTipo);
+                    panel.Controls.Add(compareButton);
+                    panel.Controls.Add(deleteButton);
 
-                        
-                    }
+                    // Adicione o Panel ao seu formulário
+                    pnlArquivos.Controls.Add(panel);
+
                 }
             }
         }
-       
+
+        
+
 
         private void btnNextPage_Click(object sender, EventArgs e)
         {
