@@ -219,10 +219,6 @@ namespace estatisticaTechData
                 pnlArquivos.Controls.Clear(); // Limpa os controles existentes
                 UC_HistoricoArquivos_Load(sender, e); // Recarrega os registros para a nova página
             }
-            else
-            {
-                btnNextPage.Enabled = false;
-            }
         }
 
         private void btnPrevPage_Click(object sender, EventArgs e)
