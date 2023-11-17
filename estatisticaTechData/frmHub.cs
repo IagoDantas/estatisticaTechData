@@ -76,9 +76,9 @@ namespace estatisticaTechData
                     Tbc_Telas.TabPages.Add(TbPage);
                     Tbc_Telas.SelectedTab = TbPage;
                     ControleBackgroundDist += 1;
-                }catch
+                }catch (Exception ex)
                 {
-                    throw new Exception("Erro ao carregar excel");
+                    throw ex;
                 }
             }
         }
@@ -86,8 +86,8 @@ namespace estatisticaTechData
         {
             if (ControleBackgroundAtributo == 0)
             {
-                ControleBackgroundAtributo += 1;
                 UC_BackgroundAtributos Teste = new UC_BackgroundAtributos();
+                ControleBackgroundAtributo += 1;
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "BackgroundAtributo";
@@ -101,8 +101,8 @@ namespace estatisticaTechData
         {
             if (ControleBackgroundVariavel == 0)
             {
-                ControleBackgroundVariavel += 1;
                 UC_BackgroundVariaveis Teste = new UC_BackgroundVariaveis();
+                ControleBackgroundVariavel += 1;
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "BackgroundVariavel";
@@ -116,8 +116,8 @@ namespace estatisticaTechData
         {
             if (ControleCEPVariavel == 0)
             {
-                ControleCEPVariavel += 1;
                 UC_controlVariaveis Teste = new UC_controlVariaveis();
+                ControleCEPVariavel += 1;
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "ControleDeVariaveis";
@@ -138,8 +138,8 @@ namespace estatisticaTechData
         {
             if (ControleCEPAtributo == 0)
             {
-                ControleCEPAtributo += 1;
                 UC_controlAtributos Teste = new UC_controlAtributos();
+                ControleCEPAtributo += 1;
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "ControleDeAtributos";
@@ -200,8 +200,8 @@ namespace estatisticaTechData
         {
             if (ControleHistoricoArquivoDistNormal == 0)
             {
-                ControleHistoricoArquivoDistNormal += 1;
                 UC_HistoricoArquivos HistArquivos = new UC_HistoricoArquivos();
+                ControleHistoricoArquivoDistNormal += 1;
                 HistArquivos.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "HistArquivos";
@@ -264,8 +264,8 @@ namespace estatisticaTechData
                 abrirBackgroundDist();
                 if(ControleDistribuicaoNormal == 0)
                 {
-                    ControleDistribuicaoNormal += 1;
                     Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
+                    ControleDistribuicaoNormal += 1;
                     DistNormal.Dock = DockStyle.Fill;
                     TabPage TbPage = new TabPage();
                     TbPage.Name = "DistribuicaoNormal";
@@ -305,7 +305,14 @@ namespace estatisticaTechData
                 btnConfig.Enabled = true;
             } catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if(ex.Message == "fechou")
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

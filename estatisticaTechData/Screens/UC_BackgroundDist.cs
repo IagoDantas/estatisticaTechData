@@ -39,9 +39,9 @@ namespace estatisticaTechData.Screens
             try
             {
                 dt = OpenExcel();
-            } catch
+            } catch (Exception ex)
             {
-                throw new Exception("Arquivo inválido");
+                throw ex;
             }
             InitializeComponent();
         }
@@ -305,7 +305,7 @@ namespace estatisticaTechData.Screens
                     }
                     else
                     {
-                        throw new Exception();
+                        throw new Exception("fechou");
                     }
                 }
             }
