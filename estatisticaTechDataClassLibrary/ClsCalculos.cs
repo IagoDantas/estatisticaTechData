@@ -169,32 +169,23 @@ namespace estatisticaTechDataClassLibrary
 
             int meio = N / 2;
 
-            arrQuartis[1] = CalcularMediana(arrExcel, N); // Q2
-
-            if (N % 2 == 0)
-            {
-                double[] arrQ1 = arrExcel.Take(meio).ToArray();
-                double[] arrQ3 = arrExcel.Skip(meio).ToArray();
-
-                arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length); // Q1
-                arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length); // Q3
-            }
-            else
-            {
-                double[] arrQ1 = arrExcel.Take(meio).ToArray();
-                double[] arrQ3 = arrExcel.Skip(meio+1).ToArray();
-
-                arrQuartis[0] = CalcularMediana(arrQ1, arrQ1.Length); // Q1
-                arrQuartis[2] = CalcularMediana(arrQ3, arrQ3.Length); // Q3
-            }
-
-            Console.WriteLine($"Q1: {arrQuartis[0]}, Q2: {arrQuartis[1]}, Q3: {arrQuartis[2]}");
+            arrQuartis[0] = CalcQuartil(arrExcel, 1);
+            arrQuartis[1] = CalcQuartil(arrExcel, 2);
+            arrQuartis[2] = CalcQuartil(arrExcel, 3);
 
             return arrQuartis;
         }
 
-
-
+        public static double CalcQuartil(double[] arr, int N)
+        {
+            double quartil ;
+            double pos = (N / 4.0) * ((double)arr.Length + 1.0);
+            double pontoInferior = arr[(int)Math.Floor(pos) - 1];
+            double pontoSuperior = arr[(int)Math.Ceiling(pos) - 1];
+            double d = pos - Math.Truncate(pos);
+            quartil = pontoInferior + (d * (pontoSuperior - pontoInferior));
+            return quartil;
+        }
 
 
         public static double[] CalcularPercentis(double[] arrExcel)
@@ -203,43 +194,48 @@ namespace estatisticaTechDataClassLibrary
 
             Array.Sort(arrExcel);
 
-            for (int i = 0; i < 100; i++)
+            for(int i = 0; i < 100; i++)
             {
-                double percentil = 0;
-                double posicao = (i * (arrExcel.Length + 1)) / 100;
-                int parteInteira = (int)Math.Floor(posicao);
-
-                if (posicao == parteInteira)
-                {
-                    if(posicao >= arrExcel.Length)
-                    {
-                        percentil = arrExcel[arrExcel.Length-1];
-                    }
-                    else
-                    {
-                        percentil = arrExcel[parteInteira];
-                    }
-                }
-                else
-                {
-                    int indiceInferior = (int)Math.Floor(posicao);
-                    int indiceSuperior = (int)Math.Ceiling(posicao);
-                    double d = posicao - Math.Truncate(posicao);
-                    percentil = ((1 - d) * arrExcel[indiceInferior]) + (d * arrExcel[indiceSuperior]);
-                }
-
-                arrPercentil[i] = percentil;
+                arrPercentil[i] = CalcPercentil(arrExcel, i + 1);
             }
-
-            Console.WriteLine($"P25: {arrPercentil[24]}, P50: {arrPercentil[49]}, P75: {arrPercentil[74]}");
 
             return arrPercentil;
         }
 
+        public static double CalcPercentil(double[] arr, int N)
+        {
+            double percentil;
+            double pos = (N * ((double)arr.Length + 1.0)) / 100.0;
+            double pontoInferior;
+            if (pos > 1)
+            {
+                if(N == 100)
+                {
+                    pontoInferior = arr[(int)Math.Floor(pos) - ((int)Math.Floor(pos) - (arr.Length - 1))];
+                }
+                else
+                {
+                    pontoInferior = arr[(int)Math.Floor(pos) - 1];
+                }
+            }
+            else
+            {
+                pontoInferior = arr[(int)Math.Floor(pos)];
 
-
-
-
+            }
+            double pontoSuperior;
+            if (pos < arr.Length)
+            {
+                pontoSuperior = arr[(int)Math.Ceiling(pos) - 1];
+            }
+            else
+            {
+                pontoSuperior = arr[arr.Length - 1];
+            }
+            double d = pos - Math.Truncate(pos);
+            percentil = pontoInferior + (d * (pontoSuperior - pontoInferior));
+            return percentil;
+        }
 
 
         public static double CalcularDesvioPadrao(double[] arrExcel)
