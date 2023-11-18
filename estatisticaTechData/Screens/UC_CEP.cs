@@ -21,12 +21,40 @@ namespace estatisticaTechData.Screens
         {
             if (rdbVariaveis.Checked)
             {
-                frmHub.funEstancia.abrirBackgroundVariaveis();
-                frmHub.funEstancia.abrirCEPVariavel();
-            }else if (rdbAtributos.Checked)
+                try
+                {
+                    frmHub.funEstancia.abrirBackgroundVariaveis();
+                    frmHub.funEstancia.abrirCEPVariavel();
+                } catch (Exception ex)
+                {
+                    if(ex.Message == "fechou")
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao abrir arquivo excel", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+            }
+            else if (rdbAtributos.Checked)
             {
-                frmHub.funEstancia.abrirBackgroundAtributos();
-                frmHub.funEstancia.abrirCEPAtributo();
+                try
+                {
+                    frmHub.funEstancia.abrirBackgroundAtributos();
+                    frmHub.funEstancia.abrirCEPAtributo();
+                } catch (Exception ex)
+                {
+                    if(ex.Message == "fechou")
+                    {
+
+                    } 
+                    else
+                    {
+                        MessageBox.Show("Erro ao abrir arquivo excel", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
