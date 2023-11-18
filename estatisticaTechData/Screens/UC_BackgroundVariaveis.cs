@@ -38,7 +38,8 @@ namespace estatisticaTechData.Screens
             conexao = new estatisticaTechDataClassLibrary.Connection();
             try
             {
-                dt = OpenExcel();
+                carregaInformacoes();
+                dt = Cls_Utils.OpenExcel(conexao, 2, email, senha);
             } catch (Exception ex)
             {
                 throw ex;
@@ -168,108 +169,6 @@ namespace estatisticaTechData.Screens
             }
         }
 
-        private DataTable OpenExcel()
-        {
-            try
-            {
-                carregaInformacoes();
-                DataTable dtp = new DataTable();
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
-                {
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
-                        using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
-                        {
-                            bool isFirstRow = true;
-                            var rows = workbook.Worksheet(1).RowsUsed();
-                            foreach (var row in rows)
-                            {
-                                if (isFirstRow)
-                                {
-                                    foreach (IXLCell cell in row.Cells())
-                                    {
-                                        dtp.Columns.Add(cell.Value.ToString());
-                                    }
-                                    isFirstRow = false;
-                                }
-                                else
-                                {
-                                    dtp.Rows.Add();
-                                    int i = 0;
-                                    foreach (IXLCell cell in row.Cells())
-                                    {
-                                        dtp.Rows[dtp.Rows.Count - 1][i++] = cell.Value.ToString();
-                                    }
-                                }
-                            }
-
-                            byte[] excelData;
-                            using (MemoryStream ms = new MemoryStream())
-                            {
-                                workbook.SaveAs(ms);
-                                excelData = ms.ToArray();
-                            }
-
-                            string json = JsonConvert.SerializeObject(dtp, Formatting.Indented);
-
-                            string[] columns2 = { "id" };
-                            string where2 = $"email='{email}' AND password='{senha}'";
-                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
-
-                            if (result2[0].Count > 0)
-                            {
-                                userId = int.Parse(result2[0][0].ToString());
-
-                                Dictionary<string, string> dataCharge = new Dictionary<string, string>();
-                                dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                                dataCharge.Add("file", Convert.ToBase64String(excelData));
-                                dataCharge.Add("user_id", userId.ToString());
-                                dataCharge.Add("status", "A");
-                                dataCharge.Add("data", json);
-
-
-                                if (conexao.InsertData("charge", dataCharge) == true)
-                                {
-
-                                    chargeId = conexao.GetLastInsertedId();
-                                    Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
-                                    dataTableMaster.Add("status", "A");
-                                    dataTableMaster.Add("data", json);
-                                    dataTableMaster.Add("user_id", userId.ToString());
-                                    dataTableMaster.Add("type_count_id", "2");
-                                    dataTableMaster.Add("charge_id", chargeId.ToString());
-
-                                    if (conexao.InsertData("table_master", dataTableMaster) != true)
-                                    {
-                                        MessageBox.Show("Falha ao salvar os dados no banco");
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Erro ao adicionar o arquivo.");
-                                }
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("Erro ao obter o ID do usuário");
-                            }
-                            Cursor.Current = Cursors.Default;
-                            return dtp;
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("fechou");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         private void btnPercentis_Click(object sender, EventArgs e)
         {
