@@ -73,7 +73,7 @@ namespace estatisticaTechData
                                 }
                             }
                             dgvTeste.DataSource = dt.DefaultView;
-
+                            /*
                             byte[] excelData;
                             using (MemoryStream ms = new MemoryStream())
                             {
@@ -126,7 +126,7 @@ namespace estatisticaTechData
                             {
                                 MessageBox.Show("Erro ao obter o ID do usuário");
                             }
-                            Cursor.Current = Cursors.Default;
+                            Cursor.Current = Cursors.Default;*/
                         }
                     }
                     else

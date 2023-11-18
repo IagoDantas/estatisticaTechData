@@ -13,30 +13,27 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_controlCompara : UserControl
     {
-        double[,] matriz;
-        double row;
-        double mediaD;
-        double desvioPadrao;
-        double desvio = UC_BackgroundVariaveis.funEstancia.desvioPadrao,
-            lsc = UC_BackgroundVariaveis.funEstancia.media + 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
-            lic = UC_BackgroundVariaveis.funEstancia.media - 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
-            media = UC_BackgroundVariaveis.funEstancia.media;
-
         public UC_controlCompara(string id)
         {
-            InitializeComponent();
-            matriz = UC_BackgroundCompara.funEstancia.matrizExcel;
-            row = matriz.GetLength(0);
+            InitializeComponent();  
         }
         private void UC_controlCompara_Load(object sender, EventArgs e)
         {
-            CalcMedia();
-            CalcDesvioPadrao();
-            GraficoC(zedInicial1);
-            GraficoP(zedCompara1);
+            double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
+            double rowNew = matrizNew.GetLength(0);
+            double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
+            double[] mediasNew = UC_BackgroundCompara.funEstancia.mediasIniciais;
+            double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
+
+            GraficoC(zedCompara1, matrizNew, rowNew);
+            GraficoP(zedCompara2, matrizNew, rowNew);
+            GraficoControle(zedCompara3, arrayNew);
+            GraficoMedia(zedCompara4, mediasNew);
+            GraficoAmplitude(zedCompara5, amplitudesNew);
+            GraficoDist(zedCompara6, arrayNew);
         }
 
-        private void GraficoC(ZedGraphControl zedGraph)
+        private void GraficoC(ZedGraphControl zedGraph, double[,] matriz, double row)
         {
             // Configurar o objeto GraphPane para o gráfico C
             GraphPane cGraphPane = zedGraph.GraphPane;
@@ -99,13 +96,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                cGraphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
-                cGraphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+                cGraphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
+                cGraphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
             }
             else
             {
-                cGraphPane.YAxis.Scale.Min = lic - 0.1;
-                cGraphPane.YAxis.Scale.Max = lsc + 0.1;
+                cGraphPane.YAxis.Scale.Min = lic - 0.01;
+                cGraphPane.YAxis.Scale.Max = lsc + 0.01;
             }
             cGraphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -118,7 +115,7 @@ namespace estatisticaTechData.Screens
             zedGraph.AxisChange();
             zedGraph.Invalidate();
         }
-        private void GraficoP(ZedGraphControl zedGraph)
+        private void GraficoP(ZedGraphControl zedGraph, double[,] matriz, double row)
         {
             // Configurar o objeto GraphPane para o gráfico P
             GraphPane pGraphPane = zedGraph.GraphPane;
@@ -182,13 +179,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                pGraphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
-                pGraphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+                pGraphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
+                pGraphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
             }
             else
             {
-                pGraphPane.YAxis.Scale.Min = lic - 0.1;
-                pGraphPane.YAxis.Scale.Max = lsc + 0.1;
+                pGraphPane.YAxis.Scale.Min = lic - 0.01;
+                pGraphPane.YAxis.Scale.Max = lsc + 0.01;
             }
             pGraphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -199,7 +196,7 @@ namespace estatisticaTechData.Screens
             zedGraph.AxisChange();
             zedGraph.Invalidate();
         }
-        private void GraficoControle(double[] arrayTeste, ZedGraphControl zedGraph)
+        private void GraficoControle(ZedGraphControl zedGraph, double[] arrayTeste)
         {
             // Configurar o objeto GraphPane para o gráfico Individual (I)
             GraphPane graphPane = zedGraph.GraphPane;
@@ -212,7 +209,8 @@ namespace estatisticaTechData.Screens
             PointPairList pointsMedia = new PointPairList();
             List<double> data = new List<double>();
             data.AddRange(arrayTeste);
-            double media = UC_BackgroundVariaveis.funEstancia.media;
+            double media = data.Average();
+            double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
             double yMin = 0, yMax = 0;
             for (int i = 0; i < data.Count; i++)
             {
@@ -230,6 +228,10 @@ namespace estatisticaTechData.Screens
                         yMin = data[i];
                 }
             }
+
+
+            double lsc = media + 3 * desvioPadrao;
+            double lic = media + 3 * desvioPadrao;
 
             LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count - 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
@@ -257,13 +259,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
-                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
+                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
             }
             else
             {
-                graphPane.YAxis.Scale.Min = lic - 0.1;
-                graphPane.YAxis.Scale.Max = lsc + 0.1;
+                graphPane.YAxis.Scale.Min = lic - 0.01;
+                graphPane.YAxis.Scale.Max = lsc + 0.01;
             }
 
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
@@ -276,7 +278,7 @@ namespace estatisticaTechData.Screens
             zedGraph.AxisChange();
             zedGraph.Invalidate();
         }
-        private void GraficoMedia(double[] medias, ZedGraphControl zedGraph)
+        private void GraficoMedia(ZedGraphControl zedGraph, double[] medias)
         {
             // Configurar o objeto GraphPane para o gráfico X-barra
             GraphPane graphPane = zedGraph.GraphPane;
@@ -324,13 +326,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
-                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
+                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
             }
             else
             {
-                graphPane.YAxis.Scale.Min = lic - 0.1;
-                graphPane.YAxis.Scale.Max = lsc + 0.1;
+                graphPane.YAxis.Scale.Min = lic - 0.01;
+                graphPane.YAxis.Scale.Max = lsc + 0.01;
             }
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -341,7 +343,7 @@ namespace estatisticaTechData.Screens
             zedGraph.AxisChange();
             zedGraph.Invalidate();
         }
-        private void GraficoAmplitude(double[] amplitudes, ZedGraphControl zedGraph)
+        private void GraficoAmplitude(ZedGraphControl zedGraph, double[] amplitudes)
         {
             // Configurar o objeto GraphPane para o gráfico de Amplitude (R)
             GraphPane graphPaneR = zedGraph.GraphPane;
@@ -385,13 +387,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                graphPaneR.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
-                graphPaneR.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
+                graphPaneR.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
+                graphPaneR.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
             }
             else
             {
-                graphPaneR.YAxis.Scale.Min = lic - 0.1;
-                graphPaneR.YAxis.Scale.Max = lsc + 0.1;
+                graphPaneR.YAxis.Scale.Min = lic - 0.01;
+                graphPaneR.YAxis.Scale.Max = lsc + 0.01;
             }
             graphPaneR.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -404,7 +406,7 @@ namespace estatisticaTechData.Screens
             zedGraph.AxisChange();
             zedGraph.Invalidate();
         }
-        private void GraficoDist(ZedGraphControl zedGraph)
+        private void GraficoDist(ZedGraphControl zedGraph, double[] arrayTeste)
         {
             try
             {
@@ -414,10 +416,10 @@ namespace estatisticaTechData.Screens
                 graphPane.XAxis.Title.Text = "Valores da Amostra";
                 graphPane.YAxis.Title.Text = "Densidade de Probabilidade";
 
-                if (UC_BackgroundDist.funEstancia.arrayExcel != null)
+                if (arrayTeste != null)
                 {
                     List<double> data = new List<double>();
-                    data.AddRange(UC_BackgroundDist.funEstancia.arrayExcel);
+                    data.AddRange(arrayTeste);
                     double media = data.Average();
                     double desvioPadrao = Math.Sqrt(data.Select(x => Math.Pow(x - media, 2)).Average());
 
@@ -471,8 +473,19 @@ namespace estatisticaTechData.Screens
 
                     graphPane.XAxis.MajorGrid.IsVisible = true;
                     graphPane.YAxis.MajorGrid.IsVisible = true;
-                    graphPane.XAxis.Scale.Min = xMin - 2;
-                    graphPane.XAxis.Scale.Max = xMax + 2;
+                    if (xMax > lsc || xMin < lic)
+                    {
+                        double diffMax, diffMin;
+                        diffMax = xMax - lsc;
+                        diffMin = lic - xMin;
+                        graphPane.XAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
+                        graphPane.XAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
+                    }
+                    else
+                    {
+                        graphPane.XAxis.Scale.Min = lic - 0.01;
+                        graphPane.XAxis.Scale.Max = lsc + 0.01;
+                    }
                     graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
                     graphPane.YAxis.Scale.Min = yMin - 0.01;
                     graphPane.YAxis.Scale.Max = yMax + 0.01;
@@ -505,27 +518,6 @@ namespace estatisticaTechData.Screens
             }
 
 
-        }
-        private void CalcMedia()
-        {
-            mediaD = 0;
-            for (int i = 0; i < row; i++)
-            {
-                mediaD += matriz[i, 0];
-            }
-            mediaD /= row;
-        }
-        private void CalcDesvioPadrao()
-        {
-            double somaQuadrados = 0;
-            for (int i = 0; i < row; i++)
-            {
-                double valor = matriz[i, 0];
-                somaQuadrados += Math.Pow(valor - mediaD, 2);
-            }
-
-            double variancia = somaQuadrados / (row - 1); // Usamos (row - 1) para calcular a variância corrigida
-            desvioPadrao = Math.Sqrt(variancia);
         }
     }
 }
