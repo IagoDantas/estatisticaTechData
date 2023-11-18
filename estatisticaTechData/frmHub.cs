@@ -27,6 +27,7 @@ namespace estatisticaTechData
         int ControleCEPVariavel = 0;
         int ControleCEPAtributo = 0;
         int ControleInicio = 0;
+        int ControleBackgroundCompara = 0;
         public string emailUser;
 
         public frmHub(string email)
@@ -157,43 +158,67 @@ namespace estatisticaTechData
 
         }
 
-        public void abrirCompara()
+        public void abrirBackgroundCompara()
         {
-            if (ControleCompara == 0)
+            if (ControleBackgroundCompara == 0)
             {
-                ControleCompara += 1;
-                UC_DistribuicaoNormalComparacao compara = new UC_DistribuicaoNormalComparacao();
-                compara.Dock = DockStyle.Fill;
+                ControleBackgroundCompara += 1;
+                UC_BackgroundCompara Teste = new UC_BackgroundCompara();
+                Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
-                TbPage.Name = "ComparacaoDistribuicaoNormal";
-                TbPage.Text = "Comparacao Distribuição Normal";
-                TbPage.Controls.Add(compara);
+                TbPage.Name = "BackgroundCompara";
+                TbPage.Text = "Background";
+                TbPage.Controls.Add(Teste);
                 Tbc_Telas.TabPages.Add(TbPage);
                 Tbc_Telas.SelectedTab = TbPage;
             }
-            else
+        }
+
+        public void abrirCompara(string id)
+        {
+            try
             {
-                guia("ComparacaoDistribuicaoNormal");
-                MessageBox.Show("Já existem abas de comparação abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                abrirBackgroundCompara();
+                if (ControleCompara == 0)
+                {
+                    ControleCompara += 1;
+                    UC_controlCompara compara = new UC_controlCompara(id);
+                    compara.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "ComparacaoGraficos";
+                    TbPage.Text = "Comparacao Graficos";
+                    TbPage.Controls.Add(compara);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                }
+                else
+                {
+                    guia("Comparacao");
+                    MessageBox.Show("Já existem abas de comparação abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+                btnConfig.ForeColor = Color.White;
+
+                btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
+                btnDistribuicao.ForeColor = Color.Black;
+
+
+                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+                btnInicio.ForeColor = Color.White;
+
+                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+                btnHistorico.ForeColor = Color.White;
+
+                btnDistribuicao.Enabled = false;
+                btnInicio.Enabled = true;
+
+                btnHistorico.Enabled = true;
             }
-
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-
-            btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-            btnDistribuicao.ForeColor = Color.Black;
-
-
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-
-            btnDistribuicao.Enabled = false;
-            btnInicio.Enabled = true;
-
-            btnHistorico.Enabled = true;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnHistorico_Click(object sender, EventArgs e)
@@ -406,9 +431,9 @@ namespace estatisticaTechData
             int confereAba(TabPage Tb)
             {
                 int var = 0;
-                if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal")
+                if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal" || Tb.Name == "ComparacaoGraficos")
                     var = 1;
-                if(Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel")
+                if(Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel" || Tb.Name == "BackgroundComparacao")
                     var = 2;
                 return var;
             }

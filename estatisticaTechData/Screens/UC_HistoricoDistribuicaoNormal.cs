@@ -26,11 +26,6 @@ namespace estatisticaTechData
             btnVisualizar.Visible = true;
         }
 
-        private void btnCompara_Click(object sender, EventArgs e)
-        {
-            frmHub.funEstancia.abrirCompara();
-        }
-
         private void btnShow_Click(object sender, EventArgs e)
         {
             btnDelete.Visible = true;

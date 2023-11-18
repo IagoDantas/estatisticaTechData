@@ -163,7 +163,6 @@
             this.btnCompara.TextColor = System.Drawing.Color.White;
             this.btnCompara.UseVisualStyleBackColor = false;
             this.btnCompara.Visible = false;
-            this.btnCompara.Click += new System.EventHandler(this.btnCompara_Click);
             // 
             // btnEdit
             // 

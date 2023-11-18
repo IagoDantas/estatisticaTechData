@@ -195,9 +195,7 @@ namespace estatisticaTechData
                     };
                     compareButton.Click += (s, eventArgs) =>
                     {
-                        // Aqui você pode acessar o índice do botão e realizar a exclusão do registro correspondente
-                        int buttonIndex = int.Parse(compareButton.Name.Split('_')[1]);
-                        // Use o buttonIndex para realizar a exclusão do registro
+                        frmHub.funEstancia.abrirCompara("1");
                     };
 
                     // Adicione os Labels ao Panel

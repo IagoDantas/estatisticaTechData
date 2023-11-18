@@ -345,6 +345,9 @@
     <EmbeddedResource Include="Screens\UC_controlAtributos.resx">
       <DependentUpon>UC_controlAtributos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\UC_controlCompara.resx">
+      <DependentUpon>UC_controlCompara.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\UC_controlVariaveis.resx">
       <DependentUpon>UC_controlVariaveis.cs</DependentUpon>
     </EmbeddedResource>
