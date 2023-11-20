@@ -12,6 +12,7 @@ using estatisticaTechDataClassLibrary;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Newtonsoft.Json;
 using System.IO;
+using Newtonsoft.Json.Linq;
 
 namespace estatisticaTechData.Screens
 {
@@ -28,24 +29,105 @@ namespace estatisticaTechData.Screens
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao, IQR;
         private int userId;
+        private string jsonString;
         private int chargeId;
         private estatisticaTechDataClassLibrary.Connection conexao;
         DataTable dt;
 
-        public UC_BackgroundDist()
+        public UC_BackgroundDist(int chargeId)
         {
-            funEstancia = this;
-            conexao = new estatisticaTechDataClassLibrary.Connection();
             try
             {
+                funEstancia = this;
+                conexao = new estatisticaTechDataClassLibrary.Connection();
+                this.chargeId = chargeId;
+                carregaInformacoes();
+                PegaJson();
+                dt = ConvertJsonToDataTable(jsonString);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            InitializeComponent();
+        }
+        public UC_BackgroundDist() // Chama o construtor com parâmetro e passa 0 como chargeId padrão
+        {
+            try
+            {
+                funEstancia = this;
+                conexao = new estatisticaTechDataClassLibrary.Connection();
                 carregaInformacoes();
                 dt = Cls_Utils.OpenExcel(conexao, 3, email, senha);
-            } catch (Exception ex)
+
+                // Restante do seu código...
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
             InitializeComponent();
+
         }
+
+        public static DataTable ConvertJsonToDataTable(string jsonString)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Converta o JSON para um objeto JArray
+            JArray jsonArray = JArray.Parse(jsonString);
+
+            // Crie colunas para a DataTable usando as chaves do primeiro objeto no array
+            foreach (JToken token in jsonArray[0])
+            {
+                dataTable.Columns.Add(((JProperty)token).Name, typeof(string));
+            }
+
+            // Adicione as linhas à DataTable
+            foreach (JObject jsonObject in jsonArray)
+            {
+                DataRow row = dataTable.NewRow();
+                foreach (JProperty property in jsonObject.Properties())
+                {
+                    row[property.Name] = property.Value.ToString();
+                }
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
+
+        private void PegaJson()
+        {
+            try
+            {
+                if(chargeId == 0)
+                {
+                    MessageBox.Show("Erro" ,"Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string[] columns = { "data" };
+                    string where = $"id='{chargeId}'";
+                    List<string>[] result = conexao.SelectData("charge", columns, where);
+
+                    if (result[0].Count > 0)
+                    {
+                        jsonString = result[0][0].ToString();
+                    }
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
         private void UC_BackgroundDist_Load(object sender, EventArgs e)
         {

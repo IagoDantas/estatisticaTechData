@@ -140,6 +140,24 @@ namespace estatisticaTechData
                     compareButton.TextColor = Color.White;
                     compareButton.UseVisualStyleBackColor = false;
 
+                    techDataButton visualizarButton = new techDataButton();
+                    visualizarButton.BackColor = Color.FromArgb(0, 107, 117);
+                    visualizarButton.BackgroundColor = Color.FromArgb(0, 107, 117);
+                    visualizarButton.BorderColor = Color.PaleVioletRed;
+                    visualizarButton.BorderRadius = 50;
+                    visualizarButton.BorderSize = 0;
+                    visualizarButton.FlatAppearance.BorderSize = 0;
+                    visualizarButton.FlatStyle = FlatStyle.Flat;
+                    visualizarButton.Font = new Font("Poppins", 10, FontStyle.Bold);
+                    visualizarButton.ForeColor = Color.White;
+                    visualizarButton.Location = new Point(compareButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                    visualizarButton.Name = $"btnVisualizar_{i}"; // Nome único para o botão
+                    visualizarButton.Size = new Size(105, 47);
+                    visualizarButton.TabIndex = 15;
+                    visualizarButton.Text = "Visualizar";
+                    visualizarButton.TextColor = Color.White;
+                    visualizarButton.UseVisualStyleBackColor = false;
+
                     techDataButton deleteButton = new techDataButton();
                     deleteButton.BackColor = Color.FromArgb(0, 107, 117);
                     deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
@@ -150,7 +168,7 @@ namespace estatisticaTechData
                     deleteButton.FlatStyle = FlatStyle.Flat;
                     deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
                     deleteButton.ForeColor = Color.White;
-                    deleteButton.Location = new Point(compareButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                    deleteButton.Location = new Point(visualizarButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
                     deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
                     deleteButton.Size = new Size(105, 47);
                     deleteButton.TabIndex = 15;
@@ -199,6 +217,11 @@ namespace estatisticaTechData
                         frmHub.funEstancia.abrirCompara(id);
                     };
 
+                    visualizarButton.Click += (s, eventArgs) =>
+                    {
+                        frmHub.funEstancia.visualizarGraficoHistorico(tableMasterTypeCountId, chargeId);
+                    };
+
                     // Adicione os Labels ao Panel
                     panel.Controls.Add(labelNome);
                     panel.Controls.Add(labelData);
@@ -206,6 +229,7 @@ namespace estatisticaTechData
                     panel.Controls.Add(labelTipo);
                     panel.Controls.Add(compareButton);
                     panel.Controls.Add(deleteButton);
+                    panel.Controls.Add(visualizarButton);
 
                     // Adicione o Panel ao seu formulário
                     pnlArquivos.Controls.Add(panel);

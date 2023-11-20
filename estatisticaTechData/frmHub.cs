@@ -174,6 +174,136 @@ namespace estatisticaTechData
             }
         }
 
+        public void visualizarGraficoHistorico(int typeCountId, int chargeId)
+        {
+            try
+            {
+                switch (typeCountId)
+                {
+                    case 1:
+                        abrirBackgroundAtributos(chargeId);
+                        break;
+
+                    case 2:
+                        abrirBackgroundVariaveis(chargeId);
+                        break;
+
+                    case 3:
+                        abrirDistNormal(chargeId);
+                        break;
+
+                    default:
+                        MessageBox.Show("Type Count ID não corresponde a nenhum caso específico");
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void abrirBackgroundAtributos(int chargeId)
+        {
+           /* // Implemente o código específico para abrirBackgroundAtributos com base no chargeId
+            // Use o parâmetro chargeId conforme necessário
+            // Exemplo:
+            UC_BackgroundAtributos backgroundAtributos = new UC_BackgroundAtributos(chargeId);
+            // Faça algo com o backgroundAtributos, como exibição na tela*/
+        }
+
+        private void abrirBackgroundVariaveis(int chargeId)
+        {
+            // Implemente o código específico para abrirBackgroundVariaveis com base no chargeId
+            // Use o parâmetro chargeId conforme necessário
+            // Exemplo:
+            /*UC_BackgroundVariaveis backgroundVariaveis = new UC_BackgroundVariaveis(chargeId);*/
+            // Faça algo com o backgroundVariaveis, como exibição na tela
+        }
+
+        private void abrirBackgroundDist(int chargeId)
+        {
+            if (ControleBackgroundDist == 0)
+            {
+                try
+                {
+                    UC_BackgroundDist Teste = new UC_BackgroundDist(chargeId);
+                    Teste.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "BackgroundDist";
+                    TbPage.Text = "Background";
+                    TbPage.Controls.Add(Teste);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                    ControleBackgroundDist += 1;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+        }
+
+        private void abrirDistNormal(int chargeId)
+        {
+            try
+            {
+                abrirBackgroundDist(chargeId);
+                if (ControleDistribuicaoNormal == 0)
+                {
+                    Screens.UC_DistribuicaoNormal DistNormal = new Screens.UC_DistribuicaoNormal();
+                    ControleDistribuicaoNormal += 1;
+                    DistNormal.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "DistribuicaoNormal";
+                    TbPage.Text = "Distribuição Normal";
+                    TbPage.Controls.Add(DistNormal);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                }
+                else
+                {
+                    guia("DistribuicaoNormal");
+                    MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+                btnConfig.ForeColor = Color.White;
+
+                btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
+                btnDistribuicao.ForeColor = Color.Black;
+
+
+                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+                btnInicio.ForeColor = Color.White;
+
+                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+                btnHistorico.ForeColor = Color.White;
+
+                btnCEP.BackColor = Color.FromArgb(0, 107, 117);
+                btnCEP.ForeColor = Color.White;
+
+
+                btnDistribuicao.Enabled = false;
+                btnHistorico.Enabled = true;
+                btnInicio.Enabled = true;
+
+                btnCEP.Enabled = true;
+                btnConfig.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "fechou")
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+
         public void abrirCompara(int id)
         {
             try
@@ -660,6 +790,10 @@ namespace estatisticaTechData
                 Tbc_Telas.SelectedTab = guiaDesejada;
             }
         }
+
+
+
+
 
         private void frmHub_Load(object sender, EventArgs e)
         {
