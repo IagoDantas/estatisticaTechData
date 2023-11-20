@@ -34,20 +34,21 @@ namespace estatisticaTechData.Screens
             this.pnlGraficos = new System.Windows.Forms.Panel();
             this.zedInicial1 = new ZedGraph.ZedGraphControl();
             this.pnlEscolhas = new System.Windows.Forms.Panel();
-            this.rdbGraphC = new estatisticaTechData.Resources.techDataRadioButton();
             this.pnlCompara = new System.Windows.Forms.Panel();
+            this.zedCompara6 = new ZedGraph.ZedGraphControl();
+            this.zedCompara5 = new ZedGraph.ZedGraphControl();
+            this.zedCompara4 = new ZedGraph.ZedGraphControl();
+            this.zedCompara3 = new ZedGraph.ZedGraphControl();
+            this.zedCompara2 = new ZedGraph.ZedGraphControl();
             this.zedCompara1 = new ZedGraph.ZedGraphControl();
             this.pnlEscolhas2 = new System.Windows.Forms.Panel();
-            this.techDataRadioButton2 = new estatisticaTechData.Resources.techDataRadioButton();
-            this.zedCompara2 = new ZedGraph.ZedGraphControl();
-            this.zedCompara3 = new ZedGraph.ZedGraphControl();
-            this.zedCompara4 = new ZedGraph.ZedGraphControl();
-            this.zedCompara5 = new ZedGraph.ZedGraphControl();
-            this.zedCompara6 = new ZedGraph.ZedGraphControl();
+            this.zedInicial2 = new ZedGraph.ZedGraphControl();
+            this.zedInicial3 = new ZedGraph.ZedGraphControl();
+            this.zedInicial4 = new ZedGraph.ZedGraphControl();
+            this.zedInicial5 = new ZedGraph.ZedGraphControl();
+            this.zedInicial6 = new ZedGraph.ZedGraphControl();
             this.pnlGraficos.SuspendLayout();
-            this.pnlEscolhas.SuspendLayout();
             this.pnlCompara.SuspendLayout();
-            this.pnlEscolhas2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -68,6 +69,11 @@ namespace estatisticaTechData.Screens
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlGraficos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.pnlGraficos.Controls.Add(this.zedInicial6);
+            this.pnlGraficos.Controls.Add(this.zedInicial5);
+            this.pnlGraficos.Controls.Add(this.zedInicial4);
+            this.pnlGraficos.Controls.Add(this.zedInicial3);
+            this.pnlGraficos.Controls.Add(this.zedInicial2);
             this.pnlGraficos.Controls.Add(this.zedInicial1);
             this.pnlGraficos.Location = new System.Drawing.Point(15, 130);
             this.pnlGraficos.Name = "pnlGraficos";
@@ -90,38 +96,17 @@ namespace estatisticaTechData.Screens
             this.zedInicial1.Size = new System.Drawing.Size(630, 481);
             this.zedInicial1.TabIndex = 0;
             this.zedInicial1.UseExtendedPrintDialog = true;
+            this.zedInicial1.Visible = false;
             // 
             // pnlEscolhas
             // 
             this.pnlEscolhas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlEscolhas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlEscolhas.Controls.Add(this.rdbGraphC);
             this.pnlEscolhas.Location = new System.Drawing.Point(15, 639);
             this.pnlEscolhas.Name = "pnlEscolhas";
             this.pnlEscolhas.Size = new System.Drawing.Size(630, 101);
             this.pnlEscolhas.TabIndex = 64;
-            // 
-            // rdbGraphC
-            // 
-            this.rdbGraphC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rdbGraphC.AutoSize = true;
-            this.rdbGraphC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.rdbGraphC.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.rdbGraphC.CheckedColor = System.Drawing.Color.White;
-            this.rdbGraphC.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbGraphC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbGraphC.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rdbGraphC.Location = new System.Drawing.Point(233, 30);
-            this.rdbGraphC.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbGraphC.Name = "rdbGraphC";
-            this.rdbGraphC.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rdbGraphC.Size = new System.Drawing.Size(133, 38);
-            this.rdbGraphC.TabIndex = 64;
-            this.rdbGraphC.Text = "Gráfico C";
-            this.rdbGraphC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.rdbGraphC.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.rdbGraphC.UseVisualStyleBackColor = false;
             // 
             // pnlCompara
             // 
@@ -140,105 +125,23 @@ namespace estatisticaTechData.Screens
             this.pnlCompara.Size = new System.Drawing.Size(630, 481);
             this.pnlCompara.TabIndex = 15;
             // 
-            // zedCompara1
+            // zedCompara6
             // 
-            this.zedCompara1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedCompara1.Enabled = false;
-            this.zedCompara1.Location = new System.Drawing.Point(0, 0);
-            this.zedCompara1.Name = "zedCompara1";
-            this.zedCompara1.ScrollGrace = 0D;
-            this.zedCompara1.ScrollMaxX = 0D;
-            this.zedCompara1.ScrollMaxY = 0D;
-            this.zedCompara1.ScrollMaxY2 = 0D;
-            this.zedCompara1.ScrollMinX = 0D;
-            this.zedCompara1.ScrollMinY = 0D;
-            this.zedCompara1.ScrollMinY2 = 0D;
-            this.zedCompara1.Size = new System.Drawing.Size(630, 481);
-            this.zedCompara1.TabIndex = 0;
-            this.zedCompara1.UseExtendedPrintDialog = true;
-            // 
-            // pnlEscolhas2
-            // 
-            this.pnlEscolhas2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlEscolhas2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.pnlEscolhas2.Controls.Add(this.techDataRadioButton2);
-            this.pnlEscolhas2.Location = new System.Drawing.Point(655, 639);
-            this.pnlEscolhas2.Name = "pnlEscolhas2";
-            this.pnlEscolhas2.Size = new System.Drawing.Size(630, 101);
-            this.pnlEscolhas2.TabIndex = 66;
-            // 
-            // techDataRadioButton2
-            // 
-            this.techDataRadioButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.techDataRadioButton2.AutoSize = true;
-            this.techDataRadioButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
-            this.techDataRadioButton2.CheckAlign = System.Drawing.ContentAlignment.TopRight;
-            this.techDataRadioButton2.CheckedColor = System.Drawing.Color.White;
-            this.techDataRadioButton2.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.techDataRadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.techDataRadioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.techDataRadioButton2.Location = new System.Drawing.Point(293, 30);
-            this.techDataRadioButton2.MinimumSize = new System.Drawing.Size(0, 21);
-            this.techDataRadioButton2.Name = "techDataRadioButton2";
-            this.techDataRadioButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.techDataRadioButton2.Size = new System.Drawing.Size(133, 38);
-            this.techDataRadioButton2.TabIndex = 64;
-            this.techDataRadioButton2.Text = "Gráfico C";
-            this.techDataRadioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.techDataRadioButton2.UnCheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
-            this.techDataRadioButton2.UseVisualStyleBackColor = false;
-            // 
-            // zedCompara2
-            // 
-            this.zedCompara2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedCompara2.Enabled = false;
-            this.zedCompara2.Location = new System.Drawing.Point(0, 0);
-            this.zedCompara2.Name = "zedCompara2";
-            this.zedCompara2.ScrollGrace = 0D;
-            this.zedCompara2.ScrollMaxX = 0D;
-            this.zedCompara2.ScrollMaxY = 0D;
-            this.zedCompara2.ScrollMaxY2 = 0D;
-            this.zedCompara2.ScrollMinX = 0D;
-            this.zedCompara2.ScrollMinY = 0D;
-            this.zedCompara2.ScrollMinY2 = 0D;
-            this.zedCompara2.Size = new System.Drawing.Size(630, 481);
-            this.zedCompara2.TabIndex = 1;
-            this.zedCompara2.UseExtendedPrintDialog = true;
-            // 
-            // zedCompara3
-            // 
-            this.zedCompara3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedCompara3.Enabled = false;
-            this.zedCompara3.Location = new System.Drawing.Point(0, 0);
-            this.zedCompara3.Name = "zedCompara3";
-            this.zedCompara3.ScrollGrace = 0D;
-            this.zedCompara3.ScrollMaxX = 0D;
-            this.zedCompara3.ScrollMaxY = 0D;
-            this.zedCompara3.ScrollMaxY2 = 0D;
-            this.zedCompara3.ScrollMinX = 0D;
-            this.zedCompara3.ScrollMinY = 0D;
-            this.zedCompara3.ScrollMinY2 = 0D;
-            this.zedCompara3.Size = new System.Drawing.Size(630, 481);
-            this.zedCompara3.TabIndex = 2;
-            this.zedCompara3.UseExtendedPrintDialog = true;
-            // 
-            // zedCompara4
-            // 
-            this.zedCompara4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedCompara4.Enabled = false;
-            this.zedCompara4.Location = new System.Drawing.Point(0, 0);
-            this.zedCompara4.Name = "zedCompara4";
-            this.zedCompara4.ScrollGrace = 0D;
-            this.zedCompara4.ScrollMaxX = 0D;
-            this.zedCompara4.ScrollMaxY = 0D;
-            this.zedCompara4.ScrollMaxY2 = 0D;
-            this.zedCompara4.ScrollMinX = 0D;
-            this.zedCompara4.ScrollMinY = 0D;
-            this.zedCompara4.ScrollMinY2 = 0D;
-            this.zedCompara4.Size = new System.Drawing.Size(630, 481);
-            this.zedCompara4.TabIndex = 3;
-            this.zedCompara4.UseExtendedPrintDialog = true;
+            this.zedCompara6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedCompara6.Enabled = false;
+            this.zedCompara6.Location = new System.Drawing.Point(0, 0);
+            this.zedCompara6.Name = "zedCompara6";
+            this.zedCompara6.ScrollGrace = 0D;
+            this.zedCompara6.ScrollMaxX = 0D;
+            this.zedCompara6.ScrollMaxY = 0D;
+            this.zedCompara6.ScrollMaxY2 = 0D;
+            this.zedCompara6.ScrollMinX = 0D;
+            this.zedCompara6.ScrollMinY = 0D;
+            this.zedCompara6.ScrollMinY2 = 0D;
+            this.zedCompara6.Size = new System.Drawing.Size(630, 481);
+            this.zedCompara6.TabIndex = 5;
+            this.zedCompara6.UseExtendedPrintDialog = true;
+            this.zedCompara6.Visible = false;
             // 
             // zedCompara5
             // 
@@ -256,23 +159,179 @@ namespace estatisticaTechData.Screens
             this.zedCompara5.Size = new System.Drawing.Size(630, 481);
             this.zedCompara5.TabIndex = 4;
             this.zedCompara5.UseExtendedPrintDialog = true;
+            this.zedCompara5.Visible = false;
             // 
-            // zedCompara6
+            // zedCompara4
             // 
-            this.zedCompara6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.zedCompara6.Enabled = false;
-            this.zedCompara6.Location = new System.Drawing.Point(0, 0);
-            this.zedCompara6.Name = "zedCompara6";
-            this.zedCompara6.ScrollGrace = 0D;
-            this.zedCompara6.ScrollMaxX = 0D;
-            this.zedCompara6.ScrollMaxY = 0D;
-            this.zedCompara6.ScrollMaxY2 = 0D;
-            this.zedCompara6.ScrollMinX = 0D;
-            this.zedCompara6.ScrollMinY = 0D;
-            this.zedCompara6.ScrollMinY2 = 0D;
-            this.zedCompara6.Size = new System.Drawing.Size(630, 481);
-            this.zedCompara6.TabIndex = 5;
-            this.zedCompara6.UseExtendedPrintDialog = true;
+            this.zedCompara4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedCompara4.Enabled = false;
+            this.zedCompara4.Location = new System.Drawing.Point(0, 0);
+            this.zedCompara4.Name = "zedCompara4";
+            this.zedCompara4.ScrollGrace = 0D;
+            this.zedCompara4.ScrollMaxX = 0D;
+            this.zedCompara4.ScrollMaxY = 0D;
+            this.zedCompara4.ScrollMaxY2 = 0D;
+            this.zedCompara4.ScrollMinX = 0D;
+            this.zedCompara4.ScrollMinY = 0D;
+            this.zedCompara4.ScrollMinY2 = 0D;
+            this.zedCompara4.Size = new System.Drawing.Size(630, 481);
+            this.zedCompara4.TabIndex = 3;
+            this.zedCompara4.UseExtendedPrintDialog = true;
+            this.zedCompara4.Visible = false;
+            // 
+            // zedCompara3
+            // 
+            this.zedCompara3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedCompara3.Enabled = false;
+            this.zedCompara3.Location = new System.Drawing.Point(0, 0);
+            this.zedCompara3.Name = "zedCompara3";
+            this.zedCompara3.ScrollGrace = 0D;
+            this.zedCompara3.ScrollMaxX = 0D;
+            this.zedCompara3.ScrollMaxY = 0D;
+            this.zedCompara3.ScrollMaxY2 = 0D;
+            this.zedCompara3.ScrollMinX = 0D;
+            this.zedCompara3.ScrollMinY = 0D;
+            this.zedCompara3.ScrollMinY2 = 0D;
+            this.zedCompara3.Size = new System.Drawing.Size(630, 481);
+            this.zedCompara3.TabIndex = 2;
+            this.zedCompara3.UseExtendedPrintDialog = true;
+            this.zedCompara3.Visible = false;
+            // 
+            // zedCompara2
+            // 
+            this.zedCompara2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedCompara2.Enabled = false;
+            this.zedCompara2.Location = new System.Drawing.Point(0, 0);
+            this.zedCompara2.Name = "zedCompara2";
+            this.zedCompara2.ScrollGrace = 0D;
+            this.zedCompara2.ScrollMaxX = 0D;
+            this.zedCompara2.ScrollMaxY = 0D;
+            this.zedCompara2.ScrollMaxY2 = 0D;
+            this.zedCompara2.ScrollMinX = 0D;
+            this.zedCompara2.ScrollMinY = 0D;
+            this.zedCompara2.ScrollMinY2 = 0D;
+            this.zedCompara2.Size = new System.Drawing.Size(630, 481);
+            this.zedCompara2.TabIndex = 1;
+            this.zedCompara2.UseExtendedPrintDialog = true;
+            this.zedCompara2.Visible = false;
+            // 
+            // zedCompara1
+            // 
+            this.zedCompara1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedCompara1.Enabled = false;
+            this.zedCompara1.Location = new System.Drawing.Point(0, 0);
+            this.zedCompara1.Name = "zedCompara1";
+            this.zedCompara1.ScrollGrace = 0D;
+            this.zedCompara1.ScrollMaxX = 0D;
+            this.zedCompara1.ScrollMaxY = 0D;
+            this.zedCompara1.ScrollMaxY2 = 0D;
+            this.zedCompara1.ScrollMinX = 0D;
+            this.zedCompara1.ScrollMinY = 0D;
+            this.zedCompara1.ScrollMinY2 = 0D;
+            this.zedCompara1.Size = new System.Drawing.Size(630, 481);
+            this.zedCompara1.TabIndex = 0;
+            this.zedCompara1.UseExtendedPrintDialog = true;
+            this.zedCompara1.Visible = false;
+            // 
+            // pnlEscolhas2
+            // 
+            this.pnlEscolhas2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlEscolhas2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(224)))), ((int)(((byte)(206)))));
+            this.pnlEscolhas2.Location = new System.Drawing.Point(655, 639);
+            this.pnlEscolhas2.Name = "pnlEscolhas2";
+            this.pnlEscolhas2.Size = new System.Drawing.Size(630, 101);
+            this.pnlEscolhas2.TabIndex = 66;
+            // 
+            // zedInicial2
+            // 
+            this.zedInicial2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedInicial2.Enabled = false;
+            this.zedInicial2.Location = new System.Drawing.Point(0, 0);
+            this.zedInicial2.Name = "zedInicial2";
+            this.zedInicial2.ScrollGrace = 0D;
+            this.zedInicial2.ScrollMaxX = 0D;
+            this.zedInicial2.ScrollMaxY = 0D;
+            this.zedInicial2.ScrollMaxY2 = 0D;
+            this.zedInicial2.ScrollMinX = 0D;
+            this.zedInicial2.ScrollMinY = 0D;
+            this.zedInicial2.ScrollMinY2 = 0D;
+            this.zedInicial2.Size = new System.Drawing.Size(630, 481);
+            this.zedInicial2.TabIndex = 1;
+            this.zedInicial2.UseExtendedPrintDialog = true;
+            this.zedInicial2.Visible = false;
+            // 
+            // zedInicial3
+            // 
+            this.zedInicial3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedInicial3.Enabled = false;
+            this.zedInicial3.Location = new System.Drawing.Point(0, 0);
+            this.zedInicial3.Name = "zedInicial3";
+            this.zedInicial3.ScrollGrace = 0D;
+            this.zedInicial3.ScrollMaxX = 0D;
+            this.zedInicial3.ScrollMaxY = 0D;
+            this.zedInicial3.ScrollMaxY2 = 0D;
+            this.zedInicial3.ScrollMinX = 0D;
+            this.zedInicial3.ScrollMinY = 0D;
+            this.zedInicial3.ScrollMinY2 = 0D;
+            this.zedInicial3.Size = new System.Drawing.Size(630, 481);
+            this.zedInicial3.TabIndex = 2;
+            this.zedInicial3.UseExtendedPrintDialog = true;
+            this.zedInicial3.Visible = false;
+            // 
+            // zedInicial4
+            // 
+            this.zedInicial4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedInicial4.Enabled = false;
+            this.zedInicial4.Location = new System.Drawing.Point(0, 0);
+            this.zedInicial4.Name = "zedInicial4";
+            this.zedInicial4.ScrollGrace = 0D;
+            this.zedInicial4.ScrollMaxX = 0D;
+            this.zedInicial4.ScrollMaxY = 0D;
+            this.zedInicial4.ScrollMaxY2 = 0D;
+            this.zedInicial4.ScrollMinX = 0D;
+            this.zedInicial4.ScrollMinY = 0D;
+            this.zedInicial4.ScrollMinY2 = 0D;
+            this.zedInicial4.Size = new System.Drawing.Size(630, 481);
+            this.zedInicial4.TabIndex = 3;
+            this.zedInicial4.UseExtendedPrintDialog = true;
+            this.zedInicial4.Visible = false;
+            // 
+            // zedInicial5
+            // 
+            this.zedInicial5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedInicial5.Enabled = false;
+            this.zedInicial5.Location = new System.Drawing.Point(0, 0);
+            this.zedInicial5.Name = "zedInicial5";
+            this.zedInicial5.ScrollGrace = 0D;
+            this.zedInicial5.ScrollMaxX = 0D;
+            this.zedInicial5.ScrollMaxY = 0D;
+            this.zedInicial5.ScrollMaxY2 = 0D;
+            this.zedInicial5.ScrollMinX = 0D;
+            this.zedInicial5.ScrollMinY = 0D;
+            this.zedInicial5.ScrollMinY2 = 0D;
+            this.zedInicial5.Size = new System.Drawing.Size(630, 481);
+            this.zedInicial5.TabIndex = 4;
+            this.zedInicial5.UseExtendedPrintDialog = true;
+            this.zedInicial5.Visible = false;
+            // 
+            // zedInicial6
+            // 
+            this.zedInicial6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.zedInicial6.Enabled = false;
+            this.zedInicial6.Location = new System.Drawing.Point(0, 0);
+            this.zedInicial6.Name = "zedInicial6";
+            this.zedInicial6.ScrollGrace = 0D;
+            this.zedInicial6.ScrollMaxX = 0D;
+            this.zedInicial6.ScrollMaxY = 0D;
+            this.zedInicial6.ScrollMaxY2 = 0D;
+            this.zedInicial6.ScrollMinX = 0D;
+            this.zedInicial6.ScrollMinY = 0D;
+            this.zedInicial6.ScrollMinY2 = 0D;
+            this.zedInicial6.Size = new System.Drawing.Size(630, 481);
+            this.zedInicial6.TabIndex = 5;
+            this.zedInicial6.UseExtendedPrintDialog = true;
+            this.zedInicial6.Visible = false;
             // 
             // UC_controlCompara
             // 
@@ -289,11 +348,7 @@ namespace estatisticaTechData.Screens
             this.Size = new System.Drawing.Size(1300, 818);
             this.Load += new System.EventHandler(this.UC_controlCompara_Load);
             this.pnlGraficos.ResumeLayout(false);
-            this.pnlEscolhas.ResumeLayout(false);
-            this.pnlEscolhas.PerformLayout();
             this.pnlCompara.ResumeLayout(false);
-            this.pnlEscolhas2.ResumeLayout(false);
-            this.pnlEscolhas2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,16 +360,19 @@ namespace estatisticaTechData.Screens
         private techDataButton btnAcessoHistorico;
         private System.Windows.Forms.Panel pnlGraficos;
         private ZedGraph.ZedGraphControl zedInicial1;
-        private Resources.techDataRadioButton rdbGraphC;
         private System.Windows.Forms.Panel pnlEscolhas;
         private System.Windows.Forms.Panel pnlCompara;
         private ZedGraph.ZedGraphControl zedCompara1;
         private System.Windows.Forms.Panel pnlEscolhas2;
-        private Resources.techDataRadioButton techDataRadioButton2;
         private ZedGraph.ZedGraphControl zedCompara5;
         private ZedGraph.ZedGraphControl zedCompara4;
         private ZedGraph.ZedGraphControl zedCompara3;
         private ZedGraph.ZedGraphControl zedCompara2;
         private ZedGraph.ZedGraphControl zedCompara6;
+        private ZedGraph.ZedGraphControl zedInicial6;
+        private ZedGraph.ZedGraphControl zedInicial5;
+        private ZedGraph.ZedGraphControl zedInicial4;
+        private ZedGraph.ZedGraphControl zedInicial3;
+        private ZedGraph.ZedGraphControl zedInicial2;
     }
 }

@@ -195,7 +195,8 @@ namespace estatisticaTechData
                     };
                     compareButton.Click += (s, eventArgs) =>
                     {
-                        frmHub.funEstancia.abrirCompara("1");
+                        int id = tableMasterId;
+                        frmHub.funEstancia.abrirCompara(id);
                     };
 
                     // Adicione os Labels ao Panel

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using estatisticaTechDataClassLibrary;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,26 +15,64 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_controlCompara : UserControl
     {
-        public UC_controlCompara(string id)
+        int id;
+        string jsonString;
+        string type;
+        private estatisticaTechDataClassLibrary.Connection conexao;
+        public UC_controlCompara(int id)
         {
+            this.id = id;
+            conexao = new estatisticaTechDataClassLibrary.Connection();
             InitializeComponent();  
         }
         private void UC_controlCompara_Load(object sender, EventArgs e)
         {
+            PegaJson();
+            var jsonDataList = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(jsonString);
             double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
             double rowNew = matrizNew.GetLength(0);
             double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
             double[] mediasNew = UC_BackgroundCompara.funEstancia.mediasIniciais;
             double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
+            if (type == "1")
+            {
+                
+            }else if (type == "2")
+            {
+                double[,] matrizOld = Variaveis(jsonDataList);
+                int x = matrizOld.GetLength(0), y = matrizOld.GetLength(1);
+                double[] vetor = new double[x * y];
+                for (int i = 0; i < x * y; i++)
+                {
+                    vetor[i] = matrizOld[i / y, i % y];
+                }
+                double [] mediasOld = ClsCalculos.CalcularMediasInicias(matrizOld, x, y);
+                double [] amplitudesOld = ClsCalculos.CalcularAmplitudes(matrizOld, x, y);
+                GraficoControle(zedInicial3, vetor);
+                GraficoMedia(zedInicial4, mediasOld);
+                GraficoAmplitude(zedInicial5, amplitudesOld);
+                GraficoControle(zedCompara3, arrayNew);
+                GraficoMedia(zedCompara4, mediasNew);
+                GraficoAmplitude(zedCompara5, amplitudesNew);
+                /*zedInicial3.Visible = true;
+                zedCompara3.Visible = true;
+                zedInicial4.Visible = true;
+                zedCompara4.Visible = true;
+                zedInicial5.Visible = true;
+                zedCompara5.Visible = true;*/
+            }
+            else if (type == "3")
+            {
+                double [] arrayOld = Dist(jsonDataList);
+                GraficoDist(zedInicial6, arrayOld);
+                GraficoDist(zedCompara6, arrayNew);
+                zedInicial6.Visible = true;
+                zedCompara6.Visible = true;
+            }
 
             GraficoC(zedCompara1, matrizNew, rowNew);
             GraficoP(zedCompara2, matrizNew, rowNew);
-            GraficoControle(zedCompara3, arrayNew);
-            GraficoMedia(zedCompara4, mediasNew);
-            GraficoAmplitude(zedCompara5, amplitudesNew);
-            GraficoDist(zedCompara6, arrayNew);
         }
-
         private void GraficoC(ZedGraphControl zedGraph, double[,] matriz, double row)
         {
             // Configurar o objeto GraphPane para o gráfico C
@@ -518,6 +558,140 @@ namespace estatisticaTechData.Screens
             }
 
 
+        }
+        private void PegaJson()
+        {
+            try
+            {
+                string[] columns = { "data", "type_count_id"};
+                string where = $"id='{id}'";
+                List<string>[] result = conexao.SelectData("table_master", columns, where);
+
+                if (result[0].Count > 0)
+                {
+                    type = result[1][0].ToString();
+                    jsonString = result[0][0].ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private double[,] Variaveis(List<Dictionary<string, string>> jsonDataList)
+        {
+            if (jsonDataList == null || jsonDataList.Count == 0)
+            {
+                // Trate o caso em que não há dados
+                return null;
+            }
+            var atributoDiferente = EncontrarAtributoDiferente(jsonDataList[0]);
+            if (atributoDiferente == null)
+            {
+                return null;
+            }
+            int x = 0;
+            int y = 0; 
+            foreach (var jsonData in jsonDataList)
+            {
+                y = 0;
+                foreach (var sample in jsonData)
+                {
+                    if (sample.Key != atributoDiferente)
+                    {
+                        y++;
+                    }
+                }
+                if (y > 0)
+                {
+                    x++;
+                }
+            }
+            double[,] arr = new double[x, y];
+            for (int i = 0; i < x; i++)
+            {
+                int j = 0;
+                foreach (var sample in jsonDataList[i])
+                {
+                    if (sample.Key != atributoDiferente)
+                    {
+                        arr[i, j] = Double.Parse(sample.Value);
+                        j++;
+                    }
+                }
+            }
+            string EncontrarAtributoDiferente(Dictionary<string, string> sample)
+            {
+                foreach (var kvp in sample)
+                {
+                    if (!Double.TryParse(kvp.Value, out double result))
+                    {
+                        return kvp.Key;
+                    }
+                }
+
+                return null;
+            }
+            return arr;
+        }
+        private double[] Dist(List<Dictionary<string, string>> jsonDataList)
+        {
+            if (jsonDataList == null || jsonDataList.Count == 0)
+            {
+                // Trate o caso em que não há dados
+                return null;
+            }
+
+            var atributoDiferente = EncontrarAtributoDiferente(jsonDataList[0]);
+            if (atributoDiferente == null)
+            {
+                return null;
+            }
+
+            int y = 0;
+
+            // Conta o número de amostras (excluindo o atributo diferente)
+            foreach (var jsonData in jsonDataList)
+            {
+                foreach (var sample in jsonData)
+                {
+                    if (sample.Key != atributoDiferente)
+                    {
+                        y++;
+                    }
+                }
+            }
+
+            double[] arr = new double[y];
+            int i = 0;
+
+            // Preenche o array com os valores do atributo diferente
+            foreach (var jsonData in jsonDataList)
+            {
+                foreach (var sample in jsonData)
+                {
+                    if (sample.Key != atributoDiferente)
+                    {
+                        arr[i] = Double.Parse(sample.Value);
+                        i++;
+                    }
+                }
+            }
+
+            string EncontrarAtributoDiferente(Dictionary<string, string> sample)
+            {
+                foreach (var kvp in sample)
+                {
+                    if (Double.TryParse(kvp.Value, out double result))
+                    {
+                        return kvp.Key;
+                    }
+                }
+
+                return null;
+            }
+
+            return arr;
         }
     }
 }

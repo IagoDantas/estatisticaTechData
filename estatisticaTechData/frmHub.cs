@@ -174,7 +174,7 @@ namespace estatisticaTechData
             }
         }
 
-        public void abrirCompara(string id)
+        public void abrirCompara(int id)
         {
             try
             {
@@ -482,9 +482,9 @@ namespace estatisticaTechData
             int confereAba(TabPage Tb)
             {
                 int var = 0;
-                if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal")
+                if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal" || Tb.Name == "ComparacaoGraficos")
                     var = 1;
-                if (Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel")
+                if (Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel" || Tb.Name == "BackgroundComparacao")
                     var = 2;
                 return var;
             }
@@ -552,6 +552,14 @@ namespace estatisticaTechData
             if (Tb.Name == "Inicio")
             {
                 ControleInicio = 0;
+            }
+            if (Tb.Name == "BackgroundComparacao")
+            {
+                ControleBackgroundCompara = 0;
+            }
+            if (Tb.Name == "ComparacaoGraficos")
+            {
+                ControleCompara = 0;
             }
 
             Tbc_Telas.TabPages.Remove(Tb);
