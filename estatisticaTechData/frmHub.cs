@@ -181,11 +181,11 @@ namespace estatisticaTechData
                 switch (typeCountId)
                 {
                     case 1:
-                        abrirBackgroundAtributos(chargeId);
+                        abrirCEPAtributo(chargeId);
                         break;
 
                     case 2:
-                        abrirBackgroundVariaveis(chargeId);
+                        
                         break;
 
                     case 3:
@@ -202,22 +202,102 @@ namespace estatisticaTechData
                 MessageBox.Show(ex.Message);
             }
         }
+       
+
+
         private void abrirBackgroundAtributos(int chargeId)
         {
-           /* // Implemente o código específico para abrirBackgroundAtributos com base no chargeId
-            // Use o parâmetro chargeId conforme necessário
-            // Exemplo:
-            UC_BackgroundAtributos backgroundAtributos = new UC_BackgroundAtributos(chargeId);
-            // Faça algo com o backgroundAtributos, como exibição na tela*/
+            if (ControleBackgroundAtributo == 0)
+            {
+                try
+                {
+                    UC_BackgroundAtributos Teste = new UC_BackgroundAtributos(chargeId);
+                    ControleBackgroundAtributo += 1;
+                    Teste.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "BackgroundAtributo";
+                    TbPage.Text = "Background";
+                    TbPage.Controls.Add(Teste);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                }
+                catch(Exception ex)
+                {
+                    throw ex;
+                }
+                
+            }
         }
+
+        public void abrirCEPAtributo(int chargeId)
+        {
+            try
+            {
+                abrirBackgroundAtributos(chargeId);
+                if (ControleCEPAtributo == 0)
+                {
+                    UC_controlAtributos Teste = new UC_controlAtributos();
+                    ControleCEPAtributo += 1;
+                    Teste.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "ControleDeAtributos";
+                    TbPage.Text = "Controle De Atributos";
+                    TbPage.Controls.Add(Teste);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                }
+                else
+                {
+                    guia("ControleDeAtributos");
+                    MessageBox.Show("Já existem abas de Controle De Atributos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
+                btnConfig.ForeColor = Color.White;
+
+                btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
+                btnDistribuicao.ForeColor = Color.White;
+
+
+                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
+                btnInicio.ForeColor = Color.White;
+
+                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
+                btnHistorico.ForeColor = Color.White;
+
+                
+                btnCEP.BackColor = Color.FromArgb(220, 236, 223);
+                btnCEP.ForeColor = Color.Black;
+
+
+                btnDistribuicao.Enabled = true;
+                btnHistorico.Enabled = true;
+                btnInicio.Enabled = true;
+
+                btnCEP.Enabled = true ;
+                btnConfig.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message == "fechou")
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
 
         private void abrirBackgroundVariaveis(int chargeId)
         {
-            // Implemente o código específico para abrirBackgroundVariaveis com base no chargeId
+            /*// Implemente o código específico para abrirBackgroundVariaveis com base no chargeId
             // Use o parâmetro chargeId conforme necessário
             // Exemplo:
-            /*UC_BackgroundVariaveis backgroundVariaveis = new UC_BackgroundVariaveis(chargeId);*/
-            // Faça algo com o backgroundVariaveis, como exibição na tela
+            UC_BackgroundVariaveis backgroundVariaveis = new UC_BackgroundVariaveis(chargeId);
+            // Faça algo com o backgroundVariaveis, como exibição na tela*/
         }
 
         private void abrirBackgroundDist(int chargeId)
@@ -242,7 +322,6 @@ namespace estatisticaTechData
                 }
             }
         }
-
         private void abrirDistNormal(int chargeId)
         {
             try

@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace estatisticaTechData.Screens
 {
@@ -29,8 +30,30 @@ namespace estatisticaTechData.Screens
         public double media, desvioPadrao;
         private int userId;
         private int chargeId;
+        private string jsonString;
         private estatisticaTechDataClassLibrary.Connection conexao;
         private DataTable dt;
+
+        public UC_BackgroundAtributos(int chargeId)
+        {
+            try
+            {
+                funEstancia = this;
+                conexao = new estatisticaTechDataClassLibrary.Connection();
+                this.chargeId = chargeId;
+                carregaInformacoes();
+                PegaJson();
+                dt = ConvertJsonToDataTable(jsonString);
+                
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+            InitializeComponent();
+        }
+
         public UC_BackgroundAtributos()
         {
             funEstancia = this;
@@ -45,8 +68,60 @@ namespace estatisticaTechData.Screens
             }
             InitializeComponent();
         }
+        public static DataTable ConvertJsonToDataTable(string jsonString)
+        {
+            DataTable dataTable = new DataTable();
 
-        
+            // Converta o JSON para um objeto JArray
+            JArray jsonArray = JArray.Parse(jsonString);
+
+            // Crie colunas para a DataTable usando as chaves do primeiro objeto no array
+            foreach (JToken token in jsonArray[0])
+            {
+                dataTable.Columns.Add(((JProperty)token).Name, typeof(string));
+            }
+
+            // Adicione as linhas à DataTable
+            foreach (JObject jsonObject in jsonArray)
+            {
+                DataRow row = dataTable.NewRow();
+                foreach (JProperty property in jsonObject.Properties())
+                {
+                    row[property.Name] = property.Value.ToString();
+                }
+                dataTable.Rows.Add(row);
+            }
+
+            return dataTable;
+        }
+
+
+        private void PegaJson()
+        {
+            try
+            {
+                if (chargeId == 0)
+                {
+                    MessageBox.Show("Erro", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string[] columns = { "data" };
+                    string where = $"id='{chargeId}'";
+                    List<string>[] result = conexao.SelectData("charge", columns, where);
+
+                    if (result[0].Count > 0)
+                    {
+                        jsonString = result[0][0].ToString();
+                    }
+
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void UC_BackgroundAtributos_Load(object sender, EventArgs e)
         {
@@ -63,8 +138,11 @@ namespace estatisticaTechData.Screens
                     for (int j = 0; j < y; j++)
                     {
                         matrizExcel[i, j] = arrayExcel[contador];
+                        Console.WriteLine(matrizExcel[i,j]);
                         contador++;
                     }
+
+                
                 mediasIniciais = ClsCalculos.CalcularMediasInicias(matrizExcel, x, y);
                 DataRow newRow = dt.NewRow();
                 for (int i = 0; i <= mediasIniciais.Length; i++)
@@ -154,6 +232,7 @@ namespace estatisticaTechData.Screens
             }
         }
 
+       
 
         public void carregaInformacoes()
         {
