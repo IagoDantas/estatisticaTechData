@@ -36,8 +36,18 @@ namespace estatisticaTechData.Screens
             double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
             if (type == "1")
             {
-                
-            }else if (type == "2")
+                double[,] matrizOld = Atributos(jsonDataList);
+                double rodOld = matrizOld.GetLength(0);
+                GraficoC(zedInicial1, matrizNew, rowNew);
+                GraficoP(zedInicial2, matrizNew, rowNew);
+                GraficoC(zedCompara1, matrizNew, rowNew);
+                GraficoP(zedCompara2, matrizNew, rowNew);
+                /*zedInicial1.Visible = true;
+                zedInicial2.Visible = true;
+                zedCompara1.Visible = true;
+                zedCompara2.Visible = true;*/
+            }
+            else if (type == "2")
             {
                 double[,] matrizOld = Variaveis(jsonDataList);
                 int x = matrizOld.GetLength(0), y = matrizOld.GetLength(1);
@@ -66,12 +76,9 @@ namespace estatisticaTechData.Screens
                 double [] arrayOld = Dist(jsonDataList);
                 GraficoDist(zedInicial6, arrayOld);
                 GraficoDist(zedCompara6, arrayNew);
-                zedInicial6.Visible = true;
-                zedCompara6.Visible = true;
+                /*zedInicial6.Visible = true;
+                zedCompara6.Visible = true;*/
             }
-
-            GraficoC(zedCompara1, matrizNew, rowNew);
-            GraficoP(zedCompara2, matrizNew, rowNew);
         }
         private void GraficoC(ZedGraphControl zedGraph, double[,] matriz, double row)
         {
@@ -692,6 +699,52 @@ namespace estatisticaTechData.Screens
             }
 
             return arr;
+        }
+        private double[,] Atributos(List<Dictionary<string, string>> jsonDataList)
+        {
+            if (jsonDataList == null || jsonDataList.Count == 0)
+            {
+                return null;
+            }
+            var atributos = EncontrarAtributos(jsonDataList[0]);
+            if (atributos == null || atributos.Count != 2)
+            {
+                return null;
+            }
+            int y = jsonDataList.Count;
+            double[,] matriz = new double[2, y];
+
+            for (int i = 0; i < y; i++)
+            {
+                foreach (var kvp in jsonDataList[i])
+                {
+                    if (kvp.Key == atributos[0])
+                    {
+                        matriz[0, i] = Double.Parse(kvp.Value);
+                    }
+                    if(kvp.Key == atributos[1])
+                    {
+                        matriz[0, i] = Double.Parse(kvp.Value);
+                    }
+                }
+            }
+
+            List<string> EncontrarAtributos(Dictionary<string, string> sample)
+            {
+                var keys = sample.Keys.ToList();
+                int numeroAtributos = keys.Count;
+
+                if (numeroAtributos >= 2)
+                {
+                    // Descarta o primeiro atributo e retorna os dois últimos
+                    keys.RemoveAt(0);
+                    return keys.ToList();
+                }
+
+                return null;
+            }
+
+            return matriz;
         }
     }
 }
