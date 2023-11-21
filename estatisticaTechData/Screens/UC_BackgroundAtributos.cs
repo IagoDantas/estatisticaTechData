@@ -138,7 +138,6 @@ namespace estatisticaTechData.Screens
                     for (int j = 0; j < y; j++)
                     {
                         matrizExcel[i, j] = arrayExcel[contador];
-                        Console.WriteLine(matrizExcel[i,j]);
                         contador++;
                     }
 
