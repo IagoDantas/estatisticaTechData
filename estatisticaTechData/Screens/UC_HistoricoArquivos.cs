@@ -213,8 +213,7 @@ namespace estatisticaTechData
                     };
                     compareButton.Click += (s, eventArgs) =>
                     {
-                        int id = tableMasterId;
-                        frmHub.funEstancia.abrirCompara(id);
+                        frmHub.funEstancia.abrirCompara(tableMasterId);
                     };
 
                     visualizarButton.Click += (s, eventArgs) =>

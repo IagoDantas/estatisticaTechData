@@ -721,7 +721,7 @@ namespace estatisticaTechData
                 int var = 0;
                 if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal" || Tb.Name == "ComparacaoGraficos")
                     var = 1;
-                if(Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel" || Tb.Name == "BackgroundComparacao")
+                if(Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel" || Tb.Name == "BackgroundCompara")
                     var = 2;
                 return var;
             }
@@ -765,7 +765,7 @@ namespace estatisticaTechData
                 int var = 0;
                 if (Tb.Name == "ControleDeVariaveis" || Tb.Name == "ControleDeAtributos" || Tb.Name == "DistribuicaoNormal" || Tb.Name == "ComparacaoGraficos")
                     var = 1;
-                if (Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel" || Tb.Name == "BackgroundComparacao")
+                if (Tb.Name == "BackgroundDist" || Tb.Name == "BackgroundAtributo" || Tb.Name == "BackgroundVariavel" || Tb.Name == "BackgroundCompara")
                     var = 2;
                 return var;
             }
@@ -802,10 +802,6 @@ namespace estatisticaTechData
             {
                 ControleBackgroundVariavel = 0;
             }
-            if (Tb.Name == "ComparacaoDistribuicaoNormal")
-            {
-                ControleCompara = 0;
-            }
             if (Tb.Name == "HistArquivos")
             {
                 ControleHistoricoArquivoDistNormal = 0;
@@ -834,7 +830,7 @@ namespace estatisticaTechData
             {
                 ControleInicio = 0;
             }
-            if (Tb.Name == "BackgroundComparacao")
+            if (Tb.Name == "BackgroundCompara")
             {
                 ControleBackgroundCompara = 0;
             }
