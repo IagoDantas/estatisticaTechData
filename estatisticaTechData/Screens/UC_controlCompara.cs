@@ -29,56 +29,149 @@ namespace estatisticaTechData.Screens
         {
             PegaJson();
             var jsonDataList = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(jsonString);
-            double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
-            double rowNew = matrizNew.GetLength(0);
-            double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
-            double[] mediasNew = UC_BackgroundCompara.funEstancia.mediasIniciais;
-            double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
             if (type == "1")
             {
-                double[,] matrizOld = Atributos(jsonDataList);
-                double rodOld = matrizOld.GetLength(0);
-                GraficoC(zedInicial1, matrizNew, rowNew);
-                GraficoP(zedInicial2, matrizNew, rowNew);
-                GraficoC(zedCompara1, matrizNew, rowNew);
-                GraficoP(zedCompara2, matrizNew, rowNew);
-                /*zedInicial1.Visible = true;
-                zedInicial2.Visible = true;
-                zedCompara1.Visible = true;
-                zedCompara2.Visible = true;*/
+                type1(jsonDataList);
             }
             else if (type == "2")
             {
-                double[,] matrizOld = Variaveis(jsonDataList);
-                int x = matrizOld.GetLength(0), y = matrizOld.GetLength(1);
-                double[] vetor = new double[x * y];
-                for (int i = 0; i < x * y; i++)
-                {
-                    vetor[i] = matrizOld[i / y, i % y];
-                }
-                double [] mediasOld = ClsCalculos.CalcularMediasInicias(matrizOld, x, y);
-                double [] amplitudesOld = ClsCalculos.CalcularAmplitudes(matrizOld, x, y);
-                GraficoControle(zedInicial3, vetor);
-                GraficoMedia(zedInicial4, mediasOld);
-                GraficoAmplitude(zedInicial5, amplitudesOld);
-                GraficoControle(zedCompara3, arrayNew);
-                GraficoMedia(zedCompara4, mediasNew);
-                GraficoAmplitude(zedCompara5, amplitudesNew);
-                /*zedInicial3.Visible = true;
-                zedCompara3.Visible = true;
-                zedInicial4.Visible = true;
-                zedCompara4.Visible = true;
-                zedInicial5.Visible = true;
-                zedCompara5.Visible = true;*/
+                type2(jsonDataList);
             }
             else if (type == "3")
             {
-                double [] arrayOld = Dist(jsonDataList);
-                GraficoDist(zedInicial6, arrayOld);
-                GraficoDist(zedCompara6, arrayNew);
-                /*zedInicial6.Visible = true;
-                zedCompara6.Visible = true;*/
+                type3(jsonDataList);
             }
+        }
+
+        private void type1(List<Dictionary<string, string>> jsonDataList)
+        {
+            double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
+            double rowNew = matrizNew.GetLength(0);
+            double[,] matrizOld = Atributos(jsonDataList);
+            double rodOld = matrizOld.GetLength(0);
+            GraficoC(zedInicial1, matrizNew, rowNew);
+            GraficoP(zedInicial2, matrizNew, rowNew);
+            GraficoC(zedCompara1, matrizNew, rowNew);
+            GraficoP(zedCompara2, matrizNew, rowNew);
+            rdbEscolha1.Text = "Gráfico C";
+            rdbEscolha2.Visible = false;
+            rdbEscolha2.Enabled = true;
+            rdbEscolha3.Text = "Gráfico P";
+            rdbOutro1.Text = "Gráfico C";
+            rdbOutro2.Visible = false;
+            rdbOutro2.Enabled = true;
+            rdbOutro3.Text = "Gráfico P";
+            rdbEscolha1.CheckedChanged += (s, eventArgs) =>
+            {
+                zedInicial1.Visible = true;
+                zedInicial2.Visible = false;
+            };
+            rdbEscolha3.CheckedChanged += (s, eventArgs) =>
+            {
+                zedInicial1.Visible = false;
+                zedInicial2.Visible = true;
+            };
+            rdbOutro1.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara1.Visible = true;
+                zedCompara2.Visible = false;
+            };
+            rdbOutro3.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara1.Visible = false;
+                zedCompara2.Visible = true;
+            };
+            rdbEscolha1.Checked = true;
+            rdbOutro1.Checked = true;
+        }
+        private void type2(List<Dictionary<string, string>> jsonDataList)
+        {
+            double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
+            double[] mediasNew = UC_BackgroundCompara.funEstancia.mediasIniciais;
+            double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
+            double[,] matrizOld = Variaveis(jsonDataList);
+            int x = matrizOld.GetLength(0), y = matrizOld.GetLength(1);
+            double[] vetor = new double[x * y];
+            for (int i = 0; i < x * y; i++)
+            {
+                vetor[i] = matrizOld[i / y, i % y];
+            }
+            double[] mediasOld = ClsCalculos.CalcularMediasInicias(matrizOld, x, y);
+            double[] amplitudesOld = ClsCalculos.CalcularAmplitudes(matrizOld, x, y);
+            GraficoControle(zedInicial3, vetor);
+            GraficoMedia(zedInicial4, mediasOld);
+            GraficoAmplitude(zedInicial5, amplitudesOld);
+            GraficoControle(zedCompara3, arrayNew);
+            GraficoMedia(zedCompara4, mediasNew);
+            GraficoAmplitude(zedCompara5, amplitudesNew);
+
+            rdbEscolha1.Text = "Controle Individual";
+            rdbEscolha2.Text = "Medias";
+            rdbEscolha3.Text = "Amplitude";
+            rdbOutro1.Text = "Controle Individual";
+            rdbOutro2.Text = "Medias";
+            rdbOutro3.Text = "Amplitude";
+            rdbEscolha1.CheckedChanged += (s, eventArgs) =>
+            {
+                zedInicial3.Visible = true;
+                zedInicial4.Visible = false;
+                zedInicial5.Visible = false;
+            };
+            rdbEscolha2.CheckedChanged += (s, eventArgs) =>
+            {
+                zedInicial3.Visible = false;
+                zedInicial4.Visible = true;
+                zedInicial5.Visible = false;
+            };
+            rdbEscolha3.CheckedChanged += (s, eventArgs) =>
+            {
+                zedInicial3.Visible = false;
+                zedInicial4.Visible = false;
+                zedInicial5.Visible = true;
+            };
+            rdbOutro1.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara3.Visible = true;
+                zedCompara4.Visible = false;
+                zedCompara5.Visible = false;
+            };
+            rdbOutro2.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara3.Visible = false;
+                zedCompara4.Visible = true;
+                zedCompara5.Visible = false;
+            };
+            rdbOutro3.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara3.Visible = false;
+                zedCompara4.Visible = false;
+                zedCompara5.Visible = true;
+            };
+            rdbEscolha1.Checked = true;
+            rdbOutro1.Checked = true;    
+        }
+        private void type3(List<Dictionary<string, string>> jsonDataList)
+        {
+
+            double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
+            double[] arrayOld = Dist(jsonDataList);
+            GraficoDist(zedInicial6, arrayOld);
+            GraficoDist(zedCompara6, arrayNew);
+            zedInicial6.Visible = true;
+            zedCompara6.Visible = true;
+            rdbEscolha1.Visible = false;
+            rdbEscolha1 .Enabled = true;
+            rdbEscolha2.Text = "Distribuição Normal";
+            rdbEscolha3.Visible = false;
+            rdbEscolha3.Enabled = true;
+            rdbOutro1.Visible = false;
+            rdbOutro1.Enabled = true;
+            rdbOutro2.Text = "Distribuição Normal";
+            rdbOutro3.Visible = false;
+            rdbOutro3.Enabled = true;
+
+            rdbEscolha2.Checked = true;
+            rdbOutro2.Checked = true;
         }
         private void GraficoC(ZedGraphControl zedGraph, double[,] matriz, double row)
         {
