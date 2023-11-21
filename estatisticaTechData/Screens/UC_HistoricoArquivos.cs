@@ -15,6 +15,7 @@ namespace estatisticaTechData
         private string userName;
         private DateTime fileDate;
         string email, senha;
+        string tipo;
         string description;
         private int currentPage = 1;
         private int recordsPerPage = 8;
@@ -36,6 +37,7 @@ namespace estatisticaTechData
             userName = userInfo["nome"].ToString();
             email = userInfo["email"].ToString();
             senha = userInfo["senha"].ToString();
+            tipo = userInfo["tipo"].ToString();
             
 
             // Obtenha os dados da tabela "charge"
@@ -132,7 +134,7 @@ namespace estatisticaTechData
                     compareButton.FlatStyle = FlatStyle.Flat;
                     compareButton.Font = new Font("Poppins", 10, FontStyle.Bold);
                     compareButton.ForeColor = Color.White;
-                    compareButton.Location = new Point(689, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                    compareButton.Location = new Point(700, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
                     compareButton.Name = $"btnComparar_{i}"; // Nome único para o botão
                     compareButton.Size = new Size(105, 47);
                     compareButton.TabIndex = 15;
@@ -158,59 +160,68 @@ namespace estatisticaTechData
                     visualizarButton.TextColor = Color.White;
                     visualizarButton.UseVisualStyleBackColor = false;
 
-                    techDataButton deleteButton = new techDataButton();
-                    deleteButton.BackColor = Color.FromArgb(0, 107, 117);
-                    deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
-                    deleteButton.BorderColor = Color.PaleVioletRed;
-                    deleteButton.BorderRadius = 50;
-                    deleteButton.BorderSize = 0;
-                    deleteButton.FlatAppearance.BorderSize = 0;
-                    deleteButton.FlatStyle = FlatStyle.Flat;
-                    deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
-                    deleteButton.ForeColor = Color.White;
-                    deleteButton.Location = new Point(visualizarButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
-                    deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
-                    deleteButton.Size = new Size(105, 47);
-                    deleteButton.TabIndex = 15;
-                    deleteButton.Text = "Deletar";
-                    deleteButton.TextColor = Color.White;
-                    deleteButton.UseVisualStyleBackColor = false;
 
-                    deleteButton.Click += (s, eventArgs) =>
+                    if(tipo != "1")
                     {
+                        techDataButton deleteButton = new techDataButton();
+                        deleteButton.BackColor = Color.FromArgb(0, 107, 117);
+                        deleteButton.BackgroundColor = Color.FromArgb(198, 44, 23);
+                        deleteButton.BorderColor = Color.PaleVioletRed;
+                        deleteButton.BorderRadius = 50;
+                        deleteButton.BorderSize = 0;
+                        deleteButton.FlatAppearance.BorderSize = 0;
+                        deleteButton.FlatStyle = FlatStyle.Flat;
+                        deleteButton.Font = new Font("Poppins", 10, FontStyle.Bold);
+                        deleteButton.ForeColor = Color.White;
+                        deleteButton.Location = new Point(visualizarButton.Right + 5, labelNome.Top - 10); // Ajuste as coordenadas conforme necessário
+                        deleteButton.Name = $"btnDeletar_{i}"; // Nome único para o botão
+                        deleteButton.Size = new Size(105, 47);
+                        deleteButton.TabIndex = 15;
+                        deleteButton.Text = "Deletar";
+                        deleteButton.TextColor = Color.White;
+                        deleteButton.UseVisualStyleBackColor = false;
 
-                        // Use o buttonIndex para realizar a exclusão do registro
-                        string tableCharge = "charge";
-                        string whereCharge = $"id = {chargeId}";
-
-
-
-                        string tableMaster = "table_master";
-                        string whereTableMaster = $"id = {tableMasterId}";
-
-
-                        bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
-
-                        bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
-
-
-
-                        if (sucessoCharge && sucessoTableMaster)
+                        deleteButton.Click += (s, eventArgs) =>
                         {
-                            // Remove o painel inteiro
-                            Control parent = deleteButton.Parent;
-                            if (parent != null)
+
+                            // Use o buttonIndex para realizar a exclusão do registro
+                            string tableCharge = "charge";
+                            string whereCharge = $"id = {chargeId}";
+
+
+
+                            string tableMaster = "table_master";
+                            string whereTableMaster = $"id = {tableMasterId}";
+
+
+                            bool sucessoTableMaster = conexao.DeleteData(tableMaster, whereTableMaster);
+
+                            bool sucessoCharge = conexao.DeleteData(tableCharge, whereCharge);
+
+
+
+                            if (sucessoCharge && sucessoTableMaster)
                             {
-                                parent.Parent.Controls.Remove(parent);
+                                // Remove o painel inteiro
+                                Control parent = deleteButton.Parent;
+                                if (parent != null)
+                                {
+                                    parent.Parent.Controls.Remove(parent);
+                                }
+
+                                pnlArquivos.Controls.Clear(); // Limpa os controles existentes
+                                UC_HistoricoArquivos_Load(s, eventArgs);
+                                // Exibe um MessageBox para indicar que a exclusão foi bem-sucedida
+                                MessageBox.Show("Registro excluído com sucesso!");
                             }
 
-                            pnlArquivos.Controls.Clear(); // Limpa os controles existentes
-                            UC_HistoricoArquivos_Load(s, eventArgs);
-                            // Exibe um MessageBox para indicar que a exclusão foi bem-sucedida
-                            MessageBox.Show("Registro excluído com sucesso!");
-                        }
+                        };
 
-                    };
+                        panel.Controls.Add(deleteButton);
+
+                    }
+
+
                     compareButton.Click += (s, eventArgs) =>
                     {
                         frmHub.funEstancia.abrirCompara(tableMasterId);
@@ -227,7 +238,6 @@ namespace estatisticaTechData
 
                     panel.Controls.Add(labelTipo);
                     panel.Controls.Add(compareButton);
-                    panel.Controls.Add(deleteButton);
                     panel.Controls.Add(visualizarButton);
 
                     // Adicione o Panel ao seu formulário
@@ -267,12 +277,13 @@ namespace estatisticaTechData
 
             try
             {
-                string[] columns = { "id", "email", "password" };
+                string[] columns = { "id", "email", "password","type" };
                 string where = $"email='{frmHub.funEstancia.emailUser}'";
                 List<string>[] result = conexao.SelectData("users", columns, where);
                 userInfo["id"] = result[0][0].ToString();
                 userInfo["email"] = result[1][0].ToString();
                 userInfo["senha"] = result[2][0].ToString();
+                userInfo["tipo"] = result[3][0].ToString();
 
                 // Obter o nome do usuário a partir do ID
                 string userId = userInfo["id"].ToString(); // Obter o ID do usuário
