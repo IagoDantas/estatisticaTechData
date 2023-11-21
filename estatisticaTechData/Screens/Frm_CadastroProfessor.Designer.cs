@@ -443,6 +443,7 @@ namespace estatisticaTechData.Screens
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_CadastroProfessor";
             this.Text = "Cadastro de Instrutor";
+            this.Load += new System.EventHandler(this.Frm_CadastroProfessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbVerConfirmeSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderConfirmeSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbVerSenha)).EndInit();

@@ -169,5 +169,11 @@ namespace estatisticaTechData.Screens
             txtConfirmaSenha.PasswordChar = true;
             pcbVerConfirmeSenha.Visible = true;
         }
+
+        private void Frm_CadastroProfessor_Load(object sender, EventArgs e)
+        {
+            pcbEsconderSenha.Visible = false;
+            pcbEsconderConfirmeSenha.Visible = false;
+        }
     }
 }
