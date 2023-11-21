@@ -337,14 +337,6 @@ namespace estatisticaTechData
                                 dataStudent.Add("user_id", userId);
                                 dataStudent.Add("ra", ra); // Adicionar o campo "RA" na tabela "students"
 
-                                if (conexao.InsertData("students", dataStudent) == true)
-                                {
-                                    MessageBox.Show("Dados gravados com sucesso");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Erro ao gravar dados");
-                                }
                             }
                             else
                             {
@@ -356,7 +348,7 @@ namespace estatisticaTechData
                             MessageBox.Show("Erro ao gravar dados");
                         }
                     }
-
+                    MessageBox.Show("Alunos cadastrados","Cadastro de alunos",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     Cursor.Current = Cursors.Default;
                 }
             }
