@@ -47,20 +47,40 @@ namespace estatisticaTechData.Screens
         {
             double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
             double rowNew = matrizNew.GetLength(0);
+            int x, y;
             double[,] matrizOld = Atributos(jsonDataList);
             double rodOld = matrizOld.GetLength(0);
             GraficoC(zedInicial1, matrizNew, rowNew);
             GraficoP(zedInicial2, matrizNew, rowNew);
             GraficoC(zedCompara1, matrizNew, rowNew);
             GraficoP(zedCompara2, matrizNew, rowNew);
+            pnlEscolha.ColumnStyles[0].Width = 45F;
+            pnlEscolha.ColumnStyles[1].Width = 10F;
+            pnlEscolha.ColumnStyles[2].Width = 45F;
+            pnlEscolha2.ColumnStyles[0].Width = 45F;
+            pnlEscolha2.ColumnStyles[1].Width = 10F;
+            pnlEscolha2.ColumnStyles[2].Width = 45F;
             rdbEscolha1.Text = "Gráfico C";
+            x = (pnlEscolha.GetColumnWidths()[0]/2)-(rdbEscolha1.Width/2);
+            y = (pnlEscolha.GetRowHeights()[1]/2) - (rdbEscolha1.Height/2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbEscolha2.Visible = false;
             rdbEscolha2.Enabled = true;
             rdbEscolha3.Text = "Gráfico P";
+            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbOutro1.Text = "Gráfico C";
+            x = (pnlEscolha2.GetColumnWidths()[0] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbOutro2.Visible = false;
             rdbOutro2.Enabled = true;
             rdbOutro3.Text = "Gráfico P";
+            x = (pnlEscolha2.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
+
             rdbEscolha1.CheckedChanged += (s, eventArgs) =>
             {
                 zedInicial1.Visible = true;
@@ -106,11 +126,29 @@ namespace estatisticaTechData.Screens
             GraficoAmplitude(zedCompara5, amplitudesNew);
 
             rdbEscolha1.Text = "Controle Individual";
+            x = (pnlEscolha.GetColumnWidths()[0] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbEscolha2.Text = "Medias";
+            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbEscolha3.Text = "Amplitude";
+            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbOutro1.Text = "Controle Individual";
+            x = (pnlEscolha.GetColumnWidths()[0] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbOutro2.Text = "Medias";
+            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbOutro3.Text = "Amplitude";
+            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbEscolha1.CheckedChanged += (s, eventArgs) =>
             {
                 zedInicial3.Visible = true;
@@ -157,16 +195,23 @@ namespace estatisticaTechData.Screens
             double[] arrayOld = Dist(jsonDataList);
             GraficoDist(zedInicial6, arrayOld);
             GraficoDist(zedCompara6, arrayNew);
+            int x, y;
             zedInicial6.Visible = true;
             zedCompara6.Visible = true;
             rdbEscolha1.Visible = false;
             rdbEscolha1 .Enabled = true;
             rdbEscolha2.Text = "Distribuição Normal";
+            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbEscolha3.Visible = false;
             rdbEscolha3.Enabled = true;
             rdbOutro1.Visible = false;
             rdbOutro1.Enabled = true;
             rdbOutro2.Text = "Distribuição Normal";
+            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
+            rdbEscolha1.Location = new Point(x, y);
             rdbOutro3.Visible = false;
             rdbOutro3.Enabled = true;
 
@@ -371,7 +416,7 @@ namespace estatisticaTechData.Screens
 
 
             double lsc = media + 3 * desvioPadrao;
-            double lic = media + 3 * desvioPadrao;
+            double lic = media - 3 * desvioPadrao;
 
             LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count - 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
@@ -399,13 +444,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
-                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
+                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
             }
             else
             {
-                graphPane.YAxis.Scale.Min = lic - 0.01;
-                graphPane.YAxis.Scale.Max = lsc + 0.01;
+                graphPane.YAxis.Scale.Min = lic - 0.1;
+                graphPane.YAxis.Scale.Max = lsc + 0.1;
             }
 
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
@@ -466,13 +511,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
-                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
+                graphPane.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                graphPane.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
             }
             else
             {
-                graphPane.YAxis.Scale.Min = lic - 0.01;
-                graphPane.YAxis.Scale.Max = lsc + 0.01;
+                graphPane.YAxis.Scale.Min = lic - 0.1;
+                graphPane.YAxis.Scale.Max = lsc + 0.1;
             }
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -527,13 +572,13 @@ namespace estatisticaTechData.Screens
                 double diffMax, diffMin;
                 diffMax = yMax - lsc;
                 diffMin = lic - yMin;
-                graphPaneR.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
-                graphPaneR.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
+                graphPaneR.YAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.1;
+                graphPaneR.YAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.1;
             }
             else
             {
-                graphPaneR.YAxis.Scale.Min = lic - 0.01;
-                graphPaneR.YAxis.Scale.Max = lsc + 0.01;
+                graphPaneR.YAxis.Scale.Min = lic - 0.1;
+                graphPaneR.YAxis.Scale.Max = lsc + 0.1;
             }
             graphPaneR.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -618,13 +663,13 @@ namespace estatisticaTechData.Screens
                         double diffMax, diffMin;
                         diffMax = xMax - lsc;
                         diffMin = lic - xMin;
-                        graphPane.XAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 0.01;
-                        graphPane.XAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 0.01;
+                        graphPane.XAxis.Scale.Min = (lic - Math.Max(diffMax, diffMin)) - 1;
+                        graphPane.XAxis.Scale.Max = (lsc + Math.Max(diffMax, diffMin)) + 1;
                     }
                     else
                     {
-                        graphPane.XAxis.Scale.Min = lic - 0.01;
-                        graphPane.XAxis.Scale.Max = lsc + 0.01;
+                        graphPane.XAxis.Scale.Min = lic - 1;
+                        graphPane.XAxis.Scale.Max = lsc + 1;
                     }
                     graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
                     graphPane.YAxis.Scale.Min = yMin - 0.01;

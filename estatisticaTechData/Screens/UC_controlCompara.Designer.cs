@@ -47,13 +47,13 @@ namespace estatisticaTechData.Screens
             this.zedCompara1 = new ZedGraph.ZedGraphControl();
             this.pnlBig = new System.Windows.Forms.TableLayoutPanel();
             this.pnlEscolha = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlEscolha2 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdbEscolha3 = new estatisticaTechData.Resources.techDataRadioButton();
             this.rdbEscolha1 = new estatisticaTechData.Resources.techDataRadioButton();
             this.rdbEscolha2 = new estatisticaTechData.Resources.techDataRadioButton();
-            this.rdbEscolha3 = new estatisticaTechData.Resources.techDataRadioButton();
-            this.pnlEscolha2 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdbOutro3 = new estatisticaTechData.Resources.techDataRadioButton();
             this.rdbOutro1 = new estatisticaTechData.Resources.techDataRadioButton();
             this.rdbOutro2 = new estatisticaTechData.Resources.techDataRadioButton();
-            this.rdbOutro3 = new estatisticaTechData.Resources.techDataRadioButton();
             this.pnlGraficos.SuspendLayout();
             this.pnlCompara.SuspendLayout();
             this.pnlBig.SuspendLayout();
@@ -356,8 +356,8 @@ namespace estatisticaTechData.Screens
             this.pnlEscolha.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.pnlEscolha.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.pnlEscolha.Controls.Add(this.rdbEscolha3, 2, 1);
-            this.pnlEscolha.Controls.Add(this.rdbEscolha2, 1, 1);
             this.pnlEscolha.Controls.Add(this.rdbEscolha1, 0, 1);
+            this.pnlEscolha.Controls.Add(this.rdbEscolha2, 1, 1);
             this.pnlEscolha.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlEscolha.Location = new System.Drawing.Point(3, 485);
             this.pnlEscolha.Name = "pnlEscolha";
@@ -370,66 +370,6 @@ namespace estatisticaTechData.Screens
             this.pnlEscolha.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.pnlEscolha.Size = new System.Drawing.Size(719, 155);
             this.pnlEscolha.TabIndex = 67;
-            // 
-            // rdbEscolha1
-            // 
-            this.rdbEscolha1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbEscolha1.AutoSize = true;
-            this.rdbEscolha1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdbEscolha1.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEscolha1.Location = new System.Drawing.Point(3, 54);
-            this.rdbEscolha1.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbEscolha1.Name = "rdbEscolha1";
-            this.rdbEscolha1.Padding = new System.Windows.Forms.Padding(5);
-            this.rdbEscolha1.Size = new System.Drawing.Size(233, 45);
-            this.rdbEscolha1.TabIndex = 0;
-            this.rdbEscolha1.TabStop = true;
-            this.rdbEscolha1.Text = "techDataRadioButton1";
-            this.rdbEscolha1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdbEscolha1.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rdbEscolha1.UseVisualStyleBackColor = true;
-            // 
-            // rdbEscolha2
-            // 
-            this.rdbEscolha2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbEscolha2.AutoSize = true;
-            this.rdbEscolha2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdbEscolha2.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEscolha2.Location = new System.Drawing.Point(242, 54);
-            this.rdbEscolha2.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbEscolha2.Name = "rdbEscolha2";
-            this.rdbEscolha2.Padding = new System.Windows.Forms.Padding(5);
-            this.rdbEscolha2.Size = new System.Drawing.Size(233, 45);
-            this.rdbEscolha2.TabIndex = 1;
-            this.rdbEscolha2.TabStop = true;
-            this.rdbEscolha2.Text = "techDataRadioButton2";
-            this.rdbEscolha2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdbEscolha2.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rdbEscolha2.UseVisualStyleBackColor = true;
-            // 
-            // rdbEscolha3
-            // 
-            this.rdbEscolha3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbEscolha3.AutoSize = true;
-            this.rdbEscolha3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdbEscolha3.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbEscolha3.Location = new System.Drawing.Point(481, 54);
-            this.rdbEscolha3.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbEscolha3.Name = "rdbEscolha3";
-            this.rdbEscolha3.Padding = new System.Windows.Forms.Padding(5);
-            this.rdbEscolha3.Size = new System.Drawing.Size(235, 45);
-            this.rdbEscolha3.TabIndex = 2;
-            this.rdbEscolha3.TabStop = true;
-            this.rdbEscolha3.Text = "techDataRadioButton3";
-            this.rdbEscolha3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdbEscolha3.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rdbEscolha3.UseVisualStyleBackColor = true;
             // 
             // pnlEscolha2
             // 
@@ -457,19 +397,89 @@ namespace estatisticaTechData.Screens
             this.pnlEscolha2.Size = new System.Drawing.Size(720, 155);
             this.pnlEscolha2.TabIndex = 67;
             // 
+            // rdbEscolha3
+            // 
+            this.rdbEscolha3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbEscolha3.AutoSize = true;
+            this.rdbEscolha3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdbEscolha3.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbEscolha3.Location = new System.Drawing.Point(481, 55);
+            this.rdbEscolha3.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbEscolha3.Name = "rdbEscolha3";
+            this.rdbEscolha3.Padding = new System.Windows.Forms.Padding(5);
+            this.rdbEscolha3.Size = new System.Drawing.Size(235, 42);
+            this.rdbEscolha3.TabIndex = 2;
+            this.rdbEscolha3.TabStop = true;
+            this.rdbEscolha3.Text = "techDataRadioButton3";
+            this.rdbEscolha3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdbEscolha3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rdbEscolha3.UseVisualStyleBackColor = true;
+            // 
+            // rdbEscolha1
+            // 
+            this.rdbEscolha1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbEscolha1.AutoSize = true;
+            this.rdbEscolha1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdbEscolha1.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbEscolha1.Location = new System.Drawing.Point(3, 55);
+            this.rdbEscolha1.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbEscolha1.Name = "rdbEscolha1";
+            this.rdbEscolha1.Padding = new System.Windows.Forms.Padding(5);
+            this.rdbEscolha1.Size = new System.Drawing.Size(233, 42);
+            this.rdbEscolha1.TabIndex = 0;
+            this.rdbEscolha1.TabStop = true;
+            this.rdbEscolha1.Text = "techDataRadioButton1";
+            this.rdbEscolha1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdbEscolha1.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rdbEscolha1.UseVisualStyleBackColor = true;
+            // 
+            // rdbEscolha2
+            // 
+            this.rdbEscolha2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.rdbEscolha2.AutoSize = true;
+            this.rdbEscolha2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdbEscolha2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdbEscolha2.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbEscolha2.Location = new System.Drawing.Point(346, 54);
+            this.rdbEscolha2.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbEscolha2.Name = "rdbEscolha2";
+            this.rdbEscolha2.Padding = new System.Windows.Forms.Padding(5);
+            this.rdbEscolha2.Size = new System.Drawing.Size(24, 45);
+            this.rdbEscolha2.TabIndex = 1;
+            this.rdbEscolha2.TabStop = true;
+            this.rdbEscolha2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdbEscolha2.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rdbEscolha2.UseVisualStyleBackColor = true;
+            // 
+            // rdbOutro3
+            // 
+            this.rdbOutro3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rdbOutro3.AutoSize = true;
+            this.rdbOutro3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
+            this.rdbOutro3.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbOutro3.Location = new System.Drawing.Point(483, 55);
+            this.rdbOutro3.MinimumSize = new System.Drawing.Size(0, 21);
+            this.rdbOutro3.Name = "rdbOutro3";
+            this.rdbOutro3.Padding = new System.Windows.Forms.Padding(5);
+            this.rdbOutro3.Size = new System.Drawing.Size(234, 42);
+            this.rdbOutro3.TabIndex = 3;
+            this.rdbOutro3.TabStop = true;
+            this.rdbOutro3.Text = "techDataRadioButton3";
+            this.rdbOutro3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdbOutro3.UnCheckedColor = System.Drawing.Color.Gray;
+            this.rdbOutro3.UseVisualStyleBackColor = true;
+            // 
             // rdbOutro1
             // 
-            this.rdbOutro1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbOutro1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbOutro1.AutoSize = true;
             this.rdbOutro1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdbOutro1.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOutro1.Location = new System.Drawing.Point(3, 54);
+            this.rdbOutro1.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbOutro1.Location = new System.Drawing.Point(3, 55);
             this.rdbOutro1.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbOutro1.Name = "rdbOutro1";
             this.rdbOutro1.Padding = new System.Windows.Forms.Padding(5);
-            this.rdbOutro1.Size = new System.Drawing.Size(234, 45);
+            this.rdbOutro1.Size = new System.Drawing.Size(234, 42);
             this.rdbOutro1.TabIndex = 1;
             this.rdbOutro1.TabStop = true;
             this.rdbOutro1.Text = "techDataRadioButton1";
@@ -479,43 +489,21 @@ namespace estatisticaTechData.Screens
             // 
             // rdbOutro2
             // 
-            this.rdbOutro2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rdbOutro2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdbOutro2.AutoSize = true;
             this.rdbOutro2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdbOutro2.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOutro2.Location = new System.Drawing.Point(243, 54);
+            this.rdbOutro2.Font = new System.Drawing.Font("Poppins Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbOutro2.Location = new System.Drawing.Point(243, 55);
             this.rdbOutro2.MinimumSize = new System.Drawing.Size(0, 21);
             this.rdbOutro2.Name = "rdbOutro2";
             this.rdbOutro2.Padding = new System.Windows.Forms.Padding(5);
-            this.rdbOutro2.Size = new System.Drawing.Size(234, 45);
+            this.rdbOutro2.Size = new System.Drawing.Size(234, 42);
             this.rdbOutro2.TabIndex = 2;
             this.rdbOutro2.TabStop = true;
             this.rdbOutro2.Text = "techDataRadioButton2";
             this.rdbOutro2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdbOutro2.UnCheckedColor = System.Drawing.Color.Gray;
             this.rdbOutro2.UseVisualStyleBackColor = true;
-            // 
-            // rdbOutro3
-            // 
-            this.rdbOutro3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rdbOutro3.AutoSize = true;
-            this.rdbOutro3.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rdbOutro3.Font = new System.Drawing.Font("Poppins Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbOutro3.Location = new System.Drawing.Point(483, 54);
-            this.rdbOutro3.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rdbOutro3.Name = "rdbOutro3";
-            this.rdbOutro3.Padding = new System.Windows.Forms.Padding(5);
-            this.rdbOutro3.Size = new System.Drawing.Size(234, 45);
-            this.rdbOutro3.TabIndex = 3;
-            this.rdbOutro3.TabStop = true;
-            this.rdbOutro3.Text = "techDataRadioButton3";
-            this.rdbOutro3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdbOutro3.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rdbOutro3.UseVisualStyleBackColor = true;
             // 
             // UC_controlCompara
             // 
