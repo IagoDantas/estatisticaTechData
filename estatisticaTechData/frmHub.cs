@@ -158,12 +158,12 @@ namespace estatisticaTechData
 
         }
 
-        public void abrirBackgroundCompara()
+        public void abrirBackgroundCompara(int id)
         {
             if (ControleBackgroundCompara == 0)
             {
                 ControleBackgroundCompara += 1;
-                UC_BackgroundCompara Teste = new UC_BackgroundCompara();
+                UC_BackgroundCompara Teste = new UC_BackgroundCompara(id);
                 Teste.Dock = DockStyle.Fill;
                 TabPage TbPage = new TabPage();
                 TbPage.Name = "BackgroundCompara";
@@ -459,11 +459,20 @@ namespace estatisticaTechData
         {
             try
             {
-                abrirBackgroundCompara();
                 if (ControleCompara == 0)
                 {
+                    frmTypeGraph dialog = new frmTypeGraph();
+                    dialog.ShowDialog();
+                    int typeID=0;
+                    if (dialog.DialogResult == DialogResult.OK)
+                        typeID = 3;
+                    else if (dialog.DialogResult == DialogResult.Cancel)
+                        typeID = 1;
+                    else if (dialog.DialogResult == DialogResult.Abort)
+                        typeID = 2;
+                    abrirBackgroundCompara(typeID);
                     ControleCompara += 1;
-                    UC_controlCompara compara = new UC_controlCompara(id);
+                    UC_controlCompara compara = new UC_controlCompara(id, typeID);
                     compara.Dock = DockStyle.Fill;
                     TabPage TbPage = new TabPage();
                     TbPage.Name = "ComparacaoGraficos";

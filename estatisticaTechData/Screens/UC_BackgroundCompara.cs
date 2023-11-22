@@ -27,12 +27,13 @@ namespace estatisticaTechData
         double mediana, variancia, dispersao, coeficientePercentilicoCurtose, coeficienteAssimetria;
         public double media, desvioPadrao, IQR;
         private int userId;
-        private int chargeId;
+        private int chargeId, typeID;
         private estatisticaTechDataClassLibrary.Connection conexao;
 
-        public UC_BackgroundCompara()
+        public UC_BackgroundCompara(int id)
         {
             InitializeComponent();
+            this.typeID = id;
             funEstancia = this;
             conexao = new estatisticaTechDataClassLibrary.Connection();
         }
@@ -73,7 +74,7 @@ namespace estatisticaTechData
                                 }
                             }
                             dgvTeste.DataSource = dt.DefaultView;
-                            /*
+                            
                             byte[] excelData;
                             using (MemoryStream ms = new MemoryStream())
                             {
@@ -108,7 +109,7 @@ namespace estatisticaTechData
                                     dataTableMaster.Add("status", "A");
                                     dataTableMaster.Add("data", json);
                                     dataTableMaster.Add("user_id", userId.ToString());
-                                    dataTableMaster.Add("type_count_id", "3");
+                                    dataTableMaster.Add("type_count_id",  typeID.ToString());
                                     dataTableMaster.Add("charge_id", chargeId.ToString());
 
                                     if (conexao.InsertData("table_master", dataTableMaster) != true)
@@ -126,7 +127,7 @@ namespace estatisticaTechData
                             {
                                 MessageBox.Show("Erro ao obter o ID do usuário");
                             }
-                            Cursor.Current = Cursors.Default;*/
+                            Cursor.Current = Cursors.Default;
                         }
                     }
                     else

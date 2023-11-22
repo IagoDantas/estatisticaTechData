@@ -15,13 +15,14 @@ namespace estatisticaTechData.Screens
 {
     public partial class UC_controlCompara : UserControl
     {
-        int id;
+        int id, typeID;
         string jsonString;
         string type;
         private estatisticaTechDataClassLibrary.Connection conexao;
-        public UC_controlCompara(int id)
+        public UC_controlCompara(int id, int typeID)
         {
             this.id = id;
+            this.typeID = typeID;
             conexao = new estatisticaTechDataClassLibrary.Connection();
             InitializeComponent();  
         }
@@ -41,25 +42,29 @@ namespace estatisticaTechData.Screens
             {
                 type3(jsonDataList);
             }
+            if (typeID == 1)
+            {
+                typeNewGraph1();
+            }
+            else if (typeID == 2)
+            {
+                typeNewGraph2();
+            }
+            else if (typeID == 3)
+            {
+                typeNewGraph3();
+            }
         }
-
         private void type1(List<Dictionary<string, string>> jsonDataList)
         {
-            double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
-            double rowNew = matrizNew.GetLength(0);
             int x, y;
             double[,] matrizOld = Atributos(jsonDataList);
-            double rodOld = matrizOld.GetLength(0);
-            GraficoC(zedInicial1, matrizNew, rowNew);
-            GraficoP(zedInicial2, matrizNew, rowNew);
-            GraficoC(zedCompara1, matrizNew, rowNew);
-            GraficoP(zedCompara2, matrizNew, rowNew);
+            double rowOld = matrizOld.GetLength(0);
+            GraficoC(zedInicial1, matrizOld, rowOld);
+            GraficoP(zedInicial2, matrizOld, rowOld);
             pnlEscolha.ColumnStyles[0].Width = 45F;
             pnlEscolha.ColumnStyles[1].Width = 10F;
             pnlEscolha.ColumnStyles[2].Width = 45F;
-            pnlEscolha2.ColumnStyles[0].Width = 45F;
-            pnlEscolha2.ColumnStyles[1].Width = 10F;
-            pnlEscolha2.ColumnStyles[2].Width = 45F;
             rdbEscolha1.Text = "Gráfico C";
             x = (pnlEscolha.GetColumnWidths()[0]/2)-(rdbEscolha1.Width/2);
             y = (pnlEscolha.GetRowHeights()[1]/2) - (rdbEscolha1.Height/2);
@@ -67,19 +72,9 @@ namespace estatisticaTechData.Screens
             rdbEscolha2.Visible = false;
             rdbEscolha2.Enabled = true;
             rdbEscolha3.Text = "Gráfico P";
-            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
-            rdbOutro1.Text = "Gráfico C";
-            x = (pnlEscolha2.GetColumnWidths()[0] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
-            rdbOutro2.Visible = false;
-            rdbOutro2.Enabled = true;
-            rdbOutro3.Text = "Gráfico P";
-            x = (pnlEscolha2.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
+            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha3.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha3.Height / 2);
+            rdbEscolha3.Location = new Point(x, y);
 
             rdbEscolha1.CheckedChanged += (s, eventArgs) =>
             {
@@ -91,24 +86,10 @@ namespace estatisticaTechData.Screens
                 zedInicial1.Visible = false;
                 zedInicial2.Visible = true;
             };
-            rdbOutro1.CheckedChanged += (s, eventArgs) =>
-            {
-                zedCompara1.Visible = true;
-                zedCompara2.Visible = false;
-            };
-            rdbOutro3.CheckedChanged += (s, eventArgs) =>
-            {
-                zedCompara1.Visible = false;
-                zedCompara2.Visible = true;
-            };
             rdbEscolha1.Checked = true;
-            rdbOutro1.Checked = true;
         }
         private void type2(List<Dictionary<string, string>> jsonDataList)
         {
-            double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
-            double[] mediasNew = UC_BackgroundCompara.funEstancia.mediasIniciais;
-            double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
             double[,] matrizOld = Variaveis(jsonDataList);
             int x = matrizOld.GetLength(0), y = matrizOld.GetLength(1);
             double[] vetor = new double[x * y];
@@ -121,34 +102,19 @@ namespace estatisticaTechData.Screens
             GraficoControle(zedInicial3, vetor);
             GraficoMedia(zedInicial4, mediasOld);
             GraficoAmplitude(zedInicial5, amplitudesOld);
-            GraficoControle(zedCompara3, arrayNew);
-            GraficoMedia(zedCompara4, mediasNew);
-            GraficoAmplitude(zedCompara5, amplitudesNew);
 
             rdbEscolha1.Text = "Controle Individual";
             x = (pnlEscolha.GetColumnWidths()[0] / 2) - (rdbEscolha1.Width / 2);
             y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
             rdbEscolha1.Location = new Point(x, y);
             rdbEscolha2.Text = "Medias";
-            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
+            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha2.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha2.Height / 2);
+            rdbEscolha2.Location = new Point(x, y);
             rdbEscolha3.Text = "Amplitude";
-            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
-            rdbOutro1.Text = "Controle Individual";
-            x = (pnlEscolha.GetColumnWidths()[0] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
-            rdbOutro2.Text = "Medias";
-            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
-            rdbOutro3.Text = "Amplitude";
-            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
+            x = (pnlEscolha.GetColumnWidths()[2] / 2) - (rdbEscolha3.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha3.Height / 2);
+            rdbEscolha3.Location = new Point(x, y);
             rdbEscolha1.CheckedChanged += (s, eventArgs) =>
             {
                 zedInicial3.Visible = true;
@@ -167,6 +133,81 @@ namespace estatisticaTechData.Screens
                 zedInicial4.Visible = false;
                 zedInicial5.Visible = true;
             };
+            rdbEscolha1.Checked = true;
+        }
+        private void type3(List<Dictionary<string, string>> jsonDataList)
+        {
+            double[] arrayOld = Dist(jsonDataList);
+            GraficoDist(zedInicial6, arrayOld);
+            int x, y;
+            zedInicial6.Visible = true;
+            rdbEscolha1.Visible = false;
+            rdbEscolha1 .Enabled = true;
+            rdbEscolha2.Text = "Distribuição Normal";
+            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha2.Width / 2);
+            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha2.Height / 2);
+            rdbEscolha2.Location = new Point(x, y);
+            rdbEscolha3.Visible = false;
+            rdbEscolha3.Enabled = true;
+            
+            rdbEscolha2.Checked = true;
+        }
+        private void typeNewGraph1()
+        {
+            double[,] matrizNew = UC_BackgroundCompara.funEstancia.matrizExcel;
+            double rowNew = matrizNew.GetLength(0);
+            int x, y;
+            GraficoC(zedCompara1, matrizNew, rowNew);
+            GraficoP(zedCompara2, matrizNew, rowNew);
+            pnlEscolha2.ColumnStyles[0].Width = 45F;
+            pnlEscolha2.ColumnStyles[1].Width = 10F;
+            pnlEscolha2.ColumnStyles[2].Width = 45F;
+            rdbOutro1.Text = "Gráfico C";
+            x = (pnlEscolha2.GetColumnWidths()[0] / 2) - (rdbOutro1.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbOutro1.Height / 2);
+            rdbOutro1.Location = new Point(x, y);
+            rdbOutro2.Visible = false;
+            rdbOutro2.Enabled = true;
+            rdbOutro3.Text = "Gráfico P";
+            x = (pnlEscolha2.GetColumnWidths()[2] / 2) - (rdbOutro3.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbOutro3.Height / 2);
+            rdbOutro3.Location = new Point(x, y);
+
+            rdbOutro1.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara1.Visible = true;
+                zedCompara2.Visible = false;
+            };
+            rdbOutro3.CheckedChanged += (s, eventArgs) =>
+            {
+                zedCompara1.Visible = false;
+                zedCompara2.Visible = true;
+            };
+            rdbOutro1.Checked = true;
+        }
+        private void typeNewGraph2()
+        {
+            double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
+            double[] mediasNew = UC_BackgroundCompara.funEstancia.mediasIniciais;
+            double[] amplitudesNew = UC_BackgroundCompara.funEstancia.amplitudes;
+            GraficoControle(zedCompara3, arrayNew);
+            GraficoMedia(zedCompara4, mediasNew);
+            GraficoAmplitude(zedCompara5, amplitudesNew);
+
+            int x, y;
+            rdbOutro1.Text = "Controle Individual";
+            x = (pnlEscolha2.GetColumnWidths()[0] / 2) - (rdbOutro1.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbOutro1.Height / 2);
+            rdbOutro1.Location = new Point(x, y);
+            rdbOutro2.Text = "Medias";
+            x = (pnlEscolha2.GetColumnWidths()[1] / 2) - (rdbOutro2.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbOutro2.Height / 2);
+            rdbOutro2.Location = new Point(x, y);
+            rdbOutro3.Text = "Amplitude";
+            x = (pnlEscolha2.GetColumnWidths()[2] / 2) - (rdbOutro3.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbOutro3.Height / 2);
+            rdbOutro3.Location = new Point(x, y);
+            
             rdbOutro1.CheckedChanged += (s, eventArgs) =>
             {
                 zedCompara3.Visible = true;
@@ -185,37 +226,24 @@ namespace estatisticaTechData.Screens
                 zedCompara4.Visible = false;
                 zedCompara5.Visible = true;
             };
-            rdbEscolha1.Checked = true;
-            rdbOutro1.Checked = true;    
+            rdbOutro1.Checked = true;
         }
-        private void type3(List<Dictionary<string, string>> jsonDataList)
+        private void typeNewGraph3()
         {
 
             double[] arrayNew = UC_BackgroundCompara.funEstancia.arrayExcel;
-            double[] arrayOld = Dist(jsonDataList);
-            GraficoDist(zedInicial6, arrayOld);
             GraficoDist(zedCompara6, arrayNew);
             int x, y;
-            zedInicial6.Visible = true;
             zedCompara6.Visible = true;
-            rdbEscolha1.Visible = false;
-            rdbEscolha1 .Enabled = true;
-            rdbEscolha2.Text = "Distribuição Normal";
-            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
-            rdbEscolha3.Visible = false;
-            rdbEscolha3.Enabled = true;
             rdbOutro1.Visible = false;
             rdbOutro1.Enabled = true;
             rdbOutro2.Text = "Distribuição Normal";
-            x = (pnlEscolha.GetColumnWidths()[1] / 2) - (rdbEscolha1.Width / 2);
-            y = (pnlEscolha.GetRowHeights()[1] / 2) - (rdbEscolha1.Height / 2);
-            rdbEscolha1.Location = new Point(x, y);
+            x = (pnlEscolha2.GetColumnWidths()[1] / 2) - (rdbOutro2.Width / 2);
+            y = (pnlEscolha2.GetRowHeights()[1] / 2) - (rdbOutro2.Height / 2);
+            rdbOutro2.Location = new Point(x, y);
             rdbOutro3.Visible = false;
             rdbOutro3.Enabled = true;
 
-            rdbEscolha2.Checked = true;
             rdbOutro2.Checked = true;
         }
         private void GraficoC(ZedGraphControl zedGraph, double[,] matriz, double row)
@@ -850,7 +878,7 @@ namespace estatisticaTechData.Screens
                 return null;
             }
             int y = jsonDataList.Count;
-            double[,] matriz = new double[2, y];
+            double[,] matriz = new double[y, 2];
 
             for (int i = 0; i < y; i++)
             {
@@ -858,11 +886,11 @@ namespace estatisticaTechData.Screens
                 {
                     if (kvp.Key == atributos[0])
                     {
-                        matriz[0, i] = Double.Parse(kvp.Value);
+                        matriz[i, 0] = Double.Parse(kvp.Value);
                     }
                     if(kvp.Key == atributos[1])
                     {
-                        matriz[0, i] = Double.Parse(kvp.Value);
+                        matriz[i, 1] = Double.Parse(kvp.Value);
                     }
                 }
             }

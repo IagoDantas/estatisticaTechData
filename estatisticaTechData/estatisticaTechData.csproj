@@ -212,6 +212,12 @@
     <Compile Include="Resources\techDataTextBox.Designer.cs">
       <DependentUpon>techDataTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\frmTypeGraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\frmTypeGraph.Designer.cs">
+      <DependentUpon>frmTypeGraph.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\UC_BackgroundAtributos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\frmTypeGraph.resx">
+      <DependentUpon>frmTypeGraph.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\frmValidacao.resx">
       <DependentUpon>frmValidacao.cs</DependentUpon>
