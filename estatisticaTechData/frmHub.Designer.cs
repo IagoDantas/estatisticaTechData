@@ -38,6 +38,7 @@
             this.btnCEP = new System.Windows.Forms.Button();
             this.pcbConfig = new System.Windows.Forms.PictureBox();
             this.Tbc_Telas = new System.Windows.Forms.TabControl();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).BeginInit();
             this.pnlSideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbConfig)).BeginInit();
@@ -53,7 +54,7 @@
             this.btnConfig.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConfig.Location = new System.Drawing.Point(0, 625);
+            this.btnConfig.Location = new System.Drawing.Point(-3, 625);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(266, 54);
             this.btnConfig.TabIndex = 7;
@@ -130,6 +131,7 @@
             this.pnlSideBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlSideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.pnlSideBar.Controls.Add(this.button1);
             this.pnlSideBar.Controls.Add(this.btnCEP);
             this.pnlSideBar.Controls.Add(this.pcbConfig);
             this.pnlSideBar.Controls.Add(this.btnConfig);
@@ -162,7 +164,7 @@
             // 
             this.pcbConfig.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pcbConfig.Image = ((System.Drawing.Image)(resources.GetObject("pcbConfig.Image")));
-            this.pcbConfig.Location = new System.Drawing.Point(12, 632);
+            this.pcbConfig.Location = new System.Drawing.Point(9, 632);
             this.pcbConfig.Name = "pcbConfig";
             this.pcbConfig.Size = new System.Drawing.Size(40, 40);
             this.pcbConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -180,6 +182,24 @@
             this.Tbc_Telas.Size = new System.Drawing.Size(998, 682);
             this.Tbc_Telas.TabIndex = 8;
             this.Tbc_Telas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Tbc_Telas_MouseDown);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(107)))), ((int)(((byte)(117)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 572);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(266, 54);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Sair";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmHub
             // 
@@ -211,5 +231,6 @@
         private System.Windows.Forms.PictureBox pcbConfig;
         private System.Windows.Forms.TabControl Tbc_Telas;
         private System.Windows.Forms.Button btnCEP;
+        private System.Windows.Forms.Button button1;
     }
 }

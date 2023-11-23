@@ -1028,5 +1028,12 @@ namespace estatisticaTechData
             btnDistribuicao.Enabled = true;
             btnHistorico.Enabled = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmHome home = new frmHome();
+            home.Show();
+            this.Close();
+        }
     }
 }
