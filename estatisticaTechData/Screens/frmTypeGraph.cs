@@ -21,17 +21,21 @@ namespace estatisticaTechData.Screens
         {
             if (rdbDist.Checked == true)
             {
-                DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.Retry;
                 this.Close();
             }else if (rdbAtributo.Checked == true)
             {
-                DialogResult = DialogResult.Cancel;
+                DialogResult = DialogResult.Ignore;
                 this.Close();
             }
             else if(rdbVariavel.Checked == true)
             {
-                DialogResult = DialogResult.Abort;
+                DialogResult = DialogResult.Yes;
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Marque um opção de gráfico!", "Erro");
             }
         }
     }

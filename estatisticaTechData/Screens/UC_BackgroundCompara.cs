@@ -38,7 +38,7 @@ namespace estatisticaTechData
             conexao = new estatisticaTechDataClassLibrary.Connection();
         }
 
-        private void UC_BackgroundDist_Load(object sender, EventArgs e)
+        private void UC_BackgroundCompara_Load(object sender, EventArgs e)
         {
             try
             {
@@ -169,6 +169,7 @@ namespace estatisticaTechData
                         newRow[i] = amplitudes[i - 1].ToString("f4");
                 }
                 dt.Rows.Add(newRow);
+                dgvTeste.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 // Atualizar o DataSource do DataGridView
                 dgvTeste.DataSource = dt;
@@ -239,6 +240,10 @@ namespace estatisticaTechData
                 Console.WriteLine(ex);
             }
 
+        }
+        private void txtPercentil_Enter(object sender, EventArgs e)
+        {
+            txtPercentil.Select(0, 0);
         }
 
         public void carregaInformacoes()

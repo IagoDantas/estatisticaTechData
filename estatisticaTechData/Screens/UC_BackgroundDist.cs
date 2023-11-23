@@ -72,6 +72,12 @@ namespace estatisticaTechData.Screens
 
         }
 
+        private void txtPercentil_Enter(object sender, EventArgs e)
+        {
+            txtPercentil.Select(0, 0);
+        }
+
+
         public static DataTable ConvertJsonToDataTable(string jsonString)
         {
             DataTable dataTable = new DataTable();
@@ -168,6 +174,8 @@ namespace estatisticaTechData.Screens
                         newRow[i] = amplitudes[i - 1].ToString("f4");
                 }
                 dt.Rows.Add(newRow);
+                dgvTeste.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
 
                 // Atualizar o DataSource do DataGridView
                 dgvTeste.DataSource = dt;

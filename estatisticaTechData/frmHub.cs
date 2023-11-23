@@ -464,12 +464,17 @@ namespace estatisticaTechData
                     frmTypeGraph dialog = new frmTypeGraph();
                     dialog.ShowDialog();
                     int typeID=0;
-                    if (dialog.DialogResult == DialogResult.OK)
+                    if (dialog.DialogResult == DialogResult.Retry)
                         typeID = 3;
-                    else if (dialog.DialogResult == DialogResult.Cancel)
+                    else if (dialog.DialogResult == DialogResult.Ignore)
                         typeID = 1;
-                    else if (dialog.DialogResult == DialogResult.Abort)
+                    else if (dialog.DialogResult == DialogResult.Yes)
                         typeID = 2;
+                    else
+                    {
+                        MessageBox.Show("Nenhum tipo de gráfico selecionado!", "Erro");
+                        return;
+                    }
                     abrirBackgroundCompara(typeID);
                     ControleCompara += 1;
                     UC_controlCompara compara = new UC_controlCompara(id, typeID);
