@@ -162,15 +162,22 @@ namespace estatisticaTechData
         {
             if (ControleBackgroundCompara == 0)
             {
-                ControleBackgroundCompara += 1;
-                UC_BackgroundCompara Teste = new UC_BackgroundCompara(id);
-                Teste.Dock = DockStyle.Fill;
-                TabPage TbPage = new TabPage();
-                TbPage.Name = "BackgroundCompara";
-                TbPage.Text = "Background";
-                TbPage.Controls.Add(Teste);
-                Tbc_Telas.TabPages.Add(TbPage);
-                Tbc_Telas.SelectedTab = TbPage;
+                try
+                {
+                    UC_BackgroundCompara Teste = new UC_BackgroundCompara(id);
+                    ControleBackgroundCompara += 1;
+                    Teste.Dock = DockStyle.Fill;
+                    TabPage TbPage = new TabPage();
+                    TbPage.Name = "BackgroundCompara";
+                    TbPage.Text = "Background";
+                    TbPage.Controls.Add(Teste);
+                    Tbc_Telas.TabPages.Add(TbPage);
+                    Tbc_Telas.SelectedTab = TbPage;
+                }catch(Exception ex)
+                {
+                    throw ex;
+                }
+                
             }
         }
 
@@ -459,25 +466,25 @@ namespace estatisticaTechData
         {
             try
             {
+                frmTypeGraph dialog = new frmTypeGraph();
+                dialog.ShowDialog();
+                int typeID = 0;
+                if (dialog.DialogResult == DialogResult.Retry)
+                    typeID = 3;
+                else if (dialog.DialogResult == DialogResult.Ignore)
+                    typeID = 1;
+                else if (dialog.DialogResult == DialogResult.Yes)
+                    typeID = 2;
+                else
+                {
+                    MessageBox.Show("Nenhum tipo de gráfico selecionado!", "Erro");
+                    return;
+                }
+                abrirBackgroundCompara(typeID);
                 if (ControleCompara == 0)
                 {
-                    frmTypeGraph dialog = new frmTypeGraph();
-                    dialog.ShowDialog();
-                    int typeID=0;
-                    if (dialog.DialogResult == DialogResult.Retry)
-                        typeID = 3;
-                    else if (dialog.DialogResult == DialogResult.Ignore)
-                        typeID = 1;
-                    else if (dialog.DialogResult == DialogResult.Yes)
-                        typeID = 2;
-                    else
-                    {
-                        MessageBox.Show("Nenhum tipo de gráfico selecionado!", "Erro");
-                        return;
-                    }
-                    abrirBackgroundCompara(typeID);
-                    ControleCompara += 1;
                     UC_controlCompara compara = new UC_controlCompara(id, typeID);
+                    ControleCompara += 1;
                     compara.Dock = DockStyle.Fill;
                     TabPage TbPage = new TabPage();
                     TbPage.Name = "ComparacaoGraficos";
@@ -512,7 +519,10 @@ namespace estatisticaTechData
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex.Message != "fechou")
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

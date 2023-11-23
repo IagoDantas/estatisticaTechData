@@ -224,7 +224,21 @@ namespace estatisticaTechData
 
                     compareButton.Click += (s, eventArgs) =>
                     {
-                        frmHub.funEstancia.abrirCompara(tableMasterId);
+                        try
+                        {
+                            frmHub.funEstancia.abrirCompara(tableMasterId);
+                        }
+                        catch (Exception ex)
+                        {
+                            if (ex.Message == "fechou")
+                            {
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao abrir arquivo excel", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
                     };
 
                     visualizarButton.Click += (s, eventArgs) =>

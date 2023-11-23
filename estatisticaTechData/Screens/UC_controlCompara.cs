@@ -30,29 +30,36 @@ namespace estatisticaTechData.Screens
         {
             PegaJson();
             var jsonDataList = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(jsonString);
-            if (type == "1")
+            try
             {
-                type1(jsonDataList);
+                if (type == "1")
+                {
+                    type1(jsonDataList);
+                }
+                else if (type == "2")
+                {
+                    type2(jsonDataList);
+                }
+                else if (type == "3")
+                {
+                    type3(jsonDataList);
+                }
+                if (typeID == 1)
+                {
+                    typeNewGraph1();
+                }
+                else if (typeID == 2)
+                {
+                    typeNewGraph2();
+                }
+                else if (typeID == 3)
+                {
+                    typeNewGraph3();
+                }
             }
-            else if (type == "2")
+            catch (Exception ex)
             {
-                type2(jsonDataList);
-            }
-            else if (type == "3")
-            {
-                type3(jsonDataList);
-            }
-            if (typeID == 1)
-            {
-                typeNewGraph1();
-            }
-            else if (typeID == 2)
-            {
-                typeNewGraph2();
-            }
-            else if (typeID == 3)
-            {
-                typeNewGraph3();
+                throw ex;
             }
         }
         private void type1(List<Dictionary<string, string>> jsonDataList)

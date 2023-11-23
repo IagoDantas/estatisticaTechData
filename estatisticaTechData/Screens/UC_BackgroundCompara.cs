@@ -29,6 +29,7 @@ namespace estatisticaTechData
         private int userId;
         private int chargeId, typeID;
         private estatisticaTechDataClassLibrary.Connection conexao;
+        DataTable dt;
 
         public UC_BackgroundCompara(int id)
         {
@@ -36,105 +37,20 @@ namespace estatisticaTechData
             this.typeID = id;
             funEstancia = this;
             conexao = new estatisticaTechDataClassLibrary.Connection();
+            try
+            {
+                chargeDt();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void UC_BackgroundCompara_Load(object sender, EventArgs e)
         {
             try
             {
-                carregaInformacoes();
-                DataTable dt = new DataTable();
-                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
-                {
-                    if (ofd.ShowDialog() == DialogResult.OK)
-                    {
-                        Cursor.Current = Cursors.WaitCursor;
-                        using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
-                        {
-                            bool isFirstRow = true;
-                            var rows = workbook.Worksheet(1).RowsUsed();
-                            foreach (var row in rows)
-                            {
-                                if (isFirstRow)
-                                {
-                                    foreach (IXLCell cell in row.Cells())
-                                    {
-                                        dt.Columns.Add(cell.Value.ToString());
-                                    }
-                                    isFirstRow = false;
-                                }
-                                else
-                                {
-                                    dt.Rows.Add();
-                                    int i = 0;
-                                    foreach (IXLCell cell in row.Cells())
-                                    {
-                                        dt.Rows[dt.Rows.Count - 1][i++] = cell.Value.ToString();
-                                    }
-                                }
-                            }
-                            dgvTeste.DataSource = dt.DefaultView;
-                            
-                            byte[] excelData;
-                            using (MemoryStream ms = new MemoryStream())
-                            {
-                                workbook.SaveAs(ms);
-                                excelData = ms.ToArray();
-                            }
-
-                            string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
-
-
-                            string[] columns2 = { "id" };
-                            string where2 = $"email='{email}' AND password='{senha}'";
-                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
-
-                            if (result2[0].Count > 0)
-                            {
-                                userId = int.Parse(result2[0][0].ToString());
-
-                                Dictionary<string, string> dataCharge = new Dictionary<string, string>();
-                                dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-                                dataCharge.Add("file", Convert.ToBase64String(excelData));
-                                dataCharge.Add("user_id", userId.ToString());
-                                dataCharge.Add("status", "A");
-                                dataCharge.Add("data", json);
-
-
-                                if (conexao.InsertData("charge", dataCharge) == true)
-                                {
-
-                                    chargeId = conexao.GetLastInsertedId();
-                                    Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
-                                    dataTableMaster.Add("status", "A");
-                                    dataTableMaster.Add("data", json);
-                                    dataTableMaster.Add("user_id", userId.ToString());
-                                    dataTableMaster.Add("type_count_id",  typeID.ToString());
-                                    dataTableMaster.Add("charge_id", chargeId.ToString());
-
-                                    if (conexao.InsertData("table_master", dataTableMaster) != true)
-                                    {
-                                        MessageBox.Show("Falha ao salvar os dados no banco");
-                                    }
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Erro ao adicionar o arquivo.");
-                                }
-
-                            }
-                            else
-                            {
-                                MessageBox.Show("Erro ao obter o ID do usuário");
-                            }
-                            Cursor.Current = Cursors.Default;
-                        }
-                    }
-                    else
-                    {
-
-                    }
-                }
                 x = dgvTeste.RowCount - 1;
                 y = dgvTeste.ColumnCount - 1;
                 arrayExcel = ArrayExcel(x, y, dgvTeste);
@@ -237,9 +153,112 @@ namespace estatisticaTechData
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.Message);
             }
+        }
 
+        private void chargeDt()
+        {
+            try
+            {
+                carregaInformacoes();
+                dt = new DataTable();
+                using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "Excel Workbook|*.xlsx", Multiselect = false })
+                {
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        Cursor.Current = Cursors.WaitCursor;
+                        using (XLWorkbook workbook = new XLWorkbook(ofd.FileName))
+                        {
+                            bool isFirstRow = true;
+                            var rows = workbook.Worksheet(1).RowsUsed();
+                            foreach (var row in rows)
+                            {
+                                if (isFirstRow)
+                                {
+                                    foreach (IXLCell cell in row.Cells())
+                                    {
+                                        dt.Columns.Add(cell.Value.ToString());
+                                    }
+                                    isFirstRow = false;
+                                }
+                                else
+                                {
+                                    dt.Rows.Add();
+                                    int i = 0;
+                                    foreach (IXLCell cell in row.Cells())
+                                    {
+                                        dt.Rows[dt.Rows.Count - 1][i++] = cell.Value.ToString();
+                                    }
+                                }
+                            }
+                            dgvTeste.DataSource = dt.DefaultView;
+
+                            byte[] excelData;
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                workbook.SaveAs(ms);
+                                excelData = ms.ToArray();
+                            }
+
+                            string json = JsonConvert.SerializeObject(dt, Formatting.Indented);
+
+
+                            string[] columns2 = { "id" };
+                            string where2 = $"email='{email}' AND password='{senha}'";
+                            List<string>[] result2 = conexao.SelectData("users", columns2, where2);
+
+                            if (result2[0].Count > 0)
+                            {
+                                userId = int.Parse(result2[0][0].ToString());
+
+                                Dictionary<string, string> dataCharge = new Dictionary<string, string>();
+                                dataCharge.Add("date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                                dataCharge.Add("file", Convert.ToBase64String(excelData));
+                                dataCharge.Add("user_id", userId.ToString());
+                                dataCharge.Add("status", "A");
+                                dataCharge.Add("data", json);
+
+
+                                if (conexao.InsertData("charge", dataCharge) == true)
+                                {
+
+                                    chargeId = conexao.GetLastInsertedId();
+                                    Dictionary<string, string> dataTableMaster = new Dictionary<string, string>();
+                                    dataTableMaster.Add("status", "A");
+                                    dataTableMaster.Add("data", json);
+                                    dataTableMaster.Add("user_id", userId.ToString());
+                                    dataTableMaster.Add("type_count_id", typeID.ToString());
+                                    dataTableMaster.Add("charge_id", chargeId.ToString());
+
+                                    if (conexao.InsertData("table_master", dataTableMaster) != true)
+                                    {
+                                        MessageBox.Show("Falha ao salvar os dados no banco");
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Erro ao adicionar o arquivo.");
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Erro ao obter o ID do usuário");
+                            }
+                            Cursor.Current = Cursors.Default;
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("fechou");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         private void txtPercentil_Enter(object sender, EventArgs e)
         {
