@@ -65,12 +65,12 @@
             // 
             // pcbLogo
             // 
-            this.pcbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pcbLogo.Image")));
+            this.pcbLogo.Image = global::estatisticaTechData.Properties.Resources.LOGO_4;
             this.pcbLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pcbLogo.Location = new System.Drawing.Point(12, 12);
             this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(160, 156);
-            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pcbLogo.Size = new System.Drawing.Size(172, 191);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogo.TabIndex = 49;
             this.pcbLogo.TabStop = false;
             // 

@@ -266,6 +266,7 @@ namespace estatisticaTechData.Screens
             this.Controls.Add(this.btnSombraEntrar);
             this.Controls.Add(this.Txt_NovaConfirmacaoSenha);
             this.Controls.Add(this.txtSombraEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Frm_EsqueceuSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Alterar a senha ";
