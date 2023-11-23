@@ -119,5 +119,15 @@ namespace estatisticaTechData.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
+        internal static System.Drawing.Icon WhatsApp_Image_2023_11_23_at_19_53_21_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp_Image_2023_11_23_at_19_53_21_removebg_preview", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

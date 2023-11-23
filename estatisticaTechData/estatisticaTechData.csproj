@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Images\techDataLogoForm.ico</ApplicationIcon>
+    <ApplicationIcon>WhatsApp_Image_2023-11-23_at_19.53.21-removebg-preview.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
@@ -412,6 +412,9 @@
   <ItemGroup>
     <Content Include="Images\TechData-fade-claro.png" />
     <Content Include="Images\techDataLogoForm.ico" />
+    <Content Include="LOGO-4.ico" />
+    <None Include="Resources\WhatsApp_Image_2023-11-23_at_19.53.21-removebg-preview.ico" />
+    <Content Include="WhatsApp_Image_2023-11-23_at_19.53.21-removebg-preview.ico" />
     <None Include="Resources\LOGO 4.png" />
     <None Include="Resources\LOGO 3.png" />
     <None Include="Resources\LOGO -2.png" />

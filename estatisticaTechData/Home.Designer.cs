@@ -50,6 +50,8 @@ namespace estatisticaTechData
             // 
             // pcbLogo
             // 
+            this.pcbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = global::estatisticaTechData.Properties.Resources.LOGO_4;
             this.pcbLogo.Location = new System.Drawing.Point(472, 39);
