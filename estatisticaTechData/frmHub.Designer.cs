@@ -57,7 +57,7 @@
             this.btnConfig.Location = new System.Drawing.Point(-3, 625);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(266, 54);
-            this.btnConfig.TabIndex = 7;
+            this.btnConfig.TabIndex = 5;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
             this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
@@ -75,7 +75,7 @@
             this.btnDistribuicao.Name = "btnDistribuicao";
             this.btnDistribuicao.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.btnDistribuicao.Size = new System.Drawing.Size(266, 50);
-            this.btnDistribuicao.TabIndex = 4;
+            this.btnDistribuicao.TabIndex = 1;
             this.btnDistribuicao.Text = "Gráfico de distribuição normal";
             this.btnDistribuicao.UseVisualStyleBackColor = false;
             this.btnDistribuicao.Click += new System.EventHandler(this.btnDistribuicao_Click);
@@ -109,7 +109,7 @@
             this.btnInicio.Location = new System.Drawing.Point(0, 195);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(266, 50);
-            this.btnInicio.TabIndex = 1;
+            this.btnInicio.TabIndex = 0;
             this.btnInicio.Text = "Início";
             this.btnInicio.UseVisualStyleBackColor = false;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
@@ -157,7 +157,7 @@
             this.button1.Location = new System.Drawing.Point(0, 572);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(266, 54);
-            this.button1.TabIndex = 10;
+            this.button1.TabIndex = 4;
             this.button1.Text = "Sair";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -173,7 +173,7 @@
             this.btnCEP.Location = new System.Drawing.Point(0, 307);
             this.btnCEP.Name = "btnCEP";
             this.btnCEP.Size = new System.Drawing.Size(266, 50);
-            this.btnCEP.TabIndex = 9;
+            this.btnCEP.TabIndex = 2;
             this.btnCEP.Text = "Gráfico CEP";
             this.btnCEP.UseVisualStyleBackColor = true;
             this.btnCEP.Click += new System.EventHandler(this.btnCEP_Click);
@@ -188,6 +188,7 @@
             this.pcbConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbConfig.TabIndex = 8;
             this.pcbConfig.TabStop = false;
+            this.pcbConfig.Click += new System.EventHandler(this.pcbConfig_Click);
             // 
             // Tbc_Telas
             // 

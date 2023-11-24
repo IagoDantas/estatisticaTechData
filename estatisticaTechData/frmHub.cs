@@ -58,7 +58,6 @@ namespace estatisticaTechData
                 guia("HistoricoDistribuicaoNormal");
                 MessageBox.Show("Já existem abas de histórico distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            btnInicio.Enabled = true;
 
         }
 
@@ -132,7 +131,6 @@ namespace estatisticaTechData
                 guia("ControleDeVariaveis");
                 MessageBox.Show("Já existem abas de Controle De Variáveis", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            btnInicio.Enabled = true;
 
         }
         public void abrirCEPAtributo()
@@ -154,7 +152,6 @@ namespace estatisticaTechData
                 guia("ControleDeAtributos");
                 MessageBox.Show("Já existem abas de Controle De Atributos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            btnInicio.Enabled = true;
 
         }
 
@@ -255,30 +252,6 @@ namespace estatisticaTechData
                     guia("ControleDeVariaveis");
                     MessageBox.Show("Já existem abas de Controle De Variáveis", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-                btnConfig.ForeColor = Color.White;
-
-                btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-                btnDistribuicao.ForeColor = Color.White;
-
-
-                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-                btnInicio.ForeColor = Color.White;
-
-                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-                btnHistorico.ForeColor = Color.White;
-
-
-                btnCEP.BackColor = Color.FromArgb(220, 236, 223);
-                btnCEP.ForeColor = Color.Black;
-
-
-                btnDistribuicao.Enabled = true;
-                btnHistorico.Enabled = true;
-                btnInicio.Enabled = true;
-
-                btnCEP.Enabled = true;
-                btnConfig.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -315,30 +288,6 @@ namespace estatisticaTechData
                     guia("ControleDeAtributos");
                     MessageBox.Show("Já existem abas de Controle De Atributos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-                btnConfig.ForeColor = Color.White;
-
-                btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-                btnDistribuicao.ForeColor = Color.White;
-
-
-                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-                btnInicio.ForeColor = Color.White;
-
-                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-                btnHistorico.ForeColor = Color.White;
-
-                
-                btnCEP.BackColor = Color.FromArgb(220, 236, 223);
-                btnCEP.ForeColor = Color.Black;
-
-
-                btnDistribuicao.Enabled = true;
-                btnHistorico.Enabled = true;
-                btnInicio.Enabled = true;
-
-                btnCEP.Enabled = true ;
-                btnConfig.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -423,30 +372,6 @@ namespace estatisticaTechData
                     guia("DistribuicaoNormal");
                     MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-                btnConfig.ForeColor = Color.White;
-
-                btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-                btnDistribuicao.ForeColor = Color.Black;
-
-
-                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-                btnInicio.ForeColor = Color.White;
-
-                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-                btnHistorico.ForeColor = Color.White;
-
-                btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-                btnCEP.ForeColor = Color.White;
-
-
-                btnDistribuicao.Enabled = false;
-                btnHistorico.Enabled = true;
-                btnInicio.Enabled = true;
-
-                btnCEP.Enabled = true;
-                btnConfig.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -498,24 +423,6 @@ namespace estatisticaTechData
                     guia("Comparacao");
                     MessageBox.Show("Já existem abas de comparação abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-                btnConfig.ForeColor = Color.White;
-
-                btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-                btnDistribuicao.ForeColor = Color.Black;
-
-
-                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-                btnInicio.ForeColor = Color.White;
-
-                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-                btnHistorico.ForeColor = Color.White;
-
-                btnDistribuicao.Enabled = false;
-                btnInicio.Enabled = true;
-
-                btnHistorico.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -545,47 +452,9 @@ namespace estatisticaTechData
                 guia("HistArquivos");
                 MessageBox.Show("Já existem abas de histórico de arquivos abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-
-            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-            btnCEP.ForeColor = Color.White;
-
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
-
-
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-
-            btnHistorico.BackColor = Color.FromArgb(220, 236, 223);
-            btnHistorico.ForeColor = Color.Black;
-
-            btnDistribuicao.Enabled = true;
-            btnCEP.Enabled = true;
-            btnInicio.Enabled = true;
-
-            btnConfig.Enabled = true;
-            btnHistorico.Enabled = false;
         }
 
-        private void btnPrevisaoDemanda_Click(object sender, EventArgs e)
-        {
-           
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-            btnDistribuicao.Enabled = true;
-            btnInicio.Enabled = true;
-
-        }
+        
 
         private void btnDistribuicao_Click(object sender, EventArgs e)
         {
@@ -609,30 +478,6 @@ namespace estatisticaTechData
                     guia("DistribuicaoNormal");
                     MessageBox.Show("Já existem abas de distribuição normal abertas", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-            
-                btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-                btnConfig.ForeColor = Color.White;
-
-                btnDistribuicao.BackColor = Color.FromArgb(220, 236, 223);
-                btnDistribuicao.ForeColor = Color.Black;
-
-
-                btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-                btnInicio.ForeColor = Color.White;
-
-                btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-                btnHistorico.ForeColor = Color.White;
-
-                btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-                btnCEP.ForeColor = Color.White;
-
-
-                btnDistribuicao.Enabled = false;
-                btnHistorico.Enabled = true;
-                btnInicio.Enabled = true;
-
-                btnCEP.Enabled = true;
-                btnConfig.Enabled = true;
             } catch(Exception ex)
             {
                 if(ex.Message == "fechou")
@@ -884,30 +729,6 @@ namespace estatisticaTechData
             {
                 guia("Configuracoes");
             }
-
-            btnConfig.BackColor = Color.FromArgb(220, 236, 223);
-            btnConfig.ForeColor = Color.Black;
-
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
-
-
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-
-            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-            btnCEP.ForeColor = Color.White;
-
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-
-
-            btnCEP.Enabled = true;
-            btnInicio.Enabled = true;
-
-            btnDistribuicao.Enabled = true;
-            btnHistorico.Enabled = true;
-            btnConfig.Enabled = false;
         }
 
         private void btnCEP_Click(object sender, EventArgs e)
@@ -929,20 +750,6 @@ namespace estatisticaTechData
                 guia("GraficoCEP");
             }
 
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
-            btnCEP.BackColor = Color.FromArgb(220, 236, 223);
-            btnCEP.ForeColor = Color.Black;
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-            btnCEP.Enabled = false;
-            btnInicio.Enabled = true;
-            btnDistribuicao.Enabled = true;
-            btnHistorico.Enabled = true;
         }
 
         private void btnHistGraph_Click(object sender, EventArgs e)
@@ -979,26 +786,6 @@ namespace estatisticaTechData
             Tbc_Telas.TabPages.Add(TbPage);
             Tbc_Telas.SelectedTab = TbPage;
 
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
-
-
-            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-            btnCEP.ForeColor = Color.White;
-
-            btnInicio.BackColor = Color.FromArgb(220, 236, 223);
-            btnInicio.ForeColor = Color.Black;
-
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-            btnInicio.Enabled = false;
-            btnCEP.Enabled = true;
-            btnDistribuicao.Enabled = true;
-            btnHistorico.Enabled = true;
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -1021,27 +808,6 @@ namespace estatisticaTechData
                 guia("Inicio");
             }
 
-            btnConfig.BackColor = Color.FromArgb(0, 107, 117);
-            btnConfig.ForeColor = Color.White;
-            btnDistribuicao.BackColor = Color.FromArgb(0, 107, 117);
-            btnDistribuicao.ForeColor = Color.White;
-
-
-            btnCEP.BackColor = Color.FromArgb(0, 107, 117);
-            btnCEP.ForeColor = Color.White;
-
-            btnInicio.BackColor = Color.FromArgb(220, 236, 223);
-            btnInicio.ForeColor = Color.Black;
-
-           
-            btnInicio.BackColor = Color.FromArgb(0, 107, 117);
-            btnInicio.ForeColor = Color.White;
-            btnHistorico.BackColor = Color.FromArgb(0, 107, 117);
-            btnHistorico.ForeColor = Color.White;
-            btnInicio.Enabled = true;
-            btnCEP.Enabled = true;
-            btnDistribuicao.Enabled = true;
-            btnHistorico.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1049,6 +815,26 @@ namespace estatisticaTechData
             frmHome home = new frmHome();
             home.Show();
             this.Close();
+        }
+
+        private void pcbConfig_Click(object sender, EventArgs e)
+        {
+            if (ControleConfig == 0)
+            {
+                ControleConfig += 1;
+                UC_Configuracao Config = new UC_Configuracao();
+                Config.Dock = DockStyle.Fill;
+                TabPage TbPage = new TabPage();
+                TbPage.Name = "Configuracoes";
+                TbPage.Text = "Configuracoes";
+                TbPage.Controls.Add(Config);
+                Tbc_Telas.TabPages.Add(TbPage);
+                Tbc_Telas.SelectedTab = TbPage;
+            }
+            else
+            {
+                guia("Configuracoes");
+            }
         }
     }
 }
