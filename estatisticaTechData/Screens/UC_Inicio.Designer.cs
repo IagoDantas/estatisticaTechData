@@ -70,10 +70,10 @@ namespace estatisticaTechData.Screens
             this.lblApresentacao.Location = new System.Drawing.Point(99, 424);
             this.lblApresentacao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApresentacao.Name = "lblApresentacao";
-            this.lblApresentacao.Size = new System.Drawing.Size(854, 96);
+            this.lblApresentacao.Size = new System.Drawing.Size(834, 96);
             this.lblApresentacao.TabIndex = 7;
-            this.lblApresentacao.Text = "O Tech Data é um software de controle estatístico descritivo\r\n para controle de p" +
-    "rodução";
+            this.lblApresentacao.Text = "O StatFlow é um software de controle estatístico descritivo\r\n para controle de pr" +
+    "odução";
             // 
             // pictureBox2
             // 
@@ -86,7 +86,7 @@ namespace estatisticaTechData.Screens
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::estatisticaTechData.Properties.Resources.LOGO_4;
+            this.pictureBox1.Image = global::estatisticaTechData.Properties.Resources.Prancheta_1_4x;
             this.pictureBox1.Location = new System.Drawing.Point(726, 72);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(227, 172);

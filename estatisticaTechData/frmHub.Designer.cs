@@ -119,7 +119,7 @@
             this.pbcPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbcPerfil.Image = global::estatisticaTechData.Properties.Resources.Prancheta_1_4x;
-            this.pbcPerfil.Location = new System.Drawing.Point(88, 25);
+            this.pbcPerfil.Location = new System.Drawing.Point(85, 28);
             this.pbcPerfil.Name = "pbcPerfil";
             this.pbcPerfil.Size = new System.Drawing.Size(100, 100);
             this.pbcPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -212,7 +212,7 @@
             this.Controls.Add(this.pnlSideBar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHub";
-            this.Text = "TechData";
+            this.Text = "StatFlow";
             this.Load += new System.EventHandler(this.frmHub_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbcPerfil)).EndInit();
             this.pnlSideBar.ResumeLayout(false);

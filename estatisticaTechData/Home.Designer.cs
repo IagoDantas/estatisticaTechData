@@ -54,9 +54,10 @@ namespace estatisticaTechData
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pcbLogo.Image = global::estatisticaTechData.Properties.Resources.Prancheta_1_4x;
-            this.pcbLogo.Location = new System.Drawing.Point(495, 39);
+            this.pcbLogo.Location = new System.Drawing.Point(493, 39);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(291, 294);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbLogo.TabIndex = 6;
             this.pcbLogo.TabStop = false;
             // 
@@ -301,7 +302,7 @@ namespace estatisticaTechData
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TechData";
+            this.Text = "StatFlow";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();

@@ -587,7 +587,7 @@
             this.MinimizeBox = false;
             this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TechData";
+            this.Text = "StatFlow";
             this.Load += new System.EventHandler(this.frmCadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEsconderSenha)).EndInit();
