@@ -65,7 +65,7 @@
             // 
             // pcbLogo
             // 
-            this.pcbLogo.Image = global::estatisticaTechData.Properties.Resources.LOGO_4;
+            this.pcbLogo.Image = global::estatisticaTechData.Properties.Resources.Prancheta_1_4x;
             this.pcbLogo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.pcbLogo.Location = new System.Drawing.Point(12, 12);
             this.pcbLogo.Name = "pcbLogo";
