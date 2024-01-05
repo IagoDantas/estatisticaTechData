@@ -21,7 +21,10 @@ namespace estatisticaTechData.Screens
             desvio = UC_BackgroundVariaveis.funEstancia.desvioPadrao,
             lsc = UC_BackgroundVariaveis.funEstancia.media + 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
             lic = UC_BackgroundVariaveis.funEstancia.media - 3 * UC_BackgroundVariaveis.funEstancia.desvioPadrao,
-            media = UC_BackgroundVariaveis.funEstancia.media;            
+            media = UC_BackgroundVariaveis.funEstancia.media, controlMin, controlMax, controlSize, mediaMin,
+            mediaMax, mediaSize, amplitudeMin , amplitudeMax, amplitudeSize;
+        double[,] lims  = new double[3, 2];
+        int selectedIndex=0;
 
         public UC_controlVariaveis()
         {
@@ -78,7 +81,8 @@ namespace estatisticaTechData.Screens
             LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count - 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count - 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count - 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
-
+            lims[0, 0] = lic;
+            lims[0, 1] = lsc;
 
             LineItem pontosLine = graphPane.AddCurve("Amostras", pointsMedia, Color.Blue, SymbolType.Circle);
 
@@ -109,6 +113,8 @@ namespace estatisticaTechData.Screens
                 graphPane.YAxis.Scale.Min = lic - 0.1;
                 graphPane.YAxis.Scale.Max = lsc + 0.1;
             }
+
+            controlMax= yMax; controlMin= yMin; controlSize = data.Count - 1;
 
             graphPane.Chart.Fill = new Fill(Color.White, Color.LightGray, 45.0f);
             double yDataRange = yMax - yMin;
@@ -147,7 +153,8 @@ namespace estatisticaTechData.Screens
             LineItem mediaLine = graphPane.AddCurve("Média", new double[] { 0, data.Count + 1 }, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, data.Count + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, data.Count + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
-
+            lims[1, 0] = lic;
+            lims[1, 1] = lsc;
 
 
             mediaLine.Line.Width = 3.0f;
@@ -182,10 +189,14 @@ namespace estatisticaTechData.Screens
             double yMajorStep = yDataRange / 10;
             graphPane.YAxis.Scale.MajorStep = yMajorStep;
             graphPane.XAxis.Scale.MajorStep = 1;
+            mediaMin = yMin;
+            mediaMax = yMax;
+            mediaSize = data.Count + 1;
 
             zedMedias.AxisChange();
             zedMedias.Invalidate();
         }
+
         private void GraficoAmplitude(double[] amplitudes)
         {
             // Configurar o objeto GraphPane para o gráfico de Amplitude (R)
@@ -210,7 +221,8 @@ namespace estatisticaTechData.Screens
             LineItem mediaLine = graphPaneR.AddCurve("Média", new double[] { 0, amplitudes.Length  +1}, new double[] { media, media }, Color.Green, SymbolType.None);
             LineItem lscLine = graphPaneR.AddCurve("LSC", new double[] { 0, amplitudes.Length + 1 }, new double[] { lsc, lsc }, Color.Red, SymbolType.None);
             LineItem licLine = graphPaneR.AddCurve("LIC", new double[] { 0, amplitudes.Length + 1 }, new double[] { lic, lic }, Color.Red, SymbolType.None);
-
+            lims[2, 0] = lic;
+            lims[2, 1] = lsc;
             mediaLine.Line.Width = 3.0f;
             lscLine.Line.Width = 3.0f;
             licLine.Line.Width = 3.0f;
@@ -245,6 +257,10 @@ namespace estatisticaTechData.Screens
             graphPaneR.XAxis.Scale.MajorStep = 1;
             graphPaneR.YAxis.Scale.MajorStep = yMajorStep;
 
+            amplitudeMin = yMin;
+            amplitudeMax = yMax;
+            amplitudeSize = amplitudes.Length + 1; 
+
             // Atualizar o gráfico
             zedAmplitude.AxisChange();
             zedAmplitude.Invalidate();
@@ -252,11 +268,14 @@ namespace estatisticaTechData.Screens
 
         private void rdbControle_CheckedChanged(object sender, EventArgs e)
         {
-            if(rdbControle.Checked)
+            if (rdbControle.Checked)
             {
                 zedControle.Visible = true;
                 zedAmplitude.Visible = false;
                 zedMedias.Visible = false;
+                selectedIndex = 0;
+                txtMin.Text = lims[0, 0].ToString("f4");
+                txtMax.Text = lims[0, 1].ToString("f4");
             }
         }
 
@@ -267,6 +286,9 @@ namespace estatisticaTechData.Screens
                 zedMedias.Visible = true;
                 zedAmplitude.Visible = false;
                 zedControle.Visible = false;
+                selectedIndex = 1;
+                txtMin.Text = lims[1, 0].ToString("f4");
+                txtMax.Text = lims[1, 1].ToString("f4");
             }
         }
 
@@ -277,6 +299,9 @@ namespace estatisticaTechData.Screens
                 zedMedias.Visible = false;
                 zedAmplitude.Visible = true;
                 zedControle.Visible = false;
+                selectedIndex = 2;
+                txtMin.Text = lims[2, 0].ToString("f4");
+                txtMax.Text = lims[2, 1].ToString("f4");
             }
         }
 
@@ -284,6 +309,136 @@ namespace estatisticaTechData.Screens
         {
             string nomeDaGuia = "BackgroundVariavel";
             frmHub.funEstancia.guia(nomeDaGuia);
+        }
+
+        private void btnLim_Click(object sender, EventArgs e)
+        {
+            if (txtMax.Text == null || txtMax.Text == "")
+            {
+                MessageBox.Show("Digite o limite superior do gráfico", "Informações incompletas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (txtMin.Text == null || txtMin.Text == "")
+            {
+                MessageBox.Show("Digite o limite inferior do gráfico", "Informações incompletas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                newLim(selectedIndex);
+
+                switch (selectedIndex)
+                {
+                    case 0:
+                        zedControle.AxisChange();
+                        zedControle.Invalidate();
+                        break;
+                    case 1:
+                        zedMedias.AxisChange();
+                        zedMedias.Invalidate();
+                        break;
+                    case 2:
+                        zedAmplitude.AxisChange();
+                        zedAmplitude.Invalidate();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        private void newLim(int selectedIndex)
+        {
+            double novoXMin;
+            double novoXMax;
+
+            // Your existing code for parsing txtMin and txtMax
+
+            if (double.TryParse(txtMin.Text, out novoXMin) && double.TryParse(txtMax.Text, out novoXMax))
+            {
+                double min = novoXMin;
+                double max = novoXMax;
+                lims[selectedIndex, 0] = min;
+                lims[selectedIndex, 1] = max;   
+                switch (selectedIndex)
+                {
+                    case 0:
+                        UpdateLscLine(max, zedControle, controlSize);
+                        UpdateLicLine(min, zedControle, controlSize);
+                        if (controlMax > max || controlMin < min)
+                        {
+                            double diffMax, diffMin;
+                            diffMax = controlMax - max;
+                            diffMin = min - controlMin;
+                            zedControle.GraphPane.YAxis.Scale.Min = (min - Math.Max(diffMax, diffMin)) - 0.1;
+                            zedControle.GraphPane.YAxis.Scale.Max = (max + Math.Max(diffMax, diffMin)) + 0.1;
+                        }
+                        else
+                        {
+                            zedControle.GraphPane.YAxis.Scale.Min = min - 0.1;
+                            zedControle.GraphPane.YAxis.Scale.Max = max + 0.1;
+                        }
+                        break;
+                    case 1:
+                        UpdateLscLine(max, zedMedias, mediaSize);
+                        UpdateLicLine(min, zedMedias, mediaSize);
+                        if (mediaMax > max || mediaMin < min)
+                        {
+                            double diffMax, diffMin;
+                            diffMax = mediaMax - max;
+                            diffMin = min - mediaMin;
+                            zedMedias.GraphPane.YAxis.Scale.Min = (min - Math.Max(diffMax, diffMin)) - 0.1;
+                            zedMedias.GraphPane.YAxis.Scale.Max = (max + Math.Max(diffMax, diffMin)) + 0.1;
+                        }
+                        else
+                        {
+                            zedMedias.GraphPane.YAxis.Scale.Min = min - 0.1;
+                            zedMedias.GraphPane.YAxis.Scale.Max = max + 0.1;
+                        }
+                        break;
+                    case 2:
+                        UpdateLscLine(max, zedAmplitude, amplitudeSize);
+                        UpdateLicLine(min, zedAmplitude, amplitudeSize);
+                        if (amplitudeMax > max || amplitudeMin < min)
+                        {
+                            double diffMax, diffMin;
+                            diffMax = amplitudeMax - max;
+                            diffMin = min - amplitudeMin;
+                            zedAmplitude.GraphPane.YAxis.Scale.Min = (min - Math.Max(diffMax, diffMin)) - 0.1;
+                            zedAmplitude.GraphPane.YAxis.Scale.Max = (max + Math.Max(diffMax, diffMin)) + 0.1;
+                        }
+                        else
+                        {
+                            zedAmplitude.GraphPane.YAxis.Scale.Min = min - 0.1;
+                            zedAmplitude.GraphPane.YAxis.Scale.Max = max + 0.1;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                // Rest of your existing code
+            }
+            else
+            {
+                MessageBox.Show("Digite apenas números", "Informações erradas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateLicLine(double min, ZedGraphControl zedGraph, double size)
+        {
+            GraphPane graphPane = zedGraph.GraphPane;
+            graphPane.CurveList.RemoveAll(curve => curve.Label.Text == "LIC");
+            LineItem licLine = graphPane.AddCurve("LIC", new double[] { 0, size }, new double[] { min, min }, Color.Red, SymbolType.None);
+            licLine.Line.Width = 3.0f;
+            licLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
+        }
+
+        private void UpdateLscLine(double max, ZedGraphControl zedGraph, double size)
+        {
+            GraphPane graphPane = zedGraph.GraphPane;
+            graphPane.CurveList.RemoveAll(curve => curve.Label.Text == "LSC");
+            LineItem lscLine = graphPane.AddCurve("LSC", new double[] { 0, size }, new double[] { max, max }, Color.Red, SymbolType.None);
+            lscLine.Line.Width = 3.0f;
+            lscLine.Line.Style = System.Drawing.Drawing2D.DashStyle.Solid;
         }
     }
 }
